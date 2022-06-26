@@ -1,0 +1,5 @@
+query recipes {
+  recipes(orderBy: { createdAt: desc }) {
+    ...RecipePreviewFields
+  }
+}
