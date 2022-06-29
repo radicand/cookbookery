@@ -1,0 +1,19 @@
+fragment RecipePreviewFields on Recipe {
+  id
+  title
+  Author {
+    id
+    name
+  }
+  description
+  Files {
+    id
+  }
+  createdAt
+  RecipeTags {
+    Tag {
+      id
+      name
+    }
+  }
+}

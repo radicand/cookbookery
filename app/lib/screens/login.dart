@@ -1,7 +1,6 @@
 import 'package:cookbook/services/auth_service.dart';
 import 'package:cookbook/widgets/button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 
 enum LoaderState { none, pending, completed, rejected }
 

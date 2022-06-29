@@ -1,0 +1,16 @@
+overwrite: true
+generates:
+  ../app/lib/graphql_schemas/anonymous/schema.graphql:
+    documents: '../app/lib/graphql_schemas/anonymous/!(schema).graphql'
+    plugins:
+      - schema-ast
+    schema:
+      - schema.graphql:
+          loader: ./anonymous-loader.ts
+  ../app/lib/graphql_schemas/editor/schema.graphql:
+    documents: '../app/lib/graphql_schemas/editor/!(schema).graphql'
+    plugins:
+      - schema-ast
+    schema:
+      - schema.graphql:
+          loader: ./editor-auth-loader.ts

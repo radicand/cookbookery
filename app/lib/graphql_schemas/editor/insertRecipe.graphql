@@ -1,0 +1,5 @@
+mutation insertRecipe($object: Recipe_insert_input!) {
+  insert_Recipe_one(object: $object) {
+    ...RecipePreviewFields
+  }
+}

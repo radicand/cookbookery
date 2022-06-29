@@ -1,0 +1,1942 @@
+schema {
+  query: query_root
+  subscription: subscription_root
+}
+
+"""whether this query should be cached (Hasura Cloud only)"""
+directive @cached(
+  """refresh the cache entry"""
+  refresh: Boolean! = false
+
+  """measured in seconds"""
+  ttl: Int! = 60
+) on QUERY
+
+"""
+columns and relationships of "File"
+"""
+type File {
+  """An object relationship"""
+  Recipe: Recipe!
+
+  """An array relationship"""
+  Steps(
+    """distinct select on columns"""
+    distinct_on: [Step_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Step_order_by!]
+
+    """filter the rows returned"""
+    where: Step_bool_exp
+  ): [Step!]!
+
+  """An object relationship"""
+  User: User!
+  blob: bytea!
+  createdAt: timestamp!
+  id: String!
+  mimetype: String!
+  recipeId: String!
+  updatedAt: timestamp!
+  userId: String!
+}
+
+"""
+order by aggregate values of table "File"
+"""
+input File_aggregate_order_by {
+  count: order_by
+  max: File_max_order_by
+  min: File_min_order_by
+}
+
+"""
+Boolean expression to filter rows from the table "File". All fields are combined with a logical 'AND'.
+"""
+input File_bool_exp {
+  Recipe: Recipe_bool_exp
+  Steps: Step_bool_exp
+  User: User_bool_exp
+  _and: [File_bool_exp!]
+  _not: File_bool_exp
+  _or: [File_bool_exp!]
+  blob: bytea_comparison_exp
+  createdAt: timestamp_comparison_exp
+  id: String_comparison_exp
+  mimetype: String_comparison_exp
+  recipeId: String_comparison_exp
+  updatedAt: timestamp_comparison_exp
+  userId: String_comparison_exp
+}
+
+"""
+order by max() on columns of table "File"
+"""
+input File_max_order_by {
+  createdAt: order_by
+  id: order_by
+  mimetype: order_by
+  recipeId: order_by
+  updatedAt: order_by
+  userId: order_by
+}
+
+"""
+order by min() on columns of table "File"
+"""
+input File_min_order_by {
+  createdAt: order_by
+  id: order_by
+  mimetype: order_by
+  recipeId: order_by
+  updatedAt: order_by
+  userId: order_by
+}
+
+"""Ordering options when selecting data from "File"."""
+input File_order_by {
+  Recipe: Recipe_order_by
+  Steps_aggregate: Step_aggregate_order_by
+  User: User_order_by
+  blob: order_by
+  createdAt: order_by
+  id: order_by
+  mimetype: order_by
+  recipeId: order_by
+  updatedAt: order_by
+  userId: order_by
+}
+
+"""
+select columns of table "File"
+"""
+enum File_select_column {
+  """column name"""
+  blob
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  id
+
+  """column name"""
+  mimetype
+
+  """column name"""
+  recipeId
+
+  """column name"""
+  updatedAt
+
+  """column name"""
+  userId
+}
+
+"""
+columns and relationships of "Ingredient"
+"""
+type Ingredient {
+  """An array relationship"""
+  IngredientUnits(
+    """distinct select on columns"""
+    distinct_on: [IngredientUnit_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [IngredientUnit_order_by!]
+
+    """filter the rows returned"""
+    where: IngredientUnit_bool_exp
+  ): [IngredientUnit!]!
+  id: String!
+  name: String!
+}
+
+"""
+columns and relationships of "IngredientUnit"
+"""
+type IngredientUnit {
+  """An object relationship"""
+  Ingredient: Ingredient
+
+  """An object relationship"""
+  RecipeSection: RecipeSection!
+
+  """An object relationship"""
+  UnitSize: UnitSize
+  amount: float8
+  id: String!
+  ingredientId: String
+  notes: String
+  order: Int!
+  recipeSectionId: String!
+  unitId: String
+}
+
+"""
+order by aggregate values of table "IngredientUnit"
+"""
+input IngredientUnit_aggregate_order_by {
+  avg: IngredientUnit_avg_order_by
+  count: order_by
+  max: IngredientUnit_max_order_by
+  min: IngredientUnit_min_order_by
+  stddev: IngredientUnit_stddev_order_by
+  stddev_pop: IngredientUnit_stddev_pop_order_by
+  stddev_samp: IngredientUnit_stddev_samp_order_by
+  sum: IngredientUnit_sum_order_by
+  var_pop: IngredientUnit_var_pop_order_by
+  var_samp: IngredientUnit_var_samp_order_by
+  variance: IngredientUnit_variance_order_by
+}
+
+"""
+order by avg() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_avg_order_by {
+  amount: order_by
+  order: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "IngredientUnit". All fields are combined with a logical 'AND'.
+"""
+input IngredientUnit_bool_exp {
+  Ingredient: Ingredient_bool_exp
+  RecipeSection: RecipeSection_bool_exp
+  UnitSize: UnitSize_bool_exp
+  _and: [IngredientUnit_bool_exp!]
+  _not: IngredientUnit_bool_exp
+  _or: [IngredientUnit_bool_exp!]
+  amount: float8_comparison_exp
+  id: String_comparison_exp
+  ingredientId: String_comparison_exp
+  notes: String_comparison_exp
+  order: Int_comparison_exp
+  recipeSectionId: String_comparison_exp
+  unitId: String_comparison_exp
+}
+
+"""
+order by max() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_max_order_by {
+  amount: order_by
+  id: order_by
+  ingredientId: order_by
+  notes: order_by
+  order: order_by
+  recipeSectionId: order_by
+  unitId: order_by
+}
+
+"""
+order by min() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_min_order_by {
+  amount: order_by
+  id: order_by
+  ingredientId: order_by
+  notes: order_by
+  order: order_by
+  recipeSectionId: order_by
+  unitId: order_by
+}
+
+"""Ordering options when selecting data from "IngredientUnit"."""
+input IngredientUnit_order_by {
+  Ingredient: Ingredient_order_by
+  RecipeSection: RecipeSection_order_by
+  UnitSize: UnitSize_order_by
+  amount: order_by
+  id: order_by
+  ingredientId: order_by
+  notes: order_by
+  order: order_by
+  recipeSectionId: order_by
+  unitId: order_by
+}
+
+"""
+select columns of table "IngredientUnit"
+"""
+enum IngredientUnit_select_column {
+  """column name"""
+  amount
+
+  """column name"""
+  id
+
+  """column name"""
+  ingredientId
+
+  """column name"""
+  notes
+
+  """column name"""
+  order
+
+  """column name"""
+  recipeSectionId
+
+  """column name"""
+  unitId
+}
+
+"""
+order by stddev() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_stddev_order_by {
+  amount: order_by
+  order: order_by
+}
+
+"""
+order by stddev_pop() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_stddev_pop_order_by {
+  amount: order_by
+  order: order_by
+}
+
+"""
+order by stddev_samp() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_stddev_samp_order_by {
+  amount: order_by
+  order: order_by
+}
+
+"""
+order by sum() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_sum_order_by {
+  amount: order_by
+  order: order_by
+}
+
+"""
+order by var_pop() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_var_pop_order_by {
+  amount: order_by
+  order: order_by
+}
+
+"""
+order by var_samp() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_var_samp_order_by {
+  amount: order_by
+  order: order_by
+}
+
+"""
+order by variance() on columns of table "IngredientUnit"
+"""
+input IngredientUnit_variance_order_by {
+  amount: order_by
+  order: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "Ingredient". All fields are combined with a logical 'AND'.
+"""
+input Ingredient_bool_exp {
+  IngredientUnits: IngredientUnit_bool_exp
+  _and: [Ingredient_bool_exp!]
+  _not: Ingredient_bool_exp
+  _or: [Ingredient_bool_exp!]
+  id: String_comparison_exp
+  name: String_comparison_exp
+}
+
+"""Ordering options when selecting data from "Ingredient"."""
+input Ingredient_order_by {
+  IngredientUnits_aggregate: IngredientUnit_aggregate_order_by
+  id: order_by
+  name: order_by
+}
+
+"""
+select columns of table "Ingredient"
+"""
+enum Ingredient_select_column {
+  """column name"""
+  id
+
+  """column name"""
+  name
+}
+
+input Int_cast_exp {
+  String: String_comparison_exp
+}
+
+"""
+Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'.
+"""
+input Int_comparison_exp {
+  _cast: Int_cast_exp
+  _eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  _is_null: Boolean
+  _lt: Int
+  _lte: Int
+  _neq: Int
+  _nin: [Int!]
+}
+
+"""
+columns and relationships of "Recipe"
+"""
+type Recipe {
+  """An object relationship"""
+  Author: User!
+
+  """An array relationship"""
+  Files(
+    """distinct select on columns"""
+    distinct_on: [File_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [File_order_by!]
+
+    """filter the rows returned"""
+    where: File_bool_exp
+  ): [File!]!
+
+  """An array relationship"""
+  RecipeSections(
+    """distinct select on columns"""
+    distinct_on: [RecipeSection_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [RecipeSection_order_by!]
+
+    """filter the rows returned"""
+    where: RecipeSection_bool_exp
+  ): [RecipeSection!]!
+
+  """An array relationship"""
+  RecipeTags(
+    """distinct select on columns"""
+    distinct_on: [_RecipeToTag_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [_RecipeToTag_order_by!]
+
+    """filter the rows returned"""
+    where: _RecipeToTag_bool_exp
+  ): [_RecipeToTag!]!
+  authorId: String!
+  createdAt: timestamp!
+  description: String
+  id: String!
+  notes: String
+  source: String
+  title: String!
+  updatedAt: timestamp!
+}
+
+"""
+columns and relationships of "RecipeSection"
+"""
+type RecipeSection {
+  """An array relationship"""
+  IngredientUnits(
+    """distinct select on columns"""
+    distinct_on: [IngredientUnit_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [IngredientUnit_order_by!]
+
+    """filter the rows returned"""
+    where: IngredientUnit_bool_exp
+  ): [IngredientUnit!]!
+
+  """An object relationship"""
+  Recipe: Recipe!
+
+  """An array relationship"""
+  Steps(
+    """distinct select on columns"""
+    distinct_on: [Step_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Step_order_by!]
+
+    """filter the rows returned"""
+    where: Step_bool_exp
+  ): [Step!]!
+  cookTimeMinutes: Int!
+  description: String
+  id: String!
+  name: String!
+  order: Int!
+  prepTimeMinutes: Int!
+  recipeId: String!
+  servingUnit: String!
+  servings: Int!
+}
+
+"""
+order by aggregate values of table "RecipeSection"
+"""
+input RecipeSection_aggregate_order_by {
+  avg: RecipeSection_avg_order_by
+  count: order_by
+  max: RecipeSection_max_order_by
+  min: RecipeSection_min_order_by
+  stddev: RecipeSection_stddev_order_by
+  stddev_pop: RecipeSection_stddev_pop_order_by
+  stddev_samp: RecipeSection_stddev_samp_order_by
+  sum: RecipeSection_sum_order_by
+  var_pop: RecipeSection_var_pop_order_by
+  var_samp: RecipeSection_var_samp_order_by
+  variance: RecipeSection_variance_order_by
+}
+
+"""
+order by avg() on columns of table "RecipeSection"
+"""
+input RecipeSection_avg_order_by {
+  cookTimeMinutes: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  servings: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "RecipeSection". All fields are combined with a logical 'AND'.
+"""
+input RecipeSection_bool_exp {
+  IngredientUnits: IngredientUnit_bool_exp
+  Recipe: Recipe_bool_exp
+  Steps: Step_bool_exp
+  _and: [RecipeSection_bool_exp!]
+  _not: RecipeSection_bool_exp
+  _or: [RecipeSection_bool_exp!]
+  cookTimeMinutes: Int_comparison_exp
+  description: String_comparison_exp
+  id: String_comparison_exp
+  name: String_comparison_exp
+  order: Int_comparison_exp
+  prepTimeMinutes: Int_comparison_exp
+  recipeId: String_comparison_exp
+  servingUnit: String_comparison_exp
+  servings: Int_comparison_exp
+}
+
+"""
+order by max() on columns of table "RecipeSection"
+"""
+input RecipeSection_max_order_by {
+  cookTimeMinutes: order_by
+  description: order_by
+  id: order_by
+  name: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  recipeId: order_by
+  servingUnit: order_by
+  servings: order_by
+}
+
+"""
+order by min() on columns of table "RecipeSection"
+"""
+input RecipeSection_min_order_by {
+  cookTimeMinutes: order_by
+  description: order_by
+  id: order_by
+  name: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  recipeId: order_by
+  servingUnit: order_by
+  servings: order_by
+}
+
+"""Ordering options when selecting data from "RecipeSection"."""
+input RecipeSection_order_by {
+  IngredientUnits_aggregate: IngredientUnit_aggregate_order_by
+  Recipe: Recipe_order_by
+  Steps_aggregate: Step_aggregate_order_by
+  cookTimeMinutes: order_by
+  description: order_by
+  id: order_by
+  name: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  recipeId: order_by
+  servingUnit: order_by
+  servings: order_by
+}
+
+"""
+select columns of table "RecipeSection"
+"""
+enum RecipeSection_select_column {
+  """column name"""
+  cookTimeMinutes
+
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  name
+
+  """column name"""
+  order
+
+  """column name"""
+  prepTimeMinutes
+
+  """column name"""
+  recipeId
+
+  """column name"""
+  servingUnit
+
+  """column name"""
+  servings
+}
+
+"""
+order by stddev() on columns of table "RecipeSection"
+"""
+input RecipeSection_stddev_order_by {
+  cookTimeMinutes: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  servings: order_by
+}
+
+"""
+order by stddev_pop() on columns of table "RecipeSection"
+"""
+input RecipeSection_stddev_pop_order_by {
+  cookTimeMinutes: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  servings: order_by
+}
+
+"""
+order by stddev_samp() on columns of table "RecipeSection"
+"""
+input RecipeSection_stddev_samp_order_by {
+  cookTimeMinutes: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  servings: order_by
+}
+
+"""
+order by sum() on columns of table "RecipeSection"
+"""
+input RecipeSection_sum_order_by {
+  cookTimeMinutes: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  servings: order_by
+}
+
+"""
+order by var_pop() on columns of table "RecipeSection"
+"""
+input RecipeSection_var_pop_order_by {
+  cookTimeMinutes: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  servings: order_by
+}
+
+"""
+order by var_samp() on columns of table "RecipeSection"
+"""
+input RecipeSection_var_samp_order_by {
+  cookTimeMinutes: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  servings: order_by
+}
+
+"""
+order by variance() on columns of table "RecipeSection"
+"""
+input RecipeSection_variance_order_by {
+  cookTimeMinutes: order_by
+  order: order_by
+  prepTimeMinutes: order_by
+  servings: order_by
+}
+
+"""
+order by aggregate values of table "Recipe"
+"""
+input Recipe_aggregate_order_by {
+  count: order_by
+  max: Recipe_max_order_by
+  min: Recipe_min_order_by
+}
+
+"""
+Boolean expression to filter rows from the table "Recipe". All fields are combined with a logical 'AND'.
+"""
+input Recipe_bool_exp {
+  Author: User_bool_exp
+  Files: File_bool_exp
+  RecipeSections: RecipeSection_bool_exp
+  RecipeTags: _RecipeToTag_bool_exp
+  _and: [Recipe_bool_exp!]
+  _not: Recipe_bool_exp
+  _or: [Recipe_bool_exp!]
+  authorId: String_comparison_exp
+  createdAt: timestamp_comparison_exp
+  description: String_comparison_exp
+  id: String_comparison_exp
+  notes: String_comparison_exp
+  source: String_comparison_exp
+  title: String_comparison_exp
+  updatedAt: timestamp_comparison_exp
+}
+
+"""
+order by max() on columns of table "Recipe"
+"""
+input Recipe_max_order_by {
+  authorId: order_by
+  createdAt: order_by
+  description: order_by
+  id: order_by
+  notes: order_by
+  source: order_by
+  title: order_by
+  updatedAt: order_by
+}
+
+"""
+order by min() on columns of table "Recipe"
+"""
+input Recipe_min_order_by {
+  authorId: order_by
+  createdAt: order_by
+  description: order_by
+  id: order_by
+  notes: order_by
+  source: order_by
+  title: order_by
+  updatedAt: order_by
+}
+
+"""Ordering options when selecting data from "Recipe"."""
+input Recipe_order_by {
+  Author: User_order_by
+  Files_aggregate: File_aggregate_order_by
+  RecipeSections_aggregate: RecipeSection_aggregate_order_by
+  RecipeTags_aggregate: _RecipeToTag_aggregate_order_by
+  authorId: order_by
+  createdAt: order_by
+  description: order_by
+  id: order_by
+  notes: order_by
+  source: order_by
+  title: order_by
+  updatedAt: order_by
+}
+
+"""
+select columns of table "Recipe"
+"""
+enum Recipe_select_column {
+  """column name"""
+  authorId
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  notes
+
+  """column name"""
+  source
+
+  """column name"""
+  title
+
+  """column name"""
+  updatedAt
+}
+
+"""
+columns and relationships of "Step"
+"""
+type Step {
+  """An object relationship"""
+  File: File
+
+  """An object relationship"""
+  RecipeSection: RecipeSection!
+  description: String!
+  fileId: String
+  id: String!
+  order: Int!
+  recipeSectionId: String!
+}
+
+"""
+order by aggregate values of table "Step"
+"""
+input Step_aggregate_order_by {
+  avg: Step_avg_order_by
+  count: order_by
+  max: Step_max_order_by
+  min: Step_min_order_by
+  stddev: Step_stddev_order_by
+  stddev_pop: Step_stddev_pop_order_by
+  stddev_samp: Step_stddev_samp_order_by
+  sum: Step_sum_order_by
+  var_pop: Step_var_pop_order_by
+  var_samp: Step_var_samp_order_by
+  variance: Step_variance_order_by
+}
+
+"""
+order by avg() on columns of table "Step"
+"""
+input Step_avg_order_by {
+  order: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "Step". All fields are combined with a logical 'AND'.
+"""
+input Step_bool_exp {
+  File: File_bool_exp
+  RecipeSection: RecipeSection_bool_exp
+  _and: [Step_bool_exp!]
+  _not: Step_bool_exp
+  _or: [Step_bool_exp!]
+  description: String_comparison_exp
+  fileId: String_comparison_exp
+  id: String_comparison_exp
+  order: Int_comparison_exp
+  recipeSectionId: String_comparison_exp
+}
+
+"""
+order by max() on columns of table "Step"
+"""
+input Step_max_order_by {
+  description: order_by
+  fileId: order_by
+  id: order_by
+  order: order_by
+  recipeSectionId: order_by
+}
+
+"""
+order by min() on columns of table "Step"
+"""
+input Step_min_order_by {
+  description: order_by
+  fileId: order_by
+  id: order_by
+  order: order_by
+  recipeSectionId: order_by
+}
+
+"""Ordering options when selecting data from "Step"."""
+input Step_order_by {
+  File: File_order_by
+  RecipeSection: RecipeSection_order_by
+  description: order_by
+  fileId: order_by
+  id: order_by
+  order: order_by
+  recipeSectionId: order_by
+}
+
+"""
+select columns of table "Step"
+"""
+enum Step_select_column {
+  """column name"""
+  description
+
+  """column name"""
+  fileId
+
+  """column name"""
+  id
+
+  """column name"""
+  order
+
+  """column name"""
+  recipeSectionId
+}
+
+"""
+order by stddev() on columns of table "Step"
+"""
+input Step_stddev_order_by {
+  order: order_by
+}
+
+"""
+order by stddev_pop() on columns of table "Step"
+"""
+input Step_stddev_pop_order_by {
+  order: order_by
+}
+
+"""
+order by stddev_samp() on columns of table "Step"
+"""
+input Step_stddev_samp_order_by {
+  order: order_by
+}
+
+"""
+order by sum() on columns of table "Step"
+"""
+input Step_sum_order_by {
+  order: order_by
+}
+
+"""
+order by var_pop() on columns of table "Step"
+"""
+input Step_var_pop_order_by {
+  order: order_by
+}
+
+"""
+order by var_samp() on columns of table "Step"
+"""
+input Step_var_samp_order_by {
+  order: order_by
+}
+
+"""
+order by variance() on columns of table "Step"
+"""
+input Step_variance_order_by {
+  order: order_by
+}
+
+"""
+Boolean expression to compare columns of type "String". All fields are combined with logical 'AND'.
+"""
+input String_comparison_exp {
+  _eq: String
+  _gt: String
+  _gte: String
+
+  """does the column match the given case-insensitive pattern"""
+  _ilike: String
+  _in: [String!]
+
+  """
+  does the column match the given POSIX regular expression, case insensitive
+  """
+  _iregex: String
+  _is_null: Boolean
+
+  """does the column match the given pattern"""
+  _like: String
+  _lt: String
+  _lte: String
+  _neq: String
+
+  """does the column NOT match the given case-insensitive pattern"""
+  _nilike: String
+  _nin: [String!]
+
+  """
+  does the column NOT match the given POSIX regular expression, case insensitive
+  """
+  _niregex: String
+
+  """does the column NOT match the given pattern"""
+  _nlike: String
+
+  """
+  does the column NOT match the given POSIX regular expression, case sensitive
+  """
+  _nregex: String
+
+  """does the column NOT match the given SQL regular expression"""
+  _nsimilar: String
+
+  """
+  does the column match the given POSIX regular expression, case sensitive
+  """
+  _regex: String
+
+  """does the column match the given SQL regular expression"""
+  _similar: String
+}
+
+"""
+columns and relationships of "Tag"
+"""
+type Tag {
+  """An array relationship"""
+  Recipes(
+    """distinct select on columns"""
+    distinct_on: [_RecipeToTag_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [_RecipeToTag_order_by!]
+
+    """filter the rows returned"""
+    where: _RecipeToTag_bool_exp
+  ): [_RecipeToTag!]!
+  id: String!
+  name: String!
+}
+
+"""
+Boolean expression to filter rows from the table "Tag". All fields are combined with a logical 'AND'.
+"""
+input Tag_bool_exp {
+  Recipes: _RecipeToTag_bool_exp
+  _and: [Tag_bool_exp!]
+  _not: Tag_bool_exp
+  _or: [Tag_bool_exp!]
+  id: String_comparison_exp
+  name: String_comparison_exp
+}
+
+"""Ordering options when selecting data from "Tag"."""
+input Tag_order_by {
+  Recipes_aggregate: _RecipeToTag_aggregate_order_by
+  id: order_by
+  name: order_by
+}
+
+"""
+select columns of table "Tag"
+"""
+enum Tag_select_column {
+  """column name"""
+  id
+
+  """column name"""
+  name
+}
+
+"""
+columns and relationships of "UnitSize"
+"""
+type UnitSize {
+  """An array relationship"""
+  IngredientUnits(
+    """distinct select on columns"""
+    distinct_on: [IngredientUnit_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [IngredientUnit_order_by!]
+
+    """filter the rows returned"""
+    where: IngredientUnit_bool_exp
+  ): [IngredientUnit!]!
+  id: String!
+  name: String!
+  plural: String!
+  unitType: UnitType_enum!
+}
+
+"""
+Boolean expression to filter rows from the table "UnitSize". All fields are combined with a logical 'AND'.
+"""
+input UnitSize_bool_exp {
+  IngredientUnits: IngredientUnit_bool_exp
+  _and: [UnitSize_bool_exp!]
+  _not: UnitSize_bool_exp
+  _or: [UnitSize_bool_exp!]
+  id: String_comparison_exp
+  name: String_comparison_exp
+  plural: String_comparison_exp
+  unitType: UnitType_enum_comparison_exp
+}
+
+"""Ordering options when selecting data from "UnitSize"."""
+input UnitSize_order_by {
+  IngredientUnits_aggregate: IngredientUnit_aggregate_order_by
+  id: order_by
+  name: order_by
+  plural: order_by
+  unitType: order_by
+}
+
+"""
+select columns of table "UnitSize"
+"""
+enum UnitSize_select_column {
+  """column name"""
+  id
+
+  """column name"""
+  name
+
+  """column name"""
+  plural
+
+  """column name"""
+  unitType
+}
+
+"""
+columns and relationships of "UnitType"
+"""
+type UnitType {
+  description: String
+  id: String!
+}
+
+"""
+Boolean expression to filter rows from the table "UnitType". All fields are combined with a logical 'AND'.
+"""
+input UnitType_bool_exp {
+  _and: [UnitType_bool_exp!]
+  _not: UnitType_bool_exp
+  _or: [UnitType_bool_exp!]
+  description: String_comparison_exp
+  id: String_comparison_exp
+}
+
+enum UnitType_enum {
+  IMPERIAL
+  METRIC
+}
+
+"""
+Boolean expression to compare columns of type "UnitType_enum". All fields are combined with logical 'AND'.
+"""
+input UnitType_enum_comparison_exp {
+  _eq: UnitType_enum
+  _in: [UnitType_enum!]
+  _is_null: Boolean
+  _neq: UnitType_enum
+  _nin: [UnitType_enum!]
+}
+
+"""Ordering options when selecting data from "UnitType"."""
+input UnitType_order_by {
+  description: order_by
+  id: order_by
+}
+
+"""
+select columns of table "UnitType"
+"""
+enum UnitType_select_column {
+  """column name"""
+  description
+
+  """column name"""
+  id
+}
+
+"""
+columns and relationships of "User"
+"""
+type User {
+  """An array relationship"""
+  Files(
+    """distinct select on columns"""
+    distinct_on: [File_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [File_order_by!]
+
+    """filter the rows returned"""
+    where: File_bool_exp
+  ): [File!]!
+
+  """An array relationship"""
+  Recipes(
+    """distinct select on columns"""
+    distinct_on: [Recipe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Recipe_order_by!]
+
+    """filter the rows returned"""
+    where: Recipe_bool_exp
+  ): [Recipe!]!
+  id: String!
+  name: String!
+}
+
+"""
+Boolean expression to filter rows from the table "User". All fields are combined with a logical 'AND'.
+"""
+input User_bool_exp {
+  Files: File_bool_exp
+  Recipes: Recipe_bool_exp
+  _and: [User_bool_exp!]
+  _not: User_bool_exp
+  _or: [User_bool_exp!]
+  id: String_comparison_exp
+  name: String_comparison_exp
+}
+
+"""Ordering options when selecting data from "User"."""
+input User_order_by {
+  Files_aggregate: File_aggregate_order_by
+  Recipes_aggregate: Recipe_aggregate_order_by
+  id: order_by
+  name: order_by
+}
+
+"""
+select columns of table "User"
+"""
+enum User_select_column {
+  """column name"""
+  id
+
+  """column name"""
+  name
+}
+
+"""
+columns and relationships of "_RecipeToTag"
+"""
+type _RecipeToTag {
+  A: String!
+  B: String!
+
+  """An object relationship"""
+  Recipe: Recipe!
+
+  """An object relationship"""
+  Tag: Tag!
+}
+
+"""
+order by aggregate values of table "_RecipeToTag"
+"""
+input _RecipeToTag_aggregate_order_by {
+  count: order_by
+  max: _RecipeToTag_max_order_by
+  min: _RecipeToTag_min_order_by
+}
+
+"""
+Boolean expression to filter rows from the table "_RecipeToTag". All fields are combined with a logical 'AND'.
+"""
+input _RecipeToTag_bool_exp {
+  A: String_comparison_exp
+  B: String_comparison_exp
+  Recipe: Recipe_bool_exp
+  Tag: Tag_bool_exp
+  _and: [_RecipeToTag_bool_exp!]
+  _not: _RecipeToTag_bool_exp
+  _or: [_RecipeToTag_bool_exp!]
+}
+
+"""
+order by max() on columns of table "_RecipeToTag"
+"""
+input _RecipeToTag_max_order_by {
+  A: order_by
+  B: order_by
+}
+
+"""
+order by min() on columns of table "_RecipeToTag"
+"""
+input _RecipeToTag_min_order_by {
+  A: order_by
+  B: order_by
+}
+
+"""Ordering options when selecting data from "_RecipeToTag"."""
+input _RecipeToTag_order_by {
+  A: order_by
+  B: order_by
+  Recipe: Recipe_order_by
+  Tag: Tag_order_by
+}
+
+"""
+select columns of table "_RecipeToTag"
+"""
+enum _RecipeToTag_select_column {
+  """column name"""
+  A
+
+  """column name"""
+  B
+}
+
+scalar bytea
+
+"""
+Boolean expression to compare columns of type "bytea". All fields are combined with logical 'AND'.
+"""
+input bytea_comparison_exp {
+  _eq: bytea
+  _gt: bytea
+  _gte: bytea
+  _in: [bytea!]
+  _is_null: Boolean
+  _lt: bytea
+  _lte: bytea
+  _neq: bytea
+  _nin: [bytea!]
+}
+
+scalar float8
+
+input float8_cast_exp {
+  String: String_comparison_exp
+}
+
+"""
+Boolean expression to compare columns of type "float8". All fields are combined with logical 'AND'.
+"""
+input float8_comparison_exp {
+  _cast: float8_cast_exp
+  _eq: float8
+  _gt: float8
+  _gte: float8
+  _in: [float8!]
+  _is_null: Boolean
+  _lt: float8
+  _lte: float8
+  _neq: float8
+  _nin: [float8!]
+}
+
+"""column ordering options"""
+enum order_by {
+  """in ascending order, nulls last"""
+  asc
+
+  """in ascending order, nulls first"""
+  asc_nulls_first
+
+  """in ascending order, nulls last"""
+  asc_nulls_last
+
+  """in descending order, nulls first"""
+  desc
+
+  """in descending order, nulls first"""
+  desc_nulls_first
+
+  """in descending order, nulls last"""
+  desc_nulls_last
+}
+
+type query_root {
+  """
+  fetch data from the table: "File"
+  """
+  File(
+    """distinct select on columns"""
+    distinct_on: [File_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [File_order_by!]
+
+    """filter the rows returned"""
+    where: File_bool_exp
+  ): [File!]!
+
+  """fetch data from the table: "File" using primary key columns"""
+  File_by_pk(id: String!): File
+
+  """
+  fetch data from the table: "Ingredient"
+  """
+  Ingredient(
+    """distinct select on columns"""
+    distinct_on: [Ingredient_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Ingredient_order_by!]
+
+    """filter the rows returned"""
+    where: Ingredient_bool_exp
+  ): [Ingredient!]!
+
+  """
+  fetch data from the table: "IngredientUnit"
+  """
+  IngredientUnit(
+    """distinct select on columns"""
+    distinct_on: [IngredientUnit_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [IngredientUnit_order_by!]
+
+    """filter the rows returned"""
+    where: IngredientUnit_bool_exp
+  ): [IngredientUnit!]!
+
+  """fetch data from the table: "IngredientUnit" using primary key columns"""
+  IngredientUnit_by_pk(id: String!): IngredientUnit
+
+  """fetch data from the table: "Ingredient" using primary key columns"""
+  Ingredient_by_pk(id: String!): Ingredient
+
+  """
+  fetch data from the table: "Recipe"
+  """
+  Recipe(
+    """distinct select on columns"""
+    distinct_on: [Recipe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Recipe_order_by!]
+
+    """filter the rows returned"""
+    where: Recipe_bool_exp
+  ): [Recipe!]!
+
+  """
+  fetch data from the table: "RecipeSection"
+  """
+  RecipeSection(
+    """distinct select on columns"""
+    distinct_on: [RecipeSection_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [RecipeSection_order_by!]
+
+    """filter the rows returned"""
+    where: RecipeSection_bool_exp
+  ): [RecipeSection!]!
+
+  """fetch data from the table: "RecipeSection" using primary key columns"""
+  RecipeSection_by_pk(id: String!): RecipeSection
+
+  """fetch data from the table: "Recipe" using primary key columns"""
+  Recipe_by_pk(id: String!): Recipe
+
+  """
+  fetch data from the table: "Step"
+  """
+  Step(
+    """distinct select on columns"""
+    distinct_on: [Step_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Step_order_by!]
+
+    """filter the rows returned"""
+    where: Step_bool_exp
+  ): [Step!]!
+
+  """fetch data from the table: "Step" using primary key columns"""
+  Step_by_pk(id: String!): Step
+
+  """
+  fetch data from the table: "Tag"
+  """
+  Tag(
+    """distinct select on columns"""
+    distinct_on: [Tag_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Tag_order_by!]
+
+    """filter the rows returned"""
+    where: Tag_bool_exp
+  ): [Tag!]!
+
+  """fetch data from the table: "Tag" using primary key columns"""
+  Tag_by_pk(id: String!): Tag
+
+  """
+  fetch data from the table: "UnitSize"
+  """
+  UnitSize(
+    """distinct select on columns"""
+    distinct_on: [UnitSize_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [UnitSize_order_by!]
+
+    """filter the rows returned"""
+    where: UnitSize_bool_exp
+  ): [UnitSize!]!
+
+  """fetch data from the table: "UnitSize" using primary key columns"""
+  UnitSize_by_pk(id: String!): UnitSize
+
+  """
+  fetch data from the table: "UnitType"
+  """
+  UnitType(
+    """distinct select on columns"""
+    distinct_on: [UnitType_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [UnitType_order_by!]
+
+    """filter the rows returned"""
+    where: UnitType_bool_exp
+  ): [UnitType!]!
+
+  """fetch data from the table: "UnitType" using primary key columns"""
+  UnitType_by_pk(id: String!): UnitType
+
+  """
+  fetch data from the table: "User"
+  """
+  User(
+    """distinct select on columns"""
+    distinct_on: [User_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [User_order_by!]
+
+    """filter the rows returned"""
+    where: User_bool_exp
+  ): [User!]!
+
+  """fetch data from the table: "User" using primary key columns"""
+  User_by_pk(id: String!): User
+
+  """
+  fetch data from the table: "_RecipeToTag"
+  """
+  _RecipeToTag(
+    """distinct select on columns"""
+    distinct_on: [_RecipeToTag_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [_RecipeToTag_order_by!]
+
+    """filter the rows returned"""
+    where: _RecipeToTag_bool_exp
+  ): [_RecipeToTag!]!
+}
+
+type subscription_root {
+  """
+  fetch data from the table: "File"
+  """
+  File(
+    """distinct select on columns"""
+    distinct_on: [File_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [File_order_by!]
+
+    """filter the rows returned"""
+    where: File_bool_exp
+  ): [File!]!
+
+  """fetch data from the table: "File" using primary key columns"""
+  File_by_pk(id: String!): File
+
+  """
+  fetch data from the table: "Ingredient"
+  """
+  Ingredient(
+    """distinct select on columns"""
+    distinct_on: [Ingredient_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Ingredient_order_by!]
+
+    """filter the rows returned"""
+    where: Ingredient_bool_exp
+  ): [Ingredient!]!
+
+  """
+  fetch data from the table: "IngredientUnit"
+  """
+  IngredientUnit(
+    """distinct select on columns"""
+    distinct_on: [IngredientUnit_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [IngredientUnit_order_by!]
+
+    """filter the rows returned"""
+    where: IngredientUnit_bool_exp
+  ): [IngredientUnit!]!
+
+  """fetch data from the table: "IngredientUnit" using primary key columns"""
+  IngredientUnit_by_pk(id: String!): IngredientUnit
+
+  """fetch data from the table: "Ingredient" using primary key columns"""
+  Ingredient_by_pk(id: String!): Ingredient
+
+  """
+  fetch data from the table: "Recipe"
+  """
+  Recipe(
+    """distinct select on columns"""
+    distinct_on: [Recipe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Recipe_order_by!]
+
+    """filter the rows returned"""
+    where: Recipe_bool_exp
+  ): [Recipe!]!
+
+  """
+  fetch data from the table: "RecipeSection"
+  """
+  RecipeSection(
+    """distinct select on columns"""
+    distinct_on: [RecipeSection_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [RecipeSection_order_by!]
+
+    """filter the rows returned"""
+    where: RecipeSection_bool_exp
+  ): [RecipeSection!]!
+
+  """fetch data from the table: "RecipeSection" using primary key columns"""
+  RecipeSection_by_pk(id: String!): RecipeSection
+
+  """fetch data from the table: "Recipe" using primary key columns"""
+  Recipe_by_pk(id: String!): Recipe
+
+  """
+  fetch data from the table: "Step"
+  """
+  Step(
+    """distinct select on columns"""
+    distinct_on: [Step_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Step_order_by!]
+
+    """filter the rows returned"""
+    where: Step_bool_exp
+  ): [Step!]!
+
+  """fetch data from the table: "Step" using primary key columns"""
+  Step_by_pk(id: String!): Step
+
+  """
+  fetch data from the table: "Tag"
+  """
+  Tag(
+    """distinct select on columns"""
+    distinct_on: [Tag_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [Tag_order_by!]
+
+    """filter the rows returned"""
+    where: Tag_bool_exp
+  ): [Tag!]!
+
+  """fetch data from the table: "Tag" using primary key columns"""
+  Tag_by_pk(id: String!): Tag
+
+  """
+  fetch data from the table: "UnitSize"
+  """
+  UnitSize(
+    """distinct select on columns"""
+    distinct_on: [UnitSize_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [UnitSize_order_by!]
+
+    """filter the rows returned"""
+    where: UnitSize_bool_exp
+  ): [UnitSize!]!
+
+  """fetch data from the table: "UnitSize" using primary key columns"""
+  UnitSize_by_pk(id: String!): UnitSize
+
+  """
+  fetch data from the table: "UnitType"
+  """
+  UnitType(
+    """distinct select on columns"""
+    distinct_on: [UnitType_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [UnitType_order_by!]
+
+    """filter the rows returned"""
+    where: UnitType_bool_exp
+  ): [UnitType!]!
+
+  """fetch data from the table: "UnitType" using primary key columns"""
+  UnitType_by_pk(id: String!): UnitType
+
+  """
+  fetch data from the table: "User"
+  """
+  User(
+    """distinct select on columns"""
+    distinct_on: [User_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [User_order_by!]
+
+    """filter the rows returned"""
+    where: User_bool_exp
+  ): [User!]!
+
+  """fetch data from the table: "User" using primary key columns"""
+  User_by_pk(id: String!): User
+
+  """
+  fetch data from the table: "_RecipeToTag"
+  """
+  _RecipeToTag(
+    """distinct select on columns"""
+    distinct_on: [_RecipeToTag_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [_RecipeToTag_order_by!]
+
+    """filter the rows returned"""
+    where: _RecipeToTag_bool_exp
+  ): [_RecipeToTag!]!
+}
+
+scalar timestamp
+
+input timestamp_cast_exp {
+  String: String_comparison_exp
+}
+
+"""
+Boolean expression to compare columns of type "timestamp". All fields are combined with logical 'AND'.
+"""
+input timestamp_comparison_exp {
+  _cast: timestamp_cast_exp
+  _eq: timestamp
+  _gt: timestamp
+  _gte: timestamp
+  _in: [timestamp!]
+  _is_null: Boolean
+  _lt: timestamp
+  _lte: timestamp
+  _neq: timestamp
+  _nin: [timestamp!]
+}

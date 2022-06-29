@@ -1,4 +1,5 @@
 import 'package:cookbook/models/cookbook_store.dart';
+import 'package:cookbook/widgets/recipe_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
@@ -30,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
               builder: (_) {
                 return Text('You are home, ${cookbookStore.user?.name}');
               },
-            )
+            ),
+            const RecipeList()
           ],
         )),
       ],

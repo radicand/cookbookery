@@ -14,7 +14,7 @@ Future<ValueNotifier<GraphQLClient>> getGQLClient() async {
   );
 
   final AuthLink authLink = AuthLink(getToken: () async {
-    final accessToken = await secureStorage.read(key: REFRESH_TOKEN_KEY);
+    final accessToken = await secureStorage.read(key: ACCESS_TOKEN_KEY);
 
     if (accessToken == null) {
       return null;
@@ -25,8 +25,8 @@ Future<ValueNotifier<GraphQLClient>> getGQLClient() async {
   final Link link = authLink.concat(httpLink);
 
   return ValueNotifier(GraphQLClient(
-    link: link,
-    // The default store is the InMemoryStore, which does NOT persist to disk
-    cache: GraphQLCache(store: HiveStore()),
-  ));
+      link: link,
+      // The default store is the InMemoryStore, which does NOT persist to disk
+      // cache: GraphQLCache(store: InMemoryStore())));
+      cache: GraphQLCache(store: HiveStore())));
 }

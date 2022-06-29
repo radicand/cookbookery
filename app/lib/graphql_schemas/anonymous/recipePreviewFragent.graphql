@@ -1,17 +1,19 @@
 fragment RecipePreviewFields on Recipe {
   id
   title
-  author {
+  Author {
     id
     name
   }
   description
-  photo {
+  Files {
     id
   }
   createdAt
-  tags {
-    id
-    name
+  RecipeTags {
+    Tag {
+      id
+      name
+    }
   }
 }

@@ -44,6 +44,9 @@ dependencies:
   flutter_dotenv: ^5.0.2
   adaptive_navigation: ^0.0.7
   graphql_flutter: ^5.1.0
+  flutter_hooks: ^0.18.5+1
+  graphql: ^5.1.1
+  gql: ^0.13.1
 
 dev_dependencies:
   flutter_test:

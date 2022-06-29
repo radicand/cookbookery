@@ -280,7 +280,7 @@ packages:
     source: hosted
     version: "5.0.2"
   flutter_hooks:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_hooks
       url: "https://pub.dartlang.org"
@@ -381,7 +381,7 @@ packages:
     source: hosted
     version: "3.0.1"
   gql:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: gql
       url: "https://pub.dartlang.org"
@@ -437,7 +437,7 @@ packages:
     source: hosted
     version: "0.2.2"
   graphql:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: graphql
       url: "https://pub.dartlang.org"

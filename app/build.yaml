@@ -1,0 +1,24 @@
+targets:
+  $default:
+    builders:
+      graphql_codegen:
+        options:
+          extraKeywords:
+            - String
+          scalars:
+            timestamp:
+              type: DateTime
+              fromJsonFunctionName: dateTimeFromJson
+              toJsonFunctionName: dateTimeToJson
+              import: package:cookbook/scalars.dart
+            float8:
+              type: double
+            bytea:
+              type: String
+          generatedFileHeader: "// ignore_for_file: constant_identifier_names, unnecessary_const, prefer_is_not_operator\n// ignore_for_file: unnecessary_this, annotate_overrides, camel_case_types\n// ignore_for_file: non_constant_identifier_names, curly_braces_in_flow_control_structures, prefer_if_null_operators\n// ignore_for_file: camel_case_extensions, prefer_const_constructors\n\n"
+          clients:
+            - graphql
+            - graphql_flutter
+          scopes:
+            - lib/graphql_schemas/anonymous/**
+            - lib/graphql_schemas/editor/**

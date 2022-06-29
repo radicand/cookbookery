@@ -32,12 +32,10 @@ class AuthService {
 
     try {
       final TokenResponse? result = await appAuth.token(
-        TokenRequest(
-          OAUTH_CLIENT_ID,
-          OAUTH_REDIRECT_URI,
-          issuer: OAUTH_ISSUER,
-          refreshToken: storedRefreshToken,
-        ),
+        TokenRequest(OAUTH_CLIENT_ID, OAUTH_REDIRECT_URI,
+            issuer: OAUTH_ISSUER,
+            refreshToken: storedRefreshToken,
+            additionalParameters: {"audience": OAUTH_AUDIENCE}),
       );
       final String setResult = await _setLocalVariables(result);
       return setResult == 'Success';
@@ -53,6 +51,7 @@ class AuthService {
       final authorizationTokenRequest = AuthorizationTokenRequest(
         OAUTH_CLIENT_ID,
         OAUTH_REDIRECT_URI,
+        additionalParameters: {"audience": OAUTH_AUDIENCE},
         discoveryUrl: '$OAUTH_ISSUER/.well-known/openid-configuration',
         issuer: OAUTH_ISSUER,
         scopes: ['openid', 'profile', 'offline_access', 'email'],
