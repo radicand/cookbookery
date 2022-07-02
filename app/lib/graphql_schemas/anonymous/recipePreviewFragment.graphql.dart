@@ -7,7 +7,7 @@ import 'package:cookbook/scalars.dart';
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 import 'package:json_annotation/json_annotation.dart';
-part 'recipePreviewFragent.graphql.g.dart';
+part 'recipePreviewFragment.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Fragment$RecipePreviewFields {

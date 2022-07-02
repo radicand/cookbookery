@@ -1,14 +1,17 @@
-import 'package:cookbook/graphql_schemas/anonymous/recipes.graphql.dart';
+import 'package:cookbook/graphql_schemas/anonymous/recipePreviewFragment.graphql.dart';
+import 'package:cookbook/widgets/recipe_card.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-class RecipeList extends HookWidget {
-  const RecipeList({Key? key}) : super(key: key);
+class RecipeList extends StatelessWidget {
+  final List<Fragment$RecipePreviewFields> items;
+  const RecipeList({Key? key, required this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final res = useQuery$recipes();
-    final titles = res.result.parsedData?.Recipe.map((r) => r.title).join(', ');
-    return Text((titles != null) ? titles : 'loading');
+    return ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return RecipeCard(recipe: items[index]);
+        });
   }
 }

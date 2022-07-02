@@ -9,7 +9,7 @@ import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 import 'package:graphql_flutter/graphql_flutter.dart' as graphql_flutter;
 import 'package:json_annotation/json_annotation.dart';
-import 'recipePreviewFragent.graphql.dart';
+import 'recipePreviewFragment.graphql.dart';
 part 'recipes.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)

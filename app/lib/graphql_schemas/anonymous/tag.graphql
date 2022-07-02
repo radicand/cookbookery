@@ -1,0 +1,9 @@
+query tag($name: String!) {
+  Tag(where: { name: { _eq: $name } }) {
+    id
+    name
+    Recipes {
+      ...RecipePreviewFields
+    }
+  }
+}

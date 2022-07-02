@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'recipePreviewFragent.graphql.dart';
+part of 'recipePreviewFragment.graphql.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

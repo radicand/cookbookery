@@ -3,6 +3,7 @@ targets:
     builders:
       graphql_codegen:
         options:
+          addTypename: true
           extraKeywords:
             - String
           scalars:

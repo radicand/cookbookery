@@ -14,6 +14,7 @@ import 'package:cookbook/screens/home.dart';
 import 'package:cookbook/screens/login.dart';
 import 'package:cookbook/screens/profile.dart';
 import 'package:cookbook/screens/recipe.dart';
+import 'package:cookbook/screens/tag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -72,6 +73,16 @@ class CookbookApp extends StatelessWidget {
         name: 'recipe',
         path: '/recipe/:id',
         builder: (context, state) => _build(const RecipeScreen()),
+      ),
+      GoRoute(
+        name: 'tag',
+        path: '/tag/:name',
+        builder: (context, state) {
+          // use state.params to get router parameter values
+          // final family = Families.family(state.params['fid']!);
+          // return FamilyScreen(family: family);
+          return _build(TagScreen(name: state.params['name'] ?? ''));
+        },
       ),
     ],
     errorBuilder: (context, state) => _build(ErrorView(state.error!)),
