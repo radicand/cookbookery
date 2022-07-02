@@ -1,0 +1,6 @@
+fragment UnitSizeFragment on UnitSize {
+  id
+  name
+  plural
+  unitType
+}

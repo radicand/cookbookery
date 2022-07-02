@@ -1,5 +1,5 @@
 query recipes {
   Recipe(order_by: { createdAt: desc }) {
-    ...RecipePreviewFields
+    ...RecipePreviewFragment
   }
 }

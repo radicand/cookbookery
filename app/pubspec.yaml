@@ -52,7 +52,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mobx_codegen: ^2.0.7
-  graphql_codegen: ^0.9.0
+  graphql_codegen: ^0.10.0-beta.4
   json_serializable: ^6.2.0
   build_runner: ^2.1.11
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -61,6 +61,13 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.1
+  flutter_launcher_icons: "^0.9.3"
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/icon/cookbook.png"
+  remove_alpha_ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

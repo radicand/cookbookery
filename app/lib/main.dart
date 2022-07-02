@@ -33,6 +33,7 @@ class CookbookApp extends StatelessWidget {
         routeInformationProvider: _router.routeInformationProvider,
         routeInformationParser: _router.routeInformationParser,
         routerDelegate: _router.routerDelegate,
+        backButtonDispatcher: RootBackButtonDispatcher(),
         title: title,
         debugShowCheckedModeBanner: true,
         themeMode: ThemeMode.system,
@@ -72,16 +73,17 @@ class CookbookApp extends StatelessWidget {
       GoRoute(
         name: 'recipe',
         path: '/recipe/:id',
-        builder: (context, state) => _build(const RecipeScreen()),
+        builder: (context, state) =>
+            _build(RecipeScreen(id: state.params['id'] ?? '')),
       ),
       GoRoute(
         name: 'tag',
-        path: '/tag/:name',
+        path: '/tag/:id',
         builder: (context, state) {
           // use state.params to get router parameter values
           // final family = Families.family(state.params['fid']!);
           // return FamilyScreen(family: family);
-          return _build(TagScreen(name: state.params['name'] ?? ''));
+          return _build(TagScreen(id: state.params['id'] ?? ''));
         },
       ),
     ],
@@ -101,7 +103,11 @@ class CookbookApp extends StatelessWidget {
           child: state.error != null
               ? ErrorScaffold(body: child)
               : SharedScaffold(
-                  selectedIndex: state.subloc == '/' ? 0 : 1,
+                  // This is where we compute the selected tab
+                  selectedIndex:
+                      state.subloc == '/profile' || state.subloc == '/login'
+                          ? 1
+                          : 0,
                   body: child,
                 ),
         ),
@@ -182,10 +188,10 @@ class _SharedScaffoldState extends State<SharedScaffold> {
 
           switch (index) {
             case 0:
-              context.goNamed('home');
+              context.pushNamed('home');
               break;
             case 1:
-              context.goNamed('profile');
+              context.pushNamed('profile');
               break;
             default:
               throw Exception('Invalid index');
@@ -222,7 +228,7 @@ class ErrorView extends StatelessWidget {
           children: [
             SelectableText(error.toString()),
             TextButton(
-              onPressed: () => context.goNamed('home'),
+              onPressed: () => context.pushNamed('home'),
               child: const HomeScreen(),
             ),
           ],

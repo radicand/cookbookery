@@ -47,14 +47,61 @@ class Input$File_aggregate_order_by {
     return true;
   }
 
-  Input$File_aggregate_order_by copyWith(
-          {Enum$order_by? Function()? count,
-          Input$File_max_order_by? Function()? max,
-          Input$File_min_order_by? Function()? min}) =>
-      Input$File_aggregate_order_by(
-          count: count == null ? this.count : count(),
-          max: max == null ? this.max : max(),
-          min: min == null ? this.min : min());
+  CopyWith$Input$File_aggregate_order_by<Input$File_aggregate_order_by>
+      get copyWith => CopyWith$Input$File_aggregate_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_aggregate_order_by<TRes> {
+  factory CopyWith$Input$File_aggregate_order_by(
+          Input$File_aggregate_order_by instance,
+          TRes Function(Input$File_aggregate_order_by) then) =
+      _CopyWithImpl$Input$File_aggregate_order_by;
+
+  factory CopyWith$Input$File_aggregate_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_aggregate_order_by;
+
+  TRes call(
+      {Enum$order_by? count,
+      Input$File_max_order_by? max,
+      Input$File_min_order_by? min});
+}
+
+class _CopyWithImpl$Input$File_aggregate_order_by<TRes>
+    implements CopyWith$Input$File_aggregate_order_by<TRes> {
+  _CopyWithImpl$Input$File_aggregate_order_by(this._instance, this._then);
+
+  final Input$File_aggregate_order_by _instance;
+
+  final TRes Function(Input$File_aggregate_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? count = _undefined,
+          Object? max = _undefined,
+          Object? min = _undefined}) =>
+      _then(Input$File_aggregate_order_by(
+          count:
+              count == _undefined ? _instance.count : (count as Enum$order_by?),
+          max: max == _undefined
+              ? _instance.max
+              : (max as Input$File_max_order_by?),
+          min: min == _undefined
+              ? _instance.min
+              : (min as Input$File_min_order_by?)));
+}
+
+class _CopyWithStubImpl$Input$File_aggregate_order_by<TRes>
+    implements CopyWith$Input$File_aggregate_order_by<TRes> {
+  _CopyWithStubImpl$Input$File_aggregate_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? count,
+          Input$File_max_order_by? max,
+          Input$File_min_order_by? min}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -98,12 +145,54 @@ class Input$File_arr_rel_insert_input {
     return true;
   }
 
-  Input$File_arr_rel_insert_input copyWith(
+  CopyWith$Input$File_arr_rel_insert_input<Input$File_arr_rel_insert_input>
+      get copyWith => CopyWith$Input$File_arr_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_arr_rel_insert_input<TRes> {
+  factory CopyWith$Input$File_arr_rel_insert_input(
+          Input$File_arr_rel_insert_input instance,
+          TRes Function(Input$File_arr_rel_insert_input) then) =
+      _CopyWithImpl$Input$File_arr_rel_insert_input;
+
+  factory CopyWith$Input$File_arr_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_arr_rel_insert_input;
+
+  TRes call(
+      {List<Input$File_insert_input>? data,
+      Input$File_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$File_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$File_arr_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$File_arr_rel_insert_input(this._instance, this._then);
+
+  final Input$File_arr_rel_insert_input _instance;
+
+  final TRes Function(Input$File_arr_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$File_arr_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as List<Input$File_insert_input>),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$File_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$File_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$File_arr_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$File_arr_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call(
           {List<Input$File_insert_input>? data,
-          Input$File_on_conflict? Function()? on_conflict}) =>
-      Input$File_arr_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+          Input$File_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -239,30 +328,109 @@ class Input$File_bool_exp {
     return true;
   }
 
-  Input$File_bool_exp copyWith(
-          {Input$Recipe_bool_exp? Function()? Recipe,
-          Input$Step_bool_exp? Function()? Steps,
-          Input$User_bool_exp? Function()? User,
-          List<Input$File_bool_exp>? Function()? $_and,
-          Input$File_bool_exp? Function()? $_not,
-          List<Input$File_bool_exp>? Function()? $_or,
-          Input$bytea_comparison_exp? Function()? blob,
-          Input$String_comparison_exp? Function()? id,
-          Input$String_comparison_exp? Function()? mimetype,
-          Input$String_comparison_exp? Function()? recipeId,
-          Input$String_comparison_exp? Function()? userId}) =>
-      Input$File_bool_exp(
-          Recipe: Recipe == null ? this.Recipe : Recipe(),
-          Steps: Steps == null ? this.Steps : Steps(),
-          User: User == null ? this.User : User(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          blob: blob == null ? this.blob : blob(),
-          id: id == null ? this.id : id(),
-          mimetype: mimetype == null ? this.mimetype : mimetype(),
-          recipeId: recipeId == null ? this.recipeId : recipeId(),
-          userId: userId == null ? this.userId : userId());
+  CopyWith$Input$File_bool_exp<Input$File_bool_exp> get copyWith =>
+      CopyWith$Input$File_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_bool_exp<TRes> {
+  factory CopyWith$Input$File_bool_exp(Input$File_bool_exp instance,
+          TRes Function(Input$File_bool_exp) then) =
+      _CopyWithImpl$Input$File_bool_exp;
+
+  factory CopyWith$Input$File_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_bool_exp;
+
+  TRes call(
+      {Input$Recipe_bool_exp? Recipe,
+      Input$Step_bool_exp? Steps,
+      Input$User_bool_exp? User,
+      List<Input$File_bool_exp>? $_and,
+      Input$File_bool_exp? $_not,
+      List<Input$File_bool_exp>? $_or,
+      Input$bytea_comparison_exp? blob,
+      Input$String_comparison_exp? id,
+      Input$String_comparison_exp? mimetype,
+      Input$String_comparison_exp? recipeId,
+      Input$String_comparison_exp? userId});
+}
+
+class _CopyWithImpl$Input$File_bool_exp<TRes>
+    implements CopyWith$Input$File_bool_exp<TRes> {
+  _CopyWithImpl$Input$File_bool_exp(this._instance, this._then);
+
+  final Input$File_bool_exp _instance;
+
+  final TRes Function(Input$File_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Recipe = _undefined,
+          Object? Steps = _undefined,
+          Object? User = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? blob = _undefined,
+          Object? id = _undefined,
+          Object? mimetype = _undefined,
+          Object? recipeId = _undefined,
+          Object? userId = _undefined}) =>
+      _then(Input$File_bool_exp(
+          Recipe: Recipe == _undefined
+              ? _instance.Recipe
+              : (Recipe as Input$Recipe_bool_exp?),
+          Steps: Steps == _undefined
+              ? _instance.Steps
+              : (Steps as Input$Step_bool_exp?),
+          User: User == _undefined
+              ? _instance.User
+              : (User as Input$User_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$File_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$File_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$File_bool_exp>?),
+          blob: blob == _undefined
+              ? _instance.blob
+              : (blob as Input$bytea_comparison_exp?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?),
+          mimetype: mimetype == _undefined
+              ? _instance.mimetype
+              : (mimetype as Input$String_comparison_exp?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as Input$String_comparison_exp?),
+          userId: userId == _undefined
+              ? _instance.userId
+              : (userId as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$File_bool_exp<TRes>
+    implements CopyWith$Input$File_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$File_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$Recipe_bool_exp? Recipe,
+          Input$Step_bool_exp? Steps,
+          Input$User_bool_exp? User,
+          List<Input$File_bool_exp>? $_and,
+          Input$File_bool_exp? $_not,
+          List<Input$File_bool_exp>? $_or,
+          Input$bytea_comparison_exp? blob,
+          Input$String_comparison_exp? id,
+          Input$String_comparison_exp? mimetype,
+          Input$String_comparison_exp? recipeId,
+          Input$String_comparison_exp? userId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -329,20 +497,75 @@ class Input$File_insert_input {
     return true;
   }
 
-  Input$File_insert_input copyWith(
-          {Input$Recipe_obj_rel_insert_input? Function()? Recipe,
-          Input$Step_arr_rel_insert_input? Function()? Steps,
-          String? Function()? blob,
-          String? Function()? id,
-          String? Function()? mimetype,
-          String? Function()? recipeId}) =>
-      Input$File_insert_input(
-          Recipe: Recipe == null ? this.Recipe : Recipe(),
-          Steps: Steps == null ? this.Steps : Steps(),
-          blob: blob == null ? this.blob : blob(),
-          id: id == null ? this.id : id(),
-          mimetype: mimetype == null ? this.mimetype : mimetype(),
-          recipeId: recipeId == null ? this.recipeId : recipeId());
+  CopyWith$Input$File_insert_input<Input$File_insert_input> get copyWith =>
+      CopyWith$Input$File_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_insert_input<TRes> {
+  factory CopyWith$Input$File_insert_input(Input$File_insert_input instance,
+          TRes Function(Input$File_insert_input) then) =
+      _CopyWithImpl$Input$File_insert_input;
+
+  factory CopyWith$Input$File_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_insert_input;
+
+  TRes call(
+      {Input$Recipe_obj_rel_insert_input? Recipe,
+      Input$Step_arr_rel_insert_input? Steps,
+      String? blob,
+      String? id,
+      String? mimetype,
+      String? recipeId});
+}
+
+class _CopyWithImpl$Input$File_insert_input<TRes>
+    implements CopyWith$Input$File_insert_input<TRes> {
+  _CopyWithImpl$Input$File_insert_input(this._instance, this._then);
+
+  final Input$File_insert_input _instance;
+
+  final TRes Function(Input$File_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Recipe = _undefined,
+          Object? Steps = _undefined,
+          Object? blob = _undefined,
+          Object? id = _undefined,
+          Object? mimetype = _undefined,
+          Object? recipeId = _undefined}) =>
+      _then(Input$File_insert_input(
+          Recipe: Recipe == _undefined
+              ? _instance.Recipe
+              : (Recipe as Input$Recipe_obj_rel_insert_input?),
+          Steps: Steps == _undefined
+              ? _instance.Steps
+              : (Steps as Input$Step_arr_rel_insert_input?),
+          blob: blob == _undefined ? _instance.blob : (blob as String?),
+          id: id == _undefined ? _instance.id : (id as String?),
+          mimetype: mimetype == _undefined
+              ? _instance.mimetype
+              : (mimetype as String?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as String?)));
+}
+
+class _CopyWithStubImpl$Input$File_insert_input<TRes>
+    implements CopyWith$Input$File_insert_input<TRes> {
+  _CopyWithStubImpl$Input$File_insert_input(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$Recipe_obj_rel_insert_input? Recipe,
+          Input$Step_arr_rel_insert_input? Steps,
+          String? blob,
+          String? id,
+          String? mimetype,
+          String? recipeId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -394,16 +617,65 @@ class Input$File_max_order_by {
     return true;
   }
 
-  Input$File_max_order_by copyWith(
-          {Enum$order_by? Function()? id,
-          Enum$order_by? Function()? mimetype,
-          Enum$order_by? Function()? recipeId,
-          Enum$order_by? Function()? userId}) =>
-      Input$File_max_order_by(
-          id: id == null ? this.id : id(),
-          mimetype: mimetype == null ? this.mimetype : mimetype(),
-          recipeId: recipeId == null ? this.recipeId : recipeId(),
-          userId: userId == null ? this.userId : userId());
+  CopyWith$Input$File_max_order_by<Input$File_max_order_by> get copyWith =>
+      CopyWith$Input$File_max_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_max_order_by<TRes> {
+  factory CopyWith$Input$File_max_order_by(Input$File_max_order_by instance,
+          TRes Function(Input$File_max_order_by) then) =
+      _CopyWithImpl$Input$File_max_order_by;
+
+  factory CopyWith$Input$File_max_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_max_order_by;
+
+  TRes call(
+      {Enum$order_by? id,
+      Enum$order_by? mimetype,
+      Enum$order_by? recipeId,
+      Enum$order_by? userId});
+}
+
+class _CopyWithImpl$Input$File_max_order_by<TRes>
+    implements CopyWith$Input$File_max_order_by<TRes> {
+  _CopyWithImpl$Input$File_max_order_by(this._instance, this._then);
+
+  final Input$File_max_order_by _instance;
+
+  final TRes Function(Input$File_max_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? id = _undefined,
+          Object? mimetype = _undefined,
+          Object? recipeId = _undefined,
+          Object? userId = _undefined}) =>
+      _then(Input$File_max_order_by(
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          mimetype: mimetype == _undefined
+              ? _instance.mimetype
+              : (mimetype as Enum$order_by?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as Enum$order_by?),
+          userId: userId == _undefined
+              ? _instance.userId
+              : (userId as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$File_max_order_by<TRes>
+    implements CopyWith$Input$File_max_order_by<TRes> {
+  _CopyWithStubImpl$Input$File_max_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? id,
+          Enum$order_by? mimetype,
+          Enum$order_by? recipeId,
+          Enum$order_by? userId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -455,16 +727,65 @@ class Input$File_min_order_by {
     return true;
   }
 
-  Input$File_min_order_by copyWith(
-          {Enum$order_by? Function()? id,
-          Enum$order_by? Function()? mimetype,
-          Enum$order_by? Function()? recipeId,
-          Enum$order_by? Function()? userId}) =>
-      Input$File_min_order_by(
-          id: id == null ? this.id : id(),
-          mimetype: mimetype == null ? this.mimetype : mimetype(),
-          recipeId: recipeId == null ? this.recipeId : recipeId(),
-          userId: userId == null ? this.userId : userId());
+  CopyWith$Input$File_min_order_by<Input$File_min_order_by> get copyWith =>
+      CopyWith$Input$File_min_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_min_order_by<TRes> {
+  factory CopyWith$Input$File_min_order_by(Input$File_min_order_by instance,
+          TRes Function(Input$File_min_order_by) then) =
+      _CopyWithImpl$Input$File_min_order_by;
+
+  factory CopyWith$Input$File_min_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_min_order_by;
+
+  TRes call(
+      {Enum$order_by? id,
+      Enum$order_by? mimetype,
+      Enum$order_by? recipeId,
+      Enum$order_by? userId});
+}
+
+class _CopyWithImpl$Input$File_min_order_by<TRes>
+    implements CopyWith$Input$File_min_order_by<TRes> {
+  _CopyWithImpl$Input$File_min_order_by(this._instance, this._then);
+
+  final Input$File_min_order_by _instance;
+
+  final TRes Function(Input$File_min_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? id = _undefined,
+          Object? mimetype = _undefined,
+          Object? recipeId = _undefined,
+          Object? userId = _undefined}) =>
+      _then(Input$File_min_order_by(
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          mimetype: mimetype == _undefined
+              ? _instance.mimetype
+              : (mimetype as Enum$order_by?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as Enum$order_by?),
+          userId: userId == _undefined
+              ? _instance.userId
+              : (userId as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$File_min_order_by<TRes>
+    implements CopyWith$Input$File_min_order_by<TRes> {
+  _CopyWithStubImpl$Input$File_min_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? id,
+          Enum$order_by? mimetype,
+          Enum$order_by? recipeId,
+          Enum$order_by? userId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -501,12 +822,51 @@ class Input$File_obj_rel_insert_input {
     return true;
   }
 
-  Input$File_obj_rel_insert_input copyWith(
-          {Input$File_insert_input? data,
-          Input$File_on_conflict? Function()? on_conflict}) =>
-      Input$File_obj_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+  CopyWith$Input$File_obj_rel_insert_input<Input$File_obj_rel_insert_input>
+      get copyWith => CopyWith$Input$File_obj_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_obj_rel_insert_input<TRes> {
+  factory CopyWith$Input$File_obj_rel_insert_input(
+          Input$File_obj_rel_insert_input instance,
+          TRes Function(Input$File_obj_rel_insert_input) then) =
+      _CopyWithImpl$Input$File_obj_rel_insert_input;
+
+  factory CopyWith$Input$File_obj_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_obj_rel_insert_input;
+
+  TRes call(
+      {Input$File_insert_input? data, Input$File_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$File_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$File_obj_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$File_obj_rel_insert_input(this._instance, this._then);
+
+  final Input$File_obj_rel_insert_input _instance;
+
+  final TRes Function(Input$File_obj_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$File_obj_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as Input$File_insert_input),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$File_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$File_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$File_obj_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$File_obj_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call({Input$File_insert_input? data, Input$File_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -561,15 +921,61 @@ class Input$File_on_conflict {
     return true;
   }
 
-  Input$File_on_conflict copyWith(
+  CopyWith$Input$File_on_conflict<Input$File_on_conflict> get copyWith =>
+      CopyWith$Input$File_on_conflict(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_on_conflict<TRes> {
+  factory CopyWith$Input$File_on_conflict(Input$File_on_conflict instance,
+          TRes Function(Input$File_on_conflict) then) =
+      _CopyWithImpl$Input$File_on_conflict;
+
+  factory CopyWith$Input$File_on_conflict.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_on_conflict;
+
+  TRes call(
+      {Enum$File_constraint? constraint,
+      List<Enum$File_update_column>? update_columns,
+      Input$File_bool_exp? where});
+}
+
+class _CopyWithImpl$Input$File_on_conflict<TRes>
+    implements CopyWith$Input$File_on_conflict<TRes> {
+  _CopyWithImpl$Input$File_on_conflict(this._instance, this._then);
+
+  final Input$File_on_conflict _instance;
+
+  final TRes Function(Input$File_on_conflict) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? constraint = _undefined,
+          Object? update_columns = _undefined,
+          Object? where = _undefined}) =>
+      _then(Input$File_on_conflict(
+          constraint: constraint == _undefined || constraint == null
+              ? _instance.constraint
+              : (constraint as Enum$File_constraint),
+          update_columns: update_columns == _undefined || update_columns == null
+              ? _instance.update_columns
+              : (update_columns as List<Enum$File_update_column>),
+          where: where == _undefined
+              ? _instance.where
+              : (where as Input$File_bool_exp?)));
+}
+
+class _CopyWithStubImpl$Input$File_on_conflict<TRes>
+    implements CopyWith$Input$File_on_conflict<TRes> {
+  _CopyWithStubImpl$Input$File_on_conflict(this._res);
+
+  TRes _res;
+
+  call(
           {Enum$File_constraint? constraint,
           List<Enum$File_update_column>? update_columns,
-          Input$File_bool_exp? Function()? where}) =>
-      Input$File_on_conflict(
-          constraint: constraint == null ? this.constraint : constraint,
-          update_columns:
-              update_columns == null ? this.update_columns : update_columns,
-          where: where == null ? this.where : where());
+          Input$File_bool_exp? where}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -663,26 +1069,87 @@ class Input$File_order_by {
     return true;
   }
 
-  Input$File_order_by copyWith(
-          {Input$Recipe_order_by? Function()? Recipe,
-          Input$Step_aggregate_order_by? Function()? Steps_aggregate,
-          Input$User_order_by? Function()? User,
-          Enum$order_by? Function()? blob,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? mimetype,
-          Enum$order_by? Function()? recipeId,
-          Enum$order_by? Function()? userId}) =>
-      Input$File_order_by(
-          Recipe: Recipe == null ? this.Recipe : Recipe(),
-          Steps_aggregate: Steps_aggregate == null
-              ? this.Steps_aggregate
-              : Steps_aggregate(),
-          User: User == null ? this.User : User(),
-          blob: blob == null ? this.blob : blob(),
-          id: id == null ? this.id : id(),
-          mimetype: mimetype == null ? this.mimetype : mimetype(),
-          recipeId: recipeId == null ? this.recipeId : recipeId(),
-          userId: userId == null ? this.userId : userId());
+  CopyWith$Input$File_order_by<Input$File_order_by> get copyWith =>
+      CopyWith$Input$File_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_order_by<TRes> {
+  factory CopyWith$Input$File_order_by(Input$File_order_by instance,
+          TRes Function(Input$File_order_by) then) =
+      _CopyWithImpl$Input$File_order_by;
+
+  factory CopyWith$Input$File_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_order_by;
+
+  TRes call(
+      {Input$Recipe_order_by? Recipe,
+      Input$Step_aggregate_order_by? Steps_aggregate,
+      Input$User_order_by? User,
+      Enum$order_by? blob,
+      Enum$order_by? id,
+      Enum$order_by? mimetype,
+      Enum$order_by? recipeId,
+      Enum$order_by? userId});
+}
+
+class _CopyWithImpl$Input$File_order_by<TRes>
+    implements CopyWith$Input$File_order_by<TRes> {
+  _CopyWithImpl$Input$File_order_by(this._instance, this._then);
+
+  final Input$File_order_by _instance;
+
+  final TRes Function(Input$File_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Recipe = _undefined,
+          Object? Steps_aggregate = _undefined,
+          Object? User = _undefined,
+          Object? blob = _undefined,
+          Object? id = _undefined,
+          Object? mimetype = _undefined,
+          Object? recipeId = _undefined,
+          Object? userId = _undefined}) =>
+      _then(Input$File_order_by(
+          Recipe: Recipe == _undefined
+              ? _instance.Recipe
+              : (Recipe as Input$Recipe_order_by?),
+          Steps_aggregate: Steps_aggregate == _undefined
+              ? _instance.Steps_aggregate
+              : (Steps_aggregate as Input$Step_aggregate_order_by?),
+          User: User == _undefined
+              ? _instance.User
+              : (User as Input$User_order_by?),
+          blob: blob == _undefined ? _instance.blob : (blob as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          mimetype: mimetype == _undefined
+              ? _instance.mimetype
+              : (mimetype as Enum$order_by?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as Enum$order_by?),
+          userId: userId == _undefined
+              ? _instance.userId
+              : (userId as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$File_order_by<TRes>
+    implements CopyWith$Input$File_order_by<TRes> {
+  _CopyWithStubImpl$Input$File_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$Recipe_order_by? Recipe,
+          Input$Step_aggregate_order_by? Steps_aggregate,
+          Input$User_order_by? User,
+          Enum$order_by? blob,
+          Enum$order_by? id,
+          Enum$order_by? mimetype,
+          Enum$order_by? recipeId,
+          Enum$order_by? userId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -712,8 +1179,43 @@ class Input$File_pk_columns_input {
     return true;
   }
 
-  Input$File_pk_columns_input copyWith({String? id}) =>
-      Input$File_pk_columns_input(id: id == null ? this.id : id);
+  CopyWith$Input$File_pk_columns_input<Input$File_pk_columns_input>
+      get copyWith => CopyWith$Input$File_pk_columns_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_pk_columns_input<TRes> {
+  factory CopyWith$Input$File_pk_columns_input(
+          Input$File_pk_columns_input instance,
+          TRes Function(Input$File_pk_columns_input) then) =
+      _CopyWithImpl$Input$File_pk_columns_input;
+
+  factory CopyWith$Input$File_pk_columns_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_pk_columns_input;
+
+  TRes call({String? id});
+}
+
+class _CopyWithImpl$Input$File_pk_columns_input<TRes>
+    implements CopyWith$Input$File_pk_columns_input<TRes> {
+  _CopyWithImpl$Input$File_pk_columns_input(this._instance, this._then);
+
+  final Input$File_pk_columns_input _instance;
+
+  final TRes Function(Input$File_pk_columns_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? id = _undefined}) => _then(Input$File_pk_columns_input(
+      id: id == _undefined || id == null ? _instance.id : (id as String)));
+}
+
+class _CopyWithStubImpl$Input$File_pk_columns_input<TRes>
+    implements CopyWith$Input$File_pk_columns_input<TRes> {
+  _CopyWithStubImpl$Input$File_pk_columns_input(this._res);
+
+  TRes _res;
+
+  call({String? id}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -749,11 +1251,46 @@ class Input$File_set_input {
     return true;
   }
 
-  Input$File_set_input copyWith(
-          {String? Function()? blob, String? Function()? mimetype}) =>
-      Input$File_set_input(
-          blob: blob == null ? this.blob : blob(),
-          mimetype: mimetype == null ? this.mimetype : mimetype());
+  CopyWith$Input$File_set_input<Input$File_set_input> get copyWith =>
+      CopyWith$Input$File_set_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$File_set_input<TRes> {
+  factory CopyWith$Input$File_set_input(Input$File_set_input instance,
+          TRes Function(Input$File_set_input) then) =
+      _CopyWithImpl$Input$File_set_input;
+
+  factory CopyWith$Input$File_set_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_set_input;
+
+  TRes call({String? blob, String? mimetype});
+}
+
+class _CopyWithImpl$Input$File_set_input<TRes>
+    implements CopyWith$Input$File_set_input<TRes> {
+  _CopyWithImpl$Input$File_set_input(this._instance, this._then);
+
+  final Input$File_set_input _instance;
+
+  final TRes Function(Input$File_set_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? blob = _undefined, Object? mimetype = _undefined}) =>
+      _then(Input$File_set_input(
+          blob: blob == _undefined ? _instance.blob : (blob as String?),
+          mimetype: mimetype == _undefined
+              ? _instance.mimetype
+              : (mimetype as String?)));
+}
+
+class _CopyWithStubImpl$Input$File_set_input<TRes>
+    implements CopyWith$Input$File_set_input<TRes> {
+  _CopyWithStubImpl$Input$File_set_input(this._res);
+
+  TRes _res;
+
+  call({String? blob, String? mimetype}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -869,30 +1406,112 @@ class Input$IngredientUnit_aggregate_order_by {
     return true;
   }
 
-  Input$IngredientUnit_aggregate_order_by copyWith(
-          {Input$IngredientUnit_avg_order_by? Function()? avg,
-          Enum$order_by? Function()? count,
-          Input$IngredientUnit_max_order_by? Function()? max,
-          Input$IngredientUnit_min_order_by? Function()? min,
-          Input$IngredientUnit_stddev_order_by? Function()? stddev,
-          Input$IngredientUnit_stddev_pop_order_by? Function()? stddev_pop,
-          Input$IngredientUnit_stddev_samp_order_by? Function()? stddev_samp,
-          Input$IngredientUnit_sum_order_by? Function()? sum,
-          Input$IngredientUnit_var_pop_order_by? Function()? var_pop,
-          Input$IngredientUnit_var_samp_order_by? Function()? var_samp,
-          Input$IngredientUnit_variance_order_by? Function()? variance}) =>
-      Input$IngredientUnit_aggregate_order_by(
-          avg: avg == null ? this.avg : avg(),
-          count: count == null ? this.count : count(),
-          max: max == null ? this.max : max(),
-          min: min == null ? this.min : min(),
-          stddev: stddev == null ? this.stddev : stddev(),
-          stddev_pop: stddev_pop == null ? this.stddev_pop : stddev_pop(),
-          stddev_samp: stddev_samp == null ? this.stddev_samp : stddev_samp(),
-          sum: sum == null ? this.sum : sum(),
-          var_pop: var_pop == null ? this.var_pop : var_pop(),
-          var_samp: var_samp == null ? this.var_samp : var_samp(),
-          variance: variance == null ? this.variance : variance());
+  CopyWith$Input$IngredientUnit_aggregate_order_by<
+          Input$IngredientUnit_aggregate_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_aggregate_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_aggregate_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_aggregate_order_by(
+          Input$IngredientUnit_aggregate_order_by instance,
+          TRes Function(Input$IngredientUnit_aggregate_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_aggregate_order_by;
+
+  factory CopyWith$Input$IngredientUnit_aggregate_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_aggregate_order_by;
+
+  TRes call(
+      {Input$IngredientUnit_avg_order_by? avg,
+      Enum$order_by? count,
+      Input$IngredientUnit_max_order_by? max,
+      Input$IngredientUnit_min_order_by? min,
+      Input$IngredientUnit_stddev_order_by? stddev,
+      Input$IngredientUnit_stddev_pop_order_by? stddev_pop,
+      Input$IngredientUnit_stddev_samp_order_by? stddev_samp,
+      Input$IngredientUnit_sum_order_by? sum,
+      Input$IngredientUnit_var_pop_order_by? var_pop,
+      Input$IngredientUnit_var_samp_order_by? var_samp,
+      Input$IngredientUnit_variance_order_by? variance});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_aggregate_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_aggregate_order_by(
+      this._instance, this._then);
+
+  final Input$IngredientUnit_aggregate_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_aggregate_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? avg = _undefined,
+          Object? count = _undefined,
+          Object? max = _undefined,
+          Object? min = _undefined,
+          Object? stddev = _undefined,
+          Object? stddev_pop = _undefined,
+          Object? stddev_samp = _undefined,
+          Object? sum = _undefined,
+          Object? var_pop = _undefined,
+          Object? var_samp = _undefined,
+          Object? variance = _undefined}) =>
+      _then(Input$IngredientUnit_aggregate_order_by(
+          avg: avg == _undefined
+              ? _instance.avg
+              : (avg as Input$IngredientUnit_avg_order_by?),
+          count:
+              count == _undefined ? _instance.count : (count as Enum$order_by?),
+          max: max == _undefined
+              ? _instance.max
+              : (max as Input$IngredientUnit_max_order_by?),
+          min: min == _undefined
+              ? _instance.min
+              : (min as Input$IngredientUnit_min_order_by?),
+          stddev: stddev == _undefined
+              ? _instance.stddev
+              : (stddev as Input$IngredientUnit_stddev_order_by?),
+          stddev_pop: stddev_pop == _undefined
+              ? _instance.stddev_pop
+              : (stddev_pop as Input$IngredientUnit_stddev_pop_order_by?),
+          stddev_samp: stddev_samp == _undefined
+              ? _instance.stddev_samp
+              : (stddev_samp as Input$IngredientUnit_stddev_samp_order_by?),
+          sum: sum == _undefined
+              ? _instance.sum
+              : (sum as Input$IngredientUnit_sum_order_by?),
+          var_pop: var_pop == _undefined
+              ? _instance.var_pop
+              : (var_pop as Input$IngredientUnit_var_pop_order_by?),
+          var_samp: var_samp == _undefined
+              ? _instance.var_samp
+              : (var_samp as Input$IngredientUnit_var_samp_order_by?),
+          variance: variance == _undefined
+              ? _instance.variance
+              : (variance as Input$IngredientUnit_variance_order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_aggregate_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_aggregate_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_aggregate_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$IngredientUnit_avg_order_by? avg,
+          Enum$order_by? count,
+          Input$IngredientUnit_max_order_by? max,
+          Input$IngredientUnit_min_order_by? min,
+          Input$IngredientUnit_stddev_order_by? stddev,
+          Input$IngredientUnit_stddev_pop_order_by? stddev_pop,
+          Input$IngredientUnit_stddev_samp_order_by? stddev_samp,
+          Input$IngredientUnit_sum_order_by? sum,
+          Input$IngredientUnit_var_pop_order_by? var_pop,
+          Input$IngredientUnit_var_samp_order_by? var_samp,
+          Input$IngredientUnit_variance_order_by? variance}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -938,12 +1557,57 @@ class Input$IngredientUnit_arr_rel_insert_input {
     return true;
   }
 
-  Input$IngredientUnit_arr_rel_insert_input copyWith(
+  CopyWith$Input$IngredientUnit_arr_rel_insert_input<
+          Input$IngredientUnit_arr_rel_insert_input>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_arr_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> {
+  factory CopyWith$Input$IngredientUnit_arr_rel_insert_input(
+          Input$IngredientUnit_arr_rel_insert_input instance,
+          TRes Function(Input$IngredientUnit_arr_rel_insert_input) then) =
+      _CopyWithImpl$Input$IngredientUnit_arr_rel_insert_input;
+
+  factory CopyWith$Input$IngredientUnit_arr_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_arr_rel_insert_input;
+
+  TRes call(
+      {List<Input$IngredientUnit_insert_input>? data,
+      Input$IngredientUnit_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_arr_rel_insert_input(
+      this._instance, this._then);
+
+  final Input$IngredientUnit_arr_rel_insert_input _instance;
+
+  final TRes Function(Input$IngredientUnit_arr_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$IngredientUnit_arr_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as List<Input$IngredientUnit_insert_input>),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$IngredientUnit_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_arr_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call(
           {List<Input$IngredientUnit_insert_input>? data,
-          Input$IngredientUnit_on_conflict? Function()? on_conflict}) =>
-      Input$IngredientUnit_arr_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+          Input$IngredientUnit_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -983,12 +1647,50 @@ class Input$IngredientUnit_avg_order_by {
     return true;
   }
 
-  Input$IngredientUnit_avg_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? order}) =>
-      Input$IngredientUnit_avg_order_by(
-          amount: amount == null ? this.amount : amount(),
-          order: order == null ? this.order : order());
+  CopyWith$Input$IngredientUnit_avg_order_by<Input$IngredientUnit_avg_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_avg_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_avg_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_avg_order_by(
+          Input$IngredientUnit_avg_order_by instance,
+          TRes Function(Input$IngredientUnit_avg_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_avg_order_by;
+
+  factory CopyWith$Input$IngredientUnit_avg_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_avg_order_by;
+
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_avg_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_avg_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_avg_order_by(this._instance, this._then);
+
+  final Input$IngredientUnit_avg_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_avg_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) =>
+      _then(Input$IngredientUnit_avg_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_avg_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_avg_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_avg_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1140,38 +1842,122 @@ class Input$IngredientUnit_bool_exp {
     return true;
   }
 
-  Input$IngredientUnit_bool_exp copyWith(
-          {Input$Ingredient_bool_exp? Function()? Ingredient,
-          Input$RecipeSection_bool_exp? Function()? RecipeSection,
-          Input$UnitSize_bool_exp? Function()? UnitSize,
-          List<Input$IngredientUnit_bool_exp>? Function()? $_and,
-          Input$IngredientUnit_bool_exp? Function()? $_not,
-          List<Input$IngredientUnit_bool_exp>? Function()? $_or,
-          Input$float8_comparison_exp? Function()? amount,
-          Input$String_comparison_exp? Function()? id,
-          Input$String_comparison_exp? Function()? ingredientId,
-          Input$String_comparison_exp? Function()? notes,
-          Input$Int_comparison_exp? Function()? order,
-          Input$String_comparison_exp? Function()? recipeSectionId,
-          Input$String_comparison_exp? Function()? unitId}) =>
-      Input$IngredientUnit_bool_exp(
-          Ingredient: Ingredient == null ? this.Ingredient : Ingredient(),
-          RecipeSection:
-              RecipeSection == null ? this.RecipeSection : RecipeSection(),
-          UnitSize: UnitSize == null ? this.UnitSize : UnitSize(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          amount: amount == null ? this.amount : amount(),
-          id: id == null ? this.id : id(),
-          ingredientId:
-              ingredientId == null ? this.ingredientId : ingredientId(),
-          notes: notes == null ? this.notes : notes(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId(),
-          unitId: unitId == null ? this.unitId : unitId());
+  CopyWith$Input$IngredientUnit_bool_exp<Input$IngredientUnit_bool_exp>
+      get copyWith => CopyWith$Input$IngredientUnit_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_bool_exp<TRes> {
+  factory CopyWith$Input$IngredientUnit_bool_exp(
+          Input$IngredientUnit_bool_exp instance,
+          TRes Function(Input$IngredientUnit_bool_exp) then) =
+      _CopyWithImpl$Input$IngredientUnit_bool_exp;
+
+  factory CopyWith$Input$IngredientUnit_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_bool_exp;
+
+  TRes call(
+      {Input$Ingredient_bool_exp? Ingredient,
+      Input$RecipeSection_bool_exp? RecipeSection,
+      Input$UnitSize_bool_exp? UnitSize,
+      List<Input$IngredientUnit_bool_exp>? $_and,
+      Input$IngredientUnit_bool_exp? $_not,
+      List<Input$IngredientUnit_bool_exp>? $_or,
+      Input$float8_comparison_exp? amount,
+      Input$String_comparison_exp? id,
+      Input$String_comparison_exp? ingredientId,
+      Input$String_comparison_exp? notes,
+      Input$Int_comparison_exp? order,
+      Input$String_comparison_exp? recipeSectionId,
+      Input$String_comparison_exp? unitId});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
+    implements CopyWith$Input$IngredientUnit_bool_exp<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_bool_exp(this._instance, this._then);
+
+  final Input$IngredientUnit_bool_exp _instance;
+
+  final TRes Function(Input$IngredientUnit_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Ingredient = _undefined,
+          Object? RecipeSection = _undefined,
+          Object? UnitSize = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? amount = _undefined,
+          Object? id = _undefined,
+          Object? ingredientId = _undefined,
+          Object? notes = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined,
+          Object? unitId = _undefined}) =>
+      _then(Input$IngredientUnit_bool_exp(
+          Ingredient: Ingredient == _undefined
+              ? _instance.Ingredient
+              : (Ingredient as Input$Ingredient_bool_exp?),
+          RecipeSection: RecipeSection == _undefined
+              ? _instance.RecipeSection
+              : (RecipeSection as Input$RecipeSection_bool_exp?),
+          UnitSize: UnitSize == _undefined
+              ? _instance.UnitSize
+              : (UnitSize as Input$UnitSize_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$IngredientUnit_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$IngredientUnit_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$IngredientUnit_bool_exp>?),
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Input$float8_comparison_exp?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?),
+          ingredientId: ingredientId == _undefined
+              ? _instance.ingredientId
+              : (ingredientId as Input$String_comparison_exp?),
+          notes: notes == _undefined
+              ? _instance.notes
+              : (notes as Input$String_comparison_exp?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Input$Int_comparison_exp?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as Input$String_comparison_exp?),
+          unitId: unitId == _undefined
+              ? _instance.unitId
+              : (unitId as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_bool_exp<TRes>
+    implements CopyWith$Input$IngredientUnit_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$Ingredient_bool_exp? Ingredient,
+          Input$RecipeSection_bool_exp? RecipeSection,
+          Input$UnitSize_bool_exp? UnitSize,
+          List<Input$IngredientUnit_bool_exp>? $_and,
+          Input$IngredientUnit_bool_exp? $_not,
+          List<Input$IngredientUnit_bool_exp>? $_or,
+          Input$float8_comparison_exp? amount,
+          Input$String_comparison_exp? id,
+          Input$String_comparison_exp? ingredientId,
+          Input$String_comparison_exp? notes,
+          Input$Int_comparison_exp? order,
+          Input$String_comparison_exp? recipeSectionId,
+          Input$String_comparison_exp? unitId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1207,11 +1993,45 @@ class Input$IngredientUnit_inc_input {
     return true;
   }
 
-  Input$IngredientUnit_inc_input copyWith(
-          {double? Function()? amount, int? Function()? order}) =>
-      Input$IngredientUnit_inc_input(
-          amount: amount == null ? this.amount : amount(),
-          order: order == null ? this.order : order());
+  CopyWith$Input$IngredientUnit_inc_input<Input$IngredientUnit_inc_input>
+      get copyWith => CopyWith$Input$IngredientUnit_inc_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_inc_input<TRes> {
+  factory CopyWith$Input$IngredientUnit_inc_input(
+          Input$IngredientUnit_inc_input instance,
+          TRes Function(Input$IngredientUnit_inc_input) then) =
+      _CopyWithImpl$Input$IngredientUnit_inc_input;
+
+  factory CopyWith$Input$IngredientUnit_inc_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_inc_input;
+
+  TRes call({double? amount, int? order});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_inc_input<TRes>
+    implements CopyWith$Input$IngredientUnit_inc_input<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_inc_input(this._instance, this._then);
+
+  final Input$IngredientUnit_inc_input _instance;
+
+  final TRes Function(Input$IngredientUnit_inc_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) =>
+      _then(Input$IngredientUnit_inc_input(
+          amount: amount == _undefined ? _instance.amount : (amount as double?),
+          order: order == _undefined ? _instance.order : (order as int?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_inc_input<TRes>
+    implements CopyWith$Input$IngredientUnit_inc_input<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_inc_input(this._res);
+
+  TRes _res;
+
+  call({double? amount, int? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1310,30 +2130,90 @@ class Input$IngredientUnit_insert_input {
     return true;
   }
 
-  Input$IngredientUnit_insert_input copyWith(
-          {Input$Ingredient_obj_rel_insert_input? Function()? Ingredient,
-          Input$RecipeSection_obj_rel_insert_input? Function()? RecipeSection,
-          double? Function()? amount,
-          String? Function()? id,
-          String? Function()? ingredientId,
-          String? Function()? notes,
-          int? Function()? order,
-          String? Function()? recipeSectionId,
-          String? Function()? unitId}) =>
-      Input$IngredientUnit_insert_input(
-          Ingredient: Ingredient == null ? this.Ingredient : Ingredient(),
-          RecipeSection:
-              RecipeSection == null ? this.RecipeSection : RecipeSection(),
-          amount: amount == null ? this.amount : amount(),
-          id: id == null ? this.id : id(),
-          ingredientId:
-              ingredientId == null ? this.ingredientId : ingredientId(),
-          notes: notes == null ? this.notes : notes(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId(),
-          unitId: unitId == null ? this.unitId : unitId());
+  CopyWith$Input$IngredientUnit_insert_input<Input$IngredientUnit_insert_input>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_insert_input<TRes> {
+  factory CopyWith$Input$IngredientUnit_insert_input(
+          Input$IngredientUnit_insert_input instance,
+          TRes Function(Input$IngredientUnit_insert_input) then) =
+      _CopyWithImpl$Input$IngredientUnit_insert_input;
+
+  factory CopyWith$Input$IngredientUnit_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_insert_input;
+
+  TRes call(
+      {Input$Ingredient_obj_rel_insert_input? Ingredient,
+      Input$RecipeSection_obj_rel_insert_input? RecipeSection,
+      double? amount,
+      String? id,
+      String? ingredientId,
+      String? notes,
+      int? order,
+      String? recipeSectionId,
+      String? unitId});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_insert_input<TRes>
+    implements CopyWith$Input$IngredientUnit_insert_input<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_insert_input(this._instance, this._then);
+
+  final Input$IngredientUnit_insert_input _instance;
+
+  final TRes Function(Input$IngredientUnit_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Ingredient = _undefined,
+          Object? RecipeSection = _undefined,
+          Object? amount = _undefined,
+          Object? id = _undefined,
+          Object? ingredientId = _undefined,
+          Object? notes = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined,
+          Object? unitId = _undefined}) =>
+      _then(Input$IngredientUnit_insert_input(
+          Ingredient: Ingredient == _undefined
+              ? _instance.Ingredient
+              : (Ingredient as Input$Ingredient_obj_rel_insert_input?),
+          RecipeSection: RecipeSection == _undefined
+              ? _instance.RecipeSection
+              : (RecipeSection as Input$RecipeSection_obj_rel_insert_input?),
+          amount: amount == _undefined ? _instance.amount : (amount as double?),
+          id: id == _undefined ? _instance.id : (id as String?),
+          ingredientId: ingredientId == _undefined
+              ? _instance.ingredientId
+              : (ingredientId as String?),
+          notes: notes == _undefined ? _instance.notes : (notes as String?),
+          order: order == _undefined ? _instance.order : (order as int?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as String?),
+          unitId:
+              unitId == _undefined ? _instance.unitId : (unitId as String?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_insert_input<TRes>
+    implements CopyWith$Input$IngredientUnit_insert_input<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_insert_input(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$Ingredient_obj_rel_insert_input? Ingredient,
+          Input$RecipeSection_obj_rel_insert_input? RecipeSection,
+          double? amount,
+          String? id,
+          String? ingredientId,
+          String? notes,
+          int? order,
+          String? recipeSectionId,
+          String? unitId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1423,25 +2303,83 @@ class Input$IngredientUnit_max_order_by {
     return true;
   }
 
-  Input$IngredientUnit_max_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? ingredientId,
-          Enum$order_by? Function()? notes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? recipeSectionId,
-          Enum$order_by? Function()? unitId}) =>
-      Input$IngredientUnit_max_order_by(
-          amount: amount == null ? this.amount : amount(),
-          id: id == null ? this.id : id(),
-          ingredientId:
-              ingredientId == null ? this.ingredientId : ingredientId(),
-          notes: notes == null ? this.notes : notes(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId(),
-          unitId: unitId == null ? this.unitId : unitId());
+  CopyWith$Input$IngredientUnit_max_order_by<Input$IngredientUnit_max_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_max_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_max_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_max_order_by(
+          Input$IngredientUnit_max_order_by instance,
+          TRes Function(Input$IngredientUnit_max_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_max_order_by;
+
+  factory CopyWith$Input$IngredientUnit_max_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_max_order_by;
+
+  TRes call(
+      {Enum$order_by? amount,
+      Enum$order_by? id,
+      Enum$order_by? ingredientId,
+      Enum$order_by? notes,
+      Enum$order_by? order,
+      Enum$order_by? recipeSectionId,
+      Enum$order_by? unitId});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_max_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_max_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_max_order_by(this._instance, this._then);
+
+  final Input$IngredientUnit_max_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_max_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? amount = _undefined,
+          Object? id = _undefined,
+          Object? ingredientId = _undefined,
+          Object? notes = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined,
+          Object? unitId = _undefined}) =>
+      _then(Input$IngredientUnit_max_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          ingredientId: ingredientId == _undefined
+              ? _instance.ingredientId
+              : (ingredientId as Enum$order_by?),
+          notes:
+              notes == _undefined ? _instance.notes : (notes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as Enum$order_by?),
+          unitId: unitId == _undefined
+              ? _instance.unitId
+              : (unitId as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_max_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_max_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_max_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? amount,
+          Enum$order_by? id,
+          Enum$order_by? ingredientId,
+          Enum$order_by? notes,
+          Enum$order_by? order,
+          Enum$order_by? recipeSectionId,
+          Enum$order_by? unitId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1531,25 +2469,83 @@ class Input$IngredientUnit_min_order_by {
     return true;
   }
 
-  Input$IngredientUnit_min_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? ingredientId,
-          Enum$order_by? Function()? notes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? recipeSectionId,
-          Enum$order_by? Function()? unitId}) =>
-      Input$IngredientUnit_min_order_by(
-          amount: amount == null ? this.amount : amount(),
-          id: id == null ? this.id : id(),
-          ingredientId:
-              ingredientId == null ? this.ingredientId : ingredientId(),
-          notes: notes == null ? this.notes : notes(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId(),
-          unitId: unitId == null ? this.unitId : unitId());
+  CopyWith$Input$IngredientUnit_min_order_by<Input$IngredientUnit_min_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_min_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_min_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_min_order_by(
+          Input$IngredientUnit_min_order_by instance,
+          TRes Function(Input$IngredientUnit_min_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_min_order_by;
+
+  factory CopyWith$Input$IngredientUnit_min_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_min_order_by;
+
+  TRes call(
+      {Enum$order_by? amount,
+      Enum$order_by? id,
+      Enum$order_by? ingredientId,
+      Enum$order_by? notes,
+      Enum$order_by? order,
+      Enum$order_by? recipeSectionId,
+      Enum$order_by? unitId});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_min_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_min_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_min_order_by(this._instance, this._then);
+
+  final Input$IngredientUnit_min_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_min_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? amount = _undefined,
+          Object? id = _undefined,
+          Object? ingredientId = _undefined,
+          Object? notes = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined,
+          Object? unitId = _undefined}) =>
+      _then(Input$IngredientUnit_min_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          ingredientId: ingredientId == _undefined
+              ? _instance.ingredientId
+              : (ingredientId as Enum$order_by?),
+          notes:
+              notes == _undefined ? _instance.notes : (notes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as Enum$order_by?),
+          unitId: unitId == _undefined
+              ? _instance.unitId
+              : (unitId as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_min_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_min_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_min_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? amount,
+          Enum$order_by? id,
+          Enum$order_by? ingredientId,
+          Enum$order_by? notes,
+          Enum$order_by? order,
+          Enum$order_by? recipeSectionId,
+          Enum$order_by? unitId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1606,15 +2602,62 @@ class Input$IngredientUnit_on_conflict {
     return true;
   }
 
-  Input$IngredientUnit_on_conflict copyWith(
+  CopyWith$Input$IngredientUnit_on_conflict<Input$IngredientUnit_on_conflict>
+      get copyWith => CopyWith$Input$IngredientUnit_on_conflict(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_on_conflict<TRes> {
+  factory CopyWith$Input$IngredientUnit_on_conflict(
+          Input$IngredientUnit_on_conflict instance,
+          TRes Function(Input$IngredientUnit_on_conflict) then) =
+      _CopyWithImpl$Input$IngredientUnit_on_conflict;
+
+  factory CopyWith$Input$IngredientUnit_on_conflict.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_on_conflict;
+
+  TRes call(
+      {Enum$IngredientUnit_constraint? constraint,
+      List<Enum$IngredientUnit_update_column>? update_columns,
+      Input$IngredientUnit_bool_exp? where});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_on_conflict<TRes>
+    implements CopyWith$Input$IngredientUnit_on_conflict<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_on_conflict(this._instance, this._then);
+
+  final Input$IngredientUnit_on_conflict _instance;
+
+  final TRes Function(Input$IngredientUnit_on_conflict) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? constraint = _undefined,
+          Object? update_columns = _undefined,
+          Object? where = _undefined}) =>
+      _then(Input$IngredientUnit_on_conflict(
+          constraint: constraint == _undefined || constraint == null
+              ? _instance.constraint
+              : (constraint as Enum$IngredientUnit_constraint),
+          update_columns: update_columns == _undefined || update_columns == null
+              ? _instance.update_columns
+              : (update_columns as List<Enum$IngredientUnit_update_column>),
+          where: where == _undefined
+              ? _instance.where
+              : (where as Input$IngredientUnit_bool_exp?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_on_conflict<TRes>
+    implements CopyWith$Input$IngredientUnit_on_conflict<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_on_conflict(this._res);
+
+  TRes _res;
+
+  call(
           {Enum$IngredientUnit_constraint? constraint,
           List<Enum$IngredientUnit_update_column>? update_columns,
-          Input$IngredientUnit_bool_exp? Function()? where}) =>
-      Input$IngredientUnit_on_conflict(
-          constraint: constraint == null ? this.constraint : constraint,
-          update_columns:
-              update_columns == null ? this.update_columns : update_columns,
-          where: where == null ? this.where : where());
+          Input$IngredientUnit_bool_exp? where}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1726,32 +2769,100 @@ class Input$IngredientUnit_order_by {
     return true;
   }
 
-  Input$IngredientUnit_order_by copyWith(
-          {Input$Ingredient_order_by? Function()? Ingredient,
-          Input$RecipeSection_order_by? Function()? RecipeSection,
-          Input$UnitSize_order_by? Function()? UnitSize,
-          Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? ingredientId,
-          Enum$order_by? Function()? notes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? recipeSectionId,
-          Enum$order_by? Function()? unitId}) =>
-      Input$IngredientUnit_order_by(
-          Ingredient: Ingredient == null ? this.Ingredient : Ingredient(),
-          RecipeSection:
-              RecipeSection == null ? this.RecipeSection : RecipeSection(),
-          UnitSize: UnitSize == null ? this.UnitSize : UnitSize(),
-          amount: amount == null ? this.amount : amount(),
-          id: id == null ? this.id : id(),
-          ingredientId:
-              ingredientId == null ? this.ingredientId : ingredientId(),
-          notes: notes == null ? this.notes : notes(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId(),
-          unitId: unitId == null ? this.unitId : unitId());
+  CopyWith$Input$IngredientUnit_order_by<Input$IngredientUnit_order_by>
+      get copyWith => CopyWith$Input$IngredientUnit_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_order_by(
+          Input$IngredientUnit_order_by instance,
+          TRes Function(Input$IngredientUnit_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_order_by;
+
+  factory CopyWith$Input$IngredientUnit_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_order_by;
+
+  TRes call(
+      {Input$Ingredient_order_by? Ingredient,
+      Input$RecipeSection_order_by? RecipeSection,
+      Input$UnitSize_order_by? UnitSize,
+      Enum$order_by? amount,
+      Enum$order_by? id,
+      Enum$order_by? ingredientId,
+      Enum$order_by? notes,
+      Enum$order_by? order,
+      Enum$order_by? recipeSectionId,
+      Enum$order_by? unitId});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_order_by(this._instance, this._then);
+
+  final Input$IngredientUnit_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Ingredient = _undefined,
+          Object? RecipeSection = _undefined,
+          Object? UnitSize = _undefined,
+          Object? amount = _undefined,
+          Object? id = _undefined,
+          Object? ingredientId = _undefined,
+          Object? notes = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined,
+          Object? unitId = _undefined}) =>
+      _then(Input$IngredientUnit_order_by(
+          Ingredient: Ingredient == _undefined
+              ? _instance.Ingredient
+              : (Ingredient as Input$Ingredient_order_by?),
+          RecipeSection: RecipeSection == _undefined
+              ? _instance.RecipeSection
+              : (RecipeSection as Input$RecipeSection_order_by?),
+          UnitSize: UnitSize == _undefined
+              ? _instance.UnitSize
+              : (UnitSize as Input$UnitSize_order_by?),
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          ingredientId: ingredientId == _undefined
+              ? _instance.ingredientId
+              : (ingredientId as Enum$order_by?),
+          notes:
+              notes == _undefined ? _instance.notes : (notes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as Enum$order_by?),
+          unitId: unitId == _undefined
+              ? _instance.unitId
+              : (unitId as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$Ingredient_order_by? Ingredient,
+          Input$RecipeSection_order_by? RecipeSection,
+          Input$UnitSize_order_by? UnitSize,
+          Enum$order_by? amount,
+          Enum$order_by? id,
+          Enum$order_by? ingredientId,
+          Enum$order_by? notes,
+          Enum$order_by? order,
+          Enum$order_by? recipeSectionId,
+          Enum$order_by? unitId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1783,8 +2894,47 @@ class Input$IngredientUnit_pk_columns_input {
     return true;
   }
 
-  Input$IngredientUnit_pk_columns_input copyWith({String? id}) =>
-      Input$IngredientUnit_pk_columns_input(id: id == null ? this.id : id);
+  CopyWith$Input$IngredientUnit_pk_columns_input<
+          Input$IngredientUnit_pk_columns_input>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_pk_columns_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_pk_columns_input<TRes> {
+  factory CopyWith$Input$IngredientUnit_pk_columns_input(
+          Input$IngredientUnit_pk_columns_input instance,
+          TRes Function(Input$IngredientUnit_pk_columns_input) then) =
+      _CopyWithImpl$Input$IngredientUnit_pk_columns_input;
+
+  factory CopyWith$Input$IngredientUnit_pk_columns_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_pk_columns_input;
+
+  TRes call({String? id});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_pk_columns_input<TRes>
+    implements CopyWith$Input$IngredientUnit_pk_columns_input<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_pk_columns_input(
+      this._instance, this._then);
+
+  final Input$IngredientUnit_pk_columns_input _instance;
+
+  final TRes Function(Input$IngredientUnit_pk_columns_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? id = _undefined}) =>
+      _then(Input$IngredientUnit_pk_columns_input(
+          id: id == _undefined || id == null ? _instance.id : (id as String)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_pk_columns_input<TRes>
+    implements CopyWith$Input$IngredientUnit_pk_columns_input<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_pk_columns_input(this._res);
+
+  TRes _res;
+
+  call({String? id}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1840,19 +2990,67 @@ class Input$IngredientUnit_set_input {
     return true;
   }
 
-  Input$IngredientUnit_set_input copyWith(
-          {double? Function()? amount,
-          String? Function()? ingredientId,
-          String? Function()? notes,
-          int? Function()? order,
-          String? Function()? unitId}) =>
-      Input$IngredientUnit_set_input(
-          amount: amount == null ? this.amount : amount(),
-          ingredientId:
-              ingredientId == null ? this.ingredientId : ingredientId(),
-          notes: notes == null ? this.notes : notes(),
-          order: order == null ? this.order : order(),
-          unitId: unitId == null ? this.unitId : unitId());
+  CopyWith$Input$IngredientUnit_set_input<Input$IngredientUnit_set_input>
+      get copyWith => CopyWith$Input$IngredientUnit_set_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_set_input<TRes> {
+  factory CopyWith$Input$IngredientUnit_set_input(
+          Input$IngredientUnit_set_input instance,
+          TRes Function(Input$IngredientUnit_set_input) then) =
+      _CopyWithImpl$Input$IngredientUnit_set_input;
+
+  factory CopyWith$Input$IngredientUnit_set_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_set_input;
+
+  TRes call(
+      {double? amount,
+      String? ingredientId,
+      String? notes,
+      int? order,
+      String? unitId});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_set_input<TRes>
+    implements CopyWith$Input$IngredientUnit_set_input<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_set_input(this._instance, this._then);
+
+  final Input$IngredientUnit_set_input _instance;
+
+  final TRes Function(Input$IngredientUnit_set_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? amount = _undefined,
+          Object? ingredientId = _undefined,
+          Object? notes = _undefined,
+          Object? order = _undefined,
+          Object? unitId = _undefined}) =>
+      _then(Input$IngredientUnit_set_input(
+          amount: amount == _undefined ? _instance.amount : (amount as double?),
+          ingredientId: ingredientId == _undefined
+              ? _instance.ingredientId
+              : (ingredientId as String?),
+          notes: notes == _undefined ? _instance.notes : (notes as String?),
+          order: order == _undefined ? _instance.order : (order as int?),
+          unitId:
+              unitId == _undefined ? _instance.unitId : (unitId as String?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_set_input<TRes>
+    implements CopyWith$Input$IngredientUnit_set_input<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_set_input(this._res);
+
+  TRes _res;
+
+  call(
+          {double? amount,
+          String? ingredientId,
+          String? notes,
+          int? order,
+          String? unitId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1892,12 +3090,52 @@ class Input$IngredientUnit_stddev_order_by {
     return true;
   }
 
-  Input$IngredientUnit_stddev_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? order}) =>
-      Input$IngredientUnit_stddev_order_by(
-          amount: amount == null ? this.amount : amount(),
-          order: order == null ? this.order : order());
+  CopyWith$Input$IngredientUnit_stddev_order_by<
+          Input$IngredientUnit_stddev_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_stddev_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_stddev_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_stddev_order_by(
+          Input$IngredientUnit_stddev_order_by instance,
+          TRes Function(Input$IngredientUnit_stddev_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_stddev_order_by;
+
+  factory CopyWith$Input$IngredientUnit_stddev_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_stddev_order_by;
+
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_stddev_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_stddev_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_stddev_order_by(
+      this._instance, this._then);
+
+  final Input$IngredientUnit_stddev_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_stddev_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) =>
+      _then(Input$IngredientUnit_stddev_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_stddev_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_stddev_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_stddev_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1937,12 +3175,52 @@ class Input$IngredientUnit_stddev_pop_order_by {
     return true;
   }
 
-  Input$IngredientUnit_stddev_pop_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? order}) =>
-      Input$IngredientUnit_stddev_pop_order_by(
-          amount: amount == null ? this.amount : amount(),
-          order: order == null ? this.order : order());
+  CopyWith$Input$IngredientUnit_stddev_pop_order_by<
+          Input$IngredientUnit_stddev_pop_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_stddev_pop_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_stddev_pop_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_stddev_pop_order_by(
+          Input$IngredientUnit_stddev_pop_order_by instance,
+          TRes Function(Input$IngredientUnit_stddev_pop_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_stddev_pop_order_by;
+
+  factory CopyWith$Input$IngredientUnit_stddev_pop_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_stddev_pop_order_by;
+
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_stddev_pop_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_stddev_pop_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_stddev_pop_order_by(
+      this._instance, this._then);
+
+  final Input$IngredientUnit_stddev_pop_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_stddev_pop_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) =>
+      _then(Input$IngredientUnit_stddev_pop_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_stddev_pop_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_stddev_pop_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_stddev_pop_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1982,12 +3260,52 @@ class Input$IngredientUnit_stddev_samp_order_by {
     return true;
   }
 
-  Input$IngredientUnit_stddev_samp_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? order}) =>
-      Input$IngredientUnit_stddev_samp_order_by(
-          amount: amount == null ? this.amount : amount(),
-          order: order == null ? this.order : order());
+  CopyWith$Input$IngredientUnit_stddev_samp_order_by<
+          Input$IngredientUnit_stddev_samp_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_stddev_samp_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_stddev_samp_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_stddev_samp_order_by(
+          Input$IngredientUnit_stddev_samp_order_by instance,
+          TRes Function(Input$IngredientUnit_stddev_samp_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_stddev_samp_order_by;
+
+  factory CopyWith$Input$IngredientUnit_stddev_samp_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_stddev_samp_order_by;
+
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_stddev_samp_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_stddev_samp_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_stddev_samp_order_by(
+      this._instance, this._then);
+
+  final Input$IngredientUnit_stddev_samp_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_stddev_samp_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) =>
+      _then(Input$IngredientUnit_stddev_samp_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_stddev_samp_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_stddev_samp_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_stddev_samp_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2027,12 +3345,50 @@ class Input$IngredientUnit_sum_order_by {
     return true;
   }
 
-  Input$IngredientUnit_sum_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? order}) =>
-      Input$IngredientUnit_sum_order_by(
-          amount: amount == null ? this.amount : amount(),
-          order: order == null ? this.order : order());
+  CopyWith$Input$IngredientUnit_sum_order_by<Input$IngredientUnit_sum_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_sum_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_sum_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_sum_order_by(
+          Input$IngredientUnit_sum_order_by instance,
+          TRes Function(Input$IngredientUnit_sum_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_sum_order_by;
+
+  factory CopyWith$Input$IngredientUnit_sum_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_sum_order_by;
+
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_sum_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_sum_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_sum_order_by(this._instance, this._then);
+
+  final Input$IngredientUnit_sum_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_sum_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) =>
+      _then(Input$IngredientUnit_sum_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_sum_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_sum_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_sum_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2072,12 +3428,52 @@ class Input$IngredientUnit_var_pop_order_by {
     return true;
   }
 
-  Input$IngredientUnit_var_pop_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? order}) =>
-      Input$IngredientUnit_var_pop_order_by(
-          amount: amount == null ? this.amount : amount(),
-          order: order == null ? this.order : order());
+  CopyWith$Input$IngredientUnit_var_pop_order_by<
+          Input$IngredientUnit_var_pop_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_var_pop_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_var_pop_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_var_pop_order_by(
+          Input$IngredientUnit_var_pop_order_by instance,
+          TRes Function(Input$IngredientUnit_var_pop_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_var_pop_order_by;
+
+  factory CopyWith$Input$IngredientUnit_var_pop_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_var_pop_order_by;
+
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_var_pop_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_var_pop_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_var_pop_order_by(
+      this._instance, this._then);
+
+  final Input$IngredientUnit_var_pop_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_var_pop_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) =>
+      _then(Input$IngredientUnit_var_pop_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_var_pop_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_var_pop_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_var_pop_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2117,12 +3513,52 @@ class Input$IngredientUnit_var_samp_order_by {
     return true;
   }
 
-  Input$IngredientUnit_var_samp_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? order}) =>
-      Input$IngredientUnit_var_samp_order_by(
-          amount: amount == null ? this.amount : amount(),
-          order: order == null ? this.order : order());
+  CopyWith$Input$IngredientUnit_var_samp_order_by<
+          Input$IngredientUnit_var_samp_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_var_samp_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_var_samp_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_var_samp_order_by(
+          Input$IngredientUnit_var_samp_order_by instance,
+          TRes Function(Input$IngredientUnit_var_samp_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_var_samp_order_by;
+
+  factory CopyWith$Input$IngredientUnit_var_samp_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_var_samp_order_by;
+
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_var_samp_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_var_samp_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_var_samp_order_by(
+      this._instance, this._then);
+
+  final Input$IngredientUnit_var_samp_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_var_samp_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) =>
+      _then(Input$IngredientUnit_var_samp_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_var_samp_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_var_samp_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_var_samp_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2162,12 +3598,52 @@ class Input$IngredientUnit_variance_order_by {
     return true;
   }
 
-  Input$IngredientUnit_variance_order_by copyWith(
-          {Enum$order_by? Function()? amount,
-          Enum$order_by? Function()? order}) =>
-      Input$IngredientUnit_variance_order_by(
-          amount: amount == null ? this.amount : amount(),
-          order: order == null ? this.order : order());
+  CopyWith$Input$IngredientUnit_variance_order_by<
+          Input$IngredientUnit_variance_order_by>
+      get copyWith =>
+          CopyWith$Input$IngredientUnit_variance_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$IngredientUnit_variance_order_by<TRes> {
+  factory CopyWith$Input$IngredientUnit_variance_order_by(
+          Input$IngredientUnit_variance_order_by instance,
+          TRes Function(Input$IngredientUnit_variance_order_by) then) =
+      _CopyWithImpl$Input$IngredientUnit_variance_order_by;
+
+  factory CopyWith$Input$IngredientUnit_variance_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_variance_order_by;
+
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$IngredientUnit_variance_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_variance_order_by<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_variance_order_by(
+      this._instance, this._then);
+
+  final Input$IngredientUnit_variance_order_by _instance;
+
+  final TRes Function(Input$IngredientUnit_variance_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) =>
+      _then(Input$IngredientUnit_variance_order_by(
+          amount: amount == _undefined
+              ? _instance.amount
+              : (amount as Enum$order_by?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_variance_order_by<TRes>
+    implements CopyWith$Input$IngredientUnit_variance_order_by<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_variance_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2263,22 +3739,79 @@ class Input$Ingredient_bool_exp {
     return true;
   }
 
-  Input$Ingredient_bool_exp copyWith(
-          {Input$IngredientUnit_bool_exp? Function()? IngredientUnits,
-          List<Input$Ingredient_bool_exp>? Function()? $_and,
-          Input$Ingredient_bool_exp? Function()? $_not,
-          List<Input$Ingredient_bool_exp>? Function()? $_or,
-          Input$String_comparison_exp? Function()? id,
-          Input$String_comparison_exp? Function()? name}) =>
-      Input$Ingredient_bool_exp(
-          IngredientUnits: IngredientUnits == null
-              ? this.IngredientUnits
-              : IngredientUnits(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name());
+  CopyWith$Input$Ingredient_bool_exp<Input$Ingredient_bool_exp> get copyWith =>
+      CopyWith$Input$Ingredient_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Ingredient_bool_exp<TRes> {
+  factory CopyWith$Input$Ingredient_bool_exp(Input$Ingredient_bool_exp instance,
+          TRes Function(Input$Ingredient_bool_exp) then) =
+      _CopyWithImpl$Input$Ingredient_bool_exp;
+
+  factory CopyWith$Input$Ingredient_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$Ingredient_bool_exp;
+
+  TRes call(
+      {Input$IngredientUnit_bool_exp? IngredientUnits,
+      List<Input$Ingredient_bool_exp>? $_and,
+      Input$Ingredient_bool_exp? $_not,
+      List<Input$Ingredient_bool_exp>? $_or,
+      Input$String_comparison_exp? id,
+      Input$String_comparison_exp? name});
+}
+
+class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
+    implements CopyWith$Input$Ingredient_bool_exp<TRes> {
+  _CopyWithImpl$Input$Ingredient_bool_exp(this._instance, this._then);
+
+  final Input$Ingredient_bool_exp _instance;
+
+  final TRes Function(Input$Ingredient_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? IngredientUnits = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined}) =>
+      _then(Input$Ingredient_bool_exp(
+          IngredientUnits: IngredientUnits == _undefined
+              ? _instance.IngredientUnits
+              : (IngredientUnits as Input$IngredientUnit_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$Ingredient_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$Ingredient_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$Ingredient_bool_exp>?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?),
+          name: name == _undefined
+              ? _instance.name
+              : (name as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$Ingredient_bool_exp<TRes>
+    implements CopyWith$Input$Ingredient_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$Ingredient_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$IngredientUnit_bool_exp? IngredientUnits,
+          List<Input$Ingredient_bool_exp>? $_and,
+          Input$Ingredient_bool_exp? $_not,
+          List<Input$Ingredient_bool_exp>? $_or,
+          Input$String_comparison_exp? id,
+          Input$String_comparison_exp? name}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2320,17 +3853,58 @@ class Input$Ingredient_insert_input {
     return true;
   }
 
-  Input$Ingredient_insert_input copyWith(
-          {Input$IngredientUnit_arr_rel_insert_input? Function()?
-              IngredientUnits,
-          String? Function()? id,
-          String? Function()? name}) =>
-      Input$Ingredient_insert_input(
-          IngredientUnits: IngredientUnits == null
-              ? this.IngredientUnits
-              : IngredientUnits(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name());
+  CopyWith$Input$Ingredient_insert_input<Input$Ingredient_insert_input>
+      get copyWith => CopyWith$Input$Ingredient_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Ingredient_insert_input<TRes> {
+  factory CopyWith$Input$Ingredient_insert_input(
+          Input$Ingredient_insert_input instance,
+          TRes Function(Input$Ingredient_insert_input) then) =
+      _CopyWithImpl$Input$Ingredient_insert_input;
+
+  factory CopyWith$Input$Ingredient_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Ingredient_insert_input;
+
+  TRes call(
+      {Input$IngredientUnit_arr_rel_insert_input? IngredientUnits,
+      String? id,
+      String? name});
+}
+
+class _CopyWithImpl$Input$Ingredient_insert_input<TRes>
+    implements CopyWith$Input$Ingredient_insert_input<TRes> {
+  _CopyWithImpl$Input$Ingredient_insert_input(this._instance, this._then);
+
+  final Input$Ingredient_insert_input _instance;
+
+  final TRes Function(Input$Ingredient_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? IngredientUnits = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined}) =>
+      _then(Input$Ingredient_insert_input(
+          IngredientUnits: IngredientUnits == _undefined
+              ? _instance.IngredientUnits
+              : (IngredientUnits as Input$IngredientUnit_arr_rel_insert_input?),
+          id: id == _undefined ? _instance.id : (id as String?),
+          name: name == _undefined ? _instance.name : (name as String?)));
+}
+
+class _CopyWithStubImpl$Input$Ingredient_insert_input<TRes>
+    implements CopyWith$Input$Ingredient_insert_input<TRes> {
+  _CopyWithStubImpl$Input$Ingredient_insert_input(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$IngredientUnit_arr_rel_insert_input? IngredientUnits,
+          String? id,
+          String? name}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2368,12 +3942,57 @@ class Input$Ingredient_obj_rel_insert_input {
     return true;
   }
 
-  Input$Ingredient_obj_rel_insert_input copyWith(
+  CopyWith$Input$Ingredient_obj_rel_insert_input<
+          Input$Ingredient_obj_rel_insert_input>
+      get copyWith =>
+          CopyWith$Input$Ingredient_obj_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Ingredient_obj_rel_insert_input<TRes> {
+  factory CopyWith$Input$Ingredient_obj_rel_insert_input(
+          Input$Ingredient_obj_rel_insert_input instance,
+          TRes Function(Input$Ingredient_obj_rel_insert_input) then) =
+      _CopyWithImpl$Input$Ingredient_obj_rel_insert_input;
+
+  factory CopyWith$Input$Ingredient_obj_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Ingredient_obj_rel_insert_input;
+
+  TRes call(
+      {Input$Ingredient_insert_input? data,
+      Input$Ingredient_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$Ingredient_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$Ingredient_obj_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$Ingredient_obj_rel_insert_input(
+      this._instance, this._then);
+
+  final Input$Ingredient_obj_rel_insert_input _instance;
+
+  final TRes Function(Input$Ingredient_obj_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$Ingredient_obj_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as Input$Ingredient_insert_input),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$Ingredient_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$Ingredient_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$Ingredient_obj_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$Ingredient_obj_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call(
           {Input$Ingredient_insert_input? data,
-          Input$Ingredient_on_conflict? Function()? on_conflict}) =>
-      Input$Ingredient_obj_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+          Input$Ingredient_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2428,15 +4047,62 @@ class Input$Ingredient_on_conflict {
     return true;
   }
 
-  Input$Ingredient_on_conflict copyWith(
+  CopyWith$Input$Ingredient_on_conflict<Input$Ingredient_on_conflict>
+      get copyWith => CopyWith$Input$Ingredient_on_conflict(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Ingredient_on_conflict<TRes> {
+  factory CopyWith$Input$Ingredient_on_conflict(
+          Input$Ingredient_on_conflict instance,
+          TRes Function(Input$Ingredient_on_conflict) then) =
+      _CopyWithImpl$Input$Ingredient_on_conflict;
+
+  factory CopyWith$Input$Ingredient_on_conflict.stub(TRes res) =
+      _CopyWithStubImpl$Input$Ingredient_on_conflict;
+
+  TRes call(
+      {Enum$Ingredient_constraint? constraint,
+      List<Enum$Ingredient_update_column>? update_columns,
+      Input$Ingredient_bool_exp? where});
+}
+
+class _CopyWithImpl$Input$Ingredient_on_conflict<TRes>
+    implements CopyWith$Input$Ingredient_on_conflict<TRes> {
+  _CopyWithImpl$Input$Ingredient_on_conflict(this._instance, this._then);
+
+  final Input$Ingredient_on_conflict _instance;
+
+  final TRes Function(Input$Ingredient_on_conflict) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? constraint = _undefined,
+          Object? update_columns = _undefined,
+          Object? where = _undefined}) =>
+      _then(Input$Ingredient_on_conflict(
+          constraint: constraint == _undefined || constraint == null
+              ? _instance.constraint
+              : (constraint as Enum$Ingredient_constraint),
+          update_columns: update_columns == _undefined || update_columns == null
+              ? _instance.update_columns
+              : (update_columns as List<Enum$Ingredient_update_column>),
+          where: where == _undefined
+              ? _instance.where
+              : (where as Input$Ingredient_bool_exp?)));
+}
+
+class _CopyWithStubImpl$Input$Ingredient_on_conflict<TRes>
+    implements CopyWith$Input$Ingredient_on_conflict<TRes> {
+  _CopyWithStubImpl$Input$Ingredient_on_conflict(this._res);
+
+  TRes _res;
+
+  call(
           {Enum$Ingredient_constraint? constraint,
           List<Enum$Ingredient_update_column>? update_columns,
-          Input$Ingredient_bool_exp? Function()? where}) =>
-      Input$Ingredient_on_conflict(
-          constraint: constraint == null ? this.constraint : constraint,
-          update_columns:
-              update_columns == null ? this.update_columns : update_columns,
-          where: where == null ? this.where : where());
+          Input$Ingredient_bool_exp? where}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2482,17 +4148,59 @@ class Input$Ingredient_order_by {
     return true;
   }
 
-  Input$Ingredient_order_by copyWith(
-          {Input$IngredientUnit_aggregate_order_by? Function()?
-              IngredientUnits_aggregate,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? name}) =>
-      Input$Ingredient_order_by(
-          IngredientUnits_aggregate: IngredientUnits_aggregate == null
-              ? this.IngredientUnits_aggregate
-              : IngredientUnits_aggregate(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name());
+  CopyWith$Input$Ingredient_order_by<Input$Ingredient_order_by> get copyWith =>
+      CopyWith$Input$Ingredient_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Ingredient_order_by<TRes> {
+  factory CopyWith$Input$Ingredient_order_by(Input$Ingredient_order_by instance,
+          TRes Function(Input$Ingredient_order_by) then) =
+      _CopyWithImpl$Input$Ingredient_order_by;
+
+  factory CopyWith$Input$Ingredient_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Ingredient_order_by;
+
+  TRes call(
+      {Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
+      Enum$order_by? id,
+      Enum$order_by? name});
+}
+
+class _CopyWithImpl$Input$Ingredient_order_by<TRes>
+    implements CopyWith$Input$Ingredient_order_by<TRes> {
+  _CopyWithImpl$Input$Ingredient_order_by(this._instance, this._then);
+
+  final Input$Ingredient_order_by _instance;
+
+  final TRes Function(Input$Ingredient_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? IngredientUnits_aggregate = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined}) =>
+      _then(Input$Ingredient_order_by(
+          IngredientUnits_aggregate: IngredientUnits_aggregate == _undefined
+              ? _instance.IngredientUnits_aggregate
+              : (IngredientUnits_aggregate
+                  as Input$IngredientUnit_aggregate_order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          name:
+              name == _undefined ? _instance.name : (name as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Ingredient_order_by<TRes>
+    implements CopyWith$Input$Ingredient_order_by<TRes> {
+  _CopyWithStubImpl$Input$Ingredient_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
+          Enum$order_by? id,
+          Enum$order_by? name}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2523,9 +4231,44 @@ class Input$Int_cast_exp {
     return true;
   }
 
-  Input$Int_cast_exp copyWith(
-          {Input$String_comparison_exp? Function()? $String}) =>
-      Input$Int_cast_exp($String: $String == null ? this.$String : $String());
+  CopyWith$Input$Int_cast_exp<Input$Int_cast_exp> get copyWith =>
+      CopyWith$Input$Int_cast_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Int_cast_exp<TRes> {
+  factory CopyWith$Input$Int_cast_exp(
+          Input$Int_cast_exp instance, TRes Function(Input$Int_cast_exp) then) =
+      _CopyWithImpl$Input$Int_cast_exp;
+
+  factory CopyWith$Input$Int_cast_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$Int_cast_exp;
+
+  TRes call({Input$String_comparison_exp? $String});
+}
+
+class _CopyWithImpl$Input$Int_cast_exp<TRes>
+    implements CopyWith$Input$Int_cast_exp<TRes> {
+  _CopyWithImpl$Input$Int_cast_exp(this._instance, this._then);
+
+  final Input$Int_cast_exp _instance;
+
+  final TRes Function(Input$Int_cast_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? $String = _undefined}) => _then(Input$Int_cast_exp(
+      $String: $String == _undefined
+          ? _instance.$String
+          : ($String as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$Int_cast_exp<TRes>
+    implements CopyWith$Input$Int_cast_exp<TRes> {
+  _CopyWithStubImpl$Input$Int_cast_exp(this._res);
+
+  TRes _res;
+
+  call({Input$String_comparison_exp? $String}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2660,28 +4403,88 @@ class Input$Int_comparison_exp {
     return true;
   }
 
-  Input$Int_comparison_exp copyWith(
-          {Input$Int_cast_exp? Function()? $_cast,
-          int? Function()? $_eq,
-          int? Function()? $_gt,
-          int? Function()? $_gte,
-          List<int>? Function()? $_in,
-          bool? Function()? $_is_null,
-          int? Function()? $_lt,
-          int? Function()? $_lte,
-          int? Function()? $_neq,
-          List<int>? Function()? $_nin}) =>
-      Input$Int_comparison_exp(
-          $_cast: $_cast == null ? this.$_cast : $_cast(),
-          $_eq: $_eq == null ? this.$_eq : $_eq(),
-          $_gt: $_gt == null ? this.$_gt : $_gt(),
-          $_gte: $_gte == null ? this.$_gte : $_gte(),
-          $_in: $_in == null ? this.$_in : $_in(),
-          $_is_null: $_is_null == null ? this.$_is_null : $_is_null(),
-          $_lt: $_lt == null ? this.$_lt : $_lt(),
-          $_lte: $_lte == null ? this.$_lte : $_lte(),
-          $_neq: $_neq == null ? this.$_neq : $_neq(),
-          $_nin: $_nin == null ? this.$_nin : $_nin());
+  CopyWith$Input$Int_comparison_exp<Input$Int_comparison_exp> get copyWith =>
+      CopyWith$Input$Int_comparison_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Int_comparison_exp<TRes> {
+  factory CopyWith$Input$Int_comparison_exp(Input$Int_comparison_exp instance,
+          TRes Function(Input$Int_comparison_exp) then) =
+      _CopyWithImpl$Input$Int_comparison_exp;
+
+  factory CopyWith$Input$Int_comparison_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$Int_comparison_exp;
+
+  TRes call(
+      {Input$Int_cast_exp? $_cast,
+      int? $_eq,
+      int? $_gt,
+      int? $_gte,
+      List<int>? $_in,
+      bool? $_is_null,
+      int? $_lt,
+      int? $_lte,
+      int? $_neq,
+      List<int>? $_nin});
+}
+
+class _CopyWithImpl$Input$Int_comparison_exp<TRes>
+    implements CopyWith$Input$Int_comparison_exp<TRes> {
+  _CopyWithImpl$Input$Int_comparison_exp(this._instance, this._then);
+
+  final Input$Int_comparison_exp _instance;
+
+  final TRes Function(Input$Int_comparison_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? $_cast = _undefined,
+          Object? $_eq = _undefined,
+          Object? $_gt = _undefined,
+          Object? $_gte = _undefined,
+          Object? $_in = _undefined,
+          Object? $_is_null = _undefined,
+          Object? $_lt = _undefined,
+          Object? $_lte = _undefined,
+          Object? $_neq = _undefined,
+          Object? $_nin = _undefined}) =>
+      _then(Input$Int_comparison_exp(
+          $_cast: $_cast == _undefined
+              ? _instance.$_cast
+              : ($_cast as Input$Int_cast_exp?),
+          $_eq: $_eq == _undefined ? _instance.$_eq : ($_eq as int?),
+          $_gt: $_gt == _undefined ? _instance.$_gt : ($_gt as int?),
+          $_gte: $_gte == _undefined ? _instance.$_gte : ($_gte as int?),
+          $_in: $_in == _undefined ? _instance.$_in : ($_in as List<int>?),
+          $_is_null: $_is_null == _undefined
+              ? _instance.$_is_null
+              : ($_is_null as bool?),
+          $_lt: $_lt == _undefined ? _instance.$_lt : ($_lt as int?),
+          $_lte: $_lte == _undefined ? _instance.$_lte : ($_lte as int?),
+          $_neq: $_neq == _undefined ? _instance.$_neq : ($_neq as int?),
+          $_nin:
+              $_nin == _undefined ? _instance.$_nin : ($_nin as List<int>?)));
+}
+
+class _CopyWithStubImpl$Input$Int_comparison_exp<TRes>
+    implements CopyWith$Input$Int_comparison_exp<TRes> {
+  _CopyWithStubImpl$Input$Int_comparison_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$Int_cast_exp? $_cast,
+          int? $_eq,
+          int? $_gt,
+          int? $_gte,
+          List<int>? $_in,
+          bool? $_is_null,
+          int? $_lt,
+          int? $_lte,
+          int? $_neq,
+          List<int>? $_nin}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2797,30 +4600,112 @@ class Input$RecipeSection_aggregate_order_by {
     return true;
   }
 
-  Input$RecipeSection_aggregate_order_by copyWith(
-          {Input$RecipeSection_avg_order_by? Function()? avg,
-          Enum$order_by? Function()? count,
-          Input$RecipeSection_max_order_by? Function()? max,
-          Input$RecipeSection_min_order_by? Function()? min,
-          Input$RecipeSection_stddev_order_by? Function()? stddev,
-          Input$RecipeSection_stddev_pop_order_by? Function()? stddev_pop,
-          Input$RecipeSection_stddev_samp_order_by? Function()? stddev_samp,
-          Input$RecipeSection_sum_order_by? Function()? sum,
-          Input$RecipeSection_var_pop_order_by? Function()? var_pop,
-          Input$RecipeSection_var_samp_order_by? Function()? var_samp,
-          Input$RecipeSection_variance_order_by? Function()? variance}) =>
-      Input$RecipeSection_aggregate_order_by(
-          avg: avg == null ? this.avg : avg(),
-          count: count == null ? this.count : count(),
-          max: max == null ? this.max : max(),
-          min: min == null ? this.min : min(),
-          stddev: stddev == null ? this.stddev : stddev(),
-          stddev_pop: stddev_pop == null ? this.stddev_pop : stddev_pop(),
-          stddev_samp: stddev_samp == null ? this.stddev_samp : stddev_samp(),
-          sum: sum == null ? this.sum : sum(),
-          var_pop: var_pop == null ? this.var_pop : var_pop(),
-          var_samp: var_samp == null ? this.var_samp : var_samp(),
-          variance: variance == null ? this.variance : variance());
+  CopyWith$Input$RecipeSection_aggregate_order_by<
+          Input$RecipeSection_aggregate_order_by>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_aggregate_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_aggregate_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_aggregate_order_by(
+          Input$RecipeSection_aggregate_order_by instance,
+          TRes Function(Input$RecipeSection_aggregate_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_aggregate_order_by;
+
+  factory CopyWith$Input$RecipeSection_aggregate_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_aggregate_order_by;
+
+  TRes call(
+      {Input$RecipeSection_avg_order_by? avg,
+      Enum$order_by? count,
+      Input$RecipeSection_max_order_by? max,
+      Input$RecipeSection_min_order_by? min,
+      Input$RecipeSection_stddev_order_by? stddev,
+      Input$RecipeSection_stddev_pop_order_by? stddev_pop,
+      Input$RecipeSection_stddev_samp_order_by? stddev_samp,
+      Input$RecipeSection_sum_order_by? sum,
+      Input$RecipeSection_var_pop_order_by? var_pop,
+      Input$RecipeSection_var_samp_order_by? var_samp,
+      Input$RecipeSection_variance_order_by? variance});
+}
+
+class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_aggregate_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_aggregate_order_by(
+      this._instance, this._then);
+
+  final Input$RecipeSection_aggregate_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_aggregate_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? avg = _undefined,
+          Object? count = _undefined,
+          Object? max = _undefined,
+          Object? min = _undefined,
+          Object? stddev = _undefined,
+          Object? stddev_pop = _undefined,
+          Object? stddev_samp = _undefined,
+          Object? sum = _undefined,
+          Object? var_pop = _undefined,
+          Object? var_samp = _undefined,
+          Object? variance = _undefined}) =>
+      _then(Input$RecipeSection_aggregate_order_by(
+          avg: avg == _undefined
+              ? _instance.avg
+              : (avg as Input$RecipeSection_avg_order_by?),
+          count:
+              count == _undefined ? _instance.count : (count as Enum$order_by?),
+          max: max == _undefined
+              ? _instance.max
+              : (max as Input$RecipeSection_max_order_by?),
+          min: min == _undefined
+              ? _instance.min
+              : (min as Input$RecipeSection_min_order_by?),
+          stddev: stddev == _undefined
+              ? _instance.stddev
+              : (stddev as Input$RecipeSection_stddev_order_by?),
+          stddev_pop: stddev_pop == _undefined
+              ? _instance.stddev_pop
+              : (stddev_pop as Input$RecipeSection_stddev_pop_order_by?),
+          stddev_samp: stddev_samp == _undefined
+              ? _instance.stddev_samp
+              : (stddev_samp as Input$RecipeSection_stddev_samp_order_by?),
+          sum: sum == _undefined
+              ? _instance.sum
+              : (sum as Input$RecipeSection_sum_order_by?),
+          var_pop: var_pop == _undefined
+              ? _instance.var_pop
+              : (var_pop as Input$RecipeSection_var_pop_order_by?),
+          var_samp: var_samp == _undefined
+              ? _instance.var_samp
+              : (var_samp as Input$RecipeSection_var_samp_order_by?),
+          variance: variance == _undefined
+              ? _instance.variance
+              : (variance as Input$RecipeSection_variance_order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_aggregate_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_aggregate_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_aggregate_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$RecipeSection_avg_order_by? avg,
+          Enum$order_by? count,
+          Input$RecipeSection_max_order_by? max,
+          Input$RecipeSection_min_order_by? min,
+          Input$RecipeSection_stddev_order_by? stddev,
+          Input$RecipeSection_stddev_pop_order_by? stddev_pop,
+          Input$RecipeSection_stddev_samp_order_by? stddev_samp,
+          Input$RecipeSection_sum_order_by? sum,
+          Input$RecipeSection_var_pop_order_by? var_pop,
+          Input$RecipeSection_var_samp_order_by? var_samp,
+          Input$RecipeSection_variance_order_by? variance}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2866,12 +4751,57 @@ class Input$RecipeSection_arr_rel_insert_input {
     return true;
   }
 
-  Input$RecipeSection_arr_rel_insert_input copyWith(
+  CopyWith$Input$RecipeSection_arr_rel_insert_input<
+          Input$RecipeSection_arr_rel_insert_input>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_arr_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_arr_rel_insert_input<TRes> {
+  factory CopyWith$Input$RecipeSection_arr_rel_insert_input(
+          Input$RecipeSection_arr_rel_insert_input instance,
+          TRes Function(Input$RecipeSection_arr_rel_insert_input) then) =
+      _CopyWithImpl$Input$RecipeSection_arr_rel_insert_input;
+
+  factory CopyWith$Input$RecipeSection_arr_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_arr_rel_insert_input;
+
+  TRes call(
+      {List<Input$RecipeSection_insert_input>? data,
+      Input$RecipeSection_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$RecipeSection_arr_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$RecipeSection_arr_rel_insert_input(
+      this._instance, this._then);
+
+  final Input$RecipeSection_arr_rel_insert_input _instance;
+
+  final TRes Function(Input$RecipeSection_arr_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$RecipeSection_arr_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as List<Input$RecipeSection_insert_input>),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$RecipeSection_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$RecipeSection_arr_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_arr_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call(
           {List<Input$RecipeSection_insert_input>? data,
-          Input$RecipeSection_on_conflict? Function()? on_conflict}) =>
-      Input$RecipeSection_arr_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+          Input$RecipeSection_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2927,20 +4857,67 @@ class Input$RecipeSection_avg_order_by {
     return true;
   }
 
-  Input$RecipeSection_avg_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_avg_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_avg_order_by<Input$RecipeSection_avg_order_by>
+      get copyWith => CopyWith$Input$RecipeSection_avg_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_avg_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_avg_order_by(
+          Input$RecipeSection_avg_order_by instance,
+          TRes Function(Input$RecipeSection_avg_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_avg_order_by;
+
+  factory CopyWith$Input$RecipeSection_avg_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_avg_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_avg_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_avg_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_avg_order_by(this._instance, this._then);
+
+  final Input$RecipeSection_avg_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_avg_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_avg_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_avg_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_avg_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_avg_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3108,44 +5085,134 @@ class Input$RecipeSection_bool_exp {
     return true;
   }
 
-  Input$RecipeSection_bool_exp copyWith(
-          {Input$IngredientUnit_bool_exp? Function()? IngredientUnits,
-          Input$Recipe_bool_exp? Function()? Recipe,
-          Input$Step_bool_exp? Function()? Steps,
-          List<Input$RecipeSection_bool_exp>? Function()? $_and,
-          Input$RecipeSection_bool_exp? Function()? $_not,
-          List<Input$RecipeSection_bool_exp>? Function()? $_or,
-          Input$Int_comparison_exp? Function()? cookTimeMinutes,
-          Input$String_comparison_exp? Function()? description,
-          Input$String_comparison_exp? Function()? id,
-          Input$String_comparison_exp? Function()? name,
-          Input$Int_comparison_exp? Function()? order,
-          Input$Int_comparison_exp? Function()? prepTimeMinutes,
-          Input$String_comparison_exp? Function()? recipeId,
-          Input$String_comparison_exp? Function()? servingUnit,
-          Input$Int_comparison_exp? Function()? servings}) =>
-      Input$RecipeSection_bool_exp(
-          IngredientUnits: IngredientUnits == null
-              ? this.IngredientUnits
-              : IngredientUnits(),
-          Recipe: Recipe == null ? this.Recipe : Recipe(),
-          Steps: Steps == null ? this.Steps : Steps(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          recipeId: recipeId == null ? this.recipeId : recipeId(),
-          servingUnit: servingUnit == null ? this.servingUnit : servingUnit(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_bool_exp<Input$RecipeSection_bool_exp>
+      get copyWith => CopyWith$Input$RecipeSection_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_bool_exp<TRes> {
+  factory CopyWith$Input$RecipeSection_bool_exp(
+          Input$RecipeSection_bool_exp instance,
+          TRes Function(Input$RecipeSection_bool_exp) then) =
+      _CopyWithImpl$Input$RecipeSection_bool_exp;
+
+  factory CopyWith$Input$RecipeSection_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_bool_exp;
+
+  TRes call(
+      {Input$IngredientUnit_bool_exp? IngredientUnits,
+      Input$Recipe_bool_exp? Recipe,
+      Input$Step_bool_exp? Steps,
+      List<Input$RecipeSection_bool_exp>? $_and,
+      Input$RecipeSection_bool_exp? $_not,
+      List<Input$RecipeSection_bool_exp>? $_or,
+      Input$Int_comparison_exp? cookTimeMinutes,
+      Input$String_comparison_exp? description,
+      Input$String_comparison_exp? id,
+      Input$String_comparison_exp? name,
+      Input$Int_comparison_exp? order,
+      Input$Int_comparison_exp? prepTimeMinutes,
+      Input$String_comparison_exp? recipeId,
+      Input$String_comparison_exp? servingUnit,
+      Input$Int_comparison_exp? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
+    implements CopyWith$Input$RecipeSection_bool_exp<TRes> {
+  _CopyWithImpl$Input$RecipeSection_bool_exp(this._instance, this._then);
+
+  final Input$RecipeSection_bool_exp _instance;
+
+  final TRes Function(Input$RecipeSection_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? IngredientUnits = _undefined,
+          Object? Recipe = _undefined,
+          Object? Steps = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? cookTimeMinutes = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? recipeId = _undefined,
+          Object? servingUnit = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_bool_exp(
+          IngredientUnits: IngredientUnits == _undefined
+              ? _instance.IngredientUnits
+              : (IngredientUnits as Input$IngredientUnit_bool_exp?),
+          Recipe: Recipe == _undefined
+              ? _instance.Recipe
+              : (Recipe as Input$Recipe_bool_exp?),
+          Steps: Steps == _undefined
+              ? _instance.Steps
+              : (Steps as Input$Step_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$RecipeSection_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$RecipeSection_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$RecipeSection_bool_exp>?),
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Input$Int_comparison_exp?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Input$String_comparison_exp?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?),
+          name: name == _undefined
+              ? _instance.name
+              : (name as Input$String_comparison_exp?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Input$Int_comparison_exp?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Input$Int_comparison_exp?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as Input$String_comparison_exp?),
+          servingUnit: servingUnit == _undefined
+              ? _instance.servingUnit
+              : (servingUnit as Input$String_comparison_exp?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Input$Int_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_bool_exp<TRes>
+    implements CopyWith$Input$RecipeSection_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$IngredientUnit_bool_exp? IngredientUnits,
+          Input$Recipe_bool_exp? Recipe,
+          Input$Step_bool_exp? Steps,
+          List<Input$RecipeSection_bool_exp>? $_and,
+          Input$RecipeSection_bool_exp? $_not,
+          List<Input$RecipeSection_bool_exp>? $_or,
+          Input$Int_comparison_exp? cookTimeMinutes,
+          Input$String_comparison_exp? description,
+          Input$String_comparison_exp? id,
+          Input$String_comparison_exp? name,
+          Input$Int_comparison_exp? order,
+          Input$Int_comparison_exp? prepTimeMinutes,
+          Input$String_comparison_exp? recipeId,
+          Input$String_comparison_exp? servingUnit,
+          Input$Int_comparison_exp? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3195,20 +5262,63 @@ class Input$RecipeSection_inc_input {
     return true;
   }
 
-  Input$RecipeSection_inc_input copyWith(
-          {int? Function()? cookTimeMinutes,
-          int? Function()? order,
-          int? Function()? prepTimeMinutes,
-          int? Function()? servings}) =>
-      Input$RecipeSection_inc_input(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_inc_input<Input$RecipeSection_inc_input>
+      get copyWith => CopyWith$Input$RecipeSection_inc_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_inc_input<TRes> {
+  factory CopyWith$Input$RecipeSection_inc_input(
+          Input$RecipeSection_inc_input instance,
+          TRes Function(Input$RecipeSection_inc_input) then) =
+      _CopyWithImpl$Input$RecipeSection_inc_input;
+
+  factory CopyWith$Input$RecipeSection_inc_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_inc_input;
+
+  TRes call(
+      {int? cookTimeMinutes, int? order, int? prepTimeMinutes, int? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_inc_input<TRes>
+    implements CopyWith$Input$RecipeSection_inc_input<TRes> {
+  _CopyWithImpl$Input$RecipeSection_inc_input(this._instance, this._then);
+
+  final Input$RecipeSection_inc_input _instance;
+
+  final TRes Function(Input$RecipeSection_inc_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_inc_input(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as int?),
+          order: order == _undefined ? _instance.order : (order as int?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as int?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as int?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_inc_input<TRes>
+    implements CopyWith$Input$RecipeSection_inc_input<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_inc_input(this._res);
+
+  TRes _res;
+
+  call(
+          {int? cookTimeMinutes,
+          int? order,
+          int? prepTimeMinutes,
+          int? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3331,39 +5441,110 @@ class Input$RecipeSection_insert_input {
     return true;
   }
 
-  Input$RecipeSection_insert_input copyWith(
-          {Input$IngredientUnit_arr_rel_insert_input? Function()?
-              IngredientUnits,
-          Input$Recipe_obj_rel_insert_input? Function()? Recipe,
-          Input$Step_arr_rel_insert_input? Function()? Steps,
-          int? Function()? cookTimeMinutes,
-          String? Function()? description,
-          String? Function()? id,
-          String? Function()? name,
-          int? Function()? order,
-          int? Function()? prepTimeMinutes,
-          String? Function()? recipeId,
-          String? Function()? servingUnit,
-          int? Function()? servings}) =>
-      Input$RecipeSection_insert_input(
-          IngredientUnits: IngredientUnits == null
-              ? this.IngredientUnits
-              : IngredientUnits(),
-          Recipe: Recipe == null ? this.Recipe : Recipe(),
-          Steps: Steps == null ? this.Steps : Steps(),
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          recipeId: recipeId == null ? this.recipeId : recipeId(),
-          servingUnit: servingUnit == null ? this.servingUnit : servingUnit(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_insert_input<Input$RecipeSection_insert_input>
+      get copyWith => CopyWith$Input$RecipeSection_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_insert_input<TRes> {
+  factory CopyWith$Input$RecipeSection_insert_input(
+          Input$RecipeSection_insert_input instance,
+          TRes Function(Input$RecipeSection_insert_input) then) =
+      _CopyWithImpl$Input$RecipeSection_insert_input;
+
+  factory CopyWith$Input$RecipeSection_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_insert_input;
+
+  TRes call(
+      {Input$IngredientUnit_arr_rel_insert_input? IngredientUnits,
+      Input$Recipe_obj_rel_insert_input? Recipe,
+      Input$Step_arr_rel_insert_input? Steps,
+      int? cookTimeMinutes,
+      String? description,
+      String? id,
+      String? name,
+      int? order,
+      int? prepTimeMinutes,
+      String? recipeId,
+      String? servingUnit,
+      int? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_insert_input<TRes>
+    implements CopyWith$Input$RecipeSection_insert_input<TRes> {
+  _CopyWithImpl$Input$RecipeSection_insert_input(this._instance, this._then);
+
+  final Input$RecipeSection_insert_input _instance;
+
+  final TRes Function(Input$RecipeSection_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? IngredientUnits = _undefined,
+          Object? Recipe = _undefined,
+          Object? Steps = _undefined,
+          Object? cookTimeMinutes = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? recipeId = _undefined,
+          Object? servingUnit = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_insert_input(
+          IngredientUnits: IngredientUnits == _undefined
+              ? _instance.IngredientUnits
+              : (IngredientUnits as Input$IngredientUnit_arr_rel_insert_input?),
+          Recipe: Recipe == _undefined
+              ? _instance.Recipe
+              : (Recipe as Input$Recipe_obj_rel_insert_input?),
+          Steps: Steps == _undefined
+              ? _instance.Steps
+              : (Steps as Input$Step_arr_rel_insert_input?),
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as int?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as String?),
+          id: id == _undefined ? _instance.id : (id as String?),
+          name: name == _undefined ? _instance.name : (name as String?),
+          order: order == _undefined ? _instance.order : (order as int?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as int?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as String?),
+          servingUnit: servingUnit == _undefined
+              ? _instance.servingUnit
+              : (servingUnit as String?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as int?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_insert_input<TRes>
+    implements CopyWith$Input$RecipeSection_insert_input<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_insert_input(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$IngredientUnit_arr_rel_insert_input? IngredientUnits,
+          Input$Recipe_obj_rel_insert_input? Recipe,
+          Input$Step_arr_rel_insert_input? Steps,
+          int? cookTimeMinutes,
+          String? description,
+          String? id,
+          String? name,
+          int? order,
+          int? prepTimeMinutes,
+          String? recipeId,
+          String? servingUnit,
+          int? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3471,30 +5652,93 @@ class Input$RecipeSection_max_order_by {
     return true;
   }
 
-  Input$RecipeSection_max_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? description,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? name,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? recipeId,
-          Enum$order_by? Function()? servingUnit,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_max_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          recipeId: recipeId == null ? this.recipeId : recipeId(),
-          servingUnit: servingUnit == null ? this.servingUnit : servingUnit(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_max_order_by<Input$RecipeSection_max_order_by>
+      get copyWith => CopyWith$Input$RecipeSection_max_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_max_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_max_order_by(
+          Input$RecipeSection_max_order_by instance,
+          TRes Function(Input$RecipeSection_max_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_max_order_by;
+
+  factory CopyWith$Input$RecipeSection_max_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_max_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? description,
+      Enum$order_by? id,
+      Enum$order_by? name,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? recipeId,
+      Enum$order_by? servingUnit,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_max_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_max_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_max_order_by(this._instance, this._then);
+
+  final Input$RecipeSection_max_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_max_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? recipeId = _undefined,
+          Object? servingUnit = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_max_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          name: name == _undefined ? _instance.name : (name as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as Enum$order_by?),
+          servingUnit: servingUnit == _undefined
+              ? _instance.servingUnit
+              : (servingUnit as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_max_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_max_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_max_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? description,
+          Enum$order_by? id,
+          Enum$order_by? name,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? recipeId,
+          Enum$order_by? servingUnit,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3602,30 +5846,93 @@ class Input$RecipeSection_min_order_by {
     return true;
   }
 
-  Input$RecipeSection_min_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? description,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? name,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? recipeId,
-          Enum$order_by? Function()? servingUnit,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_min_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          recipeId: recipeId == null ? this.recipeId : recipeId(),
-          servingUnit: servingUnit == null ? this.servingUnit : servingUnit(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_min_order_by<Input$RecipeSection_min_order_by>
+      get copyWith => CopyWith$Input$RecipeSection_min_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_min_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_min_order_by(
+          Input$RecipeSection_min_order_by instance,
+          TRes Function(Input$RecipeSection_min_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_min_order_by;
+
+  factory CopyWith$Input$RecipeSection_min_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_min_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? description,
+      Enum$order_by? id,
+      Enum$order_by? name,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? recipeId,
+      Enum$order_by? servingUnit,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_min_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_min_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_min_order_by(this._instance, this._then);
+
+  final Input$RecipeSection_min_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_min_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? recipeId = _undefined,
+          Object? servingUnit = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_min_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          name: name == _undefined ? _instance.name : (name as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as Enum$order_by?),
+          servingUnit: servingUnit == _undefined
+              ? _instance.servingUnit
+              : (servingUnit as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_min_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_min_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_min_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? description,
+          Enum$order_by? id,
+          Enum$order_by? name,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? recipeId,
+          Enum$order_by? servingUnit,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3664,12 +5971,57 @@ class Input$RecipeSection_obj_rel_insert_input {
     return true;
   }
 
-  Input$RecipeSection_obj_rel_insert_input copyWith(
+  CopyWith$Input$RecipeSection_obj_rel_insert_input<
+          Input$RecipeSection_obj_rel_insert_input>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_obj_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> {
+  factory CopyWith$Input$RecipeSection_obj_rel_insert_input(
+          Input$RecipeSection_obj_rel_insert_input instance,
+          TRes Function(Input$RecipeSection_obj_rel_insert_input) then) =
+      _CopyWithImpl$Input$RecipeSection_obj_rel_insert_input;
+
+  factory CopyWith$Input$RecipeSection_obj_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_obj_rel_insert_input;
+
+  TRes call(
+      {Input$RecipeSection_insert_input? data,
+      Input$RecipeSection_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$RecipeSection_obj_rel_insert_input(
+      this._instance, this._then);
+
+  final Input$RecipeSection_obj_rel_insert_input _instance;
+
+  final TRes Function(Input$RecipeSection_obj_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$RecipeSection_obj_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as Input$RecipeSection_insert_input),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$RecipeSection_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_obj_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call(
           {Input$RecipeSection_insert_input? data,
-          Input$RecipeSection_on_conflict? Function()? on_conflict}) =>
-      Input$RecipeSection_obj_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+          Input$RecipeSection_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3725,15 +6077,62 @@ class Input$RecipeSection_on_conflict {
     return true;
   }
 
-  Input$RecipeSection_on_conflict copyWith(
+  CopyWith$Input$RecipeSection_on_conflict<Input$RecipeSection_on_conflict>
+      get copyWith => CopyWith$Input$RecipeSection_on_conflict(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_on_conflict<TRes> {
+  factory CopyWith$Input$RecipeSection_on_conflict(
+          Input$RecipeSection_on_conflict instance,
+          TRes Function(Input$RecipeSection_on_conflict) then) =
+      _CopyWithImpl$Input$RecipeSection_on_conflict;
+
+  factory CopyWith$Input$RecipeSection_on_conflict.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_on_conflict;
+
+  TRes call(
+      {Enum$RecipeSection_constraint? constraint,
+      List<Enum$RecipeSection_update_column>? update_columns,
+      Input$RecipeSection_bool_exp? where});
+}
+
+class _CopyWithImpl$Input$RecipeSection_on_conflict<TRes>
+    implements CopyWith$Input$RecipeSection_on_conflict<TRes> {
+  _CopyWithImpl$Input$RecipeSection_on_conflict(this._instance, this._then);
+
+  final Input$RecipeSection_on_conflict _instance;
+
+  final TRes Function(Input$RecipeSection_on_conflict) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? constraint = _undefined,
+          Object? update_columns = _undefined,
+          Object? where = _undefined}) =>
+      _then(Input$RecipeSection_on_conflict(
+          constraint: constraint == _undefined || constraint == null
+              ? _instance.constraint
+              : (constraint as Enum$RecipeSection_constraint),
+          update_columns: update_columns == _undefined || update_columns == null
+              ? _instance.update_columns
+              : (update_columns as List<Enum$RecipeSection_update_column>),
+          where: where == _undefined
+              ? _instance.where
+              : (where as Input$RecipeSection_bool_exp?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_on_conflict<TRes>
+    implements CopyWith$Input$RecipeSection_on_conflict<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_on_conflict(this._res);
+
+  TRes _res;
+
+  call(
           {Enum$RecipeSection_constraint? constraint,
           List<Enum$RecipeSection_update_column>? update_columns,
-          Input$RecipeSection_bool_exp? Function()? where}) =>
-      Input$RecipeSection_on_conflict(
-          constraint: constraint == null ? this.constraint : constraint,
-          update_columns:
-              update_columns == null ? this.update_columns : update_columns,
-          where: where == null ? this.where : where());
+          Input$RecipeSection_bool_exp? where}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3864,41 +6263,112 @@ class Input$RecipeSection_order_by {
     return true;
   }
 
-  Input$RecipeSection_order_by copyWith(
-          {Input$IngredientUnit_aggregate_order_by? Function()?
-              IngredientUnits_aggregate,
-          Input$Recipe_order_by? Function()? Recipe,
-          Input$Step_aggregate_order_by? Function()? Steps_aggregate,
-          Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? description,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? name,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? recipeId,
-          Enum$order_by? Function()? servingUnit,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_order_by(
-          IngredientUnits_aggregate: IngredientUnits_aggregate == null
-              ? this.IngredientUnits_aggregate
-              : IngredientUnits_aggregate(),
-          Recipe: Recipe == null ? this.Recipe : Recipe(),
-          Steps_aggregate: Steps_aggregate == null
-              ? this.Steps_aggregate
-              : Steps_aggregate(),
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          recipeId: recipeId == null ? this.recipeId : recipeId(),
-          servingUnit: servingUnit == null ? this.servingUnit : servingUnit(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_order_by<Input$RecipeSection_order_by>
+      get copyWith => CopyWith$Input$RecipeSection_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_order_by(
+          Input$RecipeSection_order_by instance,
+          TRes Function(Input$RecipeSection_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_order_by;
+
+  factory CopyWith$Input$RecipeSection_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_order_by;
+
+  TRes call(
+      {Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
+      Input$Recipe_order_by? Recipe,
+      Input$Step_aggregate_order_by? Steps_aggregate,
+      Enum$order_by? cookTimeMinutes,
+      Enum$order_by? description,
+      Enum$order_by? id,
+      Enum$order_by? name,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? recipeId,
+      Enum$order_by? servingUnit,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_order_by(this._instance, this._then);
+
+  final Input$RecipeSection_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? IngredientUnits_aggregate = _undefined,
+          Object? Recipe = _undefined,
+          Object? Steps_aggregate = _undefined,
+          Object? cookTimeMinutes = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? recipeId = _undefined,
+          Object? servingUnit = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_order_by(
+          IngredientUnits_aggregate: IngredientUnits_aggregate == _undefined
+              ? _instance.IngredientUnits_aggregate
+              : (IngredientUnits_aggregate
+                  as Input$IngredientUnit_aggregate_order_by?),
+          Recipe: Recipe == _undefined
+              ? _instance.Recipe
+              : (Recipe as Input$Recipe_order_by?),
+          Steps_aggregate: Steps_aggregate == _undefined
+              ? _instance.Steps_aggregate
+              : (Steps_aggregate as Input$Step_aggregate_order_by?),
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          name: name == _undefined ? _instance.name : (name as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          recipeId: recipeId == _undefined
+              ? _instance.recipeId
+              : (recipeId as Enum$order_by?),
+          servingUnit: servingUnit == _undefined
+              ? _instance.servingUnit
+              : (servingUnit as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
+          Input$Recipe_order_by? Recipe,
+          Input$Step_aggregate_order_by? Steps_aggregate,
+          Enum$order_by? cookTimeMinutes,
+          Enum$order_by? description,
+          Enum$order_by? id,
+          Enum$order_by? name,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? recipeId,
+          Enum$order_by? servingUnit,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3930,8 +6400,47 @@ class Input$RecipeSection_pk_columns_input {
     return true;
   }
 
-  Input$RecipeSection_pk_columns_input copyWith({String? id}) =>
-      Input$RecipeSection_pk_columns_input(id: id == null ? this.id : id);
+  CopyWith$Input$RecipeSection_pk_columns_input<
+          Input$RecipeSection_pk_columns_input>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_pk_columns_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_pk_columns_input<TRes> {
+  factory CopyWith$Input$RecipeSection_pk_columns_input(
+          Input$RecipeSection_pk_columns_input instance,
+          TRes Function(Input$RecipeSection_pk_columns_input) then) =
+      _CopyWithImpl$Input$RecipeSection_pk_columns_input;
+
+  factory CopyWith$Input$RecipeSection_pk_columns_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_pk_columns_input;
+
+  TRes call({String? id});
+}
+
+class _CopyWithImpl$Input$RecipeSection_pk_columns_input<TRes>
+    implements CopyWith$Input$RecipeSection_pk_columns_input<TRes> {
+  _CopyWithImpl$Input$RecipeSection_pk_columns_input(
+      this._instance, this._then);
+
+  final Input$RecipeSection_pk_columns_input _instance;
+
+  final TRes Function(Input$RecipeSection_pk_columns_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? id = _undefined}) =>
+      _then(Input$RecipeSection_pk_columns_input(
+          id: id == _undefined || id == null ? _instance.id : (id as String)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_pk_columns_input<TRes>
+    implements CopyWith$Input$RecipeSection_pk_columns_input<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_pk_columns_input(this._res);
+
+  TRes _res;
+
+  call({String? id}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4012,26 +6521,82 @@ class Input$RecipeSection_set_input {
     return true;
   }
 
-  Input$RecipeSection_set_input copyWith(
-          {int? Function()? cookTimeMinutes,
-          String? Function()? description,
-          String? Function()? name,
-          int? Function()? order,
-          int? Function()? prepTimeMinutes,
-          String? Function()? servingUnit,
-          int? Function()? servings}) =>
-      Input$RecipeSection_set_input(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          description: description == null ? this.description : description(),
-          name: name == null ? this.name : name(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servingUnit: servingUnit == null ? this.servingUnit : servingUnit(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_set_input<Input$RecipeSection_set_input>
+      get copyWith => CopyWith$Input$RecipeSection_set_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_set_input<TRes> {
+  factory CopyWith$Input$RecipeSection_set_input(
+          Input$RecipeSection_set_input instance,
+          TRes Function(Input$RecipeSection_set_input) then) =
+      _CopyWithImpl$Input$RecipeSection_set_input;
+
+  factory CopyWith$Input$RecipeSection_set_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_set_input;
+
+  TRes call(
+      {int? cookTimeMinutes,
+      String? description,
+      String? name,
+      int? order,
+      int? prepTimeMinutes,
+      String? servingUnit,
+      int? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_set_input<TRes>
+    implements CopyWith$Input$RecipeSection_set_input<TRes> {
+  _CopyWithImpl$Input$RecipeSection_set_input(this._instance, this._then);
+
+  final Input$RecipeSection_set_input _instance;
+
+  final TRes Function(Input$RecipeSection_set_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? description = _undefined,
+          Object? name = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servingUnit = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_set_input(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as int?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as String?),
+          name: name == _undefined ? _instance.name : (name as String?),
+          order: order == _undefined ? _instance.order : (order as int?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as int?),
+          servingUnit: servingUnit == _undefined
+              ? _instance.servingUnit
+              : (servingUnit as String?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as int?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_set_input<TRes>
+    implements CopyWith$Input$RecipeSection_set_input<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_set_input(this._res);
+
+  TRes _res;
+
+  call(
+          {int? cookTimeMinutes,
+          String? description,
+          String? name,
+          int? order,
+          int? prepTimeMinutes,
+          String? servingUnit,
+          int? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4087,20 +6652,69 @@ class Input$RecipeSection_stddev_order_by {
     return true;
   }
 
-  Input$RecipeSection_stddev_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_stddev_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_stddev_order_by<
+          Input$RecipeSection_stddev_order_by>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_stddev_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_stddev_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_stddev_order_by(
+          Input$RecipeSection_stddev_order_by instance,
+          TRes Function(Input$RecipeSection_stddev_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_stddev_order_by;
+
+  factory CopyWith$Input$RecipeSection_stddev_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_stddev_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_stddev_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_stddev_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_stddev_order_by(this._instance, this._then);
+
+  final Input$RecipeSection_stddev_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_stddev_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_stddev_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_stddev_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_stddev_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_stddev_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4156,20 +6770,70 @@ class Input$RecipeSection_stddev_pop_order_by {
     return true;
   }
 
-  Input$RecipeSection_stddev_pop_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_stddev_pop_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_stddev_pop_order_by<
+          Input$RecipeSection_stddev_pop_order_by>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_stddev_pop_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_stddev_pop_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_stddev_pop_order_by(
+          Input$RecipeSection_stddev_pop_order_by instance,
+          TRes Function(Input$RecipeSection_stddev_pop_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_stddev_pop_order_by;
+
+  factory CopyWith$Input$RecipeSection_stddev_pop_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_stddev_pop_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_stddev_pop_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_stddev_pop_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_stddev_pop_order_by(
+      this._instance, this._then);
+
+  final Input$RecipeSection_stddev_pop_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_stddev_pop_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_stddev_pop_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_stddev_pop_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_stddev_pop_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_stddev_pop_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4225,20 +6889,70 @@ class Input$RecipeSection_stddev_samp_order_by {
     return true;
   }
 
-  Input$RecipeSection_stddev_samp_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_stddev_samp_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_stddev_samp_order_by<
+          Input$RecipeSection_stddev_samp_order_by>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_stddev_samp_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_stddev_samp_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_stddev_samp_order_by(
+          Input$RecipeSection_stddev_samp_order_by instance,
+          TRes Function(Input$RecipeSection_stddev_samp_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_stddev_samp_order_by;
+
+  factory CopyWith$Input$RecipeSection_stddev_samp_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_stddev_samp_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_stddev_samp_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_stddev_samp_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_stddev_samp_order_by(
+      this._instance, this._then);
+
+  final Input$RecipeSection_stddev_samp_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_stddev_samp_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_stddev_samp_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_stddev_samp_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_stddev_samp_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_stddev_samp_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4294,20 +7008,67 @@ class Input$RecipeSection_sum_order_by {
     return true;
   }
 
-  Input$RecipeSection_sum_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_sum_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_sum_order_by<Input$RecipeSection_sum_order_by>
+      get copyWith => CopyWith$Input$RecipeSection_sum_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_sum_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_sum_order_by(
+          Input$RecipeSection_sum_order_by instance,
+          TRes Function(Input$RecipeSection_sum_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_sum_order_by;
+
+  factory CopyWith$Input$RecipeSection_sum_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_sum_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_sum_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_sum_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_sum_order_by(this._instance, this._then);
+
+  final Input$RecipeSection_sum_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_sum_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_sum_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_sum_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_sum_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_sum_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4363,20 +7124,70 @@ class Input$RecipeSection_var_pop_order_by {
     return true;
   }
 
-  Input$RecipeSection_var_pop_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_var_pop_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_var_pop_order_by<
+          Input$RecipeSection_var_pop_order_by>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_var_pop_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_var_pop_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_var_pop_order_by(
+          Input$RecipeSection_var_pop_order_by instance,
+          TRes Function(Input$RecipeSection_var_pop_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_var_pop_order_by;
+
+  factory CopyWith$Input$RecipeSection_var_pop_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_var_pop_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_var_pop_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_var_pop_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_var_pop_order_by(
+      this._instance, this._then);
+
+  final Input$RecipeSection_var_pop_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_var_pop_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_var_pop_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_var_pop_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_var_pop_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_var_pop_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4432,20 +7243,70 @@ class Input$RecipeSection_var_samp_order_by {
     return true;
   }
 
-  Input$RecipeSection_var_samp_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_var_samp_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_var_samp_order_by<
+          Input$RecipeSection_var_samp_order_by>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_var_samp_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_var_samp_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_var_samp_order_by(
+          Input$RecipeSection_var_samp_order_by instance,
+          TRes Function(Input$RecipeSection_var_samp_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_var_samp_order_by;
+
+  factory CopyWith$Input$RecipeSection_var_samp_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_var_samp_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_var_samp_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_var_samp_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_var_samp_order_by(
+      this._instance, this._then);
+
+  final Input$RecipeSection_var_samp_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_var_samp_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_var_samp_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_var_samp_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_var_samp_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_var_samp_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4501,20 +7362,70 @@ class Input$RecipeSection_variance_order_by {
     return true;
   }
 
-  Input$RecipeSection_variance_order_by copyWith(
-          {Enum$order_by? Function()? cookTimeMinutes,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? prepTimeMinutes,
-          Enum$order_by? Function()? servings}) =>
-      Input$RecipeSection_variance_order_by(
-          cookTimeMinutes: cookTimeMinutes == null
-              ? this.cookTimeMinutes
-              : cookTimeMinutes(),
-          order: order == null ? this.order : order(),
-          prepTimeMinutes: prepTimeMinutes == null
-              ? this.prepTimeMinutes
-              : prepTimeMinutes(),
-          servings: servings == null ? this.servings : servings());
+  CopyWith$Input$RecipeSection_variance_order_by<
+          Input$RecipeSection_variance_order_by>
+      get copyWith =>
+          CopyWith$Input$RecipeSection_variance_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$RecipeSection_variance_order_by<TRes> {
+  factory CopyWith$Input$RecipeSection_variance_order_by(
+          Input$RecipeSection_variance_order_by instance,
+          TRes Function(Input$RecipeSection_variance_order_by) then) =
+      _CopyWithImpl$Input$RecipeSection_variance_order_by;
+
+  factory CopyWith$Input$RecipeSection_variance_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_variance_order_by;
+
+  TRes call(
+      {Enum$order_by? cookTimeMinutes,
+      Enum$order_by? order,
+      Enum$order_by? prepTimeMinutes,
+      Enum$order_by? servings});
+}
+
+class _CopyWithImpl$Input$RecipeSection_variance_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_variance_order_by<TRes> {
+  _CopyWithImpl$Input$RecipeSection_variance_order_by(
+      this._instance, this._then);
+
+  final Input$RecipeSection_variance_order_by _instance;
+
+  final TRes Function(Input$RecipeSection_variance_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? cookTimeMinutes = _undefined,
+          Object? order = _undefined,
+          Object? prepTimeMinutes = _undefined,
+          Object? servings = _undefined}) =>
+      _then(Input$RecipeSection_variance_order_by(
+          cookTimeMinutes: cookTimeMinutes == _undefined
+              ? _instance.cookTimeMinutes
+              : (cookTimeMinutes as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          prepTimeMinutes: prepTimeMinutes == _undefined
+              ? _instance.prepTimeMinutes
+              : (prepTimeMinutes as Enum$order_by?),
+          servings: servings == _undefined
+              ? _instance.servings
+              : (servings as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_variance_order_by<TRes>
+    implements CopyWith$Input$RecipeSection_variance_order_by<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_variance_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? cookTimeMinutes,
+          Enum$order_by? order,
+          Enum$order_by? prepTimeMinutes,
+          Enum$order_by? servings}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4558,14 +7469,61 @@ class Input$Recipe_aggregate_order_by {
     return true;
   }
 
-  Input$Recipe_aggregate_order_by copyWith(
-          {Enum$order_by? Function()? count,
-          Input$Recipe_max_order_by? Function()? max,
-          Input$Recipe_min_order_by? Function()? min}) =>
-      Input$Recipe_aggregate_order_by(
-          count: count == null ? this.count : count(),
-          max: max == null ? this.max : max(),
-          min: min == null ? this.min : min());
+  CopyWith$Input$Recipe_aggregate_order_by<Input$Recipe_aggregate_order_by>
+      get copyWith => CopyWith$Input$Recipe_aggregate_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_aggregate_order_by<TRes> {
+  factory CopyWith$Input$Recipe_aggregate_order_by(
+          Input$Recipe_aggregate_order_by instance,
+          TRes Function(Input$Recipe_aggregate_order_by) then) =
+      _CopyWithImpl$Input$Recipe_aggregate_order_by;
+
+  factory CopyWith$Input$Recipe_aggregate_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_aggregate_order_by;
+
+  TRes call(
+      {Enum$order_by? count,
+      Input$Recipe_max_order_by? max,
+      Input$Recipe_min_order_by? min});
+}
+
+class _CopyWithImpl$Input$Recipe_aggregate_order_by<TRes>
+    implements CopyWith$Input$Recipe_aggregate_order_by<TRes> {
+  _CopyWithImpl$Input$Recipe_aggregate_order_by(this._instance, this._then);
+
+  final Input$Recipe_aggregate_order_by _instance;
+
+  final TRes Function(Input$Recipe_aggregate_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? count = _undefined,
+          Object? max = _undefined,
+          Object? min = _undefined}) =>
+      _then(Input$Recipe_aggregate_order_by(
+          count:
+              count == _undefined ? _instance.count : (count as Enum$order_by?),
+          max: max == _undefined
+              ? _instance.max
+              : (max as Input$Recipe_max_order_by?),
+          min: min == _undefined
+              ? _instance.min
+              : (min as Input$Recipe_min_order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_aggregate_order_by<TRes>
+    implements CopyWith$Input$Recipe_aggregate_order_by<TRes> {
+  _CopyWithStubImpl$Input$Recipe_aggregate_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? count,
+          Input$Recipe_max_order_by? max,
+          Input$Recipe_min_order_by? min}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4733,39 +7691,133 @@ class Input$Recipe_bool_exp {
     return true;
   }
 
-  Input$Recipe_bool_exp copyWith(
-          {Input$User_bool_exp? Function()? Author,
-          Input$File_bool_exp? Function()? Files,
-          Input$RecipeSection_bool_exp? Function()? RecipeSections,
-          Input$_RecipeToTag_bool_exp? Function()? RecipeTags,
-          List<Input$Recipe_bool_exp>? Function()? $_and,
-          Input$Recipe_bool_exp? Function()? $_not,
-          List<Input$Recipe_bool_exp>? Function()? $_or,
-          Input$String_comparison_exp? Function()? authorId,
-          Input$timestamp_comparison_exp? Function()? createdAt,
-          Input$String_comparison_exp? Function()? description,
-          Input$String_comparison_exp? Function()? id,
-          Input$String_comparison_exp? Function()? notes,
-          Input$String_comparison_exp? Function()? source,
-          Input$String_comparison_exp? Function()? title,
-          Input$timestamp_comparison_exp? Function()? updatedAt}) =>
-      Input$Recipe_bool_exp(
-          Author: Author == null ? this.Author : Author(),
-          Files: Files == null ? this.Files : Files(),
-          RecipeSections:
-              RecipeSections == null ? this.RecipeSections : RecipeSections(),
-          RecipeTags: RecipeTags == null ? this.RecipeTags : RecipeTags(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          authorId: authorId == null ? this.authorId : authorId(),
-          createdAt: createdAt == null ? this.createdAt : createdAt(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          notes: notes == null ? this.notes : notes(),
-          source: source == null ? this.source : source(),
-          title: title == null ? this.title : title(),
-          updatedAt: updatedAt == null ? this.updatedAt : updatedAt());
+  CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp> get copyWith =>
+      CopyWith$Input$Recipe_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_bool_exp<TRes> {
+  factory CopyWith$Input$Recipe_bool_exp(Input$Recipe_bool_exp instance,
+          TRes Function(Input$Recipe_bool_exp) then) =
+      _CopyWithImpl$Input$Recipe_bool_exp;
+
+  factory CopyWith$Input$Recipe_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_bool_exp;
+
+  TRes call(
+      {Input$User_bool_exp? Author,
+      Input$File_bool_exp? Files,
+      Input$RecipeSection_bool_exp? RecipeSections,
+      Input$_RecipeToTag_bool_exp? RecipeTags,
+      List<Input$Recipe_bool_exp>? $_and,
+      Input$Recipe_bool_exp? $_not,
+      List<Input$Recipe_bool_exp>? $_or,
+      Input$String_comparison_exp? authorId,
+      Input$timestamp_comparison_exp? createdAt,
+      Input$String_comparison_exp? description,
+      Input$String_comparison_exp? id,
+      Input$String_comparison_exp? notes,
+      Input$String_comparison_exp? source,
+      Input$String_comparison_exp? title,
+      Input$timestamp_comparison_exp? updatedAt});
+}
+
+class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
+    implements CopyWith$Input$Recipe_bool_exp<TRes> {
+  _CopyWithImpl$Input$Recipe_bool_exp(this._instance, this._then);
+
+  final Input$Recipe_bool_exp _instance;
+
+  final TRes Function(Input$Recipe_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Author = _undefined,
+          Object? Files = _undefined,
+          Object? RecipeSections = _undefined,
+          Object? RecipeTags = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? authorId = _undefined,
+          Object? createdAt = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? notes = _undefined,
+          Object? source = _undefined,
+          Object? title = _undefined,
+          Object? updatedAt = _undefined}) =>
+      _then(Input$Recipe_bool_exp(
+          Author: Author == _undefined
+              ? _instance.Author
+              : (Author as Input$User_bool_exp?),
+          Files: Files == _undefined
+              ? _instance.Files
+              : (Files as Input$File_bool_exp?),
+          RecipeSections: RecipeSections == _undefined
+              ? _instance.RecipeSections
+              : (RecipeSections as Input$RecipeSection_bool_exp?),
+          RecipeTags: RecipeTags == _undefined
+              ? _instance.RecipeTags
+              : (RecipeTags as Input$_RecipeToTag_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$Recipe_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$Recipe_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$Recipe_bool_exp>?),
+          authorId: authorId == _undefined
+              ? _instance.authorId
+              : (authorId as Input$String_comparison_exp?),
+          createdAt: createdAt == _undefined
+              ? _instance.createdAt
+              : (createdAt as Input$timestamp_comparison_exp?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Input$String_comparison_exp?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?),
+          notes: notes == _undefined
+              ? _instance.notes
+              : (notes as Input$String_comparison_exp?),
+          source: source == _undefined
+              ? _instance.source
+              : (source as Input$String_comparison_exp?),
+          title: title == _undefined
+              ? _instance.title
+              : (title as Input$String_comparison_exp?),
+          updatedAt: updatedAt == _undefined
+              ? _instance.updatedAt
+              : (updatedAt as Input$timestamp_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_bool_exp<TRes>
+    implements CopyWith$Input$Recipe_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$Recipe_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$User_bool_exp? Author,
+          Input$File_bool_exp? Files,
+          Input$RecipeSection_bool_exp? RecipeSections,
+          Input$_RecipeToTag_bool_exp? RecipeTags,
+          List<Input$Recipe_bool_exp>? $_and,
+          Input$Recipe_bool_exp? $_not,
+          List<Input$Recipe_bool_exp>? $_or,
+          Input$String_comparison_exp? authorId,
+          Input$timestamp_comparison_exp? createdAt,
+          Input$String_comparison_exp? description,
+          Input$String_comparison_exp? id,
+          Input$String_comparison_exp? notes,
+          Input$String_comparison_exp? source,
+          Input$String_comparison_exp? title,
+          Input$timestamp_comparison_exp? updatedAt}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4854,25 +7906,83 @@ class Input$Recipe_insert_input {
     return true;
   }
 
-  Input$Recipe_insert_input copyWith(
-          {Input$File_arr_rel_insert_input? Function()? Files,
-          Input$RecipeSection_arr_rel_insert_input? Function()? RecipeSections,
-          Input$_RecipeToTag_arr_rel_insert_input? Function()? RecipeTags,
-          String? Function()? description,
-          String? Function()? id,
-          String? Function()? notes,
-          String? Function()? source,
-          String? Function()? title}) =>
-      Input$Recipe_insert_input(
-          Files: Files == null ? this.Files : Files(),
-          RecipeSections:
-              RecipeSections == null ? this.RecipeSections : RecipeSections(),
-          RecipeTags: RecipeTags == null ? this.RecipeTags : RecipeTags(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          notes: notes == null ? this.notes : notes(),
-          source: source == null ? this.source : source(),
-          title: title == null ? this.title : title());
+  CopyWith$Input$Recipe_insert_input<Input$Recipe_insert_input> get copyWith =>
+      CopyWith$Input$Recipe_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_insert_input<TRes> {
+  factory CopyWith$Input$Recipe_insert_input(Input$Recipe_insert_input instance,
+          TRes Function(Input$Recipe_insert_input) then) =
+      _CopyWithImpl$Input$Recipe_insert_input;
+
+  factory CopyWith$Input$Recipe_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_insert_input;
+
+  TRes call(
+      {Input$File_arr_rel_insert_input? Files,
+      Input$RecipeSection_arr_rel_insert_input? RecipeSections,
+      Input$_RecipeToTag_arr_rel_insert_input? RecipeTags,
+      String? description,
+      String? id,
+      String? notes,
+      String? source,
+      String? title});
+}
+
+class _CopyWithImpl$Input$Recipe_insert_input<TRes>
+    implements CopyWith$Input$Recipe_insert_input<TRes> {
+  _CopyWithImpl$Input$Recipe_insert_input(this._instance, this._then);
+
+  final Input$Recipe_insert_input _instance;
+
+  final TRes Function(Input$Recipe_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Files = _undefined,
+          Object? RecipeSections = _undefined,
+          Object? RecipeTags = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? notes = _undefined,
+          Object? source = _undefined,
+          Object? title = _undefined}) =>
+      _then(Input$Recipe_insert_input(
+          Files: Files == _undefined
+              ? _instance.Files
+              : (Files as Input$File_arr_rel_insert_input?),
+          RecipeSections: RecipeSections == _undefined
+              ? _instance.RecipeSections
+              : (RecipeSections as Input$RecipeSection_arr_rel_insert_input?),
+          RecipeTags: RecipeTags == _undefined
+              ? _instance.RecipeTags
+              : (RecipeTags as Input$_RecipeToTag_arr_rel_insert_input?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as String?),
+          id: id == _undefined ? _instance.id : (id as String?),
+          notes: notes == _undefined ? _instance.notes : (notes as String?),
+          source: source == _undefined ? _instance.source : (source as String?),
+          title: title == _undefined ? _instance.title : (title as String?)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_insert_input<TRes>
+    implements CopyWith$Input$Recipe_insert_input<TRes> {
+  _CopyWithStubImpl$Input$Recipe_insert_input(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$File_arr_rel_insert_input? Files,
+          Input$RecipeSection_arr_rel_insert_input? RecipeSections,
+          Input$_RecipeToTag_arr_rel_insert_input? RecipeTags,
+          String? description,
+          String? id,
+          String? notes,
+          String? source,
+          String? title}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4969,24 +8079,87 @@ class Input$Recipe_max_order_by {
     return true;
   }
 
-  Input$Recipe_max_order_by copyWith(
-          {Enum$order_by? Function()? authorId,
-          Enum$order_by? Function()? createdAt,
-          Enum$order_by? Function()? description,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? notes,
-          Enum$order_by? Function()? source,
-          Enum$order_by? Function()? title,
-          Enum$order_by? Function()? updatedAt}) =>
-      Input$Recipe_max_order_by(
-          authorId: authorId == null ? this.authorId : authorId(),
-          createdAt: createdAt == null ? this.createdAt : createdAt(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          notes: notes == null ? this.notes : notes(),
-          source: source == null ? this.source : source(),
-          title: title == null ? this.title : title(),
-          updatedAt: updatedAt == null ? this.updatedAt : updatedAt());
+  CopyWith$Input$Recipe_max_order_by<Input$Recipe_max_order_by> get copyWith =>
+      CopyWith$Input$Recipe_max_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_max_order_by<TRes> {
+  factory CopyWith$Input$Recipe_max_order_by(Input$Recipe_max_order_by instance,
+          TRes Function(Input$Recipe_max_order_by) then) =
+      _CopyWithImpl$Input$Recipe_max_order_by;
+
+  factory CopyWith$Input$Recipe_max_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_max_order_by;
+
+  TRes call(
+      {Enum$order_by? authorId,
+      Enum$order_by? createdAt,
+      Enum$order_by? description,
+      Enum$order_by? id,
+      Enum$order_by? notes,
+      Enum$order_by? source,
+      Enum$order_by? title,
+      Enum$order_by? updatedAt});
+}
+
+class _CopyWithImpl$Input$Recipe_max_order_by<TRes>
+    implements CopyWith$Input$Recipe_max_order_by<TRes> {
+  _CopyWithImpl$Input$Recipe_max_order_by(this._instance, this._then);
+
+  final Input$Recipe_max_order_by _instance;
+
+  final TRes Function(Input$Recipe_max_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? authorId = _undefined,
+          Object? createdAt = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? notes = _undefined,
+          Object? source = _undefined,
+          Object? title = _undefined,
+          Object? updatedAt = _undefined}) =>
+      _then(Input$Recipe_max_order_by(
+          authorId: authorId == _undefined
+              ? _instance.authorId
+              : (authorId as Enum$order_by?),
+          createdAt: createdAt == _undefined
+              ? _instance.createdAt
+              : (createdAt as Enum$order_by?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          notes:
+              notes == _undefined ? _instance.notes : (notes as Enum$order_by?),
+          source: source == _undefined
+              ? _instance.source
+              : (source as Enum$order_by?),
+          title:
+              title == _undefined ? _instance.title : (title as Enum$order_by?),
+          updatedAt: updatedAt == _undefined
+              ? _instance.updatedAt
+              : (updatedAt as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_max_order_by<TRes>
+    implements CopyWith$Input$Recipe_max_order_by<TRes> {
+  _CopyWithStubImpl$Input$Recipe_max_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? authorId,
+          Enum$order_by? createdAt,
+          Enum$order_by? description,
+          Enum$order_by? id,
+          Enum$order_by? notes,
+          Enum$order_by? source,
+          Enum$order_by? title,
+          Enum$order_by? updatedAt}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5083,24 +8256,87 @@ class Input$Recipe_min_order_by {
     return true;
   }
 
-  Input$Recipe_min_order_by copyWith(
-          {Enum$order_by? Function()? authorId,
-          Enum$order_by? Function()? createdAt,
-          Enum$order_by? Function()? description,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? notes,
-          Enum$order_by? Function()? source,
-          Enum$order_by? Function()? title,
-          Enum$order_by? Function()? updatedAt}) =>
-      Input$Recipe_min_order_by(
-          authorId: authorId == null ? this.authorId : authorId(),
-          createdAt: createdAt == null ? this.createdAt : createdAt(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          notes: notes == null ? this.notes : notes(),
-          source: source == null ? this.source : source(),
-          title: title == null ? this.title : title(),
-          updatedAt: updatedAt == null ? this.updatedAt : updatedAt());
+  CopyWith$Input$Recipe_min_order_by<Input$Recipe_min_order_by> get copyWith =>
+      CopyWith$Input$Recipe_min_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_min_order_by<TRes> {
+  factory CopyWith$Input$Recipe_min_order_by(Input$Recipe_min_order_by instance,
+          TRes Function(Input$Recipe_min_order_by) then) =
+      _CopyWithImpl$Input$Recipe_min_order_by;
+
+  factory CopyWith$Input$Recipe_min_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_min_order_by;
+
+  TRes call(
+      {Enum$order_by? authorId,
+      Enum$order_by? createdAt,
+      Enum$order_by? description,
+      Enum$order_by? id,
+      Enum$order_by? notes,
+      Enum$order_by? source,
+      Enum$order_by? title,
+      Enum$order_by? updatedAt});
+}
+
+class _CopyWithImpl$Input$Recipe_min_order_by<TRes>
+    implements CopyWith$Input$Recipe_min_order_by<TRes> {
+  _CopyWithImpl$Input$Recipe_min_order_by(this._instance, this._then);
+
+  final Input$Recipe_min_order_by _instance;
+
+  final TRes Function(Input$Recipe_min_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? authorId = _undefined,
+          Object? createdAt = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? notes = _undefined,
+          Object? source = _undefined,
+          Object? title = _undefined,
+          Object? updatedAt = _undefined}) =>
+      _then(Input$Recipe_min_order_by(
+          authorId: authorId == _undefined
+              ? _instance.authorId
+              : (authorId as Enum$order_by?),
+          createdAt: createdAt == _undefined
+              ? _instance.createdAt
+              : (createdAt as Enum$order_by?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          notes:
+              notes == _undefined ? _instance.notes : (notes as Enum$order_by?),
+          source: source == _undefined
+              ? _instance.source
+              : (source as Enum$order_by?),
+          title:
+              title == _undefined ? _instance.title : (title as Enum$order_by?),
+          updatedAt: updatedAt == _undefined
+              ? _instance.updatedAt
+              : (updatedAt as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_min_order_by<TRes>
+    implements CopyWith$Input$Recipe_min_order_by<TRes> {
+  _CopyWithStubImpl$Input$Recipe_min_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? authorId,
+          Enum$order_by? createdAt,
+          Enum$order_by? description,
+          Enum$order_by? id,
+          Enum$order_by? notes,
+          Enum$order_by? source,
+          Enum$order_by? title,
+          Enum$order_by? updatedAt}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5138,12 +8374,54 @@ class Input$Recipe_obj_rel_insert_input {
     return true;
   }
 
-  Input$Recipe_obj_rel_insert_input copyWith(
+  CopyWith$Input$Recipe_obj_rel_insert_input<Input$Recipe_obj_rel_insert_input>
+      get copyWith =>
+          CopyWith$Input$Recipe_obj_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_obj_rel_insert_input<TRes> {
+  factory CopyWith$Input$Recipe_obj_rel_insert_input(
+          Input$Recipe_obj_rel_insert_input instance,
+          TRes Function(Input$Recipe_obj_rel_insert_input) then) =
+      _CopyWithImpl$Input$Recipe_obj_rel_insert_input;
+
+  factory CopyWith$Input$Recipe_obj_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_obj_rel_insert_input;
+
+  TRes call(
+      {Input$Recipe_insert_input? data, Input$Recipe_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$Recipe_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$Recipe_obj_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$Recipe_obj_rel_insert_input(this._instance, this._then);
+
+  final Input$Recipe_obj_rel_insert_input _instance;
+
+  final TRes Function(Input$Recipe_obj_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$Recipe_obj_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as Input$Recipe_insert_input),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$Recipe_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$Recipe_obj_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$Recipe_obj_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call(
           {Input$Recipe_insert_input? data,
-          Input$Recipe_on_conflict? Function()? on_conflict}) =>
-      Input$Recipe_obj_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+          Input$Recipe_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5198,15 +8476,61 @@ class Input$Recipe_on_conflict {
     return true;
   }
 
-  Input$Recipe_on_conflict copyWith(
+  CopyWith$Input$Recipe_on_conflict<Input$Recipe_on_conflict> get copyWith =>
+      CopyWith$Input$Recipe_on_conflict(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_on_conflict<TRes> {
+  factory CopyWith$Input$Recipe_on_conflict(Input$Recipe_on_conflict instance,
+          TRes Function(Input$Recipe_on_conflict) then) =
+      _CopyWithImpl$Input$Recipe_on_conflict;
+
+  factory CopyWith$Input$Recipe_on_conflict.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_on_conflict;
+
+  TRes call(
+      {Enum$Recipe_constraint? constraint,
+      List<Enum$Recipe_update_column>? update_columns,
+      Input$Recipe_bool_exp? where});
+}
+
+class _CopyWithImpl$Input$Recipe_on_conflict<TRes>
+    implements CopyWith$Input$Recipe_on_conflict<TRes> {
+  _CopyWithImpl$Input$Recipe_on_conflict(this._instance, this._then);
+
+  final Input$Recipe_on_conflict _instance;
+
+  final TRes Function(Input$Recipe_on_conflict) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? constraint = _undefined,
+          Object? update_columns = _undefined,
+          Object? where = _undefined}) =>
+      _then(Input$Recipe_on_conflict(
+          constraint: constraint == _undefined || constraint == null
+              ? _instance.constraint
+              : (constraint as Enum$Recipe_constraint),
+          update_columns: update_columns == _undefined || update_columns == null
+              ? _instance.update_columns
+              : (update_columns as List<Enum$Recipe_update_column>),
+          where: where == _undefined
+              ? _instance.where
+              : (where as Input$Recipe_bool_exp?)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_on_conflict<TRes>
+    implements CopyWith$Input$Recipe_on_conflict<TRes> {
+  _CopyWithStubImpl$Input$Recipe_on_conflict(this._res);
+
+  TRes _res;
+
+  call(
           {Enum$Recipe_constraint? constraint,
           List<Enum$Recipe_update_column>? update_columns,
-          Input$Recipe_bool_exp? Function()? where}) =>
-      Input$Recipe_on_conflict(
-          constraint: constraint == null ? this.constraint : constraint,
-          update_columns:
-              update_columns == null ? this.update_columns : update_columns,
-          where: where == null ? this.where : where());
+          Input$Recipe_bool_exp? where}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5336,40 +8660,113 @@ class Input$Recipe_order_by {
     return true;
   }
 
-  Input$Recipe_order_by copyWith(
-          {Input$User_order_by? Function()? Author,
-          Input$File_aggregate_order_by? Function()? Files_aggregate,
-          Input$RecipeSection_aggregate_order_by? Function()?
-              RecipeSections_aggregate,
-          Input$_RecipeToTag_aggregate_order_by? Function()?
-              RecipeTags_aggregate,
-          Enum$order_by? Function()? authorId,
-          Enum$order_by? Function()? createdAt,
-          Enum$order_by? Function()? description,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? notes,
-          Enum$order_by? Function()? source,
-          Enum$order_by? Function()? title,
-          Enum$order_by? Function()? updatedAt}) =>
-      Input$Recipe_order_by(
-          Author: Author == null ? this.Author : Author(),
-          Files_aggregate: Files_aggregate == null
-              ? this.Files_aggregate
-              : Files_aggregate(),
-          RecipeSections_aggregate: RecipeSections_aggregate == null
-              ? this.RecipeSections_aggregate
-              : RecipeSections_aggregate(),
-          RecipeTags_aggregate: RecipeTags_aggregate == null
-              ? this.RecipeTags_aggregate
-              : RecipeTags_aggregate(),
-          authorId: authorId == null ? this.authorId : authorId(),
-          createdAt: createdAt == null ? this.createdAt : createdAt(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id(),
-          notes: notes == null ? this.notes : notes(),
-          source: source == null ? this.source : source(),
-          title: title == null ? this.title : title(),
-          updatedAt: updatedAt == null ? this.updatedAt : updatedAt());
+  CopyWith$Input$Recipe_order_by<Input$Recipe_order_by> get copyWith =>
+      CopyWith$Input$Recipe_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_order_by<TRes> {
+  factory CopyWith$Input$Recipe_order_by(Input$Recipe_order_by instance,
+          TRes Function(Input$Recipe_order_by) then) =
+      _CopyWithImpl$Input$Recipe_order_by;
+
+  factory CopyWith$Input$Recipe_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_order_by;
+
+  TRes call(
+      {Input$User_order_by? Author,
+      Input$File_aggregate_order_by? Files_aggregate,
+      Input$RecipeSection_aggregate_order_by? RecipeSections_aggregate,
+      Input$_RecipeToTag_aggregate_order_by? RecipeTags_aggregate,
+      Enum$order_by? authorId,
+      Enum$order_by? createdAt,
+      Enum$order_by? description,
+      Enum$order_by? id,
+      Enum$order_by? notes,
+      Enum$order_by? source,
+      Enum$order_by? title,
+      Enum$order_by? updatedAt});
+}
+
+class _CopyWithImpl$Input$Recipe_order_by<TRes>
+    implements CopyWith$Input$Recipe_order_by<TRes> {
+  _CopyWithImpl$Input$Recipe_order_by(this._instance, this._then);
+
+  final Input$Recipe_order_by _instance;
+
+  final TRes Function(Input$Recipe_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Author = _undefined,
+          Object? Files_aggregate = _undefined,
+          Object? RecipeSections_aggregate = _undefined,
+          Object? RecipeTags_aggregate = _undefined,
+          Object? authorId = _undefined,
+          Object? createdAt = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined,
+          Object? notes = _undefined,
+          Object? source = _undefined,
+          Object? title = _undefined,
+          Object? updatedAt = _undefined}) =>
+      _then(Input$Recipe_order_by(
+          Author: Author == _undefined
+              ? _instance.Author
+              : (Author as Input$User_order_by?),
+          Files_aggregate: Files_aggregate == _undefined
+              ? _instance.Files_aggregate
+              : (Files_aggregate as Input$File_aggregate_order_by?),
+          RecipeSections_aggregate: RecipeSections_aggregate == _undefined
+              ? _instance.RecipeSections_aggregate
+              : (RecipeSections_aggregate
+                  as Input$RecipeSection_aggregate_order_by?),
+          RecipeTags_aggregate: RecipeTags_aggregate == _undefined
+              ? _instance.RecipeTags_aggregate
+              : (RecipeTags_aggregate
+                  as Input$_RecipeToTag_aggregate_order_by?),
+          authorId: authorId == _undefined
+              ? _instance.authorId
+              : (authorId as Enum$order_by?),
+          createdAt: createdAt == _undefined
+              ? _instance.createdAt
+              : (createdAt as Enum$order_by?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          notes:
+              notes == _undefined ? _instance.notes : (notes as Enum$order_by?),
+          source: source == _undefined
+              ? _instance.source
+              : (source as Enum$order_by?),
+          title:
+              title == _undefined ? _instance.title : (title as Enum$order_by?),
+          updatedAt: updatedAt == _undefined
+              ? _instance.updatedAt
+              : (updatedAt as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_order_by<TRes>
+    implements CopyWith$Input$Recipe_order_by<TRes> {
+  _CopyWithStubImpl$Input$Recipe_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$User_order_by? Author,
+          Input$File_aggregate_order_by? Files_aggregate,
+          Input$RecipeSection_aggregate_order_by? RecipeSections_aggregate,
+          Input$_RecipeToTag_aggregate_order_by? RecipeTags_aggregate,
+          Enum$order_by? authorId,
+          Enum$order_by? createdAt,
+          Enum$order_by? description,
+          Enum$order_by? id,
+          Enum$order_by? notes,
+          Enum$order_by? source,
+          Enum$order_by? title,
+          Enum$order_by? updatedAt}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5399,8 +8796,43 @@ class Input$Recipe_pk_columns_input {
     return true;
   }
 
-  Input$Recipe_pk_columns_input copyWith({String? id}) =>
-      Input$Recipe_pk_columns_input(id: id == null ? this.id : id);
+  CopyWith$Input$Recipe_pk_columns_input<Input$Recipe_pk_columns_input>
+      get copyWith => CopyWith$Input$Recipe_pk_columns_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_pk_columns_input<TRes> {
+  factory CopyWith$Input$Recipe_pk_columns_input(
+          Input$Recipe_pk_columns_input instance,
+          TRes Function(Input$Recipe_pk_columns_input) then) =
+      _CopyWithImpl$Input$Recipe_pk_columns_input;
+
+  factory CopyWith$Input$Recipe_pk_columns_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_pk_columns_input;
+
+  TRes call({String? id});
+}
+
+class _CopyWithImpl$Input$Recipe_pk_columns_input<TRes>
+    implements CopyWith$Input$Recipe_pk_columns_input<TRes> {
+  _CopyWithImpl$Input$Recipe_pk_columns_input(this._instance, this._then);
+
+  final Input$Recipe_pk_columns_input _instance;
+
+  final TRes Function(Input$Recipe_pk_columns_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? id = _undefined}) => _then(Input$Recipe_pk_columns_input(
+      id: id == _undefined || id == null ? _instance.id : (id as String)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_pk_columns_input<TRes>
+    implements CopyWith$Input$Recipe_pk_columns_input<TRes> {
+  _CopyWithStubImpl$Input$Recipe_pk_columns_input(this._res);
+
+  TRes _res;
+
+  call({String? id}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5449,16 +8881,54 @@ class Input$Recipe_set_input {
     return true;
   }
 
-  Input$Recipe_set_input copyWith(
-          {String? Function()? description,
-          String? Function()? notes,
-          String? Function()? source,
-          String? Function()? title}) =>
-      Input$Recipe_set_input(
-          description: description == null ? this.description : description(),
-          notes: notes == null ? this.notes : notes(),
-          source: source == null ? this.source : source(),
-          title: title == null ? this.title : title());
+  CopyWith$Input$Recipe_set_input<Input$Recipe_set_input> get copyWith =>
+      CopyWith$Input$Recipe_set_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Recipe_set_input<TRes> {
+  factory CopyWith$Input$Recipe_set_input(Input$Recipe_set_input instance,
+          TRes Function(Input$Recipe_set_input) then) =
+      _CopyWithImpl$Input$Recipe_set_input;
+
+  factory CopyWith$Input$Recipe_set_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_set_input;
+
+  TRes call(
+      {String? description, String? notes, String? source, String? title});
+}
+
+class _CopyWithImpl$Input$Recipe_set_input<TRes>
+    implements CopyWith$Input$Recipe_set_input<TRes> {
+  _CopyWithImpl$Input$Recipe_set_input(this._instance, this._then);
+
+  final Input$Recipe_set_input _instance;
+
+  final TRes Function(Input$Recipe_set_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? description = _undefined,
+          Object? notes = _undefined,
+          Object? source = _undefined,
+          Object? title = _undefined}) =>
+      _then(Input$Recipe_set_input(
+          description: description == _undefined
+              ? _instance.description
+              : (description as String?),
+          notes: notes == _undefined ? _instance.notes : (notes as String?),
+          source: source == _undefined ? _instance.source : (source as String?),
+          title: title == _undefined ? _instance.title : (title as String?)));
+}
+
+class _CopyWithStubImpl$Input$Recipe_set_input<TRes>
+    implements CopyWith$Input$Recipe_set_input<TRes> {
+  _CopyWithStubImpl$Input$Recipe_set_input(this._res);
+
+  TRes _res;
+
+  call({String? description, String? notes, String? source, String? title}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5572,30 +9042,109 @@ class Input$Step_aggregate_order_by {
     return true;
   }
 
-  Input$Step_aggregate_order_by copyWith(
-          {Input$Step_avg_order_by? Function()? avg,
-          Enum$order_by? Function()? count,
-          Input$Step_max_order_by? Function()? max,
-          Input$Step_min_order_by? Function()? min,
-          Input$Step_stddev_order_by? Function()? stddev,
-          Input$Step_stddev_pop_order_by? Function()? stddev_pop,
-          Input$Step_stddev_samp_order_by? Function()? stddev_samp,
-          Input$Step_sum_order_by? Function()? sum,
-          Input$Step_var_pop_order_by? Function()? var_pop,
-          Input$Step_var_samp_order_by? Function()? var_samp,
-          Input$Step_variance_order_by? Function()? variance}) =>
-      Input$Step_aggregate_order_by(
-          avg: avg == null ? this.avg : avg(),
-          count: count == null ? this.count : count(),
-          max: max == null ? this.max : max(),
-          min: min == null ? this.min : min(),
-          stddev: stddev == null ? this.stddev : stddev(),
-          stddev_pop: stddev_pop == null ? this.stddev_pop : stddev_pop(),
-          stddev_samp: stddev_samp == null ? this.stddev_samp : stddev_samp(),
-          sum: sum == null ? this.sum : sum(),
-          var_pop: var_pop == null ? this.var_pop : var_pop(),
-          var_samp: var_samp == null ? this.var_samp : var_samp(),
-          variance: variance == null ? this.variance : variance());
+  CopyWith$Input$Step_aggregate_order_by<Input$Step_aggregate_order_by>
+      get copyWith => CopyWith$Input$Step_aggregate_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_aggregate_order_by<TRes> {
+  factory CopyWith$Input$Step_aggregate_order_by(
+          Input$Step_aggregate_order_by instance,
+          TRes Function(Input$Step_aggregate_order_by) then) =
+      _CopyWithImpl$Input$Step_aggregate_order_by;
+
+  factory CopyWith$Input$Step_aggregate_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_aggregate_order_by;
+
+  TRes call(
+      {Input$Step_avg_order_by? avg,
+      Enum$order_by? count,
+      Input$Step_max_order_by? max,
+      Input$Step_min_order_by? min,
+      Input$Step_stddev_order_by? stddev,
+      Input$Step_stddev_pop_order_by? stddev_pop,
+      Input$Step_stddev_samp_order_by? stddev_samp,
+      Input$Step_sum_order_by? sum,
+      Input$Step_var_pop_order_by? var_pop,
+      Input$Step_var_samp_order_by? var_samp,
+      Input$Step_variance_order_by? variance});
+}
+
+class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
+    implements CopyWith$Input$Step_aggregate_order_by<TRes> {
+  _CopyWithImpl$Input$Step_aggregate_order_by(this._instance, this._then);
+
+  final Input$Step_aggregate_order_by _instance;
+
+  final TRes Function(Input$Step_aggregate_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? avg = _undefined,
+          Object? count = _undefined,
+          Object? max = _undefined,
+          Object? min = _undefined,
+          Object? stddev = _undefined,
+          Object? stddev_pop = _undefined,
+          Object? stddev_samp = _undefined,
+          Object? sum = _undefined,
+          Object? var_pop = _undefined,
+          Object? var_samp = _undefined,
+          Object? variance = _undefined}) =>
+      _then(Input$Step_aggregate_order_by(
+          avg: avg == _undefined
+              ? _instance.avg
+              : (avg as Input$Step_avg_order_by?),
+          count:
+              count == _undefined ? _instance.count : (count as Enum$order_by?),
+          max: max == _undefined
+              ? _instance.max
+              : (max as Input$Step_max_order_by?),
+          min: min == _undefined
+              ? _instance.min
+              : (min as Input$Step_min_order_by?),
+          stddev: stddev == _undefined
+              ? _instance.stddev
+              : (stddev as Input$Step_stddev_order_by?),
+          stddev_pop: stddev_pop == _undefined
+              ? _instance.stddev_pop
+              : (stddev_pop as Input$Step_stddev_pop_order_by?),
+          stddev_samp: stddev_samp == _undefined
+              ? _instance.stddev_samp
+              : (stddev_samp as Input$Step_stddev_samp_order_by?),
+          sum: sum == _undefined
+              ? _instance.sum
+              : (sum as Input$Step_sum_order_by?),
+          var_pop: var_pop == _undefined
+              ? _instance.var_pop
+              : (var_pop as Input$Step_var_pop_order_by?),
+          var_samp: var_samp == _undefined
+              ? _instance.var_samp
+              : (var_samp as Input$Step_var_samp_order_by?),
+          variance: variance == _undefined
+              ? _instance.variance
+              : (variance as Input$Step_variance_order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_aggregate_order_by<TRes>
+    implements CopyWith$Input$Step_aggregate_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_aggregate_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$Step_avg_order_by? avg,
+          Enum$order_by? count,
+          Input$Step_max_order_by? max,
+          Input$Step_min_order_by? min,
+          Input$Step_stddev_order_by? stddev,
+          Input$Step_stddev_pop_order_by? stddev_pop,
+          Input$Step_stddev_samp_order_by? stddev_samp,
+          Input$Step_sum_order_by? sum,
+          Input$Step_var_pop_order_by? var_pop,
+          Input$Step_var_samp_order_by? var_samp,
+          Input$Step_variance_order_by? variance}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5639,12 +9188,54 @@ class Input$Step_arr_rel_insert_input {
     return true;
   }
 
-  Input$Step_arr_rel_insert_input copyWith(
+  CopyWith$Input$Step_arr_rel_insert_input<Input$Step_arr_rel_insert_input>
+      get copyWith => CopyWith$Input$Step_arr_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_arr_rel_insert_input<TRes> {
+  factory CopyWith$Input$Step_arr_rel_insert_input(
+          Input$Step_arr_rel_insert_input instance,
+          TRes Function(Input$Step_arr_rel_insert_input) then) =
+      _CopyWithImpl$Input$Step_arr_rel_insert_input;
+
+  factory CopyWith$Input$Step_arr_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_arr_rel_insert_input;
+
+  TRes call(
+      {List<Input$Step_insert_input>? data,
+      Input$Step_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$Step_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$Step_arr_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$Step_arr_rel_insert_input(this._instance, this._then);
+
+  final Input$Step_arr_rel_insert_input _instance;
+
+  final TRes Function(Input$Step_arr_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$Step_arr_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as List<Input$Step_insert_input>),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$Step_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$Step_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$Step_arr_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$Step_arr_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call(
           {List<Input$Step_insert_input>? data,
-          Input$Step_on_conflict? Function()? on_conflict}) =>
-      Input$Step_arr_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+          Input$Step_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5675,8 +9266,43 @@ class Input$Step_avg_order_by {
     return true;
   }
 
-  Input$Step_avg_order_by copyWith({Enum$order_by? Function()? order}) =>
-      Input$Step_avg_order_by(order: order == null ? this.order : order());
+  CopyWith$Input$Step_avg_order_by<Input$Step_avg_order_by> get copyWith =>
+      CopyWith$Input$Step_avg_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_avg_order_by<TRes> {
+  factory CopyWith$Input$Step_avg_order_by(Input$Step_avg_order_by instance,
+          TRes Function(Input$Step_avg_order_by) then) =
+      _CopyWithImpl$Input$Step_avg_order_by;
+
+  factory CopyWith$Input$Step_avg_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_avg_order_by;
+
+  TRes call({Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$Step_avg_order_by<TRes>
+    implements CopyWith$Input$Step_avg_order_by<TRes> {
+  _CopyWithImpl$Input$Step_avg_order_by(this._instance, this._then);
+
+  final Input$Step_avg_order_by _instance;
+
+  final TRes Function(Input$Step_avg_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? order = _undefined}) => _then(Input$Step_avg_order_by(
+      order:
+          order == _undefined ? _instance.order : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_avg_order_by<TRes>
+    implements CopyWith$Input$Step_avg_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_avg_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5804,31 +9430,103 @@ class Input$Step_bool_exp {
     return true;
   }
 
-  Input$Step_bool_exp copyWith(
-          {Input$File_bool_exp? Function()? File,
-          Input$RecipeSection_bool_exp? Function()? RecipeSection,
-          List<Input$Step_bool_exp>? Function()? $_and,
-          Input$Step_bool_exp? Function()? $_not,
-          List<Input$Step_bool_exp>? Function()? $_or,
-          Input$String_comparison_exp? Function()? description,
-          Input$String_comparison_exp? Function()? fileId,
-          Input$String_comparison_exp? Function()? id,
-          Input$Int_comparison_exp? Function()? order,
-          Input$String_comparison_exp? Function()? recipeSectionId}) =>
-      Input$Step_bool_exp(
-          File: File == null ? this.File : File(),
-          RecipeSection:
-              RecipeSection == null ? this.RecipeSection : RecipeSection(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          description: description == null ? this.description : description(),
-          fileId: fileId == null ? this.fileId : fileId(),
-          id: id == null ? this.id : id(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId());
+  CopyWith$Input$Step_bool_exp<Input$Step_bool_exp> get copyWith =>
+      CopyWith$Input$Step_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_bool_exp<TRes> {
+  factory CopyWith$Input$Step_bool_exp(Input$Step_bool_exp instance,
+          TRes Function(Input$Step_bool_exp) then) =
+      _CopyWithImpl$Input$Step_bool_exp;
+
+  factory CopyWith$Input$Step_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_bool_exp;
+
+  TRes call(
+      {Input$File_bool_exp? File,
+      Input$RecipeSection_bool_exp? RecipeSection,
+      List<Input$Step_bool_exp>? $_and,
+      Input$Step_bool_exp? $_not,
+      List<Input$Step_bool_exp>? $_or,
+      Input$String_comparison_exp? description,
+      Input$String_comparison_exp? fileId,
+      Input$String_comparison_exp? id,
+      Input$Int_comparison_exp? order,
+      Input$String_comparison_exp? recipeSectionId});
+}
+
+class _CopyWithImpl$Input$Step_bool_exp<TRes>
+    implements CopyWith$Input$Step_bool_exp<TRes> {
+  _CopyWithImpl$Input$Step_bool_exp(this._instance, this._then);
+
+  final Input$Step_bool_exp _instance;
+
+  final TRes Function(Input$Step_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? File = _undefined,
+          Object? RecipeSection = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? description = _undefined,
+          Object? fileId = _undefined,
+          Object? id = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined}) =>
+      _then(Input$Step_bool_exp(
+          File: File == _undefined
+              ? _instance.File
+              : (File as Input$File_bool_exp?),
+          RecipeSection: RecipeSection == _undefined
+              ? _instance.RecipeSection
+              : (RecipeSection as Input$RecipeSection_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$Step_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$Step_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$Step_bool_exp>?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Input$String_comparison_exp?),
+          fileId: fileId == _undefined
+              ? _instance.fileId
+              : (fileId as Input$String_comparison_exp?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?),
+          order: order == _undefined
+              ? _instance.order
+              : (order as Input$Int_comparison_exp?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$Step_bool_exp<TRes>
+    implements CopyWith$Input$Step_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$Step_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$File_bool_exp? File,
+          Input$RecipeSection_bool_exp? RecipeSection,
+          List<Input$Step_bool_exp>? $_and,
+          Input$Step_bool_exp? $_not,
+          List<Input$Step_bool_exp>? $_or,
+          Input$String_comparison_exp? description,
+          Input$String_comparison_exp? fileId,
+          Input$String_comparison_exp? id,
+          Input$Int_comparison_exp? order,
+          Input$String_comparison_exp? recipeSectionId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5858,8 +9556,42 @@ class Input$Step_inc_input {
     return true;
   }
 
-  Input$Step_inc_input copyWith({int? Function()? order}) =>
-      Input$Step_inc_input(order: order == null ? this.order : order());
+  CopyWith$Input$Step_inc_input<Input$Step_inc_input> get copyWith =>
+      CopyWith$Input$Step_inc_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_inc_input<TRes> {
+  factory CopyWith$Input$Step_inc_input(Input$Step_inc_input instance,
+          TRes Function(Input$Step_inc_input) then) =
+      _CopyWithImpl$Input$Step_inc_input;
+
+  factory CopyWith$Input$Step_inc_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_inc_input;
+
+  TRes call({int? order});
+}
+
+class _CopyWithImpl$Input$Step_inc_input<TRes>
+    implements CopyWith$Input$Step_inc_input<TRes> {
+  _CopyWithImpl$Input$Step_inc_input(this._instance, this._then);
+
+  final Input$Step_inc_input _instance;
+
+  final TRes Function(Input$Step_inc_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? order = _undefined}) => _then(Input$Step_inc_input(
+      order: order == _undefined ? _instance.order : (order as int?)));
+}
+
+class _CopyWithStubImpl$Input$Step_inc_input<TRes>
+    implements CopyWith$Input$Step_inc_input<TRes> {
+  _CopyWithStubImpl$Input$Step_inc_input(this._res);
+
+  TRes _res;
+
+  call({int? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5940,25 +9672,79 @@ class Input$Step_insert_input {
     return true;
   }
 
-  Input$Step_insert_input copyWith(
-          {Input$File_obj_rel_insert_input? Function()? File,
-          Input$RecipeSection_obj_rel_insert_input? Function()? RecipeSection,
-          String? Function()? description,
-          String? Function()? fileId,
-          String? Function()? id,
-          int? Function()? order,
-          String? Function()? recipeSectionId}) =>
-      Input$Step_insert_input(
-          File: File == null ? this.File : File(),
-          RecipeSection:
-              RecipeSection == null ? this.RecipeSection : RecipeSection(),
-          description: description == null ? this.description : description(),
-          fileId: fileId == null ? this.fileId : fileId(),
-          id: id == null ? this.id : id(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId());
+  CopyWith$Input$Step_insert_input<Input$Step_insert_input> get copyWith =>
+      CopyWith$Input$Step_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_insert_input<TRes> {
+  factory CopyWith$Input$Step_insert_input(Input$Step_insert_input instance,
+          TRes Function(Input$Step_insert_input) then) =
+      _CopyWithImpl$Input$Step_insert_input;
+
+  factory CopyWith$Input$Step_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_insert_input;
+
+  TRes call(
+      {Input$File_obj_rel_insert_input? File,
+      Input$RecipeSection_obj_rel_insert_input? RecipeSection,
+      String? description,
+      String? fileId,
+      String? id,
+      int? order,
+      String? recipeSectionId});
+}
+
+class _CopyWithImpl$Input$Step_insert_input<TRes>
+    implements CopyWith$Input$Step_insert_input<TRes> {
+  _CopyWithImpl$Input$Step_insert_input(this._instance, this._then);
+
+  final Input$Step_insert_input _instance;
+
+  final TRes Function(Input$Step_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? File = _undefined,
+          Object? RecipeSection = _undefined,
+          Object? description = _undefined,
+          Object? fileId = _undefined,
+          Object? id = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined}) =>
+      _then(Input$Step_insert_input(
+          File: File == _undefined
+              ? _instance.File
+              : (File as Input$File_obj_rel_insert_input?),
+          RecipeSection: RecipeSection == _undefined
+              ? _instance.RecipeSection
+              : (RecipeSection as Input$RecipeSection_obj_rel_insert_input?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as String?),
+          fileId: fileId == _undefined ? _instance.fileId : (fileId as String?),
+          id: id == _undefined ? _instance.id : (id as String?),
+          order: order == _undefined ? _instance.order : (order as int?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as String?)));
+}
+
+class _CopyWithStubImpl$Input$Step_insert_input<TRes>
+    implements CopyWith$Input$Step_insert_input<TRes> {
+  _CopyWithStubImpl$Input$Step_insert_input(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$File_obj_rel_insert_input? File,
+          Input$RecipeSection_obj_rel_insert_input? RecipeSection,
+          String? description,
+          String? fileId,
+          String? id,
+          int? order,
+          String? recipeSectionId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6023,20 +9809,70 @@ class Input$Step_max_order_by {
     return true;
   }
 
-  Input$Step_max_order_by copyWith(
-          {Enum$order_by? Function()? description,
-          Enum$order_by? Function()? fileId,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? recipeSectionId}) =>
-      Input$Step_max_order_by(
-          description: description == null ? this.description : description(),
-          fileId: fileId == null ? this.fileId : fileId(),
-          id: id == null ? this.id : id(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId());
+  CopyWith$Input$Step_max_order_by<Input$Step_max_order_by> get copyWith =>
+      CopyWith$Input$Step_max_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_max_order_by<TRes> {
+  factory CopyWith$Input$Step_max_order_by(Input$Step_max_order_by instance,
+          TRes Function(Input$Step_max_order_by) then) =
+      _CopyWithImpl$Input$Step_max_order_by;
+
+  factory CopyWith$Input$Step_max_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_max_order_by;
+
+  TRes call(
+      {Enum$order_by? description,
+      Enum$order_by? fileId,
+      Enum$order_by? id,
+      Enum$order_by? order,
+      Enum$order_by? recipeSectionId});
+}
+
+class _CopyWithImpl$Input$Step_max_order_by<TRes>
+    implements CopyWith$Input$Step_max_order_by<TRes> {
+  _CopyWithImpl$Input$Step_max_order_by(this._instance, this._then);
+
+  final Input$Step_max_order_by _instance;
+
+  final TRes Function(Input$Step_max_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? description = _undefined,
+          Object? fileId = _undefined,
+          Object? id = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined}) =>
+      _then(Input$Step_max_order_by(
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          fileId: fileId == _undefined
+              ? _instance.fileId
+              : (fileId as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_max_order_by<TRes>
+    implements CopyWith$Input$Step_max_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_max_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? description,
+          Enum$order_by? fileId,
+          Enum$order_by? id,
+          Enum$order_by? order,
+          Enum$order_by? recipeSectionId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6101,20 +9937,70 @@ class Input$Step_min_order_by {
     return true;
   }
 
-  Input$Step_min_order_by copyWith(
-          {Enum$order_by? Function()? description,
-          Enum$order_by? Function()? fileId,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? recipeSectionId}) =>
-      Input$Step_min_order_by(
-          description: description == null ? this.description : description(),
-          fileId: fileId == null ? this.fileId : fileId(),
-          id: id == null ? this.id : id(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId());
+  CopyWith$Input$Step_min_order_by<Input$Step_min_order_by> get copyWith =>
+      CopyWith$Input$Step_min_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_min_order_by<TRes> {
+  factory CopyWith$Input$Step_min_order_by(Input$Step_min_order_by instance,
+          TRes Function(Input$Step_min_order_by) then) =
+      _CopyWithImpl$Input$Step_min_order_by;
+
+  factory CopyWith$Input$Step_min_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_min_order_by;
+
+  TRes call(
+      {Enum$order_by? description,
+      Enum$order_by? fileId,
+      Enum$order_by? id,
+      Enum$order_by? order,
+      Enum$order_by? recipeSectionId});
+}
+
+class _CopyWithImpl$Input$Step_min_order_by<TRes>
+    implements CopyWith$Input$Step_min_order_by<TRes> {
+  _CopyWithImpl$Input$Step_min_order_by(this._instance, this._then);
+
+  final Input$Step_min_order_by _instance;
+
+  final TRes Function(Input$Step_min_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? description = _undefined,
+          Object? fileId = _undefined,
+          Object? id = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined}) =>
+      _then(Input$Step_min_order_by(
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          fileId: fileId == _undefined
+              ? _instance.fileId
+              : (fileId as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_min_order_by<TRes>
+    implements CopyWith$Input$Step_min_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_min_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? description,
+          Enum$order_by? fileId,
+          Enum$order_by? id,
+          Enum$order_by? order,
+          Enum$order_by? recipeSectionId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6169,15 +10055,61 @@ class Input$Step_on_conflict {
     return true;
   }
 
-  Input$Step_on_conflict copyWith(
+  CopyWith$Input$Step_on_conflict<Input$Step_on_conflict> get copyWith =>
+      CopyWith$Input$Step_on_conflict(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_on_conflict<TRes> {
+  factory CopyWith$Input$Step_on_conflict(Input$Step_on_conflict instance,
+          TRes Function(Input$Step_on_conflict) then) =
+      _CopyWithImpl$Input$Step_on_conflict;
+
+  factory CopyWith$Input$Step_on_conflict.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_on_conflict;
+
+  TRes call(
+      {Enum$Step_constraint? constraint,
+      List<Enum$Step_update_column>? update_columns,
+      Input$Step_bool_exp? where});
+}
+
+class _CopyWithImpl$Input$Step_on_conflict<TRes>
+    implements CopyWith$Input$Step_on_conflict<TRes> {
+  _CopyWithImpl$Input$Step_on_conflict(this._instance, this._then);
+
+  final Input$Step_on_conflict _instance;
+
+  final TRes Function(Input$Step_on_conflict) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? constraint = _undefined,
+          Object? update_columns = _undefined,
+          Object? where = _undefined}) =>
+      _then(Input$Step_on_conflict(
+          constraint: constraint == _undefined || constraint == null
+              ? _instance.constraint
+              : (constraint as Enum$Step_constraint),
+          update_columns: update_columns == _undefined || update_columns == null
+              ? _instance.update_columns
+              : (update_columns as List<Enum$Step_update_column>),
+          where: where == _undefined
+              ? _instance.where
+              : (where as Input$Step_bool_exp?)));
+}
+
+class _CopyWithStubImpl$Input$Step_on_conflict<TRes>
+    implements CopyWith$Input$Step_on_conflict<TRes> {
+  _CopyWithStubImpl$Input$Step_on_conflict(this._res);
+
+  TRes _res;
+
+  call(
           {Enum$Step_constraint? constraint,
           List<Enum$Step_update_column>? update_columns,
-          Input$Step_bool_exp? Function()? where}) =>
-      Input$Step_on_conflict(
-          constraint: constraint == null ? this.constraint : constraint,
-          update_columns:
-              update_columns == null ? this.update_columns : update_columns,
-          where: where == null ? this.where : where());
+          Input$Step_bool_exp? where}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6263,25 +10195,82 @@ class Input$Step_order_by {
     return true;
   }
 
-  Input$Step_order_by copyWith(
-          {Input$File_order_by? Function()? File,
-          Input$RecipeSection_order_by? Function()? RecipeSection,
-          Enum$order_by? Function()? description,
-          Enum$order_by? Function()? fileId,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? order,
-          Enum$order_by? Function()? recipeSectionId}) =>
-      Input$Step_order_by(
-          File: File == null ? this.File : File(),
-          RecipeSection:
-              RecipeSection == null ? this.RecipeSection : RecipeSection(),
-          description: description == null ? this.description : description(),
-          fileId: fileId == null ? this.fileId : fileId(),
-          id: id == null ? this.id : id(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId());
+  CopyWith$Input$Step_order_by<Input$Step_order_by> get copyWith =>
+      CopyWith$Input$Step_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_order_by<TRes> {
+  factory CopyWith$Input$Step_order_by(Input$Step_order_by instance,
+          TRes Function(Input$Step_order_by) then) =
+      _CopyWithImpl$Input$Step_order_by;
+
+  factory CopyWith$Input$Step_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_order_by;
+
+  TRes call(
+      {Input$File_order_by? File,
+      Input$RecipeSection_order_by? RecipeSection,
+      Enum$order_by? description,
+      Enum$order_by? fileId,
+      Enum$order_by? id,
+      Enum$order_by? order,
+      Enum$order_by? recipeSectionId});
+}
+
+class _CopyWithImpl$Input$Step_order_by<TRes>
+    implements CopyWith$Input$Step_order_by<TRes> {
+  _CopyWithImpl$Input$Step_order_by(this._instance, this._then);
+
+  final Input$Step_order_by _instance;
+
+  final TRes Function(Input$Step_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? File = _undefined,
+          Object? RecipeSection = _undefined,
+          Object? description = _undefined,
+          Object? fileId = _undefined,
+          Object? id = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined}) =>
+      _then(Input$Step_order_by(
+          File: File == _undefined
+              ? _instance.File
+              : (File as Input$File_order_by?),
+          RecipeSection: RecipeSection == _undefined
+              ? _instance.RecipeSection
+              : (RecipeSection as Input$RecipeSection_order_by?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          fileId: fileId == _undefined
+              ? _instance.fileId
+              : (fileId as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          order:
+              order == _undefined ? _instance.order : (order as Enum$order_by?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_order_by<TRes>
+    implements CopyWith$Input$Step_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$File_order_by? File,
+          Input$RecipeSection_order_by? RecipeSection,
+          Enum$order_by? description,
+          Enum$order_by? fileId,
+          Enum$order_by? id,
+          Enum$order_by? order,
+          Enum$order_by? recipeSectionId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6311,8 +10300,43 @@ class Input$Step_pk_columns_input {
     return true;
   }
 
-  Input$Step_pk_columns_input copyWith({String? id}) =>
-      Input$Step_pk_columns_input(id: id == null ? this.id : id);
+  CopyWith$Input$Step_pk_columns_input<Input$Step_pk_columns_input>
+      get copyWith => CopyWith$Input$Step_pk_columns_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_pk_columns_input<TRes> {
+  factory CopyWith$Input$Step_pk_columns_input(
+          Input$Step_pk_columns_input instance,
+          TRes Function(Input$Step_pk_columns_input) then) =
+      _CopyWithImpl$Input$Step_pk_columns_input;
+
+  factory CopyWith$Input$Step_pk_columns_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_pk_columns_input;
+
+  TRes call({String? id});
+}
+
+class _CopyWithImpl$Input$Step_pk_columns_input<TRes>
+    implements CopyWith$Input$Step_pk_columns_input<TRes> {
+  _CopyWithImpl$Input$Step_pk_columns_input(this._instance, this._then);
+
+  final Input$Step_pk_columns_input _instance;
+
+  final TRes Function(Input$Step_pk_columns_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? id = _undefined}) => _then(Input$Step_pk_columns_input(
+      id: id == _undefined || id == null ? _instance.id : (id as String)));
+}
+
+class _CopyWithStubImpl$Input$Step_pk_columns_input<TRes>
+    implements CopyWith$Input$Step_pk_columns_input<TRes> {
+  _CopyWithStubImpl$Input$Step_pk_columns_input(this._res);
+
+  TRes _res;
+
+  call({String? id}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6362,18 +10386,63 @@ class Input$Step_set_input {
     return true;
   }
 
-  Input$Step_set_input copyWith(
-          {String? Function()? description,
-          String? Function()? fileId,
-          int? Function()? order,
-          String? Function()? recipeSectionId}) =>
-      Input$Step_set_input(
-          description: description == null ? this.description : description(),
-          fileId: fileId == null ? this.fileId : fileId(),
-          order: order == null ? this.order : order(),
-          recipeSectionId: recipeSectionId == null
-              ? this.recipeSectionId
-              : recipeSectionId());
+  CopyWith$Input$Step_set_input<Input$Step_set_input> get copyWith =>
+      CopyWith$Input$Step_set_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_set_input<TRes> {
+  factory CopyWith$Input$Step_set_input(Input$Step_set_input instance,
+          TRes Function(Input$Step_set_input) then) =
+      _CopyWithImpl$Input$Step_set_input;
+
+  factory CopyWith$Input$Step_set_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_set_input;
+
+  TRes call(
+      {String? description,
+      String? fileId,
+      int? order,
+      String? recipeSectionId});
+}
+
+class _CopyWithImpl$Input$Step_set_input<TRes>
+    implements CopyWith$Input$Step_set_input<TRes> {
+  _CopyWithImpl$Input$Step_set_input(this._instance, this._then);
+
+  final Input$Step_set_input _instance;
+
+  final TRes Function(Input$Step_set_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? description = _undefined,
+          Object? fileId = _undefined,
+          Object? order = _undefined,
+          Object? recipeSectionId = _undefined}) =>
+      _then(Input$Step_set_input(
+          description: description == _undefined
+              ? _instance.description
+              : (description as String?),
+          fileId: fileId == _undefined ? _instance.fileId : (fileId as String?),
+          order: order == _undefined ? _instance.order : (order as int?),
+          recipeSectionId: recipeSectionId == _undefined
+              ? _instance.recipeSectionId
+              : (recipeSectionId as String?)));
+}
+
+class _CopyWithStubImpl$Input$Step_set_input<TRes>
+    implements CopyWith$Input$Step_set_input<TRes> {
+  _CopyWithStubImpl$Input$Step_set_input(this._res);
+
+  TRes _res;
+
+  call(
+          {String? description,
+          String? fileId,
+          int? order,
+          String? recipeSectionId}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6404,8 +10473,44 @@ class Input$Step_stddev_order_by {
     return true;
   }
 
-  Input$Step_stddev_order_by copyWith({Enum$order_by? Function()? order}) =>
-      Input$Step_stddev_order_by(order: order == null ? this.order : order());
+  CopyWith$Input$Step_stddev_order_by<Input$Step_stddev_order_by>
+      get copyWith => CopyWith$Input$Step_stddev_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_stddev_order_by<TRes> {
+  factory CopyWith$Input$Step_stddev_order_by(
+          Input$Step_stddev_order_by instance,
+          TRes Function(Input$Step_stddev_order_by) then) =
+      _CopyWithImpl$Input$Step_stddev_order_by;
+
+  factory CopyWith$Input$Step_stddev_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_stddev_order_by;
+
+  TRes call({Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$Step_stddev_order_by<TRes>
+    implements CopyWith$Input$Step_stddev_order_by<TRes> {
+  _CopyWithImpl$Input$Step_stddev_order_by(this._instance, this._then);
+
+  final Input$Step_stddev_order_by _instance;
+
+  final TRes Function(Input$Step_stddev_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? order = _undefined}) => _then(Input$Step_stddev_order_by(
+      order:
+          order == _undefined ? _instance.order : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_stddev_order_by<TRes>
+    implements CopyWith$Input$Step_stddev_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_stddev_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6436,9 +10541,46 @@ class Input$Step_stddev_pop_order_by {
     return true;
   }
 
-  Input$Step_stddev_pop_order_by copyWith({Enum$order_by? Function()? order}) =>
-      Input$Step_stddev_pop_order_by(
-          order: order == null ? this.order : order());
+  CopyWith$Input$Step_stddev_pop_order_by<Input$Step_stddev_pop_order_by>
+      get copyWith => CopyWith$Input$Step_stddev_pop_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_stddev_pop_order_by<TRes> {
+  factory CopyWith$Input$Step_stddev_pop_order_by(
+          Input$Step_stddev_pop_order_by instance,
+          TRes Function(Input$Step_stddev_pop_order_by) then) =
+      _CopyWithImpl$Input$Step_stddev_pop_order_by;
+
+  factory CopyWith$Input$Step_stddev_pop_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_stddev_pop_order_by;
+
+  TRes call({Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$Step_stddev_pop_order_by<TRes>
+    implements CopyWith$Input$Step_stddev_pop_order_by<TRes> {
+  _CopyWithImpl$Input$Step_stddev_pop_order_by(this._instance, this._then);
+
+  final Input$Step_stddev_pop_order_by _instance;
+
+  final TRes Function(Input$Step_stddev_pop_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? order = _undefined}) =>
+      _then(Input$Step_stddev_pop_order_by(
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_stddev_pop_order_by<TRes>
+    implements CopyWith$Input$Step_stddev_pop_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_stddev_pop_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6470,10 +10612,46 @@ class Input$Step_stddev_samp_order_by {
     return true;
   }
 
-  Input$Step_stddev_samp_order_by copyWith(
-          {Enum$order_by? Function()? order}) =>
-      Input$Step_stddev_samp_order_by(
-          order: order == null ? this.order : order());
+  CopyWith$Input$Step_stddev_samp_order_by<Input$Step_stddev_samp_order_by>
+      get copyWith => CopyWith$Input$Step_stddev_samp_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_stddev_samp_order_by<TRes> {
+  factory CopyWith$Input$Step_stddev_samp_order_by(
+          Input$Step_stddev_samp_order_by instance,
+          TRes Function(Input$Step_stddev_samp_order_by) then) =
+      _CopyWithImpl$Input$Step_stddev_samp_order_by;
+
+  factory CopyWith$Input$Step_stddev_samp_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_stddev_samp_order_by;
+
+  TRes call({Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$Step_stddev_samp_order_by<TRes>
+    implements CopyWith$Input$Step_stddev_samp_order_by<TRes> {
+  _CopyWithImpl$Input$Step_stddev_samp_order_by(this._instance, this._then);
+
+  final Input$Step_stddev_samp_order_by _instance;
+
+  final TRes Function(Input$Step_stddev_samp_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? order = _undefined}) =>
+      _then(Input$Step_stddev_samp_order_by(
+          order: order == _undefined
+              ? _instance.order
+              : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_stddev_samp_order_by<TRes>
+    implements CopyWith$Input$Step_stddev_samp_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_stddev_samp_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6504,8 +10682,43 @@ class Input$Step_sum_order_by {
     return true;
   }
 
-  Input$Step_sum_order_by copyWith({Enum$order_by? Function()? order}) =>
-      Input$Step_sum_order_by(order: order == null ? this.order : order());
+  CopyWith$Input$Step_sum_order_by<Input$Step_sum_order_by> get copyWith =>
+      CopyWith$Input$Step_sum_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_sum_order_by<TRes> {
+  factory CopyWith$Input$Step_sum_order_by(Input$Step_sum_order_by instance,
+          TRes Function(Input$Step_sum_order_by) then) =
+      _CopyWithImpl$Input$Step_sum_order_by;
+
+  factory CopyWith$Input$Step_sum_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_sum_order_by;
+
+  TRes call({Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$Step_sum_order_by<TRes>
+    implements CopyWith$Input$Step_sum_order_by<TRes> {
+  _CopyWithImpl$Input$Step_sum_order_by(this._instance, this._then);
+
+  final Input$Step_sum_order_by _instance;
+
+  final TRes Function(Input$Step_sum_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? order = _undefined}) => _then(Input$Step_sum_order_by(
+      order:
+          order == _undefined ? _instance.order : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_sum_order_by<TRes>
+    implements CopyWith$Input$Step_sum_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_sum_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6536,8 +10749,44 @@ class Input$Step_var_pop_order_by {
     return true;
   }
 
-  Input$Step_var_pop_order_by copyWith({Enum$order_by? Function()? order}) =>
-      Input$Step_var_pop_order_by(order: order == null ? this.order : order());
+  CopyWith$Input$Step_var_pop_order_by<Input$Step_var_pop_order_by>
+      get copyWith => CopyWith$Input$Step_var_pop_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_var_pop_order_by<TRes> {
+  factory CopyWith$Input$Step_var_pop_order_by(
+          Input$Step_var_pop_order_by instance,
+          TRes Function(Input$Step_var_pop_order_by) then) =
+      _CopyWithImpl$Input$Step_var_pop_order_by;
+
+  factory CopyWith$Input$Step_var_pop_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_var_pop_order_by;
+
+  TRes call({Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$Step_var_pop_order_by<TRes>
+    implements CopyWith$Input$Step_var_pop_order_by<TRes> {
+  _CopyWithImpl$Input$Step_var_pop_order_by(this._instance, this._then);
+
+  final Input$Step_var_pop_order_by _instance;
+
+  final TRes Function(Input$Step_var_pop_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? order = _undefined}) => _then(Input$Step_var_pop_order_by(
+      order:
+          order == _undefined ? _instance.order : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_var_pop_order_by<TRes>
+    implements CopyWith$Input$Step_var_pop_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_var_pop_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6568,8 +10817,44 @@ class Input$Step_var_samp_order_by {
     return true;
   }
 
-  Input$Step_var_samp_order_by copyWith({Enum$order_by? Function()? order}) =>
-      Input$Step_var_samp_order_by(order: order == null ? this.order : order());
+  CopyWith$Input$Step_var_samp_order_by<Input$Step_var_samp_order_by>
+      get copyWith => CopyWith$Input$Step_var_samp_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_var_samp_order_by<TRes> {
+  factory CopyWith$Input$Step_var_samp_order_by(
+          Input$Step_var_samp_order_by instance,
+          TRes Function(Input$Step_var_samp_order_by) then) =
+      _CopyWithImpl$Input$Step_var_samp_order_by;
+
+  factory CopyWith$Input$Step_var_samp_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_var_samp_order_by;
+
+  TRes call({Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$Step_var_samp_order_by<TRes>
+    implements CopyWith$Input$Step_var_samp_order_by<TRes> {
+  _CopyWithImpl$Input$Step_var_samp_order_by(this._instance, this._then);
+
+  final Input$Step_var_samp_order_by _instance;
+
+  final TRes Function(Input$Step_var_samp_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? order = _undefined}) => _then(Input$Step_var_samp_order_by(
+      order:
+          order == _undefined ? _instance.order : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_var_samp_order_by<TRes>
+    implements CopyWith$Input$Step_var_samp_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_var_samp_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6600,8 +10885,44 @@ class Input$Step_variance_order_by {
     return true;
   }
 
-  Input$Step_variance_order_by copyWith({Enum$order_by? Function()? order}) =>
-      Input$Step_variance_order_by(order: order == null ? this.order : order());
+  CopyWith$Input$Step_variance_order_by<Input$Step_variance_order_by>
+      get copyWith => CopyWith$Input$Step_variance_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Step_variance_order_by<TRes> {
+  factory CopyWith$Input$Step_variance_order_by(
+          Input$Step_variance_order_by instance,
+          TRes Function(Input$Step_variance_order_by) then) =
+      _CopyWithImpl$Input$Step_variance_order_by;
+
+  factory CopyWith$Input$Step_variance_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_variance_order_by;
+
+  TRes call({Enum$order_by? order});
+}
+
+class _CopyWithImpl$Input$Step_variance_order_by<TRes>
+    implements CopyWith$Input$Step_variance_order_by<TRes> {
+  _CopyWithImpl$Input$Step_variance_order_by(this._instance, this._then);
+
+  final Input$Step_variance_order_by _instance;
+
+  final TRes Function(Input$Step_variance_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? order = _undefined}) => _then(Input$Step_variance_order_by(
+      order:
+          order == _undefined ? _instance.order : (order as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Step_variance_order_by<TRes>
+    implements CopyWith$Input$Step_variance_order_by<TRes> {
+  _CopyWithStubImpl$Input$Step_variance_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? order}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6817,46 +11138,138 @@ class Input$String_comparison_exp {
     return true;
   }
 
-  Input$String_comparison_exp copyWith(
-          {String? Function()? $_eq,
-          String? Function()? $_gt,
-          String? Function()? $_gte,
-          String? Function()? $_ilike,
-          List<String>? Function()? $_in,
-          String? Function()? $_iregex,
-          bool? Function()? $_is_null,
-          String? Function()? $_like,
-          String? Function()? $_lt,
-          String? Function()? $_lte,
-          String? Function()? $_neq,
-          String? Function()? $_nilike,
-          List<String>? Function()? $_nin,
-          String? Function()? $_niregex,
-          String? Function()? $_nlike,
-          String? Function()? $_nregex,
-          String? Function()? $_nsimilar,
-          String? Function()? $_regex,
-          String? Function()? $_similar}) =>
-      Input$String_comparison_exp(
-          $_eq: $_eq == null ? this.$_eq : $_eq(),
-          $_gt: $_gt == null ? this.$_gt : $_gt(),
-          $_gte: $_gte == null ? this.$_gte : $_gte(),
-          $_ilike: $_ilike == null ? this.$_ilike : $_ilike(),
-          $_in: $_in == null ? this.$_in : $_in(),
-          $_iregex: $_iregex == null ? this.$_iregex : $_iregex(),
-          $_is_null: $_is_null == null ? this.$_is_null : $_is_null(),
-          $_like: $_like == null ? this.$_like : $_like(),
-          $_lt: $_lt == null ? this.$_lt : $_lt(),
-          $_lte: $_lte == null ? this.$_lte : $_lte(),
-          $_neq: $_neq == null ? this.$_neq : $_neq(),
-          $_nilike: $_nilike == null ? this.$_nilike : $_nilike(),
-          $_nin: $_nin == null ? this.$_nin : $_nin(),
-          $_niregex: $_niregex == null ? this.$_niregex : $_niregex(),
-          $_nlike: $_nlike == null ? this.$_nlike : $_nlike(),
-          $_nregex: $_nregex == null ? this.$_nregex : $_nregex(),
-          $_nsimilar: $_nsimilar == null ? this.$_nsimilar : $_nsimilar(),
-          $_regex: $_regex == null ? this.$_regex : $_regex(),
-          $_similar: $_similar == null ? this.$_similar : $_similar());
+  CopyWith$Input$String_comparison_exp<Input$String_comparison_exp>
+      get copyWith => CopyWith$Input$String_comparison_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$String_comparison_exp<TRes> {
+  factory CopyWith$Input$String_comparison_exp(
+          Input$String_comparison_exp instance,
+          TRes Function(Input$String_comparison_exp) then) =
+      _CopyWithImpl$Input$String_comparison_exp;
+
+  factory CopyWith$Input$String_comparison_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$String_comparison_exp;
+
+  TRes call(
+      {String? $_eq,
+      String? $_gt,
+      String? $_gte,
+      String? $_ilike,
+      List<String>? $_in,
+      String? $_iregex,
+      bool? $_is_null,
+      String? $_like,
+      String? $_lt,
+      String? $_lte,
+      String? $_neq,
+      String? $_nilike,
+      List<String>? $_nin,
+      String? $_niregex,
+      String? $_nlike,
+      String? $_nregex,
+      String? $_nsimilar,
+      String? $_regex,
+      String? $_similar});
+}
+
+class _CopyWithImpl$Input$String_comparison_exp<TRes>
+    implements CopyWith$Input$String_comparison_exp<TRes> {
+  _CopyWithImpl$Input$String_comparison_exp(this._instance, this._then);
+
+  final Input$String_comparison_exp _instance;
+
+  final TRes Function(Input$String_comparison_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? $_eq = _undefined,
+          Object? $_gt = _undefined,
+          Object? $_gte = _undefined,
+          Object? $_ilike = _undefined,
+          Object? $_in = _undefined,
+          Object? $_iregex = _undefined,
+          Object? $_is_null = _undefined,
+          Object? $_like = _undefined,
+          Object? $_lt = _undefined,
+          Object? $_lte = _undefined,
+          Object? $_neq = _undefined,
+          Object? $_nilike = _undefined,
+          Object? $_nin = _undefined,
+          Object? $_niregex = _undefined,
+          Object? $_nlike = _undefined,
+          Object? $_nregex = _undefined,
+          Object? $_nsimilar = _undefined,
+          Object? $_regex = _undefined,
+          Object? $_similar = _undefined}) =>
+      _then(Input$String_comparison_exp(
+          $_eq: $_eq == _undefined ? _instance.$_eq : ($_eq as String?),
+          $_gt: $_gt == _undefined ? _instance.$_gt : ($_gt as String?),
+          $_gte: $_gte == _undefined ? _instance.$_gte : ($_gte as String?),
+          $_ilike:
+              $_ilike == _undefined ? _instance.$_ilike : ($_ilike as String?),
+          $_in: $_in == _undefined ? _instance.$_in : ($_in as List<String>?),
+          $_iregex: $_iregex == _undefined
+              ? _instance.$_iregex
+              : ($_iregex as String?),
+          $_is_null: $_is_null == _undefined
+              ? _instance.$_is_null
+              : ($_is_null as bool?),
+          $_like: $_like == _undefined ? _instance.$_like : ($_like as String?),
+          $_lt: $_lt == _undefined ? _instance.$_lt : ($_lt as String?),
+          $_lte: $_lte == _undefined ? _instance.$_lte : ($_lte as String?),
+          $_neq: $_neq == _undefined ? _instance.$_neq : ($_neq as String?),
+          $_nilike: $_nilike == _undefined
+              ? _instance.$_nilike
+              : ($_nilike as String?),
+          $_nin:
+              $_nin == _undefined ? _instance.$_nin : ($_nin as List<String>?),
+          $_niregex: $_niregex == _undefined
+              ? _instance.$_niregex
+              : ($_niregex as String?),
+          $_nlike:
+              $_nlike == _undefined ? _instance.$_nlike : ($_nlike as String?),
+          $_nregex: $_nregex == _undefined
+              ? _instance.$_nregex
+              : ($_nregex as String?),
+          $_nsimilar: $_nsimilar == _undefined
+              ? _instance.$_nsimilar
+              : ($_nsimilar as String?),
+          $_regex:
+              $_regex == _undefined ? _instance.$_regex : ($_regex as String?),
+          $_similar: $_similar == _undefined
+              ? _instance.$_similar
+              : ($_similar as String?)));
+}
+
+class _CopyWithStubImpl$Input$String_comparison_exp<TRes>
+    implements CopyWith$Input$String_comparison_exp<TRes> {
+  _CopyWithStubImpl$Input$String_comparison_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {String? $_eq,
+          String? $_gt,
+          String? $_gte,
+          String? $_ilike,
+          List<String>? $_in,
+          String? $_iregex,
+          bool? $_is_null,
+          String? $_like,
+          String? $_lt,
+          String? $_lte,
+          String? $_neq,
+          String? $_nilike,
+          List<String>? $_nin,
+          String? $_niregex,
+          String? $_nlike,
+          String? $_nregex,
+          String? $_nsimilar,
+          String? $_regex,
+          String? $_similar}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6947,20 +11360,79 @@ class Input$Tag_bool_exp {
     return true;
   }
 
-  Input$Tag_bool_exp copyWith(
-          {Input$_RecipeToTag_bool_exp? Function()? Recipes,
-          List<Input$Tag_bool_exp>? Function()? $_and,
-          Input$Tag_bool_exp? Function()? $_not,
-          List<Input$Tag_bool_exp>? Function()? $_or,
-          Input$String_comparison_exp? Function()? id,
-          Input$String_comparison_exp? Function()? name}) =>
-      Input$Tag_bool_exp(
-          Recipes: Recipes == null ? this.Recipes : Recipes(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name());
+  CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp> get copyWith =>
+      CopyWith$Input$Tag_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Tag_bool_exp<TRes> {
+  factory CopyWith$Input$Tag_bool_exp(
+          Input$Tag_bool_exp instance, TRes Function(Input$Tag_bool_exp) then) =
+      _CopyWithImpl$Input$Tag_bool_exp;
+
+  factory CopyWith$Input$Tag_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$Tag_bool_exp;
+
+  TRes call(
+      {Input$_RecipeToTag_bool_exp? Recipes,
+      List<Input$Tag_bool_exp>? $_and,
+      Input$Tag_bool_exp? $_not,
+      List<Input$Tag_bool_exp>? $_or,
+      Input$String_comparison_exp? id,
+      Input$String_comparison_exp? name});
+}
+
+class _CopyWithImpl$Input$Tag_bool_exp<TRes>
+    implements CopyWith$Input$Tag_bool_exp<TRes> {
+  _CopyWithImpl$Input$Tag_bool_exp(this._instance, this._then);
+
+  final Input$Tag_bool_exp _instance;
+
+  final TRes Function(Input$Tag_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Recipes = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined}) =>
+      _then(Input$Tag_bool_exp(
+          Recipes: Recipes == _undefined
+              ? _instance.Recipes
+              : (Recipes as Input$_RecipeToTag_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$Tag_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$Tag_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$Tag_bool_exp>?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?),
+          name: name == _undefined
+              ? _instance.name
+              : (name as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$Tag_bool_exp<TRes>
+    implements CopyWith$Input$Tag_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$Tag_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$_RecipeToTag_bool_exp? Recipes,
+          List<Input$Tag_bool_exp>? $_and,
+          Input$Tag_bool_exp? $_not,
+          List<Input$Tag_bool_exp>? $_or,
+          Input$String_comparison_exp? id,
+          Input$String_comparison_exp? name}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7002,14 +11474,57 @@ class Input$Tag_insert_input {
     return true;
   }
 
-  Input$Tag_insert_input copyWith(
-          {Input$_RecipeToTag_arr_rel_insert_input? Function()? Recipes,
-          String? Function()? id,
-          String? Function()? name}) =>
-      Input$Tag_insert_input(
-          Recipes: Recipes == null ? this.Recipes : Recipes(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name());
+  CopyWith$Input$Tag_insert_input<Input$Tag_insert_input> get copyWith =>
+      CopyWith$Input$Tag_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Tag_insert_input<TRes> {
+  factory CopyWith$Input$Tag_insert_input(Input$Tag_insert_input instance,
+          TRes Function(Input$Tag_insert_input) then) =
+      _CopyWithImpl$Input$Tag_insert_input;
+
+  factory CopyWith$Input$Tag_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Tag_insert_input;
+
+  TRes call(
+      {Input$_RecipeToTag_arr_rel_insert_input? Recipes,
+      String? id,
+      String? name});
+}
+
+class _CopyWithImpl$Input$Tag_insert_input<TRes>
+    implements CopyWith$Input$Tag_insert_input<TRes> {
+  _CopyWithImpl$Input$Tag_insert_input(this._instance, this._then);
+
+  final Input$Tag_insert_input _instance;
+
+  final TRes Function(Input$Tag_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Recipes = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined}) =>
+      _then(Input$Tag_insert_input(
+          Recipes: Recipes == _undefined
+              ? _instance.Recipes
+              : (Recipes as Input$_RecipeToTag_arr_rel_insert_input?),
+          id: id == _undefined ? _instance.id : (id as String?),
+          name: name == _undefined ? _instance.name : (name as String?)));
+}
+
+class _CopyWithStubImpl$Input$Tag_insert_input<TRes>
+    implements CopyWith$Input$Tag_insert_input<TRes> {
+  _CopyWithStubImpl$Input$Tag_insert_input(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$_RecipeToTag_arr_rel_insert_input? Recipes,
+          String? id,
+          String? name}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7045,12 +11560,50 @@ class Input$Tag_obj_rel_insert_input {
     return true;
   }
 
-  Input$Tag_obj_rel_insert_input copyWith(
-          {Input$Tag_insert_input? data,
-          Input$Tag_on_conflict? Function()? on_conflict}) =>
-      Input$Tag_obj_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+  CopyWith$Input$Tag_obj_rel_insert_input<Input$Tag_obj_rel_insert_input>
+      get copyWith => CopyWith$Input$Tag_obj_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Tag_obj_rel_insert_input<TRes> {
+  factory CopyWith$Input$Tag_obj_rel_insert_input(
+          Input$Tag_obj_rel_insert_input instance,
+          TRes Function(Input$Tag_obj_rel_insert_input) then) =
+      _CopyWithImpl$Input$Tag_obj_rel_insert_input;
+
+  factory CopyWith$Input$Tag_obj_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Tag_obj_rel_insert_input;
+
+  TRes call({Input$Tag_insert_input? data, Input$Tag_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$Tag_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$Tag_obj_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$Tag_obj_rel_insert_input(this._instance, this._then);
+
+  final Input$Tag_obj_rel_insert_input _instance;
+
+  final TRes Function(Input$Tag_obj_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$Tag_obj_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as Input$Tag_insert_input),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$Tag_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$Tag_obj_rel_insert_input<TRes>
+    implements CopyWith$Input$Tag_obj_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$Tag_obj_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call({Input$Tag_insert_input? data, Input$Tag_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7105,15 +11658,61 @@ class Input$Tag_on_conflict {
     return true;
   }
 
-  Input$Tag_on_conflict copyWith(
+  CopyWith$Input$Tag_on_conflict<Input$Tag_on_conflict> get copyWith =>
+      CopyWith$Input$Tag_on_conflict(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Tag_on_conflict<TRes> {
+  factory CopyWith$Input$Tag_on_conflict(Input$Tag_on_conflict instance,
+          TRes Function(Input$Tag_on_conflict) then) =
+      _CopyWithImpl$Input$Tag_on_conflict;
+
+  factory CopyWith$Input$Tag_on_conflict.stub(TRes res) =
+      _CopyWithStubImpl$Input$Tag_on_conflict;
+
+  TRes call(
+      {Enum$Tag_constraint? constraint,
+      List<Enum$Tag_update_column>? update_columns,
+      Input$Tag_bool_exp? where});
+}
+
+class _CopyWithImpl$Input$Tag_on_conflict<TRes>
+    implements CopyWith$Input$Tag_on_conflict<TRes> {
+  _CopyWithImpl$Input$Tag_on_conflict(this._instance, this._then);
+
+  final Input$Tag_on_conflict _instance;
+
+  final TRes Function(Input$Tag_on_conflict) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? constraint = _undefined,
+          Object? update_columns = _undefined,
+          Object? where = _undefined}) =>
+      _then(Input$Tag_on_conflict(
+          constraint: constraint == _undefined || constraint == null
+              ? _instance.constraint
+              : (constraint as Enum$Tag_constraint),
+          update_columns: update_columns == _undefined || update_columns == null
+              ? _instance.update_columns
+              : (update_columns as List<Enum$Tag_update_column>),
+          where: where == _undefined
+              ? _instance.where
+              : (where as Input$Tag_bool_exp?)));
+}
+
+class _CopyWithStubImpl$Input$Tag_on_conflict<TRes>
+    implements CopyWith$Input$Tag_on_conflict<TRes> {
+  _CopyWithStubImpl$Input$Tag_on_conflict(this._res);
+
+  TRes _res;
+
+  call(
           {Enum$Tag_constraint? constraint,
           List<Enum$Tag_update_column>? update_columns,
-          Input$Tag_bool_exp? Function()? where}) =>
-      Input$Tag_on_conflict(
-          constraint: constraint == null ? this.constraint : constraint,
-          update_columns:
-              update_columns == null ? this.update_columns : update_columns,
-          where: where == null ? this.where : where());
+          Input$Tag_bool_exp? where}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7157,16 +11756,58 @@ class Input$Tag_order_by {
     return true;
   }
 
-  Input$Tag_order_by copyWith(
-          {Input$_RecipeToTag_aggregate_order_by? Function()? Recipes_aggregate,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? name}) =>
-      Input$Tag_order_by(
-          Recipes_aggregate: Recipes_aggregate == null
-              ? this.Recipes_aggregate
-              : Recipes_aggregate(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name());
+  CopyWith$Input$Tag_order_by<Input$Tag_order_by> get copyWith =>
+      CopyWith$Input$Tag_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$Tag_order_by<TRes> {
+  factory CopyWith$Input$Tag_order_by(
+          Input$Tag_order_by instance, TRes Function(Input$Tag_order_by) then) =
+      _CopyWithImpl$Input$Tag_order_by;
+
+  factory CopyWith$Input$Tag_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$Tag_order_by;
+
+  TRes call(
+      {Input$_RecipeToTag_aggregate_order_by? Recipes_aggregate,
+      Enum$order_by? id,
+      Enum$order_by? name});
+}
+
+class _CopyWithImpl$Input$Tag_order_by<TRes>
+    implements CopyWith$Input$Tag_order_by<TRes> {
+  _CopyWithImpl$Input$Tag_order_by(this._instance, this._then);
+
+  final Input$Tag_order_by _instance;
+
+  final TRes Function(Input$Tag_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Recipes_aggregate = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined}) =>
+      _then(Input$Tag_order_by(
+          Recipes_aggregate: Recipes_aggregate == _undefined
+              ? _instance.Recipes_aggregate
+              : (Recipes_aggregate as Input$_RecipeToTag_aggregate_order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          name:
+              name == _undefined ? _instance.name : (name as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$Tag_order_by<TRes>
+    implements CopyWith$Input$Tag_order_by<TRes> {
+  _CopyWithStubImpl$Input$Tag_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$_RecipeToTag_aggregate_order_by? Recipes_aggregate,
+          Enum$order_by? id,
+          Enum$order_by? name}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7278,26 +11919,91 @@ class Input$UnitSize_bool_exp {
     return true;
   }
 
-  Input$UnitSize_bool_exp copyWith(
-          {Input$IngredientUnit_bool_exp? Function()? IngredientUnits,
-          List<Input$UnitSize_bool_exp>? Function()? $_and,
-          Input$UnitSize_bool_exp? Function()? $_not,
-          List<Input$UnitSize_bool_exp>? Function()? $_or,
-          Input$String_comparison_exp? Function()? id,
-          Input$String_comparison_exp? Function()? name,
-          Input$String_comparison_exp? Function()? plural,
-          Input$UnitType_enum_comparison_exp? Function()? unitType}) =>
-      Input$UnitSize_bool_exp(
-          IngredientUnits: IngredientUnits == null
-              ? this.IngredientUnits
-              : IngredientUnits(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name(),
-          plural: plural == null ? this.plural : plural(),
-          unitType: unitType == null ? this.unitType : unitType());
+  CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp> get copyWith =>
+      CopyWith$Input$UnitSize_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$UnitSize_bool_exp<TRes> {
+  factory CopyWith$Input$UnitSize_bool_exp(Input$UnitSize_bool_exp instance,
+          TRes Function(Input$UnitSize_bool_exp) then) =
+      _CopyWithImpl$Input$UnitSize_bool_exp;
+
+  factory CopyWith$Input$UnitSize_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitSize_bool_exp;
+
+  TRes call(
+      {Input$IngredientUnit_bool_exp? IngredientUnits,
+      List<Input$UnitSize_bool_exp>? $_and,
+      Input$UnitSize_bool_exp? $_not,
+      List<Input$UnitSize_bool_exp>? $_or,
+      Input$String_comparison_exp? id,
+      Input$String_comparison_exp? name,
+      Input$String_comparison_exp? plural,
+      Input$UnitType_enum_comparison_exp? unitType});
+}
+
+class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
+    implements CopyWith$Input$UnitSize_bool_exp<TRes> {
+  _CopyWithImpl$Input$UnitSize_bool_exp(this._instance, this._then);
+
+  final Input$UnitSize_bool_exp _instance;
+
+  final TRes Function(Input$UnitSize_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? IngredientUnits = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined,
+          Object? plural = _undefined,
+          Object? unitType = _undefined}) =>
+      _then(Input$UnitSize_bool_exp(
+          IngredientUnits: IngredientUnits == _undefined
+              ? _instance.IngredientUnits
+              : (IngredientUnits as Input$IngredientUnit_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$UnitSize_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$UnitSize_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$UnitSize_bool_exp>?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?),
+          name: name == _undefined
+              ? _instance.name
+              : (name as Input$String_comparison_exp?),
+          plural: plural == _undefined
+              ? _instance.plural
+              : (plural as Input$String_comparison_exp?),
+          unitType: unitType == _undefined
+              ? _instance.unitType
+              : (unitType as Input$UnitType_enum_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$UnitSize_bool_exp<TRes>
+    implements CopyWith$Input$UnitSize_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$UnitSize_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$IngredientUnit_bool_exp? IngredientUnits,
+          List<Input$UnitSize_bool_exp>? $_and,
+          Input$UnitSize_bool_exp? $_not,
+          List<Input$UnitSize_bool_exp>? $_or,
+          Input$String_comparison_exp? id,
+          Input$String_comparison_exp? name,
+          Input$String_comparison_exp? plural,
+          Input$UnitType_enum_comparison_exp? unitType}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7362,21 +12068,70 @@ class Input$UnitSize_order_by {
     return true;
   }
 
-  Input$UnitSize_order_by copyWith(
-          {Input$IngredientUnit_aggregate_order_by? Function()?
-              IngredientUnits_aggregate,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? name,
-          Enum$order_by? Function()? plural,
-          Enum$order_by? Function()? unitType}) =>
-      Input$UnitSize_order_by(
-          IngredientUnits_aggregate: IngredientUnits_aggregate == null
-              ? this.IngredientUnits_aggregate
-              : IngredientUnits_aggregate(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name(),
-          plural: plural == null ? this.plural : plural(),
-          unitType: unitType == null ? this.unitType : unitType());
+  CopyWith$Input$UnitSize_order_by<Input$UnitSize_order_by> get copyWith =>
+      CopyWith$Input$UnitSize_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$UnitSize_order_by<TRes> {
+  factory CopyWith$Input$UnitSize_order_by(Input$UnitSize_order_by instance,
+          TRes Function(Input$UnitSize_order_by) then) =
+      _CopyWithImpl$Input$UnitSize_order_by;
+
+  factory CopyWith$Input$UnitSize_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitSize_order_by;
+
+  TRes call(
+      {Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
+      Enum$order_by? id,
+      Enum$order_by? name,
+      Enum$order_by? plural,
+      Enum$order_by? unitType});
+}
+
+class _CopyWithImpl$Input$UnitSize_order_by<TRes>
+    implements CopyWith$Input$UnitSize_order_by<TRes> {
+  _CopyWithImpl$Input$UnitSize_order_by(this._instance, this._then);
+
+  final Input$UnitSize_order_by _instance;
+
+  final TRes Function(Input$UnitSize_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? IngredientUnits_aggregate = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined,
+          Object? plural = _undefined,
+          Object? unitType = _undefined}) =>
+      _then(Input$UnitSize_order_by(
+          IngredientUnits_aggregate: IngredientUnits_aggregate == _undefined
+              ? _instance.IngredientUnits_aggregate
+              : (IngredientUnits_aggregate
+                  as Input$IngredientUnit_aggregate_order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          name: name == _undefined ? _instance.name : (name as Enum$order_by?),
+          plural: plural == _undefined
+              ? _instance.plural
+              : (plural as Enum$order_by?),
+          unitType: unitType == _undefined
+              ? _instance.unitType
+              : (unitType as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$UnitSize_order_by<TRes>
+    implements CopyWith$Input$UnitSize_order_by<TRes> {
+  _CopyWithStubImpl$Input$UnitSize_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
+          Enum$order_by? id,
+          Enum$order_by? name,
+          Enum$order_by? plural,
+          Enum$order_by? unitType}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7460,18 +12215,73 @@ class Input$UnitType_bool_exp {
     return true;
   }
 
-  Input$UnitType_bool_exp copyWith(
-          {List<Input$UnitType_bool_exp>? Function()? $_and,
-          Input$UnitType_bool_exp? Function()? $_not,
-          List<Input$UnitType_bool_exp>? Function()? $_or,
-          Input$String_comparison_exp? Function()? description,
-          Input$String_comparison_exp? Function()? id}) =>
-      Input$UnitType_bool_exp(
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id());
+  CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp> get copyWith =>
+      CopyWith$Input$UnitType_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$UnitType_bool_exp<TRes> {
+  factory CopyWith$Input$UnitType_bool_exp(Input$UnitType_bool_exp instance,
+          TRes Function(Input$UnitType_bool_exp) then) =
+      _CopyWithImpl$Input$UnitType_bool_exp;
+
+  factory CopyWith$Input$UnitType_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitType_bool_exp;
+
+  TRes call(
+      {List<Input$UnitType_bool_exp>? $_and,
+      Input$UnitType_bool_exp? $_not,
+      List<Input$UnitType_bool_exp>? $_or,
+      Input$String_comparison_exp? description,
+      Input$String_comparison_exp? id});
+}
+
+class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
+    implements CopyWith$Input$UnitType_bool_exp<TRes> {
+  _CopyWithImpl$Input$UnitType_bool_exp(this._instance, this._then);
+
+  final Input$UnitType_bool_exp _instance;
+
+  final TRes Function(Input$UnitType_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined}) =>
+      _then(Input$UnitType_bool_exp(
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$UnitType_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$UnitType_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$UnitType_bool_exp>?),
+          description: description == _undefined
+              ? _instance.description
+              : (description as Input$String_comparison_exp?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$UnitType_bool_exp<TRes>
+    implements CopyWith$Input$UnitType_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$UnitType_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {List<Input$UnitType_bool_exp>? $_and,
+          Input$UnitType_bool_exp? $_not,
+          List<Input$UnitType_bool_exp>? $_or,
+          Input$String_comparison_exp? description,
+          Input$String_comparison_exp? id}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7559,18 +12369,76 @@ class Input$UnitType_enum_comparison_exp {
     return true;
   }
 
-  Input$UnitType_enum_comparison_exp copyWith(
-          {Enum$UnitType_enum? Function()? $_eq,
-          List<Enum$UnitType_enum>? Function()? $_in,
-          bool? Function()? $_is_null,
-          Enum$UnitType_enum? Function()? $_neq,
-          List<Enum$UnitType_enum>? Function()? $_nin}) =>
-      Input$UnitType_enum_comparison_exp(
-          $_eq: $_eq == null ? this.$_eq : $_eq(),
-          $_in: $_in == null ? this.$_in : $_in(),
-          $_is_null: $_is_null == null ? this.$_is_null : $_is_null(),
-          $_neq: $_neq == null ? this.$_neq : $_neq(),
-          $_nin: $_nin == null ? this.$_nin : $_nin());
+  CopyWith$Input$UnitType_enum_comparison_exp<
+          Input$UnitType_enum_comparison_exp>
+      get copyWith =>
+          CopyWith$Input$UnitType_enum_comparison_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$UnitType_enum_comparison_exp<TRes> {
+  factory CopyWith$Input$UnitType_enum_comparison_exp(
+          Input$UnitType_enum_comparison_exp instance,
+          TRes Function(Input$UnitType_enum_comparison_exp) then) =
+      _CopyWithImpl$Input$UnitType_enum_comparison_exp;
+
+  factory CopyWith$Input$UnitType_enum_comparison_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitType_enum_comparison_exp;
+
+  TRes call(
+      {Enum$UnitType_enum? $_eq,
+      List<Enum$UnitType_enum>? $_in,
+      bool? $_is_null,
+      Enum$UnitType_enum? $_neq,
+      List<Enum$UnitType_enum>? $_nin});
+}
+
+class _CopyWithImpl$Input$UnitType_enum_comparison_exp<TRes>
+    implements CopyWith$Input$UnitType_enum_comparison_exp<TRes> {
+  _CopyWithImpl$Input$UnitType_enum_comparison_exp(this._instance, this._then);
+
+  final Input$UnitType_enum_comparison_exp _instance;
+
+  final TRes Function(Input$UnitType_enum_comparison_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? $_eq = _undefined,
+          Object? $_in = _undefined,
+          Object? $_is_null = _undefined,
+          Object? $_neq = _undefined,
+          Object? $_nin = _undefined}) =>
+      _then(Input$UnitType_enum_comparison_exp(
+          $_eq: $_eq == _undefined
+              ? _instance.$_eq
+              : ($_eq as Enum$UnitType_enum?),
+          $_in: $_in == _undefined
+              ? _instance.$_in
+              : ($_in as List<Enum$UnitType_enum>?),
+          $_is_null: $_is_null == _undefined
+              ? _instance.$_is_null
+              : ($_is_null as bool?),
+          $_neq: $_neq == _undefined
+              ? _instance.$_neq
+              : ($_neq as Enum$UnitType_enum?),
+          $_nin: $_nin == _undefined
+              ? _instance.$_nin
+              : ($_nin as List<Enum$UnitType_enum>?)));
+}
+
+class _CopyWithStubImpl$Input$UnitType_enum_comparison_exp<TRes>
+    implements CopyWith$Input$UnitType_enum_comparison_exp<TRes> {
+  _CopyWithStubImpl$Input$UnitType_enum_comparison_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$UnitType_enum? $_eq,
+          List<Enum$UnitType_enum>? $_in,
+          bool? $_is_null,
+          Enum$UnitType_enum? $_neq,
+          List<Enum$UnitType_enum>? $_nin}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7608,12 +12476,46 @@ class Input$UnitType_order_by {
     return true;
   }
 
-  Input$UnitType_order_by copyWith(
-          {Enum$order_by? Function()? description,
-          Enum$order_by? Function()? id}) =>
-      Input$UnitType_order_by(
-          description: description == null ? this.description : description(),
-          id: id == null ? this.id : id());
+  CopyWith$Input$UnitType_order_by<Input$UnitType_order_by> get copyWith =>
+      CopyWith$Input$UnitType_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$UnitType_order_by<TRes> {
+  factory CopyWith$Input$UnitType_order_by(Input$UnitType_order_by instance,
+          TRes Function(Input$UnitType_order_by) then) =
+      _CopyWithImpl$Input$UnitType_order_by;
+
+  factory CopyWith$Input$UnitType_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitType_order_by;
+
+  TRes call({Enum$order_by? description, Enum$order_by? id});
+}
+
+class _CopyWithImpl$Input$UnitType_order_by<TRes>
+    implements CopyWith$Input$UnitType_order_by<TRes> {
+  _CopyWithImpl$Input$UnitType_order_by(this._instance, this._then);
+
+  final Input$UnitType_order_by _instance;
+
+  final TRes Function(Input$UnitType_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? description = _undefined, Object? id = _undefined}) =>
+      _then(Input$UnitType_order_by(
+          description: description == _undefined
+              ? _instance.description
+              : (description as Enum$order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$UnitType_order_by<TRes>
+    implements CopyWith$Input$UnitType_order_by<TRes> {
+  _CopyWithStubImpl$Input$UnitType_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? description, Enum$order_by? id}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7717,22 +12619,85 @@ class Input$User_bool_exp {
     return true;
   }
 
-  Input$User_bool_exp copyWith(
-          {Input$File_bool_exp? Function()? Files,
-          Input$Recipe_bool_exp? Function()? Recipes,
-          List<Input$User_bool_exp>? Function()? $_and,
-          Input$User_bool_exp? Function()? $_not,
-          List<Input$User_bool_exp>? Function()? $_or,
-          Input$String_comparison_exp? Function()? id,
-          Input$String_comparison_exp? Function()? name}) =>
-      Input$User_bool_exp(
-          Files: Files == null ? this.Files : Files(),
-          Recipes: Recipes == null ? this.Recipes : Recipes(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name());
+  CopyWith$Input$User_bool_exp<Input$User_bool_exp> get copyWith =>
+      CopyWith$Input$User_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$User_bool_exp<TRes> {
+  factory CopyWith$Input$User_bool_exp(Input$User_bool_exp instance,
+          TRes Function(Input$User_bool_exp) then) =
+      _CopyWithImpl$Input$User_bool_exp;
+
+  factory CopyWith$Input$User_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$User_bool_exp;
+
+  TRes call(
+      {Input$File_bool_exp? Files,
+      Input$Recipe_bool_exp? Recipes,
+      List<Input$User_bool_exp>? $_and,
+      Input$User_bool_exp? $_not,
+      List<Input$User_bool_exp>? $_or,
+      Input$String_comparison_exp? id,
+      Input$String_comparison_exp? name});
+}
+
+class _CopyWithImpl$Input$User_bool_exp<TRes>
+    implements CopyWith$Input$User_bool_exp<TRes> {
+  _CopyWithImpl$Input$User_bool_exp(this._instance, this._then);
+
+  final Input$User_bool_exp _instance;
+
+  final TRes Function(Input$User_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Files = _undefined,
+          Object? Recipes = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined}) =>
+      _then(Input$User_bool_exp(
+          Files: Files == _undefined
+              ? _instance.Files
+              : (Files as Input$File_bool_exp?),
+          Recipes: Recipes == _undefined
+              ? _instance.Recipes
+              : (Recipes as Input$Recipe_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$User_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$User_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$User_bool_exp>?),
+          id: id == _undefined
+              ? _instance.id
+              : (id as Input$String_comparison_exp?),
+          name: name == _undefined
+              ? _instance.name
+              : (name as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$User_bool_exp<TRes>
+    implements CopyWith$Input$User_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$User_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$File_bool_exp? Files,
+          Input$Recipe_bool_exp? Recipes,
+          List<Input$User_bool_exp>? $_and,
+          Input$User_bool_exp? $_not,
+          List<Input$User_bool_exp>? $_or,
+          Input$String_comparison_exp? id,
+          Input$String_comparison_exp? name}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7784,20 +12749,64 @@ class Input$User_order_by {
     return true;
   }
 
-  Input$User_order_by copyWith(
-          {Input$File_aggregate_order_by? Function()? Files_aggregate,
-          Input$Recipe_aggregate_order_by? Function()? Recipes_aggregate,
-          Enum$order_by? Function()? id,
-          Enum$order_by? Function()? name}) =>
-      Input$User_order_by(
-          Files_aggregate: Files_aggregate == null
-              ? this.Files_aggregate
-              : Files_aggregate(),
-          Recipes_aggregate: Recipes_aggregate == null
-              ? this.Recipes_aggregate
-              : Recipes_aggregate(),
-          id: id == null ? this.id : id(),
-          name: name == null ? this.name : name());
+  CopyWith$Input$User_order_by<Input$User_order_by> get copyWith =>
+      CopyWith$Input$User_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$User_order_by<TRes> {
+  factory CopyWith$Input$User_order_by(Input$User_order_by instance,
+          TRes Function(Input$User_order_by) then) =
+      _CopyWithImpl$Input$User_order_by;
+
+  factory CopyWith$Input$User_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$User_order_by;
+
+  TRes call(
+      {Input$File_aggregate_order_by? Files_aggregate,
+      Input$Recipe_aggregate_order_by? Recipes_aggregate,
+      Enum$order_by? id,
+      Enum$order_by? name});
+}
+
+class _CopyWithImpl$Input$User_order_by<TRes>
+    implements CopyWith$Input$User_order_by<TRes> {
+  _CopyWithImpl$Input$User_order_by(this._instance, this._then);
+
+  final Input$User_order_by _instance;
+
+  final TRes Function(Input$User_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? Files_aggregate = _undefined,
+          Object? Recipes_aggregate = _undefined,
+          Object? id = _undefined,
+          Object? name = _undefined}) =>
+      _then(Input$User_order_by(
+          Files_aggregate: Files_aggregate == _undefined
+              ? _instance.Files_aggregate
+              : (Files_aggregate as Input$File_aggregate_order_by?),
+          Recipes_aggregate: Recipes_aggregate == _undefined
+              ? _instance.Recipes_aggregate
+              : (Recipes_aggregate as Input$Recipe_aggregate_order_by?),
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          name:
+              name == _undefined ? _instance.name : (name as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$User_order_by<TRes>
+    implements CopyWith$Input$User_order_by<TRes> {
+  _CopyWithStubImpl$Input$User_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$File_aggregate_order_by? Files_aggregate,
+          Input$Recipe_aggregate_order_by? Recipes_aggregate,
+          Enum$order_by? id,
+          Enum$order_by? name}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7842,14 +12851,64 @@ class Input$_RecipeToTag_aggregate_order_by {
     return true;
   }
 
-  Input$_RecipeToTag_aggregate_order_by copyWith(
-          {Enum$order_by? Function()? count,
-          Input$_RecipeToTag_max_order_by? Function()? max,
-          Input$_RecipeToTag_min_order_by? Function()? min}) =>
-      Input$_RecipeToTag_aggregate_order_by(
-          count: count == null ? this.count : count(),
-          max: max == null ? this.max : max(),
-          min: min == null ? this.min : min());
+  CopyWith$Input$_RecipeToTag_aggregate_order_by<
+          Input$_RecipeToTag_aggregate_order_by>
+      get copyWith =>
+          CopyWith$Input$_RecipeToTag_aggregate_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> {
+  factory CopyWith$Input$_RecipeToTag_aggregate_order_by(
+          Input$_RecipeToTag_aggregate_order_by instance,
+          TRes Function(Input$_RecipeToTag_aggregate_order_by) then) =
+      _CopyWithImpl$Input$_RecipeToTag_aggregate_order_by;
+
+  factory CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_aggregate_order_by;
+
+  TRes call(
+      {Enum$order_by? count,
+      Input$_RecipeToTag_max_order_by? max,
+      Input$_RecipeToTag_min_order_by? min});
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
+    implements CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_aggregate_order_by(
+      this._instance, this._then);
+
+  final Input$_RecipeToTag_aggregate_order_by _instance;
+
+  final TRes Function(Input$_RecipeToTag_aggregate_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? count = _undefined,
+          Object? max = _undefined,
+          Object? min = _undefined}) =>
+      _then(Input$_RecipeToTag_aggregate_order_by(
+          count:
+              count == _undefined ? _instance.count : (count as Enum$order_by?),
+          max: max == _undefined
+              ? _instance.max
+              : (max as Input$_RecipeToTag_max_order_by?),
+          min: min == _undefined
+              ? _instance.min
+              : (min as Input$_RecipeToTag_min_order_by?)));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
+    implements CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_aggregate_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? count,
+          Input$_RecipeToTag_max_order_by? max,
+          Input$_RecipeToTag_min_order_by? min}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7895,12 +12954,57 @@ class Input$_RecipeToTag_arr_rel_insert_input {
     return true;
   }
 
-  Input$_RecipeToTag_arr_rel_insert_input copyWith(
+  CopyWith$Input$_RecipeToTag_arr_rel_insert_input<
+          Input$_RecipeToTag_arr_rel_insert_input>
+      get copyWith =>
+          CopyWith$Input$_RecipeToTag_arr_rel_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> {
+  factory CopyWith$Input$_RecipeToTag_arr_rel_insert_input(
+          Input$_RecipeToTag_arr_rel_insert_input instance,
+          TRes Function(Input$_RecipeToTag_arr_rel_insert_input) then) =
+      _CopyWithImpl$Input$_RecipeToTag_arr_rel_insert_input;
+
+  factory CopyWith$Input$_RecipeToTag_arr_rel_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_arr_rel_insert_input;
+
+  TRes call(
+      {List<Input$_RecipeToTag_insert_input>? data,
+      Input$_RecipeToTag_on_conflict? on_conflict});
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_arr_rel_insert_input(
+      this._instance, this._then);
+
+  final Input$_RecipeToTag_arr_rel_insert_input _instance;
+
+  final TRes Function(Input$_RecipeToTag_arr_rel_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? data = _undefined, Object? on_conflict = _undefined}) =>
+      _then(Input$_RecipeToTag_arr_rel_insert_input(
+          data: data == _undefined || data == null
+              ? _instance.data
+              : (data as List<Input$_RecipeToTag_insert_input>),
+          on_conflict: on_conflict == _undefined
+              ? _instance.on_conflict
+              : (on_conflict as Input$_RecipeToTag_on_conflict?)));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_arr_rel_insert_input(this._res);
+
+  TRes _res;
+
+  call(
           {List<Input$_RecipeToTag_insert_input>? data,
-          Input$_RecipeToTag_on_conflict? Function()? on_conflict}) =>
-      Input$_RecipeToTag_arr_rel_insert_input(
-          data: data == null ? this.data : data,
-          on_conflict: on_conflict == null ? this.on_conflict : on_conflict());
+          Input$_RecipeToTag_on_conflict? on_conflict}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8004,22 +13108,84 @@ class Input$_RecipeToTag_bool_exp {
     return true;
   }
 
-  Input$_RecipeToTag_bool_exp copyWith(
-          {Input$String_comparison_exp? Function()? A,
-          Input$String_comparison_exp? Function()? B,
-          Input$Recipe_bool_exp? Function()? Recipe,
-          Input$Tag_bool_exp? Function()? Tag,
-          List<Input$_RecipeToTag_bool_exp>? Function()? $_and,
-          Input$_RecipeToTag_bool_exp? Function()? $_not,
-          List<Input$_RecipeToTag_bool_exp>? Function()? $_or}) =>
-      Input$_RecipeToTag_bool_exp(
-          A: A == null ? this.A : A(),
-          B: B == null ? this.B : B(),
-          Recipe: Recipe == null ? this.Recipe : Recipe(),
-          Tag: Tag == null ? this.Tag : Tag(),
-          $_and: $_and == null ? this.$_and : $_and(),
-          $_not: $_not == null ? this.$_not : $_not(),
-          $_or: $_or == null ? this.$_or : $_or());
+  CopyWith$Input$_RecipeToTag_bool_exp<Input$_RecipeToTag_bool_exp>
+      get copyWith => CopyWith$Input$_RecipeToTag_bool_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$_RecipeToTag_bool_exp<TRes> {
+  factory CopyWith$Input$_RecipeToTag_bool_exp(
+          Input$_RecipeToTag_bool_exp instance,
+          TRes Function(Input$_RecipeToTag_bool_exp) then) =
+      _CopyWithImpl$Input$_RecipeToTag_bool_exp;
+
+  factory CopyWith$Input$_RecipeToTag_bool_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_bool_exp;
+
+  TRes call(
+      {Input$String_comparison_exp? A,
+      Input$String_comparison_exp? B,
+      Input$Recipe_bool_exp? Recipe,
+      Input$Tag_bool_exp? Tag,
+      List<Input$_RecipeToTag_bool_exp>? $_and,
+      Input$_RecipeToTag_bool_exp? $_not,
+      List<Input$_RecipeToTag_bool_exp>? $_or});
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_bool_exp<TRes>
+    implements CopyWith$Input$_RecipeToTag_bool_exp<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_bool_exp(this._instance, this._then);
+
+  final Input$_RecipeToTag_bool_exp _instance;
+
+  final TRes Function(Input$_RecipeToTag_bool_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? A = _undefined,
+          Object? B = _undefined,
+          Object? Recipe = _undefined,
+          Object? Tag = _undefined,
+          Object? $_and = _undefined,
+          Object? $_not = _undefined,
+          Object? $_or = _undefined}) =>
+      _then(Input$_RecipeToTag_bool_exp(
+          A: A == _undefined
+              ? _instance.A
+              : (A as Input$String_comparison_exp?),
+          B: B == _undefined
+              ? _instance.B
+              : (B as Input$String_comparison_exp?),
+          Recipe: Recipe == _undefined
+              ? _instance.Recipe
+              : (Recipe as Input$Recipe_bool_exp?),
+          Tag: Tag == _undefined ? _instance.Tag : (Tag as Input$Tag_bool_exp?),
+          $_and: $_and == _undefined
+              ? _instance.$_and
+              : ($_and as List<Input$_RecipeToTag_bool_exp>?),
+          $_not: $_not == _undefined
+              ? _instance.$_not
+              : ($_not as Input$_RecipeToTag_bool_exp?),
+          $_or: $_or == _undefined
+              ? _instance.$_or
+              : ($_or as List<Input$_RecipeToTag_bool_exp>?)));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_bool_exp<TRes>
+    implements CopyWith$Input$_RecipeToTag_bool_exp<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_bool_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$String_comparison_exp? A,
+          Input$String_comparison_exp? B,
+          Input$Recipe_bool_exp? Recipe,
+          Input$Tag_bool_exp? Tag,
+          List<Input$_RecipeToTag_bool_exp>? $_and,
+          Input$_RecipeToTag_bool_exp? $_not,
+          List<Input$_RecipeToTag_bool_exp>? $_or}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8068,16 +13234,64 @@ class Input$_RecipeToTag_insert_input {
     return true;
   }
 
-  Input$_RecipeToTag_insert_input copyWith(
-          {String? Function()? A,
-          String? Function()? B,
-          Input$Recipe_obj_rel_insert_input? Function()? Recipe,
-          Input$Tag_obj_rel_insert_input? Function()? Tag}) =>
-      Input$_RecipeToTag_insert_input(
-          A: A == null ? this.A : A(),
-          B: B == null ? this.B : B(),
-          Recipe: Recipe == null ? this.Recipe : Recipe(),
-          Tag: Tag == null ? this.Tag : Tag());
+  CopyWith$Input$_RecipeToTag_insert_input<Input$_RecipeToTag_insert_input>
+      get copyWith => CopyWith$Input$_RecipeToTag_insert_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$_RecipeToTag_insert_input<TRes> {
+  factory CopyWith$Input$_RecipeToTag_insert_input(
+          Input$_RecipeToTag_insert_input instance,
+          TRes Function(Input$_RecipeToTag_insert_input) then) =
+      _CopyWithImpl$Input$_RecipeToTag_insert_input;
+
+  factory CopyWith$Input$_RecipeToTag_insert_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_insert_input;
+
+  TRes call(
+      {String? A,
+      String? B,
+      Input$Recipe_obj_rel_insert_input? Recipe,
+      Input$Tag_obj_rel_insert_input? Tag});
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_insert_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_insert_input<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_insert_input(this._instance, this._then);
+
+  final Input$_RecipeToTag_insert_input _instance;
+
+  final TRes Function(Input$_RecipeToTag_insert_input) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? A = _undefined,
+          Object? B = _undefined,
+          Object? Recipe = _undefined,
+          Object? Tag = _undefined}) =>
+      _then(Input$_RecipeToTag_insert_input(
+          A: A == _undefined ? _instance.A : (A as String?),
+          B: B == _undefined ? _instance.B : (B as String?),
+          Recipe: Recipe == _undefined
+              ? _instance.Recipe
+              : (Recipe as Input$Recipe_obj_rel_insert_input?),
+          Tag: Tag == _undefined
+              ? _instance.Tag
+              : (Tag as Input$Tag_obj_rel_insert_input?)));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_insert_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_insert_input<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_insert_input(this._res);
+
+  TRes _res;
+
+  call(
+          {String? A,
+          String? B,
+          Input$Recipe_obj_rel_insert_input? Recipe,
+          Input$Tag_obj_rel_insert_input? Tag}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8116,10 +13330,45 @@ class Input$_RecipeToTag_max_order_by {
     return true;
   }
 
-  Input$_RecipeToTag_max_order_by copyWith(
-          {Enum$order_by? Function()? A, Enum$order_by? Function()? B}) =>
-      Input$_RecipeToTag_max_order_by(
-          A: A == null ? this.A : A(), B: B == null ? this.B : B());
+  CopyWith$Input$_RecipeToTag_max_order_by<Input$_RecipeToTag_max_order_by>
+      get copyWith => CopyWith$Input$_RecipeToTag_max_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$_RecipeToTag_max_order_by<TRes> {
+  factory CopyWith$Input$_RecipeToTag_max_order_by(
+          Input$_RecipeToTag_max_order_by instance,
+          TRes Function(Input$_RecipeToTag_max_order_by) then) =
+      _CopyWithImpl$Input$_RecipeToTag_max_order_by;
+
+  factory CopyWith$Input$_RecipeToTag_max_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_max_order_by;
+
+  TRes call({Enum$order_by? A, Enum$order_by? B});
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_max_order_by<TRes>
+    implements CopyWith$Input$_RecipeToTag_max_order_by<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_max_order_by(this._instance, this._then);
+
+  final Input$_RecipeToTag_max_order_by _instance;
+
+  final TRes Function(Input$_RecipeToTag_max_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? A = _undefined, Object? B = _undefined}) =>
+      _then(Input$_RecipeToTag_max_order_by(
+          A: A == _undefined ? _instance.A : (A as Enum$order_by?),
+          B: B == _undefined ? _instance.B : (B as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_max_order_by<TRes>
+    implements CopyWith$Input$_RecipeToTag_max_order_by<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_max_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? A, Enum$order_by? B}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8158,10 +13407,45 @@ class Input$_RecipeToTag_min_order_by {
     return true;
   }
 
-  Input$_RecipeToTag_min_order_by copyWith(
-          {Enum$order_by? Function()? A, Enum$order_by? Function()? B}) =>
-      Input$_RecipeToTag_min_order_by(
-          A: A == null ? this.A : A(), B: B == null ? this.B : B());
+  CopyWith$Input$_RecipeToTag_min_order_by<Input$_RecipeToTag_min_order_by>
+      get copyWith => CopyWith$Input$_RecipeToTag_min_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$_RecipeToTag_min_order_by<TRes> {
+  factory CopyWith$Input$_RecipeToTag_min_order_by(
+          Input$_RecipeToTag_min_order_by instance,
+          TRes Function(Input$_RecipeToTag_min_order_by) then) =
+      _CopyWithImpl$Input$_RecipeToTag_min_order_by;
+
+  factory CopyWith$Input$_RecipeToTag_min_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_min_order_by;
+
+  TRes call({Enum$order_by? A, Enum$order_by? B});
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_min_order_by<TRes>
+    implements CopyWith$Input$_RecipeToTag_min_order_by<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_min_order_by(this._instance, this._then);
+
+  final Input$_RecipeToTag_min_order_by _instance;
+
+  final TRes Function(Input$_RecipeToTag_min_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? A = _undefined, Object? B = _undefined}) =>
+      _then(Input$_RecipeToTag_min_order_by(
+          A: A == _undefined ? _instance.A : (A as Enum$order_by?),
+          B: B == _undefined ? _instance.B : (B as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_min_order_by<TRes>
+    implements CopyWith$Input$_RecipeToTag_min_order_by<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_min_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? A, Enum$order_by? B}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8216,15 +13500,62 @@ class Input$_RecipeToTag_on_conflict {
     return true;
   }
 
-  Input$_RecipeToTag_on_conflict copyWith(
+  CopyWith$Input$_RecipeToTag_on_conflict<Input$_RecipeToTag_on_conflict>
+      get copyWith => CopyWith$Input$_RecipeToTag_on_conflict(this, (i) => i);
+}
+
+abstract class CopyWith$Input$_RecipeToTag_on_conflict<TRes> {
+  factory CopyWith$Input$_RecipeToTag_on_conflict(
+          Input$_RecipeToTag_on_conflict instance,
+          TRes Function(Input$_RecipeToTag_on_conflict) then) =
+      _CopyWithImpl$Input$_RecipeToTag_on_conflict;
+
+  factory CopyWith$Input$_RecipeToTag_on_conflict.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_on_conflict;
+
+  TRes call(
+      {Enum$_RecipeToTag_constraint? constraint,
+      List<Enum$_RecipeToTag_update_column>? update_columns,
+      Input$_RecipeToTag_bool_exp? where});
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_on_conflict<TRes>
+    implements CopyWith$Input$_RecipeToTag_on_conflict<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_on_conflict(this._instance, this._then);
+
+  final Input$_RecipeToTag_on_conflict _instance;
+
+  final TRes Function(Input$_RecipeToTag_on_conflict) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? constraint = _undefined,
+          Object? update_columns = _undefined,
+          Object? where = _undefined}) =>
+      _then(Input$_RecipeToTag_on_conflict(
+          constraint: constraint == _undefined || constraint == null
+              ? _instance.constraint
+              : (constraint as Enum$_RecipeToTag_constraint),
+          update_columns: update_columns == _undefined || update_columns == null
+              ? _instance.update_columns
+              : (update_columns as List<Enum$_RecipeToTag_update_column>),
+          where: where == _undefined
+              ? _instance.where
+              : (where as Input$_RecipeToTag_bool_exp?)));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_on_conflict<TRes>
+    implements CopyWith$Input$_RecipeToTag_on_conflict<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_on_conflict(this._res);
+
+  TRes _res;
+
+  call(
           {Enum$_RecipeToTag_constraint? constraint,
           List<Enum$_RecipeToTag_update_column>? update_columns,
-          Input$_RecipeToTag_bool_exp? Function()? where}) =>
-      Input$_RecipeToTag_on_conflict(
-          constraint: constraint == null ? this.constraint : constraint,
-          update_columns:
-              update_columns == null ? this.update_columns : update_columns,
-          where: where == null ? this.where : where());
+          Input$_RecipeToTag_bool_exp? where}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8274,16 +13605,64 @@ class Input$_RecipeToTag_order_by {
     return true;
   }
 
-  Input$_RecipeToTag_order_by copyWith(
-          {Enum$order_by? Function()? A,
-          Enum$order_by? Function()? B,
-          Input$Recipe_order_by? Function()? Recipe,
-          Input$Tag_order_by? Function()? Tag}) =>
-      Input$_RecipeToTag_order_by(
-          A: A == null ? this.A : A(),
-          B: B == null ? this.B : B(),
-          Recipe: Recipe == null ? this.Recipe : Recipe(),
-          Tag: Tag == null ? this.Tag : Tag());
+  CopyWith$Input$_RecipeToTag_order_by<Input$_RecipeToTag_order_by>
+      get copyWith => CopyWith$Input$_RecipeToTag_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$_RecipeToTag_order_by<TRes> {
+  factory CopyWith$Input$_RecipeToTag_order_by(
+          Input$_RecipeToTag_order_by instance,
+          TRes Function(Input$_RecipeToTag_order_by) then) =
+      _CopyWithImpl$Input$_RecipeToTag_order_by;
+
+  factory CopyWith$Input$_RecipeToTag_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_order_by;
+
+  TRes call(
+      {Enum$order_by? A,
+      Enum$order_by? B,
+      Input$Recipe_order_by? Recipe,
+      Input$Tag_order_by? Tag});
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_order_by<TRes>
+    implements CopyWith$Input$_RecipeToTag_order_by<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_order_by(this._instance, this._then);
+
+  final Input$_RecipeToTag_order_by _instance;
+
+  final TRes Function(Input$_RecipeToTag_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? A = _undefined,
+          Object? B = _undefined,
+          Object? Recipe = _undefined,
+          Object? Tag = _undefined}) =>
+      _then(Input$_RecipeToTag_order_by(
+          A: A == _undefined ? _instance.A : (A as Enum$order_by?),
+          B: B == _undefined ? _instance.B : (B as Enum$order_by?),
+          Recipe: Recipe == _undefined
+              ? _instance.Recipe
+              : (Recipe as Input$Recipe_order_by?),
+          Tag: Tag == _undefined
+              ? _instance.Tag
+              : (Tag as Input$Tag_order_by?)));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_order_by<TRes>
+    implements CopyWith$Input$_RecipeToTag_order_by<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? A,
+          Enum$order_by? B,
+          Input$Recipe_order_by? Recipe,
+          Input$Tag_order_by? Tag}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8319,10 +13698,45 @@ class Input$_RecipeToTag_set_input {
     return true;
   }
 
-  Input$_RecipeToTag_set_input copyWith(
-          {String? Function()? A, String? Function()? B}) =>
-      Input$_RecipeToTag_set_input(
-          A: A == null ? this.A : A(), B: B == null ? this.B : B());
+  CopyWith$Input$_RecipeToTag_set_input<Input$_RecipeToTag_set_input>
+      get copyWith => CopyWith$Input$_RecipeToTag_set_input(this, (i) => i);
+}
+
+abstract class CopyWith$Input$_RecipeToTag_set_input<TRes> {
+  factory CopyWith$Input$_RecipeToTag_set_input(
+          Input$_RecipeToTag_set_input instance,
+          TRes Function(Input$_RecipeToTag_set_input) then) =
+      _CopyWithImpl$Input$_RecipeToTag_set_input;
+
+  factory CopyWith$Input$_RecipeToTag_set_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_set_input;
+
+  TRes call({String? A, String? B});
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_set_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_set_input<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_set_input(this._instance, this._then);
+
+  final Input$_RecipeToTag_set_input _instance;
+
+  final TRes Function(Input$_RecipeToTag_set_input) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? A = _undefined, Object? B = _undefined}) =>
+      _then(Input$_RecipeToTag_set_input(
+          A: A == _undefined ? _instance.A : (A as String?),
+          B: B == _undefined ? _instance.B : (B as String?)));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_set_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_set_input<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_set_input(this._res);
+
+  TRes _res;
+
+  call({String? A, String? B}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8448,26 +13862,84 @@ class Input$bytea_comparison_exp {
     return true;
   }
 
-  Input$bytea_comparison_exp copyWith(
-          {String? Function()? $_eq,
-          String? Function()? $_gt,
-          String? Function()? $_gte,
-          List<String>? Function()? $_in,
-          bool? Function()? $_is_null,
-          String? Function()? $_lt,
-          String? Function()? $_lte,
-          String? Function()? $_neq,
-          List<String>? Function()? $_nin}) =>
-      Input$bytea_comparison_exp(
-          $_eq: $_eq == null ? this.$_eq : $_eq(),
-          $_gt: $_gt == null ? this.$_gt : $_gt(),
-          $_gte: $_gte == null ? this.$_gte : $_gte(),
-          $_in: $_in == null ? this.$_in : $_in(),
-          $_is_null: $_is_null == null ? this.$_is_null : $_is_null(),
-          $_lt: $_lt == null ? this.$_lt : $_lt(),
-          $_lte: $_lte == null ? this.$_lte : $_lte(),
-          $_neq: $_neq == null ? this.$_neq : $_neq(),
-          $_nin: $_nin == null ? this.$_nin : $_nin());
+  CopyWith$Input$bytea_comparison_exp<Input$bytea_comparison_exp>
+      get copyWith => CopyWith$Input$bytea_comparison_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$bytea_comparison_exp<TRes> {
+  factory CopyWith$Input$bytea_comparison_exp(
+          Input$bytea_comparison_exp instance,
+          TRes Function(Input$bytea_comparison_exp) then) =
+      _CopyWithImpl$Input$bytea_comparison_exp;
+
+  factory CopyWith$Input$bytea_comparison_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$bytea_comparison_exp;
+
+  TRes call(
+      {String? $_eq,
+      String? $_gt,
+      String? $_gte,
+      List<String>? $_in,
+      bool? $_is_null,
+      String? $_lt,
+      String? $_lte,
+      String? $_neq,
+      List<String>? $_nin});
+}
+
+class _CopyWithImpl$Input$bytea_comparison_exp<TRes>
+    implements CopyWith$Input$bytea_comparison_exp<TRes> {
+  _CopyWithImpl$Input$bytea_comparison_exp(this._instance, this._then);
+
+  final Input$bytea_comparison_exp _instance;
+
+  final TRes Function(Input$bytea_comparison_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? $_eq = _undefined,
+          Object? $_gt = _undefined,
+          Object? $_gte = _undefined,
+          Object? $_in = _undefined,
+          Object? $_is_null = _undefined,
+          Object? $_lt = _undefined,
+          Object? $_lte = _undefined,
+          Object? $_neq = _undefined,
+          Object? $_nin = _undefined}) =>
+      _then(Input$bytea_comparison_exp(
+          $_eq: $_eq == _undefined ? _instance.$_eq : ($_eq as String?),
+          $_gt: $_gt == _undefined ? _instance.$_gt : ($_gt as String?),
+          $_gte: $_gte == _undefined ? _instance.$_gte : ($_gte as String?),
+          $_in: $_in == _undefined ? _instance.$_in : ($_in as List<String>?),
+          $_is_null: $_is_null == _undefined
+              ? _instance.$_is_null
+              : ($_is_null as bool?),
+          $_lt: $_lt == _undefined ? _instance.$_lt : ($_lt as String?),
+          $_lte: $_lte == _undefined ? _instance.$_lte : ($_lte as String?),
+          $_neq: $_neq == _undefined ? _instance.$_neq : ($_neq as String?),
+          $_nin: $_nin == _undefined
+              ? _instance.$_nin
+              : ($_nin as List<String>?)));
+}
+
+class _CopyWithStubImpl$Input$bytea_comparison_exp<TRes>
+    implements CopyWith$Input$bytea_comparison_exp<TRes> {
+  _CopyWithStubImpl$Input$bytea_comparison_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {String? $_eq,
+          String? $_gt,
+          String? $_gte,
+          List<String>? $_in,
+          bool? $_is_null,
+          String? $_lt,
+          String? $_lte,
+          String? $_neq,
+          List<String>? $_nin}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8498,10 +13970,44 @@ class Input$float8_cast_exp {
     return true;
   }
 
-  Input$float8_cast_exp copyWith(
-          {Input$String_comparison_exp? Function()? $String}) =>
-      Input$float8_cast_exp(
-          $String: $String == null ? this.$String : $String());
+  CopyWith$Input$float8_cast_exp<Input$float8_cast_exp> get copyWith =>
+      CopyWith$Input$float8_cast_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$float8_cast_exp<TRes> {
+  factory CopyWith$Input$float8_cast_exp(Input$float8_cast_exp instance,
+          TRes Function(Input$float8_cast_exp) then) =
+      _CopyWithImpl$Input$float8_cast_exp;
+
+  factory CopyWith$Input$float8_cast_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$float8_cast_exp;
+
+  TRes call({Input$String_comparison_exp? $String});
+}
+
+class _CopyWithImpl$Input$float8_cast_exp<TRes>
+    implements CopyWith$Input$float8_cast_exp<TRes> {
+  _CopyWithImpl$Input$float8_cast_exp(this._instance, this._then);
+
+  final Input$float8_cast_exp _instance;
+
+  final TRes Function(Input$float8_cast_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? $String = _undefined}) => _then(Input$float8_cast_exp(
+      $String: $String == _undefined
+          ? _instance.$String
+          : ($String as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$float8_cast_exp<TRes>
+    implements CopyWith$Input$float8_cast_exp<TRes> {
+  _CopyWithStubImpl$Input$float8_cast_exp(this._res);
+
+  TRes _res;
+
+  call({Input$String_comparison_exp? $String}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8636,28 +14142,90 @@ class Input$float8_comparison_exp {
     return true;
   }
 
-  Input$float8_comparison_exp copyWith(
-          {Input$float8_cast_exp? Function()? $_cast,
-          double? Function()? $_eq,
-          double? Function()? $_gt,
-          double? Function()? $_gte,
-          List<double>? Function()? $_in,
-          bool? Function()? $_is_null,
-          double? Function()? $_lt,
-          double? Function()? $_lte,
-          double? Function()? $_neq,
-          List<double>? Function()? $_nin}) =>
-      Input$float8_comparison_exp(
-          $_cast: $_cast == null ? this.$_cast : $_cast(),
-          $_eq: $_eq == null ? this.$_eq : $_eq(),
-          $_gt: $_gt == null ? this.$_gt : $_gt(),
-          $_gte: $_gte == null ? this.$_gte : $_gte(),
-          $_in: $_in == null ? this.$_in : $_in(),
-          $_is_null: $_is_null == null ? this.$_is_null : $_is_null(),
-          $_lt: $_lt == null ? this.$_lt : $_lt(),
-          $_lte: $_lte == null ? this.$_lte : $_lte(),
-          $_neq: $_neq == null ? this.$_neq : $_neq(),
-          $_nin: $_nin == null ? this.$_nin : $_nin());
+  CopyWith$Input$float8_comparison_exp<Input$float8_comparison_exp>
+      get copyWith => CopyWith$Input$float8_comparison_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$float8_comparison_exp<TRes> {
+  factory CopyWith$Input$float8_comparison_exp(
+          Input$float8_comparison_exp instance,
+          TRes Function(Input$float8_comparison_exp) then) =
+      _CopyWithImpl$Input$float8_comparison_exp;
+
+  factory CopyWith$Input$float8_comparison_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$float8_comparison_exp;
+
+  TRes call(
+      {Input$float8_cast_exp? $_cast,
+      double? $_eq,
+      double? $_gt,
+      double? $_gte,
+      List<double>? $_in,
+      bool? $_is_null,
+      double? $_lt,
+      double? $_lte,
+      double? $_neq,
+      List<double>? $_nin});
+}
+
+class _CopyWithImpl$Input$float8_comparison_exp<TRes>
+    implements CopyWith$Input$float8_comparison_exp<TRes> {
+  _CopyWithImpl$Input$float8_comparison_exp(this._instance, this._then);
+
+  final Input$float8_comparison_exp _instance;
+
+  final TRes Function(Input$float8_comparison_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? $_cast = _undefined,
+          Object? $_eq = _undefined,
+          Object? $_gt = _undefined,
+          Object? $_gte = _undefined,
+          Object? $_in = _undefined,
+          Object? $_is_null = _undefined,
+          Object? $_lt = _undefined,
+          Object? $_lte = _undefined,
+          Object? $_neq = _undefined,
+          Object? $_nin = _undefined}) =>
+      _then(Input$float8_comparison_exp(
+          $_cast: $_cast == _undefined
+              ? _instance.$_cast
+              : ($_cast as Input$float8_cast_exp?),
+          $_eq: $_eq == _undefined ? _instance.$_eq : ($_eq as double?),
+          $_gt: $_gt == _undefined ? _instance.$_gt : ($_gt as double?),
+          $_gte: $_gte == _undefined ? _instance.$_gte : ($_gte as double?),
+          $_in: $_in == _undefined ? _instance.$_in : ($_in as List<double>?),
+          $_is_null: $_is_null == _undefined
+              ? _instance.$_is_null
+              : ($_is_null as bool?),
+          $_lt: $_lt == _undefined ? _instance.$_lt : ($_lt as double?),
+          $_lte: $_lte == _undefined ? _instance.$_lte : ($_lte as double?),
+          $_neq: $_neq == _undefined ? _instance.$_neq : ($_neq as double?),
+          $_nin: $_nin == _undefined
+              ? _instance.$_nin
+              : ($_nin as List<double>?)));
+}
+
+class _CopyWithStubImpl$Input$float8_comparison_exp<TRes>
+    implements CopyWith$Input$float8_comparison_exp<TRes> {
+  _CopyWithStubImpl$Input$float8_comparison_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$float8_cast_exp? $_cast,
+          double? $_eq,
+          double? $_gt,
+          double? $_gte,
+          List<double>? $_in,
+          bool? $_is_null,
+          double? $_lt,
+          double? $_lte,
+          double? $_neq,
+          List<double>? $_nin}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8688,10 +14256,44 @@ class Input$timestamp_cast_exp {
     return true;
   }
 
-  Input$timestamp_cast_exp copyWith(
-          {Input$String_comparison_exp? Function()? $String}) =>
-      Input$timestamp_cast_exp(
-          $String: $String == null ? this.$String : $String());
+  CopyWith$Input$timestamp_cast_exp<Input$timestamp_cast_exp> get copyWith =>
+      CopyWith$Input$timestamp_cast_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$timestamp_cast_exp<TRes> {
+  factory CopyWith$Input$timestamp_cast_exp(Input$timestamp_cast_exp instance,
+          TRes Function(Input$timestamp_cast_exp) then) =
+      _CopyWithImpl$Input$timestamp_cast_exp;
+
+  factory CopyWith$Input$timestamp_cast_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$timestamp_cast_exp;
+
+  TRes call({Input$String_comparison_exp? $String});
+}
+
+class _CopyWithImpl$Input$timestamp_cast_exp<TRes>
+    implements CopyWith$Input$timestamp_cast_exp<TRes> {
+  _CopyWithImpl$Input$timestamp_cast_exp(this._instance, this._then);
+
+  final Input$timestamp_cast_exp _instance;
+
+  final TRes Function(Input$timestamp_cast_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? $String = _undefined}) => _then(Input$timestamp_cast_exp(
+      $String: $String == _undefined
+          ? _instance.$String
+          : ($String as Input$String_comparison_exp?)));
+}
+
+class _CopyWithStubImpl$Input$timestamp_cast_exp<TRes>
+    implements CopyWith$Input$timestamp_cast_exp<TRes> {
+  _CopyWithStubImpl$Input$timestamp_cast_exp(this._res);
+
+  TRes _res;
+
+  call({Input$String_comparison_exp? $String}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8850,28 +14452,90 @@ class Input$timestamp_comparison_exp {
     return true;
   }
 
-  Input$timestamp_comparison_exp copyWith(
-          {Input$timestamp_cast_exp? Function()? $_cast,
-          DateTime? Function()? $_eq,
-          DateTime? Function()? $_gt,
-          DateTime? Function()? $_gte,
-          List<DateTime>? Function()? $_in,
-          bool? Function()? $_is_null,
-          DateTime? Function()? $_lt,
-          DateTime? Function()? $_lte,
-          DateTime? Function()? $_neq,
-          List<DateTime>? Function()? $_nin}) =>
-      Input$timestamp_comparison_exp(
-          $_cast: $_cast == null ? this.$_cast : $_cast(),
-          $_eq: $_eq == null ? this.$_eq : $_eq(),
-          $_gt: $_gt == null ? this.$_gt : $_gt(),
-          $_gte: $_gte == null ? this.$_gte : $_gte(),
-          $_in: $_in == null ? this.$_in : $_in(),
-          $_is_null: $_is_null == null ? this.$_is_null : $_is_null(),
-          $_lt: $_lt == null ? this.$_lt : $_lt(),
-          $_lte: $_lte == null ? this.$_lte : $_lte(),
-          $_neq: $_neq == null ? this.$_neq : $_neq(),
-          $_nin: $_nin == null ? this.$_nin : $_nin());
+  CopyWith$Input$timestamp_comparison_exp<Input$timestamp_comparison_exp>
+      get copyWith => CopyWith$Input$timestamp_comparison_exp(this, (i) => i);
+}
+
+abstract class CopyWith$Input$timestamp_comparison_exp<TRes> {
+  factory CopyWith$Input$timestamp_comparison_exp(
+          Input$timestamp_comparison_exp instance,
+          TRes Function(Input$timestamp_comparison_exp) then) =
+      _CopyWithImpl$Input$timestamp_comparison_exp;
+
+  factory CopyWith$Input$timestamp_comparison_exp.stub(TRes res) =
+      _CopyWithStubImpl$Input$timestamp_comparison_exp;
+
+  TRes call(
+      {Input$timestamp_cast_exp? $_cast,
+      DateTime? $_eq,
+      DateTime? $_gt,
+      DateTime? $_gte,
+      List<DateTime>? $_in,
+      bool? $_is_null,
+      DateTime? $_lt,
+      DateTime? $_lte,
+      DateTime? $_neq,
+      List<DateTime>? $_nin});
+}
+
+class _CopyWithImpl$Input$timestamp_comparison_exp<TRes>
+    implements CopyWith$Input$timestamp_comparison_exp<TRes> {
+  _CopyWithImpl$Input$timestamp_comparison_exp(this._instance, this._then);
+
+  final Input$timestamp_comparison_exp _instance;
+
+  final TRes Function(Input$timestamp_comparison_exp) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? $_cast = _undefined,
+          Object? $_eq = _undefined,
+          Object? $_gt = _undefined,
+          Object? $_gte = _undefined,
+          Object? $_in = _undefined,
+          Object? $_is_null = _undefined,
+          Object? $_lt = _undefined,
+          Object? $_lte = _undefined,
+          Object? $_neq = _undefined,
+          Object? $_nin = _undefined}) =>
+      _then(Input$timestamp_comparison_exp(
+          $_cast: $_cast == _undefined
+              ? _instance.$_cast
+              : ($_cast as Input$timestamp_cast_exp?),
+          $_eq: $_eq == _undefined ? _instance.$_eq : ($_eq as DateTime?),
+          $_gt: $_gt == _undefined ? _instance.$_gt : ($_gt as DateTime?),
+          $_gte: $_gte == _undefined ? _instance.$_gte : ($_gte as DateTime?),
+          $_in: $_in == _undefined ? _instance.$_in : ($_in as List<DateTime>?),
+          $_is_null: $_is_null == _undefined
+              ? _instance.$_is_null
+              : ($_is_null as bool?),
+          $_lt: $_lt == _undefined ? _instance.$_lt : ($_lt as DateTime?),
+          $_lte: $_lte == _undefined ? _instance.$_lte : ($_lte as DateTime?),
+          $_neq: $_neq == _undefined ? _instance.$_neq : ($_neq as DateTime?),
+          $_nin: $_nin == _undefined
+              ? _instance.$_nin
+              : ($_nin as List<DateTime>?)));
+}
+
+class _CopyWithStubImpl$Input$timestamp_comparison_exp<TRes>
+    implements CopyWith$Input$timestamp_comparison_exp<TRes> {
+  _CopyWithStubImpl$Input$timestamp_comparison_exp(this._res);
+
+  TRes _res;
+
+  call(
+          {Input$timestamp_cast_exp? $_cast,
+          DateTime? $_eq,
+          DateTime? $_gt,
+          DateTime? $_gte,
+          List<DateTime>? $_in,
+          bool? $_is_null,
+          DateTime? $_lt,
+          DateTime? $_lte,
+          DateTime? $_neq,
+          List<DateTime>? $_nin}) =>
+      _res;
 }
 
 enum Enum$File_constraint {

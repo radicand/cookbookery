@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:cookbook/helpers/constants.dart';
+import 'package:cookbook/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
@@ -22,7 +25,16 @@ Future<ValueNotifier<GraphQLClient>> getGQLClient() async {
     return 'Bearer $accessToken';
   });
 
-  final Link link = authLink.concat(httpLink);
+  final ErrorLink errorLink =
+      ErrorLink(onGraphQLError: (request, forward, response) {
+    log(response.errors?.toString() ?? '');
+    if (response.errors?.any((error) => error.message.contains("JWTExpired")) ??
+        false) {
+      AuthService.instance.refreshToken();
+    }
+  });
+
+  final Link link = authLink.concat(httpLink).concat(errorLink);
 
   return ValueNotifier(GraphQLClient(
       link: link,

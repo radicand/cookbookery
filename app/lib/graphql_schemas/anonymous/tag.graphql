@@ -1,9 +1,11 @@
-query tag($name: String!) {
-  Tag(where: { name: { _eq: $name } }) {
+query tag($id: String!) {
+  Tag_by_pk(id: $id) {
     id
     name
     Recipes {
-      ...RecipePreviewFields
+      Recipe {
+        ...RecipePreviewFragment
+      }
     }
   }
 }

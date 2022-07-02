@@ -6,8 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 // import 'package:flutter_mobx/flutter_mobx.dart';
 
 class HomeScreen extends HookWidget {
-  final String title;
-  const HomeScreen({Key? key, this.title = 'Home'}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

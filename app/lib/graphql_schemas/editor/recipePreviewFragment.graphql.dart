@@ -112,24 +112,133 @@ class Fragment$RecipePreviewFields {
 
 extension UtilityExtension$Fragment$RecipePreviewFields
     on Fragment$RecipePreviewFields {
-  Fragment$RecipePreviewFields copyWith(
+  CopyWith$Fragment$RecipePreviewFields<Fragment$RecipePreviewFields>
+      get copyWith => CopyWith$Fragment$RecipePreviewFields(this, (i) => i);
+}
+
+abstract class CopyWith$Fragment$RecipePreviewFields<TRes> {
+  factory CopyWith$Fragment$RecipePreviewFields(
+          Fragment$RecipePreviewFields instance,
+          TRes Function(Fragment$RecipePreviewFields) then) =
+      _CopyWithImpl$Fragment$RecipePreviewFields;
+
+  factory CopyWith$Fragment$RecipePreviewFields.stub(TRes res) =
+      _CopyWithStubImpl$Fragment$RecipePreviewFields;
+
+  TRes call(
+      {String? id,
+      String? title,
+      Fragment$RecipePreviewFields$Author? Author,
+      String? description,
+      List<Fragment$RecipePreviewFields$Files>? Files,
+      DateTime? createdAt,
+      List<Fragment$RecipePreviewFields$RecipeTags>? RecipeTags,
+      String? $__typename});
+  CopyWith$Fragment$RecipePreviewFields$Author<TRes> get Author;
+  TRes Files(
+      Iterable<Fragment$RecipePreviewFields$Files> Function(
+              Iterable<
+                  CopyWith$Fragment$RecipePreviewFields$Files<
+                      Fragment$RecipePreviewFields$Files>>)
+          _fn);
+  TRes RecipeTags(
+      Iterable<Fragment$RecipePreviewFields$RecipeTags> Function(
+              Iterable<
+                  CopyWith$Fragment$RecipePreviewFields$RecipeTags<
+                      Fragment$RecipePreviewFields$RecipeTags>>)
+          _fn);
+}
+
+class _CopyWithImpl$Fragment$RecipePreviewFields<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields<TRes> {
+  _CopyWithImpl$Fragment$RecipePreviewFields(this._instance, this._then);
+
+  final Fragment$RecipePreviewFields _instance;
+
+  final TRes Function(Fragment$RecipePreviewFields) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? id = _undefined,
+          Object? title = _undefined,
+          Object? Author = _undefined,
+          Object? description = _undefined,
+          Object? Files = _undefined,
+          Object? createdAt = _undefined,
+          Object? RecipeTags = _undefined,
+          Object? $__typename = _undefined}) =>
+      _then(Fragment$RecipePreviewFields(
+          id: id == _undefined || id == null ? _instance.id : (id as String),
+          title: title == _undefined || title == null
+              ? _instance.title
+              : (title as String),
+          Author: Author == _undefined || Author == null
+              ? _instance.Author
+              : (Author as Fragment$RecipePreviewFields$Author),
+          description: description == _undefined
+              ? _instance.description
+              : (description as String?),
+          Files: Files == _undefined || Files == null
+              ? _instance.Files
+              : (Files as List<Fragment$RecipePreviewFields$Files>),
+          createdAt: createdAt == _undefined || createdAt == null
+              ? _instance.createdAt
+              : (createdAt as DateTime),
+          RecipeTags: RecipeTags == _undefined || RecipeTags == null
+              ? _instance.RecipeTags
+              : (RecipeTags as List<Fragment$RecipePreviewFields$RecipeTags>),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String)));
+  CopyWith$Fragment$RecipePreviewFields$Author<TRes> get Author {
+    final local$Author = _instance.Author;
+    return CopyWith$Fragment$RecipePreviewFields$Author(
+        local$Author, (e) => call(Author: e));
+  }
+
+  TRes Files(
+          Iterable<Fragment$RecipePreviewFields$Files> Function(
+                  Iterable<
+                      CopyWith$Fragment$RecipePreviewFields$Files<
+                          Fragment$RecipePreviewFields$Files>>)
+              _fn) =>
+      call(
+          Files: _fn(_instance.Files.map((e) =>
+                  CopyWith$Fragment$RecipePreviewFields$Files(e, (i) => i)))
+              .toList());
+  TRes RecipeTags(
+          Iterable<Fragment$RecipePreviewFields$RecipeTags> Function(
+                  Iterable<
+                      CopyWith$Fragment$RecipePreviewFields$RecipeTags<
+                          Fragment$RecipePreviewFields$RecipeTags>>)
+              _fn) =>
+      call(
+          RecipeTags: _fn(_instance.RecipeTags.map((e) =>
+              CopyWith$Fragment$RecipePreviewFields$RecipeTags(
+                  e, (i) => i))).toList());
+}
+
+class _CopyWithStubImpl$Fragment$RecipePreviewFields<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields<TRes> {
+  _CopyWithStubImpl$Fragment$RecipePreviewFields(this._res);
+
+  TRes _res;
+
+  call(
           {String? id,
           String? title,
           Fragment$RecipePreviewFields$Author? Author,
-          String? Function()? description,
+          String? description,
           List<Fragment$RecipePreviewFields$Files>? Files,
           DateTime? createdAt,
           List<Fragment$RecipePreviewFields$RecipeTags>? RecipeTags,
           String? $__typename}) =>
-      Fragment$RecipePreviewFields(
-          id: id == null ? this.id : id,
-          title: title == null ? this.title : title,
-          Author: Author == null ? this.Author : Author,
-          description: description == null ? this.description : description(),
-          Files: Files == null ? this.Files : Files,
-          createdAt: createdAt == null ? this.createdAt : createdAt,
-          RecipeTags: RecipeTags == null ? this.RecipeTags : RecipeTags,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
+      _res;
+  CopyWith$Fragment$RecipePreviewFields$Author<TRes> get Author =>
+      CopyWith$Fragment$RecipePreviewFields$Author.stub(_res);
+  Files(_fn) => _res;
+  RecipeTags(_fn) => _res;
 }
 
 const fragmentDefinitionRecipePreviewFields = FragmentDefinitionNode(
@@ -330,12 +439,55 @@ class Fragment$RecipePreviewFields$Author {
 
 extension UtilityExtension$Fragment$RecipePreviewFields$Author
     on Fragment$RecipePreviewFields$Author {
-  Fragment$RecipePreviewFields$Author copyWith(
-          {String? id, String? name, String? $__typename}) =>
-      Fragment$RecipePreviewFields$Author(
-          id: id == null ? this.id : id,
-          name: name == null ? this.name : name,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
+  CopyWith$Fragment$RecipePreviewFields$Author<
+          Fragment$RecipePreviewFields$Author>
+      get copyWith =>
+          CopyWith$Fragment$RecipePreviewFields$Author(this, (i) => i);
+}
+
+abstract class CopyWith$Fragment$RecipePreviewFields$Author<TRes> {
+  factory CopyWith$Fragment$RecipePreviewFields$Author(
+          Fragment$RecipePreviewFields$Author instance,
+          TRes Function(Fragment$RecipePreviewFields$Author) then) =
+      _CopyWithImpl$Fragment$RecipePreviewFields$Author;
+
+  factory CopyWith$Fragment$RecipePreviewFields$Author.stub(TRes res) =
+      _CopyWithStubImpl$Fragment$RecipePreviewFields$Author;
+
+  TRes call({String? id, String? name, String? $__typename});
+}
+
+class _CopyWithImpl$Fragment$RecipePreviewFields$Author<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields$Author<TRes> {
+  _CopyWithImpl$Fragment$RecipePreviewFields$Author(this._instance, this._then);
+
+  final Fragment$RecipePreviewFields$Author _instance;
+
+  final TRes Function(Fragment$RecipePreviewFields$Author) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? id = _undefined,
+          Object? name = _undefined,
+          Object? $__typename = _undefined}) =>
+      _then(Fragment$RecipePreviewFields$Author(
+          id: id == _undefined || id == null ? _instance.id : (id as String),
+          name: name == _undefined || name == null
+              ? _instance.name
+              : (name as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String)));
+}
+
+class _CopyWithStubImpl$Fragment$RecipePreviewFields$Author<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields$Author<TRes> {
+  _CopyWithStubImpl$Fragment$RecipePreviewFields$Author(this._res);
+
+  TRes _res;
+
+  call({String? id, String? name, String? $__typename}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -378,11 +530,49 @@ class Fragment$RecipePreviewFields$Files {
 
 extension UtilityExtension$Fragment$RecipePreviewFields$Files
     on Fragment$RecipePreviewFields$Files {
-  Fragment$RecipePreviewFields$Files copyWith(
-          {String? id, String? $__typename}) =>
-      Fragment$RecipePreviewFields$Files(
-          id: id == null ? this.id : id,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
+  CopyWith$Fragment$RecipePreviewFields$Files<
+          Fragment$RecipePreviewFields$Files>
+      get copyWith =>
+          CopyWith$Fragment$RecipePreviewFields$Files(this, (i) => i);
+}
+
+abstract class CopyWith$Fragment$RecipePreviewFields$Files<TRes> {
+  factory CopyWith$Fragment$RecipePreviewFields$Files(
+          Fragment$RecipePreviewFields$Files instance,
+          TRes Function(Fragment$RecipePreviewFields$Files) then) =
+      _CopyWithImpl$Fragment$RecipePreviewFields$Files;
+
+  factory CopyWith$Fragment$RecipePreviewFields$Files.stub(TRes res) =
+      _CopyWithStubImpl$Fragment$RecipePreviewFields$Files;
+
+  TRes call({String? id, String? $__typename});
+}
+
+class _CopyWithImpl$Fragment$RecipePreviewFields$Files<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields$Files<TRes> {
+  _CopyWithImpl$Fragment$RecipePreviewFields$Files(this._instance, this._then);
+
+  final Fragment$RecipePreviewFields$Files _instance;
+
+  final TRes Function(Fragment$RecipePreviewFields$Files) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? id = _undefined, Object? $__typename = _undefined}) =>
+      _then(Fragment$RecipePreviewFields$Files(
+          id: id == _undefined || id == null ? _instance.id : (id as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String)));
+}
+
+class _CopyWithStubImpl$Fragment$RecipePreviewFields$Files<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields$Files<TRes> {
+  _CopyWithStubImpl$Fragment$RecipePreviewFields$Files(this._res);
+
+  TRes _res;
+
+  call({String? id, String? $__typename}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -425,12 +615,64 @@ class Fragment$RecipePreviewFields$RecipeTags {
 
 extension UtilityExtension$Fragment$RecipePreviewFields$RecipeTags
     on Fragment$RecipePreviewFields$RecipeTags {
-  Fragment$RecipePreviewFields$RecipeTags copyWith(
+  CopyWith$Fragment$RecipePreviewFields$RecipeTags<
+          Fragment$RecipePreviewFields$RecipeTags>
+      get copyWith =>
+          CopyWith$Fragment$RecipePreviewFields$RecipeTags(this, (i) => i);
+}
+
+abstract class CopyWith$Fragment$RecipePreviewFields$RecipeTags<TRes> {
+  factory CopyWith$Fragment$RecipePreviewFields$RecipeTags(
+          Fragment$RecipePreviewFields$RecipeTags instance,
+          TRes Function(Fragment$RecipePreviewFields$RecipeTags) then) =
+      _CopyWithImpl$Fragment$RecipePreviewFields$RecipeTags;
+
+  factory CopyWith$Fragment$RecipePreviewFields$RecipeTags.stub(TRes res) =
+      _CopyWithStubImpl$Fragment$RecipePreviewFields$RecipeTags;
+
+  TRes call(
+      {Fragment$RecipePreviewFields$RecipeTags$Tag? Tag, String? $__typename});
+  CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag<TRes> get Tag;
+}
+
+class _CopyWithImpl$Fragment$RecipePreviewFields$RecipeTags<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields$RecipeTags<TRes> {
+  _CopyWithImpl$Fragment$RecipePreviewFields$RecipeTags(
+      this._instance, this._then);
+
+  final Fragment$RecipePreviewFields$RecipeTags _instance;
+
+  final TRes Function(Fragment$RecipePreviewFields$RecipeTags) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? Tag = _undefined, Object? $__typename = _undefined}) =>
+      _then(Fragment$RecipePreviewFields$RecipeTags(
+          Tag: Tag == _undefined || Tag == null
+              ? _instance.Tag
+              : (Tag as Fragment$RecipePreviewFields$RecipeTags$Tag),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String)));
+  CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag<TRes> get Tag {
+    final local$Tag = _instance.Tag;
+    return CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag(
+        local$Tag, (e) => call(Tag: e));
+  }
+}
+
+class _CopyWithStubImpl$Fragment$RecipePreviewFields$RecipeTags<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields$RecipeTags<TRes> {
+  _CopyWithStubImpl$Fragment$RecipePreviewFields$RecipeTags(this._res);
+
+  TRes _res;
+
+  call(
           {Fragment$RecipePreviewFields$RecipeTags$Tag? Tag,
           String? $__typename}) =>
-      Fragment$RecipePreviewFields$RecipeTags(
-          Tag: Tag == null ? this.Tag : Tag,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
+      _res;
+  CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag<TRes> get Tag =>
+      CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -479,10 +721,54 @@ class Fragment$RecipePreviewFields$RecipeTags$Tag {
 
 extension UtilityExtension$Fragment$RecipePreviewFields$RecipeTags$Tag
     on Fragment$RecipePreviewFields$RecipeTags$Tag {
-  Fragment$RecipePreviewFields$RecipeTags$Tag copyWith(
-          {String? id, String? name, String? $__typename}) =>
-      Fragment$RecipePreviewFields$RecipeTags$Tag(
-          id: id == null ? this.id : id,
-          name: name == null ? this.name : name,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
+  CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag<
+          Fragment$RecipePreviewFields$RecipeTags$Tag>
+      get copyWith =>
+          CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag(this, (i) => i);
+}
+
+abstract class CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag<TRes> {
+  factory CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag(
+          Fragment$RecipePreviewFields$RecipeTags$Tag instance,
+          TRes Function(Fragment$RecipePreviewFields$RecipeTags$Tag) then) =
+      _CopyWithImpl$Fragment$RecipePreviewFields$RecipeTags$Tag;
+
+  factory CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag.stub(TRes res) =
+      _CopyWithStubImpl$Fragment$RecipePreviewFields$RecipeTags$Tag;
+
+  TRes call({String? id, String? name, String? $__typename});
+}
+
+class _CopyWithImpl$Fragment$RecipePreviewFields$RecipeTags$Tag<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag<TRes> {
+  _CopyWithImpl$Fragment$RecipePreviewFields$RecipeTags$Tag(
+      this._instance, this._then);
+
+  final Fragment$RecipePreviewFields$RecipeTags$Tag _instance;
+
+  final TRes Function(Fragment$RecipePreviewFields$RecipeTags$Tag) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? id = _undefined,
+          Object? name = _undefined,
+          Object? $__typename = _undefined}) =>
+      _then(Fragment$RecipePreviewFields$RecipeTags$Tag(
+          id: id == _undefined || id == null ? _instance.id : (id as String),
+          name: name == _undefined || name == null
+              ? _instance.name
+              : (name as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String)));
+}
+
+class _CopyWithStubImpl$Fragment$RecipePreviewFields$RecipeTags$Tag<TRes>
+    implements CopyWith$Fragment$RecipePreviewFields$RecipeTags$Tag<TRes> {
+  _CopyWithStubImpl$Fragment$RecipePreviewFields$RecipeTags$Tag(this._res);
+
+  TRes _res;
+
+  call({String? id, String? name, String? $__typename}) => _res;
 }

@@ -1,0 +1,21 @@
+fragment RecipeSectionFragment on RecipeSection {
+  id
+  order
+  cookTimeMinutes
+  prepTimeMinutes
+  description
+  IngredientUnits(order_by: { order: asc }) {
+    ...IngredientUnitFragment
+  }
+  name
+  servingUnit
+  servings
+  Steps(order_by: { order: asc }) {
+    id
+    description
+    order
+  }
+  Recipe {
+    id
+  }
+}

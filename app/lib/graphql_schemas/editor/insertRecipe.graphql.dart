@@ -4,7 +4,6 @@
 // ignore_for_file: camel_case_extensions, prefer_const_constructors
 
 import 'dart:async';
-import 'package:cookbook/scalars.dart';
 import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
@@ -42,10 +41,46 @@ class Variables$Mutation$insertRecipe {
     return true;
   }
 
-  Variables$Mutation$insertRecipe copyWith(
-          {Input$Recipe_insert_input? object}) =>
+  CopyWith$Variables$Mutation$insertRecipe<Variables$Mutation$insertRecipe>
+      get copyWith => CopyWith$Variables$Mutation$insertRecipe(this, (i) => i);
+}
+
+abstract class CopyWith$Variables$Mutation$insertRecipe<TRes> {
+  factory CopyWith$Variables$Mutation$insertRecipe(
+          Variables$Mutation$insertRecipe instance,
+          TRes Function(Variables$Mutation$insertRecipe) then) =
+      _CopyWithImpl$Variables$Mutation$insertRecipe;
+
+  factory CopyWith$Variables$Mutation$insertRecipe.stub(TRes res) =
+      _CopyWithStubImpl$Variables$Mutation$insertRecipe;
+
+  TRes call({Input$Recipe_insert_input? object});
+}
+
+class _CopyWithImpl$Variables$Mutation$insertRecipe<TRes>
+    implements CopyWith$Variables$Mutation$insertRecipe<TRes> {
+  _CopyWithImpl$Variables$Mutation$insertRecipe(this._instance, this._then);
+
+  final Variables$Mutation$insertRecipe _instance;
+
+  final TRes Function(Variables$Mutation$insertRecipe) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? object = _undefined}) => _then(
       Variables$Mutation$insertRecipe(
-          object: object == null ? this.object : object);
+          object: object == _undefined || object == null
+              ? _instance.object
+              : (object as Input$Recipe_insert_input)));
+}
+
+class _CopyWithStubImpl$Variables$Mutation$insertRecipe<TRes>
+    implements CopyWith$Variables$Mutation$insertRecipe<TRes> {
+  _CopyWithStubImpl$Variables$Mutation$insertRecipe(this._res);
+
+  TRes _res;
+
+  call({Input$Recipe_insert_input? object}) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -56,7 +91,7 @@ class Mutation$insertRecipe {
   factory Mutation$insertRecipe.fromJson(Map<String, dynamic> json) =>
       _$Mutation$insertRecipeFromJson(json);
 
-  final Mutation$insertRecipe$insert_Recipe_one? insert_Recipe_one;
+  final Fragment$RecipePreviewFields? insert_Recipe_one;
 
   @JsonKey(name: '__typename')
   final String $__typename;
@@ -84,15 +119,64 @@ class Mutation$insertRecipe {
 }
 
 extension UtilityExtension$Mutation$insertRecipe on Mutation$insertRecipe {
-  Mutation$insertRecipe copyWith(
-          {Mutation$insertRecipe$insert_Recipe_one? Function()?
-              insert_Recipe_one,
+  CopyWith$Mutation$insertRecipe<Mutation$insertRecipe> get copyWith =>
+      CopyWith$Mutation$insertRecipe(this, (i) => i);
+}
+
+abstract class CopyWith$Mutation$insertRecipe<TRes> {
+  factory CopyWith$Mutation$insertRecipe(Mutation$insertRecipe instance,
+          TRes Function(Mutation$insertRecipe) then) =
+      _CopyWithImpl$Mutation$insertRecipe;
+
+  factory CopyWith$Mutation$insertRecipe.stub(TRes res) =
+      _CopyWithStubImpl$Mutation$insertRecipe;
+
+  TRes call(
+      {Fragment$RecipePreviewFields? insert_Recipe_one, String? $__typename});
+  CopyWith$Fragment$RecipePreviewFields<TRes> get insert_Recipe_one;
+}
+
+class _CopyWithImpl$Mutation$insertRecipe<TRes>
+    implements CopyWith$Mutation$insertRecipe<TRes> {
+  _CopyWithImpl$Mutation$insertRecipe(this._instance, this._then);
+
+  final Mutation$insertRecipe _instance;
+
+  final TRes Function(Mutation$insertRecipe) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? insert_Recipe_one = _undefined,
+          Object? $__typename = _undefined}) =>
+      _then(Mutation$insertRecipe(
+          insert_Recipe_one: insert_Recipe_one == _undefined
+              ? _instance.insert_Recipe_one
+              : (insert_Recipe_one as Fragment$RecipePreviewFields?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String)));
+  CopyWith$Fragment$RecipePreviewFields<TRes> get insert_Recipe_one {
+    final local$insert_Recipe_one = _instance.insert_Recipe_one;
+    return local$insert_Recipe_one == null
+        ? CopyWith$Fragment$RecipePreviewFields.stub(_then(_instance))
+        : CopyWith$Fragment$RecipePreviewFields(
+            local$insert_Recipe_one, (e) => call(insert_Recipe_one: e));
+  }
+}
+
+class _CopyWithStubImpl$Mutation$insertRecipe<TRes>
+    implements CopyWith$Mutation$insertRecipe<TRes> {
+  _CopyWithStubImpl$Mutation$insertRecipe(this._res);
+
+  TRes _res;
+
+  call(
+          {Fragment$RecipePreviewFields? insert_Recipe_one,
           String? $__typename}) =>
-      Mutation$insertRecipe(
-          insert_Recipe_one: insert_Recipe_one == null
-              ? this.insert_Recipe_one
-              : insert_Recipe_one(),
-          $__typename: $__typename == null ? this.$__typename : $__typename);
+      _res;
+  CopyWith$Fragment$RecipePreviewFields<TRes> get insert_Recipe_one =>
+      CopyWith$Fragment$RecipePreviewFields.stub(_res);
 }
 
 const documentNodeMutationinsertRecipe = DocumentNode(definitions: [
@@ -315,337 +399,4 @@ class Mutation$insertRecipe$Widget
                 (variables, {optimisticResult}) =>
                     run(variables.toJson(), optimisticResult: optimisticResult),
                 result));
-}
-
-@JsonSerializable(explicitToJson: true)
-class Mutation$insertRecipe$insert_Recipe_one
-    implements Fragment$RecipePreviewFields {
-  Mutation$insertRecipe$insert_Recipe_one(
-      {required this.id,
-      required this.title,
-      required this.Author,
-      this.description,
-      required this.Files,
-      required this.createdAt,
-      required this.RecipeTags,
-      required this.$__typename});
-
-  @override
-  factory Mutation$insertRecipe$insert_Recipe_one.fromJson(
-          Map<String, dynamic> json) =>
-      _$Mutation$insertRecipe$insert_Recipe_oneFromJson(json);
-
-  final String id;
-
-  final String title;
-
-  final Mutation$insertRecipe$insert_Recipe_one$Author Author;
-
-  final String? description;
-
-  final List<Mutation$insertRecipe$insert_Recipe_one$Files> Files;
-
-  @JsonKey(fromJson: dateTimeFromJson, toJson: dateTimeToJson)
-  final DateTime createdAt;
-
-  final List<Mutation$insertRecipe$insert_Recipe_one$RecipeTags> RecipeTags;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() =>
-      _$Mutation$insertRecipe$insert_Recipe_oneToJson(this);
-  int get hashCode {
-    final l$id = id;
-    final l$title = title;
-    final l$Author = Author;
-    final l$description = description;
-    final l$Files = Files;
-    final l$createdAt = createdAt;
-    final l$RecipeTags = RecipeTags;
-    final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$title,
-      l$Author,
-      l$description,
-      Object.hashAll(l$Files.map((v) => v)),
-      l$createdAt,
-      Object.hashAll(l$RecipeTags.map((v) => v)),
-      l$$__typename
-    ]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Mutation$insertRecipe$insert_Recipe_one) ||
-        runtimeType != other.runtimeType) return false;
-    final l$id = id;
-    final lOther$id = other.id;
-    if (l$id != lOther$id) return false;
-    final l$title = title;
-    final lOther$title = other.title;
-    if (l$title != lOther$title) return false;
-    final l$Author = Author;
-    final lOther$Author = other.Author;
-    if (l$Author != lOther$Author) return false;
-    final l$description = description;
-    final lOther$description = other.description;
-    if (l$description != lOther$description) return false;
-    final l$Files = Files;
-    final lOther$Files = other.Files;
-    if (l$Files.length != lOther$Files.length) return false;
-    for (int i = 0; i < l$Files.length; i++) {
-      final l$Files$entry = l$Files[i];
-      final lOther$Files$entry = lOther$Files[i];
-      if (l$Files$entry != lOther$Files$entry) return false;
-    }
-
-    final l$createdAt = createdAt;
-    final lOther$createdAt = other.createdAt;
-    if (l$createdAt != lOther$createdAt) return false;
-    final l$RecipeTags = RecipeTags;
-    final lOther$RecipeTags = other.RecipeTags;
-    if (l$RecipeTags.length != lOther$RecipeTags.length) return false;
-    for (int i = 0; i < l$RecipeTags.length; i++) {
-      final l$RecipeTags$entry = l$RecipeTags[i];
-      final lOther$RecipeTags$entry = lOther$RecipeTags[i];
-      if (l$RecipeTags$entry != lOther$RecipeTags$entry) return false;
-    }
-
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Mutation$insertRecipe$insert_Recipe_one
-    on Mutation$insertRecipe$insert_Recipe_one {
-  Mutation$insertRecipe$insert_Recipe_one copyWith(
-          {String? id,
-          String? title,
-          Mutation$insertRecipe$insert_Recipe_one$Author? Author,
-          String? Function()? description,
-          List<Mutation$insertRecipe$insert_Recipe_one$Files>? Files,
-          DateTime? createdAt,
-          List<Mutation$insertRecipe$insert_Recipe_one$RecipeTags>? RecipeTags,
-          String? $__typename}) =>
-      Mutation$insertRecipe$insert_Recipe_one(
-          id: id == null ? this.id : id,
-          title: title == null ? this.title : title,
-          Author: Author == null ? this.Author : Author,
-          description: description == null ? this.description : description(),
-          Files: Files == null ? this.Files : Files,
-          createdAt: createdAt == null ? this.createdAt : createdAt,
-          RecipeTags: RecipeTags == null ? this.RecipeTags : RecipeTags,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
-}
-
-@JsonSerializable(explicitToJson: true)
-class Mutation$insertRecipe$insert_Recipe_one$Author
-    implements Fragment$RecipePreviewFields$Author {
-  Mutation$insertRecipe$insert_Recipe_one$Author(
-      {required this.id, required this.name, required this.$__typename});
-
-  @override
-  factory Mutation$insertRecipe$insert_Recipe_one$Author.fromJson(
-          Map<String, dynamic> json) =>
-      _$Mutation$insertRecipe$insert_Recipe_one$AuthorFromJson(json);
-
-  final String id;
-
-  final String name;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() =>
-      _$Mutation$insertRecipe$insert_Recipe_one$AuthorToJson(this);
-  int get hashCode {
-    final l$id = id;
-    final l$name = name;
-    final l$$__typename = $__typename;
-    return Object.hashAll([l$id, l$name, l$$__typename]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Mutation$insertRecipe$insert_Recipe_one$Author) ||
-        runtimeType != other.runtimeType) return false;
-    final l$id = id;
-    final lOther$id = other.id;
-    if (l$id != lOther$id) return false;
-    final l$name = name;
-    final lOther$name = other.name;
-    if (l$name != lOther$name) return false;
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Mutation$insertRecipe$insert_Recipe_one$Author
-    on Mutation$insertRecipe$insert_Recipe_one$Author {
-  Mutation$insertRecipe$insert_Recipe_one$Author copyWith(
-          {String? id, String? name, String? $__typename}) =>
-      Mutation$insertRecipe$insert_Recipe_one$Author(
-          id: id == null ? this.id : id,
-          name: name == null ? this.name : name,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
-}
-
-@JsonSerializable(explicitToJson: true)
-class Mutation$insertRecipe$insert_Recipe_one$Files
-    implements Fragment$RecipePreviewFields$Files {
-  Mutation$insertRecipe$insert_Recipe_one$Files(
-      {required this.id, required this.$__typename});
-
-  @override
-  factory Mutation$insertRecipe$insert_Recipe_one$Files.fromJson(
-          Map<String, dynamic> json) =>
-      _$Mutation$insertRecipe$insert_Recipe_one$FilesFromJson(json);
-
-  final String id;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() =>
-      _$Mutation$insertRecipe$insert_Recipe_one$FilesToJson(this);
-  int get hashCode {
-    final l$id = id;
-    final l$$__typename = $__typename;
-    return Object.hashAll([l$id, l$$__typename]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Mutation$insertRecipe$insert_Recipe_one$Files) ||
-        runtimeType != other.runtimeType) return false;
-    final l$id = id;
-    final lOther$id = other.id;
-    if (l$id != lOther$id) return false;
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Mutation$insertRecipe$insert_Recipe_one$Files
-    on Mutation$insertRecipe$insert_Recipe_one$Files {
-  Mutation$insertRecipe$insert_Recipe_one$Files copyWith(
-          {String? id, String? $__typename}) =>
-      Mutation$insertRecipe$insert_Recipe_one$Files(
-          id: id == null ? this.id : id,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
-}
-
-@JsonSerializable(explicitToJson: true)
-class Mutation$insertRecipe$insert_Recipe_one$RecipeTags
-    implements Fragment$RecipePreviewFields$RecipeTags {
-  Mutation$insertRecipe$insert_Recipe_one$RecipeTags(
-      {required this.Tag, required this.$__typename});
-
-  @override
-  factory Mutation$insertRecipe$insert_Recipe_one$RecipeTags.fromJson(
-          Map<String, dynamic> json) =>
-      _$Mutation$insertRecipe$insert_Recipe_one$RecipeTagsFromJson(json);
-
-  final Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag Tag;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() =>
-      _$Mutation$insertRecipe$insert_Recipe_one$RecipeTagsToJson(this);
-  int get hashCode {
-    final l$Tag = Tag;
-    final l$$__typename = $__typename;
-    return Object.hashAll([l$Tag, l$$__typename]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Mutation$insertRecipe$insert_Recipe_one$RecipeTags) ||
-        runtimeType != other.runtimeType) return false;
-    final l$Tag = Tag;
-    final lOther$Tag = other.Tag;
-    if (l$Tag != lOther$Tag) return false;
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Mutation$insertRecipe$insert_Recipe_one$RecipeTags
-    on Mutation$insertRecipe$insert_Recipe_one$RecipeTags {
-  Mutation$insertRecipe$insert_Recipe_one$RecipeTags copyWith(
-          {Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag? Tag,
-          String? $__typename}) =>
-      Mutation$insertRecipe$insert_Recipe_one$RecipeTags(
-          Tag: Tag == null ? this.Tag : Tag,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
-}
-
-@JsonSerializable(explicitToJson: true)
-class Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag
-    implements Fragment$RecipePreviewFields$RecipeTags$Tag {
-  Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag(
-      {required this.id, required this.name, required this.$__typename});
-
-  @override
-  factory Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag.fromJson(
-          Map<String, dynamic> json) =>
-      _$Mutation$insertRecipe$insert_Recipe_one$RecipeTags$TagFromJson(json);
-
-  final String id;
-
-  final String name;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() =>
-      _$Mutation$insertRecipe$insert_Recipe_one$RecipeTags$TagToJson(this);
-  int get hashCode {
-    final l$id = id;
-    final l$name = name;
-    final l$$__typename = $__typename;
-    return Object.hashAll([l$id, l$name, l$$__typename]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag) ||
-        runtimeType != other.runtimeType) return false;
-    final l$id = id;
-    final lOther$id = other.id;
-    if (l$id != lOther$id) return false;
-    final l$name = name;
-    final lOther$name = other.name;
-    if (l$name != lOther$name) return false;
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag
-    on Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag {
-  Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag copyWith(
-          {String? id, String? name, String? $__typename}) =>
-      Mutation$insertRecipe$insert_Recipe_one$RecipeTags$Tag(
-          id: id == null ? this.id : id,
-          name: name == null ? this.name : name,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
 }

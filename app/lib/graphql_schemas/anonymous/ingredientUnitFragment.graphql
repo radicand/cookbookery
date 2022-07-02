@@ -1,0 +1,13 @@
+fragment IngredientUnitFragment on IngredientUnit {
+  id
+  amount
+  UnitSize {
+    ...UnitSizeFragment
+  }
+  notes
+  Ingredient {
+    id
+    name
+  }
+  order
+}

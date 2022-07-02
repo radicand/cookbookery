@@ -3,7 +3,7 @@ import 'package:cookbook/widgets/recipe_card.dart';
 import 'package:flutter/widgets.dart';
 
 class RecipeList extends StatelessWidget {
-  final List<Fragment$RecipePreviewFields> items;
+  final List<Fragment$RecipePreviewFragment> items;
   const RecipeList({Key? key, required this.items}) : super(key: key);
 
   @override

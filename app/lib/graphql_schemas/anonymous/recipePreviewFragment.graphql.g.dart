@@ -6,28 +6,28 @@ part of 'recipePreviewFragment.graphql.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Fragment$RecipePreviewFields _$Fragment$RecipePreviewFieldsFromJson(
+Fragment$RecipePreviewFragment _$Fragment$RecipePreviewFragmentFromJson(
         Map<String, dynamic> json) =>
-    Fragment$RecipePreviewFields(
+    Fragment$RecipePreviewFragment(
       id: json['id'] as String,
       title: json['title'] as String,
-      Author: Fragment$RecipePreviewFields$Author.fromJson(
+      Author: Fragment$RecipePreviewFragment$Author.fromJson(
           json['Author'] as Map<String, dynamic>),
       description: json['description'] as String?,
       Files: (json['Files'] as List<dynamic>)
-          .map((e) => Fragment$RecipePreviewFields$Files.fromJson(
+          .map((e) => Fragment$RecipePreviewFragment$Files.fromJson(
               e as Map<String, dynamic>))
           .toList(),
       createdAt: dateTimeFromJson(json['createdAt']),
       RecipeTags: (json['RecipeTags'] as List<dynamic>)
-          .map((e) => Fragment$RecipePreviewFields$RecipeTags.fromJson(
+          .map((e) => Fragment$RecipePreviewFragment$RecipeTags.fromJson(
               e as Map<String, dynamic>))
           .toList(),
       $__typename: json['__typename'] as String,
     );
 
-Map<String, dynamic> _$Fragment$RecipePreviewFieldsToJson(
-        Fragment$RecipePreviewFields instance) =>
+Map<String, dynamic> _$Fragment$RecipePreviewFragmentToJson(
+        Fragment$RecipePreviewFragment instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
@@ -39,63 +39,64 @@ Map<String, dynamic> _$Fragment$RecipePreviewFieldsToJson(
       '__typename': instance.$__typename,
     };
 
-Fragment$RecipePreviewFields$Author
-    _$Fragment$RecipePreviewFields$AuthorFromJson(Map<String, dynamic> json) =>
-        Fragment$RecipePreviewFields$Author(
+Fragment$RecipePreviewFragment$Author
+    _$Fragment$RecipePreviewFragment$AuthorFromJson(
+            Map<String, dynamic> json) =>
+        Fragment$RecipePreviewFragment$Author(
           id: json['id'] as String,
           name: json['name'] as String,
           $__typename: json['__typename'] as String,
         );
 
-Map<String, dynamic> _$Fragment$RecipePreviewFields$AuthorToJson(
-        Fragment$RecipePreviewFields$Author instance) =>
+Map<String, dynamic> _$Fragment$RecipePreviewFragment$AuthorToJson(
+        Fragment$RecipePreviewFragment$Author instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       '__typename': instance.$__typename,
     };
 
-Fragment$RecipePreviewFields$Files _$Fragment$RecipePreviewFields$FilesFromJson(
-        Map<String, dynamic> json) =>
-    Fragment$RecipePreviewFields$Files(
-      id: json['id'] as String,
-      $__typename: json['__typename'] as String,
-    );
+Fragment$RecipePreviewFragment$Files
+    _$Fragment$RecipePreviewFragment$FilesFromJson(Map<String, dynamic> json) =>
+        Fragment$RecipePreviewFragment$Files(
+          id: json['id'] as String,
+          $__typename: json['__typename'] as String,
+        );
 
-Map<String, dynamic> _$Fragment$RecipePreviewFields$FilesToJson(
-        Fragment$RecipePreviewFields$Files instance) =>
+Map<String, dynamic> _$Fragment$RecipePreviewFragment$FilesToJson(
+        Fragment$RecipePreviewFragment$Files instance) =>
     <String, dynamic>{
       'id': instance.id,
       '__typename': instance.$__typename,
     };
 
-Fragment$RecipePreviewFields$RecipeTags
-    _$Fragment$RecipePreviewFields$RecipeTagsFromJson(
+Fragment$RecipePreviewFragment$RecipeTags
+    _$Fragment$RecipePreviewFragment$RecipeTagsFromJson(
             Map<String, dynamic> json) =>
-        Fragment$RecipePreviewFields$RecipeTags(
-          Tag: Fragment$RecipePreviewFields$RecipeTags$Tag.fromJson(
+        Fragment$RecipePreviewFragment$RecipeTags(
+          Tag: Fragment$RecipePreviewFragment$RecipeTags$Tag.fromJson(
               json['Tag'] as Map<String, dynamic>),
           $__typename: json['__typename'] as String,
         );
 
-Map<String, dynamic> _$Fragment$RecipePreviewFields$RecipeTagsToJson(
-        Fragment$RecipePreviewFields$RecipeTags instance) =>
+Map<String, dynamic> _$Fragment$RecipePreviewFragment$RecipeTagsToJson(
+        Fragment$RecipePreviewFragment$RecipeTags instance) =>
     <String, dynamic>{
       'Tag': instance.Tag.toJson(),
       '__typename': instance.$__typename,
     };
 
-Fragment$RecipePreviewFields$RecipeTags$Tag
-    _$Fragment$RecipePreviewFields$RecipeTags$TagFromJson(
+Fragment$RecipePreviewFragment$RecipeTags$Tag
+    _$Fragment$RecipePreviewFragment$RecipeTags$TagFromJson(
             Map<String, dynamic> json) =>
-        Fragment$RecipePreviewFields$RecipeTags$Tag(
+        Fragment$RecipePreviewFragment$RecipeTags$Tag(
           id: json['id'] as String,
           name: json['name'] as String,
           $__typename: json['__typename'] as String,
         );
 
-Map<String, dynamic> _$Fragment$RecipePreviewFields$RecipeTags$TagToJson(
-        Fragment$RecipePreviewFields$RecipeTags$Tag instance) =>
+Map<String, dynamic> _$Fragment$RecipePreviewFragment$RecipeTags$TagToJson(
+        Fragment$RecipePreviewFragment$RecipeTags$Tag instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

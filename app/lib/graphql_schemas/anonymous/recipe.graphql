@@ -1,0 +1,5 @@
+query recipe($id: String!) {
+  Recipe_by_pk(id: $id) {
+    ...RecipeFragment
+  }
+}

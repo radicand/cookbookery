@@ -1,4 +1,4 @@
-fragment RecipePreviewFragment on Recipe {
+fragment RecipeFragment on Recipe {
   id
   title
   Author {
@@ -10,6 +10,12 @@ fragment RecipePreviewFragment on Recipe {
     id
   }
   createdAt
+  updatedAt
+  notes
+  RecipeSections(order_by: { order: asc }) {
+    ...RecipeSectionFragment
+  }
+  source
   RecipeTags {
     Tag {
       id

@@ -24,6 +24,10 @@ class AuthService {
   String? oAuthAccessToken;
 
   Future<bool> init() async {
+    return refreshToken();
+  }
+
+  Future<bool> refreshToken() async {
     final storedRefreshToken = await secureStorage.read(key: REFRESH_TOKEN_KEY);
 
     if (storedRefreshToken == null) {
@@ -38,10 +42,14 @@ class AuthService {
             additionalParameters: {"audience": OAUTH_AUDIENCE}),
       );
       final String setResult = await _setLocalVariables(result);
-      return setResult == 'Success';
+      final success = setResult == 'Success';
+      if (!success) {
+        logout();
+      }
+      return success;
     } catch (e, s) {
       print('error on Refresh Token: $e - stack: $s');
-      // logOut() possibly
+      logout();
       return false;
     }
   }
@@ -72,6 +80,7 @@ class AuthService {
   }
 
   Future<void> logout() async {
+    print("Logging out and deleting auth storage keys");
     await secureStorage.delete(key: REFRESH_TOKEN_KEY);
     await secureStorage.delete(key: ACCESS_TOKEN_KEY);
     cookbookStore.setUser(null);

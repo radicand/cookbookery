@@ -3,7 +3,6 @@
 // ignore_for_file: non_constant_identifier_names, curly_braces_in_flow_control_structures, prefer_if_null_operators
 // ignore_for_file: camel_case_extensions, prefer_const_constructors
 
-import 'package:cookbook/scalars.dart';
 import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
@@ -20,7 +19,7 @@ class Query$recipes {
   factory Query$recipes.fromJson(Map<String, dynamic> json) =>
       _$Query$recipesFromJson(json);
 
-  final List<Query$recipes$Recipe> Recipe;
+  final List<Fragment$RecipePreviewFragment> Recipe;
 
   @JsonKey(name: '__typename')
   final String $__typename;
@@ -55,11 +54,67 @@ class Query$recipes {
 }
 
 extension UtilityExtension$Query$recipes on Query$recipes {
-  Query$recipes copyWith(
-          {List<Query$recipes$Recipe>? Recipe, String? $__typename}) =>
-      Query$recipes(
-          Recipe: Recipe == null ? this.Recipe : Recipe,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
+  CopyWith$Query$recipes<Query$recipes> get copyWith =>
+      CopyWith$Query$recipes(this, (i) => i);
+}
+
+abstract class CopyWith$Query$recipes<TRes> {
+  factory CopyWith$Query$recipes(
+          Query$recipes instance, TRes Function(Query$recipes) then) =
+      _CopyWithImpl$Query$recipes;
+
+  factory CopyWith$Query$recipes.stub(TRes res) =
+      _CopyWithStubImpl$Query$recipes;
+
+  TRes call(
+      {List<Fragment$RecipePreviewFragment>? Recipe, String? $__typename});
+  TRes Recipe(
+      Iterable<Fragment$RecipePreviewFragment> Function(
+              Iterable<
+                  CopyWith$Fragment$RecipePreviewFragment<
+                      Fragment$RecipePreviewFragment>>)
+          _fn);
+}
+
+class _CopyWithImpl$Query$recipes<TRes>
+    implements CopyWith$Query$recipes<TRes> {
+  _CopyWithImpl$Query$recipes(this._instance, this._then);
+
+  final Query$recipes _instance;
+
+  final TRes Function(Query$recipes) _then;
+
+  static const _undefined = {};
+
+  TRes call({Object? Recipe = _undefined, Object? $__typename = _undefined}) =>
+      _then(Query$recipes(
+          Recipe: Recipe == _undefined || Recipe == null
+              ? _instance.Recipe
+              : (Recipe as List<Fragment$RecipePreviewFragment>),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String)));
+  TRes Recipe(
+          Iterable<Fragment$RecipePreviewFragment> Function(
+                  Iterable<
+                      CopyWith$Fragment$RecipePreviewFragment<
+                          Fragment$RecipePreviewFragment>>)
+              _fn) =>
+      call(
+          Recipe: _fn(_instance.Recipe.map(
+                  (e) => CopyWith$Fragment$RecipePreviewFragment(e, (i) => i)))
+              .toList());
+}
+
+class _CopyWithStubImpl$Query$recipes<TRes>
+    implements CopyWith$Query$recipes<TRes> {
+  _CopyWithStubImpl$Query$recipes(this._res);
+
+  TRes _res;
+
+  call({List<Fragment$RecipePreviewFragment>? Recipe, String? $__typename}) =>
+      _res;
+  Recipe(_fn) => _res;
 }
 
 const documentNodeQueryrecipes = DocumentNode(definitions: [
@@ -84,7 +139,8 @@ const documentNodeQueryrecipes = DocumentNode(definitions: [
             directives: [],
             selectionSet: SelectionSetNode(selections: [
               FragmentSpreadNode(
-                  name: NameNode(value: 'RecipePreviewFields'), directives: []),
+                  name: NameNode(value: 'RecipePreviewFragment'),
+                  directives: []),
               FieldNode(
                   name: NameNode(value: '__typename'),
                   alias: null,
@@ -99,7 +155,7 @@ const documentNodeQueryrecipes = DocumentNode(definitions: [
             directives: [],
             selectionSet: null)
       ])),
-  fragmentDefinitionRecipePreviewFields,
+  fragmentDefinitionRecipePreviewFragment,
 ]);
 Query$recipes _parserFn$Query$recipes(Map<String, dynamic> data) =>
     Query$recipes.fromJson(data);
@@ -197,324 +253,4 @@ class Query$recipes$Widget extends graphql_flutter.Query<Query$recipes> {
             key: key,
             options: options ?? Options$Query$recipes(),
             builder: builder);
-}
-
-@JsonSerializable(explicitToJson: true)
-class Query$recipes$Recipe implements Fragment$RecipePreviewFields {
-  Query$recipes$Recipe(
-      {required this.id,
-      required this.title,
-      required this.Author,
-      this.description,
-      required this.Files,
-      required this.createdAt,
-      required this.RecipeTags,
-      required this.$__typename});
-
-  @override
-  factory Query$recipes$Recipe.fromJson(Map<String, dynamic> json) =>
-      _$Query$recipes$RecipeFromJson(json);
-
-  final String id;
-
-  final String title;
-
-  final Query$recipes$Recipe$Author Author;
-
-  final String? description;
-
-  final List<Query$recipes$Recipe$Files> Files;
-
-  @JsonKey(fromJson: dateTimeFromJson, toJson: dateTimeToJson)
-  final DateTime createdAt;
-
-  final List<Query$recipes$Recipe$RecipeTags> RecipeTags;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() => _$Query$recipes$RecipeToJson(this);
-  int get hashCode {
-    final l$id = id;
-    final l$title = title;
-    final l$Author = Author;
-    final l$description = description;
-    final l$Files = Files;
-    final l$createdAt = createdAt;
-    final l$RecipeTags = RecipeTags;
-    final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$title,
-      l$Author,
-      l$description,
-      Object.hashAll(l$Files.map((v) => v)),
-      l$createdAt,
-      Object.hashAll(l$RecipeTags.map((v) => v)),
-      l$$__typename
-    ]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Query$recipes$Recipe) || runtimeType != other.runtimeType)
-      return false;
-    final l$id = id;
-    final lOther$id = other.id;
-    if (l$id != lOther$id) return false;
-    final l$title = title;
-    final lOther$title = other.title;
-    if (l$title != lOther$title) return false;
-    final l$Author = Author;
-    final lOther$Author = other.Author;
-    if (l$Author != lOther$Author) return false;
-    final l$description = description;
-    final lOther$description = other.description;
-    if (l$description != lOther$description) return false;
-    final l$Files = Files;
-    final lOther$Files = other.Files;
-    if (l$Files.length != lOther$Files.length) return false;
-    for (int i = 0; i < l$Files.length; i++) {
-      final l$Files$entry = l$Files[i];
-      final lOther$Files$entry = lOther$Files[i];
-      if (l$Files$entry != lOther$Files$entry) return false;
-    }
-
-    final l$createdAt = createdAt;
-    final lOther$createdAt = other.createdAt;
-    if (l$createdAt != lOther$createdAt) return false;
-    final l$RecipeTags = RecipeTags;
-    final lOther$RecipeTags = other.RecipeTags;
-    if (l$RecipeTags.length != lOther$RecipeTags.length) return false;
-    for (int i = 0; i < l$RecipeTags.length; i++) {
-      final l$RecipeTags$entry = l$RecipeTags[i];
-      final lOther$RecipeTags$entry = lOther$RecipeTags[i];
-      if (l$RecipeTags$entry != lOther$RecipeTags$entry) return false;
-    }
-
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Query$recipes$Recipe on Query$recipes$Recipe {
-  Query$recipes$Recipe copyWith(
-          {String? id,
-          String? title,
-          Query$recipes$Recipe$Author? Author,
-          String? Function()? description,
-          List<Query$recipes$Recipe$Files>? Files,
-          DateTime? createdAt,
-          List<Query$recipes$Recipe$RecipeTags>? RecipeTags,
-          String? $__typename}) =>
-      Query$recipes$Recipe(
-          id: id == null ? this.id : id,
-          title: title == null ? this.title : title,
-          Author: Author == null ? this.Author : Author,
-          description: description == null ? this.description : description(),
-          Files: Files == null ? this.Files : Files,
-          createdAt: createdAt == null ? this.createdAt : createdAt,
-          RecipeTags: RecipeTags == null ? this.RecipeTags : RecipeTags,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
-}
-
-@JsonSerializable(explicitToJson: true)
-class Query$recipes$Recipe$Author
-    implements Fragment$RecipePreviewFields$Author {
-  Query$recipes$Recipe$Author(
-      {required this.id, required this.name, required this.$__typename});
-
-  @override
-  factory Query$recipes$Recipe$Author.fromJson(Map<String, dynamic> json) =>
-      _$Query$recipes$Recipe$AuthorFromJson(json);
-
-  final String id;
-
-  final String name;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() => _$Query$recipes$Recipe$AuthorToJson(this);
-  int get hashCode {
-    final l$id = id;
-    final l$name = name;
-    final l$$__typename = $__typename;
-    return Object.hashAll([l$id, l$name, l$$__typename]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Query$recipes$Recipe$Author) ||
-        runtimeType != other.runtimeType) return false;
-    final l$id = id;
-    final lOther$id = other.id;
-    if (l$id != lOther$id) return false;
-    final l$name = name;
-    final lOther$name = other.name;
-    if (l$name != lOther$name) return false;
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Query$recipes$Recipe$Author
-    on Query$recipes$Recipe$Author {
-  Query$recipes$Recipe$Author copyWith(
-          {String? id, String? name, String? $__typename}) =>
-      Query$recipes$Recipe$Author(
-          id: id == null ? this.id : id,
-          name: name == null ? this.name : name,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
-}
-
-@JsonSerializable(explicitToJson: true)
-class Query$recipes$Recipe$Files implements Fragment$RecipePreviewFields$Files {
-  Query$recipes$Recipe$Files({required this.id, required this.$__typename});
-
-  @override
-  factory Query$recipes$Recipe$Files.fromJson(Map<String, dynamic> json) =>
-      _$Query$recipes$Recipe$FilesFromJson(json);
-
-  final String id;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() => _$Query$recipes$Recipe$FilesToJson(this);
-  int get hashCode {
-    final l$id = id;
-    final l$$__typename = $__typename;
-    return Object.hashAll([l$id, l$$__typename]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Query$recipes$Recipe$Files) ||
-        runtimeType != other.runtimeType) return false;
-    final l$id = id;
-    final lOther$id = other.id;
-    if (l$id != lOther$id) return false;
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Query$recipes$Recipe$Files
-    on Query$recipes$Recipe$Files {
-  Query$recipes$Recipe$Files copyWith({String? id, String? $__typename}) =>
-      Query$recipes$Recipe$Files(
-          id: id == null ? this.id : id,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
-}
-
-@JsonSerializable(explicitToJson: true)
-class Query$recipes$Recipe$RecipeTags
-    implements Fragment$RecipePreviewFields$RecipeTags {
-  Query$recipes$Recipe$RecipeTags(
-      {required this.Tag, required this.$__typename});
-
-  @override
-  factory Query$recipes$Recipe$RecipeTags.fromJson(Map<String, dynamic> json) =>
-      _$Query$recipes$Recipe$RecipeTagsFromJson(json);
-
-  final Query$recipes$Recipe$RecipeTags$Tag Tag;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() =>
-      _$Query$recipes$Recipe$RecipeTagsToJson(this);
-  int get hashCode {
-    final l$Tag = Tag;
-    final l$$__typename = $__typename;
-    return Object.hashAll([l$Tag, l$$__typename]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Query$recipes$Recipe$RecipeTags) ||
-        runtimeType != other.runtimeType) return false;
-    final l$Tag = Tag;
-    final lOther$Tag = other.Tag;
-    if (l$Tag != lOther$Tag) return false;
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Query$recipes$Recipe$RecipeTags
-    on Query$recipes$Recipe$RecipeTags {
-  Query$recipes$Recipe$RecipeTags copyWith(
-          {Query$recipes$Recipe$RecipeTags$Tag? Tag, String? $__typename}) =>
-      Query$recipes$Recipe$RecipeTags(
-          Tag: Tag == null ? this.Tag : Tag,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
-}
-
-@JsonSerializable(explicitToJson: true)
-class Query$recipes$Recipe$RecipeTags$Tag
-    implements Fragment$RecipePreviewFields$RecipeTags$Tag {
-  Query$recipes$Recipe$RecipeTags$Tag(
-      {required this.id, required this.name, required this.$__typename});
-
-  @override
-  factory Query$recipes$Recipe$RecipeTags$Tag.fromJson(
-          Map<String, dynamic> json) =>
-      _$Query$recipes$Recipe$RecipeTags$TagFromJson(json);
-
-  final String id;
-
-  final String name;
-
-  @JsonKey(name: '__typename')
-  final String $__typename;
-
-  Map<String, dynamic> toJson() =>
-      _$Query$recipes$Recipe$RecipeTags$TagToJson(this);
-  int get hashCode {
-    final l$id = id;
-    final l$name = name;
-    final l$$__typename = $__typename;
-    return Object.hashAll([l$id, l$name, l$$__typename]);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Query$recipes$Recipe$RecipeTags$Tag) ||
-        runtimeType != other.runtimeType) return false;
-    final l$id = id;
-    final lOther$id = other.id;
-    if (l$id != lOther$id) return false;
-    final l$name = name;
-    final lOther$name = other.name;
-    if (l$name != lOther$name) return false;
-    final l$$__typename = $__typename;
-    final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
-    return true;
-  }
-}
-
-extension UtilityExtension$Query$recipes$Recipe$RecipeTags$Tag
-    on Query$recipes$Recipe$RecipeTags$Tag {
-  Query$recipes$Recipe$RecipeTags$Tag copyWith(
-          {String? id, String? name, String? $__typename}) =>
-      Query$recipes$Recipe$RecipeTags$Tag(
-          id: id == null ? this.id : id,
-          name: name == null ? this.name : name,
-          $__typename: $__typename == null ? this.$__typename : $__typename);
 }
