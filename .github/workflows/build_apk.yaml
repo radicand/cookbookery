@@ -42,12 +42,12 @@ jobs:
           token: ${{secrets.CODECOV_TOKEN}}
           files: app/coverage/lcov.info
 
-      - name: Run integration tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          working-directory: app/
-          api-level: 30
-          script: flutter drive --driver=test_driver/main_test.dart --target integration_test/app_test.dart
+#      - name: Run integration tests
+#        uses: reactivecircus/android-emulator-runner@v2
+#        with:
+#          working-directory: app/
+#          api-level: 30
+#          script: flutter drive --driver=test_driver/main_test.dart --target integration_test/app_test.dart
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
