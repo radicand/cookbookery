@@ -49,3 +49,5 @@ app.*.map.json
 .env
 local.properties
 node_modules
+coverage
+screenshots/
