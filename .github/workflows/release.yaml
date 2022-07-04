@@ -92,7 +92,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: release-aab
-          path: app/build/app/outputs/bundle/app-release.aab
+          path: app/build/app/outputs/bundle/release/app-release.aab
 
       # - name: Upload Screenshoots
       #   uses: actions/upload-artifact@v3
