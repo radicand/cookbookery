@@ -21,19 +21,10 @@ jobs:
           distribution: "zulu"
           java-version: "11"
 
-      - name: Get Flutter version from pubspec
-        working-directory: app/
-        run: |
-          set -e
-
-          brew install yq
-          _flutterVersion=$( yq read pubspec.yaml environment.flutter )
-          echo "FLUTTER_VERSION=${_flutterVersion}" >> $GITHUB_ENV
-
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+          flutter-version: 3.0.4
           channel: "stable"
 
       - name: Install dependencies
@@ -100,7 +91,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: release-aab
-          path: app/build/app/outputs/bundle/app-release.aabs
+          path: app/build/app/outputs/bundle/app-release.aab
 
       # - name: Upload Screenshoots
       #   uses: actions/upload-artifact@v3
