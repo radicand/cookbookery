@@ -1833,6 +1833,29 @@ Map<String, dynamic> _$Input$Tag_order_byToJson(Input$Tag_order_by instance) =>
       'name': _$Enum$order_byEnumMap[instance.name],
     };
 
+Input$UnitSize_aggregate_order_by _$Input$UnitSize_aggregate_order_byFromJson(
+        Map<String, dynamic> json) =>
+    Input$UnitSize_aggregate_order_by(
+      count: $enumDecodeNullable(_$Enum$order_byEnumMap, json['count'],
+          unknownValue: Enum$order_by.$unknown),
+      max: json['max'] == null
+          ? null
+          : Input$UnitSize_max_order_by.fromJson(
+              json['max'] as Map<String, dynamic>),
+      min: json['min'] == null
+          ? null
+          : Input$UnitSize_min_order_by.fromJson(
+              json['min'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$Input$UnitSize_aggregate_order_byToJson(
+        Input$UnitSize_aggregate_order_by instance) =>
+    <String, dynamic>{
+      'count': _$Enum$order_byEnumMap[instance.count],
+      'max': instance.max?.toJson(),
+      'min': instance.min?.toJson(),
+    };
+
 Input$UnitSize_bool_exp _$Input$UnitSize_bool_expFromJson(
         Map<String, dynamic> json) =>
     Input$UnitSize_bool_exp(
@@ -1840,6 +1863,10 @@ Input$UnitSize_bool_exp _$Input$UnitSize_bool_expFromJson(
           ? null
           : Input$IngredientUnit_bool_exp.fromJson(
               json['IngredientUnits'] as Map<String, dynamic>),
+      UnitType: json['UnitType'] == null
+          ? null
+          : Input$UnitType_bool_exp.fromJson(
+              json['UnitType'] as Map<String, dynamic>),
       $_and: (json['_and'] as List<dynamic>?)
           ?.map((e) =>
               Input$UnitSize_bool_exp.fromJson(e as Map<String, dynamic>))
@@ -1874,6 +1901,7 @@ Map<String, dynamic> _$Input$UnitSize_bool_expToJson(
         Input$UnitSize_bool_exp instance) =>
     <String, dynamic>{
       'IngredientUnits': instance.IngredientUnits?.toJson(),
+      'UnitType': instance.UnitType?.toJson(),
       '_and': instance.$_and?.map((e) => e.toJson()).toList(),
       '_not': instance.$_not?.toJson(),
       '_or': instance.$_or?.map((e) => e.toJson()).toList(),
@@ -1883,6 +1911,44 @@ Map<String, dynamic> _$Input$UnitSize_bool_expToJson(
       'unitType': instance.unitType?.toJson(),
     };
 
+Input$UnitSize_max_order_by _$Input$UnitSize_max_order_byFromJson(
+        Map<String, dynamic> json) =>
+    Input$UnitSize_max_order_by(
+      id: $enumDecodeNullable(_$Enum$order_byEnumMap, json['id'],
+          unknownValue: Enum$order_by.$unknown),
+      name: $enumDecodeNullable(_$Enum$order_byEnumMap, json['name'],
+          unknownValue: Enum$order_by.$unknown),
+      plural: $enumDecodeNullable(_$Enum$order_byEnumMap, json['plural'],
+          unknownValue: Enum$order_by.$unknown),
+    );
+
+Map<String, dynamic> _$Input$UnitSize_max_order_byToJson(
+        Input$UnitSize_max_order_by instance) =>
+    <String, dynamic>{
+      'id': _$Enum$order_byEnumMap[instance.id],
+      'name': _$Enum$order_byEnumMap[instance.name],
+      'plural': _$Enum$order_byEnumMap[instance.plural],
+    };
+
+Input$UnitSize_min_order_by _$Input$UnitSize_min_order_byFromJson(
+        Map<String, dynamic> json) =>
+    Input$UnitSize_min_order_by(
+      id: $enumDecodeNullable(_$Enum$order_byEnumMap, json['id'],
+          unknownValue: Enum$order_by.$unknown),
+      name: $enumDecodeNullable(_$Enum$order_byEnumMap, json['name'],
+          unknownValue: Enum$order_by.$unknown),
+      plural: $enumDecodeNullable(_$Enum$order_byEnumMap, json['plural'],
+          unknownValue: Enum$order_by.$unknown),
+    );
+
+Map<String, dynamic> _$Input$UnitSize_min_order_byToJson(
+        Input$UnitSize_min_order_by instance) =>
+    <String, dynamic>{
+      'id': _$Enum$order_byEnumMap[instance.id],
+      'name': _$Enum$order_byEnumMap[instance.name],
+      'plural': _$Enum$order_byEnumMap[instance.plural],
+    };
+
 Input$UnitSize_order_by _$Input$UnitSize_order_byFromJson(
         Map<String, dynamic> json) =>
     Input$UnitSize_order_by(
@@ -1890,6 +1956,10 @@ Input$UnitSize_order_by _$Input$UnitSize_order_byFromJson(
           ? null
           : Input$IngredientUnit_aggregate_order_by.fromJson(
               json['IngredientUnits_aggregate'] as Map<String, dynamic>),
+      UnitType: json['UnitType'] == null
+          ? null
+          : Input$UnitType_order_by.fromJson(
+              json['UnitType'] as Map<String, dynamic>),
       id: $enumDecodeNullable(_$Enum$order_byEnumMap, json['id'],
           unknownValue: Enum$order_by.$unknown),
       name: $enumDecodeNullable(_$Enum$order_byEnumMap, json['name'],
@@ -1904,6 +1974,7 @@ Map<String, dynamic> _$Input$UnitSize_order_byToJson(
         Input$UnitSize_order_by instance) =>
     <String, dynamic>{
       'IngredientUnits_aggregate': instance.IngredientUnits_aggregate?.toJson(),
+      'UnitType': instance.UnitType?.toJson(),
       'id': _$Enum$order_byEnumMap[instance.id],
       'name': _$Enum$order_byEnumMap[instance.name],
       'plural': _$Enum$order_byEnumMap[instance.plural],
@@ -1913,6 +1984,10 @@ Map<String, dynamic> _$Input$UnitSize_order_byToJson(
 Input$UnitType_bool_exp _$Input$UnitType_bool_expFromJson(
         Map<String, dynamic> json) =>
     Input$UnitType_bool_exp(
+      UnitSizes: json['UnitSizes'] == null
+          ? null
+          : Input$UnitSize_bool_exp.fromJson(
+              json['UnitSizes'] as Map<String, dynamic>),
       $_and: (json['_and'] as List<dynamic>?)
           ?.map((e) =>
               Input$UnitType_bool_exp.fromJson(e as Map<String, dynamic>))
@@ -1938,6 +2013,7 @@ Input$UnitType_bool_exp _$Input$UnitType_bool_expFromJson(
 Map<String, dynamic> _$Input$UnitType_bool_expToJson(
         Input$UnitType_bool_exp instance) =>
     <String, dynamic>{
+      'UnitSizes': instance.UnitSizes?.toJson(),
       '_and': instance.$_and?.map((e) => e.toJson()).toList(),
       '_not': instance.$_not?.toJson(),
       '_or': instance.$_or?.map((e) => e.toJson()).toList(),
@@ -1983,6 +2059,10 @@ const _$Enum$UnitType_enumEnumMap = {
 Input$UnitType_order_by _$Input$UnitType_order_byFromJson(
         Map<String, dynamic> json) =>
     Input$UnitType_order_by(
+      UnitSizes_aggregate: json['UnitSizes_aggregate'] == null
+          ? null
+          : Input$UnitSize_aggregate_order_by.fromJson(
+              json['UnitSizes_aggregate'] as Map<String, dynamic>),
       description: $enumDecodeNullable(
           _$Enum$order_byEnumMap, json['description'],
           unknownValue: Enum$order_by.$unknown),
@@ -1993,6 +2073,7 @@ Input$UnitType_order_by _$Input$UnitType_order_byFromJson(
 Map<String, dynamic> _$Input$UnitType_order_byToJson(
         Input$UnitType_order_by instance) =>
     <String, dynamic>{
+      'UnitSizes_aggregate': instance.UnitSizes_aggregate?.toJson(),
       'description': _$Enum$order_byEnumMap[instance.description],
       'id': _$Enum$order_byEnumMap[instance.id],
     };

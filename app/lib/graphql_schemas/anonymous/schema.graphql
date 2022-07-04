@@ -1111,6 +1111,9 @@ type UnitSize {
     """filter the rows returned"""
     where: IngredientUnit_bool_exp
   ): [IngredientUnit!]!
+
+  """An object relationship"""
+  UnitType: UnitType!
   id: String!
   name: String!
   plural: String!
@@ -1118,10 +1121,20 @@ type UnitSize {
 }
 
 """
+order by aggregate values of table "UnitSize"
+"""
+input UnitSize_aggregate_order_by {
+  count: order_by
+  max: UnitSize_max_order_by
+  min: UnitSize_min_order_by
+}
+
+"""
 Boolean expression to filter rows from the table "UnitSize". All fields are combined with a logical 'AND'.
 """
 input UnitSize_bool_exp {
   IngredientUnits: IngredientUnit_bool_exp
+  UnitType: UnitType_bool_exp
   _and: [UnitSize_bool_exp!]
   _not: UnitSize_bool_exp
   _or: [UnitSize_bool_exp!]
@@ -1131,9 +1144,28 @@ input UnitSize_bool_exp {
   unitType: UnitType_enum_comparison_exp
 }
 
+"""
+order by max() on columns of table "UnitSize"
+"""
+input UnitSize_max_order_by {
+  id: order_by
+  name: order_by
+  plural: order_by
+}
+
+"""
+order by min() on columns of table "UnitSize"
+"""
+input UnitSize_min_order_by {
+  id: order_by
+  name: order_by
+  plural: order_by
+}
+
 """Ordering options when selecting data from "UnitSize"."""
 input UnitSize_order_by {
   IngredientUnits_aggregate: IngredientUnit_aggregate_order_by
+  UnitType: UnitType_order_by
   id: order_by
   name: order_by
   plural: order_by
@@ -1161,6 +1193,23 @@ enum UnitSize_select_column {
 columns and relationships of "UnitType"
 """
 type UnitType {
+  """An array relationship"""
+  UnitSizes(
+    """distinct select on columns"""
+    distinct_on: [UnitSize_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [UnitSize_order_by!]
+
+    """filter the rows returned"""
+    where: UnitSize_bool_exp
+  ): [UnitSize!]!
   description: String
   id: String!
 }
@@ -1169,6 +1218,7 @@ type UnitType {
 Boolean expression to filter rows from the table "UnitType". All fields are combined with a logical 'AND'.
 """
 input UnitType_bool_exp {
+  UnitSizes: UnitSize_bool_exp
   _and: [UnitType_bool_exp!]
   _not: UnitType_bool_exp
   _or: [UnitType_bool_exp!]
@@ -1194,6 +1244,7 @@ input UnitType_enum_comparison_exp {
 
 """Ordering options when selecting data from "UnitType"."""
 input UnitType_order_by {
+  UnitSizes_aggregate: UnitSize_aggregate_order_by
   description: order_by
   id: order_by
 }

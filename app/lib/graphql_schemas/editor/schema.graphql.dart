@@ -11811,9 +11811,110 @@ class _CopyWithStubImpl$Input$Tag_order_by<TRes>
 }
 
 @JsonSerializable(explicitToJson: true)
+class Input$UnitSize_aggregate_order_by {
+  Input$UnitSize_aggregate_order_by({this.count, this.max, this.min});
+
+  @override
+  factory Input$UnitSize_aggregate_order_by.fromJson(
+          Map<String, dynamic> json) =>
+      _$Input$UnitSize_aggregate_order_byFromJson(json);
+
+  @JsonKey(unknownEnumValue: Enum$order_by.$unknown)
+  final Enum$order_by? count;
+
+  final Input$UnitSize_max_order_by? max;
+
+  final Input$UnitSize_min_order_by? min;
+
+  Map<String, dynamic> toJson() =>
+      _$Input$UnitSize_aggregate_order_byToJson(this);
+  int get hashCode {
+    final l$count = count;
+    final l$max = max;
+    final l$min = min;
+    return Object.hashAll([l$count, l$max, l$min]);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (!(other is Input$UnitSize_aggregate_order_by) ||
+        runtimeType != other.runtimeType) return false;
+    final l$count = count;
+    final lOther$count = other.count;
+    if (l$count != lOther$count) return false;
+    final l$max = max;
+    final lOther$max = other.max;
+    if (l$max != lOther$max) return false;
+    final l$min = min;
+    final lOther$min = other.min;
+    if (l$min != lOther$min) return false;
+    return true;
+  }
+
+  CopyWith$Input$UnitSize_aggregate_order_by<Input$UnitSize_aggregate_order_by>
+      get copyWith =>
+          CopyWith$Input$UnitSize_aggregate_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$UnitSize_aggregate_order_by<TRes> {
+  factory CopyWith$Input$UnitSize_aggregate_order_by(
+          Input$UnitSize_aggregate_order_by instance,
+          TRes Function(Input$UnitSize_aggregate_order_by) then) =
+      _CopyWithImpl$Input$UnitSize_aggregate_order_by;
+
+  factory CopyWith$Input$UnitSize_aggregate_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitSize_aggregate_order_by;
+
+  TRes call(
+      {Enum$order_by? count,
+      Input$UnitSize_max_order_by? max,
+      Input$UnitSize_min_order_by? min});
+}
+
+class _CopyWithImpl$Input$UnitSize_aggregate_order_by<TRes>
+    implements CopyWith$Input$UnitSize_aggregate_order_by<TRes> {
+  _CopyWithImpl$Input$UnitSize_aggregate_order_by(this._instance, this._then);
+
+  final Input$UnitSize_aggregate_order_by _instance;
+
+  final TRes Function(Input$UnitSize_aggregate_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? count = _undefined,
+          Object? max = _undefined,
+          Object? min = _undefined}) =>
+      _then(Input$UnitSize_aggregate_order_by(
+          count:
+              count == _undefined ? _instance.count : (count as Enum$order_by?),
+          max: max == _undefined
+              ? _instance.max
+              : (max as Input$UnitSize_max_order_by?),
+          min: min == _undefined
+              ? _instance.min
+              : (min as Input$UnitSize_min_order_by?)));
+}
+
+class _CopyWithStubImpl$Input$UnitSize_aggregate_order_by<TRes>
+    implements CopyWith$Input$UnitSize_aggregate_order_by<TRes> {
+  _CopyWithStubImpl$Input$UnitSize_aggregate_order_by(this._res);
+
+  TRes _res;
+
+  call(
+          {Enum$order_by? count,
+          Input$UnitSize_max_order_by? max,
+          Input$UnitSize_min_order_by? min}) =>
+      _res;
+}
+
+@JsonSerializable(explicitToJson: true)
 class Input$UnitSize_bool_exp {
   Input$UnitSize_bool_exp(
       {this.IngredientUnits,
+      this.UnitType,
       this.$_and,
       this.$_not,
       this.$_or,
@@ -11827,6 +11928,8 @@ class Input$UnitSize_bool_exp {
       _$Input$UnitSize_bool_expFromJson(json);
 
   final Input$IngredientUnit_bool_exp? IngredientUnits;
+
+  final Input$UnitType_bool_exp? UnitType;
 
   @JsonKey(name: '_and')
   final List<Input$UnitSize_bool_exp>? $_and;
@@ -11848,6 +11951,7 @@ class Input$UnitSize_bool_exp {
   Map<String, dynamic> toJson() => _$Input$UnitSize_bool_expToJson(this);
   int get hashCode {
     final l$IngredientUnits = IngredientUnits;
+    final l$UnitType = UnitType;
     final l$$_and = $_and;
     final l$$_not = $_not;
     final l$$_or = $_or;
@@ -11857,6 +11961,7 @@ class Input$UnitSize_bool_exp {
     final l$unitType = unitType;
     return Object.hashAll([
       l$IngredientUnits,
+      l$UnitType,
       l$$_and == null ? null : Object.hashAll(l$$_and.map((v) => v)),
       l$$_not,
       l$$_or == null ? null : Object.hashAll(l$$_or.map((v) => v)),
@@ -11875,6 +11980,9 @@ class Input$UnitSize_bool_exp {
     final l$IngredientUnits = IngredientUnits;
     final lOther$IngredientUnits = other.IngredientUnits;
     if (l$IngredientUnits != lOther$IngredientUnits) return false;
+    final l$UnitType = UnitType;
+    final lOther$UnitType = other.UnitType;
+    if (l$UnitType != lOther$UnitType) return false;
     final l$$_and = $_and;
     final lOther$$_and = other.$_and;
     if (l$$_and != null && lOther$$_and != null) {
@@ -11933,6 +12041,7 @@ abstract class CopyWith$Input$UnitSize_bool_exp<TRes> {
 
   TRes call(
       {Input$IngredientUnit_bool_exp? IngredientUnits,
+      Input$UnitType_bool_exp? UnitType,
       List<Input$UnitSize_bool_exp>? $_and,
       Input$UnitSize_bool_exp? $_not,
       List<Input$UnitSize_bool_exp>? $_or,
@@ -11954,6 +12063,7 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
 
   TRes call(
           {Object? IngredientUnits = _undefined,
+          Object? UnitType = _undefined,
           Object? $_and = _undefined,
           Object? $_not = _undefined,
           Object? $_or = _undefined,
@@ -11965,6 +12075,9 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
           IngredientUnits: IngredientUnits == _undefined
               ? _instance.IngredientUnits
               : (IngredientUnits as Input$IngredientUnit_bool_exp?),
+          UnitType: UnitType == _undefined
+              ? _instance.UnitType
+              : (UnitType as Input$UnitType_bool_exp?),
           $_and: $_and == _undefined
               ? _instance.$_and
               : ($_and as List<Input$UnitSize_bool_exp>?),
@@ -11996,6 +12109,7 @@ class _CopyWithStubImpl$Input$UnitSize_bool_exp<TRes>
 
   call(
           {Input$IngredientUnit_bool_exp? IngredientUnits,
+          Input$UnitType_bool_exp? UnitType,
           List<Input$UnitSize_bool_exp>? $_and,
           Input$UnitSize_bool_exp? $_not,
           List<Input$UnitSize_bool_exp>? $_or,
@@ -12007,9 +12121,188 @@ class _CopyWithStubImpl$Input$UnitSize_bool_exp<TRes>
 }
 
 @JsonSerializable(explicitToJson: true)
+class Input$UnitSize_max_order_by {
+  Input$UnitSize_max_order_by({this.id, this.name, this.plural});
+
+  @override
+  factory Input$UnitSize_max_order_by.fromJson(Map<String, dynamic> json) =>
+      _$Input$UnitSize_max_order_byFromJson(json);
+
+  @JsonKey(unknownEnumValue: Enum$order_by.$unknown)
+  final Enum$order_by? id;
+
+  @JsonKey(unknownEnumValue: Enum$order_by.$unknown)
+  final Enum$order_by? name;
+
+  @JsonKey(unknownEnumValue: Enum$order_by.$unknown)
+  final Enum$order_by? plural;
+
+  Map<String, dynamic> toJson() => _$Input$UnitSize_max_order_byToJson(this);
+  int get hashCode {
+    final l$id = id;
+    final l$name = name;
+    final l$plural = plural;
+    return Object.hashAll([l$id, l$name, l$plural]);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (!(other is Input$UnitSize_max_order_by) ||
+        runtimeType != other.runtimeType) return false;
+    final l$id = id;
+    final lOther$id = other.id;
+    if (l$id != lOther$id) return false;
+    final l$name = name;
+    final lOther$name = other.name;
+    if (l$name != lOther$name) return false;
+    final l$plural = plural;
+    final lOther$plural = other.plural;
+    if (l$plural != lOther$plural) return false;
+    return true;
+  }
+
+  CopyWith$Input$UnitSize_max_order_by<Input$UnitSize_max_order_by>
+      get copyWith => CopyWith$Input$UnitSize_max_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$UnitSize_max_order_by<TRes> {
+  factory CopyWith$Input$UnitSize_max_order_by(
+          Input$UnitSize_max_order_by instance,
+          TRes Function(Input$UnitSize_max_order_by) then) =
+      _CopyWithImpl$Input$UnitSize_max_order_by;
+
+  factory CopyWith$Input$UnitSize_max_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitSize_max_order_by;
+
+  TRes call({Enum$order_by? id, Enum$order_by? name, Enum$order_by? plural});
+}
+
+class _CopyWithImpl$Input$UnitSize_max_order_by<TRes>
+    implements CopyWith$Input$UnitSize_max_order_by<TRes> {
+  _CopyWithImpl$Input$UnitSize_max_order_by(this._instance, this._then);
+
+  final Input$UnitSize_max_order_by _instance;
+
+  final TRes Function(Input$UnitSize_max_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? id = _undefined,
+          Object? name = _undefined,
+          Object? plural = _undefined}) =>
+      _then(Input$UnitSize_max_order_by(
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          name: name == _undefined ? _instance.name : (name as Enum$order_by?),
+          plural: plural == _undefined
+              ? _instance.plural
+              : (plural as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$UnitSize_max_order_by<TRes>
+    implements CopyWith$Input$UnitSize_max_order_by<TRes> {
+  _CopyWithStubImpl$Input$UnitSize_max_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? id, Enum$order_by? name, Enum$order_by? plural}) => _res;
+}
+
+@JsonSerializable(explicitToJson: true)
+class Input$UnitSize_min_order_by {
+  Input$UnitSize_min_order_by({this.id, this.name, this.plural});
+
+  @override
+  factory Input$UnitSize_min_order_by.fromJson(Map<String, dynamic> json) =>
+      _$Input$UnitSize_min_order_byFromJson(json);
+
+  @JsonKey(unknownEnumValue: Enum$order_by.$unknown)
+  final Enum$order_by? id;
+
+  @JsonKey(unknownEnumValue: Enum$order_by.$unknown)
+  final Enum$order_by? name;
+
+  @JsonKey(unknownEnumValue: Enum$order_by.$unknown)
+  final Enum$order_by? plural;
+
+  Map<String, dynamic> toJson() => _$Input$UnitSize_min_order_byToJson(this);
+  int get hashCode {
+    final l$id = id;
+    final l$name = name;
+    final l$plural = plural;
+    return Object.hashAll([l$id, l$name, l$plural]);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (!(other is Input$UnitSize_min_order_by) ||
+        runtimeType != other.runtimeType) return false;
+    final l$id = id;
+    final lOther$id = other.id;
+    if (l$id != lOther$id) return false;
+    final l$name = name;
+    final lOther$name = other.name;
+    if (l$name != lOther$name) return false;
+    final l$plural = plural;
+    final lOther$plural = other.plural;
+    if (l$plural != lOther$plural) return false;
+    return true;
+  }
+
+  CopyWith$Input$UnitSize_min_order_by<Input$UnitSize_min_order_by>
+      get copyWith => CopyWith$Input$UnitSize_min_order_by(this, (i) => i);
+}
+
+abstract class CopyWith$Input$UnitSize_min_order_by<TRes> {
+  factory CopyWith$Input$UnitSize_min_order_by(
+          Input$UnitSize_min_order_by instance,
+          TRes Function(Input$UnitSize_min_order_by) then) =
+      _CopyWithImpl$Input$UnitSize_min_order_by;
+
+  factory CopyWith$Input$UnitSize_min_order_by.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitSize_min_order_by;
+
+  TRes call({Enum$order_by? id, Enum$order_by? name, Enum$order_by? plural});
+}
+
+class _CopyWithImpl$Input$UnitSize_min_order_by<TRes>
+    implements CopyWith$Input$UnitSize_min_order_by<TRes> {
+  _CopyWithImpl$Input$UnitSize_min_order_by(this._instance, this._then);
+
+  final Input$UnitSize_min_order_by _instance;
+
+  final TRes Function(Input$UnitSize_min_order_by) _then;
+
+  static const _undefined = {};
+
+  TRes call(
+          {Object? id = _undefined,
+          Object? name = _undefined,
+          Object? plural = _undefined}) =>
+      _then(Input$UnitSize_min_order_by(
+          id: id == _undefined ? _instance.id : (id as Enum$order_by?),
+          name: name == _undefined ? _instance.name : (name as Enum$order_by?),
+          plural: plural == _undefined
+              ? _instance.plural
+              : (plural as Enum$order_by?)));
+}
+
+class _CopyWithStubImpl$Input$UnitSize_min_order_by<TRes>
+    implements CopyWith$Input$UnitSize_min_order_by<TRes> {
+  _CopyWithStubImpl$Input$UnitSize_min_order_by(this._res);
+
+  TRes _res;
+
+  call({Enum$order_by? id, Enum$order_by? name, Enum$order_by? plural}) => _res;
+}
+
+@JsonSerializable(explicitToJson: true)
 class Input$UnitSize_order_by {
   Input$UnitSize_order_by(
       {this.IngredientUnits_aggregate,
+      this.UnitType,
       this.id,
       this.name,
       this.plural,
@@ -12020,6 +12313,8 @@ class Input$UnitSize_order_by {
       _$Input$UnitSize_order_byFromJson(json);
 
   final Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate;
+
+  final Input$UnitType_order_by? UnitType;
 
   @JsonKey(unknownEnumValue: Enum$order_by.$unknown)
   final Enum$order_by? id;
@@ -12036,12 +12331,19 @@ class Input$UnitSize_order_by {
   Map<String, dynamic> toJson() => _$Input$UnitSize_order_byToJson(this);
   int get hashCode {
     final l$IngredientUnits_aggregate = IngredientUnits_aggregate;
+    final l$UnitType = UnitType;
     final l$id = id;
     final l$name = name;
     final l$plural = plural;
     final l$unitType = unitType;
-    return Object.hashAll(
-        [l$IngredientUnits_aggregate, l$id, l$name, l$plural, l$unitType]);
+    return Object.hashAll([
+      l$IngredientUnits_aggregate,
+      l$UnitType,
+      l$id,
+      l$name,
+      l$plural,
+      l$unitType
+    ]);
   }
 
   @override
@@ -12053,6 +12355,9 @@ class Input$UnitSize_order_by {
     final lOther$IngredientUnits_aggregate = other.IngredientUnits_aggregate;
     if (l$IngredientUnits_aggregate != lOther$IngredientUnits_aggregate)
       return false;
+    final l$UnitType = UnitType;
+    final lOther$UnitType = other.UnitType;
+    if (l$UnitType != lOther$UnitType) return false;
     final l$id = id;
     final lOther$id = other.id;
     if (l$id != lOther$id) return false;
@@ -12082,6 +12387,7 @@ abstract class CopyWith$Input$UnitSize_order_by<TRes> {
 
   TRes call(
       {Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
+      Input$UnitType_order_by? UnitType,
       Enum$order_by? id,
       Enum$order_by? name,
       Enum$order_by? plural,
@@ -12100,6 +12406,7 @@ class _CopyWithImpl$Input$UnitSize_order_by<TRes>
 
   TRes call(
           {Object? IngredientUnits_aggregate = _undefined,
+          Object? UnitType = _undefined,
           Object? id = _undefined,
           Object? name = _undefined,
           Object? plural = _undefined,
@@ -12109,6 +12416,9 @@ class _CopyWithImpl$Input$UnitSize_order_by<TRes>
               ? _instance.IngredientUnits_aggregate
               : (IngredientUnits_aggregate
                   as Input$IngredientUnit_aggregate_order_by?),
+          UnitType: UnitType == _undefined
+              ? _instance.UnitType
+              : (UnitType as Input$UnitType_order_by?),
           id: id == _undefined ? _instance.id : (id as Enum$order_by?),
           name: name == _undefined ? _instance.name : (name as Enum$order_by?),
           plural: plural == _undefined
@@ -12127,6 +12437,7 @@ class _CopyWithStubImpl$Input$UnitSize_order_by<TRes>
 
   call(
           {Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
+          Input$UnitType_order_by? UnitType,
           Enum$order_by? id,
           Enum$order_by? name,
           Enum$order_by? plural,
@@ -12137,11 +12448,18 @@ class _CopyWithStubImpl$Input$UnitSize_order_by<TRes>
 @JsonSerializable(explicitToJson: true)
 class Input$UnitType_bool_exp {
   Input$UnitType_bool_exp(
-      {this.$_and, this.$_not, this.$_or, this.description, this.id});
+      {this.UnitSizes,
+      this.$_and,
+      this.$_not,
+      this.$_or,
+      this.description,
+      this.id});
 
   @override
   factory Input$UnitType_bool_exp.fromJson(Map<String, dynamic> json) =>
       _$Input$UnitType_bool_expFromJson(json);
+
+  final Input$UnitSize_bool_exp? UnitSizes;
 
   @JsonKey(name: '_and')
   final List<Input$UnitType_bool_exp>? $_and;
@@ -12158,12 +12476,14 @@ class Input$UnitType_bool_exp {
 
   Map<String, dynamic> toJson() => _$Input$UnitType_bool_expToJson(this);
   int get hashCode {
+    final l$UnitSizes = UnitSizes;
     final l$$_and = $_and;
     final l$$_not = $_not;
     final l$$_or = $_or;
     final l$description = description;
     final l$id = id;
     return Object.hashAll([
+      l$UnitSizes,
       l$$_and == null ? null : Object.hashAll(l$$_and.map((v) => v)),
       l$$_not,
       l$$_or == null ? null : Object.hashAll(l$$_or.map((v) => v)),
@@ -12177,6 +12497,9 @@ class Input$UnitType_bool_exp {
     if (identical(this, other)) return true;
     if (!(other is Input$UnitType_bool_exp) || runtimeType != other.runtimeType)
       return false;
+    final l$UnitSizes = UnitSizes;
+    final lOther$UnitSizes = other.UnitSizes;
+    if (l$UnitSizes != lOther$UnitSizes) return false;
     final l$$_and = $_and;
     final lOther$$_and = other.$_and;
     if (l$$_and != null && lOther$$_and != null) {
@@ -12228,7 +12551,8 @@ abstract class CopyWith$Input$UnitType_bool_exp<TRes> {
       _CopyWithStubImpl$Input$UnitType_bool_exp;
 
   TRes call(
-      {List<Input$UnitType_bool_exp>? $_and,
+      {Input$UnitSize_bool_exp? UnitSizes,
+      List<Input$UnitType_bool_exp>? $_and,
       Input$UnitType_bool_exp? $_not,
       List<Input$UnitType_bool_exp>? $_or,
       Input$String_comparison_exp? description,
@@ -12246,12 +12570,16 @@ class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
   static const _undefined = {};
 
   TRes call(
-          {Object? $_and = _undefined,
+          {Object? UnitSizes = _undefined,
+          Object? $_and = _undefined,
           Object? $_not = _undefined,
           Object? $_or = _undefined,
           Object? description = _undefined,
           Object? id = _undefined}) =>
       _then(Input$UnitType_bool_exp(
+          UnitSizes: UnitSizes == _undefined
+              ? _instance.UnitSizes
+              : (UnitSizes as Input$UnitSize_bool_exp?),
           $_and: $_and == _undefined
               ? _instance.$_and
               : ($_and as List<Input$UnitType_bool_exp>?),
@@ -12276,7 +12604,8 @@ class _CopyWithStubImpl$Input$UnitType_bool_exp<TRes>
   TRes _res;
 
   call(
-          {List<Input$UnitType_bool_exp>? $_and,
+          {Input$UnitSize_bool_exp? UnitSizes,
+          List<Input$UnitType_bool_exp>? $_and,
           Input$UnitType_bool_exp? $_not,
           List<Input$UnitType_bool_exp>? $_or,
           Input$String_comparison_exp? description,
@@ -12443,11 +12772,14 @@ class _CopyWithStubImpl$Input$UnitType_enum_comparison_exp<TRes>
 
 @JsonSerializable(explicitToJson: true)
 class Input$UnitType_order_by {
-  Input$UnitType_order_by({this.description, this.id});
+  Input$UnitType_order_by(
+      {this.UnitSizes_aggregate, this.description, this.id});
 
   @override
   factory Input$UnitType_order_by.fromJson(Map<String, dynamic> json) =>
       _$Input$UnitType_order_byFromJson(json);
+
+  final Input$UnitSize_aggregate_order_by? UnitSizes_aggregate;
 
   @JsonKey(unknownEnumValue: Enum$order_by.$unknown)
   final Enum$order_by? description;
@@ -12457,9 +12789,10 @@ class Input$UnitType_order_by {
 
   Map<String, dynamic> toJson() => _$Input$UnitType_order_byToJson(this);
   int get hashCode {
+    final l$UnitSizes_aggregate = UnitSizes_aggregate;
     final l$description = description;
     final l$id = id;
-    return Object.hashAll([l$description, l$id]);
+    return Object.hashAll([l$UnitSizes_aggregate, l$description, l$id]);
   }
 
   @override
@@ -12467,6 +12800,9 @@ class Input$UnitType_order_by {
     if (identical(this, other)) return true;
     if (!(other is Input$UnitType_order_by) || runtimeType != other.runtimeType)
       return false;
+    final l$UnitSizes_aggregate = UnitSizes_aggregate;
+    final lOther$UnitSizes_aggregate = other.UnitSizes_aggregate;
+    if (l$UnitSizes_aggregate != lOther$UnitSizes_aggregate) return false;
     final l$description = description;
     final lOther$description = other.description;
     if (l$description != lOther$description) return false;
@@ -12488,7 +12824,10 @@ abstract class CopyWith$Input$UnitType_order_by<TRes> {
   factory CopyWith$Input$UnitType_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$UnitType_order_by;
 
-  TRes call({Enum$order_by? description, Enum$order_by? id});
+  TRes call(
+      {Input$UnitSize_aggregate_order_by? UnitSizes_aggregate,
+      Enum$order_by? description,
+      Enum$order_by? id});
 }
 
 class _CopyWithImpl$Input$UnitType_order_by<TRes>
@@ -12501,8 +12840,14 @@ class _CopyWithImpl$Input$UnitType_order_by<TRes>
 
   static const _undefined = {};
 
-  TRes call({Object? description = _undefined, Object? id = _undefined}) =>
+  TRes call(
+          {Object? UnitSizes_aggregate = _undefined,
+          Object? description = _undefined,
+          Object? id = _undefined}) =>
       _then(Input$UnitType_order_by(
+          UnitSizes_aggregate: UnitSizes_aggregate == _undefined
+              ? _instance.UnitSizes_aggregate
+              : (UnitSizes_aggregate as Input$UnitSize_aggregate_order_by?),
           description: description == _undefined
               ? _instance.description
               : (description as Enum$order_by?),
@@ -12515,7 +12860,11 @@ class _CopyWithStubImpl$Input$UnitType_order_by<TRes>
 
   TRes _res;
 
-  call({Enum$order_by? description, Enum$order_by? id}) => _res;
+  call(
+          {Input$UnitSize_aggregate_order_by? UnitSizes_aggregate,
+          Enum$order_by? description,
+          Enum$order_by? id}) =>
+      _res;
 }
 
 @JsonSerializable(explicitToJson: true)
