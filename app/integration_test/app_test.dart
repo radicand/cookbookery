@@ -39,6 +39,7 @@ takeScreenshot(tester, binding, name) async {
     try {
       await binding.convertFlutterSurfaceToImage();
     } catch (e) {
+      // ignore: avoid_print
       print("TakeScreenshot exception $e");
     }
     await tester.pumpAndSettle();

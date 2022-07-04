@@ -51,3 +51,4 @@ local.properties
 node_modules
 coverage
 screenshots/
+build/

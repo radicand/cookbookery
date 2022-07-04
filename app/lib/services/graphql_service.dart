@@ -32,6 +32,7 @@ Future<ValueNotifier<GraphQLClient>> getGQLClient() async {
         false) {
       AuthService.instance.refreshToken();
     }
+    return null;
   });
 
   final Link link = authLink.concat(httpLink).concat(errorLink);

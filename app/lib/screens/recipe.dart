@@ -1,9 +1,11 @@
 import 'dart:developer';
 
 import 'package:cookbook/graphql_schemas/anonymous/recipe.graphql.dart';
+import 'package:cookbook/helpers/constants.dart';
 import 'package:cookbook/widgets/rating_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:fraction/fraction.dart';
 import 'package:go_router/go_router.dart';
 
 class RecipeScreen extends HookWidget {
@@ -28,20 +30,39 @@ class RecipeScreen extends HookWidget {
       log('Query error for recipe: ${res.result.exception.toString()}');
     }
 
+    final image = recipe.Files.isNotEmpty ? recipe.Files.first.id : null;
+    final backupImage = Image.asset('assets/backgrounds/placeholder-gray.png',
+        fit: BoxFit.cover,
+        color: Colors.black38,
+        colorBlendMode: BlendMode.darken);
+
     return SafeArea(
       child: Scaffold(
         body: Stack(
           children: <Widget>[
             Positioned.fill(
-              child: Image.network(
-                "https://cdn.pixabay.com/photo/2016/12/11/22/41/lasagna-1900529_960_720.jpg",
-                fit: BoxFit.cover,
-                color: Colors.black38,
-                colorBlendMode: BlendMode.darken,
-              ),
+              child: image != null
+                  ? Image.network(
+                      '$FAAS_HOSTURI/function/photo?id=$image&hostpath=${Uri.encodeFull(GRAPHQL_HOSTPATH)}',
+                      frameBuilder:
+                          (context, child, frame, wasSynchronouslyLoaded) {
+                        if (wasSynchronouslyLoaded) {
+                          return child;
+                        }
+                        return AnimatedOpacity(
+                            opacity: frame == null ? 0 : 1,
+                            duration: const Duration(seconds: 1),
+                            curve: Curves.easeOut,
+                            child: child);
+                      },
+                      fit: BoxFit.cover,
+                      color: Colors.black38,
+                      colorBlendMode: BlendMode.darken,
+                    )
+                  : backupImage,
             ),
             Positioned(
-              top: 15,
+              top: 30,
               right: 15,
               child: IconButton(
                 icon: const Icon(
@@ -80,14 +101,6 @@ class RecipeScreen extends HookWidget {
                                 style:
                                     Theme.of(context).textTheme.headlineMedium,
                               )),
-                          const Spacer(),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.favorite_border,
-                              color: Colors.white,
-                            ),
-                            onPressed: () {},
-                          )
                         ],
                       ),
                       Row(
@@ -198,10 +211,24 @@ class RecipeScreen extends HookWidget {
                               ...List.generate(
                                 section.IngredientUnits.length,
                                 (f) {
+                                  final whole =
+                                      (section.IngredientUnits[f].amount ??
+                                              1 / 1)
+                                          .floor();
+                                  final remainder = section
+                                      .IngredientUnits[f].amount
+                                      ?.remainder(1);
+                                  final remainderString =
+                                      remainder != null && remainder != 0
+                                          ? Fraction.fromDouble(remainder,
+                                                  precision: 1.0e-2)
+                                              .reduce()
+                                              .toStringAsGlyph()
+                                          : '';
                                   return Row(
                                     children: <Widget>[
                                       Text(
-                                        "${section.IngredientUnits[f].amount} ${section.IngredientUnits[f].UnitSize?.name} ${section.IngredientUnits[f].Ingredient?.name}",
+                                        "${whole != 0 ? whole : ''}$remainderString ${section.IngredientUnits[f].UnitSize?.name} ${section.IngredientUnits[f].Ingredient?.name}",
                                         style: const TextStyle(
                                           color: Colors.white,
                                           fontSize: 17,
