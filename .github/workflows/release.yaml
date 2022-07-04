@@ -1,0 +1,109 @@
+name: Build and release app
+concurrency: build-test
+
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Make env
+        working-directory: app/
+        run: |
+          echo "${{ secrets.DOTENV }}" > .env
+
+      - uses: actions/setup-java@v2
+        with:
+          distribution: "zulu"
+          java-version: "11"
+
+      - name: Get Flutter version from pubspec
+        working-directory: app/
+        run: |
+          set -e
+
+          brew install yq
+          _flutterVersion=$( yq read pubspec.yaml environment.flutter )
+          echo "FLUTTER_VERSION=${_flutterVersion}" >> $GITHUB_ENV
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: "stable"
+
+      - name: Install dependencies
+        working-directory: app/
+        run: flutter pub get
+
+      - name: Run analyzer
+        working-directory: app/
+        run: flutter analyze
+
+      - name: Run unit tests
+        working-directory: app/
+        run: flutter test --coverage
+
+      - name: Upload to code coverage
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          files: app/coverage/lcov.info
+
+      - name: Download Android keystore
+        id: android_keystore
+        uses: timheuer/base64-to-file@v1.0.3
+        with:
+          fileName: key.jks
+          encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+
+      - name: Create key.properties
+        run: |
+          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
+          echo "storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
+          echo "keyPassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
+          echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: "5.x"
+          # includePrerelease: true
+
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v0.9.7
+        id: gitversion
+        with:
+          useConfigFile: true
+
+      - name: Update version
+        working-directory: app/
+        run: yq -i ".version = \"${{ steps.gitversion.outputs.FullSemVer }}\"" pubspec.yaml
+
+      - name: Build bundle
+        working-directory: app/
+        run: flutter build appbundle
+
+      # - name: Run integration tests
+      #   uses: reactivecircus/android-emulator-runner@v2
+      #   with:
+      #     working-directory: app/
+      #     target: google_apis
+      #     api-level: 30
+      #     script: flutter drive --driver=test_driver/main_test.dart --target integration_test/app_test.dart
+
+      - name: Upload AAB
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-aab
+          path: app/build/app/outputs/bundle/app-release.aabs
+
+      # - name: Upload Screenshoots
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: Test result screenshots
+      #     path: app/screenshots/*.png
