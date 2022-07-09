@@ -4,6 +4,7 @@ concurrency: build-app
 on:
   push:
     paths:
+      - ".github/workflows/release-app.yaml"
       - app/*/**'
   workflow_dispatch:
 jobs:
