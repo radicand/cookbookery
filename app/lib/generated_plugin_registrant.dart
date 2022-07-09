@@ -8,6 +8,7 @@
 
 import 'package:connectivity_plus_web/connectivity_plus_web.dart';
 import 'package:flutter_secure_storage_web/flutter_secure_storage_web.dart';
+import 'package:url_launcher_web/url_launcher_web.dart';
 
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
@@ -15,5 +16,6 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 void registerPlugins(Registrar registrar) {
   ConnectivityPlusPlugin.registerWith(registrar);
   FlutterSecureStorageWeb.registerWith(registrar);
+  UrlLauncherPlugin.registerWith(registrar);
   registrar.registerMessageHandler();
 }

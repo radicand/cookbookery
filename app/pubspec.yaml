@@ -43,6 +43,7 @@ dependencies:
   graphql: ^5.1.1
   gql: ^0.13.1
   fraction: ^4.1.1
+  url_launcher: ^6.1.4
 dev_dependencies:
   flutter_test:
     sdk: flutter

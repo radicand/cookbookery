@@ -225,9 +225,9 @@ Input$File_on_conflict _$Input$File_on_conflictFromJson(
 Map<String, dynamic> _$Input$File_on_conflictToJson(
         Input$File_on_conflict instance) =>
     <String, dynamic>{
-      'constraint': _$Enum$File_constraintEnumMap[instance.constraint],
+      'constraint': _$Enum$File_constraintEnumMap[instance.constraint]!,
       'update_columns': instance.update_columns
-          .map((e) => _$Enum$File_update_columnEnumMap[e])
+          .map((e) => _$Enum$File_update_columnEnumMap[e]!)
           .toList(),
       'where': instance.where?.toJson(),
     };
@@ -617,9 +617,9 @@ Map<String, dynamic> _$Input$IngredientUnit_on_conflictToJson(
         Input$IngredientUnit_on_conflict instance) =>
     <String, dynamic>{
       'constraint':
-          _$Enum$IngredientUnit_constraintEnumMap[instance.constraint],
+          _$Enum$IngredientUnit_constraintEnumMap[instance.constraint]!,
       'update_columns': instance.update_columns
-          .map((e) => _$Enum$IngredientUnit_update_columnEnumMap[e])
+          .map((e) => _$Enum$IngredientUnit_update_columnEnumMap[e]!)
           .toList(),
       'where': instance.where?.toJson(),
     };
@@ -933,9 +933,9 @@ Input$Ingredient_on_conflict _$Input$Ingredient_on_conflictFromJson(
 Map<String, dynamic> _$Input$Ingredient_on_conflictToJson(
         Input$Ingredient_on_conflict instance) =>
     <String, dynamic>{
-      'constraint': _$Enum$Ingredient_constraintEnumMap[instance.constraint],
+      'constraint': _$Enum$Ingredient_constraintEnumMap[instance.constraint]!,
       'update_columns': instance.update_columns
-          .map((e) => _$Enum$Ingredient_update_columnEnumMap[e])
+          .map((e) => _$Enum$Ingredient_update_columnEnumMap[e]!)
           .toList(),
       'where': instance.where?.toJson(),
     };
@@ -1391,9 +1391,10 @@ Input$RecipeSection_on_conflict _$Input$RecipeSection_on_conflictFromJson(
 Map<String, dynamic> _$Input$RecipeSection_on_conflictToJson(
         Input$RecipeSection_on_conflict instance) =>
     <String, dynamic>{
-      'constraint': _$Enum$RecipeSection_constraintEnumMap[instance.constraint],
+      'constraint':
+          _$Enum$RecipeSection_constraintEnumMap[instance.constraint]!,
       'update_columns': instance.update_columns
-          .map((e) => _$Enum$RecipeSection_update_columnEnumMap[e])
+          .map((e) => _$Enum$RecipeSection_update_columnEnumMap[e]!)
           .toList(),
       'where': instance.where?.toJson(),
     };
@@ -1933,9 +1934,9 @@ Input$Recipe_on_conflict _$Input$Recipe_on_conflictFromJson(
 Map<String, dynamic> _$Input$Recipe_on_conflictToJson(
         Input$Recipe_on_conflict instance) =>
     <String, dynamic>{
-      'constraint': _$Enum$Recipe_constraintEnumMap[instance.constraint],
+      'constraint': _$Enum$Recipe_constraintEnumMap[instance.constraint]!,
       'update_columns': instance.update_columns
-          .map((e) => _$Enum$Recipe_update_columnEnumMap[e])
+          .map((e) => _$Enum$Recipe_update_columnEnumMap[e]!)
           .toList(),
       'where': instance.where?.toJson(),
     };
@@ -2302,9 +2303,9 @@ Input$Step_on_conflict _$Input$Step_on_conflictFromJson(
 Map<String, dynamic> _$Input$Step_on_conflictToJson(
         Input$Step_on_conflict instance) =>
     <String, dynamic>{
-      'constraint': _$Enum$Step_constraintEnumMap[instance.constraint],
+      'constraint': _$Enum$Step_constraintEnumMap[instance.constraint]!,
       'update_columns': instance.update_columns
-          .map((e) => _$Enum$Step_update_columnEnumMap[e])
+          .map((e) => _$Enum$Step_update_columnEnumMap[e]!)
           .toList(),
       'where': instance.where?.toJson(),
     };
@@ -2615,9 +2616,9 @@ Input$Tag_on_conflict _$Input$Tag_on_conflictFromJson(
 Map<String, dynamic> _$Input$Tag_on_conflictToJson(
         Input$Tag_on_conflict instance) =>
     <String, dynamic>{
-      'constraint': _$Enum$Tag_constraintEnumMap[instance.constraint],
+      'constraint': _$Enum$Tag_constraintEnumMap[instance.constraint]!,
       'update_columns': instance.update_columns
-          .map((e) => _$Enum$Tag_update_columnEnumMap[e])
+          .map((e) => _$Enum$Tag_update_columnEnumMap[e]!)
           .toList(),
       'where': instance.where?.toJson(),
     };
@@ -2862,11 +2863,12 @@ Map<String, dynamic> _$Input$UnitType_enum_comparison_expToJson(
         Input$UnitType_enum_comparison_exp instance) =>
     <String, dynamic>{
       '_eq': _$Enum$UnitType_enumEnumMap[instance.$_eq],
-      '_in': instance.$_in?.map((e) => _$Enum$UnitType_enumEnumMap[e]).toList(),
+      '_in':
+          instance.$_in?.map((e) => _$Enum$UnitType_enumEnumMap[e]!).toList(),
       '_is_null': instance.$_is_null,
       '_neq': _$Enum$UnitType_enumEnumMap[instance.$_neq],
       '_nin':
-          instance.$_nin?.map((e) => _$Enum$UnitType_enumEnumMap[e]).toList(),
+          instance.$_nin?.map((e) => _$Enum$UnitType_enumEnumMap[e]!).toList(),
     };
 
 const _$Enum$UnitType_enumEnumMap = {
@@ -3126,9 +3128,9 @@ Input$_RecipeToTag_on_conflict _$Input$_RecipeToTag_on_conflictFromJson(
 Map<String, dynamic> _$Input$_RecipeToTag_on_conflictToJson(
         Input$_RecipeToTag_on_conflict instance) =>
     <String, dynamic>{
-      'constraint': _$Enum$_RecipeToTag_constraintEnumMap[instance.constraint],
+      'constraint': _$Enum$_RecipeToTag_constraintEnumMap[instance.constraint]!,
       'update_columns': instance.update_columns
-          .map((e) => _$Enum$_RecipeToTag_update_columnEnumMap[e])
+          .map((e) => _$Enum$_RecipeToTag_update_columnEnumMap[e]!)
           .toList(),
       'where': instance.where?.toJson(),
     };

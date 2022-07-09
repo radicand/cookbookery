@@ -186,12 +186,13 @@ class _SharedScaffoldState extends State<SharedScaffold> {
           // if there's a drawer, close it
           if (_drawerSize) Navigator.pop(context);
 
+          // routes here must be go, not push.
           switch (index) {
             case 0:
-              context.pushNamed('home');
+              context.goNamed('home');
               break;
             case 1:
-              context.pushNamed('profile');
+              context.goNamed('profile');
               break;
             default:
               throw Exception('Invalid index');
@@ -228,8 +229,8 @@ class ErrorView extends StatelessWidget {
           children: [
             SelectableText(error.toString()),
             TextButton(
-              onPressed: () => context.pushNamed('home'),
-              child: const HomeScreen(),
+              onPressed: () => context.goNamed('home'),
+              child: const Text('Home'),
             ),
           ],
         ),

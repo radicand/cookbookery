@@ -20,10 +20,6 @@ class ProfileScreen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        Center(
-            child: Column(
-          children: const <Widget>[],
-        )),
         Observer(
           builder: (_) {
             return Text('Hello ${cookbookStore.user?.name}');

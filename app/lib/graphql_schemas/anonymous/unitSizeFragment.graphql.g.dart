@@ -23,7 +23,7 @@ Map<String, dynamic> _$Fragment$UnitSizeFragmentToJson(
       'id': instance.id,
       'name': instance.name,
       'plural': instance.plural,
-      'unitType': _$Enum$UnitType_enumEnumMap[instance.unitType],
+      'unitType': _$Enum$UnitType_enumEnumMap[instance.unitType]!,
       '__typename': instance.$__typename,
     };
 

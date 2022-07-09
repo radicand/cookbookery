@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:cookbook/graphql_schemas/anonymous/recipe.graphql.dart';
 import 'package:cookbook/helpers/constants.dart';
+import 'package:cookbook/helpers/urls.dart';
 import 'package:cookbook/widgets/rating_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -271,6 +272,44 @@ class RecipeScreen extends HookWidget {
                           ),
                         ),
                       ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        children: recipe.source != null
+                            ? Uri.tryParse(recipe.source!) != null &&
+                                    recipe.source!.startsWith('http')
+                                ? <Widget>[
+                                    const Text(
+                                      "Source",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(
+                                        Icons.open_in_new,
+                                        color: Colors.white,
+                                        size: 14,
+                                      ),
+                                      onPressed: () =>
+                                          launchUrl(Uri.parse(recipe.source!)),
+                                    )
+                                  ]
+                                : [
+                                    Text(
+                                      recipe.source!,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17,
+                                      ),
+                                      softWrap: true,
+                                      overflow: TextOverflow.ellipsis,
+                                    )
+                                  ]
+                            : [],
+                      )
                     ],
                   ),
                 ),

@@ -2043,11 +2043,12 @@ Map<String, dynamic> _$Input$UnitType_enum_comparison_expToJson(
         Input$UnitType_enum_comparison_exp instance) =>
     <String, dynamic>{
       '_eq': _$Enum$UnitType_enumEnumMap[instance.$_eq],
-      '_in': instance.$_in?.map((e) => _$Enum$UnitType_enumEnumMap[e]).toList(),
+      '_in':
+          instance.$_in?.map((e) => _$Enum$UnitType_enumEnumMap[e]!).toList(),
       '_is_null': instance.$_is_null,
       '_neq': _$Enum$UnitType_enumEnumMap[instance.$_neq],
       '_nin':
-          instance.$_nin?.map((e) => _$Enum$UnitType_enumEnumMap[e]).toList(),
+          instance.$_nin?.map((e) => _$Enum$UnitType_enumEnumMap[e]!).toList(),
     };
 
 const _$Enum$UnitType_enumEnumMap = {
