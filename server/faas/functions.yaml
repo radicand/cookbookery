@@ -1,9 +1,9 @@
 provider:
   name: openfaas
-  gateway: https://fn.k3s.radicand.net
+  gateway: ${OPENFAAS_GATEWAY}
 
 functions:
   photo:
     lang: node18
     handler: ./photo
-    image: radicand/cookbookery-faas-photo
+    image: ${REPO_PATH}/cookbookery-faas-photo

@@ -31,8 +31,14 @@ jobs:
 
       - name: Publish functions
         working-directory: ./server/faas
+        env:
+          REPO_PATH: ghcr.io/${{ github.repository_owner }}
+          OPENFAAS_GATEWAY: ${{ secrets.OPENFAAS_GATEWAY }}
         run: faas-cli publish -f functions.yaml --platforms linux/arm64
 
       - name: Deploy functions
         working-directory: ./server/faas
+        env:
+          REPO_PATH: ghcr.io/${{ github.repository_owner }}
+          OPENFAAS_GATEWAY: ${{ secrets.OPENFAAS_GATEWAY }}
         run: faas-cli deploy -f functions.yaml

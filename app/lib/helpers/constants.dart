@@ -3,7 +3,7 @@
 import 'package:cookbook/models/recipe.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-final FAAS_HOSTURI = dotenv.get('FAAS_HOSTURI', fallback: '');
+final FAAS_HOSTURI = dotenv.get('OPENFAAS_GATEWAY', fallback: '');
 final GRAPHQL_HOSTPATH = dotenv.get('GRAPHQL_HOSTPATH', fallback: '');
 final OAUTH_DOMAIN = dotenv.get('OAUTH_DOMAIN', fallback: '');
 final OAUTH_CLIENT_ID = dotenv.get('OAUTH_CLIENT_ID', fallback: '');
