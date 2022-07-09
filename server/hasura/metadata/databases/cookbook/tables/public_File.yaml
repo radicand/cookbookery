@@ -1,0 +1,79 @@
+table:
+  schema: public
+  name: File
+object_relationships:
+  - name: Recipe
+    using:
+      foreign_key_constraint_on: recipeId
+  - name: User
+    using:
+      foreign_key_constraint_on: userId
+array_relationships:
+  - name: Steps
+    using:
+      foreign_key_constraint_on:
+        column: fileId
+        table:
+          schema: public
+          name: Step
+insert_permissions:
+  - role: Cookbook Author
+    permission:
+      check:
+        User:
+          JWTSubs:
+            sub:
+              _eq: X-Hasura-User-Id
+      set:
+        userId: x-hasura-User-Id
+      columns:
+        - blob
+        - id
+        - mimetype
+        - recipeId
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - blob
+        - id
+        - mimetype
+        - recipeId
+        - userId
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - blob
+        - id
+        - mimetype
+        - recipeId
+        - userId
+        - createdAt
+        - updatedAt
+      filter: {}
+update_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - blob
+        - mimetype
+      filter:
+        User:
+          JWTSubs:
+            sub:
+              _eq: X-Hasura-User-Id
+      check:
+        User:
+          JWTSubs:
+            sub:
+              _eq: X-Hasura-User-Id
+delete_permissions:
+  - role: Cookbook Author
+    permission:
+      backend_only: false
+      filter:
+        User:
+          JWTSubs:
+            sub:
+              _eq: X-Hasura-User-Id

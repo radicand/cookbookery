@@ -1,0 +1,97 @@
+table:
+  schema: public
+  name: Recipe
+object_relationships:
+  - name: Author
+    using:
+      foreign_key_constraint_on: authorId
+array_relationships:
+  - name: Files
+    using:
+      foreign_key_constraint_on:
+        column: recipeId
+        table:
+          schema: public
+          name: File
+  - name: RecipeSections
+    using:
+      foreign_key_constraint_on:
+        column: recipeId
+        table:
+          schema: public
+          name: RecipeSection
+  - name: RecipeTags
+    using:
+      foreign_key_constraint_on:
+        column: A
+        table:
+          schema: public
+          name: _RecipeToTag
+insert_permissions:
+  - role: Cookbook Author
+    permission:
+      check:
+        Author:
+          JWTSubs:
+            sub:
+              _eq: X-Hasura-User-Id
+      set:
+        authorId: x-hasura-User-Id
+      columns:
+        - description
+        - id
+        - notes
+        - source
+        - title
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - authorId
+        - createdAt
+        - description
+        - id
+        - notes
+        - source
+        - title
+        - updatedAt
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - authorId
+        - description
+        - id
+        - notes
+        - source
+        - title
+        - createdAt
+        - updatedAt
+      filter: {}
+update_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - description
+        - notes
+        - source
+        - title
+      filter:
+        Author:
+          JWTSubs:
+            sub:
+              _eq: X-Hasura-User-Id
+      check:
+        Author:
+          JWTSubs:
+            sub:
+              _eq: X-Hasura-User-Id
+delete_permissions:
+  - role: Cookbook Author
+    permission:
+      backend_only: false
+      filter:
+        Author:
+          JWTSubs:
+            sub:
+              _eq: X-Hasura-User-Id

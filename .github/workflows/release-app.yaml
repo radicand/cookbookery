@@ -1,7 +1,11 @@
 name: Build and release app
-concurrency: build-test
+concurrency: build-app
 
-on: [push, workflow_dispatch]
+on:
+  push:
+    paths:
+      - app/*/**'
+  workflow_dispatch:
 jobs:
   build:
     runs-on: macos-latest

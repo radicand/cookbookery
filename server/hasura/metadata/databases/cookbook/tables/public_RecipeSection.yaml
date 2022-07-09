@@ -1,0 +1,101 @@
+table:
+  schema: public
+  name: RecipeSection
+object_relationships:
+  - name: Recipe
+    using:
+      foreign_key_constraint_on: recipeId
+array_relationships:
+  - name: IngredientUnits
+    using:
+      foreign_key_constraint_on:
+        column: recipeSectionId
+        table:
+          schema: public
+          name: IngredientUnit
+  - name: Steps
+    using:
+      foreign_key_constraint_on:
+        column: recipeSectionId
+        table:
+          schema: public
+          name: Step
+insert_permissions:
+  - role: Cookbook Author
+    permission:
+      check:
+        Recipe:
+          Author:
+            JWTSubs:
+              sub:
+                _eq: X-Hasura-User-Id
+      columns:
+        - cookTimeMinutes
+        - description
+        - id
+        - name
+        - order
+        - prepTimeMinutes
+        - recipeId
+        - servingUnit
+        - servings
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - cookTimeMinutes
+        - order
+        - prepTimeMinutes
+        - servings
+        - description
+        - id
+        - name
+        - recipeId
+        - servingUnit
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - cookTimeMinutes
+        - order
+        - prepTimeMinutes
+        - servings
+        - description
+        - id
+        - name
+        - recipeId
+        - servingUnit
+      filter: {}
+update_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - cookTimeMinutes
+        - description
+        - name
+        - order
+        - prepTimeMinutes
+        - servingUnit
+        - servings
+      filter:
+        Recipe:
+          Author:
+            JWTSubs:
+              sub:
+                _eq: X-Hasura-User-Id
+      check:
+        Recipe:
+          Author:
+            JWTSubs:
+              sub:
+                _eq: X-Hasura-User-Id
+delete_permissions:
+  - role: Cookbook Author
+    permission:
+      backend_only: false
+      filter:
+        Recipe:
+          Author:
+            JWTSubs:
+              sub:
+                _eq: X-Hasura-User-Id

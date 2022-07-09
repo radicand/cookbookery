@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "cookbook-hasura.fullname" . }}
+  labels:
+    {{- include "cookbook-hasura.labels" . | nindent 4 }}
+  annotations:
+    {{- include "cookbook-hasura.annotations" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "cookbook-hasura.selectorLabels" . | nindent 4 }}

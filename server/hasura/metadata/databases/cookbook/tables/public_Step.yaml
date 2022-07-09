@@ -1,0 +1,114 @@
+table:
+  schema: public
+  name: Step
+object_relationships:
+  - name: File
+    using:
+      foreign_key_constraint_on: fileId
+  - name: RecipeSection
+    using:
+      foreign_key_constraint_on: recipeSectionId
+insert_permissions:
+  - role: Cookbook Author
+    permission:
+      check:
+        _and:
+          - RecipeSection:
+              Recipe:
+                Author:
+                  JWTSubs:
+                    sub:
+                      _eq: X-Hasura-User-Id
+          - _or:
+              - fileId:
+                  _is_null: true
+              - File:
+                  User:
+                    JWTSubs:
+                      sub:
+                        _eq: X-Hasura-User-Id
+      columns:
+        - order
+        - description
+        - fileId
+        - id
+        - recipeSectionId
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - order
+        - description
+        - fileId
+        - id
+        - recipeSectionId
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - order
+        - description
+        - fileId
+        - id
+        - recipeSectionId
+      filter: {}
+update_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - description
+        - fileId
+        - order
+        - recipeSectionId
+      filter:
+        _and:
+          - RecipeSection:
+              Recipe:
+                Author:
+                  JWTSubs:
+                    sub:
+                      _eq: X-Hasura-User-Id
+          - _or:
+              - fileId:
+                  _is_null: true
+              - File:
+                  User:
+                    JWTSubs:
+                      sub:
+                        _eq: X-Hasura-User-Id
+      check:
+        _and:
+          - RecipeSection:
+              Recipe:
+                Author:
+                  JWTSubs:
+                    sub:
+                      _eq: X-Hasura-User-Id
+          - _or:
+              - fileId:
+                  _is_null: true
+              - File:
+                  User:
+                    JWTSubs:
+                      sub:
+                        _eq: X-Hasura-User-Id
+delete_permissions:
+  - role: Cookbook Author
+    permission:
+      backend_only: false
+      filter:
+        _and:
+          - RecipeSection:
+              Recipe:
+                Author:
+                  JWTSubs:
+                    sub:
+                      _eq: X-Hasura-User-Id
+          - _or:
+              - fileId:
+                  _is_null: true
+              - File:
+                  User:
+                    JWTSubs:
+                      sub:
+                        _eq: X-Hasura-User-Id

@@ -1,0 +1,31 @@
+table:
+  schema: public
+  name: Tag
+array_relationships:
+  - name: Recipes
+    using:
+      foreign_key_constraint_on:
+        column: B
+        table:
+          schema: public
+          name: _RecipeToTag
+insert_permissions:
+  - role: Cookbook Author
+    permission:
+      check: {}
+      columns:
+        - id
+        - name
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - id
+        - name
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - id
+        - name
+      filter: {}

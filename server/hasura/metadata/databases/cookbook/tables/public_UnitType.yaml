@@ -1,0 +1,25 @@
+table:
+  schema: public
+  name: UnitType
+is_enum: true
+array_relationships:
+  - name: UnitSizes
+    using:
+      foreign_key_constraint_on:
+        column: unitType
+        table:
+          schema: public
+          name: UnitSize
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - description
+        - id
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - id
+        - description
+      filter: {}

@@ -1,0 +1,88 @@
+table:
+  schema: public
+  name: IngredientUnit
+object_relationships:
+  - name: Ingredient
+    using:
+      foreign_key_constraint_on: ingredientId
+  - name: RecipeSection
+    using:
+      foreign_key_constraint_on: recipeSectionId
+  - name: UnitSize
+    using:
+      foreign_key_constraint_on: unitId
+insert_permissions:
+  - role: Cookbook Author
+    permission:
+      check:
+        RecipeSection:
+          Recipe:
+            Author:
+              JWTSubs:
+                sub:
+                  _eq: X-Hasura-User-Id
+      columns:
+        - amount
+        - order
+        - id
+        - ingredientId
+        - notes
+        - recipeSectionId
+        - unitId
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - amount
+        - order
+        - id
+        - ingredientId
+        - notes
+        - recipeSectionId
+        - unitId
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - amount
+        - order
+        - id
+        - ingredientId
+        - notes
+        - recipeSectionId
+        - unitId
+      filter: {}
+update_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - amount
+        - ingredientId
+        - notes
+        - order
+        - unitId
+      filter:
+        RecipeSection:
+          Recipe:
+            Author:
+              JWTSubs:
+                sub:
+                  _eq: X-Hasura-User-Id
+      check:
+        RecipeSection:
+          Recipe:
+            Author:
+              JWTSubs:
+                sub:
+                  _eq: X-Hasura-User-Id
+delete_permissions:
+  - role: Cookbook Author
+    permission:
+      backend_only: false
+      filter:
+        RecipeSection:
+          Recipe:
+            Author:
+              JWTSubs:
+                sub:
+                  _eq: X-Hasura-User-Id

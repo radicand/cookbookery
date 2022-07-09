@@ -1,0 +1,32 @@
+table:
+  schema: public
+  name: UnitSize
+object_relationships:
+  - name: UnitType
+    using:
+      foreign_key_constraint_on: unitType
+array_relationships:
+  - name: IngredientUnits
+    using:
+      foreign_key_constraint_on:
+        column: unitId
+        table:
+          schema: public
+          name: IngredientUnit
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - unitType
+        - id
+        - name
+        - plural
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - unitType
+        - id
+        - name
+        - plural
+      filter: {}

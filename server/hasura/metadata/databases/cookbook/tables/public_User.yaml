@@ -1,0 +1,40 @@
+table:
+  schema: public
+  name: User
+array_relationships:
+  - name: Files
+    using:
+      foreign_key_constraint_on:
+        column: userId
+        table:
+          schema: public
+          name: File
+  - name: JWTSubs
+    using:
+      foreign_key_constraint_on:
+        column: userId
+        table:
+          schema: public
+          name: JWTSub
+  - name: Recipes
+    using:
+      foreign_key_constraint_on:
+        column: authorId
+        table:
+          schema: public
+          name: Recipe
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - id
+        - name
+      filter: {}
+      limit: 1
+  - role: anonymous
+    permission:
+      columns:
+        - id
+        - name
+      filter: {}
+      limit: 1

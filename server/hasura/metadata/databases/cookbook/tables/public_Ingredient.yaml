@@ -1,0 +1,31 @@
+table:
+  schema: public
+  name: Ingredient
+array_relationships:
+  - name: IngredientUnits
+    using:
+      foreign_key_constraint_on:
+        column: ingredientId
+        table:
+          schema: public
+          name: IngredientUnit
+insert_permissions:
+  - role: Cookbook Author
+    permission:
+      check: {}
+      columns:
+        - id
+        - name
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - id
+        - name
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - id
+        - name
+      filter: {}

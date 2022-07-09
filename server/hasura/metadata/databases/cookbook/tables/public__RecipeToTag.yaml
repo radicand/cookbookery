@@ -1,0 +1,63 @@
+table:
+  schema: public
+  name: _RecipeToTag
+object_relationships:
+  - name: Recipe
+    using:
+      foreign_key_constraint_on: A
+  - name: Tag
+    using:
+      foreign_key_constraint_on: B
+insert_permissions:
+  - role: Cookbook Author
+    permission:
+      check:
+        Recipe:
+          Author:
+            JWTSubs:
+              sub:
+                _eq: X-Hasura-User-Id
+      columns:
+        - A
+        - B
+select_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - A
+        - B
+      filter: {}
+  - role: anonymous
+    permission:
+      columns:
+        - A
+        - B
+      filter: {}
+update_permissions:
+  - role: Cookbook Author
+    permission:
+      columns:
+        - A
+        - B
+      filter:
+        Recipe:
+          Author:
+            JWTSubs:
+              sub:
+                _eq: X-Hasura-User-Id
+      check:
+        Recipe:
+          Author:
+            JWTSubs:
+              sub:
+                _eq: X-Hasura-User-Id
+delete_permissions:
+  - role: Cookbook Author
+    permission:
+      backend_only: false
+      filter:
+        Recipe:
+          Author:
+            JWTSubs:
+              sub:
+                _eq: X-Hasura-User-Id

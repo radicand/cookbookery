@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cookbook-hasura.fullname" . }}
+  labels:
+    {{- include "cookbook-hasura.labels" . | nindent 4 }}
+  annotations:
+    {{- include "cookbook-hasura.annotations" . | nindent 4 }}
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "cookbook-hasura.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "cookbook-hasura.selectorLabels" . | nindent 8 }}
+      annotations:
+        {{- include "cookbook-hasura.annotations" . | nindent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "cookbook-hasura.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: HASURA_GRAPHQL_METADATA_DATABASE_URL
+              value: {{ .Values.metadataDbUrl }}
+            - name: HASURA_GRAPHQL_DATABASE_URL
+              value: {{ .Values.dbUrl }}
+            - name: HASURA_GRAPHQL_JWT_SECRET
+              value: {{ .Values.jwtSecret | toJson | quote }}
+            - name: HASURA_GRAPHQL_CORS_DOMAIN
+              value: {{ .Values.corsDomains }}
+            - name: HASURA_GRAPHQL_UNAUTHORIZED_ROLE
+              value: "anonymous"
+            - name: HASURA_GRAPHQL_ADMIN_SECRET
+              value: {{ .Values.adminSecret }}
+            ## enable the console served by server
+            - name: HASURA_GRAPHQL_ENABLE_CONSOLE
+              value: "false"
+            ## enable debugging mode. It is recommended to disable this in production
+            - name: HASURA_GRAPHQL_DEV_MODE
+              value: "false"
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 60
+            timeoutSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 60
+            timeoutSeconds: 2
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
