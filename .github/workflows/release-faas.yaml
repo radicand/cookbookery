@@ -53,7 +53,7 @@ jobs:
       - name: Delete packages older than 7 days (but keep at least 3 versions)
         uses: davahome/ghcr-cleanup@v1.1
         with:
-          token: ${{ secrets.GHCR }}
+          token: ${{ secrets.CR_PAT }}
           package: cookbookery-faas-photo
           owner: user
           minimum_days: 7
