@@ -31,7 +31,7 @@ jobs:
 
       - name: Publish functions
         working-directory: ./server/faas
-        run: faas-cli publish -f functions.yml --platforms linux/arm64
+        run: faas-cli publish -f functions.yaml --platforms linux/arm64
 
       - name: Deploy functions
         working-directory: ./server/faas
