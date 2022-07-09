@@ -70,7 +70,7 @@ jobs:
           echo "::set-output name=url::cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}"
 
       - name: "Deploy"
-        uses: "deliverybot/helm@v1"
+        uses: "glopezep/helm@v1"
         with:
           helm: helm3
           release: "cookbookery-api"
