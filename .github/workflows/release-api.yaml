@@ -97,7 +97,7 @@ jobs:
             corsDomains: ${{ secrets.HASURA_CORS_DOMAINS }}
             ingress.hosts\[0\].host: ${{ steps.envurl.outputs.url }}
             ingress.hosts\[0\].paths\[0\]: "/"
-            CI_PROJECT_PATH_SLUG: ${{ github.head_ref }}
+            CI_PROJECT_PATH_SLUG: ${GITHUB_REF#refs/*/}
             CI_ENVIRONMENT_SLUG: 'production'
         env:
           KUBECONFIG_FILE: "${{ secrets.KUBE_CONFIG }}"
