@@ -77,26 +77,15 @@ jobs:
         run: |
           echo "::set-output name=url::cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}"
 
-      - name: "Deploy"
-        uses: "glopezep/helm@v1.7.1"
-        with:
-          helm: helm3
-          release: "cookbookery-api"
-          namespace: "cookbook"
-          chart: "./server/hasura/manifest/cookbook-hasura"
-          token: "${{ github.token }}"
-          values: |
-            image.repository: ghcr.io/radicand/cookbookery-api
-            image.tag: ${{ steps.tagdata.outputs.tag }}
-            dbUrl: ${{ secrets.DATABASE_URL }}
-            metadataDbUrl: ${{ secrets.METADATA_DB_URL }}
-            jwtSecret.audience: ${{ secrets.JWT_AUD }}
-            jwtsecret.issuer: ${{ secrets.JWT_ISS }}
-            jwtSecret.jwk_url: ${{ secrets.JWT_JWKS }}
-            adminSecret: ${{ secrets.HASURA_ADMIN_SECRET }}
-            corsDomains: ${{ secrets.HASURA_CORS_DOMAINS }}
-            ingress.host: ${{ steps.envurl.outputs.url }}
-            CI_PROJECT_PATH_SLUG: ${{ github.ref_name }}
-            CI_ENVIRONMENT_SLUG: 'production'
+      - name: Install Helm
+        uses: azure/setup-helm@v3
+
+      - name: Setup kubeconfig
+        run: |
+          echo "${{ secrets.KUBE_CONFIG }}" > .kubeconfig
+
+      - name: Deploy
+        run: |
+          helm upgrade cookbookery-api-production ./manifests/cookbook-hasura --install -n cookbook --set image.repository=ghcr.io/radicand/cookbookery-api --set image.tag=${{ steps.tagdata.outputs.tag }} --set dbUrl=${{ secrets.DATABASE_URL }} --set metadataDbUrl=${{ secrets.METADATA_DB_URL }} --set jwtSecret.audience=${{ secrets.JWT_AUD }} --set jwtSecret.issuer=${{ secrets.JWT_ISS }} --set jwtSecret.jwk_url=${{ secrets.JWT_JWKS }} --set adminSecret="${{ secrets.HASURA_ADMIN_SECRET }}" --set corsDomains="${{ secrets.HASURA_CORS_DOMAINS }}" --set ingress.host=${{ steps.envurl.outputs.url }} --set CI_PROJECT_PATH_SLUG=${{ github.ref_name }} --set CI_ENVIRONMENT_SLUG=production
         env:
-          KUBECONFIG_FILE: "${{ secrets.KUBE_CONFIG }}"
+          KUBECONFIG_FILE: .kubeconfig
