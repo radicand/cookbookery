@@ -9,6 +9,9 @@ on:
   workflow_dispatch:
 jobs:
   build:
+    environment:
+      name: production
+      url: https://cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -28,6 +31,11 @@ jobs:
         with:
           useConfigFile: true
 
+      - name: Extract tag
+        id: tagdata
+        run: |
+          echo "::set-output name=tag::${{ steps.gitversion.outputs.NuGetVersionV2 }}-${{ steps.gitversion.outputs.BuildMetaData || 0 }}"
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
@@ -36,10 +44,8 @@ jobs:
           tags: |
             type=ref,event=branch
             type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
             type=sha
-            type=raw,value=${{ steps.gitversion.outputs.NuGetVersionV2 }}.${{ steps.gitversion.outputs.BuildMetaData || 0 }}
+            type=raw,value=${{ steps.tagdata.outputs.tag }}
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
@@ -57,3 +63,28 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: "Deploy"
+        uses: "deliverybot/helm@v1"
+        with:
+          helm: helm3
+          release: "cookbookery-api"
+          namespace: "cookbook"
+          chart: "./server/hasura/manifest/cookbook-hasura"
+          token: "${{ github.token }}"
+          values: |
+            image.repository: ghcr.io/radicand/cookbookery-api
+            image.tag: ${{ steps.tagdata.outputs.tag }}
+            dbUrl: ${{ secrets.DATABASE_URL }}
+            metadataDbUrl: ${{ secrets.METADATA_DB_URL }}
+            jwtSecret.audience: ${{ secrets.JWT_AUD }}
+            jwtsecret.issuer: ${{ secrets.JWT_ISS }}
+            jwtSecret.jwk_url: ${{ secrets.JWT_JWKS }}
+            adminSecret: ${{ secrets.HASURA_ADMIN_SECRET }}
+            corsDomains: ${{ secrets.HASURA_CORS_DOMAINS }}
+            ingress.hosts[0].host: cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}
+            ingress.hosts[0].paths[0]: "/"
+            CI_PROJECT_PATH_SLUG: ${{ github.head_ref }}
+            CI_ENVIRONMENT_SLUG: 'production'
+        env:
+          KUBECONFIG_FILE: "${{ secrets.KUBE_CONFIG }}"
