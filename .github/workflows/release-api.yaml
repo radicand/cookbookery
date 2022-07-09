@@ -36,7 +36,7 @@ jobs:
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=sha
-            type=raw,value=${{ steps.gitversion.outputs.NuGetVersionV2 }}.${{ steps.gitversion.outputs.BuildMetaData || "0" }}
+            type=raw,value=${{ steps.gitversion.outputs.NuGetVersionV2 }}.${{ steps.gitversion.outputs.BuildMetaData || 0 }}
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
