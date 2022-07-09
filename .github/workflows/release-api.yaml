@@ -11,7 +11,7 @@ jobs:
   build:
     environment:
       name: production
-      url: https://cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}
+      url: ${{ steps.envurl.outputs.url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -64,6 +64,11 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
+      - name: Extract env url
+        id: envurl
+        run: |
+          echo "::set-output name=url::cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}"
+
       - name: "Deploy"
         uses: "deliverybot/helm@v1"
         with:
@@ -82,7 +87,7 @@ jobs:
             jwtSecret.jwk_url: ${{ secrets.JWT_JWKS }}
             adminSecret: ${{ secrets.HASURA_ADMIN_SECRET }}
             corsDomains: ${{ secrets.HASURA_CORS_DOMAINS }}
-            ingress.hosts[0].host: cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}
+            ingress.hosts[0].host: ${{ steps.envurl.outputs.url }}
             ingress.hosts[0].paths[0]: "/"
             CI_PROJECT_PATH_SLUG: ${{ github.head_ref }}
             CI_ENVIRONMENT_SLUG: 'production'
