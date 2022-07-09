@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: radicand/cookbookery-api
+          images: ghcr.io/radicand/cookbookery-api
           tags: |
             type=ref,event=branch
             type=ref,event=pr
