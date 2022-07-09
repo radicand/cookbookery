@@ -13,6 +13,7 @@ jobs:
       name: production
     defaults:
       run:
+        shell: bash
         working-directory: ./server/faas
     runs-on: ubuntu-latest
     steps:
