@@ -92,6 +92,11 @@ jobs:
       #     target: google_apis
       #     api-level: 30
       #     script: flutter drive --driver=test_driver/main_test.dart --target integration_test/app_test.dart
+      # - name: Upload Screenshoots
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: Test result screenshots
+      #     path: app/screenshots/*.png
 
       - name: Upload AAB
         uses: actions/upload-artifact@v3
@@ -99,8 +104,29 @@ jobs:
           name: release-aab
           path: app/build/app/outputs/bundle/release/app-release.aab
 
-      # - name: Upload Screenshoots
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: Test result screenshots
-      #     path: app/screenshots/*.png
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "2.6"
+
+      - name: Cache bundle dependencies
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-gems-
+
+      - name: Download bundle dependencies
+        run: |
+          gem install bundler:2.0.2
+          bundle config path vendor/bundle
+          bundle install
+
+      - name: Release to Google Play (internal)
+        env:
+          SUPPLY_PACKAGE_NAME: org.radicand.app.cookbook
+          SUPPLY_JSON_KEY_DATA: ${{ secrets.GOOGLE_PLAY_SERVICE_JSON }}
+        run: |
+          bundle exec fastlane supply \
+          --aab app/build/app/outputs/bundle/release/app-release.aab \
+          --track internal
