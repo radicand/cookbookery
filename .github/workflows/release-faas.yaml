@@ -11,10 +11,6 @@ jobs:
   build:
     environment:
       name: production
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./server/faas
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -34,7 +30,9 @@ jobs:
         run: faas-cli login -p ${{ secrets.OPENFAAS_GATEWAY_PASSWD }} -g ${{ secrets.OPENFAAS_GATEWAY }}
 
       - name: Publish functions
+        working-directory: ./server/faas
         run: faas-cli publish -f functions.yml --platforms linux/arm64
 
       - name: Deploy functions
+        working-directory: ./server/faas
         run: faas-cli deploy -f functions.yaml
