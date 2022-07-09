@@ -49,3 +49,14 @@ jobs:
         run: |
           faas-cli login -p ${{ secrets.OPENFAAS_GATEWAY_PASSWD }} -g ${{ secrets.OPENFAAS_GATEWAY }} && \
           faas-cli deploy -f functions.yaml -g ${{ secrets.OPENFAAS_GATEWAY }}
+
+      - name: Delete packages older than 7 days (but keep at least 3 versions)
+        uses: davahome/ghcr-cleanup@v1.1
+        with:
+          token: ${{ secrets.GHCR }}
+          package: cookbookery-faas-photo
+          owner: user
+          minimum_days: 7
+          keep_versions: 3
+          delete_untagged: 1
+          keep_versions_untagged: 3
