@@ -95,8 +95,7 @@ jobs:
             jwtSecret.jwk_url: ${{ secrets.JWT_JWKS }}
             adminSecret: ${{ secrets.HASURA_ADMIN_SECRET }}
             corsDomains: ${{ secrets.HASURA_CORS_DOMAINS }}
-            ingress.hosts[0].host: ${{ steps.envurl.outputs.url }}
-            ingress.hosts[0].paths[0]: "/"
+            ingress.host: ${{ steps.envurl.outputs.url }}
             CI_PROJECT_PATH_SLUG: ${{ github.ref_name }}
             CI_ENVIRONMENT_SLUG: 'production'
         env:

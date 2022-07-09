@@ -21,10 +21,8 @@ ingress:
     # kubernetes.io/tls-acme: "true"
     # app.gitlab.com/app: ""
     # app.gitlab.com/env: ""
-  hosts:
-    []
-    # - host: chart-example.local
-    #   paths: []
+  # host: chart-example.local
+  # path: /
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
