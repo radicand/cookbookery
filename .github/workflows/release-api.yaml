@@ -11,7 +11,7 @@ jobs:
   build:
     environment:
       name: production
-      url: ${{ steps.envurl.outputs.url }}
+      url: https://${{ steps.envurl.outputs.url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -55,9 +55,17 @@ jobs:
           username: radicand
           password: ${{ secrets.CR_PAT }}
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      # https://github.com/docker/setup-buildx-action
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          platforms: linux/amd64,linux/arm64
           context: ./server/hasura
           file: ./server/hasura/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
@@ -87,8 +95,8 @@ jobs:
             jwtSecret.jwk_url: ${{ secrets.JWT_JWKS }}
             adminSecret: ${{ secrets.HASURA_ADMIN_SECRET }}
             corsDomains: ${{ secrets.HASURA_CORS_DOMAINS }}
-            ingress.hosts[0].host: ${{ steps.envurl.outputs.url }}
-            ingress.hosts[0].paths[0]: "/"
+            ingress.hosts\[0\].host: ${{ steps.envurl.outputs.url }}
+            ingress.hosts\[0\].paths\[0\]: "/"
             CI_PROJECT_PATH_SLUG: ${{ github.head_ref }}
             CI_ENVIRONMENT_SLUG: 'production'
         env:
