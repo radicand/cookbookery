@@ -1,4 +1,9 @@
 module.exports = async (event, context) => {
+  if (!event.query.hostpath.endsWith('/v1/graphql')) {
+    // TODO this needs to be locked down more
+    return context.status(400).fail(`Bad path`);
+  }
+
   const query = `
   query GetFile($id: String!) {
       File_by_pk(id: $id) {

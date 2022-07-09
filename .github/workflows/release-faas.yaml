@@ -1,0 +1,39 @@
+name: Build and release faas
+concurrency: build-faas
+
+on:
+  push:
+    paths:
+      - ".github/workflows/release-faas.yaml"
+      - server/faas/*/**'
+  workflow_dispatch:
+jobs:
+  build:
+    environment:
+      name: production
+    defaults:
+      run:
+        working-directory: ./server/faas
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      # https://github.com/docker/setup-buildx-action
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Setup faas-cli
+        run: curl -sSL https://cli.openfaas.com | sudo sh
+
+      - name: Login to openfaas
+        run: faas-cli login -p ${{ secrets.OPENFAAS_GATEWAY_PASSWD }} -g ${{ secrets.OPENFAAS_GATEWAY }}
+
+      - name: Publish functions
+        run: faas-cli publish -f functions.yml --platforms linux/arm64
+
+      - name: Deploy functions
+        run: faas-cli deploy -f functions.yaml
