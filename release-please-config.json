@@ -8,7 +8,7 @@
       "changelogPath": "CHANGELOG.md",
       "versioning": "default"
     },
-    "server/faas": {
+    "server-faas": {
       "draft": false,
       "prerelease": false,
       "bumpMinorPreMajor": false,
@@ -16,7 +16,7 @@
       "changelogPath": "CHANGELOG.md",
       "versioning": "default"
     },
-    "server/hasura": {
+    "server-api": {
       "draft": false,
       "prerelease": false,
       "bumpMinorPreMajor": false,
