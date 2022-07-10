@@ -37,7 +37,12 @@ module.exports = async (event, context) => {
   const file = imgRes.blob.replace(/\\x/, ''); // replace leading escape
 
   return context
-    .headers({ 'Content-Type': imgRes.mimetype })
+    .headers({
+      'Content-Type': imgRes.mimetype,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Methods': 'POST,GET,DELETE,PUT,OPTIONS',
+    })
     .status(200)
     .succeed(Buffer.from(file, 'hex'));
 };
