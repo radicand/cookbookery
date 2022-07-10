@@ -2,22 +2,25 @@
   "packages": {
     "app": {
       "draft": false,
+      "release-type": "dart",
       "prerelease": false,
       "bumpMinorPreMajor": false,
       "bumpPatchForMinorPreMajor": false,
       "changelogPath": "CHANGELOG.md",
       "versioning": "default"
     },
-    "server-faas": {
+    "server/faas": {
       "draft": false,
+      "release-type": "simple",
       "prerelease": false,
       "bumpMinorPreMajor": false,
       "bumpPatchForMinorPreMajor": false,
       "changelogPath": "CHANGELOG.md",
       "versioning": "default"
     },
-    "server-api": {
+    "server/hasura": {
       "draft": false,
+      "release-type": "simple",
       "prerelease": false,
       "bumpMinorPreMajor": false,
       "bumpPatchForMinorPreMajor": false,
