@@ -117,7 +117,6 @@ jobs:
           restore-keys: ${{ runner.os }}-gems-
 
       - name: Download bundle dependencies
-        working-directory: app/
         run: |
           gem install bundler:2.0.2
           bundle config path vendor/bundle
@@ -127,8 +126,8 @@ jobs:
         env:
           SUPPLY_PACKAGE_NAME: org.radicand.app.cookbook
           SUPPLY_JSON_KEY_DATA: ${{ secrets.GOOGLE_PLAY_SERVICE_JSON }}
-        working-directory: app/
         run: |
+          bundle exec fastlane run validate_play_store_json_key
           bundle exec fastlane supply \
-          --aab build/app/outputs/bundle/release/app-release.aab \
+          --aab app/build/app/outputs/bundle/release/app-release.aab \
           --track internal
