@@ -7,7 +7,7 @@ on:
       - "main"
     paths:
       - ".github/workflows/release-api.yaml"
-      - server/hasura/*/**'
+      - server/hasura/version.txt
   workflow_dispatch:
 jobs:
   build:

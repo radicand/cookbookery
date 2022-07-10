@@ -7,7 +7,7 @@ on:
       - "main"
     paths:
       - ".github/workflows/release-app.yaml"
-      - app/*/**'
+      - app/CHANGELOG.md
   workflow_dispatch:
     inputs:
       lane:
@@ -82,22 +82,6 @@ jobs:
           echo "storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
           echo "keyPassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
           echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties
-
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.9.7
-        with:
-          versionSpec: "5.x"
-          # includePrerelease: true
-
-      - name: Determine Version
-        uses: gittools/actions/gitversion/execute@v0.9.7
-        id: gitversion
-        with:
-          useConfigFile: true
-
-      - name: Update version
-        working-directory: app/
-        run: yq -i ".version = \"${{ steps.gitversion.outputs.FullSemVer }}\"" pubspec.yaml
 
       # - name: Build bundle
       #   working-directory: app/

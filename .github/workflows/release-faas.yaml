@@ -7,7 +7,7 @@ on:
       - "main"
     paths:
       - ".github/workflows/release-faas.yaml"
-      - server/faas/*/**'
+      - server/faas/version.txt'
   workflow_dispatch:
 jobs:
   build:
