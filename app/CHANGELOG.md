@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/radicand/cookbookery/compare/app-v1.0.0...app-v1.1.1) (2022-07-10)
+
+
+### Bug Fixes
+
+* remove broken link opener for now ([d9fe9d9](https://github.com/radicand/cookbookery/commit/d9fe9d96ea7229cfedcfa92281ceec835f5d004c))
+
 ## 1.0.0 (2022-07-10)
 
 
