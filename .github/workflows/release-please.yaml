@@ -9,19 +9,19 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
-          release-type: dart
-          package-name: app
-          path: app
           monorepo-tags: true
-      - uses: google-github-actions/release-please-action@v3
-        with:
-          release-type: simple
-          package-name: server-faas
-          path: server/faas
-          monorepo-tags: true
-      - uses: google-github-actions/release-please-action@v3
-        with:
-          release-type: simple
-          package-name: server-api
-          path: server/hasura
-          monorepo-tags: true
+          # release-type: dart
+          # package-name: app
+          # path: app
+      # - uses: google-github-actions/release-please-action@v3
+      #   with:
+      #     release-type: simple
+      #     package-name: server-faas
+      #     path: server/faas
+      #     monorepo-tags: true
+      # - uses: google-github-actions/release-please-action@v3
+      #   with:
+      #     release-type: simple
+      #     package-name: server-api
+      #     path: server/hasura
+      #     monorepo-tags: true
