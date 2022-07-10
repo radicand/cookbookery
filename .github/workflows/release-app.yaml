@@ -130,4 +130,4 @@ jobs:
           bundle exec fastlane run validate_play_store_json_key
           bundle exec fastlane supply \
           --aab app/build/app/outputs/bundle/release/app-release.aab \
-          --track internal
+          --track internal --release_status draft
