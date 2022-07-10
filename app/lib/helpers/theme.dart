@@ -23,3 +23,28 @@ ThemeData getTheme() {
       // ),
       );
 }
+
+ThemeData getDarkTheme() {
+  return ThemeData(
+      primarySwatch: Colors.cyan,
+      brightness: Brightness.dark,
+      visualDensity: VisualDensity.adaptivePlatformDensity,
+      textTheme: const TextTheme(
+        headlineSmall: TextStyle(color: Colors.white),
+        headlineMedium: TextStyle(color: Colors.white),
+      )
+      // scaffoldBackgroundColor: Colors.white,
+      // fontFamily: GoogleFonts.lato().fontFamily,
+      // appBarTheme: AppBarTheme(
+      //   iconTheme: IconThemeData(color: Colors.brown),
+      //   color: Colors.white,
+      //   elevation: 0.0,
+      //   centerTitle: true,
+      //   textTheme: TextTheme(
+      //     headline6: TextStyle(
+      //       color: Colors.brown,
+      //     ),
+      //   ),
+      // ),
+      );
+}

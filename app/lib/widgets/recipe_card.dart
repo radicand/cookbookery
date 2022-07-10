@@ -9,35 +9,37 @@ class RecipeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Card(
-        child: InkWell(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              ListTile(
-                // leading: const Icon(Icons.album),
-                title: Text(recipe.title,
-                    style: const TextStyle(fontWeight: FontWeight.bold)),
-                subtitle: Text(recipe.description ?? ''),
+      child: Tooltip(
+          message: "Show recipe",
+          child: Card(
+            child: InkWell(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  ListTile(
+                    // leading: const Icon(Icons.album),
+                    title: Text(recipe.title,
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
+                    subtitle: Text(recipe.description ?? ''),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: recipe.RecipeTags.map((tag) {
+                      return TextButton(
+                        child: Text(tag.Tag.name),
+                        onPressed: () {
+                          context.pushNamed('tag', params: {'id': tag.Tag.id});
+                        },
+                      );
+                    }).toList(),
+                  ),
+                ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: recipe.RecipeTags.map((tag) {
-                  return TextButton(
-                    child: Text(tag.Tag.name),
-                    onPressed: () {
-                      context.pushNamed('tag', params: {'id': tag.Tag.id});
-                    },
-                  );
-                }).toList(),
-              ),
-            ],
-          ),
-          onTap: () {
-            context.pushNamed('recipe', params: {'id': recipe.id});
-          },
-        ),
-      ),
+              onTap: () {
+                context.pushNamed('recipe', params: {'id': recipe.id});
+              },
+            ),
+          )),
     );
   }
 }

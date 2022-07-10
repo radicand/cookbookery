@@ -3,6 +3,8 @@ concurrency: build-faas
 
 on:
   push:
+    branches:
+      - "main"
     paths:
       - ".github/workflows/release-faas.yaml"
       - server/faas/*/**'

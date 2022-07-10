@@ -13,23 +13,17 @@ void main() {
   group('end-to-end test', () {
     testWidgets('load and verify', (tester) async {
       app.main();
-      await tester.pumpAndSettle();
-      await takeScreenshot(tester, binding, 'ss-home-1');
+      await tester.pumpAndSettle(const Duration(seconds: 5));
 
-      // Verify the counter starts at 0.
       expect(find.text('Family Cookbook'), findsOneWidget);
 
-      // // Finds the floating action button to tap on.
-      // final Finder fab = find.byTooltip('Increment');
+      await takeScreenshot(tester, binding, 'ss-home-1');
 
-      // // Emulate a tap on the floating action button.
-      // await tester.tap(fab);
+      final Finder fab = find.byTooltip('Show recipe');
+      await tester.tap(fab);
+      await tester.pumpAndSettle(const Duration(seconds: 5));
 
-      // // Trigger a frame.
-      // await tester.pumpAndSettle();
-
-      // // Verify the counter increments by 1.
-      // expect(find.text('1'), findsOneWidget);
+      await takeScreenshot(tester, binding, 'ss-recipe-1');
     });
   });
 }

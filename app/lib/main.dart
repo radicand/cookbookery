@@ -15,6 +15,8 @@ import 'package:cookbook/screens/login.dart';
 import 'package:cookbook/screens/profile.dart';
 import 'package:cookbook/screens/recipe.dart';
 import 'package:cookbook/screens/tag.dart';
+import 'package:device_preview_screenshot/device_preview_screenshot.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -35,9 +37,13 @@ class CookbookApp extends StatelessWidget {
         routerDelegate: _router.routerDelegate,
         backButtonDispatcher: RootBackButtonDispatcher(),
         title: title,
-        debugShowCheckedModeBanner: true,
+        debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.system,
         theme: getTheme(),
+        darkTheme: getDarkTheme(),
+        useInheritedMediaQuery: true,
+        // locale: DevicePreview.locale(context),
+        // builder: DevicePreview.appBuilder,
       );
 
   late final _router = GoRouter(
@@ -52,7 +58,6 @@ class CookbookApp extends StatelessWidget {
       return null;
     },
     refreshListenable: cookbookStore.loginInfo,
-    urlPathStrategy: UrlPathStrategy.path,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -133,7 +138,16 @@ Future<void> main() async {
 
       final client = await getGQLClient();
 
-      runApp(GraphQLProvider(client: client, child: CookbookApp()));
+      GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
+      runApp(DevicePreview(
+        enabled: false, // !kReleaseMode,
+        builder: (context) => GraphQLProvider(
+            client: client, child: CookbookApp()), // Wrap your app
+        tools: const [
+          ...DevicePreview.defaultTools,
+          DevicePreviewScreenshot(),
+        ],
+      ));
     },
     (error, stackTrace) async {
       print('Caught Dart Error!');

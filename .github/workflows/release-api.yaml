@@ -3,6 +3,8 @@ concurrency: build-api
 
 on:
   push:
+    branches:
+      - "main"
     paths:
       - ".github/workflows/release-api.yaml"
       - server/hasura/*/**'

@@ -1,0 +1,1 @@
+An easy-to-use cookbook app with curated recipes. Capability to add new recipes planned for the future!

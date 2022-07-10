@@ -3,10 +3,28 @@ concurrency: build-app
 
 on:
   push:
+    branches:
+      - "main"
     paths:
       - ".github/workflows/release-app.yaml"
       - app/*/**'
   workflow_dispatch:
+    inputs:
+      lane:
+        description: "Fastlane lane"
+        required: true
+        default: "internal"
+        type: choice
+        options:
+          - internal
+          - alpha
+          - beta
+          - promote_to_production
+          - production
+
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   build:
     runs-on: macos-latest
@@ -81,9 +99,9 @@ jobs:
         working-directory: app/
         run: yq -i ".version = \"${{ steps.gitversion.outputs.FullSemVer }}\"" pubspec.yaml
 
-      - name: Build bundle
-        working-directory: app/
-        run: flutter build appbundle
+      # - name: Build bundle
+      #   working-directory: app/
+      #   run: flutter build appbundle
 
       # - name: Run integration tests
       #   uses: reactivecircus/android-emulator-runner@v2
@@ -98,36 +116,31 @@ jobs:
       #     name: Test result screenshots
       #     path: app/screenshots/*.png
 
-      - name: Upload AAB
-        uses: actions/upload-artifact@v3
-        with:
-          name: release-aab
-          path: app/build/app/outputs/bundle/release/app-release.aab
+      # - name: Upload AAB
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: release-aab
+      #     path: app/build/app/outputs/bundle/release/app-release.aab
 
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.6"
+          bundler-cache: true
+          working-directory: app/android
 
-      - name: Cache bundle dependencies
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: ${{ runner.os }}-gems-
+      # - name: Download bundle dependencies
+      #   working-directory: app
+      #   run: |
+      #     gem install bundler:2.0.2
+      #     bundle config path vendor/bundle
+      #     bundle install
 
-      - name: Download bundle dependencies
-        run: |
-          gem install bundler:2.0.2
-          bundle config path vendor/bundle
-          bundle install
-
-      - name: Release to Google Play (internal)
+      - name: Release to Google Play (${{ github.event.inputs.lane || 'internal' }})
+        working-directory: app/android
         env:
           SUPPLY_PACKAGE_NAME: org.radicand.app.cookbook
           SUPPLY_JSON_KEY_DATA: ${{ secrets.GOOGLE_PLAY_SERVICE_JSON }}
         run: |
           bundle exec fastlane run validate_play_store_json_key
-          bundle exec fastlane supply \
-          --aab app/build/app/outputs/bundle/release/app-release.aab \
-          --track internal --release_status draft
+          bundle exec fastlane ${{ github.event.inputs.lane || 'internal' }}
