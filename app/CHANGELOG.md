@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/radicand/cookbookery/compare/cookbook-v1.1.1...cookbook-v1.1.2) (2022-07-10)
+
+
+### Bug Fixes
+
+* **app:** remove unused import ([f66366c](https://github.com/radicand/cookbookery/commit/f66366cc30728ca2b6e3365773934eb1991a2d0f))
+
 ## [1.1.1](https://github.com/radicand/cookbookery/compare/cookbook-v1.1.1...cookbook-v1.1.1) (2022-07-10)
 
 
