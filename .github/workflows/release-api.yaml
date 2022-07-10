@@ -22,7 +22,7 @@ jobs:
       - name: Extract tag
         id: tagdata
         run: |
-          echo "::set-output name=tag::${{ steps.gitversion.outputs.NuGetVersionV2 }}-${{ steps.gitversion.outputs.BuildMetaData || 0 }}"
+          echo "::set-output name=tag::`cat server/hasura/version.txt`"
 
       - name: Docker meta
         id: meta
