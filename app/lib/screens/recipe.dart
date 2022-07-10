@@ -280,22 +280,22 @@ class RecipeScreen extends HookWidget {
                             ? Uri.tryParse(recipe.source!) != null &&
                                     recipe.source!.startsWith('http')
                                 ? <Widget>[
-                                    const Text(
-                                      "Source",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 17,
-                                      ),
-                                    ),
-                                    IconButton(
-                                      icon: const Icon(
-                                        Icons.open_in_new,
-                                        color: Colors.white,
-                                        size: 14,
-                                      ),
-                                      onPressed: () =>
-                                          launchUrl(Uri.parse(recipe.source!)),
-                                    )
+                                    // const Text(
+                                    //   "Source",
+                                    //   style: TextStyle(
+                                    //     color: Colors.white,
+                                    //     fontSize: 17,
+                                    //   ),
+                                    // ),
+                                    // IconButton(
+                                    //   icon: const Icon(
+                                    //     Icons.open_in_new,
+                                    //     color: Colors.white,
+                                    //     size: 14,
+                                    //   ),
+                                    //   onPressed: () =>
+                                    //       launchUrl(Uri.parse(recipe.source!)),
+                                    // )
                                   ]
                                 : [
                                     Text(
