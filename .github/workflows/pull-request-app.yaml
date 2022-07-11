@@ -3,10 +3,10 @@ concurrency: test-prq-app
 
 on:
   pull_request:
+    branches:
+      - main
     paths:
-      - ".github/workflows/release-app.yaml"
-      - app/**/*
-      - app/*
+      - app/**
 
 # Declare default permissions as read only.
 permissions: read-all
