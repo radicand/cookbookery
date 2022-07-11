@@ -7,7 +7,8 @@
       "bumpMinorPreMajor": false,
       "bumpPatchForMinorPreMajor": false,
       "changelogPath": "CHANGELOG.md",
-      "versioning": "default"
+      "versioning": "default",
+      "monorepo-tags": true
     },
     "server/faas": {
       "draft": false,
@@ -16,7 +17,8 @@
       "bumpMinorPreMajor": false,
       "bumpPatchForMinorPreMajor": false,
       "changelogPath": "CHANGELOG.md",
-      "versioning": "default"
+      "versioning": "default",
+      "monorepo-tags": true
     },
     "server/hasura": {
       "draft": false,
@@ -25,7 +27,8 @@
       "bumpMinorPreMajor": false,
       "bumpPatchForMinorPreMajor": false,
       "changelogPath": "CHANGELOG.md",
-      "versioning": "default"
+      "versioning": "default",
+      "monorepo-tags": true
     }
   }
 }
