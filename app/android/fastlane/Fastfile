@@ -23,7 +23,14 @@ platform :android do
 
   desc "Submit a new internal build to Google Play"
   lane :internal do
-    sh "flutter build appbundle -v --no-deferred-components"
+    previous_build_number = google_play_track_version_codes(
+      package_name: app_id,
+      track: "internal",
+      json_key_data: ENV['SUPPLY_JSON_KEY_DATA'],
+    )[0]
+
+    current_build_number = previous_build_number + 1
+    sh "flutter build appbundle -v --no-deferred-components --build-number #{current_build_number}"
     changelog = "Bug fixes and minor enhancements",
     upload_to_play_store(
       track: 'internal',
