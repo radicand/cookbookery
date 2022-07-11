@@ -1,8 +1,8 @@
 ```sh
 
-echo "" | faas-cli login -s --gateway https://fn.k3s.radicand.net
+echo "" | faas-cli login -s --gateway $OPENFAAS_GATEWAY
 
-faas-cli publish -f functions.yaml --platforms linux/arm64
-faas-cli deploy -f functions.yaml
+faas-cli publish -f functions.yaml --platforms linux/arm64 -g $OPENFAAS_GATEWAY
+faas-cli deploy -f functions.yaml -g $OPENFAAS_GATEWAY
 
 ```
