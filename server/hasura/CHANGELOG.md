@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/radicand/cookbookery/compare/v1.1.0...v1.1.1) (2022-07-11)
+
+
+### Bug Fixes
+
+* remove extra files from docker context ([d39c982](https://github.com/radicand/cookbookery/commit/d39c98292ca251909c0943075e043eb2036d9218))
+
 ## [1.1.0](https://github.com/radicand/cookbookery/compare/v1.0.0...v1.1.0) (2022-07-10)
 
 
