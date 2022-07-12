@@ -4,6 +4,10 @@
       "release-type": "dart",
       "monorepo-tags": true
     },
+    "common": {
+      "release-type": "node",
+      "monorepo-tags": true
+    },
     "server/faas": {
       "release-type": "simple",
       "monorepo-tags": true
