@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
-          command: manifest
+          command: release-pr
           monorepo-tags: true
           # release-type: dart
           # package-name: app

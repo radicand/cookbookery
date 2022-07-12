@@ -1,33 +1,15 @@
 {
   "packages": {
     "app": {
-      "draft": false,
       "release-type": "dart",
-      "prerelease": false,
-      "bumpMinorPreMajor": false,
-      "bumpPatchForMinorPreMajor": false,
-      "changelogPath": "CHANGELOG.md",
-      "versioning": "default",
       "monorepo-tags": true
     },
     "server/faas": {
-      "draft": false,
       "release-type": "simple",
-      "prerelease": false,
-      "bumpMinorPreMajor": false,
-      "bumpPatchForMinorPreMajor": false,
-      "changelogPath": "CHANGELOG.md",
-      "versioning": "default",
       "monorepo-tags": true
     },
     "server/hasura": {
-      "draft": false,
       "release-type": "simple",
-      "prerelease": false,
-      "bumpMinorPreMajor": false,
-      "bumpPatchForMinorPreMajor": false,
-      "changelogPath": "CHANGELOG.md",
-      "versioning": "default",
       "monorepo-tags": true
     }
   }
