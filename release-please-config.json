@@ -16,7 +16,7 @@
       "monorepo-tags": true
     },
     "server/hasura": {
-      "package-namme": "server-api",
+      "package-name": "server-api",
       "release-type": "simple",
       "monorepo-tags": true
     }
