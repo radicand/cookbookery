@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/radicand/cookbookery/compare/app-v1.1.2...app-v1.1.3) (2022-07-12)
+
+
+### Bug Fixes
+
+* revert name ([68c6f7c](https://github.com/radicand/cookbookery/commit/68c6f7cc9ef24a4938ac4fa4325da7fe737e94e7))
+
 ## [1.1.2](https://github.com/radicand/cookbookery/compare/app-v1.1.1...app-v1.1.2) (2022-07-12)
 
 
