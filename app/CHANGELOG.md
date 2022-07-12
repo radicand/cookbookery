@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/radicand/cookbookery/compare/cookbook-v1.1.2...cookbook-v1.1.3) (2022-07-11)
+
+
+### Bug Fixes
+
+* attempt fix for pubspec version code ([c309da6](https://github.com/radicand/cookbookery/commit/c309da66598db5b4206b401cdaf78e9608088db4))
+
 ## [1.1.2](https://github.com/radicand/cookbookery/compare/cookbook-v1.1.1...cookbook-v1.1.2) (2022-07-10)
 
 
