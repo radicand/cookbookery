@@ -1,18 +1,22 @@
 {
   "packages": {
     "app": {
+      "package-name": "app",
       "release-type": "dart",
       "monorepo-tags": true
     },
     "common": {
+      "package-name": "common",
       "release-type": "node",
       "monorepo-tags": true
     },
     "server/faas": {
+      "package-name": "server-faas",
       "release-type": "simple",
       "monorepo-tags": true
     },
     "server/hasura": {
+      "package-namme": "server-api",
       "release-type": "simple",
       "monorepo-tags": true
     }
