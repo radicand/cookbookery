@@ -27,6 +27,7 @@ permissions: read-all
 
 jobs:
   build:
+    environment: production
     runs-on: macos-latest
     steps:
       - name: Checkout code
