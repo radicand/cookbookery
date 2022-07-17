@@ -24,7 +24,7 @@ platform :android do
   desc "Submit a new internal build to Google Play"
   lane :internal do
     previous_build_number = google_play_track_version_codes(
-      package_name: package_name,
+      package_name: "org.radicand.cookbook.app",
       track: "internal",
       json_key_data: ENV['SUPPLY_JSON_KEY_DATA'],
     )[0]
