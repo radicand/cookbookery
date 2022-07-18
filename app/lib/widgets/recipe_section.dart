@@ -98,7 +98,7 @@ class _RecipeSectionWidgetState extends State<RecipeSectionWidget> {
               servingMultiplier;
           final whole = (amount / 1).floor();
           final remainder = amount.remainder(1);
-          final remainderString = remainder != null && remainder != 0
+          final remainderString = remainder != 0
               ? Fraction.fromDouble(remainder, precision: 1.0e-2)
                   .reduce()
                   .toStringAsGlyph()
