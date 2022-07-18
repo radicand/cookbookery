@@ -4,9 +4,9 @@ import 'package:cookbook/graphql_schemas/anonymous/recipe.graphql.dart';
 import 'package:cookbook/helpers/constants.dart';
 // import 'package:cookbook/helpers/urls.dart';
 import 'package:cookbook/widgets/rating_bar.dart';
+import 'package:cookbook/widgets/recipe_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:fraction/fraction.dart';
 import 'package:go_router/go_router.dart';
 
 class RecipeScreen extends HookWidget {
@@ -166,95 +166,9 @@ class RecipeScreen extends HookWidget {
                       ),
                       const SizedBox(height: 15),
                       ...recipe.RecipeSections.map((section) {
-                        return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                section.name,
-                                softWrap: true,
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 2,
-                                style:
-                                    Theme.of(context).textTheme.headlineSmall,
-                              ),
-                              Text(
-                                "Makes ${section.servings} ${section.servingUnit}",
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  // fontWeight: FontWeight.bold,
-                                  fontSize: 17,
-                                ),
-                                softWrap: true,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              GridView.count(
-                                  crossAxisCount: 2,
-                                  shrinkWrap: true,
-                                  childAspectRatio: 5,
-                                  children: [
-                                    Text(
-                                      "Prep: ${section.prepTimeMinutes} min",
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        // fontWeight: FontWeight.bold,
-                                        fontSize: 17,
-                                      ),
-                                    ),
-                                    Text(
-                                      "Cook: ${section.cookTimeMinutes} min",
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        // fontWeight: FontWeight.bold,
-                                        fontSize: 17,
-                                      ),
-                                    ),
-                                  ]),
-                              ...List.generate(
-                                section.IngredientUnits.length,
-                                (f) {
-                                  final whole =
-                                      (section.IngredientUnits[f].amount ??
-                                              1 / 1)
-                                          .floor();
-                                  final remainder = section
-                                      .IngredientUnits[f].amount
-                                      ?.remainder(1);
-                                  final remainderString =
-                                      remainder != null && remainder != 0
-                                          ? Fraction.fromDouble(remainder,
-                                                  precision: 1.0e-2)
-                                              .reduce()
-                                              .toStringAsGlyph()
-                                          : '';
-                                  return Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "${whole != 0 ? whole : ''}$remainderString ${section.IngredientUnits[f].UnitSize?.name} ${section.IngredientUnits[f].Ingredient?.name}",
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 17,
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              ),
-                              const SizedBox(
-                                height: 15,
-                              ),
-                              ...List.generate(
-                                section.Steps.length,
-                                (s) {
-                                  return Text(
-                                    "${s + 1}. ${section.Steps[s].description}",
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ]);
+                        return RecipeSectionWidget(
+                          section: section,
+                        );
                       }),
                       const SizedBox(
                         height: 15,
