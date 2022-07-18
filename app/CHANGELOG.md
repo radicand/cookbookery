@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/radicand/cookbookery/compare/app-v1.1.3...app-v1.2.0) (2022-07-18)
+
+
+### Features
+
+* **app/recipe:** adjust serving size ([f4273f1](https://github.com/radicand/cookbookery/commit/f4273f1fe84f71ef245ac3fadcc41524a94b3b98))
+
 ## [1.1.3](https://github.com/radicand/cookbookery/compare/app-v1.1.2...app-v1.1.3) (2022-07-17)
 
 
