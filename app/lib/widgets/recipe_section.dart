@@ -12,7 +12,7 @@ class RecipeSectionWidget extends StatefulWidget {
 }
 
 class _RecipeSectionWidgetState extends State<RecipeSectionWidget> {
-  var servingMultiplier = 1;
+  double servingMultiplier = 1;
   @override
   Widget build(BuildContext context) {
     final numServings = widget.section.servings * servingMultiplier;
@@ -30,8 +30,9 @@ class _RecipeSectionWidgetState extends State<RecipeSectionWidget> {
       ),
       Row(
         children: [
-          Text(
-            "Makes $numServings $servingUnitName",
+          Expanded(
+              child: Text(
+            "Makes ${numServings.toFraction().isWhole ? numServings.toInt() : numServings} $servingUnitName",
             style: const TextStyle(
               color: Colors.white,
               // fontWeight: FontWeight.bold,
@@ -39,19 +40,7 @@ class _RecipeSectionWidgetState extends State<RecipeSectionWidget> {
             ),
             softWrap: true,
             overflow: TextOverflow.ellipsis,
-          ),
-          IconButton(
-            icon: const Icon(
-              Icons.add_circle,
-              color: Colors.white,
-              size: 14,
-            ),
-            onPressed: () => {
-              setState(() {
-                servingMultiplier = servingMultiplier + 1;
-              })
-            },
-          ),
+          )),
           IconButton(
             icon: const Icon(
               Icons.remove_circle,
@@ -65,6 +54,29 @@ class _RecipeSectionWidgetState extends State<RecipeSectionWidget> {
                     servingMultiplier = servingMultiplier - 1;
                   })
                 }
+              else if (servingMultiplier >
+                  .25) // don't go further than a fourth
+                {
+                  setState(() {
+                    servingMultiplier = servingMultiplier / 2;
+                  })
+                }
+            },
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.add_circle,
+              color: Colors.white,
+              size: 14,
+            ),
+            onPressed: () => {
+              setState(() {
+                if (servingMultiplier < 1) {
+                  servingMultiplier = servingMultiplier * 2;
+                } else {
+                  servingMultiplier = servingMultiplier + 1;
+                }
+              })
             },
           ),
         ],
@@ -98,11 +110,21 @@ class _RecipeSectionWidgetState extends State<RecipeSectionWidget> {
               servingMultiplier;
           final whole = (amount / 1).floor();
           final remainder = amount.remainder(1);
-          final remainderString = remainder != 0
-              ? Fraction.fromDouble(remainder, precision: 1.0e-2)
-                  .reduce()
-                  .toStringAsGlyph()
-              : '';
+          var remainderString;
+
+          try {
+            remainderString = remainder != 0
+                ? Fraction.fromDouble(remainder, precision: 1.0e-2)
+                    .reduce()
+                    .toStringAsGlyph()
+                : '';
+          } catch (e) {
+            remainderString = remainder != 0
+                ? Fraction.fromDouble(remainder, precision: 1.0e-2)
+                    .reduce()
+                    .toString()
+                : '';
+          }
           return Row(
             children: <Widget>[
               Text(
