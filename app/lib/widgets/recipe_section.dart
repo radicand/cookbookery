@@ -110,7 +110,7 @@ class _RecipeSectionWidgetState extends State<RecipeSectionWidget> {
               servingMultiplier;
           final whole = (amount / 1).floor();
           final remainder = amount.remainder(1);
-          var remainderString;
+          String remainderString;
 
           try {
             remainderString = remainder != 0
