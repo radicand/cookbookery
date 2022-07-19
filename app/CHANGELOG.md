@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.1](https://github.com/radicand/cookbookery/compare/app-v1.2.0...app-v1.2.1) (2022-07-19)
+
+
+### Bug Fixes
+
+* **app/recipe:** handle halving the recipe as well ([799fab0](https://github.com/radicand/cookbookery/commit/799fab01cb574d60de90ed120b10a092c53a96ba))
+* **app/recipe:** show string fraction when glyphs can't be rendered ([799fab0](https://github.com/radicand/cookbookery/commit/799fab01cb574d60de90ed120b10a092c53a96ba))
+* **app:** remove unnecessary null check ([ad314ff](https://github.com/radicand/cookbookery/commit/ad314ffa8de89cc32c8c42fecf676d7645c57860))
+
 ## [1.2.0](https://github.com/radicand/cookbookery/compare/app-v1.1.3...app-v1.2.0) (2022-07-18)
 
 
