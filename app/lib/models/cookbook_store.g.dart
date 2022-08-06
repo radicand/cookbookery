@@ -25,6 +25,22 @@ mixin _$CookbookAppStore on _CookbookAppStore, Store {
     });
   }
 
+  late final _$idTokenAtom =
+      Atom(name: '_CookbookAppStore.idToken', context: context);
+
+  @override
+  IdToken? get idToken {
+    _$idTokenAtom.reportRead();
+    return super.idToken;
+  }
+
+  @override
+  set idToken(IdToken? value) {
+    _$idTokenAtom.reportWrite(value, super.idToken, () {
+      super.idToken = value;
+    });
+  }
+
   late final _$_CookbookAppStoreActionController =
       ActionController(name: '_CookbookAppStore', context: context);
 
@@ -40,9 +56,21 @@ mixin _$CookbookAppStore on _CookbookAppStore, Store {
   }
 
   @override
+  void setIdToken(IdToken? localIdToken) {
+    final _$actionInfo = _$_CookbookAppStoreActionController.startAction(
+        name: '_CookbookAppStore.setIdToken');
+    try {
+      return super.setIdToken(localIdToken);
+    } finally {
+      _$_CookbookAppStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
-user: ${user}
+user: ${user},
+idToken: ${idToken}
     ''';
   }
 }

@@ -11,6 +11,8 @@ import 'package:flutter_appauth/flutter_appauth.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
+const scopes = ['openid', 'profile', 'offline_access', 'email'];
+
 class AuthService {
   static final AuthService instance = AuthService._internal();
   factory AuthService() => instance;
@@ -20,7 +22,7 @@ class AuthService {
   final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
 
   OAuthUser? profile;
-  OAuthIdToken? idToken;
+  IdToken? idToken;
   String? oAuthAccessToken;
 
   Future<bool> init() async {
@@ -35,12 +37,13 @@ class AuthService {
     }
 
     try {
-      final TokenResponse? result = await appAuth.token(
-        TokenRequest(OAUTH_CLIENT_ID, OAUTH_REDIRECT_URI,
-            issuer: OAUTH_ISSUER,
-            refreshToken: storedRefreshToken,
-            additionalParameters: {"audience": OAUTH_AUDIENCE}),
-      );
+      final TokenResponse? result = await appAuth.token(TokenRequest(
+        OAUTH_CLIENT_ID,
+        OAUTH_REDIRECT_URI,
+        issuer: OAUTH_ISSUER,
+        refreshToken: storedRefreshToken,
+        scopes: scopes,
+      ));
       final String setResult = await _setLocalVariables(result);
       final success = setResult == 'Success';
       if (!success) {
@@ -49,7 +52,7 @@ class AuthService {
       return success;
     } catch (e, s) {
       print('error on Refresh Token: $e - stack: $s');
-      logout();
+      // logout();
       return false;
     }
   }
@@ -57,14 +60,12 @@ class AuthService {
   Future<String> login() async {
     try {
       final authorizationTokenRequest = AuthorizationTokenRequest(
-        OAUTH_CLIENT_ID,
-        OAUTH_REDIRECT_URI,
-        additionalParameters: {"audience": OAUTH_AUDIENCE},
-        discoveryUrl: '$OAUTH_ISSUER/.well-known/openid-configuration',
-        issuer: OAUTH_ISSUER,
-        scopes: ['openid', 'profile', 'offline_access', 'email'],
-        promptValues: ['login'],
-      );
+          OAUTH_CLIENT_ID, OAUTH_REDIRECT_URI,
+          additionalParameters: {"audience": OAUTH_AUDIENCE},
+          discoveryUrl: '$OAUTH_ISSUER/.well-known/openid-configuration',
+          issuer: OAUTH_ISSUER,
+          scopes: scopes,
+          promptValues: ['login']);
 
       final AuthorizationTokenResponse? result =
           await appAuth.authorizeAndExchangeCode(
@@ -84,21 +85,7 @@ class AuthService {
     await secureStorage.delete(key: REFRESH_TOKEN_KEY);
     await secureStorage.delete(key: ACCESS_TOKEN_KEY);
     cookbookStore.setUser(null);
-  }
-
-  OAuthIdToken parseIdToken(String idToken) {
-    final parts = idToken.split(r'.');
-    assert(parts.length == 3);
-
-    final Map<String, dynamic> json = jsonDecode(
-      utf8.decode(
-        base64Url.decode(
-          base64Url.normalize(parts[1]),
-        ),
-      ),
-    );
-
-    return OAuthIdToken.fromJson(json);
+    cookbookStore.setIdToken(null);
   }
 
   Future<OAuthUser> getUserDetails(String accessToken) async {
@@ -112,8 +99,6 @@ class AuthService {
       headers: {'Authorization': 'Bearer $accessToken'},
     );
 
-    print('getUserDetails ${response.body}');
-
     if (response.statusCode == 200) {
       return OAuthUser.fromJson(jsonDecode(response.body));
     } else {
@@ -126,25 +111,24 @@ class AuthService {
         result != null && result.accessToken != null && result.idToken != null;
 
     if (isValidResult) {
-      oAuthAccessToken = result.accessToken;
-      idToken = parseIdToken(result.idToken!);
-      profile = await getUserDetails(result.accessToken!);
-
-      cookbookStore.setUser(profile);
-
-      if (result.accessToken != null) {
-        await secureStorage.write(
-          key: ACCESS_TOKEN_KEY,
-          value: result.accessToken,
-        );
-      }
-
       if (result.refreshToken != null) {
         await secureStorage.write(
           key: REFRESH_TOKEN_KEY,
           value: result.refreshToken,
         );
       }
+
+      oAuthAccessToken = result.accessToken;
+      profile = await getUserDetails(result.accessToken);
+      idToken = idTokenFromJson(result.idToken);
+
+      cookbookStore.setUser(profile);
+      cookbookStore.setIdToken(idToken);
+
+      await secureStorage.write(
+        key: ACCESS_TOKEN_KEY,
+        value: result.accessToken,
+      );
 
       return 'Success';
     } else {

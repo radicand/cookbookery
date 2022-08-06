@@ -10,7 +10,8 @@ final OAUTH_CLIENT_ID = dotenv.get('OAUTH_CLIENT_ID', fallback: '');
 final OAUTH_ISSUER = 'https://$OAUTH_DOMAIN';
 final OAUTH_AUDIENCE = dotenv.get('OAUTH_AUDIENCE', fallback: '');
 final BUNDLE_IDENTIFIER = dotenv.get('BUNDLE_IDENTIFIER', fallback: '');
-final OAUTH_REDIRECT_URI = '$BUNDLE_IDENTIFIER://login-callback';
+final OAUTH_REDIRECT_URI = dotenv.get('OAUTH_REDIRECT_URI',
+    fallback: '$BUNDLE_IDENTIFIER://login-callback');
 const REFRESH_TOKEN_KEY = 'refresh_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 

@@ -63,19 +63,7 @@ class RecipeScreen extends HookWidget {
                   : backupImage,
             ),
             Positioned(
-              top: 30,
-              right: 15,
-              child: IconButton(
-                icon: const Icon(
-                  Icons.close,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  context.pop();
-                },
-              ),
-            ),
-            Positioned(
+              top: 15,
               bottom: 15,
               left: 15,
               right: 15,
@@ -228,7 +216,20 @@ class RecipeScreen extends HookWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            Positioned(
+              top: 15,
+              right: 15,
+              child: IconButton(
+                icon: const Icon(
+                  Icons.close,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  context.pop();
+                },
+              ),
+            ),
           ],
         ),
       ),

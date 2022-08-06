@@ -6,31 +6,25 @@ part of 'id_token.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-OAuthIdToken _$OAuthIdTokenFromJson(Map<String, dynamic> json) => OAuthIdToken(
-      nickname: json['nickname'] as String,
-      name: json['name'] as String,
-      email: json['email'] as String,
-      picture: json['picture'] as String,
-      updatedAt: json['updated_at'] as String,
+IdToken _$IdTokenFromJson(Map<String, dynamic> json) => IdToken(
+      httpsHasuraIoJwtClaims: HttpsHasuraIoJwtClaims.fromJson(
+          json['httpsHasuraIoJwtClaims'] as Map<String, dynamic>),
       iss: json['iss'] as String,
       sub: json['sub'] as String,
-      aud: json['aud'] as String,
+      aud: (json['aud'] as List<dynamic>).map((e) => e as String).toList(),
       iat: json['iat'] as int,
       exp: json['exp'] as int,
-      authTime: json['auth_time'] as int?,
+      azp: json['azp'] as String?,
+      scope: json['scope'] as String?,
     );
 
-Map<String, dynamic> _$OAuthIdTokenToJson(OAuthIdToken instance) =>
-    <String, dynamic>{
-      'nickname': instance.nickname,
-      'name': instance.name,
-      'picture': instance.picture,
-      'updated_at': instance.updatedAt,
+Map<String, dynamic> _$IdTokenToJson(IdToken instance) => <String, dynamic>{
+      'httpsHasuraIoJwtClaims': instance.httpsHasuraIoJwtClaims,
       'iss': instance.iss,
       'sub': instance.sub,
       'aud': instance.aud,
-      'email': instance.email,
       'iat': instance.iat,
       'exp': instance.exp,
-      'auth_time': instance.authTime,
+      'azp': instance.azp,
+      'scope': instance.scope,
     };

@@ -22,8 +22,18 @@ class ProfileScreen extends StatelessWidget {
       children: <Widget>[
         Observer(
           builder: (_) {
-            return Text('Hello ${cookbookStore.user?.name}');
+            return Text(
+                'Hello ${cookbookStore.user?.name}! You have ${cookbookStore.idToken?.httpsHasuraIoJwtClaims.xHasuraAllowedRoles.join(',')} profile');
           },
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: CommonButton(
+            onPressed: () async {
+              await AuthService.instance.refreshToken();
+            },
+            text: 'Refresh',
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),

@@ -64,6 +64,8 @@ abstract class CopyWith$Input$File_aggregate_order_by<TRes> {
       {Enum$order_by? count,
       Input$File_max_order_by? max,
       Input$File_min_order_by? min});
+  CopyWith$Input$File_max_order_by<TRes> get max;
+  CopyWith$Input$File_min_order_by<TRes> get min;
 }
 
 class _CopyWithImpl$Input$File_aggregate_order_by<TRes>
@@ -89,6 +91,19 @@ class _CopyWithImpl$Input$File_aggregate_order_by<TRes>
           min: min == _undefined
               ? _instance.min
               : (min as Input$File_min_order_by?)));
+  CopyWith$Input$File_max_order_by<TRes> get max {
+    final local$max = _instance.max;
+    return local$max == null
+        ? CopyWith$Input$File_max_order_by.stub(_then(_instance))
+        : CopyWith$Input$File_max_order_by(local$max, (e) => call(max: e));
+  }
+
+  CopyWith$Input$File_min_order_by<TRes> get min {
+    final local$min = _instance.min;
+    return local$min == null
+        ? CopyWith$Input$File_min_order_by.stub(_then(_instance))
+        : CopyWith$Input$File_min_order_by(local$min, (e) => call(min: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$File_aggregate_order_by<TRes>
@@ -102,6 +117,10 @@ class _CopyWithStubImpl$Input$File_aggregate_order_by<TRes>
           Input$File_max_order_by? max,
           Input$File_min_order_by? min}) =>
       _res;
+  CopyWith$Input$File_max_order_by<TRes> get max =>
+      CopyWith$Input$File_max_order_by.stub(_res);
+  CopyWith$Input$File_min_order_by<TRes> get min =>
+      CopyWith$Input$File_min_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -161,6 +180,12 @@ abstract class CopyWith$Input$File_arr_rel_insert_input<TRes> {
   TRes call(
       {List<Input$File_insert_input>? data,
       Input$File_on_conflict? on_conflict});
+  TRes data(
+      Iterable<Input$File_insert_input> Function(
+              Iterable<
+                  CopyWith$Input$File_insert_input<Input$File_insert_input>>)
+          _fn);
+  CopyWith$Input$File_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$File_arr_rel_insert_input<TRes>
@@ -181,6 +206,23 @@ class _CopyWithImpl$Input$File_arr_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$File_on_conflict?)));
+  TRes data(
+          Iterable<Input$File_insert_input> Function(
+                  Iterable<
+                      CopyWith$Input$File_insert_input<
+                          Input$File_insert_input>>)
+              _fn) =>
+      call(
+          data: _fn(_instance.data
+                  .map((e) => CopyWith$Input$File_insert_input(e, (i) => i)))
+              .toList());
+  CopyWith$Input$File_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$File_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$File_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$File_arr_rel_insert_input<TRes>
@@ -193,6 +235,9 @@ class _CopyWithStubImpl$Input$File_arr_rel_insert_input<TRes>
           {List<Input$File_insert_input>? data,
           Input$File_on_conflict? on_conflict}) =>
       _res;
+  data(_fn) => _res;
+  CopyWith$Input$File_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$File_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -352,6 +397,23 @@ abstract class CopyWith$Input$File_bool_exp<TRes> {
       Input$String_comparison_exp? mimetype,
       Input$String_comparison_exp? recipeId,
       Input$String_comparison_exp? userId});
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipe;
+  CopyWith$Input$Step_bool_exp<TRes> get Steps;
+  CopyWith$Input$User_bool_exp<TRes> get User;
+  TRes $_and(
+      Iterable<Input$File_bool_exp>? Function(
+              Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?)
+          _fn);
+  CopyWith$Input$File_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$File_bool_exp>? Function(
+              Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?)
+          _fn);
+  CopyWith$Input$bytea_comparison_exp<TRes> get blob;
+  CopyWith$Input$String_comparison_exp<TRes> get id;
+  CopyWith$Input$String_comparison_exp<TRes> get mimetype;
+  CopyWith$Input$String_comparison_exp<TRes> get recipeId;
+  CopyWith$Input$String_comparison_exp<TRes> get userId;
 }
 
 class _CopyWithImpl$Input$File_bool_exp<TRes>
@@ -410,6 +472,87 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
           userId: userId == _undefined
               ? _instance.userId
               : (userId as Input$String_comparison_exp?)));
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipe {
+    final local$Recipe = _instance.Recipe;
+    return local$Recipe == null
+        ? CopyWith$Input$Recipe_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Recipe_bool_exp(local$Recipe, (e) => call(Recipe: e));
+  }
+
+  CopyWith$Input$Step_bool_exp<TRes> get Steps {
+    final local$Steps = _instance.Steps;
+    return local$Steps == null
+        ? CopyWith$Input$Step_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Step_bool_exp(local$Steps, (e) => call(Steps: e));
+  }
+
+  CopyWith$Input$User_bool_exp<TRes> get User {
+    final local$User = _instance.User;
+    return local$User == null
+        ? CopyWith$Input$User_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$User_bool_exp(local$User, (e) => call(User: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$File_bool_exp>? Function(
+                  Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and
+                  ?.map((e) => CopyWith$Input$File_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$File_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$File_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$File_bool_exp(local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$File_bool_exp>? Function(
+                  Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or
+                  ?.map((e) => CopyWith$Input$File_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$bytea_comparison_exp<TRes> get blob {
+    final local$blob = _instance.blob;
+    return local$blob == null
+        ? CopyWith$Input$bytea_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$bytea_comparison_exp(local$blob, (e) => call(blob: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get mimetype {
+    final local$mimetype = _instance.mimetype;
+    return local$mimetype == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$mimetype, (e) => call(mimetype: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get recipeId {
+    final local$recipeId = _instance.recipeId;
+    return local$recipeId == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$recipeId, (e) => call(recipeId: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get userId {
+    final local$userId = _instance.userId;
+    return local$userId == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$userId, (e) => call(userId: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$File_bool_exp<TRes>
@@ -431,6 +574,26 @@ class _CopyWithStubImpl$Input$File_bool_exp<TRes>
           Input$String_comparison_exp? recipeId,
           Input$String_comparison_exp? userId}) =>
       _res;
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipe =>
+      CopyWith$Input$Recipe_bool_exp.stub(_res);
+  CopyWith$Input$Step_bool_exp<TRes> get Steps =>
+      CopyWith$Input$Step_bool_exp.stub(_res);
+  CopyWith$Input$User_bool_exp<TRes> get User =>
+      CopyWith$Input$User_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$File_bool_exp<TRes> get $_not =>
+      CopyWith$Input$File_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$bytea_comparison_exp<TRes> get blob =>
+      CopyWith$Input$bytea_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get mimetype =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get recipeId =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get userId =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -516,6 +679,8 @@ abstract class CopyWith$Input$File_insert_input<TRes> {
       String? id,
       String? mimetype,
       String? recipeId});
+  CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe;
+  CopyWith$Input$Step_arr_rel_insert_input<TRes> get Steps;
 }
 
 class _CopyWithImpl$Input$File_insert_input<TRes>
@@ -550,6 +715,21 @@ class _CopyWithImpl$Input$File_insert_input<TRes>
           recipeId: recipeId == _undefined
               ? _instance.recipeId
               : (recipeId as String?)));
+  CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe {
+    final local$Recipe = _instance.Recipe;
+    return local$Recipe == null
+        ? CopyWith$Input$Recipe_obj_rel_insert_input.stub(_then(_instance))
+        : CopyWith$Input$Recipe_obj_rel_insert_input(
+            local$Recipe, (e) => call(Recipe: e));
+  }
+
+  CopyWith$Input$Step_arr_rel_insert_input<TRes> get Steps {
+    final local$Steps = _instance.Steps;
+    return local$Steps == null
+        ? CopyWith$Input$Step_arr_rel_insert_input.stub(_then(_instance))
+        : CopyWith$Input$Step_arr_rel_insert_input(
+            local$Steps, (e) => call(Steps: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$File_insert_input<TRes>
@@ -566,6 +746,10 @@ class _CopyWithStubImpl$Input$File_insert_input<TRes>
           String? mimetype,
           String? recipeId}) =>
       _res;
+  CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe =>
+      CopyWith$Input$Recipe_obj_rel_insert_input.stub(_res);
+  CopyWith$Input$Step_arr_rel_insert_input<TRes> get Steps =>
+      CopyWith$Input$Step_arr_rel_insert_input.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -837,6 +1021,8 @@ abstract class CopyWith$Input$File_obj_rel_insert_input<TRes> {
 
   TRes call(
       {Input$File_insert_input? data, Input$File_on_conflict? on_conflict});
+  CopyWith$Input$File_insert_input<TRes> get data;
+  CopyWith$Input$File_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$File_obj_rel_insert_input<TRes>
@@ -857,6 +1043,18 @@ class _CopyWithImpl$Input$File_obj_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$File_on_conflict?)));
+  CopyWith$Input$File_insert_input<TRes> get data {
+    final local$data = _instance.data;
+    return CopyWith$Input$File_insert_input(local$data, (e) => call(data: e));
+  }
+
+  CopyWith$Input$File_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$File_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$File_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$File_obj_rel_insert_input<TRes>
@@ -867,6 +1065,10 @@ class _CopyWithStubImpl$Input$File_obj_rel_insert_input<TRes>
 
   call({Input$File_insert_input? data, Input$File_on_conflict? on_conflict}) =>
       _res;
+  CopyWith$Input$File_insert_input<TRes> get data =>
+      CopyWith$Input$File_insert_input.stub(_res);
+  CopyWith$Input$File_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$File_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -937,6 +1139,7 @@ abstract class CopyWith$Input$File_on_conflict<TRes> {
       {Enum$File_constraint? constraint,
       List<Enum$File_update_column>? update_columns,
       Input$File_bool_exp? where});
+  CopyWith$Input$File_bool_exp<TRes> get where;
 }
 
 class _CopyWithImpl$Input$File_on_conflict<TRes>
@@ -963,6 +1166,12 @@ class _CopyWithImpl$Input$File_on_conflict<TRes>
           where: where == _undefined
               ? _instance.where
               : (where as Input$File_bool_exp?)));
+  CopyWith$Input$File_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return local$where == null
+        ? CopyWith$Input$File_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$File_bool_exp(local$where, (e) => call(where: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$File_on_conflict<TRes>
@@ -976,6 +1185,8 @@ class _CopyWithStubImpl$Input$File_on_conflict<TRes>
           List<Enum$File_update_column>? update_columns,
           Input$File_bool_exp? where}) =>
       _res;
+  CopyWith$Input$File_bool_exp<TRes> get where =>
+      CopyWith$Input$File_bool_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1090,6 +1301,9 @@ abstract class CopyWith$Input$File_order_by<TRes> {
       Enum$order_by? mimetype,
       Enum$order_by? recipeId,
       Enum$order_by? userId});
+  CopyWith$Input$Recipe_order_by<TRes> get Recipe;
+  CopyWith$Input$Step_aggregate_order_by<TRes> get Steps_aggregate;
+  CopyWith$Input$User_order_by<TRes> get User;
 }
 
 class _CopyWithImpl$Input$File_order_by<TRes>
@@ -1132,6 +1346,27 @@ class _CopyWithImpl$Input$File_order_by<TRes>
           userId: userId == _undefined
               ? _instance.userId
               : (userId as Enum$order_by?)));
+  CopyWith$Input$Recipe_order_by<TRes> get Recipe {
+    final local$Recipe = _instance.Recipe;
+    return local$Recipe == null
+        ? CopyWith$Input$Recipe_order_by.stub(_then(_instance))
+        : CopyWith$Input$Recipe_order_by(local$Recipe, (e) => call(Recipe: e));
+  }
+
+  CopyWith$Input$Step_aggregate_order_by<TRes> get Steps_aggregate {
+    final local$Steps_aggregate = _instance.Steps_aggregate;
+    return local$Steps_aggregate == null
+        ? CopyWith$Input$Step_aggregate_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_aggregate_order_by(
+            local$Steps_aggregate, (e) => call(Steps_aggregate: e));
+  }
+
+  CopyWith$Input$User_order_by<TRes> get User {
+    final local$User = _instance.User;
+    return local$User == null
+        ? CopyWith$Input$User_order_by.stub(_then(_instance))
+        : CopyWith$Input$User_order_by(local$User, (e) => call(User: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$File_order_by<TRes>
@@ -1150,6 +1385,12 @@ class _CopyWithStubImpl$Input$File_order_by<TRes>
           Enum$order_by? recipeId,
           Enum$order_by? userId}) =>
       _res;
+  CopyWith$Input$Recipe_order_by<TRes> get Recipe =>
+      CopyWith$Input$Recipe_order_by.stub(_res);
+  CopyWith$Input$Step_aggregate_order_by<TRes> get Steps_aggregate =>
+      CopyWith$Input$Step_aggregate_order_by.stub(_res);
+  CopyWith$Input$User_order_by<TRes> get User =>
+      CopyWith$Input$User_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1433,6 +1674,16 @@ abstract class CopyWith$Input$IngredientUnit_aggregate_order_by<TRes> {
       Input$IngredientUnit_var_pop_order_by? var_pop,
       Input$IngredientUnit_var_samp_order_by? var_samp,
       Input$IngredientUnit_variance_order_by? variance});
+  CopyWith$Input$IngredientUnit_avg_order_by<TRes> get avg;
+  CopyWith$Input$IngredientUnit_max_order_by<TRes> get max;
+  CopyWith$Input$IngredientUnit_min_order_by<TRes> get min;
+  CopyWith$Input$IngredientUnit_stddev_order_by<TRes> get stddev;
+  CopyWith$Input$IngredientUnit_stddev_pop_order_by<TRes> get stddev_pop;
+  CopyWith$Input$IngredientUnit_stddev_samp_order_by<TRes> get stddev_samp;
+  CopyWith$Input$IngredientUnit_sum_order_by<TRes> get sum;
+  CopyWith$Input$IngredientUnit_var_pop_order_by<TRes> get var_pop;
+  CopyWith$Input$IngredientUnit_var_samp_order_by<TRes> get var_samp;
+  CopyWith$Input$IngredientUnit_variance_order_by<TRes> get variance;
 }
 
 class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
@@ -1491,6 +1742,87 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
           variance: variance == _undefined
               ? _instance.variance
               : (variance as Input$IngredientUnit_variance_order_by?)));
+  CopyWith$Input$IngredientUnit_avg_order_by<TRes> get avg {
+    final local$avg = _instance.avg;
+    return local$avg == null
+        ? CopyWith$Input$IngredientUnit_avg_order_by.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_avg_order_by(
+            local$avg, (e) => call(avg: e));
+  }
+
+  CopyWith$Input$IngredientUnit_max_order_by<TRes> get max {
+    final local$max = _instance.max;
+    return local$max == null
+        ? CopyWith$Input$IngredientUnit_max_order_by.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_max_order_by(
+            local$max, (e) => call(max: e));
+  }
+
+  CopyWith$Input$IngredientUnit_min_order_by<TRes> get min {
+    final local$min = _instance.min;
+    return local$min == null
+        ? CopyWith$Input$IngredientUnit_min_order_by.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_min_order_by(
+            local$min, (e) => call(min: e));
+  }
+
+  CopyWith$Input$IngredientUnit_stddev_order_by<TRes> get stddev {
+    final local$stddev = _instance.stddev;
+    return local$stddev == null
+        ? CopyWith$Input$IngredientUnit_stddev_order_by.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_stddev_order_by(
+            local$stddev, (e) => call(stddev: e));
+  }
+
+  CopyWith$Input$IngredientUnit_stddev_pop_order_by<TRes> get stddev_pop {
+    final local$stddev_pop = _instance.stddev_pop;
+    return local$stddev_pop == null
+        ? CopyWith$Input$IngredientUnit_stddev_pop_order_by.stub(
+            _then(_instance))
+        : CopyWith$Input$IngredientUnit_stddev_pop_order_by(
+            local$stddev_pop, (e) => call(stddev_pop: e));
+  }
+
+  CopyWith$Input$IngredientUnit_stddev_samp_order_by<TRes> get stddev_samp {
+    final local$stddev_samp = _instance.stddev_samp;
+    return local$stddev_samp == null
+        ? CopyWith$Input$IngredientUnit_stddev_samp_order_by.stub(
+            _then(_instance))
+        : CopyWith$Input$IngredientUnit_stddev_samp_order_by(
+            local$stddev_samp, (e) => call(stddev_samp: e));
+  }
+
+  CopyWith$Input$IngredientUnit_sum_order_by<TRes> get sum {
+    final local$sum = _instance.sum;
+    return local$sum == null
+        ? CopyWith$Input$IngredientUnit_sum_order_by.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_sum_order_by(
+            local$sum, (e) => call(sum: e));
+  }
+
+  CopyWith$Input$IngredientUnit_var_pop_order_by<TRes> get var_pop {
+    final local$var_pop = _instance.var_pop;
+    return local$var_pop == null
+        ? CopyWith$Input$IngredientUnit_var_pop_order_by.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_var_pop_order_by(
+            local$var_pop, (e) => call(var_pop: e));
+  }
+
+  CopyWith$Input$IngredientUnit_var_samp_order_by<TRes> get var_samp {
+    final local$var_samp = _instance.var_samp;
+    return local$var_samp == null
+        ? CopyWith$Input$IngredientUnit_var_samp_order_by.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_var_samp_order_by(
+            local$var_samp, (e) => call(var_samp: e));
+  }
+
+  CopyWith$Input$IngredientUnit_variance_order_by<TRes> get variance {
+    final local$variance = _instance.variance;
+    return local$variance == null
+        ? CopyWith$Input$IngredientUnit_variance_order_by.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_variance_order_by(
+            local$variance, (e) => call(variance: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_aggregate_order_by<TRes>
@@ -1512,6 +1844,26 @@ class _CopyWithStubImpl$Input$IngredientUnit_aggregate_order_by<TRes>
           Input$IngredientUnit_var_samp_order_by? var_samp,
           Input$IngredientUnit_variance_order_by? variance}) =>
       _res;
+  CopyWith$Input$IngredientUnit_avg_order_by<TRes> get avg =>
+      CopyWith$Input$IngredientUnit_avg_order_by.stub(_res);
+  CopyWith$Input$IngredientUnit_max_order_by<TRes> get max =>
+      CopyWith$Input$IngredientUnit_max_order_by.stub(_res);
+  CopyWith$Input$IngredientUnit_min_order_by<TRes> get min =>
+      CopyWith$Input$IngredientUnit_min_order_by.stub(_res);
+  CopyWith$Input$IngredientUnit_stddev_order_by<TRes> get stddev =>
+      CopyWith$Input$IngredientUnit_stddev_order_by.stub(_res);
+  CopyWith$Input$IngredientUnit_stddev_pop_order_by<TRes> get stddev_pop =>
+      CopyWith$Input$IngredientUnit_stddev_pop_order_by.stub(_res);
+  CopyWith$Input$IngredientUnit_stddev_samp_order_by<TRes> get stddev_samp =>
+      CopyWith$Input$IngredientUnit_stddev_samp_order_by.stub(_res);
+  CopyWith$Input$IngredientUnit_sum_order_by<TRes> get sum =>
+      CopyWith$Input$IngredientUnit_sum_order_by.stub(_res);
+  CopyWith$Input$IngredientUnit_var_pop_order_by<TRes> get var_pop =>
+      CopyWith$Input$IngredientUnit_var_pop_order_by.stub(_res);
+  CopyWith$Input$IngredientUnit_var_samp_order_by<TRes> get var_samp =>
+      CopyWith$Input$IngredientUnit_var_samp_order_by.stub(_res);
+  CopyWith$Input$IngredientUnit_variance_order_by<TRes> get variance =>
+      CopyWith$Input$IngredientUnit_variance_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1575,6 +1927,13 @@ abstract class CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> {
   TRes call(
       {List<Input$IngredientUnit_insert_input>? data,
       Input$IngredientUnit_on_conflict? on_conflict});
+  TRes data(
+      Iterable<Input$IngredientUnit_insert_input> Function(
+              Iterable<
+                  CopyWith$Input$IngredientUnit_insert_input<
+                      Input$IngredientUnit_insert_input>>)
+          _fn);
+  CopyWith$Input$IngredientUnit_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
@@ -1596,6 +1955,23 @@ class _CopyWithImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$IngredientUnit_on_conflict?)));
+  TRes data(
+          Iterable<Input$IngredientUnit_insert_input> Function(
+                  Iterable<
+                      CopyWith$Input$IngredientUnit_insert_input<
+                          Input$IngredientUnit_insert_input>>)
+              _fn) =>
+      call(
+          data: _fn(_instance.data.map((e) =>
+                  CopyWith$Input$IngredientUnit_insert_input(e, (i) => i)))
+              .toList());
+  CopyWith$Input$IngredientUnit_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$IngredientUnit_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
@@ -1608,6 +1984,9 @@ class _CopyWithStubImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
           {List<Input$IngredientUnit_insert_input>? data,
           Input$IngredientUnit_on_conflict? on_conflict}) =>
       _res;
+  data(_fn) => _res;
+  CopyWith$Input$IngredientUnit_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$IngredientUnit_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1869,6 +2248,29 @@ abstract class CopyWith$Input$IngredientUnit_bool_exp<TRes> {
       Input$Int_comparison_exp? order,
       Input$String_comparison_exp? recipeSectionId,
       Input$String_comparison_exp? unitId});
+  CopyWith$Input$Ingredient_bool_exp<TRes> get Ingredient;
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection;
+  CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSize;
+  TRes $_and(
+      Iterable<Input$IngredientUnit_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$IngredientUnit_bool_exp<
+                      Input$IngredientUnit_bool_exp>>?)
+          _fn);
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$IngredientUnit_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$IngredientUnit_bool_exp<
+                      Input$IngredientUnit_bool_exp>>?)
+          _fn);
+  CopyWith$Input$float8_comparison_exp<TRes> get amount;
+  CopyWith$Input$String_comparison_exp<TRes> get id;
+  CopyWith$Input$String_comparison_exp<TRes> get ingredientId;
+  CopyWith$Input$String_comparison_exp<TRes> get notes;
+  CopyWith$Input$Int_comparison_exp<TRes> get order;
+  CopyWith$Input$String_comparison_exp<TRes> get recipeSectionId;
+  CopyWith$Input$String_comparison_exp<TRes> get unitId;
 }
 
 class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
@@ -1935,6 +2337,111 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
           unitId: unitId == _undefined
               ? _instance.unitId
               : (unitId as Input$String_comparison_exp?)));
+  CopyWith$Input$Ingredient_bool_exp<TRes> get Ingredient {
+    final local$Ingredient = _instance.Ingredient;
+    return local$Ingredient == null
+        ? CopyWith$Input$Ingredient_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Ingredient_bool_exp(
+            local$Ingredient, (e) => call(Ingredient: e));
+  }
+
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection {
+    final local$RecipeSection = _instance.RecipeSection;
+    return local$RecipeSection == null
+        ? CopyWith$Input$RecipeSection_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_bool_exp(
+            local$RecipeSection, (e) => call(RecipeSection: e));
+  }
+
+  CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSize {
+    final local$UnitSize = _instance.UnitSize;
+    return local$UnitSize == null
+        ? CopyWith$Input$UnitSize_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$UnitSize_bool_exp(
+            local$UnitSize, (e) => call(UnitSize: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$IngredientUnit_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$IngredientUnit_bool_exp<
+                          Input$IngredientUnit_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and?.map(
+                  (e) => CopyWith$Input$IngredientUnit_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$IngredientUnit_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_bool_exp(
+            local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$IngredientUnit_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$IngredientUnit_bool_exp<
+                          Input$IngredientUnit_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or?.map(
+                  (e) => CopyWith$Input$IngredientUnit_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$float8_comparison_exp<TRes> get amount {
+    final local$amount = _instance.amount;
+    return local$amount == null
+        ? CopyWith$Input$float8_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$float8_comparison_exp(
+            local$amount, (e) => call(amount: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get ingredientId {
+    final local$ingredientId = _instance.ingredientId;
+    return local$ingredientId == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$ingredientId, (e) => call(ingredientId: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get notes {
+    final local$notes = _instance.notes;
+    return local$notes == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$notes, (e) => call(notes: e));
+  }
+
+  CopyWith$Input$Int_comparison_exp<TRes> get order {
+    final local$order = _instance.order;
+    return local$order == null
+        ? CopyWith$Input$Int_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$Int_comparison_exp(local$order, (e) => call(order: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get recipeSectionId {
+    final local$recipeSectionId = _instance.recipeSectionId;
+    return local$recipeSectionId == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$recipeSectionId, (e) => call(recipeSectionId: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get unitId {
+    final local$unitId = _instance.unitId;
+    return local$unitId == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$unitId, (e) => call(unitId: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_bool_exp<TRes>
@@ -1958,6 +2465,30 @@ class _CopyWithStubImpl$Input$IngredientUnit_bool_exp<TRes>
           Input$String_comparison_exp? recipeSectionId,
           Input$String_comparison_exp? unitId}) =>
       _res;
+  CopyWith$Input$Ingredient_bool_exp<TRes> get Ingredient =>
+      CopyWith$Input$Ingredient_bool_exp.stub(_res);
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection =>
+      CopyWith$Input$RecipeSection_bool_exp.stub(_res);
+  CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSize =>
+      CopyWith$Input$UnitSize_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get $_not =>
+      CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$float8_comparison_exp<TRes> get amount =>
+      CopyWith$Input$float8_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get ingredientId =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get notes =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$Int_comparison_exp<TRes> get order =>
+      CopyWith$Input$Int_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get recipeSectionId =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get unitId =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2154,6 +2685,8 @@ abstract class CopyWith$Input$IngredientUnit_insert_input<TRes> {
       int? order,
       String? recipeSectionId,
       String? unitId});
+  CopyWith$Input$Ingredient_obj_rel_insert_input<TRes> get Ingredient;
+  CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> get RecipeSection;
 }
 
 class _CopyWithImpl$Input$IngredientUnit_insert_input<TRes>
@@ -2195,6 +2728,22 @@ class _CopyWithImpl$Input$IngredientUnit_insert_input<TRes>
               : (recipeSectionId as String?),
           unitId:
               unitId == _undefined ? _instance.unitId : (unitId as String?)));
+  CopyWith$Input$Ingredient_obj_rel_insert_input<TRes> get Ingredient {
+    final local$Ingredient = _instance.Ingredient;
+    return local$Ingredient == null
+        ? CopyWith$Input$Ingredient_obj_rel_insert_input.stub(_then(_instance))
+        : CopyWith$Input$Ingredient_obj_rel_insert_input(
+            local$Ingredient, (e) => call(Ingredient: e));
+  }
+
+  CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> get RecipeSection {
+    final local$RecipeSection = _instance.RecipeSection;
+    return local$RecipeSection == null
+        ? CopyWith$Input$RecipeSection_obj_rel_insert_input.stub(
+            _then(_instance))
+        : CopyWith$Input$RecipeSection_obj_rel_insert_input(
+            local$RecipeSection, (e) => call(RecipeSection: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_insert_input<TRes>
@@ -2214,6 +2763,10 @@ class _CopyWithStubImpl$Input$IngredientUnit_insert_input<TRes>
           String? recipeSectionId,
           String? unitId}) =>
       _res;
+  CopyWith$Input$Ingredient_obj_rel_insert_input<TRes> get Ingredient =>
+      CopyWith$Input$Ingredient_obj_rel_insert_input.stub(_res);
+  CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> get RecipeSection =>
+      CopyWith$Input$RecipeSection_obj_rel_insert_input.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2619,6 +3172,7 @@ abstract class CopyWith$Input$IngredientUnit_on_conflict<TRes> {
       {Enum$IngredientUnit_constraint? constraint,
       List<Enum$IngredientUnit_update_column>? update_columns,
       Input$IngredientUnit_bool_exp? where});
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get where;
 }
 
 class _CopyWithImpl$Input$IngredientUnit_on_conflict<TRes>
@@ -2645,6 +3199,13 @@ class _CopyWithImpl$Input$IngredientUnit_on_conflict<TRes>
           where: where == _undefined
               ? _instance.where
               : (where as Input$IngredientUnit_bool_exp?)));
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return local$where == null
+        ? CopyWith$Input$IngredientUnit_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_bool_exp(
+            local$where, (e) => call(where: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_on_conflict<TRes>
@@ -2658,6 +3219,8 @@ class _CopyWithStubImpl$Input$IngredientUnit_on_conflict<TRes>
           List<Enum$IngredientUnit_update_column>? update_columns,
           Input$IngredientUnit_bool_exp? where}) =>
       _res;
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get where =>
+      CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2793,6 +3356,9 @@ abstract class CopyWith$Input$IngredientUnit_order_by<TRes> {
       Enum$order_by? order,
       Enum$order_by? recipeSectionId,
       Enum$order_by? unitId});
+  CopyWith$Input$Ingredient_order_by<TRes> get Ingredient;
+  CopyWith$Input$RecipeSection_order_by<TRes> get RecipeSection;
+  CopyWith$Input$UnitSize_order_by<TRes> get UnitSize;
 }
 
 class _CopyWithImpl$Input$IngredientUnit_order_by<TRes>
@@ -2843,6 +3409,29 @@ class _CopyWithImpl$Input$IngredientUnit_order_by<TRes>
           unitId: unitId == _undefined
               ? _instance.unitId
               : (unitId as Enum$order_by?)));
+  CopyWith$Input$Ingredient_order_by<TRes> get Ingredient {
+    final local$Ingredient = _instance.Ingredient;
+    return local$Ingredient == null
+        ? CopyWith$Input$Ingredient_order_by.stub(_then(_instance))
+        : CopyWith$Input$Ingredient_order_by(
+            local$Ingredient, (e) => call(Ingredient: e));
+  }
+
+  CopyWith$Input$RecipeSection_order_by<TRes> get RecipeSection {
+    final local$RecipeSection = _instance.RecipeSection;
+    return local$RecipeSection == null
+        ? CopyWith$Input$RecipeSection_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_order_by(
+            local$RecipeSection, (e) => call(RecipeSection: e));
+  }
+
+  CopyWith$Input$UnitSize_order_by<TRes> get UnitSize {
+    final local$UnitSize = _instance.UnitSize;
+    return local$UnitSize == null
+        ? CopyWith$Input$UnitSize_order_by.stub(_then(_instance))
+        : CopyWith$Input$UnitSize_order_by(
+            local$UnitSize, (e) => call(UnitSize: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_order_by<TRes>
@@ -2863,6 +3452,12 @@ class _CopyWithStubImpl$Input$IngredientUnit_order_by<TRes>
           Enum$order_by? recipeSectionId,
           Enum$order_by? unitId}) =>
       _res;
+  CopyWith$Input$Ingredient_order_by<TRes> get Ingredient =>
+      CopyWith$Input$Ingredient_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_order_by<TRes> get RecipeSection =>
+      CopyWith$Input$RecipeSection_order_by.stub(_res);
+  CopyWith$Input$UnitSize_order_by<TRes> get UnitSize =>
+      CopyWith$Input$UnitSize_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3758,6 +4353,22 @@ abstract class CopyWith$Input$Ingredient_bool_exp<TRes> {
       List<Input$Ingredient_bool_exp>? $_or,
       Input$String_comparison_exp? id,
       Input$String_comparison_exp? name});
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits;
+  TRes $_and(
+      Iterable<Input$Ingredient_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$Ingredient_bool_exp<
+                      Input$Ingredient_bool_exp>>?)
+          _fn);
+  CopyWith$Input$Ingredient_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$Ingredient_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$Ingredient_bool_exp<
+                      Input$Ingredient_bool_exp>>?)
+          _fn);
+  CopyWith$Input$String_comparison_exp<TRes> get id;
+  CopyWith$Input$String_comparison_exp<TRes> get name;
 }
 
 class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
@@ -3796,6 +4407,56 @@ class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
           name: name == _undefined
               ? _instance.name
               : (name as Input$String_comparison_exp?)));
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits {
+    final local$IngredientUnits = _instance.IngredientUnits;
+    return local$IngredientUnits == null
+        ? CopyWith$Input$IngredientUnit_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_bool_exp(
+            local$IngredientUnits, (e) => call(IngredientUnits: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$Ingredient_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$Ingredient_bool_exp<
+                          Input$Ingredient_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and
+                  ?.map((e) => CopyWith$Input$Ingredient_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$Ingredient_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$Ingredient_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Ingredient_bool_exp(
+            local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$Ingredient_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$Ingredient_bool_exp<
+                          Input$Ingredient_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or
+                  ?.map((e) => CopyWith$Input$Ingredient_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get name {
+    final local$name = _instance.name;
+    return local$name == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$name, (e) => call(name: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Ingredient_bool_exp<TRes>
@@ -3812,6 +4473,16 @@ class _CopyWithStubImpl$Input$Ingredient_bool_exp<TRes>
           Input$String_comparison_exp? id,
           Input$String_comparison_exp? name}) =>
       _res;
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits =>
+      CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$Ingredient_bool_exp<TRes> get $_not =>
+      CopyWith$Input$Ingredient_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get name =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3870,6 +4541,7 @@ abstract class CopyWith$Input$Ingredient_insert_input<TRes> {
       {Input$IngredientUnit_arr_rel_insert_input? IngredientUnits,
       String? id,
       String? name});
+  CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> get IngredientUnits;
 }
 
 class _CopyWithImpl$Input$Ingredient_insert_input<TRes>
@@ -3892,6 +4564,14 @@ class _CopyWithImpl$Input$Ingredient_insert_input<TRes>
               : (IngredientUnits as Input$IngredientUnit_arr_rel_insert_input?),
           id: id == _undefined ? _instance.id : (id as String?),
           name: name == _undefined ? _instance.name : (name as String?)));
+  CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> get IngredientUnits {
+    final local$IngredientUnits = _instance.IngredientUnits;
+    return local$IngredientUnits == null
+        ? CopyWith$Input$IngredientUnit_arr_rel_insert_input.stub(
+            _then(_instance))
+        : CopyWith$Input$IngredientUnit_arr_rel_insert_input(
+            local$IngredientUnits, (e) => call(IngredientUnits: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Ingredient_insert_input<TRes>
@@ -3905,6 +4585,9 @@ class _CopyWithStubImpl$Input$Ingredient_insert_input<TRes>
           String? id,
           String? name}) =>
       _res;
+  CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes>
+      get IngredientUnits =>
+          CopyWith$Input$IngredientUnit_arr_rel_insert_input.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -3960,6 +4643,8 @@ abstract class CopyWith$Input$Ingredient_obj_rel_insert_input<TRes> {
   TRes call(
       {Input$Ingredient_insert_input? data,
       Input$Ingredient_on_conflict? on_conflict});
+  CopyWith$Input$Ingredient_insert_input<TRes> get data;
+  CopyWith$Input$Ingredient_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$Ingredient_obj_rel_insert_input<TRes>
@@ -3981,6 +4666,19 @@ class _CopyWithImpl$Input$Ingredient_obj_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$Ingredient_on_conflict?)));
+  CopyWith$Input$Ingredient_insert_input<TRes> get data {
+    final local$data = _instance.data;
+    return CopyWith$Input$Ingredient_insert_input(
+        local$data, (e) => call(data: e));
+  }
+
+  CopyWith$Input$Ingredient_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$Ingredient_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$Ingredient_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Ingredient_obj_rel_insert_input<TRes>
@@ -3993,6 +4691,10 @@ class _CopyWithStubImpl$Input$Ingredient_obj_rel_insert_input<TRes>
           {Input$Ingredient_insert_input? data,
           Input$Ingredient_on_conflict? on_conflict}) =>
       _res;
+  CopyWith$Input$Ingredient_insert_input<TRes> get data =>
+      CopyWith$Input$Ingredient_insert_input.stub(_res);
+  CopyWith$Input$Ingredient_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$Ingredient_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4064,6 +4766,7 @@ abstract class CopyWith$Input$Ingredient_on_conflict<TRes> {
       {Enum$Ingredient_constraint? constraint,
       List<Enum$Ingredient_update_column>? update_columns,
       Input$Ingredient_bool_exp? where});
+  CopyWith$Input$Ingredient_bool_exp<TRes> get where;
 }
 
 class _CopyWithImpl$Input$Ingredient_on_conflict<TRes>
@@ -4090,6 +4793,13 @@ class _CopyWithImpl$Input$Ingredient_on_conflict<TRes>
           where: where == _undefined
               ? _instance.where
               : (where as Input$Ingredient_bool_exp?)));
+  CopyWith$Input$Ingredient_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return local$where == null
+        ? CopyWith$Input$Ingredient_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Ingredient_bool_exp(
+            local$where, (e) => call(where: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Ingredient_on_conflict<TRes>
@@ -4103,6 +4813,8 @@ class _CopyWithStubImpl$Input$Ingredient_on_conflict<TRes>
           List<Enum$Ingredient_update_column>? update_columns,
           Input$Ingredient_bool_exp? where}) =>
       _res;
+  CopyWith$Input$Ingredient_bool_exp<TRes> get where =>
+      CopyWith$Input$Ingredient_bool_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4164,6 +4876,8 @@ abstract class CopyWith$Input$Ingredient_order_by<TRes> {
       {Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
       Enum$order_by? id,
       Enum$order_by? name});
+  CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
+      get IngredientUnits_aggregate;
 }
 
 class _CopyWithImpl$Input$Ingredient_order_by<TRes>
@@ -4188,6 +4902,16 @@ class _CopyWithImpl$Input$Ingredient_order_by<TRes>
           id: id == _undefined ? _instance.id : (id as Enum$order_by?),
           name:
               name == _undefined ? _instance.name : (name as Enum$order_by?)));
+  CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
+      get IngredientUnits_aggregate {
+    final local$IngredientUnits_aggregate = _instance.IngredientUnits_aggregate;
+    return local$IngredientUnits_aggregate == null
+        ? CopyWith$Input$IngredientUnit_aggregate_order_by.stub(
+            _then(_instance))
+        : CopyWith$Input$IngredientUnit_aggregate_order_by(
+            local$IngredientUnits_aggregate,
+            (e) => call(IngredientUnits_aggregate: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Ingredient_order_by<TRes>
@@ -4201,6 +4925,9 @@ class _CopyWithStubImpl$Input$Ingredient_order_by<TRes>
           Enum$order_by? id,
           Enum$order_by? name}) =>
       _res;
+  CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
+      get IngredientUnits_aggregate =>
+          CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4244,6 +4971,7 @@ abstract class CopyWith$Input$Int_cast_exp<TRes> {
       _CopyWithStubImpl$Input$Int_cast_exp;
 
   TRes call({Input$String_comparison_exp? $String});
+  CopyWith$Input$String_comparison_exp<TRes> get $String;
 }
 
 class _CopyWithImpl$Input$Int_cast_exp<TRes>
@@ -4260,6 +4988,13 @@ class _CopyWithImpl$Input$Int_cast_exp<TRes>
       $String: $String == _undefined
           ? _instance.$String
           : ($String as Input$String_comparison_exp?)));
+  CopyWith$Input$String_comparison_exp<TRes> get $String {
+    final local$$String = _instance.$String;
+    return local$$String == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$$String, (e) => call($String: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Int_cast_exp<TRes>
@@ -4269,6 +5004,8 @@ class _CopyWithStubImpl$Input$Int_cast_exp<TRes>
   TRes _res;
 
   call({Input$String_comparison_exp? $String}) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get $String =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4426,6 +5163,7 @@ abstract class CopyWith$Input$Int_comparison_exp<TRes> {
       int? $_lte,
       int? $_neq,
       List<int>? $_nin});
+  CopyWith$Input$Int_cast_exp<TRes> get $_cast;
 }
 
 class _CopyWithImpl$Input$Int_comparison_exp<TRes>
@@ -4465,6 +5203,12 @@ class _CopyWithImpl$Input$Int_comparison_exp<TRes>
           $_neq: $_neq == _undefined ? _instance.$_neq : ($_neq as int?),
           $_nin:
               $_nin == _undefined ? _instance.$_nin : ($_nin as List<int>?)));
+  CopyWith$Input$Int_cast_exp<TRes> get $_cast {
+    final local$$_cast = _instance.$_cast;
+    return local$$_cast == null
+        ? CopyWith$Input$Int_cast_exp.stub(_then(_instance))
+        : CopyWith$Input$Int_cast_exp(local$$_cast, (e) => call($_cast: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Int_comparison_exp<TRes>
@@ -4485,6 +5229,8 @@ class _CopyWithStubImpl$Input$Int_comparison_exp<TRes>
           int? $_neq,
           List<int>? $_nin}) =>
       _res;
+  CopyWith$Input$Int_cast_exp<TRes> get $_cast =>
+      CopyWith$Input$Int_cast_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4627,6 +5373,16 @@ abstract class CopyWith$Input$RecipeSection_aggregate_order_by<TRes> {
       Input$RecipeSection_var_pop_order_by? var_pop,
       Input$RecipeSection_var_samp_order_by? var_samp,
       Input$RecipeSection_variance_order_by? variance});
+  CopyWith$Input$RecipeSection_avg_order_by<TRes> get avg;
+  CopyWith$Input$RecipeSection_max_order_by<TRes> get max;
+  CopyWith$Input$RecipeSection_min_order_by<TRes> get min;
+  CopyWith$Input$RecipeSection_stddev_order_by<TRes> get stddev;
+  CopyWith$Input$RecipeSection_stddev_pop_order_by<TRes> get stddev_pop;
+  CopyWith$Input$RecipeSection_stddev_samp_order_by<TRes> get stddev_samp;
+  CopyWith$Input$RecipeSection_sum_order_by<TRes> get sum;
+  CopyWith$Input$RecipeSection_var_pop_order_by<TRes> get var_pop;
+  CopyWith$Input$RecipeSection_var_samp_order_by<TRes> get var_samp;
+  CopyWith$Input$RecipeSection_variance_order_by<TRes> get variance;
 }
 
 class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
@@ -4685,6 +5441,87 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
           variance: variance == _undefined
               ? _instance.variance
               : (variance as Input$RecipeSection_variance_order_by?)));
+  CopyWith$Input$RecipeSection_avg_order_by<TRes> get avg {
+    final local$avg = _instance.avg;
+    return local$avg == null
+        ? CopyWith$Input$RecipeSection_avg_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_avg_order_by(
+            local$avg, (e) => call(avg: e));
+  }
+
+  CopyWith$Input$RecipeSection_max_order_by<TRes> get max {
+    final local$max = _instance.max;
+    return local$max == null
+        ? CopyWith$Input$RecipeSection_max_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_max_order_by(
+            local$max, (e) => call(max: e));
+  }
+
+  CopyWith$Input$RecipeSection_min_order_by<TRes> get min {
+    final local$min = _instance.min;
+    return local$min == null
+        ? CopyWith$Input$RecipeSection_min_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_min_order_by(
+            local$min, (e) => call(min: e));
+  }
+
+  CopyWith$Input$RecipeSection_stddev_order_by<TRes> get stddev {
+    final local$stddev = _instance.stddev;
+    return local$stddev == null
+        ? CopyWith$Input$RecipeSection_stddev_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_stddev_order_by(
+            local$stddev, (e) => call(stddev: e));
+  }
+
+  CopyWith$Input$RecipeSection_stddev_pop_order_by<TRes> get stddev_pop {
+    final local$stddev_pop = _instance.stddev_pop;
+    return local$stddev_pop == null
+        ? CopyWith$Input$RecipeSection_stddev_pop_order_by.stub(
+            _then(_instance))
+        : CopyWith$Input$RecipeSection_stddev_pop_order_by(
+            local$stddev_pop, (e) => call(stddev_pop: e));
+  }
+
+  CopyWith$Input$RecipeSection_stddev_samp_order_by<TRes> get stddev_samp {
+    final local$stddev_samp = _instance.stddev_samp;
+    return local$stddev_samp == null
+        ? CopyWith$Input$RecipeSection_stddev_samp_order_by.stub(
+            _then(_instance))
+        : CopyWith$Input$RecipeSection_stddev_samp_order_by(
+            local$stddev_samp, (e) => call(stddev_samp: e));
+  }
+
+  CopyWith$Input$RecipeSection_sum_order_by<TRes> get sum {
+    final local$sum = _instance.sum;
+    return local$sum == null
+        ? CopyWith$Input$RecipeSection_sum_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_sum_order_by(
+            local$sum, (e) => call(sum: e));
+  }
+
+  CopyWith$Input$RecipeSection_var_pop_order_by<TRes> get var_pop {
+    final local$var_pop = _instance.var_pop;
+    return local$var_pop == null
+        ? CopyWith$Input$RecipeSection_var_pop_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_var_pop_order_by(
+            local$var_pop, (e) => call(var_pop: e));
+  }
+
+  CopyWith$Input$RecipeSection_var_samp_order_by<TRes> get var_samp {
+    final local$var_samp = _instance.var_samp;
+    return local$var_samp == null
+        ? CopyWith$Input$RecipeSection_var_samp_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_var_samp_order_by(
+            local$var_samp, (e) => call(var_samp: e));
+  }
+
+  CopyWith$Input$RecipeSection_variance_order_by<TRes> get variance {
+    final local$variance = _instance.variance;
+    return local$variance == null
+        ? CopyWith$Input$RecipeSection_variance_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_variance_order_by(
+            local$variance, (e) => call(variance: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_aggregate_order_by<TRes>
@@ -4706,6 +5543,26 @@ class _CopyWithStubImpl$Input$RecipeSection_aggregate_order_by<TRes>
           Input$RecipeSection_var_samp_order_by? var_samp,
           Input$RecipeSection_variance_order_by? variance}) =>
       _res;
+  CopyWith$Input$RecipeSection_avg_order_by<TRes> get avg =>
+      CopyWith$Input$RecipeSection_avg_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_max_order_by<TRes> get max =>
+      CopyWith$Input$RecipeSection_max_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_min_order_by<TRes> get min =>
+      CopyWith$Input$RecipeSection_min_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_stddev_order_by<TRes> get stddev =>
+      CopyWith$Input$RecipeSection_stddev_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_stddev_pop_order_by<TRes> get stddev_pop =>
+      CopyWith$Input$RecipeSection_stddev_pop_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_stddev_samp_order_by<TRes> get stddev_samp =>
+      CopyWith$Input$RecipeSection_stddev_samp_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_sum_order_by<TRes> get sum =>
+      CopyWith$Input$RecipeSection_sum_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_var_pop_order_by<TRes> get var_pop =>
+      CopyWith$Input$RecipeSection_var_pop_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_var_samp_order_by<TRes> get var_samp =>
+      CopyWith$Input$RecipeSection_var_samp_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_variance_order_by<TRes> get variance =>
+      CopyWith$Input$RecipeSection_variance_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -4769,6 +5626,13 @@ abstract class CopyWith$Input$RecipeSection_arr_rel_insert_input<TRes> {
   TRes call(
       {List<Input$RecipeSection_insert_input>? data,
       Input$RecipeSection_on_conflict? on_conflict});
+  TRes data(
+      Iterable<Input$RecipeSection_insert_input> Function(
+              Iterable<
+                  CopyWith$Input$RecipeSection_insert_input<
+                      Input$RecipeSection_insert_input>>)
+          _fn);
+  CopyWith$Input$RecipeSection_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
@@ -4790,6 +5654,23 @@ class _CopyWithImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$RecipeSection_on_conflict?)));
+  TRes data(
+          Iterable<Input$RecipeSection_insert_input> Function(
+                  Iterable<
+                      CopyWith$Input$RecipeSection_insert_input<
+                          Input$RecipeSection_insert_input>>)
+              _fn) =>
+      call(
+          data: _fn(_instance.data.map((e) =>
+                  CopyWith$Input$RecipeSection_insert_input(e, (i) => i)))
+              .toList());
+  CopyWith$Input$RecipeSection_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$RecipeSection_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
@@ -4802,6 +5683,9 @@ class _CopyWithStubImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
           {List<Input$RecipeSection_insert_input>? data,
           Input$RecipeSection_on_conflict? on_conflict}) =>
       _res;
+  data(_fn) => _res;
+  CopyWith$Input$RecipeSection_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$RecipeSection_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5114,6 +5998,31 @@ abstract class CopyWith$Input$RecipeSection_bool_exp<TRes> {
       Input$String_comparison_exp? recipeId,
       Input$String_comparison_exp? servingUnit,
       Input$Int_comparison_exp? servings});
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits;
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipe;
+  CopyWith$Input$Step_bool_exp<TRes> get Steps;
+  TRes $_and(
+      Iterable<Input$RecipeSection_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$RecipeSection_bool_exp<
+                      Input$RecipeSection_bool_exp>>?)
+          _fn);
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$RecipeSection_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$RecipeSection_bool_exp<
+                      Input$RecipeSection_bool_exp>>?)
+          _fn);
+  CopyWith$Input$Int_comparison_exp<TRes> get cookTimeMinutes;
+  CopyWith$Input$String_comparison_exp<TRes> get description;
+  CopyWith$Input$String_comparison_exp<TRes> get id;
+  CopyWith$Input$String_comparison_exp<TRes> get name;
+  CopyWith$Input$Int_comparison_exp<TRes> get order;
+  CopyWith$Input$Int_comparison_exp<TRes> get prepTimeMinutes;
+  CopyWith$Input$String_comparison_exp<TRes> get recipeId;
+  CopyWith$Input$String_comparison_exp<TRes> get servingUnit;
+  CopyWith$Input$Int_comparison_exp<TRes> get servings;
 }
 
 class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
@@ -5188,6 +6097,125 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
           servings: servings == _undefined
               ? _instance.servings
               : (servings as Input$Int_comparison_exp?)));
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits {
+    final local$IngredientUnits = _instance.IngredientUnits;
+    return local$IngredientUnits == null
+        ? CopyWith$Input$IngredientUnit_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_bool_exp(
+            local$IngredientUnits, (e) => call(IngredientUnits: e));
+  }
+
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipe {
+    final local$Recipe = _instance.Recipe;
+    return local$Recipe == null
+        ? CopyWith$Input$Recipe_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Recipe_bool_exp(local$Recipe, (e) => call(Recipe: e));
+  }
+
+  CopyWith$Input$Step_bool_exp<TRes> get Steps {
+    final local$Steps = _instance.Steps;
+    return local$Steps == null
+        ? CopyWith$Input$Step_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Step_bool_exp(local$Steps, (e) => call(Steps: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$RecipeSection_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$RecipeSection_bool_exp<
+                          Input$RecipeSection_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and?.map(
+                  (e) => CopyWith$Input$RecipeSection_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$RecipeSection_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_bool_exp(
+            local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$RecipeSection_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$RecipeSection_bool_exp<
+                          Input$RecipeSection_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or?.map(
+                  (e) => CopyWith$Input$RecipeSection_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$Int_comparison_exp<TRes> get cookTimeMinutes {
+    final local$cookTimeMinutes = _instance.cookTimeMinutes;
+    return local$cookTimeMinutes == null
+        ? CopyWith$Input$Int_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$Int_comparison_exp(
+            local$cookTimeMinutes, (e) => call(cookTimeMinutes: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get description {
+    final local$description = _instance.description;
+    return local$description == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$description, (e) => call(description: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get name {
+    final local$name = _instance.name;
+    return local$name == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$name, (e) => call(name: e));
+  }
+
+  CopyWith$Input$Int_comparison_exp<TRes> get order {
+    final local$order = _instance.order;
+    return local$order == null
+        ? CopyWith$Input$Int_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$Int_comparison_exp(local$order, (e) => call(order: e));
+  }
+
+  CopyWith$Input$Int_comparison_exp<TRes> get prepTimeMinutes {
+    final local$prepTimeMinutes = _instance.prepTimeMinutes;
+    return local$prepTimeMinutes == null
+        ? CopyWith$Input$Int_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$Int_comparison_exp(
+            local$prepTimeMinutes, (e) => call(prepTimeMinutes: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get recipeId {
+    final local$recipeId = _instance.recipeId;
+    return local$recipeId == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$recipeId, (e) => call(recipeId: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get servingUnit {
+    final local$servingUnit = _instance.servingUnit;
+    return local$servingUnit == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$servingUnit, (e) => call(servingUnit: e));
+  }
+
+  CopyWith$Input$Int_comparison_exp<TRes> get servings {
+    final local$servings = _instance.servings;
+    return local$servings == null
+        ? CopyWith$Input$Int_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$Int_comparison_exp(
+            local$servings, (e) => call(servings: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_bool_exp<TRes>
@@ -5213,6 +6241,34 @@ class _CopyWithStubImpl$Input$RecipeSection_bool_exp<TRes>
           Input$String_comparison_exp? servingUnit,
           Input$Int_comparison_exp? servings}) =>
       _res;
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits =>
+      CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipe =>
+      CopyWith$Input$Recipe_bool_exp.stub(_res);
+  CopyWith$Input$Step_bool_exp<TRes> get Steps =>
+      CopyWith$Input$Step_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get $_not =>
+      CopyWith$Input$RecipeSection_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$Int_comparison_exp<TRes> get cookTimeMinutes =>
+      CopyWith$Input$Int_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get description =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get name =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$Int_comparison_exp<TRes> get order =>
+      CopyWith$Input$Int_comparison_exp.stub(_res);
+  CopyWith$Input$Int_comparison_exp<TRes> get prepTimeMinutes =>
+      CopyWith$Input$Int_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get recipeId =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get servingUnit =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$Int_comparison_exp<TRes> get servings =>
+      CopyWith$Input$Int_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5467,6 +6523,9 @@ abstract class CopyWith$Input$RecipeSection_insert_input<TRes> {
       String? recipeId,
       String? servingUnit,
       int? servings});
+  CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> get IngredientUnits;
+  CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe;
+  CopyWith$Input$Step_arr_rel_insert_input<TRes> get Steps;
 }
 
 class _CopyWithImpl$Input$RecipeSection_insert_input<TRes>
@@ -5523,6 +6582,30 @@ class _CopyWithImpl$Input$RecipeSection_insert_input<TRes>
           servings: servings == _undefined
               ? _instance.servings
               : (servings as int?)));
+  CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> get IngredientUnits {
+    final local$IngredientUnits = _instance.IngredientUnits;
+    return local$IngredientUnits == null
+        ? CopyWith$Input$IngredientUnit_arr_rel_insert_input.stub(
+            _then(_instance))
+        : CopyWith$Input$IngredientUnit_arr_rel_insert_input(
+            local$IngredientUnits, (e) => call(IngredientUnits: e));
+  }
+
+  CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe {
+    final local$Recipe = _instance.Recipe;
+    return local$Recipe == null
+        ? CopyWith$Input$Recipe_obj_rel_insert_input.stub(_then(_instance))
+        : CopyWith$Input$Recipe_obj_rel_insert_input(
+            local$Recipe, (e) => call(Recipe: e));
+  }
+
+  CopyWith$Input$Step_arr_rel_insert_input<TRes> get Steps {
+    final local$Steps = _instance.Steps;
+    return local$Steps == null
+        ? CopyWith$Input$Step_arr_rel_insert_input.stub(_then(_instance))
+        : CopyWith$Input$Step_arr_rel_insert_input(
+            local$Steps, (e) => call(Steps: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_insert_input<TRes>
@@ -5545,6 +6628,13 @@ class _CopyWithStubImpl$Input$RecipeSection_insert_input<TRes>
           String? servingUnit,
           int? servings}) =>
       _res;
+  CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes>
+      get IngredientUnits =>
+          CopyWith$Input$IngredientUnit_arr_rel_insert_input.stub(_res);
+  CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe =>
+      CopyWith$Input$Recipe_obj_rel_insert_input.stub(_res);
+  CopyWith$Input$Step_arr_rel_insert_input<TRes> get Steps =>
+      CopyWith$Input$Step_arr_rel_insert_input.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -5989,6 +7079,8 @@ abstract class CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> {
   TRes call(
       {Input$RecipeSection_insert_input? data,
       Input$RecipeSection_on_conflict? on_conflict});
+  CopyWith$Input$RecipeSection_insert_input<TRes> get data;
+  CopyWith$Input$RecipeSection_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
@@ -6010,6 +7102,19 @@ class _CopyWithImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$RecipeSection_on_conflict?)));
+  CopyWith$Input$RecipeSection_insert_input<TRes> get data {
+    final local$data = _instance.data;
+    return CopyWith$Input$RecipeSection_insert_input(
+        local$data, (e) => call(data: e));
+  }
+
+  CopyWith$Input$RecipeSection_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$RecipeSection_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
@@ -6022,6 +7127,10 @@ class _CopyWithStubImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
           {Input$RecipeSection_insert_input? data,
           Input$RecipeSection_on_conflict? on_conflict}) =>
       _res;
+  CopyWith$Input$RecipeSection_insert_input<TRes> get data =>
+      CopyWith$Input$RecipeSection_insert_input.stub(_res);
+  CopyWith$Input$RecipeSection_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$RecipeSection_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6094,6 +7203,7 @@ abstract class CopyWith$Input$RecipeSection_on_conflict<TRes> {
       {Enum$RecipeSection_constraint? constraint,
       List<Enum$RecipeSection_update_column>? update_columns,
       Input$RecipeSection_bool_exp? where});
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get where;
 }
 
 class _CopyWithImpl$Input$RecipeSection_on_conflict<TRes>
@@ -6120,6 +7230,13 @@ class _CopyWithImpl$Input$RecipeSection_on_conflict<TRes>
           where: where == _undefined
               ? _instance.where
               : (where as Input$RecipeSection_bool_exp?)));
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return local$where == null
+        ? CopyWith$Input$RecipeSection_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_bool_exp(
+            local$where, (e) => call(where: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_on_conflict<TRes>
@@ -6133,6 +7250,8 @@ class _CopyWithStubImpl$Input$RecipeSection_on_conflict<TRes>
           List<Enum$RecipeSection_update_column>? update_columns,
           Input$RecipeSection_bool_exp? where}) =>
       _res;
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get where =>
+      CopyWith$Input$RecipeSection_bool_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -6289,6 +7408,10 @@ abstract class CopyWith$Input$RecipeSection_order_by<TRes> {
       Enum$order_by? recipeId,
       Enum$order_by? servingUnit,
       Enum$order_by? servings});
+  CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
+      get IngredientUnits_aggregate;
+  CopyWith$Input$Recipe_order_by<TRes> get Recipe;
+  CopyWith$Input$Step_aggregate_order_by<TRes> get Steps_aggregate;
 }
 
 class _CopyWithImpl$Input$RecipeSection_order_by<TRes>
@@ -6347,6 +7470,31 @@ class _CopyWithImpl$Input$RecipeSection_order_by<TRes>
           servings: servings == _undefined
               ? _instance.servings
               : (servings as Enum$order_by?)));
+  CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
+      get IngredientUnits_aggregate {
+    final local$IngredientUnits_aggregate = _instance.IngredientUnits_aggregate;
+    return local$IngredientUnits_aggregate == null
+        ? CopyWith$Input$IngredientUnit_aggregate_order_by.stub(
+            _then(_instance))
+        : CopyWith$Input$IngredientUnit_aggregate_order_by(
+            local$IngredientUnits_aggregate,
+            (e) => call(IngredientUnits_aggregate: e));
+  }
+
+  CopyWith$Input$Recipe_order_by<TRes> get Recipe {
+    final local$Recipe = _instance.Recipe;
+    return local$Recipe == null
+        ? CopyWith$Input$Recipe_order_by.stub(_then(_instance))
+        : CopyWith$Input$Recipe_order_by(local$Recipe, (e) => call(Recipe: e));
+  }
+
+  CopyWith$Input$Step_aggregate_order_by<TRes> get Steps_aggregate {
+    final local$Steps_aggregate = _instance.Steps_aggregate;
+    return local$Steps_aggregate == null
+        ? CopyWith$Input$Step_aggregate_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_aggregate_order_by(
+            local$Steps_aggregate, (e) => call(Steps_aggregate: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_order_by<TRes>
@@ -6369,6 +7517,13 @@ class _CopyWithStubImpl$Input$RecipeSection_order_by<TRes>
           Enum$order_by? servingUnit,
           Enum$order_by? servings}) =>
       _res;
+  CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
+      get IngredientUnits_aggregate =>
+          CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
+  CopyWith$Input$Recipe_order_by<TRes> get Recipe =>
+      CopyWith$Input$Recipe_order_by.stub(_res);
+  CopyWith$Input$Step_aggregate_order_by<TRes> get Steps_aggregate =>
+      CopyWith$Input$Step_aggregate_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7486,6 +8641,8 @@ abstract class CopyWith$Input$Recipe_aggregate_order_by<TRes> {
       {Enum$order_by? count,
       Input$Recipe_max_order_by? max,
       Input$Recipe_min_order_by? min});
+  CopyWith$Input$Recipe_max_order_by<TRes> get max;
+  CopyWith$Input$Recipe_min_order_by<TRes> get min;
 }
 
 class _CopyWithImpl$Input$Recipe_aggregate_order_by<TRes>
@@ -7511,6 +8668,19 @@ class _CopyWithImpl$Input$Recipe_aggregate_order_by<TRes>
           min: min == _undefined
               ? _instance.min
               : (min as Input$Recipe_min_order_by?)));
+  CopyWith$Input$Recipe_max_order_by<TRes> get max {
+    final local$max = _instance.max;
+    return local$max == null
+        ? CopyWith$Input$Recipe_max_order_by.stub(_then(_instance))
+        : CopyWith$Input$Recipe_max_order_by(local$max, (e) => call(max: e));
+  }
+
+  CopyWith$Input$Recipe_min_order_by<TRes> get min {
+    final local$min = _instance.min;
+    return local$min == null
+        ? CopyWith$Input$Recipe_min_order_by.stub(_then(_instance))
+        : CopyWith$Input$Recipe_min_order_by(local$min, (e) => call(min: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Recipe_aggregate_order_by<TRes>
@@ -7524,6 +8694,10 @@ class _CopyWithStubImpl$Input$Recipe_aggregate_order_by<TRes>
           Input$Recipe_max_order_by? max,
           Input$Recipe_min_order_by? min}) =>
       _res;
+  CopyWith$Input$Recipe_max_order_by<TRes> get max =>
+      CopyWith$Input$Recipe_max_order_by.stub(_res);
+  CopyWith$Input$Recipe_min_order_by<TRes> get min =>
+      CopyWith$Input$Recipe_min_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7719,6 +8893,27 @@ abstract class CopyWith$Input$Recipe_bool_exp<TRes> {
       Input$String_comparison_exp? source,
       Input$String_comparison_exp? title,
       Input$timestamp_comparison_exp? updatedAt});
+  CopyWith$Input$User_bool_exp<TRes> get Author;
+  CopyWith$Input$File_bool_exp<TRes> get Files;
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSections;
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get RecipeTags;
+  TRes $_and(
+      Iterable<Input$Recipe_bool_exp>? Function(
+              Iterable<CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?)
+          _fn);
+  CopyWith$Input$Recipe_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$Recipe_bool_exp>? Function(
+              Iterable<CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?)
+          _fn);
+  CopyWith$Input$String_comparison_exp<TRes> get authorId;
+  CopyWith$Input$timestamp_comparison_exp<TRes> get createdAt;
+  CopyWith$Input$String_comparison_exp<TRes> get description;
+  CopyWith$Input$String_comparison_exp<TRes> get id;
+  CopyWith$Input$String_comparison_exp<TRes> get notes;
+  CopyWith$Input$String_comparison_exp<TRes> get source;
+  CopyWith$Input$String_comparison_exp<TRes> get title;
+  CopyWith$Input$timestamp_comparison_exp<TRes> get updatedAt;
 }
 
 class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
@@ -7793,6 +8988,123 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
           updatedAt: updatedAt == _undefined
               ? _instance.updatedAt
               : (updatedAt as Input$timestamp_comparison_exp?)));
+  CopyWith$Input$User_bool_exp<TRes> get Author {
+    final local$Author = _instance.Author;
+    return local$Author == null
+        ? CopyWith$Input$User_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$User_bool_exp(local$Author, (e) => call(Author: e));
+  }
+
+  CopyWith$Input$File_bool_exp<TRes> get Files {
+    final local$Files = _instance.Files;
+    return local$Files == null
+        ? CopyWith$Input$File_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$File_bool_exp(local$Files, (e) => call(Files: e));
+  }
+
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSections {
+    final local$RecipeSections = _instance.RecipeSections;
+    return local$RecipeSections == null
+        ? CopyWith$Input$RecipeSection_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_bool_exp(
+            local$RecipeSections, (e) => call(RecipeSections: e));
+  }
+
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get RecipeTags {
+    final local$RecipeTags = _instance.RecipeTags;
+    return local$RecipeTags == null
+        ? CopyWith$Input$_RecipeToTag_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_bool_exp(
+            local$RecipeTags, (e) => call(RecipeTags: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$Recipe_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and
+                  ?.map((e) => CopyWith$Input$Recipe_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$Recipe_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$Recipe_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Recipe_bool_exp(local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$Recipe_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or
+                  ?.map((e) => CopyWith$Input$Recipe_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$String_comparison_exp<TRes> get authorId {
+    final local$authorId = _instance.authorId;
+    return local$authorId == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$authorId, (e) => call(authorId: e));
+  }
+
+  CopyWith$Input$timestamp_comparison_exp<TRes> get createdAt {
+    final local$createdAt = _instance.createdAt;
+    return local$createdAt == null
+        ? CopyWith$Input$timestamp_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$timestamp_comparison_exp(
+            local$createdAt, (e) => call(createdAt: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get description {
+    final local$description = _instance.description;
+    return local$description == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$description, (e) => call(description: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get notes {
+    final local$notes = _instance.notes;
+    return local$notes == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$notes, (e) => call(notes: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get source {
+    final local$source = _instance.source;
+    return local$source == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$source, (e) => call(source: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get title {
+    final local$title = _instance.title;
+    return local$title == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$title, (e) => call(title: e));
+  }
+
+  CopyWith$Input$timestamp_comparison_exp<TRes> get updatedAt {
+    final local$updatedAt = _instance.updatedAt;
+    return local$updatedAt == null
+        ? CopyWith$Input$timestamp_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$timestamp_comparison_exp(
+            local$updatedAt, (e) => call(updatedAt: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Recipe_bool_exp<TRes>
@@ -7818,6 +9130,34 @@ class _CopyWithStubImpl$Input$Recipe_bool_exp<TRes>
           Input$String_comparison_exp? title,
           Input$timestamp_comparison_exp? updatedAt}) =>
       _res;
+  CopyWith$Input$User_bool_exp<TRes> get Author =>
+      CopyWith$Input$User_bool_exp.stub(_res);
+  CopyWith$Input$File_bool_exp<TRes> get Files =>
+      CopyWith$Input$File_bool_exp.stub(_res);
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSections =>
+      CopyWith$Input$RecipeSection_bool_exp.stub(_res);
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get RecipeTags =>
+      CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$Recipe_bool_exp<TRes> get $_not =>
+      CopyWith$Input$Recipe_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get authorId =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$timestamp_comparison_exp<TRes> get createdAt =>
+      CopyWith$Input$timestamp_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get description =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get notes =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get source =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get title =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$timestamp_comparison_exp<TRes> get updatedAt =>
+      CopyWith$Input$timestamp_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -7927,6 +9267,9 @@ abstract class CopyWith$Input$Recipe_insert_input<TRes> {
       String? notes,
       String? source,
       String? title});
+  CopyWith$Input$File_arr_rel_insert_input<TRes> get Files;
+  CopyWith$Input$RecipeSection_arr_rel_insert_input<TRes> get RecipeSections;
+  CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> get RecipeTags;
 }
 
 class _CopyWithImpl$Input$Recipe_insert_input<TRes>
@@ -7965,6 +9308,31 @@ class _CopyWithImpl$Input$Recipe_insert_input<TRes>
           notes: notes == _undefined ? _instance.notes : (notes as String?),
           source: source == _undefined ? _instance.source : (source as String?),
           title: title == _undefined ? _instance.title : (title as String?)));
+  CopyWith$Input$File_arr_rel_insert_input<TRes> get Files {
+    final local$Files = _instance.Files;
+    return local$Files == null
+        ? CopyWith$Input$File_arr_rel_insert_input.stub(_then(_instance))
+        : CopyWith$Input$File_arr_rel_insert_input(
+            local$Files, (e) => call(Files: e));
+  }
+
+  CopyWith$Input$RecipeSection_arr_rel_insert_input<TRes> get RecipeSections {
+    final local$RecipeSections = _instance.RecipeSections;
+    return local$RecipeSections == null
+        ? CopyWith$Input$RecipeSection_arr_rel_insert_input.stub(
+            _then(_instance))
+        : CopyWith$Input$RecipeSection_arr_rel_insert_input(
+            local$RecipeSections, (e) => call(RecipeSections: e));
+  }
+
+  CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> get RecipeTags {
+    final local$RecipeTags = _instance.RecipeTags;
+    return local$RecipeTags == null
+        ? CopyWith$Input$_RecipeToTag_arr_rel_insert_input.stub(
+            _then(_instance))
+        : CopyWith$Input$_RecipeToTag_arr_rel_insert_input(
+            local$RecipeTags, (e) => call(RecipeTags: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Recipe_insert_input<TRes>
@@ -7983,6 +9351,12 @@ class _CopyWithStubImpl$Input$Recipe_insert_input<TRes>
           String? source,
           String? title}) =>
       _res;
+  CopyWith$Input$File_arr_rel_insert_input<TRes> get Files =>
+      CopyWith$Input$File_arr_rel_insert_input.stub(_res);
+  CopyWith$Input$RecipeSection_arr_rel_insert_input<TRes> get RecipeSections =>
+      CopyWith$Input$RecipeSection_arr_rel_insert_input.stub(_res);
+  CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> get RecipeTags =>
+      CopyWith$Input$_RecipeToTag_arr_rel_insert_input.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8390,6 +9764,8 @@ abstract class CopyWith$Input$Recipe_obj_rel_insert_input<TRes> {
 
   TRes call(
       {Input$Recipe_insert_input? data, Input$Recipe_on_conflict? on_conflict});
+  CopyWith$Input$Recipe_insert_input<TRes> get data;
+  CopyWith$Input$Recipe_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$Recipe_obj_rel_insert_input<TRes>
@@ -8410,6 +9786,18 @@ class _CopyWithImpl$Input$Recipe_obj_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$Recipe_on_conflict?)));
+  CopyWith$Input$Recipe_insert_input<TRes> get data {
+    final local$data = _instance.data;
+    return CopyWith$Input$Recipe_insert_input(local$data, (e) => call(data: e));
+  }
+
+  CopyWith$Input$Recipe_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$Recipe_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$Recipe_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Recipe_obj_rel_insert_input<TRes>
@@ -8422,6 +9810,10 @@ class _CopyWithStubImpl$Input$Recipe_obj_rel_insert_input<TRes>
           {Input$Recipe_insert_input? data,
           Input$Recipe_on_conflict? on_conflict}) =>
       _res;
+  CopyWith$Input$Recipe_insert_input<TRes> get data =>
+      CopyWith$Input$Recipe_insert_input.stub(_res);
+  CopyWith$Input$Recipe_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$Recipe_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8492,6 +9884,7 @@ abstract class CopyWith$Input$Recipe_on_conflict<TRes> {
       {Enum$Recipe_constraint? constraint,
       List<Enum$Recipe_update_column>? update_columns,
       Input$Recipe_bool_exp? where});
+  CopyWith$Input$Recipe_bool_exp<TRes> get where;
 }
 
 class _CopyWithImpl$Input$Recipe_on_conflict<TRes>
@@ -8518,6 +9911,12 @@ class _CopyWithImpl$Input$Recipe_on_conflict<TRes>
           where: where == _undefined
               ? _instance.where
               : (where as Input$Recipe_bool_exp?)));
+  CopyWith$Input$Recipe_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return local$where == null
+        ? CopyWith$Input$Recipe_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Recipe_bool_exp(local$where, (e) => call(where: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Recipe_on_conflict<TRes>
@@ -8531,6 +9930,8 @@ class _CopyWithStubImpl$Input$Recipe_on_conflict<TRes>
           List<Enum$Recipe_update_column>? update_columns,
           Input$Recipe_bool_exp? where}) =>
       _res;
+  CopyWith$Input$Recipe_bool_exp<TRes> get where =>
+      CopyWith$Input$Recipe_bool_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -8685,6 +10086,11 @@ abstract class CopyWith$Input$Recipe_order_by<TRes> {
       Enum$order_by? source,
       Enum$order_by? title,
       Enum$order_by? updatedAt});
+  CopyWith$Input$User_order_by<TRes> get Author;
+  CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate;
+  CopyWith$Input$RecipeSection_aggregate_order_by<TRes>
+      get RecipeSections_aggregate;
+  CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> get RecipeTags_aggregate;
 }
 
 class _CopyWithImpl$Input$Recipe_order_by<TRes>
@@ -8745,6 +10151,39 @@ class _CopyWithImpl$Input$Recipe_order_by<TRes>
           updatedAt: updatedAt == _undefined
               ? _instance.updatedAt
               : (updatedAt as Enum$order_by?)));
+  CopyWith$Input$User_order_by<TRes> get Author {
+    final local$Author = _instance.Author;
+    return local$Author == null
+        ? CopyWith$Input$User_order_by.stub(_then(_instance))
+        : CopyWith$Input$User_order_by(local$Author, (e) => call(Author: e));
+  }
+
+  CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate {
+    final local$Files_aggregate = _instance.Files_aggregate;
+    return local$Files_aggregate == null
+        ? CopyWith$Input$File_aggregate_order_by.stub(_then(_instance))
+        : CopyWith$Input$File_aggregate_order_by(
+            local$Files_aggregate, (e) => call(Files_aggregate: e));
+  }
+
+  CopyWith$Input$RecipeSection_aggregate_order_by<TRes>
+      get RecipeSections_aggregate {
+    final local$RecipeSections_aggregate = _instance.RecipeSections_aggregate;
+    return local$RecipeSections_aggregate == null
+        ? CopyWith$Input$RecipeSection_aggregate_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_aggregate_order_by(
+            local$RecipeSections_aggregate,
+            (e) => call(RecipeSections_aggregate: e));
+  }
+
+  CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes>
+      get RecipeTags_aggregate {
+    final local$RecipeTags_aggregate = _instance.RecipeTags_aggregate;
+    return local$RecipeTags_aggregate == null
+        ? CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_aggregate_order_by(
+            local$RecipeTags_aggregate, (e) => call(RecipeTags_aggregate: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Recipe_order_by<TRes>
@@ -8767,6 +10206,16 @@ class _CopyWithStubImpl$Input$Recipe_order_by<TRes>
           Enum$order_by? title,
           Enum$order_by? updatedAt}) =>
       _res;
+  CopyWith$Input$User_order_by<TRes> get Author =>
+      CopyWith$Input$User_order_by.stub(_res);
+  CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate =>
+      CopyWith$Input$File_aggregate_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_aggregate_order_by<TRes>
+      get RecipeSections_aggregate =>
+          CopyWith$Input$RecipeSection_aggregate_order_by.stub(_res);
+  CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes>
+      get RecipeTags_aggregate =>
+          CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -9067,6 +10516,16 @@ abstract class CopyWith$Input$Step_aggregate_order_by<TRes> {
       Input$Step_var_pop_order_by? var_pop,
       Input$Step_var_samp_order_by? var_samp,
       Input$Step_variance_order_by? variance});
+  CopyWith$Input$Step_avg_order_by<TRes> get avg;
+  CopyWith$Input$Step_max_order_by<TRes> get max;
+  CopyWith$Input$Step_min_order_by<TRes> get min;
+  CopyWith$Input$Step_stddev_order_by<TRes> get stddev;
+  CopyWith$Input$Step_stddev_pop_order_by<TRes> get stddev_pop;
+  CopyWith$Input$Step_stddev_samp_order_by<TRes> get stddev_samp;
+  CopyWith$Input$Step_sum_order_by<TRes> get sum;
+  CopyWith$Input$Step_var_pop_order_by<TRes> get var_pop;
+  CopyWith$Input$Step_var_samp_order_by<TRes> get var_samp;
+  CopyWith$Input$Step_variance_order_by<TRes> get variance;
 }
 
 class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
@@ -9124,6 +10583,81 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
           variance: variance == _undefined
               ? _instance.variance
               : (variance as Input$Step_variance_order_by?)));
+  CopyWith$Input$Step_avg_order_by<TRes> get avg {
+    final local$avg = _instance.avg;
+    return local$avg == null
+        ? CopyWith$Input$Step_avg_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_avg_order_by(local$avg, (e) => call(avg: e));
+  }
+
+  CopyWith$Input$Step_max_order_by<TRes> get max {
+    final local$max = _instance.max;
+    return local$max == null
+        ? CopyWith$Input$Step_max_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_max_order_by(local$max, (e) => call(max: e));
+  }
+
+  CopyWith$Input$Step_min_order_by<TRes> get min {
+    final local$min = _instance.min;
+    return local$min == null
+        ? CopyWith$Input$Step_min_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_min_order_by(local$min, (e) => call(min: e));
+  }
+
+  CopyWith$Input$Step_stddev_order_by<TRes> get stddev {
+    final local$stddev = _instance.stddev;
+    return local$stddev == null
+        ? CopyWith$Input$Step_stddev_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_stddev_order_by(
+            local$stddev, (e) => call(stddev: e));
+  }
+
+  CopyWith$Input$Step_stddev_pop_order_by<TRes> get stddev_pop {
+    final local$stddev_pop = _instance.stddev_pop;
+    return local$stddev_pop == null
+        ? CopyWith$Input$Step_stddev_pop_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_stddev_pop_order_by(
+            local$stddev_pop, (e) => call(stddev_pop: e));
+  }
+
+  CopyWith$Input$Step_stddev_samp_order_by<TRes> get stddev_samp {
+    final local$stddev_samp = _instance.stddev_samp;
+    return local$stddev_samp == null
+        ? CopyWith$Input$Step_stddev_samp_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_stddev_samp_order_by(
+            local$stddev_samp, (e) => call(stddev_samp: e));
+  }
+
+  CopyWith$Input$Step_sum_order_by<TRes> get sum {
+    final local$sum = _instance.sum;
+    return local$sum == null
+        ? CopyWith$Input$Step_sum_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_sum_order_by(local$sum, (e) => call(sum: e));
+  }
+
+  CopyWith$Input$Step_var_pop_order_by<TRes> get var_pop {
+    final local$var_pop = _instance.var_pop;
+    return local$var_pop == null
+        ? CopyWith$Input$Step_var_pop_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_var_pop_order_by(
+            local$var_pop, (e) => call(var_pop: e));
+  }
+
+  CopyWith$Input$Step_var_samp_order_by<TRes> get var_samp {
+    final local$var_samp = _instance.var_samp;
+    return local$var_samp == null
+        ? CopyWith$Input$Step_var_samp_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_var_samp_order_by(
+            local$var_samp, (e) => call(var_samp: e));
+  }
+
+  CopyWith$Input$Step_variance_order_by<TRes> get variance {
+    final local$variance = _instance.variance;
+    return local$variance == null
+        ? CopyWith$Input$Step_variance_order_by.stub(_then(_instance))
+        : CopyWith$Input$Step_variance_order_by(
+            local$variance, (e) => call(variance: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Step_aggregate_order_by<TRes>
@@ -9145,6 +10679,26 @@ class _CopyWithStubImpl$Input$Step_aggregate_order_by<TRes>
           Input$Step_var_samp_order_by? var_samp,
           Input$Step_variance_order_by? variance}) =>
       _res;
+  CopyWith$Input$Step_avg_order_by<TRes> get avg =>
+      CopyWith$Input$Step_avg_order_by.stub(_res);
+  CopyWith$Input$Step_max_order_by<TRes> get max =>
+      CopyWith$Input$Step_max_order_by.stub(_res);
+  CopyWith$Input$Step_min_order_by<TRes> get min =>
+      CopyWith$Input$Step_min_order_by.stub(_res);
+  CopyWith$Input$Step_stddev_order_by<TRes> get stddev =>
+      CopyWith$Input$Step_stddev_order_by.stub(_res);
+  CopyWith$Input$Step_stddev_pop_order_by<TRes> get stddev_pop =>
+      CopyWith$Input$Step_stddev_pop_order_by.stub(_res);
+  CopyWith$Input$Step_stddev_samp_order_by<TRes> get stddev_samp =>
+      CopyWith$Input$Step_stddev_samp_order_by.stub(_res);
+  CopyWith$Input$Step_sum_order_by<TRes> get sum =>
+      CopyWith$Input$Step_sum_order_by.stub(_res);
+  CopyWith$Input$Step_var_pop_order_by<TRes> get var_pop =>
+      CopyWith$Input$Step_var_pop_order_by.stub(_res);
+  CopyWith$Input$Step_var_samp_order_by<TRes> get var_samp =>
+      CopyWith$Input$Step_var_samp_order_by.stub(_res);
+  CopyWith$Input$Step_variance_order_by<TRes> get variance =>
+      CopyWith$Input$Step_variance_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -9204,6 +10758,12 @@ abstract class CopyWith$Input$Step_arr_rel_insert_input<TRes> {
   TRes call(
       {List<Input$Step_insert_input>? data,
       Input$Step_on_conflict? on_conflict});
+  TRes data(
+      Iterable<Input$Step_insert_input> Function(
+              Iterable<
+                  CopyWith$Input$Step_insert_input<Input$Step_insert_input>>)
+          _fn);
+  CopyWith$Input$Step_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$Step_arr_rel_insert_input<TRes>
@@ -9224,6 +10784,23 @@ class _CopyWithImpl$Input$Step_arr_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$Step_on_conflict?)));
+  TRes data(
+          Iterable<Input$Step_insert_input> Function(
+                  Iterable<
+                      CopyWith$Input$Step_insert_input<
+                          Input$Step_insert_input>>)
+              _fn) =>
+      call(
+          data: _fn(_instance.data
+                  .map((e) => CopyWith$Input$Step_insert_input(e, (i) => i)))
+              .toList());
+  CopyWith$Input$Step_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$Step_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$Step_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Step_arr_rel_insert_input<TRes>
@@ -9236,6 +10813,9 @@ class _CopyWithStubImpl$Input$Step_arr_rel_insert_input<TRes>
           {List<Input$Step_insert_input>? data,
           Input$Step_on_conflict? on_conflict}) =>
       _res;
+  data(_fn) => _res;
+  CopyWith$Input$Step_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$Step_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -9453,6 +11033,22 @@ abstract class CopyWith$Input$Step_bool_exp<TRes> {
       Input$String_comparison_exp? id,
       Input$Int_comparison_exp? order,
       Input$String_comparison_exp? recipeSectionId});
+  CopyWith$Input$File_bool_exp<TRes> get File;
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection;
+  TRes $_and(
+      Iterable<Input$Step_bool_exp>? Function(
+              Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?)
+          _fn);
+  CopyWith$Input$Step_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$Step_bool_exp>? Function(
+              Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?)
+          _fn);
+  CopyWith$Input$String_comparison_exp<TRes> get description;
+  CopyWith$Input$String_comparison_exp<TRes> get fileId;
+  CopyWith$Input$String_comparison_exp<TRes> get id;
+  CopyWith$Input$Int_comparison_exp<TRes> get order;
+  CopyWith$Input$String_comparison_exp<TRes> get recipeSectionId;
 }
 
 class _CopyWithImpl$Input$Step_bool_exp<TRes>
@@ -9507,6 +11103,81 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
           recipeSectionId: recipeSectionId == _undefined
               ? _instance.recipeSectionId
               : (recipeSectionId as Input$String_comparison_exp?)));
+  CopyWith$Input$File_bool_exp<TRes> get File {
+    final local$File = _instance.File;
+    return local$File == null
+        ? CopyWith$Input$File_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$File_bool_exp(local$File, (e) => call(File: e));
+  }
+
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection {
+    final local$RecipeSection = _instance.RecipeSection;
+    return local$RecipeSection == null
+        ? CopyWith$Input$RecipeSection_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_bool_exp(
+            local$RecipeSection, (e) => call(RecipeSection: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$Step_bool_exp>? Function(
+                  Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and
+                  ?.map((e) => CopyWith$Input$Step_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$Step_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$Step_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Step_bool_exp(local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$Step_bool_exp>? Function(
+                  Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or
+                  ?.map((e) => CopyWith$Input$Step_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$String_comparison_exp<TRes> get description {
+    final local$description = _instance.description;
+    return local$description == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$description, (e) => call(description: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get fileId {
+    final local$fileId = _instance.fileId;
+    return local$fileId == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$fileId, (e) => call(fileId: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
+
+  CopyWith$Input$Int_comparison_exp<TRes> get order {
+    final local$order = _instance.order;
+    return local$order == null
+        ? CopyWith$Input$Int_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$Int_comparison_exp(local$order, (e) => call(order: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get recipeSectionId {
+    final local$recipeSectionId = _instance.recipeSectionId;
+    return local$recipeSectionId == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$recipeSectionId, (e) => call(recipeSectionId: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Step_bool_exp<TRes>
@@ -9527,6 +11198,24 @@ class _CopyWithStubImpl$Input$Step_bool_exp<TRes>
           Input$Int_comparison_exp? order,
           Input$String_comparison_exp? recipeSectionId}) =>
       _res;
+  CopyWith$Input$File_bool_exp<TRes> get File =>
+      CopyWith$Input$File_bool_exp.stub(_res);
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection =>
+      CopyWith$Input$RecipeSection_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$Step_bool_exp<TRes> get $_not =>
+      CopyWith$Input$Step_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get description =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get fileId =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$Int_comparison_exp<TRes> get order =>
+      CopyWith$Input$Int_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get recipeSectionId =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -9692,6 +11381,8 @@ abstract class CopyWith$Input$Step_insert_input<TRes> {
       String? id,
       int? order,
       String? recipeSectionId});
+  CopyWith$Input$File_obj_rel_insert_input<TRes> get File;
+  CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> get RecipeSection;
 }
 
 class _CopyWithImpl$Input$Step_insert_input<TRes>
@@ -9728,6 +11419,22 @@ class _CopyWithImpl$Input$Step_insert_input<TRes>
           recipeSectionId: recipeSectionId == _undefined
               ? _instance.recipeSectionId
               : (recipeSectionId as String?)));
+  CopyWith$Input$File_obj_rel_insert_input<TRes> get File {
+    final local$File = _instance.File;
+    return local$File == null
+        ? CopyWith$Input$File_obj_rel_insert_input.stub(_then(_instance))
+        : CopyWith$Input$File_obj_rel_insert_input(
+            local$File, (e) => call(File: e));
+  }
+
+  CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> get RecipeSection {
+    final local$RecipeSection = _instance.RecipeSection;
+    return local$RecipeSection == null
+        ? CopyWith$Input$RecipeSection_obj_rel_insert_input.stub(
+            _then(_instance))
+        : CopyWith$Input$RecipeSection_obj_rel_insert_input(
+            local$RecipeSection, (e) => call(RecipeSection: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Step_insert_input<TRes>
@@ -9745,6 +11452,10 @@ class _CopyWithStubImpl$Input$Step_insert_input<TRes>
           int? order,
           String? recipeSectionId}) =>
       _res;
+  CopyWith$Input$File_obj_rel_insert_input<TRes> get File =>
+      CopyWith$Input$File_obj_rel_insert_input.stub(_res);
+  CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> get RecipeSection =>
+      CopyWith$Input$RecipeSection_obj_rel_insert_input.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -10071,6 +11782,7 @@ abstract class CopyWith$Input$Step_on_conflict<TRes> {
       {Enum$Step_constraint? constraint,
       List<Enum$Step_update_column>? update_columns,
       Input$Step_bool_exp? where});
+  CopyWith$Input$Step_bool_exp<TRes> get where;
 }
 
 class _CopyWithImpl$Input$Step_on_conflict<TRes>
@@ -10097,6 +11809,12 @@ class _CopyWithImpl$Input$Step_on_conflict<TRes>
           where: where == _undefined
               ? _instance.where
               : (where as Input$Step_bool_exp?)));
+  CopyWith$Input$Step_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return local$where == null
+        ? CopyWith$Input$Step_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Step_bool_exp(local$where, (e) => call(where: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Step_on_conflict<TRes>
@@ -10110,6 +11828,8 @@ class _CopyWithStubImpl$Input$Step_on_conflict<TRes>
           List<Enum$Step_update_column>? update_columns,
           Input$Step_bool_exp? where}) =>
       _res;
+  CopyWith$Input$Step_bool_exp<TRes> get where =>
+      CopyWith$Input$Step_bool_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -10215,6 +11935,8 @@ abstract class CopyWith$Input$Step_order_by<TRes> {
       Enum$order_by? id,
       Enum$order_by? order,
       Enum$order_by? recipeSectionId});
+  CopyWith$Input$File_order_by<TRes> get File;
+  CopyWith$Input$RecipeSection_order_by<TRes> get RecipeSection;
 }
 
 class _CopyWithImpl$Input$Step_order_by<TRes>
@@ -10254,6 +11976,20 @@ class _CopyWithImpl$Input$Step_order_by<TRes>
           recipeSectionId: recipeSectionId == _undefined
               ? _instance.recipeSectionId
               : (recipeSectionId as Enum$order_by?)));
+  CopyWith$Input$File_order_by<TRes> get File {
+    final local$File = _instance.File;
+    return local$File == null
+        ? CopyWith$Input$File_order_by.stub(_then(_instance))
+        : CopyWith$Input$File_order_by(local$File, (e) => call(File: e));
+  }
+
+  CopyWith$Input$RecipeSection_order_by<TRes> get RecipeSection {
+    final local$RecipeSection = _instance.RecipeSection;
+    return local$RecipeSection == null
+        ? CopyWith$Input$RecipeSection_order_by.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_order_by(
+            local$RecipeSection, (e) => call(RecipeSection: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Step_order_by<TRes>
@@ -10271,6 +12007,10 @@ class _CopyWithStubImpl$Input$Step_order_by<TRes>
           Enum$order_by? order,
           Enum$order_by? recipeSectionId}) =>
       _res;
+  CopyWith$Input$File_order_by<TRes> get File =>
+      CopyWith$Input$File_order_by.stub(_res);
+  CopyWith$Input$RecipeSection_order_by<TRes> get RecipeSection =>
+      CopyWith$Input$RecipeSection_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -11379,6 +13119,18 @@ abstract class CopyWith$Input$Tag_bool_exp<TRes> {
       List<Input$Tag_bool_exp>? $_or,
       Input$String_comparison_exp? id,
       Input$String_comparison_exp? name});
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get Recipes;
+  TRes $_and(
+      Iterable<Input$Tag_bool_exp>? Function(
+              Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?)
+          _fn);
+  CopyWith$Input$Tag_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$Tag_bool_exp>? Function(
+              Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?)
+          _fn);
+  CopyWith$Input$String_comparison_exp<TRes> get id;
+  CopyWith$Input$String_comparison_exp<TRes> get name;
 }
 
 class _CopyWithImpl$Input$Tag_bool_exp<TRes>
@@ -11417,6 +13169,51 @@ class _CopyWithImpl$Input$Tag_bool_exp<TRes>
           name: name == _undefined
               ? _instance.name
               : (name as Input$String_comparison_exp?)));
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get Recipes {
+    final local$Recipes = _instance.Recipes;
+    return local$Recipes == null
+        ? CopyWith$Input$_RecipeToTag_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_bool_exp(
+            local$Recipes, (e) => call(Recipes: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$Tag_bool_exp>? Function(
+                  Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and
+                  ?.map((e) => CopyWith$Input$Tag_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$Tag_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$Tag_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Tag_bool_exp(local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$Tag_bool_exp>? Function(
+                  Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or
+                  ?.map((e) => CopyWith$Input$Tag_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get name {
+    final local$name = _instance.name;
+    return local$name == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$name, (e) => call(name: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Tag_bool_exp<TRes>
@@ -11433,6 +13230,16 @@ class _CopyWithStubImpl$Input$Tag_bool_exp<TRes>
           Input$String_comparison_exp? id,
           Input$String_comparison_exp? name}) =>
       _res;
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get Recipes =>
+      CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$Tag_bool_exp<TRes> get $_not =>
+      CopyWith$Input$Tag_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get name =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -11490,6 +13297,7 @@ abstract class CopyWith$Input$Tag_insert_input<TRes> {
       {Input$_RecipeToTag_arr_rel_insert_input? Recipes,
       String? id,
       String? name});
+  CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> get Recipes;
 }
 
 class _CopyWithImpl$Input$Tag_insert_input<TRes>
@@ -11512,6 +13320,14 @@ class _CopyWithImpl$Input$Tag_insert_input<TRes>
               : (Recipes as Input$_RecipeToTag_arr_rel_insert_input?),
           id: id == _undefined ? _instance.id : (id as String?),
           name: name == _undefined ? _instance.name : (name as String?)));
+  CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> get Recipes {
+    final local$Recipes = _instance.Recipes;
+    return local$Recipes == null
+        ? CopyWith$Input$_RecipeToTag_arr_rel_insert_input.stub(
+            _then(_instance))
+        : CopyWith$Input$_RecipeToTag_arr_rel_insert_input(
+            local$Recipes, (e) => call(Recipes: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Tag_insert_input<TRes>
@@ -11525,6 +13341,8 @@ class _CopyWithStubImpl$Input$Tag_insert_input<TRes>
           String? id,
           String? name}) =>
       _res;
+  CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> get Recipes =>
+      CopyWith$Input$_RecipeToTag_arr_rel_insert_input.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -11574,6 +13392,8 @@ abstract class CopyWith$Input$Tag_obj_rel_insert_input<TRes> {
       _CopyWithStubImpl$Input$Tag_obj_rel_insert_input;
 
   TRes call({Input$Tag_insert_input? data, Input$Tag_on_conflict? on_conflict});
+  CopyWith$Input$Tag_insert_input<TRes> get data;
+  CopyWith$Input$Tag_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$Tag_obj_rel_insert_input<TRes>
@@ -11594,6 +13414,18 @@ class _CopyWithImpl$Input$Tag_obj_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$Tag_on_conflict?)));
+  CopyWith$Input$Tag_insert_input<TRes> get data {
+    final local$data = _instance.data;
+    return CopyWith$Input$Tag_insert_input(local$data, (e) => call(data: e));
+  }
+
+  CopyWith$Input$Tag_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$Tag_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$Tag_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Tag_obj_rel_insert_input<TRes>
@@ -11604,6 +13436,10 @@ class _CopyWithStubImpl$Input$Tag_obj_rel_insert_input<TRes>
 
   call({Input$Tag_insert_input? data, Input$Tag_on_conflict? on_conflict}) =>
       _res;
+  CopyWith$Input$Tag_insert_input<TRes> get data =>
+      CopyWith$Input$Tag_insert_input.stub(_res);
+  CopyWith$Input$Tag_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$Tag_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -11674,6 +13510,7 @@ abstract class CopyWith$Input$Tag_on_conflict<TRes> {
       {Enum$Tag_constraint? constraint,
       List<Enum$Tag_update_column>? update_columns,
       Input$Tag_bool_exp? where});
+  CopyWith$Input$Tag_bool_exp<TRes> get where;
 }
 
 class _CopyWithImpl$Input$Tag_on_conflict<TRes>
@@ -11700,6 +13537,12 @@ class _CopyWithImpl$Input$Tag_on_conflict<TRes>
           where: where == _undefined
               ? _instance.where
               : (where as Input$Tag_bool_exp?)));
+  CopyWith$Input$Tag_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return local$where == null
+        ? CopyWith$Input$Tag_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Tag_bool_exp(local$where, (e) => call(where: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Tag_on_conflict<TRes>
@@ -11713,6 +13556,8 @@ class _CopyWithStubImpl$Input$Tag_on_conflict<TRes>
           List<Enum$Tag_update_column>? update_columns,
           Input$Tag_bool_exp? where}) =>
       _res;
+  CopyWith$Input$Tag_bool_exp<TRes> get where =>
+      CopyWith$Input$Tag_bool_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -11772,6 +13617,7 @@ abstract class CopyWith$Input$Tag_order_by<TRes> {
       {Input$_RecipeToTag_aggregate_order_by? Recipes_aggregate,
       Enum$order_by? id,
       Enum$order_by? name});
+  CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> get Recipes_aggregate;
 }
 
 class _CopyWithImpl$Input$Tag_order_by<TRes>
@@ -11795,6 +13641,13 @@ class _CopyWithImpl$Input$Tag_order_by<TRes>
           id: id == _undefined ? _instance.id : (id as Enum$order_by?),
           name:
               name == _undefined ? _instance.name : (name as Enum$order_by?)));
+  CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> get Recipes_aggregate {
+    final local$Recipes_aggregate = _instance.Recipes_aggregate;
+    return local$Recipes_aggregate == null
+        ? CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_aggregate_order_by(
+            local$Recipes_aggregate, (e) => call(Recipes_aggregate: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$Tag_order_by<TRes>
@@ -11808,6 +13661,8 @@ class _CopyWithStubImpl$Input$Tag_order_by<TRes>
           Enum$order_by? id,
           Enum$order_by? name}) =>
       _res;
+  CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> get Recipes_aggregate =>
+      CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -11870,6 +13725,8 @@ abstract class CopyWith$Input$UnitSize_aggregate_order_by<TRes> {
       {Enum$order_by? count,
       Input$UnitSize_max_order_by? max,
       Input$UnitSize_min_order_by? min});
+  CopyWith$Input$UnitSize_max_order_by<TRes> get max;
+  CopyWith$Input$UnitSize_min_order_by<TRes> get min;
 }
 
 class _CopyWithImpl$Input$UnitSize_aggregate_order_by<TRes>
@@ -11895,6 +13752,19 @@ class _CopyWithImpl$Input$UnitSize_aggregate_order_by<TRes>
           min: min == _undefined
               ? _instance.min
               : (min as Input$UnitSize_min_order_by?)));
+  CopyWith$Input$UnitSize_max_order_by<TRes> get max {
+    final local$max = _instance.max;
+    return local$max == null
+        ? CopyWith$Input$UnitSize_max_order_by.stub(_then(_instance))
+        : CopyWith$Input$UnitSize_max_order_by(local$max, (e) => call(max: e));
+  }
+
+  CopyWith$Input$UnitSize_min_order_by<TRes> get min {
+    final local$min = _instance.min;
+    return local$min == null
+        ? CopyWith$Input$UnitSize_min_order_by.stub(_then(_instance))
+        : CopyWith$Input$UnitSize_min_order_by(local$min, (e) => call(min: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$UnitSize_aggregate_order_by<TRes>
@@ -11908,6 +13778,10 @@ class _CopyWithStubImpl$Input$UnitSize_aggregate_order_by<TRes>
           Input$UnitSize_max_order_by? max,
           Input$UnitSize_min_order_by? min}) =>
       _res;
+  CopyWith$Input$UnitSize_max_order_by<TRes> get max =>
+      CopyWith$Input$UnitSize_max_order_by.stub(_res);
+  CopyWith$Input$UnitSize_min_order_by<TRes> get min =>
+      CopyWith$Input$UnitSize_min_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -12049,6 +13923,23 @@ abstract class CopyWith$Input$UnitSize_bool_exp<TRes> {
       Input$String_comparison_exp? name,
       Input$String_comparison_exp? plural,
       Input$UnitType_enum_comparison_exp? unitType});
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits;
+  CopyWith$Input$UnitType_bool_exp<TRes> get UnitType;
+  TRes $_and(
+      Iterable<Input$UnitSize_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp>>?)
+          _fn);
+  CopyWith$Input$UnitSize_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$UnitSize_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp>>?)
+          _fn);
+  CopyWith$Input$String_comparison_exp<TRes> get id;
+  CopyWith$Input$String_comparison_exp<TRes> get name;
+  CopyWith$Input$String_comparison_exp<TRes> get plural;
+  CopyWith$Input$UnitType_enum_comparison_exp<TRes> get unitType;
 }
 
 class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
@@ -12099,6 +13990,79 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
           unitType: unitType == _undefined
               ? _instance.unitType
               : (unitType as Input$UnitType_enum_comparison_exp?)));
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits {
+    final local$IngredientUnits = _instance.IngredientUnits;
+    return local$IngredientUnits == null
+        ? CopyWith$Input$IngredientUnit_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_bool_exp(
+            local$IngredientUnits, (e) => call(IngredientUnits: e));
+  }
+
+  CopyWith$Input$UnitType_bool_exp<TRes> get UnitType {
+    final local$UnitType = _instance.UnitType;
+    return local$UnitType == null
+        ? CopyWith$Input$UnitType_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$UnitType_bool_exp(
+            local$UnitType, (e) => call(UnitType: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$UnitSize_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$UnitSize_bool_exp<
+                          Input$UnitSize_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and
+                  ?.map((e) => CopyWith$Input$UnitSize_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$UnitSize_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$UnitSize_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$UnitSize_bool_exp(local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$UnitSize_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$UnitSize_bool_exp<
+                          Input$UnitSize_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or
+                  ?.map((e) => CopyWith$Input$UnitSize_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get name {
+    final local$name = _instance.name;
+    return local$name == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$name, (e) => call(name: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get plural {
+    final local$plural = _instance.plural;
+    return local$plural == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$plural, (e) => call(plural: e));
+  }
+
+  CopyWith$Input$UnitType_enum_comparison_exp<TRes> get unitType {
+    final local$unitType = _instance.unitType;
+    return local$unitType == null
+        ? CopyWith$Input$UnitType_enum_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$UnitType_enum_comparison_exp(
+            local$unitType, (e) => call(unitType: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$UnitSize_bool_exp<TRes>
@@ -12118,6 +14082,22 @@ class _CopyWithStubImpl$Input$UnitSize_bool_exp<TRes>
           Input$String_comparison_exp? plural,
           Input$UnitType_enum_comparison_exp? unitType}) =>
       _res;
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits =>
+      CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
+  CopyWith$Input$UnitType_bool_exp<TRes> get UnitType =>
+      CopyWith$Input$UnitType_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$UnitSize_bool_exp<TRes> get $_not =>
+      CopyWith$Input$UnitSize_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get name =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get plural =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$UnitType_enum_comparison_exp<TRes> get unitType =>
+      CopyWith$Input$UnitType_enum_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -12392,6 +14372,9 @@ abstract class CopyWith$Input$UnitSize_order_by<TRes> {
       Enum$order_by? name,
       Enum$order_by? plural,
       Enum$order_by? unitType});
+  CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
+      get IngredientUnits_aggregate;
+  CopyWith$Input$UnitType_order_by<TRes> get UnitType;
 }
 
 class _CopyWithImpl$Input$UnitSize_order_by<TRes>
@@ -12427,6 +14410,24 @@ class _CopyWithImpl$Input$UnitSize_order_by<TRes>
           unitType: unitType == _undefined
               ? _instance.unitType
               : (unitType as Enum$order_by?)));
+  CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
+      get IngredientUnits_aggregate {
+    final local$IngredientUnits_aggregate = _instance.IngredientUnits_aggregate;
+    return local$IngredientUnits_aggregate == null
+        ? CopyWith$Input$IngredientUnit_aggregate_order_by.stub(
+            _then(_instance))
+        : CopyWith$Input$IngredientUnit_aggregate_order_by(
+            local$IngredientUnits_aggregate,
+            (e) => call(IngredientUnits_aggregate: e));
+  }
+
+  CopyWith$Input$UnitType_order_by<TRes> get UnitType {
+    final local$UnitType = _instance.UnitType;
+    return local$UnitType == null
+        ? CopyWith$Input$UnitType_order_by.stub(_then(_instance))
+        : CopyWith$Input$UnitType_order_by(
+            local$UnitType, (e) => call(UnitType: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$UnitSize_order_by<TRes>
@@ -12443,6 +14444,11 @@ class _CopyWithStubImpl$Input$UnitSize_order_by<TRes>
           Enum$order_by? plural,
           Enum$order_by? unitType}) =>
       _res;
+  CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
+      get IngredientUnits_aggregate =>
+          CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
+  CopyWith$Input$UnitType_order_by<TRes> get UnitType =>
+      CopyWith$Input$UnitType_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -12557,6 +14563,20 @@ abstract class CopyWith$Input$UnitType_bool_exp<TRes> {
       List<Input$UnitType_bool_exp>? $_or,
       Input$String_comparison_exp? description,
       Input$String_comparison_exp? id});
+  CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSizes;
+  TRes $_and(
+      Iterable<Input$UnitType_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp>>?)
+          _fn);
+  CopyWith$Input$UnitType_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$UnitType_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp>>?)
+          _fn);
+  CopyWith$Input$String_comparison_exp<TRes> get description;
+  CopyWith$Input$String_comparison_exp<TRes> get id;
 }
 
 class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
@@ -12595,6 +14615,55 @@ class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
           id: id == _undefined
               ? _instance.id
               : (id as Input$String_comparison_exp?)));
+  CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSizes {
+    final local$UnitSizes = _instance.UnitSizes;
+    return local$UnitSizes == null
+        ? CopyWith$Input$UnitSize_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$UnitSize_bool_exp(
+            local$UnitSizes, (e) => call(UnitSizes: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$UnitType_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$UnitType_bool_exp<
+                          Input$UnitType_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and
+                  ?.map((e) => CopyWith$Input$UnitType_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$UnitType_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$UnitType_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$UnitType_bool_exp(local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$UnitType_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$UnitType_bool_exp<
+                          Input$UnitType_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or
+                  ?.map((e) => CopyWith$Input$UnitType_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$String_comparison_exp<TRes> get description {
+    final local$description = _instance.description;
+    return local$description == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$description, (e) => call(description: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$UnitType_bool_exp<TRes>
@@ -12611,6 +14680,16 @@ class _CopyWithStubImpl$Input$UnitType_bool_exp<TRes>
           Input$String_comparison_exp? description,
           Input$String_comparison_exp? id}) =>
       _res;
+  CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSizes =>
+      CopyWith$Input$UnitSize_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$UnitType_bool_exp<TRes> get $_not =>
+      CopyWith$Input$UnitType_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get description =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -12828,6 +14907,7 @@ abstract class CopyWith$Input$UnitType_order_by<TRes> {
       {Input$UnitSize_aggregate_order_by? UnitSizes_aggregate,
       Enum$order_by? description,
       Enum$order_by? id});
+  CopyWith$Input$UnitSize_aggregate_order_by<TRes> get UnitSizes_aggregate;
 }
 
 class _CopyWithImpl$Input$UnitType_order_by<TRes>
@@ -12852,6 +14932,13 @@ class _CopyWithImpl$Input$UnitType_order_by<TRes>
               ? _instance.description
               : (description as Enum$order_by?),
           id: id == _undefined ? _instance.id : (id as Enum$order_by?)));
+  CopyWith$Input$UnitSize_aggregate_order_by<TRes> get UnitSizes_aggregate {
+    final local$UnitSizes_aggregate = _instance.UnitSizes_aggregate;
+    return local$UnitSizes_aggregate == null
+        ? CopyWith$Input$UnitSize_aggregate_order_by.stub(_then(_instance))
+        : CopyWith$Input$UnitSize_aggregate_order_by(
+            local$UnitSizes_aggregate, (e) => call(UnitSizes_aggregate: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$UnitType_order_by<TRes>
@@ -12865,6 +14952,8 @@ class _CopyWithStubImpl$Input$UnitType_order_by<TRes>
           Enum$order_by? description,
           Enum$order_by? id}) =>
       _res;
+  CopyWith$Input$UnitSize_aggregate_order_by<TRes> get UnitSizes_aggregate =>
+      CopyWith$Input$UnitSize_aggregate_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -12988,6 +15077,19 @@ abstract class CopyWith$Input$User_bool_exp<TRes> {
       List<Input$User_bool_exp>? $_or,
       Input$String_comparison_exp? id,
       Input$String_comparison_exp? name});
+  CopyWith$Input$File_bool_exp<TRes> get Files;
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipes;
+  TRes $_and(
+      Iterable<Input$User_bool_exp>? Function(
+              Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?)
+          _fn);
+  CopyWith$Input$User_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$User_bool_exp>? Function(
+              Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?)
+          _fn);
+  CopyWith$Input$String_comparison_exp<TRes> get id;
+  CopyWith$Input$String_comparison_exp<TRes> get name;
 }
 
 class _CopyWithImpl$Input$User_bool_exp<TRes>
@@ -13030,6 +15132,58 @@ class _CopyWithImpl$Input$User_bool_exp<TRes>
           name: name == _undefined
               ? _instance.name
               : (name as Input$String_comparison_exp?)));
+  CopyWith$Input$File_bool_exp<TRes> get Files {
+    final local$Files = _instance.Files;
+    return local$Files == null
+        ? CopyWith$Input$File_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$File_bool_exp(local$Files, (e) => call(Files: e));
+  }
+
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipes {
+    final local$Recipes = _instance.Recipes;
+    return local$Recipes == null
+        ? CopyWith$Input$Recipe_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Recipe_bool_exp(
+            local$Recipes, (e) => call(Recipes: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$User_bool_exp>? Function(
+                  Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and
+                  ?.map((e) => CopyWith$Input$User_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$User_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$User_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$User_bool_exp(local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$User_bool_exp>? Function(
+                  Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or
+                  ?.map((e) => CopyWith$Input$User_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$String_comparison_exp<TRes> get id {
+    final local$id = _instance.id;
+    return local$id == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$id, (e) => call(id: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get name {
+    final local$name = _instance.name;
+    return local$name == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$name, (e) => call(name: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$User_bool_exp<TRes>
@@ -13047,6 +15201,18 @@ class _CopyWithStubImpl$Input$User_bool_exp<TRes>
           Input$String_comparison_exp? id,
           Input$String_comparison_exp? name}) =>
       _res;
+  CopyWith$Input$File_bool_exp<TRes> get Files =>
+      CopyWith$Input$File_bool_exp.stub(_res);
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipes =>
+      CopyWith$Input$Recipe_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$User_bool_exp<TRes> get $_not =>
+      CopyWith$Input$User_bool_exp.stub(_res);
+  $_or(_fn) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get id =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get name =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -13115,6 +15281,8 @@ abstract class CopyWith$Input$User_order_by<TRes> {
       Input$Recipe_aggregate_order_by? Recipes_aggregate,
       Enum$order_by? id,
       Enum$order_by? name});
+  CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate;
+  CopyWith$Input$Recipe_aggregate_order_by<TRes> get Recipes_aggregate;
 }
 
 class _CopyWithImpl$Input$User_order_by<TRes>
@@ -13142,6 +15310,21 @@ class _CopyWithImpl$Input$User_order_by<TRes>
           id: id == _undefined ? _instance.id : (id as Enum$order_by?),
           name:
               name == _undefined ? _instance.name : (name as Enum$order_by?)));
+  CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate {
+    final local$Files_aggregate = _instance.Files_aggregate;
+    return local$Files_aggregate == null
+        ? CopyWith$Input$File_aggregate_order_by.stub(_then(_instance))
+        : CopyWith$Input$File_aggregate_order_by(
+            local$Files_aggregate, (e) => call(Files_aggregate: e));
+  }
+
+  CopyWith$Input$Recipe_aggregate_order_by<TRes> get Recipes_aggregate {
+    final local$Recipes_aggregate = _instance.Recipes_aggregate;
+    return local$Recipes_aggregate == null
+        ? CopyWith$Input$Recipe_aggregate_order_by.stub(_then(_instance))
+        : CopyWith$Input$Recipe_aggregate_order_by(
+            local$Recipes_aggregate, (e) => call(Recipes_aggregate: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$User_order_by<TRes>
@@ -13156,6 +15339,10 @@ class _CopyWithStubImpl$Input$User_order_by<TRes>
           Enum$order_by? id,
           Enum$order_by? name}) =>
       _res;
+  CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate =>
+      CopyWith$Input$File_aggregate_order_by.stub(_res);
+  CopyWith$Input$Recipe_aggregate_order_by<TRes> get Recipes_aggregate =>
+      CopyWith$Input$Recipe_aggregate_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -13219,6 +15406,8 @@ abstract class CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> {
       {Enum$order_by? count,
       Input$_RecipeToTag_max_order_by? max,
       Input$_RecipeToTag_min_order_by? min});
+  CopyWith$Input$_RecipeToTag_max_order_by<TRes> get max;
+  CopyWith$Input$_RecipeToTag_min_order_by<TRes> get min;
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
@@ -13245,6 +15434,21 @@ class _CopyWithImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
           min: min == _undefined
               ? _instance.min
               : (min as Input$_RecipeToTag_min_order_by?)));
+  CopyWith$Input$_RecipeToTag_max_order_by<TRes> get max {
+    final local$max = _instance.max;
+    return local$max == null
+        ? CopyWith$Input$_RecipeToTag_max_order_by.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_max_order_by(
+            local$max, (e) => call(max: e));
+  }
+
+  CopyWith$Input$_RecipeToTag_min_order_by<TRes> get min {
+    final local$min = _instance.min;
+    return local$min == null
+        ? CopyWith$Input$_RecipeToTag_min_order_by.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_min_order_by(
+            local$min, (e) => call(min: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
@@ -13258,6 +15462,10 @@ class _CopyWithStubImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
           Input$_RecipeToTag_max_order_by? max,
           Input$_RecipeToTag_min_order_by? min}) =>
       _res;
+  CopyWith$Input$_RecipeToTag_max_order_by<TRes> get max =>
+      CopyWith$Input$_RecipeToTag_max_order_by.stub(_res);
+  CopyWith$Input$_RecipeToTag_min_order_by<TRes> get min =>
+      CopyWith$Input$_RecipeToTag_min_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -13321,6 +15529,13 @@ abstract class CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> {
   TRes call(
       {List<Input$_RecipeToTag_insert_input>? data,
       Input$_RecipeToTag_on_conflict? on_conflict});
+  TRes data(
+      Iterable<Input$_RecipeToTag_insert_input> Function(
+              Iterable<
+                  CopyWith$Input$_RecipeToTag_insert_input<
+                      Input$_RecipeToTag_insert_input>>)
+          _fn);
+  CopyWith$Input$_RecipeToTag_on_conflict<TRes> get on_conflict;
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
@@ -13342,6 +15557,23 @@ class _CopyWithImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
           on_conflict: on_conflict == _undefined
               ? _instance.on_conflict
               : (on_conflict as Input$_RecipeToTag_on_conflict?)));
+  TRes data(
+          Iterable<Input$_RecipeToTag_insert_input> Function(
+                  Iterable<
+                      CopyWith$Input$_RecipeToTag_insert_input<
+                          Input$_RecipeToTag_insert_input>>)
+              _fn) =>
+      call(
+          data: _fn(_instance.data.map(
+                  (e) => CopyWith$Input$_RecipeToTag_insert_input(e, (i) => i)))
+              .toList());
+  CopyWith$Input$_RecipeToTag_on_conflict<TRes> get on_conflict {
+    final local$on_conflict = _instance.on_conflict;
+    return local$on_conflict == null
+        ? CopyWith$Input$_RecipeToTag_on_conflict.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_on_conflict(
+            local$on_conflict, (e) => call(on_conflict: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
@@ -13354,6 +15586,9 @@ class _CopyWithStubImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
           {List<Input$_RecipeToTag_insert_input>? data,
           Input$_RecipeToTag_on_conflict? on_conflict}) =>
       _res;
+  data(_fn) => _res;
+  CopyWith$Input$_RecipeToTag_on_conflict<TRes> get on_conflict =>
+      CopyWith$Input$_RecipeToTag_on_conflict.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -13478,6 +15713,23 @@ abstract class CopyWith$Input$_RecipeToTag_bool_exp<TRes> {
       List<Input$_RecipeToTag_bool_exp>? $_and,
       Input$_RecipeToTag_bool_exp? $_not,
       List<Input$_RecipeToTag_bool_exp>? $_or});
+  CopyWith$Input$String_comparison_exp<TRes> get A;
+  CopyWith$Input$String_comparison_exp<TRes> get B;
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipe;
+  CopyWith$Input$Tag_bool_exp<TRes> get Tag;
+  TRes $_and(
+      Iterable<Input$_RecipeToTag_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$_RecipeToTag_bool_exp<
+                      Input$_RecipeToTag_bool_exp>>?)
+          _fn);
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get $_not;
+  TRes $_or(
+      Iterable<Input$_RecipeToTag_bool_exp>? Function(
+              Iterable<
+                  CopyWith$Input$_RecipeToTag_bool_exp<
+                      Input$_RecipeToTag_bool_exp>>?)
+          _fn);
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_bool_exp<TRes>
@@ -13518,6 +15770,62 @@ class _CopyWithImpl$Input$_RecipeToTag_bool_exp<TRes>
           $_or: $_or == _undefined
               ? _instance.$_or
               : ($_or as List<Input$_RecipeToTag_bool_exp>?)));
+  CopyWith$Input$String_comparison_exp<TRes> get A {
+    final local$A = _instance.A;
+    return local$A == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$A, (e) => call(A: e));
+  }
+
+  CopyWith$Input$String_comparison_exp<TRes> get B {
+    final local$B = _instance.B;
+    return local$B == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(local$B, (e) => call(B: e));
+  }
+
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipe {
+    final local$Recipe = _instance.Recipe;
+    return local$Recipe == null
+        ? CopyWith$Input$Recipe_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Recipe_bool_exp(local$Recipe, (e) => call(Recipe: e));
+  }
+
+  CopyWith$Input$Tag_bool_exp<TRes> get Tag {
+    final local$Tag = _instance.Tag;
+    return local$Tag == null
+        ? CopyWith$Input$Tag_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$Tag_bool_exp(local$Tag, (e) => call(Tag: e));
+  }
+
+  TRes $_and(
+          Iterable<Input$_RecipeToTag_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$_RecipeToTag_bool_exp<
+                          Input$_RecipeToTag_bool_exp>>?)
+              _fn) =>
+      call(
+          $_and: _fn(_instance.$_and?.map(
+                  (e) => CopyWith$Input$_RecipeToTag_bool_exp(e, (i) => i)))
+              ?.toList());
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get $_not {
+    final local$$_not = _instance.$_not;
+    return local$$_not == null
+        ? CopyWith$Input$_RecipeToTag_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_bool_exp(
+            local$$_not, (e) => call($_not: e));
+  }
+
+  TRes $_or(
+          Iterable<Input$_RecipeToTag_bool_exp>? Function(
+                  Iterable<
+                      CopyWith$Input$_RecipeToTag_bool_exp<
+                          Input$_RecipeToTag_bool_exp>>?)
+              _fn) =>
+      call(
+          $_or: _fn(_instance.$_or?.map(
+                  (e) => CopyWith$Input$_RecipeToTag_bool_exp(e, (i) => i)))
+              ?.toList());
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_bool_exp<TRes>
@@ -13535,6 +15843,18 @@ class _CopyWithStubImpl$Input$_RecipeToTag_bool_exp<TRes>
           Input$_RecipeToTag_bool_exp? $_not,
           List<Input$_RecipeToTag_bool_exp>? $_or}) =>
       _res;
+  CopyWith$Input$String_comparison_exp<TRes> get A =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$String_comparison_exp<TRes> get B =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
+  CopyWith$Input$Recipe_bool_exp<TRes> get Recipe =>
+      CopyWith$Input$Recipe_bool_exp.stub(_res);
+  CopyWith$Input$Tag_bool_exp<TRes> get Tag =>
+      CopyWith$Input$Tag_bool_exp.stub(_res);
+  $_and(_fn) => _res;
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get $_not =>
+      CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
+  $_or(_fn) => _res;
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -13601,6 +15921,8 @@ abstract class CopyWith$Input$_RecipeToTag_insert_input<TRes> {
       String? B,
       Input$Recipe_obj_rel_insert_input? Recipe,
       Input$Tag_obj_rel_insert_input? Tag});
+  CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe;
+  CopyWith$Input$Tag_obj_rel_insert_input<TRes> get Tag;
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_insert_input<TRes>
@@ -13627,6 +15949,21 @@ class _CopyWithImpl$Input$_RecipeToTag_insert_input<TRes>
           Tag: Tag == _undefined
               ? _instance.Tag
               : (Tag as Input$Tag_obj_rel_insert_input?)));
+  CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe {
+    final local$Recipe = _instance.Recipe;
+    return local$Recipe == null
+        ? CopyWith$Input$Recipe_obj_rel_insert_input.stub(_then(_instance))
+        : CopyWith$Input$Recipe_obj_rel_insert_input(
+            local$Recipe, (e) => call(Recipe: e));
+  }
+
+  CopyWith$Input$Tag_obj_rel_insert_input<TRes> get Tag {
+    final local$Tag = _instance.Tag;
+    return local$Tag == null
+        ? CopyWith$Input$Tag_obj_rel_insert_input.stub(_then(_instance))
+        : CopyWith$Input$Tag_obj_rel_insert_input(
+            local$Tag, (e) => call(Tag: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_insert_input<TRes>
@@ -13641,6 +15978,10 @@ class _CopyWithStubImpl$Input$_RecipeToTag_insert_input<TRes>
           Input$Recipe_obj_rel_insert_input? Recipe,
           Input$Tag_obj_rel_insert_input? Tag}) =>
       _res;
+  CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe =>
+      CopyWith$Input$Recipe_obj_rel_insert_input.stub(_res);
+  CopyWith$Input$Tag_obj_rel_insert_input<TRes> get Tag =>
+      CopyWith$Input$Tag_obj_rel_insert_input.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -13866,6 +16207,7 @@ abstract class CopyWith$Input$_RecipeToTag_on_conflict<TRes> {
       {Enum$_RecipeToTag_constraint? constraint,
       List<Enum$_RecipeToTag_update_column>? update_columns,
       Input$_RecipeToTag_bool_exp? where});
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get where;
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_on_conflict<TRes>
@@ -13892,6 +16234,13 @@ class _CopyWithImpl$Input$_RecipeToTag_on_conflict<TRes>
           where: where == _undefined
               ? _instance.where
               : (where as Input$_RecipeToTag_bool_exp?)));
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return local$where == null
+        ? CopyWith$Input$_RecipeToTag_bool_exp.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_bool_exp(
+            local$where, (e) => call(where: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_on_conflict<TRes>
@@ -13905,6 +16254,8 @@ class _CopyWithStubImpl$Input$_RecipeToTag_on_conflict<TRes>
           List<Enum$_RecipeToTag_update_column>? update_columns,
           Input$_RecipeToTag_bool_exp? where}) =>
       _res;
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get where =>
+      CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -13972,6 +16323,8 @@ abstract class CopyWith$Input$_RecipeToTag_order_by<TRes> {
       Enum$order_by? B,
       Input$Recipe_order_by? Recipe,
       Input$Tag_order_by? Tag});
+  CopyWith$Input$Recipe_order_by<TRes> get Recipe;
+  CopyWith$Input$Tag_order_by<TRes> get Tag;
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_order_by<TRes>
@@ -13998,6 +16351,19 @@ class _CopyWithImpl$Input$_RecipeToTag_order_by<TRes>
           Tag: Tag == _undefined
               ? _instance.Tag
               : (Tag as Input$Tag_order_by?)));
+  CopyWith$Input$Recipe_order_by<TRes> get Recipe {
+    final local$Recipe = _instance.Recipe;
+    return local$Recipe == null
+        ? CopyWith$Input$Recipe_order_by.stub(_then(_instance))
+        : CopyWith$Input$Recipe_order_by(local$Recipe, (e) => call(Recipe: e));
+  }
+
+  CopyWith$Input$Tag_order_by<TRes> get Tag {
+    final local$Tag = _instance.Tag;
+    return local$Tag == null
+        ? CopyWith$Input$Tag_order_by.stub(_then(_instance))
+        : CopyWith$Input$Tag_order_by(local$Tag, (e) => call(Tag: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_order_by<TRes>
@@ -14012,6 +16378,10 @@ class _CopyWithStubImpl$Input$_RecipeToTag_order_by<TRes>
           Input$Recipe_order_by? Recipe,
           Input$Tag_order_by? Tag}) =>
       _res;
+  CopyWith$Input$Recipe_order_by<TRes> get Recipe =>
+      CopyWith$Input$Recipe_order_by.stub(_res);
+  CopyWith$Input$Tag_order_by<TRes> get Tag =>
+      CopyWith$Input$Tag_order_by.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -14332,6 +16702,7 @@ abstract class CopyWith$Input$float8_cast_exp<TRes> {
       _CopyWithStubImpl$Input$float8_cast_exp;
 
   TRes call({Input$String_comparison_exp? $String});
+  CopyWith$Input$String_comparison_exp<TRes> get $String;
 }
 
 class _CopyWithImpl$Input$float8_cast_exp<TRes>
@@ -14348,6 +16719,13 @@ class _CopyWithImpl$Input$float8_cast_exp<TRes>
       $String: $String == _undefined
           ? _instance.$String
           : ($String as Input$String_comparison_exp?)));
+  CopyWith$Input$String_comparison_exp<TRes> get $String {
+    final local$$String = _instance.$String;
+    return local$$String == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$$String, (e) => call($String: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$float8_cast_exp<TRes>
@@ -14357,6 +16735,8 @@ class _CopyWithStubImpl$Input$float8_cast_exp<TRes>
   TRes _res;
 
   call({Input$String_comparison_exp? $String}) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get $String =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -14515,6 +16895,7 @@ abstract class CopyWith$Input$float8_comparison_exp<TRes> {
       double? $_lte,
       double? $_neq,
       List<double>? $_nin});
+  CopyWith$Input$float8_cast_exp<TRes> get $_cast;
 }
 
 class _CopyWithImpl$Input$float8_comparison_exp<TRes>
@@ -14555,6 +16936,12 @@ class _CopyWithImpl$Input$float8_comparison_exp<TRes>
           $_nin: $_nin == _undefined
               ? _instance.$_nin
               : ($_nin as List<double>?)));
+  CopyWith$Input$float8_cast_exp<TRes> get $_cast {
+    final local$$_cast = _instance.$_cast;
+    return local$$_cast == null
+        ? CopyWith$Input$float8_cast_exp.stub(_then(_instance))
+        : CopyWith$Input$float8_cast_exp(local$$_cast, (e) => call($_cast: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$float8_comparison_exp<TRes>
@@ -14575,6 +16962,8 @@ class _CopyWithStubImpl$Input$float8_comparison_exp<TRes>
           double? $_neq,
           List<double>? $_nin}) =>
       _res;
+  CopyWith$Input$float8_cast_exp<TRes> get $_cast =>
+      CopyWith$Input$float8_cast_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -14618,6 +17007,7 @@ abstract class CopyWith$Input$timestamp_cast_exp<TRes> {
       _CopyWithStubImpl$Input$timestamp_cast_exp;
 
   TRes call({Input$String_comparison_exp? $String});
+  CopyWith$Input$String_comparison_exp<TRes> get $String;
 }
 
 class _CopyWithImpl$Input$timestamp_cast_exp<TRes>
@@ -14634,6 +17024,13 @@ class _CopyWithImpl$Input$timestamp_cast_exp<TRes>
       $String: $String == _undefined
           ? _instance.$String
           : ($String as Input$String_comparison_exp?)));
+  CopyWith$Input$String_comparison_exp<TRes> get $String {
+    final local$$String = _instance.$String;
+    return local$$String == null
+        ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
+        : CopyWith$Input$String_comparison_exp(
+            local$$String, (e) => call($String: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$timestamp_cast_exp<TRes>
@@ -14643,6 +17040,8 @@ class _CopyWithStubImpl$Input$timestamp_cast_exp<TRes>
   TRes _res;
 
   call({Input$String_comparison_exp? $String}) => _res;
+  CopyWith$Input$String_comparison_exp<TRes> get $String =>
+      CopyWith$Input$String_comparison_exp.stub(_res);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -14825,6 +17224,7 @@ abstract class CopyWith$Input$timestamp_comparison_exp<TRes> {
       DateTime? $_lte,
       DateTime? $_neq,
       List<DateTime>? $_nin});
+  CopyWith$Input$timestamp_cast_exp<TRes> get $_cast;
 }
 
 class _CopyWithImpl$Input$timestamp_comparison_exp<TRes>
@@ -14865,6 +17265,13 @@ class _CopyWithImpl$Input$timestamp_comparison_exp<TRes>
           $_nin: $_nin == _undefined
               ? _instance.$_nin
               : ($_nin as List<DateTime>?)));
+  CopyWith$Input$timestamp_cast_exp<TRes> get $_cast {
+    final local$$_cast = _instance.$_cast;
+    return local$$_cast == null
+        ? CopyWith$Input$timestamp_cast_exp.stub(_then(_instance))
+        : CopyWith$Input$timestamp_cast_exp(
+            local$$_cast, (e) => call($_cast: e));
+  }
 }
 
 class _CopyWithStubImpl$Input$timestamp_comparison_exp<TRes>
@@ -14885,6 +17292,8 @@ class _CopyWithStubImpl$Input$timestamp_comparison_exp<TRes>
           DateTime? $_neq,
           List<DateTime>? $_nin}) =>
       _res;
+  CopyWith$Input$timestamp_cast_exp<TRes> get $_cast =>
+      CopyWith$Input$timestamp_cast_exp.stub(_res);
 }
 
 enum Enum$File_constraint {
