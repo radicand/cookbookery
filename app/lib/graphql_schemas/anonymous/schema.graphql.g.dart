@@ -655,25 +655,9 @@ Map<String, dynamic> _$Input$Ingredient_order_byToJson(
       'name': _$Enum$order_byEnumMap[instance.name],
     };
 
-Input$Int_cast_exp _$Input$Int_cast_expFromJson(Map<String, dynamic> json) =>
-    Input$Int_cast_exp(
-      $String: json['String'] == null
-          ? null
-          : Input$String_comparison_exp.fromJson(
-              json['String'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$Input$Int_cast_expToJson(Input$Int_cast_exp instance) =>
-    <String, dynamic>{
-      'String': instance.$String?.toJson(),
-    };
-
 Input$Int_comparison_exp _$Input$Int_comparison_expFromJson(
         Map<String, dynamic> json) =>
     Input$Int_comparison_exp(
-      $_cast: json['_cast'] == null
-          ? null
-          : Input$Int_cast_exp.fromJson(json['_cast'] as Map<String, dynamic>),
       $_eq: json['_eq'] as int?,
       $_gt: json['_gt'] as int?,
       $_gte: json['_gte'] as int?,
@@ -688,7 +672,6 @@ Input$Int_comparison_exp _$Input$Int_comparison_expFromJson(
 Map<String, dynamic> _$Input$Int_comparison_expToJson(
         Input$Int_comparison_exp instance) =>
     <String, dynamic>{
-      '_cast': instance.$_cast?.toJson(),
       '_eq': instance.$_eq,
       '_gt': instance.$_gt,
       '_gte': instance.$_gte,
@@ -2297,28 +2280,9 @@ Map<String, dynamic> _$Input$bytea_comparison_expToJson(
       '_nin': instance.$_nin,
     };
 
-Input$float8_cast_exp _$Input$float8_cast_expFromJson(
-        Map<String, dynamic> json) =>
-    Input$float8_cast_exp(
-      $String: json['String'] == null
-          ? null
-          : Input$String_comparison_exp.fromJson(
-              json['String'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$Input$float8_cast_expToJson(
-        Input$float8_cast_exp instance) =>
-    <String, dynamic>{
-      'String': instance.$String?.toJson(),
-    };
-
 Input$float8_comparison_exp _$Input$float8_comparison_expFromJson(
         Map<String, dynamic> json) =>
     Input$float8_comparison_exp(
-      $_cast: json['_cast'] == null
-          ? null
-          : Input$float8_cast_exp.fromJson(
-              json['_cast'] as Map<String, dynamic>),
       $_eq: (json['_eq'] as num?)?.toDouble(),
       $_gt: (json['_gt'] as num?)?.toDouble(),
       $_gte: (json['_gte'] as num?)?.toDouble(),
@@ -2337,7 +2301,6 @@ Input$float8_comparison_exp _$Input$float8_comparison_expFromJson(
 Map<String, dynamic> _$Input$float8_comparison_expToJson(
         Input$float8_comparison_exp instance) =>
     <String, dynamic>{
-      '_cast': instance.$_cast?.toJson(),
       '_eq': instance.$_eq,
       '_gt': instance.$_gt,
       '_gte': instance.$_gte,
@@ -2349,28 +2312,9 @@ Map<String, dynamic> _$Input$float8_comparison_expToJson(
       '_nin': instance.$_nin,
     };
 
-Input$timestamp_cast_exp _$Input$timestamp_cast_expFromJson(
-        Map<String, dynamic> json) =>
-    Input$timestamp_cast_exp(
-      $String: json['String'] == null
-          ? null
-          : Input$String_comparison_exp.fromJson(
-              json['String'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$Input$timestamp_cast_expToJson(
-        Input$timestamp_cast_exp instance) =>
-    <String, dynamic>{
-      'String': instance.$String?.toJson(),
-    };
-
 Input$timestamp_comparison_exp _$Input$timestamp_comparison_expFromJson(
         Map<String, dynamic> json) =>
     Input$timestamp_comparison_exp(
-      $_cast: json['_cast'] == null
-          ? null
-          : Input$timestamp_cast_exp.fromJson(
-              json['_cast'] as Map<String, dynamic>),
       $_eq: _nullable$dateTimeFromJson(json['_eq']),
       $_gt: _nullable$dateTimeFromJson(json['_gt']),
       $_gte: _nullable$dateTimeFromJson(json['_gte']),
@@ -2385,7 +2329,6 @@ Input$timestamp_comparison_exp _$Input$timestamp_comparison_expFromJson(
 Map<String, dynamic> _$Input$timestamp_comparison_expToJson(
         Input$timestamp_comparison_exp instance) =>
     <String, dynamic>{
-      '_cast': instance.$_cast?.toJson(),
       '_eq': _nullable$dateTimeToJson(instance.$_eq),
       '_gt': _nullable$dateTimeToJson(instance.$_gt),
       '_gte': _nullable$dateTimeToJson(instance.$_gte),

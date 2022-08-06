@@ -382,15 +382,10 @@ enum Ingredient_select_column {
   name
 }
 
-input Int_cast_exp {
-  String: String_comparison_exp
-}
-
 """
 Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'.
 """
 input Int_comparison_exp {
-  _cast: Int_cast_exp
   _eq: Int
   _gt: Int
   _gte: Int
@@ -1425,15 +1420,10 @@ input bytea_comparison_exp {
 
 scalar float8
 
-input float8_cast_exp {
-  String: String_comparison_exp
-}
-
 """
 Boolean expression to compare columns of type "float8". All fields are combined with logical 'AND'.
 """
 input float8_comparison_exp {
-  _cast: float8_cast_exp
   _eq: float8
   _gt: float8
   _gte: float8
@@ -1972,15 +1962,10 @@ type subscription_root {
 
 scalar timestamp
 
-input timestamp_cast_exp {
-  String: String_comparison_exp
-}
-
 """
 Boolean expression to compare columns of type "timestamp". All fields are combined with logical 'AND'.
 """
 input timestamp_comparison_exp {
-  _cast: timestamp_cast_exp
   _eq: timestamp
   _gt: timestamp
   _gte: timestamp
