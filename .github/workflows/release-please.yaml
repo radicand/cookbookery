@@ -1,28 +1,22 @@
+name: Release Please
+
 on:
   push:
     branches:
       - main
-name: release-please
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
+        id: release
         with:
           command: manifest
           monorepo-tags: true
-          # release-type: dart
-          # package-name: app
-          # path: app
-      # - uses: google-github-actions/release-please-action@v3
-      #   with:
-      #     release-type: simple
-      #     package-name: server-faas
-      #     path: server/faas
-      #     monorepo-tags: true
-      # - uses: google-github-actions/release-please-action@v3
-      #   with:
-      #     release-type: simple
-      #     package-name: server-api
-      #     path: server/hasura
-      #     monorepo-tags: true
+      - run: gh workflow run release-app.yaml -f lane=internal
+        if: ${{ steps.release.outputs.release_created }}
+      - run: gh workflow run release-api.yaml
+        if: ${{ steps.release.outputs.release_created }}
+      - run: gh workflow run release-faas.yaml
+        if: ${{ steps.release.outputs.release_created }}

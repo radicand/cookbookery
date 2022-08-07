@@ -2,13 +2,8 @@ name: Build and release faas
 concurrency: build-faas
 
 on:
-  push:
-    branches:
-      - "main"
-    paths:
-      - ".github/workflows/release-faas.yaml"
-      - server/faas/version.txt'
   workflow_dispatch:
+  workflow_call:
 jobs:
   build:
     environment:

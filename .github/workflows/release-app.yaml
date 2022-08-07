@@ -2,12 +2,11 @@ name: Build and release app
 concurrency: build-app
 
 on:
-  push:
-    branches:
-      - "main"
-    paths:
-      - ".github/workflows/release-app.yaml"
-  release:
+  workflow_call:
+    inputs:
+      lane:
+        required: true
+        type: string
   workflow_dispatch:
     inputs:
       lane:
