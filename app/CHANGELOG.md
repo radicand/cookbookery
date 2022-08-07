@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/radicand/cookbookery/compare/app-v1.3.1...app-v1.3.2) (2022-08-07)
+
+
+### Bug Fixes
+
+* **app:** lower compilesdk version for greater device compatibility ([516e27d](https://github.com/radicand/cookbookery/commit/516e27dbbe931a44a507bd105cc5a7b77e192bd5))
+
 ## [1.3.1](https://github.com/radicand/cookbookery/compare/app-v1.3.0...app-v1.3.1) (2022-08-07)
 
 
