@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/radicand/cookbookery/compare/server-api-v1.2.0...server-api-v1.3.0) (2022-08-07)
+
+
+### Features
+
+* **ci:** chain release components to release creation ([f71cf9d](https://github.com/radicand/cookbookery/commit/f71cf9d94fc734dc4a710bc2509d776bf5c79b28))
+* **hasura:** upgrade to 2.9.0 ([f71cf9d](https://github.com/radicand/cookbookery/commit/f71cf9d94fc734dc4a710bc2509d776bf5c79b28))
+
 ## [1.2.0](https://github.com/radicand/cookbookery/compare/server-api-v1.1.1...server-api-v1.2.0) (2022-07-12)
 
 
