@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/radicand/cookbookery/compare/app-v1.3.0...app-v1.3.1) (2022-08-07)
+
+
+### Bug Fixes
+
+* **deps:** downgrade flutter_secure_storage due to sdk api mismatch ([248dcd7](https://github.com/radicand/cookbookery/commit/248dcd701f55d813d644ba77426888af5a4b1217))
+
 ## [1.3.0](https://github.com/radicand/cookbookery/compare/app-v1.2.1...app-v1.3.0) (2022-08-06)
 
 
