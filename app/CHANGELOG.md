@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/radicand/cookbookery/compare/app-v1.2.1...app-v1.3.0) (2022-08-06)
+
+
+### Features
+
+* **app/macos:** functional macos app ([458c2c0](https://github.com/radicand/cookbookery/commit/458c2c0453274d564433fdeb65a37be532060219))
+
+
+### Bug Fixes
+
+* **auth:** correct refresh token behavior to work properly ([30a57e4](https://github.com/radicand/cookbookery/commit/30a57e444f4b5b03586f36985455687eff58b427))
+* **gradle:** update to gradle 7.5 ([65089cf](https://github.com/radicand/cookbookery/commit/65089cf33aef0d8c52af901892179de62f87f8c6))
+* **ui:** adjust close icon to be pressable ([30a57e4](https://github.com/radicand/cookbookery/commit/30a57e444f4b5b03586f36985455687eff58b427))
+
 ## [1.2.1](https://github.com/radicand/cookbookery/compare/app-v1.2.0...app-v1.2.1) (2022-07-19)
 
 
