@@ -7,6 +7,8 @@ on:
       - "main"
     paths:
       - ".github/workflows/release-app.yaml"
+      - "app/*"
+      - "app/**/*"
   workflow_dispatch:
 
 # Declare default permissions as read only.
