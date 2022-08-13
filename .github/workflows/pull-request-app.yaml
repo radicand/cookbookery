@@ -3,7 +3,6 @@ concurrency: test-prq-app
 
 on:
   pull_request:
-    branches: ["*"]
     paths:
       - app/**
 
