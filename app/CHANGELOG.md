@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/radicand/cookbookery/compare/app-v1.3.2...app-v1.3.3) (2022-08-13)
+
+
+### Bug Fixes
+
+* **recipe:** tapping source now goes to the source url ([cf6fe7b](https://github.com/radicand/cookbookery/commit/cf6fe7b435dafd0663e424b680c6d67daaf2f884))
+
 ## [1.3.2](https://github.com/radicand/cookbookery/compare/app-v1.3.1...app-v1.3.2) (2022-08-07)
 
 
