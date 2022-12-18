@@ -1,5 +1,4 @@
 name: Test app
-concurrency: build-app
 
 on:
   push:
