@@ -34,7 +34,7 @@ jobs:
 
       - uses: actions/setup-java@v3
         with:
-          distribution: "azul"
+          distribution: "zulu"
           java-version: "11"
 
       - name: Install Flutter
