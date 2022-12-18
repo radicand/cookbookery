@@ -81,8 +81,15 @@ jobs:
           bundler-cache: true
           working-directory: app/android
 
-      - name: Download bundle dependencies
+      - name: Download bundle dependencies (android)
         working-directory: app/android
+        run: |
+          gem install bundler:2.3.26
+          bundle config path vendor/bundle
+          bundle install
+
+      - name: Download bundle dependencies (ios)
+        working-directory: app/ios
         run: |
           gem install bundler:2.3.26
           bundle config path vendor/bundle
