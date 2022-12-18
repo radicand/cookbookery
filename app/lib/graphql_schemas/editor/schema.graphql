@@ -211,6 +211,12 @@ enum File_update_column {
   mimetype
 }
 
+input File_updates {
+  """sets the columns of the filtered rows to the given values"""
+  _set: File_set_input
+  where: File_bool_exp!
+}
+
 """
 columns and relationships of "Ingredient"
 """
@@ -496,6 +502,15 @@ enum IngredientUnit_update_column {
 
   """column name"""
   unitId
+}
+
+input IngredientUnit_updates {
+  """increments the numeric columns with given value of the filtered values"""
+  _inc: IngredientUnit_inc_input
+
+  """sets the columns of the filtered rows to the given values"""
+  _set: IngredientUnit_set_input
+  where: IngredientUnit_bool_exp!
 }
 
 """
@@ -1040,6 +1055,15 @@ enum RecipeSection_update_column {
   servings
 }
 
+input RecipeSection_updates {
+  """increments the numeric columns with given value of the filtered values"""
+  _inc: RecipeSection_inc_input
+
+  """sets the columns of the filtered rows to the given values"""
+  _set: RecipeSection_set_input
+  where: RecipeSection_bool_exp!
+}
+
 """
 order by var_pop() on columns of table "RecipeSection"
 """
@@ -1257,6 +1281,12 @@ enum Recipe_update_column {
 
   """column name"""
   title
+}
+
+input Recipe_updates {
+  """sets the columns of the filtered rows to the given values"""
+  _set: Recipe_set_input
+  where: Recipe_bool_exp!
 }
 
 """
@@ -1486,6 +1516,15 @@ enum Step_update_column {
 
   """column name"""
   recipeSectionId
+}
+
+input Step_updates {
+  """increments the numeric columns with given value of the filtered values"""
+  _inc: Step_inc_input
+
+  """sets the columns of the filtered rows to the given values"""
+  _set: Step_set_input
+  where: Step_bool_exp!
 }
 
 """
@@ -2064,6 +2103,12 @@ enum _RecipeToTag_update_column {
   B
 }
 
+input _RecipeToTag_updates {
+  """sets the columns of the filtered rows to the given values"""
+  _set: _RecipeToTag_set_input
+  where: _RecipeToTag_bool_exp!
+}
+
 scalar bytea
 
 """
@@ -2370,6 +2415,14 @@ type mutation_root {
   ): File
 
   """
+  update multiples rows of table: "File"
+  """
+  update_File_many(
+    """updates to execute, in order"""
+    updates: [File_updates!]!
+  ): [File_mutation_response]
+
+  """
   update data of the table: "IngredientUnit"
   """
   update_IngredientUnit(
@@ -2394,6 +2447,14 @@ type mutation_root {
     _set: IngredientUnit_set_input
     pk_columns: IngredientUnit_pk_columns_input!
   ): IngredientUnit
+
+  """
+  update multiples rows of table: "IngredientUnit"
+  """
+  update_IngredientUnit_many(
+    """updates to execute, in order"""
+    updates: [IngredientUnit_updates!]!
+  ): [IngredientUnit_mutation_response]
 
   """
   update data of the table: "Recipe"
@@ -2433,6 +2494,14 @@ type mutation_root {
   ): RecipeSection
 
   """
+  update multiples rows of table: "RecipeSection"
+  """
+  update_RecipeSection_many(
+    """updates to execute, in order"""
+    updates: [RecipeSection_updates!]!
+  ): [RecipeSection_mutation_response]
+
+  """
   update single row of the table: "Recipe"
   """
   update_Recipe_by_pk(
@@ -2440,6 +2509,14 @@ type mutation_root {
     _set: Recipe_set_input
     pk_columns: Recipe_pk_columns_input!
   ): Recipe
+
+  """
+  update multiples rows of table: "Recipe"
+  """
+  update_Recipe_many(
+    """updates to execute, in order"""
+    updates: [Recipe_updates!]!
+  ): [Recipe_mutation_response]
 
   """
   update data of the table: "Step"
@@ -2468,6 +2545,14 @@ type mutation_root {
   ): Step
 
   """
+  update multiples rows of table: "Step"
+  """
+  update_Step_many(
+    """updates to execute, in order"""
+    updates: [Step_updates!]!
+  ): [Step_mutation_response]
+
+  """
   update data of the table: "_RecipeToTag"
   """
   update__RecipeToTag(
@@ -2477,6 +2562,14 @@ type mutation_root {
     """filter the rows which have to be updated"""
     where: _RecipeToTag_bool_exp!
   ): _RecipeToTag_mutation_response
+
+  """
+  update multiples rows of table: "_RecipeToTag"
+  """
+  update__RecipeToTag_many(
+    """updates to execute, in order"""
+    updates: [_RecipeToTag_updates!]!
+  ): [_RecipeToTag_mutation_response]
 }
 
 """column ordering options"""

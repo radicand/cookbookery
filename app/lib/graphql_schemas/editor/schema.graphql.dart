@@ -2504,6 +2504,157 @@ class _CopyWithStubImpl$Input$File_set_input<TRes>
       _res;
 }
 
+class Input$File_updates {
+  factory Input$File_updates({
+    Input$File_set_input? $_set,
+    required Input$File_bool_exp where,
+  }) =>
+      Input$File_updates._({
+        if ($_set != null) r'_set': $_set,
+        r'where': where,
+      });
+
+  Input$File_updates._(this._$data);
+
+  factory Input$File_updates.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('_set')) {
+      final l$$_set = data['_set'];
+      result$data['_set'] = l$$_set == null
+          ? null
+          : Input$File_set_input.fromJson((l$$_set as Map<String, dynamic>));
+    }
+    final l$where = data['where'];
+    result$data['where'] =
+        Input$File_bool_exp.fromJson((l$where as Map<String, dynamic>));
+    return Input$File_updates._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$File_set_input? get $_set => (_$data['_set'] as Input$File_set_input?);
+  Input$File_bool_exp get where => (_$data['where'] as Input$File_bool_exp);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('_set')) {
+      final l$$_set = $_set;
+      result$data['_set'] = l$$_set?.toJson();
+    }
+    final l$where = where;
+    result$data['where'] = l$where.toJson();
+    return result$data;
+  }
+
+  CopyWith$Input$File_updates<Input$File_updates> get copyWith =>
+      CopyWith$Input$File_updates(
+        this,
+        (i) => i,
+      );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$File_updates) || runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$$_set = $_set;
+    final lOther$$_set = other.$_set;
+    if (_$data.containsKey('_set') != other._$data.containsKey('_set')) {
+      return false;
+    }
+    if (l$$_set != lOther$$_set) {
+      return false;
+    }
+    final l$where = where;
+    final lOther$where = other.where;
+    if (l$where != lOther$where) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$$_set = $_set;
+    final l$where = where;
+    return Object.hashAll([
+      _$data.containsKey('_set') ? l$$_set : const {},
+      l$where,
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$File_updates<TRes> {
+  factory CopyWith$Input$File_updates(
+    Input$File_updates instance,
+    TRes Function(Input$File_updates) then,
+  ) = _CopyWithImpl$Input$File_updates;
+
+  factory CopyWith$Input$File_updates.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_updates;
+
+  TRes call({
+    Input$File_set_input? $_set,
+    Input$File_bool_exp? where,
+  });
+  CopyWith$Input$File_set_input<TRes> get $_set;
+  CopyWith$Input$File_bool_exp<TRes> get where;
+}
+
+class _CopyWithImpl$Input$File_updates<TRes>
+    implements CopyWith$Input$File_updates<TRes> {
+  _CopyWithImpl$Input$File_updates(
+    this._instance,
+    this._then,
+  );
+
+  final Input$File_updates _instance;
+
+  final TRes Function(Input$File_updates) _then;
+
+  static const _undefined = {};
+
+  TRes call({
+    Object? $_set = _undefined,
+    Object? where = _undefined,
+  }) =>
+      _then(Input$File_updates._({
+        ..._instance._$data,
+        if ($_set != _undefined) '_set': ($_set as Input$File_set_input?),
+        if (where != _undefined && where != null)
+          'where': (where as Input$File_bool_exp),
+      }));
+  CopyWith$Input$File_set_input<TRes> get $_set {
+    final local$$_set = _instance.$_set;
+    return local$$_set == null
+        ? CopyWith$Input$File_set_input.stub(_then(_instance))
+        : CopyWith$Input$File_set_input(local$$_set, (e) => call($_set: e));
+  }
+
+  CopyWith$Input$File_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return CopyWith$Input$File_bool_exp(local$where, (e) => call(where: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$File_updates<TRes>
+    implements CopyWith$Input$File_updates<TRes> {
+  _CopyWithStubImpl$Input$File_updates(this._res);
+
+  TRes _res;
+
+  call({
+    Input$File_set_input? $_set,
+    Input$File_bool_exp? where,
+  }) =>
+      _res;
+  CopyWith$Input$File_set_input<TRes> get $_set =>
+      CopyWith$Input$File_set_input.stub(_res);
+  CopyWith$Input$File_bool_exp<TRes> get where =>
+      CopyWith$Input$File_bool_exp.stub(_res);
+}
+
 class Input$IngredientUnit_aggregate_order_by {
   factory Input$IngredientUnit_aggregate_order_by({
     Input$IngredientUnit_avg_order_by? avg,
@@ -6576,6 +6727,205 @@ class _CopyWithStubImpl$Input$IngredientUnit_sum_order_by<TRes>
     Enum$order_by? order,
   }) =>
       _res;
+}
+
+class Input$IngredientUnit_updates {
+  factory Input$IngredientUnit_updates({
+    Input$IngredientUnit_inc_input? $_inc,
+    Input$IngredientUnit_set_input? $_set,
+    required Input$IngredientUnit_bool_exp where,
+  }) =>
+      Input$IngredientUnit_updates._({
+        if ($_inc != null) r'_inc': $_inc,
+        if ($_set != null) r'_set': $_set,
+        r'where': where,
+      });
+
+  Input$IngredientUnit_updates._(this._$data);
+
+  factory Input$IngredientUnit_updates.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('_inc')) {
+      final l$$_inc = data['_inc'];
+      result$data['_inc'] = l$$_inc == null
+          ? null
+          : Input$IngredientUnit_inc_input.fromJson(
+              (l$$_inc as Map<String, dynamic>));
+    }
+    if (data.containsKey('_set')) {
+      final l$$_set = data['_set'];
+      result$data['_set'] = l$$_set == null
+          ? null
+          : Input$IngredientUnit_set_input.fromJson(
+              (l$$_set as Map<String, dynamic>));
+    }
+    final l$where = data['where'];
+    result$data['where'] = Input$IngredientUnit_bool_exp.fromJson(
+        (l$where as Map<String, dynamic>));
+    return Input$IngredientUnit_updates._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$IngredientUnit_inc_input? get $_inc =>
+      (_$data['_inc'] as Input$IngredientUnit_inc_input?);
+  Input$IngredientUnit_set_input? get $_set =>
+      (_$data['_set'] as Input$IngredientUnit_set_input?);
+  Input$IngredientUnit_bool_exp get where =>
+      (_$data['where'] as Input$IngredientUnit_bool_exp);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('_inc')) {
+      final l$$_inc = $_inc;
+      result$data['_inc'] = l$$_inc?.toJson();
+    }
+    if (_$data.containsKey('_set')) {
+      final l$$_set = $_set;
+      result$data['_set'] = l$$_set?.toJson();
+    }
+    final l$where = where;
+    result$data['where'] = l$where.toJson();
+    return result$data;
+  }
+
+  CopyWith$Input$IngredientUnit_updates<Input$IngredientUnit_updates>
+      get copyWith => CopyWith$Input$IngredientUnit_updates(
+            this,
+            (i) => i,
+          );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$IngredientUnit_updates) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$$_inc = $_inc;
+    final lOther$$_inc = other.$_inc;
+    if (_$data.containsKey('_inc') != other._$data.containsKey('_inc')) {
+      return false;
+    }
+    if (l$$_inc != lOther$$_inc) {
+      return false;
+    }
+    final l$$_set = $_set;
+    final lOther$$_set = other.$_set;
+    if (_$data.containsKey('_set') != other._$data.containsKey('_set')) {
+      return false;
+    }
+    if (l$$_set != lOther$$_set) {
+      return false;
+    }
+    final l$where = where;
+    final lOther$where = other.where;
+    if (l$where != lOther$where) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$$_inc = $_inc;
+    final l$$_set = $_set;
+    final l$where = where;
+    return Object.hashAll([
+      _$data.containsKey('_inc') ? l$$_inc : const {},
+      _$data.containsKey('_set') ? l$$_set : const {},
+      l$where,
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$IngredientUnit_updates<TRes> {
+  factory CopyWith$Input$IngredientUnit_updates(
+    Input$IngredientUnit_updates instance,
+    TRes Function(Input$IngredientUnit_updates) then,
+  ) = _CopyWithImpl$Input$IngredientUnit_updates;
+
+  factory CopyWith$Input$IngredientUnit_updates.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_updates;
+
+  TRes call({
+    Input$IngredientUnit_inc_input? $_inc,
+    Input$IngredientUnit_set_input? $_set,
+    Input$IngredientUnit_bool_exp? where,
+  });
+  CopyWith$Input$IngredientUnit_inc_input<TRes> get $_inc;
+  CopyWith$Input$IngredientUnit_set_input<TRes> get $_set;
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get where;
+}
+
+class _CopyWithImpl$Input$IngredientUnit_updates<TRes>
+    implements CopyWith$Input$IngredientUnit_updates<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_updates(
+    this._instance,
+    this._then,
+  );
+
+  final Input$IngredientUnit_updates _instance;
+
+  final TRes Function(Input$IngredientUnit_updates) _then;
+
+  static const _undefined = {};
+
+  TRes call({
+    Object? $_inc = _undefined,
+    Object? $_set = _undefined,
+    Object? where = _undefined,
+  }) =>
+      _then(Input$IngredientUnit_updates._({
+        ..._instance._$data,
+        if ($_inc != _undefined)
+          '_inc': ($_inc as Input$IngredientUnit_inc_input?),
+        if ($_set != _undefined)
+          '_set': ($_set as Input$IngredientUnit_set_input?),
+        if (where != _undefined && where != null)
+          'where': (where as Input$IngredientUnit_bool_exp),
+      }));
+  CopyWith$Input$IngredientUnit_inc_input<TRes> get $_inc {
+    final local$$_inc = _instance.$_inc;
+    return local$$_inc == null
+        ? CopyWith$Input$IngredientUnit_inc_input.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_inc_input(
+            local$$_inc, (e) => call($_inc: e));
+  }
+
+  CopyWith$Input$IngredientUnit_set_input<TRes> get $_set {
+    final local$$_set = _instance.$_set;
+    return local$$_set == null
+        ? CopyWith$Input$IngredientUnit_set_input.stub(_then(_instance))
+        : CopyWith$Input$IngredientUnit_set_input(
+            local$$_set, (e) => call($_set: e));
+  }
+
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return CopyWith$Input$IngredientUnit_bool_exp(
+        local$where, (e) => call(where: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_updates<TRes>
+    implements CopyWith$Input$IngredientUnit_updates<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_updates(this._res);
+
+  TRes _res;
+
+  call({
+    Input$IngredientUnit_inc_input? $_inc,
+    Input$IngredientUnit_set_input? $_set,
+    Input$IngredientUnit_bool_exp? where,
+  }) =>
+      _res;
+  CopyWith$Input$IngredientUnit_inc_input<TRes> get $_inc =>
+      CopyWith$Input$IngredientUnit_inc_input.stub(_res);
+  CopyWith$Input$IngredientUnit_set_input<TRes> get $_set =>
+      CopyWith$Input$IngredientUnit_set_input.stub(_res);
+  CopyWith$Input$IngredientUnit_bool_exp<TRes> get where =>
+      CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
 }
 
 class Input$IngredientUnit_var_pop_order_by {
@@ -13491,6 +13841,205 @@ class _CopyWithStubImpl$Input$RecipeSection_sum_order_by<TRes>
       _res;
 }
 
+class Input$RecipeSection_updates {
+  factory Input$RecipeSection_updates({
+    Input$RecipeSection_inc_input? $_inc,
+    Input$RecipeSection_set_input? $_set,
+    required Input$RecipeSection_bool_exp where,
+  }) =>
+      Input$RecipeSection_updates._({
+        if ($_inc != null) r'_inc': $_inc,
+        if ($_set != null) r'_set': $_set,
+        r'where': where,
+      });
+
+  Input$RecipeSection_updates._(this._$data);
+
+  factory Input$RecipeSection_updates.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('_inc')) {
+      final l$$_inc = data['_inc'];
+      result$data['_inc'] = l$$_inc == null
+          ? null
+          : Input$RecipeSection_inc_input.fromJson(
+              (l$$_inc as Map<String, dynamic>));
+    }
+    if (data.containsKey('_set')) {
+      final l$$_set = data['_set'];
+      result$data['_set'] = l$$_set == null
+          ? null
+          : Input$RecipeSection_set_input.fromJson(
+              (l$$_set as Map<String, dynamic>));
+    }
+    final l$where = data['where'];
+    result$data['where'] = Input$RecipeSection_bool_exp.fromJson(
+        (l$where as Map<String, dynamic>));
+    return Input$RecipeSection_updates._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$RecipeSection_inc_input? get $_inc =>
+      (_$data['_inc'] as Input$RecipeSection_inc_input?);
+  Input$RecipeSection_set_input? get $_set =>
+      (_$data['_set'] as Input$RecipeSection_set_input?);
+  Input$RecipeSection_bool_exp get where =>
+      (_$data['where'] as Input$RecipeSection_bool_exp);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('_inc')) {
+      final l$$_inc = $_inc;
+      result$data['_inc'] = l$$_inc?.toJson();
+    }
+    if (_$data.containsKey('_set')) {
+      final l$$_set = $_set;
+      result$data['_set'] = l$$_set?.toJson();
+    }
+    final l$where = where;
+    result$data['where'] = l$where.toJson();
+    return result$data;
+  }
+
+  CopyWith$Input$RecipeSection_updates<Input$RecipeSection_updates>
+      get copyWith => CopyWith$Input$RecipeSection_updates(
+            this,
+            (i) => i,
+          );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$RecipeSection_updates) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$$_inc = $_inc;
+    final lOther$$_inc = other.$_inc;
+    if (_$data.containsKey('_inc') != other._$data.containsKey('_inc')) {
+      return false;
+    }
+    if (l$$_inc != lOther$$_inc) {
+      return false;
+    }
+    final l$$_set = $_set;
+    final lOther$$_set = other.$_set;
+    if (_$data.containsKey('_set') != other._$data.containsKey('_set')) {
+      return false;
+    }
+    if (l$$_set != lOther$$_set) {
+      return false;
+    }
+    final l$where = where;
+    final lOther$where = other.where;
+    if (l$where != lOther$where) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$$_inc = $_inc;
+    final l$$_set = $_set;
+    final l$where = where;
+    return Object.hashAll([
+      _$data.containsKey('_inc') ? l$$_inc : const {},
+      _$data.containsKey('_set') ? l$$_set : const {},
+      l$where,
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$RecipeSection_updates<TRes> {
+  factory CopyWith$Input$RecipeSection_updates(
+    Input$RecipeSection_updates instance,
+    TRes Function(Input$RecipeSection_updates) then,
+  ) = _CopyWithImpl$Input$RecipeSection_updates;
+
+  factory CopyWith$Input$RecipeSection_updates.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_updates;
+
+  TRes call({
+    Input$RecipeSection_inc_input? $_inc,
+    Input$RecipeSection_set_input? $_set,
+    Input$RecipeSection_bool_exp? where,
+  });
+  CopyWith$Input$RecipeSection_inc_input<TRes> get $_inc;
+  CopyWith$Input$RecipeSection_set_input<TRes> get $_set;
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get where;
+}
+
+class _CopyWithImpl$Input$RecipeSection_updates<TRes>
+    implements CopyWith$Input$RecipeSection_updates<TRes> {
+  _CopyWithImpl$Input$RecipeSection_updates(
+    this._instance,
+    this._then,
+  );
+
+  final Input$RecipeSection_updates _instance;
+
+  final TRes Function(Input$RecipeSection_updates) _then;
+
+  static const _undefined = {};
+
+  TRes call({
+    Object? $_inc = _undefined,
+    Object? $_set = _undefined,
+    Object? where = _undefined,
+  }) =>
+      _then(Input$RecipeSection_updates._({
+        ..._instance._$data,
+        if ($_inc != _undefined)
+          '_inc': ($_inc as Input$RecipeSection_inc_input?),
+        if ($_set != _undefined)
+          '_set': ($_set as Input$RecipeSection_set_input?),
+        if (where != _undefined && where != null)
+          'where': (where as Input$RecipeSection_bool_exp),
+      }));
+  CopyWith$Input$RecipeSection_inc_input<TRes> get $_inc {
+    final local$$_inc = _instance.$_inc;
+    return local$$_inc == null
+        ? CopyWith$Input$RecipeSection_inc_input.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_inc_input(
+            local$$_inc, (e) => call($_inc: e));
+  }
+
+  CopyWith$Input$RecipeSection_set_input<TRes> get $_set {
+    final local$$_set = _instance.$_set;
+    return local$$_set == null
+        ? CopyWith$Input$RecipeSection_set_input.stub(_then(_instance))
+        : CopyWith$Input$RecipeSection_set_input(
+            local$$_set, (e) => call($_set: e));
+  }
+
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return CopyWith$Input$RecipeSection_bool_exp(
+        local$where, (e) => call(where: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_updates<TRes>
+    implements CopyWith$Input$RecipeSection_updates<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_updates(this._res);
+
+  TRes _res;
+
+  call({
+    Input$RecipeSection_inc_input? $_inc,
+    Input$RecipeSection_set_input? $_set,
+    Input$RecipeSection_bool_exp? where,
+  }) =>
+      _res;
+  CopyWith$Input$RecipeSection_inc_input<TRes> get $_inc =>
+      CopyWith$Input$RecipeSection_inc_input.stub(_res);
+  CopyWith$Input$RecipeSection_set_input<TRes> get $_set =>
+      CopyWith$Input$RecipeSection_set_input.stub(_res);
+  CopyWith$Input$RecipeSection_bool_exp<TRes> get where =>
+      CopyWith$Input$RecipeSection_bool_exp.stub(_res);
+}
+
 class Input$RecipeSection_var_pop_order_by {
   factory Input$RecipeSection_var_pop_order_by({
     Enum$order_by? cookTimeMinutes,
@@ -17123,6 +17672,158 @@ class _CopyWithStubImpl$Input$Recipe_set_input<TRes>
       _res;
 }
 
+class Input$Recipe_updates {
+  factory Input$Recipe_updates({
+    Input$Recipe_set_input? $_set,
+    required Input$Recipe_bool_exp where,
+  }) =>
+      Input$Recipe_updates._({
+        if ($_set != null) r'_set': $_set,
+        r'where': where,
+      });
+
+  Input$Recipe_updates._(this._$data);
+
+  factory Input$Recipe_updates.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('_set')) {
+      final l$$_set = data['_set'];
+      result$data['_set'] = l$$_set == null
+          ? null
+          : Input$Recipe_set_input.fromJson((l$$_set as Map<String, dynamic>));
+    }
+    final l$where = data['where'];
+    result$data['where'] =
+        Input$Recipe_bool_exp.fromJson((l$where as Map<String, dynamic>));
+    return Input$Recipe_updates._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$Recipe_set_input? get $_set =>
+      (_$data['_set'] as Input$Recipe_set_input?);
+  Input$Recipe_bool_exp get where => (_$data['where'] as Input$Recipe_bool_exp);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('_set')) {
+      final l$$_set = $_set;
+      result$data['_set'] = l$$_set?.toJson();
+    }
+    final l$where = where;
+    result$data['where'] = l$where.toJson();
+    return result$data;
+  }
+
+  CopyWith$Input$Recipe_updates<Input$Recipe_updates> get copyWith =>
+      CopyWith$Input$Recipe_updates(
+        this,
+        (i) => i,
+      );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Recipe_updates) || runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$$_set = $_set;
+    final lOther$$_set = other.$_set;
+    if (_$data.containsKey('_set') != other._$data.containsKey('_set')) {
+      return false;
+    }
+    if (l$$_set != lOther$$_set) {
+      return false;
+    }
+    final l$where = where;
+    final lOther$where = other.where;
+    if (l$where != lOther$where) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$$_set = $_set;
+    final l$where = where;
+    return Object.hashAll([
+      _$data.containsKey('_set') ? l$$_set : const {},
+      l$where,
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Recipe_updates<TRes> {
+  factory CopyWith$Input$Recipe_updates(
+    Input$Recipe_updates instance,
+    TRes Function(Input$Recipe_updates) then,
+  ) = _CopyWithImpl$Input$Recipe_updates;
+
+  factory CopyWith$Input$Recipe_updates.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_updates;
+
+  TRes call({
+    Input$Recipe_set_input? $_set,
+    Input$Recipe_bool_exp? where,
+  });
+  CopyWith$Input$Recipe_set_input<TRes> get $_set;
+  CopyWith$Input$Recipe_bool_exp<TRes> get where;
+}
+
+class _CopyWithImpl$Input$Recipe_updates<TRes>
+    implements CopyWith$Input$Recipe_updates<TRes> {
+  _CopyWithImpl$Input$Recipe_updates(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Recipe_updates _instance;
+
+  final TRes Function(Input$Recipe_updates) _then;
+
+  static const _undefined = {};
+
+  TRes call({
+    Object? $_set = _undefined,
+    Object? where = _undefined,
+  }) =>
+      _then(Input$Recipe_updates._({
+        ..._instance._$data,
+        if ($_set != _undefined) '_set': ($_set as Input$Recipe_set_input?),
+        if (where != _undefined && where != null)
+          'where': (where as Input$Recipe_bool_exp),
+      }));
+  CopyWith$Input$Recipe_set_input<TRes> get $_set {
+    final local$$_set = _instance.$_set;
+    return local$$_set == null
+        ? CopyWith$Input$Recipe_set_input.stub(_then(_instance))
+        : CopyWith$Input$Recipe_set_input(local$$_set, (e) => call($_set: e));
+  }
+
+  CopyWith$Input$Recipe_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return CopyWith$Input$Recipe_bool_exp(local$where, (e) => call(where: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$Recipe_updates<TRes>
+    implements CopyWith$Input$Recipe_updates<TRes> {
+  _CopyWithStubImpl$Input$Recipe_updates(this._res);
+
+  TRes _res;
+
+  call({
+    Input$Recipe_set_input? $_set,
+    Input$Recipe_bool_exp? where,
+  }) =>
+      _res;
+  CopyWith$Input$Recipe_set_input<TRes> get $_set =>
+      CopyWith$Input$Recipe_set_input.stub(_res);
+  CopyWith$Input$Recipe_bool_exp<TRes> get where =>
+      CopyWith$Input$Recipe_bool_exp.stub(_res);
+}
+
 class Input$Step_aggregate_order_by {
   factory Input$Step_aggregate_order_by({
     Input$Step_avg_order_by? avg,
@@ -20480,6 +21181,194 @@ class _CopyWithStubImpl$Input$Step_sum_order_by<TRes>
   TRes _res;
 
   call({Enum$order_by? order}) => _res;
+}
+
+class Input$Step_updates {
+  factory Input$Step_updates({
+    Input$Step_inc_input? $_inc,
+    Input$Step_set_input? $_set,
+    required Input$Step_bool_exp where,
+  }) =>
+      Input$Step_updates._({
+        if ($_inc != null) r'_inc': $_inc,
+        if ($_set != null) r'_set': $_set,
+        r'where': where,
+      });
+
+  Input$Step_updates._(this._$data);
+
+  factory Input$Step_updates.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('_inc')) {
+      final l$$_inc = data['_inc'];
+      result$data['_inc'] = l$$_inc == null
+          ? null
+          : Input$Step_inc_input.fromJson((l$$_inc as Map<String, dynamic>));
+    }
+    if (data.containsKey('_set')) {
+      final l$$_set = data['_set'];
+      result$data['_set'] = l$$_set == null
+          ? null
+          : Input$Step_set_input.fromJson((l$$_set as Map<String, dynamic>));
+    }
+    final l$where = data['where'];
+    result$data['where'] =
+        Input$Step_bool_exp.fromJson((l$where as Map<String, dynamic>));
+    return Input$Step_updates._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$Step_inc_input? get $_inc => (_$data['_inc'] as Input$Step_inc_input?);
+  Input$Step_set_input? get $_set => (_$data['_set'] as Input$Step_set_input?);
+  Input$Step_bool_exp get where => (_$data['where'] as Input$Step_bool_exp);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('_inc')) {
+      final l$$_inc = $_inc;
+      result$data['_inc'] = l$$_inc?.toJson();
+    }
+    if (_$data.containsKey('_set')) {
+      final l$$_set = $_set;
+      result$data['_set'] = l$$_set?.toJson();
+    }
+    final l$where = where;
+    result$data['where'] = l$where.toJson();
+    return result$data;
+  }
+
+  CopyWith$Input$Step_updates<Input$Step_updates> get copyWith =>
+      CopyWith$Input$Step_updates(
+        this,
+        (i) => i,
+      );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Step_updates) || runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$$_inc = $_inc;
+    final lOther$$_inc = other.$_inc;
+    if (_$data.containsKey('_inc') != other._$data.containsKey('_inc')) {
+      return false;
+    }
+    if (l$$_inc != lOther$$_inc) {
+      return false;
+    }
+    final l$$_set = $_set;
+    final lOther$$_set = other.$_set;
+    if (_$data.containsKey('_set') != other._$data.containsKey('_set')) {
+      return false;
+    }
+    if (l$$_set != lOther$$_set) {
+      return false;
+    }
+    final l$where = where;
+    final lOther$where = other.where;
+    if (l$where != lOther$where) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$$_inc = $_inc;
+    final l$$_set = $_set;
+    final l$where = where;
+    return Object.hashAll([
+      _$data.containsKey('_inc') ? l$$_inc : const {},
+      _$data.containsKey('_set') ? l$$_set : const {},
+      l$where,
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Step_updates<TRes> {
+  factory CopyWith$Input$Step_updates(
+    Input$Step_updates instance,
+    TRes Function(Input$Step_updates) then,
+  ) = _CopyWithImpl$Input$Step_updates;
+
+  factory CopyWith$Input$Step_updates.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_updates;
+
+  TRes call({
+    Input$Step_inc_input? $_inc,
+    Input$Step_set_input? $_set,
+    Input$Step_bool_exp? where,
+  });
+  CopyWith$Input$Step_inc_input<TRes> get $_inc;
+  CopyWith$Input$Step_set_input<TRes> get $_set;
+  CopyWith$Input$Step_bool_exp<TRes> get where;
+}
+
+class _CopyWithImpl$Input$Step_updates<TRes>
+    implements CopyWith$Input$Step_updates<TRes> {
+  _CopyWithImpl$Input$Step_updates(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Step_updates _instance;
+
+  final TRes Function(Input$Step_updates) _then;
+
+  static const _undefined = {};
+
+  TRes call({
+    Object? $_inc = _undefined,
+    Object? $_set = _undefined,
+    Object? where = _undefined,
+  }) =>
+      _then(Input$Step_updates._({
+        ..._instance._$data,
+        if ($_inc != _undefined) '_inc': ($_inc as Input$Step_inc_input?),
+        if ($_set != _undefined) '_set': ($_set as Input$Step_set_input?),
+        if (where != _undefined && where != null)
+          'where': (where as Input$Step_bool_exp),
+      }));
+  CopyWith$Input$Step_inc_input<TRes> get $_inc {
+    final local$$_inc = _instance.$_inc;
+    return local$$_inc == null
+        ? CopyWith$Input$Step_inc_input.stub(_then(_instance))
+        : CopyWith$Input$Step_inc_input(local$$_inc, (e) => call($_inc: e));
+  }
+
+  CopyWith$Input$Step_set_input<TRes> get $_set {
+    final local$$_set = _instance.$_set;
+    return local$$_set == null
+        ? CopyWith$Input$Step_set_input.stub(_then(_instance))
+        : CopyWith$Input$Step_set_input(local$$_set, (e) => call($_set: e));
+  }
+
+  CopyWith$Input$Step_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return CopyWith$Input$Step_bool_exp(local$where, (e) => call(where: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$Step_updates<TRes>
+    implements CopyWith$Input$Step_updates<TRes> {
+  _CopyWithStubImpl$Input$Step_updates(this._res);
+
+  TRes _res;
+
+  call({
+    Input$Step_inc_input? $_inc,
+    Input$Step_set_input? $_set,
+    Input$Step_bool_exp? where,
+  }) =>
+      _res;
+  CopyWith$Input$Step_inc_input<TRes> get $_inc =>
+      CopyWith$Input$Step_inc_input.stub(_res);
+  CopyWith$Input$Step_set_input<TRes> get $_set =>
+      CopyWith$Input$Step_set_input.stub(_res);
+  CopyWith$Input$Step_bool_exp<TRes> get where =>
+      CopyWith$Input$Step_bool_exp.stub(_res);
 }
 
 class Input$Step_var_pop_order_by {
@@ -27017,6 +27906,164 @@ class _CopyWithStubImpl$Input$_RecipeToTag_set_input<TRes>
     String? B,
   }) =>
       _res;
+}
+
+class Input$_RecipeToTag_updates {
+  factory Input$_RecipeToTag_updates({
+    Input$_RecipeToTag_set_input? $_set,
+    required Input$_RecipeToTag_bool_exp where,
+  }) =>
+      Input$_RecipeToTag_updates._({
+        if ($_set != null) r'_set': $_set,
+        r'where': where,
+      });
+
+  Input$_RecipeToTag_updates._(this._$data);
+
+  factory Input$_RecipeToTag_updates.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('_set')) {
+      final l$$_set = data['_set'];
+      result$data['_set'] = l$$_set == null
+          ? null
+          : Input$_RecipeToTag_set_input.fromJson(
+              (l$$_set as Map<String, dynamic>));
+    }
+    final l$where = data['where'];
+    result$data['where'] =
+        Input$_RecipeToTag_bool_exp.fromJson((l$where as Map<String, dynamic>));
+    return Input$_RecipeToTag_updates._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$_RecipeToTag_set_input? get $_set =>
+      (_$data['_set'] as Input$_RecipeToTag_set_input?);
+  Input$_RecipeToTag_bool_exp get where =>
+      (_$data['where'] as Input$_RecipeToTag_bool_exp);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('_set')) {
+      final l$$_set = $_set;
+      result$data['_set'] = l$$_set?.toJson();
+    }
+    final l$where = where;
+    result$data['where'] = l$where.toJson();
+    return result$data;
+  }
+
+  CopyWith$Input$_RecipeToTag_updates<Input$_RecipeToTag_updates>
+      get copyWith => CopyWith$Input$_RecipeToTag_updates(
+            this,
+            (i) => i,
+          );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$_RecipeToTag_updates) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$$_set = $_set;
+    final lOther$$_set = other.$_set;
+    if (_$data.containsKey('_set') != other._$data.containsKey('_set')) {
+      return false;
+    }
+    if (l$$_set != lOther$$_set) {
+      return false;
+    }
+    final l$where = where;
+    final lOther$where = other.where;
+    if (l$where != lOther$where) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$$_set = $_set;
+    final l$where = where;
+    return Object.hashAll([
+      _$data.containsKey('_set') ? l$$_set : const {},
+      l$where,
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$_RecipeToTag_updates<TRes> {
+  factory CopyWith$Input$_RecipeToTag_updates(
+    Input$_RecipeToTag_updates instance,
+    TRes Function(Input$_RecipeToTag_updates) then,
+  ) = _CopyWithImpl$Input$_RecipeToTag_updates;
+
+  factory CopyWith$Input$_RecipeToTag_updates.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_updates;
+
+  TRes call({
+    Input$_RecipeToTag_set_input? $_set,
+    Input$_RecipeToTag_bool_exp? where,
+  });
+  CopyWith$Input$_RecipeToTag_set_input<TRes> get $_set;
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get where;
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_updates<TRes>
+    implements CopyWith$Input$_RecipeToTag_updates<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_updates(
+    this._instance,
+    this._then,
+  );
+
+  final Input$_RecipeToTag_updates _instance;
+
+  final TRes Function(Input$_RecipeToTag_updates) _then;
+
+  static const _undefined = {};
+
+  TRes call({
+    Object? $_set = _undefined,
+    Object? where = _undefined,
+  }) =>
+      _then(Input$_RecipeToTag_updates._({
+        ..._instance._$data,
+        if ($_set != _undefined)
+          '_set': ($_set as Input$_RecipeToTag_set_input?),
+        if (where != _undefined && where != null)
+          'where': (where as Input$_RecipeToTag_bool_exp),
+      }));
+  CopyWith$Input$_RecipeToTag_set_input<TRes> get $_set {
+    final local$$_set = _instance.$_set;
+    return local$$_set == null
+        ? CopyWith$Input$_RecipeToTag_set_input.stub(_then(_instance))
+        : CopyWith$Input$_RecipeToTag_set_input(
+            local$$_set, (e) => call($_set: e));
+  }
+
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get where {
+    final local$where = _instance.where;
+    return CopyWith$Input$_RecipeToTag_bool_exp(
+        local$where, (e) => call(where: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_updates<TRes>
+    implements CopyWith$Input$_RecipeToTag_updates<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_updates(this._res);
+
+  TRes _res;
+
+  call({
+    Input$_RecipeToTag_set_input? $_set,
+    Input$_RecipeToTag_bool_exp? where,
+  }) =>
+      _res;
+  CopyWith$Input$_RecipeToTag_set_input<TRes> get $_set =>
+      CopyWith$Input$_RecipeToTag_set_input.stub(_res);
+  CopyWith$Input$_RecipeToTag_bool_exp<TRes> get where =>
+      CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
 }
 
 class Input$bytea_comparison_exp {
