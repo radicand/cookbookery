@@ -46,8 +46,8 @@ jobs:
 
       - uses: actions/setup-java@v3
         with:
-          distribution: "temurin"
-          java-version: "19"
+          distribution: "azul"
+          java-version: "11"
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
@@ -84,7 +84,7 @@ jobs:
       - name: Download bundle dependencies
         working-directory: app/android
         run: |
-          gem install bundler:2.0.2
+          gem install bundler:2.3.26
           bundle config path vendor/bundle
           bundle install
 
