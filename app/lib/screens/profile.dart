@@ -22,8 +22,7 @@ class ProfileScreen extends StatelessWidget {
       children: <Widget>[
         Observer(
           builder: (_) {
-            return Text(
-                'Hello ${cookbookStore.user?.name}! You have ${cookbookStore.idToken?.httpsHasuraIoJwtClaims.xHasuraAllowedRoles.join(',')} profile');
+            return Text('Hello ${cookbookStore.user?.name}!');
           },
         ),
         Padding(

@@ -53,3 +53,7 @@ coverage
 screenshots/
 build/
 vendor/
+
+Runner.app.*.zip
+*.ipa
+report.xml

@@ -11,4 +11,4 @@ PRODUCT_NAME = Cookbook
 PRODUCT_BUNDLE_IDENTIFIER = org.radicand.app.cookbook
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2022 org.radicand.app. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2022 org.radicand.app.cookbook. All rights reserved.

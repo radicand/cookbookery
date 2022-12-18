@@ -8,48 +8,71 @@ import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 import 'package:graphql_flutter/graphql_flutter.dart' as graphql_flutter;
-import 'package:json_annotation/json_annotation.dart';
 import 'recipePreviewFragment.graphql.dart';
 import 'schema.graphql.dart';
-part 'insertRecipe.graphql.g.dart';
 
-@JsonSerializable(explicitToJson: true)
 class Variables$Mutation$insertRecipe {
-  Variables$Mutation$insertRecipe({required this.object});
+  factory Variables$Mutation$insertRecipe(
+          {required Input$Recipe_insert_input object}) =>
+      Variables$Mutation$insertRecipe._({
+        r'object': object,
+      });
+
+  Variables$Mutation$insertRecipe._(this._$data);
+
+  factory Variables$Mutation$insertRecipe.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$object = data['object'];
+    result$data['object'] =
+        Input$Recipe_insert_input.fromJson((l$object as Map<String, dynamic>));
+    return Variables$Mutation$insertRecipe._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$Recipe_insert_input get object =>
+      (_$data['object'] as Input$Recipe_insert_input);
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$object = object;
+    result$data['object'] = l$object.toJson();
+    return result$data;
+  }
+
+  CopyWith$Variables$Mutation$insertRecipe<Variables$Mutation$insertRecipe>
+      get copyWith => CopyWith$Variables$Mutation$insertRecipe(
+            this,
+            (i) => i,
+          );
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Variables$Mutation$insertRecipe) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$object = object;
+    final lOther$object = other.object;
+    if (l$object != lOther$object) {
+      return false;
+    }
+    return true;
+  }
 
   @override
-  factory Variables$Mutation$insertRecipe.fromJson(Map<String, dynamic> json) =>
-      _$Variables$Mutation$insertRecipeFromJson(json);
-
-  final Input$Recipe_insert_input object;
-
-  Map<String, dynamic> toJson() =>
-      _$Variables$Mutation$insertRecipeToJson(this);
   int get hashCode {
     final l$object = object;
     return Object.hashAll([l$object]);
   }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Variables$Mutation$insertRecipe) ||
-        runtimeType != other.runtimeType) return false;
-    final l$object = object;
-    final lOther$object = other.object;
-    if (l$object != lOther$object) return false;
-    return true;
-  }
-
-  CopyWith$Variables$Mutation$insertRecipe<Variables$Mutation$insertRecipe>
-      get copyWith => CopyWith$Variables$Mutation$insertRecipe(this, (i) => i);
 }
 
 abstract class CopyWith$Variables$Mutation$insertRecipe<TRes> {
   factory CopyWith$Variables$Mutation$insertRecipe(
-          Variables$Mutation$insertRecipe instance,
-          TRes Function(Variables$Mutation$insertRecipe) then) =
-      _CopyWithImpl$Variables$Mutation$insertRecipe;
+    Variables$Mutation$insertRecipe instance,
+    TRes Function(Variables$Mutation$insertRecipe) then,
+  ) = _CopyWithImpl$Variables$Mutation$insertRecipe;
 
   factory CopyWith$Variables$Mutation$insertRecipe.stub(TRes res) =
       _CopyWithStubImpl$Variables$Mutation$insertRecipe;
@@ -59,7 +82,10 @@ abstract class CopyWith$Variables$Mutation$insertRecipe<TRes> {
 
 class _CopyWithImpl$Variables$Mutation$insertRecipe<TRes>
     implements CopyWith$Variables$Mutation$insertRecipe<TRes> {
-  _CopyWithImpl$Variables$Mutation$insertRecipe(this._instance, this._then);
+  _CopyWithImpl$Variables$Mutation$insertRecipe(
+    this._instance,
+    this._then,
+  );
 
   final Variables$Mutation$insertRecipe _instance;
 
@@ -67,11 +93,12 @@ class _CopyWithImpl$Variables$Mutation$insertRecipe<TRes>
 
   static const _undefined = {};
 
-  TRes call({Object? object = _undefined}) => _then(
-      Variables$Mutation$insertRecipe(
-          object: object == _undefined || object == null
-              ? _instance.object
-              : (object as Input$Recipe_insert_input)));
+  TRes call({Object? object = _undefined}) =>
+      _then(Variables$Mutation$insertRecipe._({
+        ..._instance._$data,
+        if (object != _undefined && object != null)
+          'object': (object as Input$Recipe_insert_input),
+      }));
 }
 
 class _CopyWithStubImpl$Variables$Mutation$insertRecipe<TRes>
@@ -83,62 +110,99 @@ class _CopyWithStubImpl$Variables$Mutation$insertRecipe<TRes>
   call({Input$Recipe_insert_input? object}) => _res;
 }
 
-@JsonSerializable(explicitToJson: true)
 class Mutation$insertRecipe {
-  Mutation$insertRecipe({this.insert_Recipe_one, required this.$__typename});
+  Mutation$insertRecipe({
+    this.insert_Recipe_one,
+    required this.$__typename,
+  });
 
-  @override
-  factory Mutation$insertRecipe.fromJson(Map<String, dynamic> json) =>
-      _$Mutation$insertRecipeFromJson(json);
+  factory Mutation$insertRecipe.fromJson(Map<String, dynamic> json) {
+    final l$insert_Recipe_one = json['insert_Recipe_one'];
+    final l$$__typename = json['__typename'];
+    return Mutation$insertRecipe(
+      insert_Recipe_one: l$insert_Recipe_one == null
+          ? null
+          : Fragment$RecipePreviewFields.fromJson(
+              (l$insert_Recipe_one as Map<String, dynamic>)),
+      $__typename: (l$$__typename as String),
+    );
+  }
 
   final Fragment$RecipePreviewFields? insert_Recipe_one;
 
-  @JsonKey(name: '__typename')
   final String $__typename;
 
-  Map<String, dynamic> toJson() => _$Mutation$insertRecipeToJson(this);
+  Map<String, dynamic> toJson() {
+    final _resultData = <String, dynamic>{};
+    final l$insert_Recipe_one = insert_Recipe_one;
+    _resultData['insert_Recipe_one'] = l$insert_Recipe_one?.toJson();
+    final l$$__typename = $__typename;
+    _resultData['__typename'] = l$$__typename;
+    return _resultData;
+  }
+
+  @override
   int get hashCode {
     final l$insert_Recipe_one = insert_Recipe_one;
     final l$$__typename = $__typename;
-    return Object.hashAll([l$insert_Recipe_one, l$$__typename]);
+    return Object.hashAll([
+      l$insert_Recipe_one,
+      l$$__typename,
+    ]);
   }
 
   @override
   bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (!(other is Mutation$insertRecipe) || runtimeType != other.runtimeType)
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Mutation$insertRecipe) || runtimeType != other.runtimeType) {
       return false;
+    }
     final l$insert_Recipe_one = insert_Recipe_one;
     final lOther$insert_Recipe_one = other.insert_Recipe_one;
-    if (l$insert_Recipe_one != lOther$insert_Recipe_one) return false;
+    if (l$insert_Recipe_one != lOther$insert_Recipe_one) {
+      return false;
+    }
     final l$$__typename = $__typename;
     final lOther$$__typename = other.$__typename;
-    if (l$$__typename != lOther$$__typename) return false;
+    if (l$$__typename != lOther$$__typename) {
+      return false;
+    }
     return true;
   }
 }
 
 extension UtilityExtension$Mutation$insertRecipe on Mutation$insertRecipe {
   CopyWith$Mutation$insertRecipe<Mutation$insertRecipe> get copyWith =>
-      CopyWith$Mutation$insertRecipe(this, (i) => i);
+      CopyWith$Mutation$insertRecipe(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Mutation$insertRecipe<TRes> {
-  factory CopyWith$Mutation$insertRecipe(Mutation$insertRecipe instance,
-          TRes Function(Mutation$insertRecipe) then) =
-      _CopyWithImpl$Mutation$insertRecipe;
+  factory CopyWith$Mutation$insertRecipe(
+    Mutation$insertRecipe instance,
+    TRes Function(Mutation$insertRecipe) then,
+  ) = _CopyWithImpl$Mutation$insertRecipe;
 
   factory CopyWith$Mutation$insertRecipe.stub(TRes res) =
       _CopyWithStubImpl$Mutation$insertRecipe;
 
-  TRes call(
-      {Fragment$RecipePreviewFields? insert_Recipe_one, String? $__typename});
+  TRes call({
+    Fragment$RecipePreviewFields? insert_Recipe_one,
+    String? $__typename,
+  });
   CopyWith$Fragment$RecipePreviewFields<TRes> get insert_Recipe_one;
 }
 
 class _CopyWithImpl$Mutation$insertRecipe<TRes>
     implements CopyWith$Mutation$insertRecipe<TRes> {
-  _CopyWithImpl$Mutation$insertRecipe(this._instance, this._then);
+  _CopyWithImpl$Mutation$insertRecipe(
+    this._instance,
+    this._then,
+  );
 
   final Mutation$insertRecipe _instance;
 
@@ -146,16 +210,18 @@ class _CopyWithImpl$Mutation$insertRecipe<TRes>
 
   static const _undefined = {};
 
-  TRes call(
-          {Object? insert_Recipe_one = _undefined,
-          Object? $__typename = _undefined}) =>
+  TRes call({
+    Object? insert_Recipe_one = _undefined,
+    Object? $__typename = _undefined,
+  }) =>
       _then(Mutation$insertRecipe(
-          insert_Recipe_one: insert_Recipe_one == _undefined
-              ? _instance.insert_Recipe_one
-              : (insert_Recipe_one as Fragment$RecipePreviewFields?),
-          $__typename: $__typename == _undefined || $__typename == null
-              ? _instance.$__typename
-              : ($__typename as String)));
+        insert_Recipe_one: insert_Recipe_one == _undefined
+            ? _instance.insert_Recipe_one
+            : (insert_Recipe_one as Fragment$RecipePreviewFields?),
+        $__typename: $__typename == _undefined || $__typename == null
+            ? _instance.$__typename
+            : ($__typename as String),
+      ));
   CopyWith$Fragment$RecipePreviewFields<TRes> get insert_Recipe_one {
     final local$insert_Recipe_one = _instance.insert_Recipe_one;
     return local$insert_Recipe_one == null
@@ -171,9 +237,10 @@ class _CopyWithStubImpl$Mutation$insertRecipe<TRes>
 
   TRes _res;
 
-  call(
-          {Fragment$RecipePreviewFields? insert_Recipe_one,
-          String? $__typename}) =>
+  call({
+    Fragment$RecipePreviewFields? insert_Recipe_one,
+    String? $__typename,
+  }) =>
       _res;
   CopyWith$Fragment$RecipePreviewFields<TRes> get insert_Recipe_one =>
       CopyWith$Fragment$RecipePreviewFields.stub(_res);
@@ -181,85 +248,97 @@ class _CopyWithStubImpl$Mutation$insertRecipe<TRes>
 
 const documentNodeMutationinsertRecipe = DocumentNode(definitions: [
   OperationDefinitionNode(
-      type: OperationType.mutation,
-      name: NameNode(value: 'insertRecipe'),
-      variableDefinitions: [
-        VariableDefinitionNode(
-            variable: VariableNode(name: NameNode(value: 'object')),
-            type: NamedTypeNode(
-                name: NameNode(value: 'Recipe_insert_input'), isNonNull: true),
-            defaultValue: DefaultValueNode(value: null),
-            directives: [])
-      ],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FieldNode(
-            name: NameNode(value: 'insert_Recipe_one'),
-            alias: null,
-            arguments: [
-              ArgumentNode(
-                  name: NameNode(value: 'object'),
-                  value: VariableNode(name: NameNode(value: 'object')))
-            ],
+    type: OperationType.mutation,
+    name: NameNode(value: 'insertRecipe'),
+    variableDefinitions: [
+      VariableDefinitionNode(
+        variable: VariableNode(name: NameNode(value: 'object')),
+        type: NamedTypeNode(
+          name: NameNode(value: 'Recipe_insert_input'),
+          isNonNull: true,
+        ),
+        defaultValue: DefaultValueNode(value: null),
+        directives: [],
+      )
+    ],
+    directives: [],
+    selectionSet: SelectionSetNode(selections: [
+      FieldNode(
+        name: NameNode(value: 'insert_Recipe_one'),
+        alias: null,
+        arguments: [
+          ArgumentNode(
+            name: NameNode(value: 'object'),
+            value: VariableNode(name: NameNode(value: 'object')),
+          )
+        ],
+        directives: [],
+        selectionSet: SelectionSetNode(selections: [
+          FragmentSpreadNode(
+            name: NameNode(value: 'RecipePreviewFields'),
             directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FragmentSpreadNode(
-                  name: NameNode(value: 'RecipePreviewFields'), directives: []),
-              FieldNode(
-                  name: NameNode(value: '__typename'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null)
-            ])),
-        FieldNode(
+          ),
+          FieldNode(
             name: NameNode(value: '__typename'),
             alias: null,
             arguments: [],
             directives: [],
-            selectionSet: null)
-      ])),
+            selectionSet: null,
+          ),
+        ]),
+      ),
+      FieldNode(
+        name: NameNode(value: '__typename'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+    ]),
+  ),
   fragmentDefinitionRecipePreviewFields,
 ]);
 Mutation$insertRecipe _parserFn$Mutation$insertRecipe(
         Map<String, dynamic> data) =>
     Mutation$insertRecipe.fromJson(data);
 typedef OnMutationCompleted$Mutation$insertRecipe = FutureOr<void> Function(
-    dynamic, Mutation$insertRecipe?);
+  dynamic,
+  Mutation$insertRecipe?,
+);
 
 class Options$Mutation$insertRecipe
     extends graphql.MutationOptions<Mutation$insertRecipe> {
-  Options$Mutation$insertRecipe(
-      {String? operationName,
-      required Variables$Mutation$insertRecipe variables,
-      graphql.FetchPolicy? fetchPolicy,
-      graphql.ErrorPolicy? errorPolicy,
-      graphql.CacheRereadPolicy? cacheRereadPolicy,
-      Object? optimisticResult,
-      graphql.Context? context,
-      OnMutationCompleted$Mutation$insertRecipe? onCompleted,
-      graphql.OnMutationUpdate<Mutation$insertRecipe>? update,
-      graphql.OnError? onError})
-      : onCompletedWithParsed = onCompleted,
+  Options$Mutation$insertRecipe({
+    String? operationName,
+    required Variables$Mutation$insertRecipe variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    graphql.Context? context,
+    OnMutationCompleted$Mutation$insertRecipe? onCompleted,
+    graphql.OnMutationUpdate<Mutation$insertRecipe>? update,
+    graphql.OnError? onError,
+  })  : onCompletedWithParsed = onCompleted,
         super(
-            variables: variables.toJson(),
-            operationName: operationName,
-            fetchPolicy: fetchPolicy,
-            errorPolicy: errorPolicy,
-            cacheRereadPolicy: cacheRereadPolicy,
-            optimisticResult: optimisticResult,
-            context: context,
-            onCompleted: onCompleted == null
-                ? null
-                : (data) => onCompleted(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult,
+          context: context,
+          onCompleted: onCompleted == null
+              ? null
+              : (data) => onCompleted(
                     data,
-                    data == null
-                        ? null
-                        : _parserFn$Mutation$insertRecipe(data)),
-            update: update,
-            onError: onError,
-            document: documentNodeMutationinsertRecipe,
-            parserFn: _parserFn$Mutation$insertRecipe);
+                    data == null ? null : _parserFn$Mutation$insertRecipe(data),
+                  ),
+          update: update,
+          onError: onError,
+          document: documentNodeMutationinsertRecipe,
+          parserFn: _parserFn$Mutation$insertRecipe,
+        );
 
   final OnMutationCompleted$Mutation$insertRecipe? onCompletedWithParsed;
 
@@ -268,38 +347,39 @@ class Options$Mutation$insertRecipe
         ...super.onCompleted == null
             ? super.properties
             : super.properties.where((property) => property != onCompleted),
-        onCompletedWithParsed
+        onCompletedWithParsed,
       ];
 }
 
 class WatchOptions$Mutation$insertRecipe
     extends graphql.WatchQueryOptions<Mutation$insertRecipe> {
-  WatchOptions$Mutation$insertRecipe(
-      {String? operationName,
-      required Variables$Mutation$insertRecipe variables,
-      graphql.FetchPolicy? fetchPolicy,
-      graphql.ErrorPolicy? errorPolicy,
-      graphql.CacheRereadPolicy? cacheRereadPolicy,
-      Object? optimisticResult,
-      graphql.Context? context,
-      Duration? pollInterval,
-      bool? eagerlyFetchResults,
-      bool carryForwardDataOnException = true,
-      bool fetchResults = false})
-      : super(
-            variables: variables.toJson(),
-            operationName: operationName,
-            fetchPolicy: fetchPolicy,
-            errorPolicy: errorPolicy,
-            cacheRereadPolicy: cacheRereadPolicy,
-            optimisticResult: optimisticResult,
-            context: context,
-            document: documentNodeMutationinsertRecipe,
-            pollInterval: pollInterval,
-            eagerlyFetchResults: eagerlyFetchResults,
-            carryForwardDataOnException: carryForwardDataOnException,
-            fetchResults: fetchResults,
-            parserFn: _parserFn$Mutation$insertRecipe);
+  WatchOptions$Mutation$insertRecipe({
+    String? operationName,
+    required Variables$Mutation$insertRecipe variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult,
+          context: context,
+          document: documentNodeMutationinsertRecipe,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Mutation$insertRecipe,
+        );
 }
 
 extension ClientExtension$Mutation$insertRecipe on graphql.GraphQLClient {
@@ -312,7 +392,10 @@ extension ClientExtension$Mutation$insertRecipe on graphql.GraphQLClient {
 }
 
 class Mutation$insertRecipe$HookResult {
-  Mutation$insertRecipe$HookResult(this.runMutation, this.result);
+  Mutation$insertRecipe$HookResult(
+    this.runMutation,
+    this.result,
+  );
 
   final RunMutation$Mutation$insertRecipe runMutation;
 
@@ -338,35 +421,35 @@ graphql.ObservableQuery<Mutation$insertRecipe> useWatchMutation$insertRecipe(
 
 class WidgetOptions$Mutation$insertRecipe
     extends graphql.MutationOptions<Mutation$insertRecipe> {
-  WidgetOptions$Mutation$insertRecipe(
-      {String? operationName,
-      graphql.FetchPolicy? fetchPolicy,
-      graphql.ErrorPolicy? errorPolicy,
-      graphql.CacheRereadPolicy? cacheRereadPolicy,
-      Object? optimisticResult,
-      graphql.Context? context,
-      OnMutationCompleted$Mutation$insertRecipe? onCompleted,
-      graphql.OnMutationUpdate<Mutation$insertRecipe>? update,
-      graphql.OnError? onError})
-      : onCompletedWithParsed = onCompleted,
+  WidgetOptions$Mutation$insertRecipe({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    graphql.Context? context,
+    OnMutationCompleted$Mutation$insertRecipe? onCompleted,
+    graphql.OnMutationUpdate<Mutation$insertRecipe>? update,
+    graphql.OnError? onError,
+  })  : onCompletedWithParsed = onCompleted,
         super(
-            operationName: operationName,
-            fetchPolicy: fetchPolicy,
-            errorPolicy: errorPolicy,
-            cacheRereadPolicy: cacheRereadPolicy,
-            optimisticResult: optimisticResult,
-            context: context,
-            onCompleted: onCompleted == null
-                ? null
-                : (data) => onCompleted(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult,
+          context: context,
+          onCompleted: onCompleted == null
+              ? null
+              : (data) => onCompleted(
                     data,
-                    data == null
-                        ? null
-                        : _parserFn$Mutation$insertRecipe(data)),
-            update: update,
-            onError: onError,
-            document: documentNodeMutationinsertRecipe,
-            parserFn: _parserFn$Mutation$insertRecipe);
+                    data == null ? null : _parserFn$Mutation$insertRecipe(data),
+                  ),
+          update: update,
+          onError: onError,
+          document: documentNodeMutationinsertRecipe,
+          parserFn: _parserFn$Mutation$insertRecipe,
+        );
 
   final OnMutationCompleted$Mutation$insertRecipe? onCompletedWithParsed;
 
@@ -375,28 +458,43 @@ class WidgetOptions$Mutation$insertRecipe
         ...super.onCompleted == null
             ? super.properties
             : super.properties.where((property) => property != onCompleted),
-        onCompletedWithParsed
+        onCompletedWithParsed,
       ];
 }
 
 typedef RunMutation$Mutation$insertRecipe
-    = graphql.MultiSourceResult<Mutation$insertRecipe>
-        Function(Variables$Mutation$insertRecipe, {Object? optimisticResult});
+    = graphql.MultiSourceResult<Mutation$insertRecipe> Function(
+  Variables$Mutation$insertRecipe, {
+  Object? optimisticResult,
+});
 typedef Builder$Mutation$insertRecipe = widgets.Widget Function(
-    RunMutation$Mutation$insertRecipe,
-    graphql.QueryResult<Mutation$insertRecipe>?);
+  RunMutation$Mutation$insertRecipe,
+  graphql.QueryResult<Mutation$insertRecipe>?,
+);
 
 class Mutation$insertRecipe$Widget
     extends graphql_flutter.Mutation<Mutation$insertRecipe> {
-  Mutation$insertRecipe$Widget(
-      {widgets.Key? key,
-      WidgetOptions$Mutation$insertRecipe? options,
-      required Builder$Mutation$insertRecipe builder})
-      : super(
-            key: key,
-            options: options ?? WidgetOptions$Mutation$insertRecipe(),
-            builder: (run, result) => builder(
-                (variables, {optimisticResult}) =>
-                    run(variables.toJson(), optimisticResult: optimisticResult),
-                result));
+  Mutation$insertRecipe$Widget({
+    widgets.Key? key,
+    WidgetOptions$Mutation$insertRecipe? options,
+    required Builder$Mutation$insertRecipe builder,
+  }) : super(
+          key: key,
+          options: options ?? WidgetOptions$Mutation$insertRecipe(),
+          builder: (
+            run,
+            result,
+          ) =>
+              builder(
+            (
+              variables, {
+              optimisticResult,
+            }) =>
+                run(
+              variables.toJson(),
+              optimisticResult: optimisticResult,
+            ),
+            result,
+          ),
+        );
 }

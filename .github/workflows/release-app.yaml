@@ -12,7 +12,7 @@ on:
       lane:
         description: "Fastlane lane"
         required: true
-        default: "internal"
+        default: "beta"
         type: choice
         options:
           - internal
@@ -25,6 +25,11 @@ on:
 permissions: read-all
 
 jobs:
+  test:
+    environment: production
+    runs-on: macos-latest
+    steps:
+      - uses: radicand/Cookbookery/.github/workflows/test-app.yaml@main
   build:
     environment: production
     runs-on: macos-latest
@@ -37,38 +42,24 @@ jobs:
         run: |
           echo "${{ secrets.DOTENV }}" > .env
 
-      - uses: actions/setup-java@v2
+      - uses: actions/setup-java@v3
         with:
-          distribution: "zulu"
-          java-version: "11"
+          distribution: "temurin"
+          java-version: "19"
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 3.0.5
+          flutter-version: 3.3.10
           channel: "stable"
 
       - name: Install dependencies
         working-directory: app/
         run: flutter pub get
 
-      - name: Run analyzer
-        working-directory: app/
-        run: flutter analyze
-
-      - name: Run unit tests
-        working-directory: app/
-        run: flutter test --coverage
-
-      - name: Upload to code coverage
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{secrets.CODECOV_TOKEN}}
-          files: app/coverage/lcov.info
-
       - name: Download Android keystore
         id: android_keystore
-        uses: timheuer/base64-to-file@v1.0.3
+        uses: timheuer/base64-to-file@v1
         with:
           fileName: key.jks
           encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
@@ -81,31 +72,8 @@ jobs:
           echo "keyPassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
           echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties
 
-      # - name: Build bundle
-      #   working-directory: app/
-      #   run: flutter build appbundle
-
-      # - name: Run integration tests
-      #   uses: reactivecircus/android-emulator-runner@v2
-      #   with:
-      #     working-directory: app/
-      #     target: google_apis
-      #     api-level: 30
-      #     script: flutter drive --driver=test_driver/main_test.dart --target integration_test/app_test.dart
-      # - name: Upload Screenshoots
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: Test result screenshots
-      #     path: app/screenshots/*.png
-
-      # - name: Upload AAB
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: release-aab
-      #     path: app/build/app/outputs/bundle/release/app-release.aab
-
       - name: Setup Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: "2.6"
           bundler-cache: true
@@ -126,3 +94,21 @@ jobs:
         run: |
           bundle exec fastlane run validate_play_store_json_key
           bundle exec fastlane ${{ github.event.inputs.lane || 'internal' }}
+
+      - name: Release to Apple App Store (${{ github.event.inputs.lane || 'beta' }})
+        working-directory: app/ios
+        env:
+          SUPPLY_PACKAGE_NAME: org.radicand.app.cookbook
+          TEAM_ID: ${{ secrets.TEAM_ID }}
+          ITC_TEAM_ID: ${{ secrets.ITC_TEAM_ID }}
+          FASTLANE_USER: ${{ secrets.FASTLANE_USER_APPLE }}
+          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD_APPLE }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+          FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_KEYCHAIN_NAME: ${{ secrets.MATCH_KEYCHAIN_NAME }}
+          MATCH_KEYCHAIN_PASSWORD: ${{ secrets.MATCH_KEYCHAIN_PASSWORD }}
+          DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS: ${{ secrets.DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS }}
+        run: |
+          pod install
+          bundle exec fastlane ${{ github.event.inputs.lane || 'beta' }}

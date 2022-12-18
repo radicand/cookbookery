@@ -15,7 +15,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           command: manifest
           monorepo-tags: true
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: gh workflow run release-app.yaml -f lane=internal
         if: ${{ steps.release.outputs.release_created }}
       - run: gh workflow run release-api.yaml

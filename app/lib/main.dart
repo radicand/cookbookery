@@ -22,6 +22,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 import 'services/graphql_service.dart';
 
@@ -47,7 +49,7 @@ class CookbookApp extends StatelessWidget {
       );
 
   late final _router = GoRouter(
-    redirect: (GoRouterState state) {
+    redirect: (_, GoRouterState state) {
       final loggedIn = cookbookStore.loginInfo.isLoggedIn;
       final isAccessingProfile = state.location == '/profile';
       final isAccessingLogin = state.location == '/login';
@@ -60,64 +62,66 @@ class CookbookApp extends StatelessWidget {
     refreshListenable: cookbookStore.loginInfo,
     debugLogDiagnostics: true,
     routes: [
-      GoRoute(
-        name: 'home',
-        path: '/',
-        builder: (context, state) => _build(const HomeScreen()),
-      ),
-      GoRoute(
-        name: 'login',
-        path: '/login',
-        builder: (context, state) => _build(const LoginScreen()),
-      ),
-      GoRoute(
-        name: 'profile',
-        path: '/profile',
-        builder: (context, state) => _build(const ProfileScreen()),
-      ),
-      GoRoute(
-        name: 'recipe',
-        path: '/recipe/:id',
-        builder: (context, state) =>
-            _build(RecipeScreen(id: state.params['id'] ?? '')),
-      ),
-      GoRoute(
-        name: 'tag',
-        path: '/tag/:id',
-        builder: (context, state) {
-          // use state.params to get router parameter values
-          // final family = Families.family(state.params['fid']!);
-          // return FamilyScreen(family: family);
-          return _build(TagScreen(id: state.params['id'] ?? ''));
-        },
-      ),
+      ShellRoute(
+          // use the builder to keep the SharedScaffold from being animated
+          // as new pages as shown; wrappiong that in single-page Navigator at the
+          // root provides an Overlay needed for the adaptive navigation scaffold and
+          // a root Navigator to show the About box
+          builder: (context, state, child) => Navigator(
+                onPopPage: (route, dynamic result) {
+                  route.didPop(result);
+                  return false; // don't pop the single page on the root navigator
+                },
+                pages: [
+                  MaterialPage<void>(
+                    child: state.error != null
+                        ? ErrorScaffold(body: child)
+                        : SharedScaffold(
+                            // This is where we compute the selected tab
+                            selectedIndex: state.subloc == '/profile' ||
+                                    state.subloc == '/login'
+                                ? 1
+                                : 0,
+                            body: child,
+                          ),
+                  ),
+                ],
+              ),
+          routes: [
+            GoRoute(
+              name: 'home',
+              path: '/',
+              builder: (context, state) => _build(const HomeScreen()),
+            ),
+            GoRoute(
+              name: 'login',
+              path: '/login',
+              builder: (context, state) => _build(const LoginScreen()),
+            ),
+            GoRoute(
+              name: 'profile',
+              path: '/profile',
+              builder: (context, state) => _build(const ProfileScreen()),
+            ),
+            GoRoute(
+              name: 'recipe',
+              path: '/recipe/:id',
+              builder: (context, state) =>
+                  _build(RecipeScreen(id: state.params['id'] ?? '')),
+            ),
+            GoRoute(
+              name: 'tag',
+              path: '/tag/:id',
+              builder: (context, state) {
+                // use state.params to get router parameter values
+                // final family = Families.family(state.params['fid']!);
+                // return FamilyScreen(family: family);
+                return _build(TagScreen(id: state.params['id'] ?? ''));
+              },
+            ),
+          ]),
     ],
     errorBuilder: (context, state) => _build(ErrorView(state.error!)),
-
-    // use the navigatorBuilder to keep the SharedScaffold from being animated
-    // as new pages as shown; wrappiong that in single-page Navigator at the
-    // root provides an Overlay needed for the adaptive navigation scaffold and
-    // a root Navigator to show the About box
-    navigatorBuilder: (context, state, child) => Navigator(
-      onPopPage: (route, dynamic result) {
-        route.didPop(result);
-        return false; // don't pop the single page on the root navigator
-      },
-      pages: [
-        MaterialPage<void>(
-          child: state.error != null
-              ? ErrorScaffold(body: child)
-              : SharedScaffold(
-                  // This is where we compute the selected tab
-                  selectedIndex:
-                      state.subloc == '/profile' || state.subloc == '/login'
-                          ? 1
-                          : 0,
-                  body: child,
-                ),
-        ),
-      ],
-    ),
   );
 
   // wrap the view widgets in a Scaffold to get the exit animation just right on
@@ -138,7 +142,7 @@ Future<void> main() async {
 
       final client = await getGQLClient();
 
-      GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
+      usePathUrlStrategy();
       runApp(DevicePreview(
         enabled: false, // !kReleaseMode,
         builder: (context) => GraphQLProvider(
