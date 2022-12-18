@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://github.com/radicand/cookbookery/compare/app-v1.3.3...app-v1.4.0) (2022-12-18)
+
+
+### Features
+
+* **ios:** support ios ([3f9fbb8](https://github.com/radicand/cookbookery/commit/3f9fbb810f6d2ab623acef583d23f3892f623071))
+
+
+### Bug Fixes
+
+* bump to latest flutter sdk ([2d0cfe3](https://github.com/radicand/cookbookery/commit/2d0cfe333412298663c9bcac5c0a06a5336fa3ba))
+* regenerate schema to match latest deps ([78f028a](https://github.com/radicand/cookbookery/commit/78f028a7186a44a02de0cf6df5e45a62b7ca5c39))
+
 ## [1.3.3](https://github.com/radicand/cookbookery/compare/app-v1.3.2...app-v1.3.3) (2022-08-13)
 
 
