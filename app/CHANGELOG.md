@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/radicand/cookbookery/compare/app-v1.4.0...app-v1.4.1) (2022-12-18)
+
+
+### Bug Fixes
+
+* **ci:** correct java and fastlane deps ([2058658](https://github.com/radicand/cookbookery/commit/205865891ff7e5824beea8c143cf0255c3789c26))
+
 ## [1.4.0](https://github.com/radicand/cookbookery/compare/app-v1.3.3...app-v1.4.0) (2022-12-18)
 
 
