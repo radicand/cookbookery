@@ -11,6 +11,11 @@ on:
       - "app/**/*"
   workflow_dispatch:
   workflow_call:
+    secrets:
+      DOTENV:
+        required: true
+      CODECOV_TOKEN:
+        required: true
 
 # Declare default permissions as read only.
 permissions: read-all

@@ -26,11 +26,13 @@ permissions: read-all
 
 jobs:
   test:
-    environment: production
-    runs-on: macos-latest
-    steps:
-      - uses: radicand/Cookbookery/.github/workflows/test-app.yaml@main
+    uses: radicand/Cookbookery/.github/workflows/test-app.yaml@main
+    secrets:
+      DOTENV: ${{ secrets.DOTENV }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
   build:
+    needs: ["test"]
     environment: production
     runs-on: macos-latest
     steps:
