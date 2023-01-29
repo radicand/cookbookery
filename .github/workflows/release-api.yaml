@@ -66,6 +66,7 @@ jobs:
       - name: Setup kubeconfig
         run: |
           echo "${{ secrets.KUBE_CONFIG }}" > .kubeconfig
+          chmod og-rwx .kubeconfig
 
       - name: Deploy
         run: |
