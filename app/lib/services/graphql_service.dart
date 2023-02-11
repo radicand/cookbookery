@@ -11,6 +11,7 @@ Future<ValueNotifier<GraphQLClient>> getGQLClient() async {
   // so we need to initialize Hive.
   await initHiveForFlutter();
   const FlutterSecureStorage secureStorage = FlutterSecureStorage();
+  AuthService.instance.refreshToken();
 
   final HttpLink httpLink = HttpLink(
     'http$GRAPHQL_HOSTPATH',
