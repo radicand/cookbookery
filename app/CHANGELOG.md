@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/radicand/cookbookery/compare/app-v1.4.1...app-v1.4.2) (2023-02-11)
+
+
+### Bug Fixes
+
+* **ci:** force new version for testflight ([3b4eafb](https://github.com/radicand/cookbookery/commit/3b4eafbca0681d4bed5b935f22013572efe43ff0))
+
 ## [1.4.1](https://github.com/radicand/cookbookery/compare/app-v1.4.0...app-v1.4.1) (2022-12-18)
 
 
