@@ -26,7 +26,7 @@ permissions: read-all
 
 jobs:
   test:
-    uses: .github/workflows/test-app.yaml@main
+    uses: ./.github/workflows/test-app.yaml
     secrets: inherit
 
   build:
