@@ -24,6 +24,7 @@ import 'package:go_router/go_router.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'services/graphql_service.dart';
 
@@ -143,15 +144,20 @@ Future<void> main() async {
       final client = await getGQLClient();
 
       usePathUrlStrategy();
-      runApp(DevicePreview(
-        enabled: false, // !kReleaseMode,
-        builder: (context) => GraphQLProvider(
-            client: client, child: CookbookApp()), // Wrap your app
-        tools: const [
-          ...DevicePreview.defaultTools,
-          DevicePreviewScreenshot(),
-        ],
-      ));
+      await SentryFlutter.init((options) {
+        options.dsn =
+            'https://785380e0a35b434da08919d13ac6bfcb@o376448.ingest.sentry.io/4504668675047424';
+        options.tracesSampleRate = 1.0;
+      },
+          appRunner: () => runApp(DevicePreview(
+                enabled: false, // !kReleaseMode,
+                builder: (context) => GraphQLProvider(
+                    client: client, child: CookbookApp()), // Wrap your app
+                tools: const [
+                  ...DevicePreview.defaultTools,
+                  DevicePreviewScreenshot(),
+                ],
+              )));
     },
     (error, stackTrace) async {
       print('Caught Dart Error!');
