@@ -1,5 +1,5 @@
 {
-  "app": "1.4.2",
+  "app": "1.4.3",
   "common": "1.0.2",
   "server/hasura": "1.4.0",
   "server/faas": "1.2.0"
