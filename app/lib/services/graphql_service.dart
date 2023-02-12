@@ -42,5 +42,6 @@ Future<ValueNotifier<GraphQLClient>> getGQLClient() async {
       link: link,
       // The default store is the InMemoryStore, which does NOT persist to disk
       // cache: GraphQLCache(store: InMemoryStore())));
-      cache: GraphQLCache(store: HiveStore())));
+      // cache: GraphQLCache(store: HiveStore())));
+      cache: GraphQLCache(store: InMemoryStore())));
 }

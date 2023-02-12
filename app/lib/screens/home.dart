@@ -24,7 +24,9 @@ class HomeScreen extends HookWidget {
         // ),
         Flexible(
           fit: FlexFit.loose,
-          child: RecipeList(items: res.result.parsedData?.Recipe ?? []),
+          child: RefreshIndicator(
+              onRefresh: () => res.refetch(),
+              child: RecipeList(items: res.result.parsedData?.Recipe ?? [])),
         )
       ],
     );

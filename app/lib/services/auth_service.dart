@@ -52,7 +52,7 @@ class AuthService {
       return success;
     } catch (e, s) {
       print('error on Refresh Token: $e - stack: $s');
-      // logout();
+      logout();
       return false;
     }
   }
