@@ -26,10 +26,8 @@ permissions: read-all
 
 jobs:
   test:
-    uses: radicand/Cookbookery/.github/workflows/test-app.yaml@main
-    secrets:
-      DOTENV: ${{ secrets.DOTENV }}
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    uses: .github/workflows/test-app.yaml
+    secrets: inherit
 
   build:
     needs: ["test"]
