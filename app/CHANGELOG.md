@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.3](https://github.com/radicand/cookbookery/compare/app-v1.4.2...app-v1.4.3) (2023-02-12)
+
+
+### Bug Fixes
+
+* **app:** force temporary dependecy override ([984e805](https://github.com/radicand/cookbookery/commit/984e805bf899e13dab6e43a970be19e0a1310b62))
+* **auth:** force logout if token is bad ([4ccf426](https://github.com/radicand/cookbookery/commit/4ccf4265a20a79e861dcfc1bf09b8f1a5f3dbe3a))
+
 ## [1.4.2](https://github.com/radicand/cookbookery/compare/app-v1.4.1...app-v1.4.2) (2023-02-11)
 
 
