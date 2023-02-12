@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/radicand/cookbookery/compare/app-v1.4.3...app-v1.5.0) (2023-02-12)
+
+
+### Features
+
+* **monitoring:** capture error details with sentry ([7cdf0c4](https://github.com/radicand/cookbookery/commit/7cdf0c4780f944713ef3d00f2c275c692da76793))
+
 ## [1.4.3](https://github.com/radicand/cookbookery/compare/app-v1.4.2...app-v1.4.3) (2023-02-12)
 
 
