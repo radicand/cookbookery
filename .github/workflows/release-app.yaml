@@ -2,6 +2,9 @@ name: Build and release app
 concurrency: build-app
 
 on:
+  release:
+    types:
+      - published
   workflow_call:
     inputs:
       lane:
@@ -92,14 +95,14 @@ jobs:
           bundle config path vendor/bundle
           bundle install
 
-      - name: Release to Google Play (${{ github.event.inputs.lane || 'internal' }})
+      - name: Release to Google Play (${{ github.event.inputs.lane || 'beta' }})
         working-directory: app/android
         env:
           SUPPLY_PACKAGE_NAME: org.radicand.app.cookbook
           SUPPLY_JSON_KEY_DATA: ${{ secrets.GOOGLE_PLAY_SERVICE_JSON }}
         run: |
           bundle exec fastlane run validate_play_store_json_key
-          bundle exec fastlane ${{ github.event.inputs.lane || 'internal' }}
+          bundle exec fastlane ${{ github.event.inputs.lane || 'beta' }}
 
       - name: Release to Apple App Store (${{ github.event.inputs.lane || 'beta' }})
         working-directory: app/ios
