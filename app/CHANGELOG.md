@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.1](https://github.com/radicand/cookbookery/compare/app-v1.5.0...app-v1.5.1) (2023-08-26)
+
+
+### Bug Fixes
+
+* correct dependency upgrades ([8487bfd](https://github.com/radicand/cookbookery/commit/8487bfd8e1eb763e937f8eb4fcdba581ebc731ab))
+* **ios:** correct podfile lock ([8778a12](https://github.com/radicand/cookbookery/commit/8778a120c57cd84b3f8a57bc67ec8d9322f2cc67))
+
 ## [1.5.0](https://github.com/radicand/cookbookery/compare/app-v1.4.3...app-v1.5.0) (2023-02-12)
 
 
