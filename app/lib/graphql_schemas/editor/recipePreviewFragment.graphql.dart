@@ -16,7 +16,7 @@ class Fragment$RecipePreviewFields {
     required this.Files,
     required this.createdAt,
     required this.RecipeTags,
-    required this.$__typename,
+    this.$__typename = 'Recipe',
   });
 
   factory Fragment$RecipePreviewFields.fromJson(Map<String, dynamic> json) {
@@ -227,7 +227,7 @@ class _CopyWithImpl$Fragment$RecipePreviewFields<TRes>
 
   final TRes Function(Fragment$RecipePreviewFields) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -505,7 +505,7 @@ class Fragment$RecipePreviewFields$Author {
   Fragment$RecipePreviewFields$Author({
     required this.id,
     required this.name,
-    required this.$__typename,
+    this.$__typename = 'User',
   });
 
   factory Fragment$RecipePreviewFields$Author.fromJson(
@@ -614,7 +614,7 @@ class _CopyWithImpl$Fragment$RecipePreviewFields$Author<TRes>
 
   final TRes Function(Fragment$RecipePreviewFields$Author) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -649,7 +649,7 @@ class _CopyWithStubImpl$Fragment$RecipePreviewFields$Author<TRes>
 class Fragment$RecipePreviewFields$Files {
   Fragment$RecipePreviewFields$Files({
     required this.id,
-    required this.$__typename,
+    this.$__typename = 'File',
   });
 
   factory Fragment$RecipePreviewFields$Files.fromJson(
@@ -744,7 +744,7 @@ class _CopyWithImpl$Fragment$RecipePreviewFields$Files<TRes>
 
   final TRes Function(Fragment$RecipePreviewFields$Files) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -774,7 +774,7 @@ class _CopyWithStubImpl$Fragment$RecipePreviewFields$Files<TRes>
 class Fragment$RecipePreviewFields$RecipeTags {
   Fragment$RecipePreviewFields$RecipeTags({
     required this.Tag,
-    required this.$__typename,
+    this.$__typename = '_RecipeToTag',
   });
 
   factory Fragment$RecipePreviewFields$RecipeTags.fromJson(
@@ -871,7 +871,7 @@ class _CopyWithImpl$Fragment$RecipePreviewFields$RecipeTags<TRes>
 
   final TRes Function(Fragment$RecipePreviewFields$RecipeTags) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Tag = _undefined,
@@ -911,7 +911,7 @@ class Fragment$RecipePreviewFields$RecipeTags$Tag {
   Fragment$RecipePreviewFields$RecipeTags$Tag({
     required this.id,
     required this.name,
-    required this.$__typename,
+    this.$__typename = 'Tag',
   });
 
   factory Fragment$RecipePreviewFields$RecipeTags$Tag.fromJson(
@@ -1020,7 +1020,7 @@ class _CopyWithImpl$Fragment$RecipePreviewFields$RecipeTags$Tag<TRes>
 
   final TRes Function(Fragment$RecipePreviewFields$RecipeTags$Tag) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,

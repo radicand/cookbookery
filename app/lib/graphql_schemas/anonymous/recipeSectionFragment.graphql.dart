@@ -21,7 +21,7 @@ class Fragment$RecipeSectionFragment {
     required this.servings,
     required this.Steps,
     required this.Recipe,
-    required this.$__typename,
+    this.$__typename = 'RecipeSection',
   });
 
   factory Fragment$RecipeSectionFragment.fromJson(Map<String, dynamic> json) {
@@ -289,7 +289,7 @@ class _CopyWithImpl$Fragment$RecipeSectionFragment<TRes>
 
   final TRes Function(Fragment$RecipeSectionFragment) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -622,7 +622,7 @@ class Fragment$RecipeSectionFragment$Steps {
     required this.id,
     required this.description,
     required this.order,
-    required this.$__typename,
+    this.$__typename = 'Step',
   });
 
   factory Fragment$RecipeSectionFragment$Steps.fromJson(
@@ -745,7 +745,7 @@ class _CopyWithImpl$Fragment$RecipeSectionFragment$Steps<TRes>
 
   final TRes Function(Fragment$RecipeSectionFragment$Steps) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -785,7 +785,7 @@ class _CopyWithStubImpl$Fragment$RecipeSectionFragment$Steps<TRes>
 class Fragment$RecipeSectionFragment$Recipe {
   Fragment$RecipeSectionFragment$Recipe({
     required this.id,
-    required this.$__typename,
+    this.$__typename = 'Recipe',
   });
 
   factory Fragment$RecipeSectionFragment$Recipe.fromJson(
@@ -880,7 +880,7 @@ class _CopyWithImpl$Fragment$RecipeSectionFragment$Recipe<TRes>
 
   final TRes Function(Fragment$RecipeSectionFragment$Recipe) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,

@@ -17,7 +17,7 @@ class RecipeCard extends StatelessWidget {
           child: Card(
             child: InkWell(
               onTap: () {
-                context.pushNamed('recipe', params: {'id': recipe.id});
+                context.pushNamed('recipe', pathParameters: {'id': recipe.id});
               },
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -52,7 +52,7 @@ class RecipeCard extends StatelessWidget {
                               child: Text(tag.Tag.name),
                               onPressed: () {
                                 context.pushNamed('tag',
-                                    params: {'id': tag.Tag.id});
+                                    pathParameters: {'id': tag.Tag.id});
                               },
                             );
                           }).toList(),

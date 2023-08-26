@@ -93,8 +93,8 @@ class RecipeScreen extends HookWidget {
                               )),
                         ],
                       ),
-                      Row(
-                        children: const <Widget>[
+                      const Row(
+                        children: <Widget>[
                           RatingBar(rating: 5),
                           SizedBox(width: 9),
                           Text(
@@ -126,7 +126,7 @@ class RecipeScreen extends HookWidget {
                                     style: const TextStyle(color: Colors.white),
                                   ),
                                   onTap: () => context.pushNamed('tag',
-                                      params: {
+                                      pathParameters: {
                                         'id': recipe.RecipeTags[i].Tag.id
                                       }),
                                 ));

@@ -13,7 +13,7 @@ class Fragment$UnitSizeFragment {
     required this.name,
     required this.plural,
     required this.unitType,
-    required this.$__typename,
+    this.$__typename = 'UnitSize',
   });
 
   factory Fragment$UnitSizeFragment.fromJson(Map<String, dynamic> json) {
@@ -148,7 +148,7 @@ class _CopyWithImpl$Fragment$UnitSizeFragment<TRes>
 
   final TRes Function(Fragment$UnitSizeFragment) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,

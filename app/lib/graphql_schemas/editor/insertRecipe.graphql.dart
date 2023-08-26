@@ -91,7 +91,7 @@ class _CopyWithImpl$Variables$Mutation$insertRecipe<TRes>
 
   final TRes Function(Variables$Mutation$insertRecipe) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? object = _undefined}) =>
       _then(Variables$Mutation$insertRecipe._({
@@ -113,7 +113,7 @@ class _CopyWithStubImpl$Variables$Mutation$insertRecipe<TRes>
 class Mutation$insertRecipe {
   Mutation$insertRecipe({
     this.insert_Recipe_one,
-    required this.$__typename,
+    this.$__typename = 'mutation_root',
   });
 
   factory Mutation$insertRecipe.fromJson(Map<String, dynamic> json) {
@@ -208,7 +208,7 @@ class _CopyWithImpl$Mutation$insertRecipe<TRes>
 
   final TRes Function(Mutation$insertRecipe) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? insert_Recipe_one = _undefined,
@@ -302,7 +302,7 @@ Mutation$insertRecipe _parserFn$Mutation$insertRecipe(
         Map<String, dynamic> data) =>
     Mutation$insertRecipe.fromJson(data);
 typedef OnMutationCompleted$Mutation$insertRecipe = FutureOr<void> Function(
-  dynamic,
+  Map<String, dynamic>?,
   Mutation$insertRecipe?,
 );
 
@@ -315,6 +315,7 @@ class Options$Mutation$insertRecipe
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
     Object? optimisticResult,
+    Mutation$insertRecipe? typedOptimisticResult,
     graphql.Context? context,
     OnMutationCompleted$Mutation$insertRecipe? onCompleted,
     graphql.OnMutationUpdate<Mutation$insertRecipe>? update,
@@ -326,7 +327,7 @@ class Options$Mutation$insertRecipe
           fetchPolicy: fetchPolicy,
           errorPolicy: errorPolicy,
           cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
           context: context,
           onCompleted: onCompleted == null
               ? null
@@ -360,6 +361,7 @@ class WatchOptions$Mutation$insertRecipe
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
     Object? optimisticResult,
+    Mutation$insertRecipe? typedOptimisticResult,
     graphql.Context? context,
     Duration? pollInterval,
     bool? eagerlyFetchResults,
@@ -371,7 +373,7 @@ class WatchOptions$Mutation$insertRecipe
           fetchPolicy: fetchPolicy,
           errorPolicy: errorPolicy,
           cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
           context: context,
           document: documentNodeMutationinsertRecipe,
           pollInterval: pollInterval,
@@ -407,9 +409,10 @@ Mutation$insertRecipe$HookResult useMutation$insertRecipe(
   final result = graphql_flutter
       .useMutation(options ?? WidgetOptions$Mutation$insertRecipe());
   return Mutation$insertRecipe$HookResult(
-    (variables, {optimisticResult}) => result.runMutation(
+    (variables, {optimisticResult, typedOptimisticResult}) =>
+        result.runMutation(
       variables.toJson(),
-      optimisticResult: optimisticResult,
+      optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
     ),
     result.result,
   );
@@ -427,6 +430,7 @@ class WidgetOptions$Mutation$insertRecipe
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
     Object? optimisticResult,
+    Mutation$insertRecipe? typedOptimisticResult,
     graphql.Context? context,
     OnMutationCompleted$Mutation$insertRecipe? onCompleted,
     graphql.OnMutationUpdate<Mutation$insertRecipe>? update,
@@ -437,7 +441,7 @@ class WidgetOptions$Mutation$insertRecipe
           fetchPolicy: fetchPolicy,
           errorPolicy: errorPolicy,
           cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
           context: context,
           onCompleted: onCompleted == null
               ? null
@@ -466,6 +470,7 @@ typedef RunMutation$Mutation$insertRecipe
     = graphql.MultiSourceResult<Mutation$insertRecipe> Function(
   Variables$Mutation$insertRecipe, {
   Object? optimisticResult,
+  Mutation$insertRecipe? typedOptimisticResult,
 });
 typedef Builder$Mutation$insertRecipe = widgets.Widget Function(
   RunMutation$Mutation$insertRecipe,
@@ -489,10 +494,12 @@ class Mutation$insertRecipe$Widget
             (
               variables, {
               optimisticResult,
+              typedOptimisticResult,
             }) =>
                 run(
               variables.toJson(),
-              optimisticResult: optimisticResult,
+              optimisticResult:
+                  optimisticResult ?? typedOptimisticResult?.toJson(),
             ),
             result,
           ),

@@ -3,6 +3,7 @@
 // ignore_for_file: non_constant_identifier_names, curly_braces_in_flow_control_structures, prefer_if_null_operators
 // ignore_for_file: camel_case_extensions, prefer_const_constructors
 
+import 'dart:async';
 import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
@@ -84,7 +85,7 @@ class _CopyWithImpl$Variables$Query$tag<TRes>
 
   final TRes Function(Variables$Query$tag) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? id = _undefined}) => _then(Variables$Query$tag._({
         ..._instance._$data,
@@ -104,7 +105,7 @@ class _CopyWithStubImpl$Variables$Query$tag<TRes>
 class Query$tag {
   Query$tag({
     this.Tag_by_pk,
-    required this.$__typename,
+    this.$__typename = 'query_root',
   });
 
   factory Query$tag.fromJson(Map<String, dynamic> json) {
@@ -195,7 +196,7 @@ class _CopyWithImpl$Query$tag<TRes> implements CopyWith$Query$tag<TRes> {
 
   final TRes Function(Query$tag) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Tag_by_pk = _undefined,
@@ -330,6 +331,10 @@ const documentNodeQuerytag = DocumentNode(definitions: [
 ]);
 Query$tag _parserFn$Query$tag(Map<String, dynamic> data) =>
     Query$tag.fromJson(data);
+typedef OnQueryComplete$Query$tag = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$tag?,
+);
 
 class Options$Query$tag extends graphql.QueryOptions<Query$tag> {
   Options$Query$tag({
@@ -339,20 +344,41 @@ class Options$Query$tag extends graphql.QueryOptions<Query$tag> {
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
     Object? optimisticResult,
+    Query$tag? typedOptimisticResult,
     Duration? pollInterval,
     graphql.Context? context,
-  }) : super(
+    OnQueryComplete$Query$tag? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
           variables: variables.toJson(),
           operationName: operationName,
           fetchPolicy: fetchPolicy,
           errorPolicy: errorPolicy,
           cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
           pollInterval: pollInterval,
           context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$tag(data),
+                  ),
+          onError: onError,
           document: documentNodeQuerytag,
           parserFn: _parserFn$Query$tag,
         );
+
+  final OnQueryComplete$Query$tag? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
 }
 
 class WatchOptions$Query$tag extends graphql.WatchQueryOptions<Query$tag> {
@@ -363,6 +389,7 @@ class WatchOptions$Query$tag extends graphql.WatchQueryOptions<Query$tag> {
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
     Object? optimisticResult,
+    Query$tag? typedOptimisticResult,
     graphql.Context? context,
     Duration? pollInterval,
     bool? eagerlyFetchResults,
@@ -374,7 +401,7 @@ class WatchOptions$Query$tag extends graphql.WatchQueryOptions<Query$tag> {
           fetchPolicy: fetchPolicy,
           errorPolicy: errorPolicy,
           cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
           context: context,
           document: documentNodeQuerytag,
           pollInterval: pollInterval,
@@ -455,7 +482,7 @@ class Query$tag$Tag_by_pk {
     required this.id,
     required this.name,
     required this.Recipes,
-    required this.$__typename,
+    this.$__typename = 'Tag',
   });
 
   factory Query$tag$Tag_by_pk.fromJson(Map<String, dynamic> json) {
@@ -590,7 +617,7 @@ class _CopyWithImpl$Query$tag$Tag_by_pk<TRes>
 
   final TRes Function(Query$tag$Tag_by_pk) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -643,7 +670,7 @@ class _CopyWithStubImpl$Query$tag$Tag_by_pk<TRes>
 class Query$tag$Tag_by_pk$Recipes {
   Query$tag$Tag_by_pk$Recipes({
     required this.Recipe,
-    required this.$__typename,
+    this.$__typename = '_RecipeToTag',
   });
 
   factory Query$tag$Tag_by_pk$Recipes.fromJson(Map<String, dynamic> json) {
@@ -738,7 +765,7 @@ class _CopyWithImpl$Query$tag$Tag_by_pk$Recipes<TRes>
 
   final TRes Function(Query$tag$Tag_by_pk$Recipes) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Recipe = _undefined,

@@ -44,16 +44,15 @@ class CookbookApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: getTheme(),
         darkTheme: getDarkTheme(),
-        useInheritedMediaQuery: true,
         // locale: DevicePreview.locale(context),
         // builder: DevicePreview.appBuilder,
       );
 
   late final _router = GoRouter(
-    redirect: (_, GoRouterState state) {
+    redirect: (BuildContext context, GoRouterState state) {
       final loggedIn = cookbookStore.loginInfo.isLoggedIn;
-      final isAccessingProfile = state.location == '/profile';
-      final isAccessingLogin = state.location == '/login';
+      final isAccessingProfile = state.uri.toString() == '/profile';
+      final isAccessingLogin = state.uri.toString() == '/login';
 
       if (!loggedIn && isAccessingProfile) return '/login';
       if (loggedIn && isAccessingLogin) return '/profile';
@@ -79,8 +78,9 @@ class CookbookApp extends StatelessWidget {
                         ? ErrorScaffold(body: child)
                         : SharedScaffold(
                             // This is where we compute the selected tab
-                            selectedIndex: state.subloc == '/profile' ||
-                                    state.subloc == '/login'
+                            selectedIndex:
+                                state.matchedLocation == '/profile' ||
+                                        state.matchedLocation == '/login'
                                 ? 1
                                 : 0,
                             body: child,
@@ -108,7 +108,7 @@ class CookbookApp extends StatelessWidget {
               name: 'recipe',
               path: '/recipe/:id',
               builder: (context, state) =>
-                  _build(RecipeScreen(id: state.params['id'] ?? '')),
+                  _build(RecipeScreen(id: state.pathParameters['id'] ?? '')),
             ),
             GoRoute(
               name: 'tag',
@@ -117,7 +117,7 @@ class CookbookApp extends StatelessWidget {
                 // use state.params to get router parameter values
                 // final family = Families.family(state.params['fid']!);
                 // return FamilyScreen(family: family);
-                return _build(TagScreen(id: state.params['id'] ?? ''));
+                return _build(TagScreen(id: state.pathParameters['id'] ?? ''));
               },
             ),
           ]),

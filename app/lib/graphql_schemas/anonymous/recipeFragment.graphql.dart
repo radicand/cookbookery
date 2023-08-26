@@ -23,7 +23,7 @@ class Fragment$RecipeFragment {
     required this.RecipeSections,
     this.source,
     required this.RecipeTags,
-    required this.$__typename,
+    this.$__typename = 'Recipe',
   });
 
   factory Fragment$RecipeFragment.fromJson(Map<String, dynamic> json) {
@@ -306,7 +306,7 @@ class _CopyWithImpl$Fragment$RecipeFragment<TRes>
 
   final TRes Function(Fragment$RecipeFragment) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -663,7 +663,7 @@ class Fragment$RecipeFragment$Author {
   Fragment$RecipeFragment$Author({
     required this.id,
     required this.name,
-    required this.$__typename,
+    this.$__typename = 'User',
   });
 
   factory Fragment$RecipeFragment$Author.fromJson(Map<String, dynamic> json) {
@@ -770,7 +770,7 @@ class _CopyWithImpl$Fragment$RecipeFragment$Author<TRes>
 
   final TRes Function(Fragment$RecipeFragment$Author) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -805,7 +805,7 @@ class _CopyWithStubImpl$Fragment$RecipeFragment$Author<TRes>
 class Fragment$RecipeFragment$Files {
   Fragment$RecipeFragment$Files({
     required this.id,
-    required this.$__typename,
+    this.$__typename = 'File',
   });
 
   factory Fragment$RecipeFragment$Files.fromJson(Map<String, dynamic> json) {
@@ -898,7 +898,7 @@ class _CopyWithImpl$Fragment$RecipeFragment$Files<TRes>
 
   final TRes Function(Fragment$RecipeFragment$Files) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -928,7 +928,7 @@ class _CopyWithStubImpl$Fragment$RecipeFragment$Files<TRes>
 class Fragment$RecipeFragment$RecipeTags {
   Fragment$RecipeFragment$RecipeTags({
     required this.Tag,
-    required this.$__typename,
+    this.$__typename = '_RecipeToTag',
   });
 
   factory Fragment$RecipeFragment$RecipeTags.fromJson(
@@ -1025,7 +1025,7 @@ class _CopyWithImpl$Fragment$RecipeFragment$RecipeTags<TRes>
 
   final TRes Function(Fragment$RecipeFragment$RecipeTags) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Tag = _undefined,
@@ -1065,7 +1065,7 @@ class Fragment$RecipeFragment$RecipeTags$Tag {
   Fragment$RecipeFragment$RecipeTags$Tag({
     required this.id,
     required this.name,
-    required this.$__typename,
+    this.$__typename = 'Tag',
   });
 
   factory Fragment$RecipeFragment$RecipeTags$Tag.fromJson(
@@ -1174,7 +1174,7 @@ class _CopyWithImpl$Fragment$RecipeFragment$RecipeTags$Tag<TRes>
 
   final TRes Function(Fragment$RecipeFragment$RecipeTags$Tag) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,

@@ -15,7 +15,7 @@ class Fragment$IngredientUnitFragment {
     this.notes,
     this.Ingredient,
     required this.order,
-    required this.$__typename,
+    this.$__typename = 'IngredientUnit',
   });
 
   factory Fragment$IngredientUnitFragment.fromJson(Map<String, dynamic> json) {
@@ -186,7 +186,7 @@ class _CopyWithImpl$Fragment$IngredientUnitFragment<TRes>
 
   final TRes Function(Fragment$IngredientUnitFragment) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -395,7 +395,7 @@ class Fragment$IngredientUnitFragment$Ingredient {
   Fragment$IngredientUnitFragment$Ingredient({
     required this.id,
     required this.name,
-    required this.$__typename,
+    this.$__typename = 'Ingredient',
   });
 
   factory Fragment$IngredientUnitFragment$Ingredient.fromJson(
@@ -504,7 +504,7 @@ class _CopyWithImpl$Fragment$IngredientUnitFragment$Ingredient<TRes>
 
   final TRes Function(Fragment$IngredientUnitFragment$Ingredient) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,

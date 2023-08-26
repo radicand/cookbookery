@@ -3,6 +3,7 @@
 // ignore_for_file: non_constant_identifier_names, curly_braces_in_flow_control_structures, prefer_if_null_operators
 // ignore_for_file: camel_case_extensions, prefer_const_constructors
 
+import 'dart:async';
 import 'ingredientUnitFragment.graphql.dart';
 import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
@@ -89,7 +90,7 @@ class _CopyWithImpl$Variables$Query$recipe<TRes>
 
   final TRes Function(Variables$Query$recipe) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? id = _undefined}) => _then(Variables$Query$recipe._({
         ..._instance._$data,
@@ -109,7 +110,7 @@ class _CopyWithStubImpl$Variables$Query$recipe<TRes>
 class Query$recipe {
   Query$recipe({
     this.Recipe_by_pk,
-    required this.$__typename,
+    this.$__typename = 'query_root',
   });
 
   factory Query$recipe.fromJson(Map<String, dynamic> json) {
@@ -201,7 +202,7 @@ class _CopyWithImpl$Query$recipe<TRes> implements CopyWith$Query$recipe<TRes> {
 
   final TRes Function(Query$recipe) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Recipe_by_pk = _undefined,
@@ -296,6 +297,10 @@ const documentNodeQueryrecipe = DocumentNode(definitions: [
 ]);
 Query$recipe _parserFn$Query$recipe(Map<String, dynamic> data) =>
     Query$recipe.fromJson(data);
+typedef OnQueryComplete$Query$recipe = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$recipe?,
+);
 
 class Options$Query$recipe extends graphql.QueryOptions<Query$recipe> {
   Options$Query$recipe({
@@ -305,20 +310,41 @@ class Options$Query$recipe extends graphql.QueryOptions<Query$recipe> {
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
     Object? optimisticResult,
+    Query$recipe? typedOptimisticResult,
     Duration? pollInterval,
     graphql.Context? context,
-  }) : super(
+    OnQueryComplete$Query$recipe? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
           variables: variables.toJson(),
           operationName: operationName,
           fetchPolicy: fetchPolicy,
           errorPolicy: errorPolicy,
           cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
           pollInterval: pollInterval,
           context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$recipe(data),
+                  ),
+          onError: onError,
           document: documentNodeQueryrecipe,
           parserFn: _parserFn$Query$recipe,
         );
+
+  final OnQueryComplete$Query$recipe? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
 }
 
 class WatchOptions$Query$recipe
@@ -330,6 +356,7 @@ class WatchOptions$Query$recipe
     graphql.ErrorPolicy? errorPolicy,
     graphql.CacheRereadPolicy? cacheRereadPolicy,
     Object? optimisticResult,
+    Query$recipe? typedOptimisticResult,
     graphql.Context? context,
     Duration? pollInterval,
     bool? eagerlyFetchResults,
@@ -341,7 +368,7 @@ class WatchOptions$Query$recipe
           fetchPolicy: fetchPolicy,
           errorPolicy: errorPolicy,
           cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
           context: context,
           document: documentNodeQueryrecipe,
           pollInterval: pollInterval,

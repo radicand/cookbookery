@@ -149,7 +149,7 @@ class _CopyWithImpl$Input$File_aggregate_order_by<TRes>
 
   final TRes Function(Input$File_aggregate_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? count = _undefined,
@@ -322,7 +322,7 @@ class _CopyWithImpl$Input$File_arr_rel_insert_input<TRes>
 
   final TRes Function(Input$File_arr_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -766,7 +766,7 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
 
   final TRes Function(Input$File_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Recipe = _undefined,
@@ -1137,7 +1137,7 @@ class _CopyWithImpl$Input$File_insert_input<TRes>
 
   final TRes Function(Input$File_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Recipe = _undefined,
@@ -1364,7 +1364,7 @@ class _CopyWithImpl$Input$File_max_order_by<TRes>
 
   final TRes Function(Input$File_max_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -1564,7 +1564,7 @@ class _CopyWithImpl$Input$File_min_order_by<TRes>
 
   final TRes Function(Input$File_min_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -1710,7 +1710,7 @@ class _CopyWithImpl$Input$File_obj_rel_insert_input<TRes>
 
   final TRes Function(Input$File_obj_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -1757,12 +1757,12 @@ class _CopyWithStubImpl$Input$File_obj_rel_insert_input<TRes>
 class Input$File_on_conflict {
   factory Input$File_on_conflict({
     required Enum$File_constraint constraint,
-    required List<Enum$File_update_column> update_columns,
+    List<Enum$File_update_column>? update_columns,
     Input$File_bool_exp? where,
   }) =>
       Input$File_on_conflict._({
         r'constraint': constraint,
-        r'update_columns': update_columns,
+        if (update_columns != null) r'update_columns': update_columns,
         if (where != null) r'where': where,
       });
 
@@ -1773,10 +1773,12 @@ class Input$File_on_conflict {
     final l$constraint = data['constraint'];
     result$data['constraint'] =
         fromJson$Enum$File_constraint((l$constraint as String));
-    final l$update_columns = data['update_columns'];
-    result$data['update_columns'] = (l$update_columns as List<dynamic>)
-        .map((e) => fromJson$Enum$File_update_column((e as String)))
-        .toList();
+    if (data.containsKey('update_columns')) {
+      final l$update_columns = data['update_columns'];
+      result$data['update_columns'] = (l$update_columns as List<dynamic>)
+          .map((e) => fromJson$Enum$File_update_column((e as String)))
+          .toList();
+    }
     if (data.containsKey('where')) {
       final l$where = data['where'];
       result$data['where'] = l$where == null
@@ -1790,16 +1792,20 @@ class Input$File_on_conflict {
 
   Enum$File_constraint get constraint =>
       (_$data['constraint'] as Enum$File_constraint);
-  List<Enum$File_update_column> get update_columns =>
-      (_$data['update_columns'] as List<Enum$File_update_column>);
+  List<Enum$File_update_column>? get update_columns =>
+      (_$data['update_columns'] as List<Enum$File_update_column>?);
   Input$File_bool_exp? get where => (_$data['where'] as Input$File_bool_exp?);
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
     result$data['constraint'] = toJson$Enum$File_constraint(l$constraint);
-    final l$update_columns = update_columns;
-    result$data['update_columns'] =
-        l$update_columns.map((e) => toJson$Enum$File_update_column(e)).toList();
+    if (_$data.containsKey('update_columns')) {
+      final l$update_columns = update_columns;
+      result$data['update_columns'] =
+          (l$update_columns as List<Enum$File_update_column>)
+              .map((e) => toJson$Enum$File_update_column(e))
+              .toList();
+    }
     if (_$data.containsKey('where')) {
       final l$where = where;
       result$data['where'] = l$where?.toJson();
@@ -1828,15 +1834,23 @@ class Input$File_on_conflict {
     }
     final l$update_columns = update_columns;
     final lOther$update_columns = other.update_columns;
-    if (l$update_columns.length != lOther$update_columns.length) {
+    if (_$data.containsKey('update_columns') !=
+        other._$data.containsKey('update_columns')) {
       return false;
     }
-    for (int i = 0; i < l$update_columns.length; i++) {
-      final l$update_columns$entry = l$update_columns[i];
-      final lOther$update_columns$entry = lOther$update_columns[i];
-      if (l$update_columns$entry != lOther$update_columns$entry) {
+    if (l$update_columns != null && lOther$update_columns != null) {
+      if (l$update_columns.length != lOther$update_columns.length) {
         return false;
       }
+      for (int i = 0; i < l$update_columns.length; i++) {
+        final l$update_columns$entry = l$update_columns[i];
+        final lOther$update_columns$entry = lOther$update_columns[i];
+        if (l$update_columns$entry != lOther$update_columns$entry) {
+          return false;
+        }
+      }
+    } else if (l$update_columns != lOther$update_columns) {
+      return false;
     }
     final l$where = where;
     final lOther$where = other.where;
@@ -1856,7 +1870,11 @@ class Input$File_on_conflict {
     final l$where = where;
     return Object.hashAll([
       l$constraint,
-      Object.hashAll(l$update_columns.map((v) => v)),
+      _$data.containsKey('update_columns')
+          ? l$update_columns == null
+              ? null
+              : Object.hashAll(l$update_columns.map((v) => v))
+          : const {},
       _$data.containsKey('where') ? l$where : const {},
     ]);
   }
@@ -1890,7 +1908,7 @@ class _CopyWithImpl$Input$File_on_conflict<TRes>
 
   final TRes Function(Input$File_on_conflict) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? constraint = _undefined,
@@ -2199,7 +2217,7 @@ class _CopyWithImpl$Input$File_order_by<TRes>
 
   final TRes Function(Input$File_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Recipe = _undefined,
@@ -2349,7 +2367,7 @@ class _CopyWithImpl$Input$File_pk_columns_input<TRes>
 
   final TRes Function(Input$File_pk_columns_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? id = _undefined}) => _then(Input$File_pk_columns_input._({
         ..._instance._$data,
@@ -2478,7 +2496,7 @@ class _CopyWithImpl$Input$File_set_input<TRes>
 
   final TRes Function(Input$File_set_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? blob = _undefined,
@@ -2613,7 +2631,7 @@ class _CopyWithImpl$Input$File_updates<TRes>
 
   final TRes Function(Input$File_updates) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_set = _undefined,
@@ -3023,7 +3041,7 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_aggregate_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? avg = _undefined,
@@ -3319,7 +3337,7 @@ class _CopyWithImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
 
   final TRes Function(Input$IngredientUnit_arr_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -3487,7 +3505,7 @@ class _CopyWithImpl$Input$IngredientUnit_avg_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_avg_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -3977,7 +3995,7 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
 
   final TRes Function(Input$IngredientUnit_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Ingredient = _undefined,
@@ -4292,7 +4310,7 @@ class _CopyWithImpl$Input$IngredientUnit_inc_input<TRes>
 
   final TRes Function(Input$IngredientUnit_inc_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -4599,7 +4617,7 @@ class _CopyWithImpl$Input$IngredientUnit_insert_input<TRes>
 
   final TRes Function(Input$IngredientUnit_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Ingredient = _undefined,
@@ -4915,7 +4933,7 @@ class _CopyWithImpl$Input$IngredientUnit_max_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_max_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -5202,7 +5220,7 @@ class _CopyWithImpl$Input$IngredientUnit_min_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_min_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -5248,12 +5266,12 @@ class _CopyWithStubImpl$Input$IngredientUnit_min_order_by<TRes>
 class Input$IngredientUnit_on_conflict {
   factory Input$IngredientUnit_on_conflict({
     required Enum$IngredientUnit_constraint constraint,
-    required List<Enum$IngredientUnit_update_column> update_columns,
+    List<Enum$IngredientUnit_update_column>? update_columns,
     Input$IngredientUnit_bool_exp? where,
   }) =>
       Input$IngredientUnit_on_conflict._({
         r'constraint': constraint,
-        r'update_columns': update_columns,
+        if (update_columns != null) r'update_columns': update_columns,
         if (where != null) r'where': where,
       });
 
@@ -5264,10 +5282,12 @@ class Input$IngredientUnit_on_conflict {
     final l$constraint = data['constraint'];
     result$data['constraint'] =
         fromJson$Enum$IngredientUnit_constraint((l$constraint as String));
-    final l$update_columns = data['update_columns'];
-    result$data['update_columns'] = (l$update_columns as List<dynamic>)
-        .map((e) => fromJson$Enum$IngredientUnit_update_column((e as String)))
-        .toList();
+    if (data.containsKey('update_columns')) {
+      final l$update_columns = data['update_columns'];
+      result$data['update_columns'] = (l$update_columns as List<dynamic>)
+          .map((e) => fromJson$Enum$IngredientUnit_update_column((e as String)))
+          .toList();
+    }
     if (data.containsKey('where')) {
       final l$where = data['where'];
       result$data['where'] = l$where == null
@@ -5282,8 +5302,8 @@ class Input$IngredientUnit_on_conflict {
 
   Enum$IngredientUnit_constraint get constraint =>
       (_$data['constraint'] as Enum$IngredientUnit_constraint);
-  List<Enum$IngredientUnit_update_column> get update_columns =>
-      (_$data['update_columns'] as List<Enum$IngredientUnit_update_column>);
+  List<Enum$IngredientUnit_update_column>? get update_columns =>
+      (_$data['update_columns'] as List<Enum$IngredientUnit_update_column>?);
   Input$IngredientUnit_bool_exp? get where =>
       (_$data['where'] as Input$IngredientUnit_bool_exp?);
   Map<String, dynamic> toJson() {
@@ -5291,10 +5311,13 @@ class Input$IngredientUnit_on_conflict {
     final l$constraint = constraint;
     result$data['constraint'] =
         toJson$Enum$IngredientUnit_constraint(l$constraint);
-    final l$update_columns = update_columns;
-    result$data['update_columns'] = l$update_columns
-        .map((e) => toJson$Enum$IngredientUnit_update_column(e))
-        .toList();
+    if (_$data.containsKey('update_columns')) {
+      final l$update_columns = update_columns;
+      result$data['update_columns'] =
+          (l$update_columns as List<Enum$IngredientUnit_update_column>)
+              .map((e) => toJson$Enum$IngredientUnit_update_column(e))
+              .toList();
+    }
     if (_$data.containsKey('where')) {
       final l$where = where;
       result$data['where'] = l$where?.toJson();
@@ -5323,15 +5346,23 @@ class Input$IngredientUnit_on_conflict {
     }
     final l$update_columns = update_columns;
     final lOther$update_columns = other.update_columns;
-    if (l$update_columns.length != lOther$update_columns.length) {
+    if (_$data.containsKey('update_columns') !=
+        other._$data.containsKey('update_columns')) {
       return false;
     }
-    for (int i = 0; i < l$update_columns.length; i++) {
-      final l$update_columns$entry = l$update_columns[i];
-      final lOther$update_columns$entry = lOther$update_columns[i];
-      if (l$update_columns$entry != lOther$update_columns$entry) {
+    if (l$update_columns != null && lOther$update_columns != null) {
+      if (l$update_columns.length != lOther$update_columns.length) {
         return false;
       }
+      for (int i = 0; i < l$update_columns.length; i++) {
+        final l$update_columns$entry = l$update_columns[i];
+        final lOther$update_columns$entry = lOther$update_columns[i];
+        if (l$update_columns$entry != lOther$update_columns$entry) {
+          return false;
+        }
+      }
+    } else if (l$update_columns != lOther$update_columns) {
+      return false;
     }
     final l$where = where;
     final lOther$where = other.where;
@@ -5351,7 +5382,11 @@ class Input$IngredientUnit_on_conflict {
     final l$where = where;
     return Object.hashAll([
       l$constraint,
-      Object.hashAll(l$update_columns.map((v) => v)),
+      _$data.containsKey('update_columns')
+          ? l$update_columns == null
+              ? null
+              : Object.hashAll(l$update_columns.map((v) => v))
+          : const {},
       _$data.containsKey('where') ? l$where : const {},
     ]);
   }
@@ -5385,7 +5420,7 @@ class _CopyWithImpl$Input$IngredientUnit_on_conflict<TRes>
 
   final TRes Function(Input$IngredientUnit_on_conflict) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? constraint = _undefined,
@@ -5754,7 +5789,7 @@ class _CopyWithImpl$Input$IngredientUnit_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Ingredient = _undefined,
@@ -5917,7 +5952,7 @@ class _CopyWithImpl$Input$IngredientUnit_pk_columns_input<TRes>
 
   final TRes Function(Input$IngredientUnit_pk_columns_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? id = _undefined}) =>
       _then(Input$IngredientUnit_pk_columns_input._({
@@ -6114,7 +6149,7 @@ class _CopyWithImpl$Input$IngredientUnit_set_input<TRes>
 
   final TRes Function(Input$IngredientUnit_set_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -6269,7 +6304,7 @@ class _CopyWithImpl$Input$IngredientUnit_stddev_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_stddev_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -6414,7 +6449,7 @@ class _CopyWithImpl$Input$IngredientUnit_stddev_pop_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_stddev_pop_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -6559,7 +6594,7 @@ class _CopyWithImpl$Input$IngredientUnit_stddev_samp_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_stddev_samp_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -6703,7 +6738,7 @@ class _CopyWithImpl$Input$IngredientUnit_sum_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_sum_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -6869,7 +6904,7 @@ class _CopyWithImpl$Input$IngredientUnit_updates<TRes>
 
   final TRes Function(Input$IngredientUnit_updates) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_inc = _undefined,
@@ -7047,7 +7082,7 @@ class _CopyWithImpl$Input$IngredientUnit_var_pop_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_var_pop_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -7192,7 +7227,7 @@ class _CopyWithImpl$Input$IngredientUnit_var_samp_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_var_samp_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -7337,7 +7372,7 @@ class _CopyWithImpl$Input$IngredientUnit_variance_order_by<TRes>
 
   final TRes Function(Input$IngredientUnit_variance_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? amount = _undefined,
@@ -7634,7 +7669,7 @@ class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
 
   final TRes Function(Input$Ingredient_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? IngredientUnits = _undefined,
@@ -7880,7 +7915,7 @@ class _CopyWithImpl$Input$Ingredient_insert_input<TRes>
 
   final TRes Function(Input$Ingredient_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? IngredientUnits = _undefined,
@@ -8038,7 +8073,7 @@ class _CopyWithImpl$Input$Ingredient_obj_rel_insert_input<TRes>
 
   final TRes Function(Input$Ingredient_obj_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -8086,12 +8121,12 @@ class _CopyWithStubImpl$Input$Ingredient_obj_rel_insert_input<TRes>
 class Input$Ingredient_on_conflict {
   factory Input$Ingredient_on_conflict({
     required Enum$Ingredient_constraint constraint,
-    required List<Enum$Ingredient_update_column> update_columns,
+    List<Enum$Ingredient_update_column>? update_columns,
     Input$Ingredient_bool_exp? where,
   }) =>
       Input$Ingredient_on_conflict._({
         r'constraint': constraint,
-        r'update_columns': update_columns,
+        if (update_columns != null) r'update_columns': update_columns,
         if (where != null) r'where': where,
       });
 
@@ -8102,10 +8137,12 @@ class Input$Ingredient_on_conflict {
     final l$constraint = data['constraint'];
     result$data['constraint'] =
         fromJson$Enum$Ingredient_constraint((l$constraint as String));
-    final l$update_columns = data['update_columns'];
-    result$data['update_columns'] = (l$update_columns as List<dynamic>)
-        .map((e) => fromJson$Enum$Ingredient_update_column((e as String)))
-        .toList();
+    if (data.containsKey('update_columns')) {
+      final l$update_columns = data['update_columns'];
+      result$data['update_columns'] = (l$update_columns as List<dynamic>)
+          .map((e) => fromJson$Enum$Ingredient_update_column((e as String)))
+          .toList();
+    }
     if (data.containsKey('where')) {
       final l$where = data['where'];
       result$data['where'] = l$where == null
@@ -8120,18 +8157,21 @@ class Input$Ingredient_on_conflict {
 
   Enum$Ingredient_constraint get constraint =>
       (_$data['constraint'] as Enum$Ingredient_constraint);
-  List<Enum$Ingredient_update_column> get update_columns =>
-      (_$data['update_columns'] as List<Enum$Ingredient_update_column>);
+  List<Enum$Ingredient_update_column>? get update_columns =>
+      (_$data['update_columns'] as List<Enum$Ingredient_update_column>?);
   Input$Ingredient_bool_exp? get where =>
       (_$data['where'] as Input$Ingredient_bool_exp?);
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
     result$data['constraint'] = toJson$Enum$Ingredient_constraint(l$constraint);
-    final l$update_columns = update_columns;
-    result$data['update_columns'] = l$update_columns
-        .map((e) => toJson$Enum$Ingredient_update_column(e))
-        .toList();
+    if (_$data.containsKey('update_columns')) {
+      final l$update_columns = update_columns;
+      result$data['update_columns'] =
+          (l$update_columns as List<Enum$Ingredient_update_column>)
+              .map((e) => toJson$Enum$Ingredient_update_column(e))
+              .toList();
+    }
     if (_$data.containsKey('where')) {
       final l$where = where;
       result$data['where'] = l$where?.toJson();
@@ -8160,15 +8200,23 @@ class Input$Ingredient_on_conflict {
     }
     final l$update_columns = update_columns;
     final lOther$update_columns = other.update_columns;
-    if (l$update_columns.length != lOther$update_columns.length) {
+    if (_$data.containsKey('update_columns') !=
+        other._$data.containsKey('update_columns')) {
       return false;
     }
-    for (int i = 0; i < l$update_columns.length; i++) {
-      final l$update_columns$entry = l$update_columns[i];
-      final lOther$update_columns$entry = lOther$update_columns[i];
-      if (l$update_columns$entry != lOther$update_columns$entry) {
+    if (l$update_columns != null && lOther$update_columns != null) {
+      if (l$update_columns.length != lOther$update_columns.length) {
         return false;
       }
+      for (int i = 0; i < l$update_columns.length; i++) {
+        final l$update_columns$entry = l$update_columns[i];
+        final lOther$update_columns$entry = lOther$update_columns[i];
+        if (l$update_columns$entry != lOther$update_columns$entry) {
+          return false;
+        }
+      }
+    } else if (l$update_columns != lOther$update_columns) {
+      return false;
     }
     final l$where = where;
     final lOther$where = other.where;
@@ -8188,7 +8236,11 @@ class Input$Ingredient_on_conflict {
     final l$where = where;
     return Object.hashAll([
       l$constraint,
-      Object.hashAll(l$update_columns.map((v) => v)),
+      _$data.containsKey('update_columns')
+          ? l$update_columns == null
+              ? null
+              : Object.hashAll(l$update_columns.map((v) => v))
+          : const {},
       _$data.containsKey('where') ? l$where : const {},
     ]);
   }
@@ -8222,7 +8274,7 @@ class _CopyWithImpl$Input$Ingredient_on_conflict<TRes>
 
   final TRes Function(Input$Ingredient_on_conflict) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? constraint = _undefined,
@@ -8413,7 +8465,7 @@ class _CopyWithImpl$Input$Ingredient_order_by<TRes>
 
   final TRes Function(Input$Ingredient_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? IngredientUnits_aggregate = _undefined,
@@ -8756,7 +8808,7 @@ class _CopyWithImpl$Input$Int_comparison_exp<TRes>
 
   final TRes Function(Input$Int_comparison_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_eq = _undefined,
@@ -9171,7 +9223,7 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_aggregate_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? avg = _undefined,
@@ -9467,7 +9519,7 @@ class _CopyWithImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
 
   final TRes Function(Input$RecipeSection_arr_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -9691,7 +9743,7 @@ class _CopyWithImpl$Input$RecipeSection_avg_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_avg_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -10242,7 +10294,7 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
 
   final TRes Function(Input$RecipeSection_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? IngredientUnits = _undefined,
@@ -10628,7 +10680,7 @@ class _CopyWithImpl$Input$RecipeSection_inc_input<TRes>
 
   final TRes Function(Input$RecipeSection_inc_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -11016,7 +11068,7 @@ class _CopyWithImpl$Input$RecipeSection_insert_input<TRes>
 
   final TRes Function(Input$RecipeSection_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? IngredientUnits = _undefined,
@@ -11408,7 +11460,7 @@ class _CopyWithImpl$Input$RecipeSection_max_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_max_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -11758,7 +11810,7 @@ class _CopyWithImpl$Input$RecipeSection_min_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_min_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -11925,7 +11977,7 @@ class _CopyWithImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
 
   final TRes Function(Input$RecipeSection_obj_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -11973,12 +12025,12 @@ class _CopyWithStubImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
 class Input$RecipeSection_on_conflict {
   factory Input$RecipeSection_on_conflict({
     required Enum$RecipeSection_constraint constraint,
-    required List<Enum$RecipeSection_update_column> update_columns,
+    List<Enum$RecipeSection_update_column>? update_columns,
     Input$RecipeSection_bool_exp? where,
   }) =>
       Input$RecipeSection_on_conflict._({
         r'constraint': constraint,
-        r'update_columns': update_columns,
+        if (update_columns != null) r'update_columns': update_columns,
         if (where != null) r'where': where,
       });
 
@@ -11989,10 +12041,12 @@ class Input$RecipeSection_on_conflict {
     final l$constraint = data['constraint'];
     result$data['constraint'] =
         fromJson$Enum$RecipeSection_constraint((l$constraint as String));
-    final l$update_columns = data['update_columns'];
-    result$data['update_columns'] = (l$update_columns as List<dynamic>)
-        .map((e) => fromJson$Enum$RecipeSection_update_column((e as String)))
-        .toList();
+    if (data.containsKey('update_columns')) {
+      final l$update_columns = data['update_columns'];
+      result$data['update_columns'] = (l$update_columns as List<dynamic>)
+          .map((e) => fromJson$Enum$RecipeSection_update_column((e as String)))
+          .toList();
+    }
     if (data.containsKey('where')) {
       final l$where = data['where'];
       result$data['where'] = l$where == null
@@ -12007,8 +12061,8 @@ class Input$RecipeSection_on_conflict {
 
   Enum$RecipeSection_constraint get constraint =>
       (_$data['constraint'] as Enum$RecipeSection_constraint);
-  List<Enum$RecipeSection_update_column> get update_columns =>
-      (_$data['update_columns'] as List<Enum$RecipeSection_update_column>);
+  List<Enum$RecipeSection_update_column>? get update_columns =>
+      (_$data['update_columns'] as List<Enum$RecipeSection_update_column>?);
   Input$RecipeSection_bool_exp? get where =>
       (_$data['where'] as Input$RecipeSection_bool_exp?);
   Map<String, dynamic> toJson() {
@@ -12016,10 +12070,13 @@ class Input$RecipeSection_on_conflict {
     final l$constraint = constraint;
     result$data['constraint'] =
         toJson$Enum$RecipeSection_constraint(l$constraint);
-    final l$update_columns = update_columns;
-    result$data['update_columns'] = l$update_columns
-        .map((e) => toJson$Enum$RecipeSection_update_column(e))
-        .toList();
+    if (_$data.containsKey('update_columns')) {
+      final l$update_columns = update_columns;
+      result$data['update_columns'] =
+          (l$update_columns as List<Enum$RecipeSection_update_column>)
+              .map((e) => toJson$Enum$RecipeSection_update_column(e))
+              .toList();
+    }
     if (_$data.containsKey('where')) {
       final l$where = where;
       result$data['where'] = l$where?.toJson();
@@ -12048,15 +12105,23 @@ class Input$RecipeSection_on_conflict {
     }
     final l$update_columns = update_columns;
     final lOther$update_columns = other.update_columns;
-    if (l$update_columns.length != lOther$update_columns.length) {
+    if (_$data.containsKey('update_columns') !=
+        other._$data.containsKey('update_columns')) {
       return false;
     }
-    for (int i = 0; i < l$update_columns.length; i++) {
-      final l$update_columns$entry = l$update_columns[i];
-      final lOther$update_columns$entry = lOther$update_columns[i];
-      if (l$update_columns$entry != lOther$update_columns$entry) {
+    if (l$update_columns != null && lOther$update_columns != null) {
+      if (l$update_columns.length != lOther$update_columns.length) {
         return false;
       }
+      for (int i = 0; i < l$update_columns.length; i++) {
+        final l$update_columns$entry = l$update_columns[i];
+        final lOther$update_columns$entry = lOther$update_columns[i];
+        if (l$update_columns$entry != lOther$update_columns$entry) {
+          return false;
+        }
+      }
+    } else if (l$update_columns != lOther$update_columns) {
+      return false;
     }
     final l$where = where;
     final lOther$where = other.where;
@@ -12076,7 +12141,11 @@ class Input$RecipeSection_on_conflict {
     final l$where = where;
     return Object.hashAll([
       l$constraint,
-      Object.hashAll(l$update_columns.map((v) => v)),
+      _$data.containsKey('update_columns')
+          ? l$update_columns == null
+              ? null
+              : Object.hashAll(l$update_columns.map((v) => v))
+          : const {},
       _$data.containsKey('where') ? l$where : const {},
     ]);
   }
@@ -12110,7 +12179,7 @@ class _CopyWithImpl$Input$RecipeSection_on_conflict<TRes>
 
   final TRes Function(Input$RecipeSection_on_conflict) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? constraint = _undefined,
@@ -12540,7 +12609,7 @@ class _CopyWithImpl$Input$RecipeSection_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? IngredientUnits_aggregate = _undefined,
@@ -12715,7 +12784,7 @@ class _CopyWithImpl$Input$RecipeSection_pk_columns_input<TRes>
 
   final TRes Function(Input$RecipeSection_pk_columns_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? id = _undefined}) =>
       _then(Input$RecipeSection_pk_columns_input._({
@@ -12960,7 +13029,7 @@ class _CopyWithImpl$Input$RecipeSection_set_input<TRes>
 
   final TRes Function(Input$RecipeSection_set_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -13179,7 +13248,7 @@ class _CopyWithImpl$Input$RecipeSection_stddev_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_stddev_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -13389,7 +13458,7 @@ class _CopyWithImpl$Input$RecipeSection_stddev_pop_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_stddev_pop_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -13599,7 +13668,7 @@ class _CopyWithImpl$Input$RecipeSection_stddev_samp_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_stddev_samp_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -13807,7 +13876,7 @@ class _CopyWithImpl$Input$RecipeSection_sum_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_sum_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -13981,7 +14050,7 @@ class _CopyWithImpl$Input$RecipeSection_updates<TRes>
 
   final TRes Function(Input$RecipeSection_updates) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_inc = _undefined,
@@ -14216,7 +14285,7 @@ class _CopyWithImpl$Input$RecipeSection_var_pop_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_var_pop_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -14426,7 +14495,7 @@ class _CopyWithImpl$Input$RecipeSection_var_samp_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_var_samp_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -14636,7 +14705,7 @@ class _CopyWithImpl$Input$RecipeSection_variance_order_by<TRes>
 
   final TRes Function(Input$RecipeSection_variance_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? cookTimeMinutes = _undefined,
@@ -14814,7 +14883,7 @@ class _CopyWithImpl$Input$Recipe_aggregate_order_by<TRes>
 
   final TRes Function(Input$Recipe_aggregate_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? count = _undefined,
@@ -15369,7 +15438,7 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
 
   final TRes Function(Input$Recipe_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Author = _undefined,
@@ -15853,7 +15922,7 @@ class _CopyWithImpl$Input$Recipe_insert_input<TRes>
 
   final TRes Function(Input$Recipe_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Files = _undefined,
@@ -16201,7 +16270,7 @@ class _CopyWithImpl$Input$Recipe_max_order_by<TRes>
 
   final TRes Function(Input$Recipe_max_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? authorId = _undefined,
@@ -16514,7 +16583,7 @@ class _CopyWithImpl$Input$Recipe_min_order_by<TRes>
 
   final TRes Function(Input$Recipe_min_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? authorId = _undefined,
@@ -16674,7 +16743,7 @@ class _CopyWithImpl$Input$Recipe_obj_rel_insert_input<TRes>
 
   final TRes Function(Input$Recipe_obj_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -16721,12 +16790,12 @@ class _CopyWithStubImpl$Input$Recipe_obj_rel_insert_input<TRes>
 class Input$Recipe_on_conflict {
   factory Input$Recipe_on_conflict({
     required Enum$Recipe_constraint constraint,
-    required List<Enum$Recipe_update_column> update_columns,
+    List<Enum$Recipe_update_column>? update_columns,
     Input$Recipe_bool_exp? where,
   }) =>
       Input$Recipe_on_conflict._({
         r'constraint': constraint,
-        r'update_columns': update_columns,
+        if (update_columns != null) r'update_columns': update_columns,
         if (where != null) r'where': where,
       });
 
@@ -16737,10 +16806,12 @@ class Input$Recipe_on_conflict {
     final l$constraint = data['constraint'];
     result$data['constraint'] =
         fromJson$Enum$Recipe_constraint((l$constraint as String));
-    final l$update_columns = data['update_columns'];
-    result$data['update_columns'] = (l$update_columns as List<dynamic>)
-        .map((e) => fromJson$Enum$Recipe_update_column((e as String)))
-        .toList();
+    if (data.containsKey('update_columns')) {
+      final l$update_columns = data['update_columns'];
+      result$data['update_columns'] = (l$update_columns as List<dynamic>)
+          .map((e) => fromJson$Enum$Recipe_update_column((e as String)))
+          .toList();
+    }
     if (data.containsKey('where')) {
       final l$where = data['where'];
       result$data['where'] = l$where == null
@@ -16754,18 +16825,21 @@ class Input$Recipe_on_conflict {
 
   Enum$Recipe_constraint get constraint =>
       (_$data['constraint'] as Enum$Recipe_constraint);
-  List<Enum$Recipe_update_column> get update_columns =>
-      (_$data['update_columns'] as List<Enum$Recipe_update_column>);
+  List<Enum$Recipe_update_column>? get update_columns =>
+      (_$data['update_columns'] as List<Enum$Recipe_update_column>?);
   Input$Recipe_bool_exp? get where =>
       (_$data['where'] as Input$Recipe_bool_exp?);
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
     result$data['constraint'] = toJson$Enum$Recipe_constraint(l$constraint);
-    final l$update_columns = update_columns;
-    result$data['update_columns'] = l$update_columns
-        .map((e) => toJson$Enum$Recipe_update_column(e))
-        .toList();
+    if (_$data.containsKey('update_columns')) {
+      final l$update_columns = update_columns;
+      result$data['update_columns'] =
+          (l$update_columns as List<Enum$Recipe_update_column>)
+              .map((e) => toJson$Enum$Recipe_update_column(e))
+              .toList();
+    }
     if (_$data.containsKey('where')) {
       final l$where = where;
       result$data['where'] = l$where?.toJson();
@@ -16794,15 +16868,23 @@ class Input$Recipe_on_conflict {
     }
     final l$update_columns = update_columns;
     final lOther$update_columns = other.update_columns;
-    if (l$update_columns.length != lOther$update_columns.length) {
+    if (_$data.containsKey('update_columns') !=
+        other._$data.containsKey('update_columns')) {
       return false;
     }
-    for (int i = 0; i < l$update_columns.length; i++) {
-      final l$update_columns$entry = l$update_columns[i];
-      final lOther$update_columns$entry = lOther$update_columns[i];
-      if (l$update_columns$entry != lOther$update_columns$entry) {
+    if (l$update_columns != null && lOther$update_columns != null) {
+      if (l$update_columns.length != lOther$update_columns.length) {
         return false;
       }
+      for (int i = 0; i < l$update_columns.length; i++) {
+        final l$update_columns$entry = l$update_columns[i];
+        final lOther$update_columns$entry = lOther$update_columns[i];
+        if (l$update_columns$entry != lOther$update_columns$entry) {
+          return false;
+        }
+      }
+    } else if (l$update_columns != lOther$update_columns) {
+      return false;
     }
     final l$where = where;
     final lOther$where = other.where;
@@ -16822,7 +16904,11 @@ class Input$Recipe_on_conflict {
     final l$where = where;
     return Object.hashAll([
       l$constraint,
-      Object.hashAll(l$update_columns.map((v) => v)),
+      _$data.containsKey('update_columns')
+          ? l$update_columns == null
+              ? null
+              : Object.hashAll(l$update_columns.map((v) => v))
+          : const {},
       _$data.containsKey('where') ? l$where : const {},
     ]);
   }
@@ -16856,7 +16942,7 @@ class _CopyWithImpl$Input$Recipe_on_conflict<TRes>
 
   final TRes Function(Input$Recipe_on_conflict) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? constraint = _undefined,
@@ -17282,7 +17368,7 @@ class _CopyWithImpl$Input$Recipe_order_by<TRes>
 
   final TRes Function(Input$Recipe_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Author = _undefined,
@@ -17465,7 +17551,7 @@ class _CopyWithImpl$Input$Recipe_pk_columns_input<TRes>
 
   final TRes Function(Input$Recipe_pk_columns_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? id = _undefined}) =>
       _then(Input$Recipe_pk_columns_input._({
@@ -17640,7 +17726,7 @@ class _CopyWithImpl$Input$Recipe_set_input<TRes>
 
   final TRes Function(Input$Recipe_set_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? description = _undefined,
@@ -17782,7 +17868,7 @@ class _CopyWithImpl$Input$Recipe_updates<TRes>
 
   final TRes Function(Input$Recipe_updates) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_set = _undefined,
@@ -18186,7 +18272,7 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
 
   final TRes Function(Input$Step_aggregate_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? avg = _undefined,
@@ -18467,7 +18553,7 @@ class _CopyWithImpl$Input$Step_arr_rel_insert_input<TRes>
 
   final TRes Function(Input$Step_arr_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -18602,7 +18688,7 @@ class _CopyWithImpl$Input$Step_avg_order_by<TRes>
 
   final TRes Function(Input$Step_avg_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? order = _undefined}) => _then(Input$Step_avg_order_by._({
         ..._instance._$data,
@@ -18991,7 +19077,7 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
 
   final TRes Function(Input$Step_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? File = _undefined,
@@ -19222,7 +19308,7 @@ class _CopyWithImpl$Input$Step_inc_input<TRes>
 
   final TRes Function(Input$Step_inc_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? order = _undefined}) => _then(Input$Step_inc_input._({
         ..._instance._$data,
@@ -19474,7 +19560,7 @@ class _CopyWithImpl$Input$Step_insert_input<TRes>
 
   final TRes Function(Input$Step_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? File = _undefined,
@@ -19733,7 +19819,7 @@ class _CopyWithImpl$Input$Step_max_order_by<TRes>
 
   final TRes Function(Input$Step_max_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? description = _undefined,
@@ -19964,7 +20050,7 @@ class _CopyWithImpl$Input$Step_min_order_by<TRes>
 
   final TRes Function(Input$Step_min_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? description = _undefined,
@@ -20004,12 +20090,12 @@ class _CopyWithStubImpl$Input$Step_min_order_by<TRes>
 class Input$Step_on_conflict {
   factory Input$Step_on_conflict({
     required Enum$Step_constraint constraint,
-    required List<Enum$Step_update_column> update_columns,
+    List<Enum$Step_update_column>? update_columns,
     Input$Step_bool_exp? where,
   }) =>
       Input$Step_on_conflict._({
         r'constraint': constraint,
-        r'update_columns': update_columns,
+        if (update_columns != null) r'update_columns': update_columns,
         if (where != null) r'where': where,
       });
 
@@ -20020,10 +20106,12 @@ class Input$Step_on_conflict {
     final l$constraint = data['constraint'];
     result$data['constraint'] =
         fromJson$Enum$Step_constraint((l$constraint as String));
-    final l$update_columns = data['update_columns'];
-    result$data['update_columns'] = (l$update_columns as List<dynamic>)
-        .map((e) => fromJson$Enum$Step_update_column((e as String)))
-        .toList();
+    if (data.containsKey('update_columns')) {
+      final l$update_columns = data['update_columns'];
+      result$data['update_columns'] = (l$update_columns as List<dynamic>)
+          .map((e) => fromJson$Enum$Step_update_column((e as String)))
+          .toList();
+    }
     if (data.containsKey('where')) {
       final l$where = data['where'];
       result$data['where'] = l$where == null
@@ -20037,16 +20125,20 @@ class Input$Step_on_conflict {
 
   Enum$Step_constraint get constraint =>
       (_$data['constraint'] as Enum$Step_constraint);
-  List<Enum$Step_update_column> get update_columns =>
-      (_$data['update_columns'] as List<Enum$Step_update_column>);
+  List<Enum$Step_update_column>? get update_columns =>
+      (_$data['update_columns'] as List<Enum$Step_update_column>?);
   Input$Step_bool_exp? get where => (_$data['where'] as Input$Step_bool_exp?);
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
     result$data['constraint'] = toJson$Enum$Step_constraint(l$constraint);
-    final l$update_columns = update_columns;
-    result$data['update_columns'] =
-        l$update_columns.map((e) => toJson$Enum$Step_update_column(e)).toList();
+    if (_$data.containsKey('update_columns')) {
+      final l$update_columns = update_columns;
+      result$data['update_columns'] =
+          (l$update_columns as List<Enum$Step_update_column>)
+              .map((e) => toJson$Enum$Step_update_column(e))
+              .toList();
+    }
     if (_$data.containsKey('where')) {
       final l$where = where;
       result$data['where'] = l$where?.toJson();
@@ -20075,15 +20167,23 @@ class Input$Step_on_conflict {
     }
     final l$update_columns = update_columns;
     final lOther$update_columns = other.update_columns;
-    if (l$update_columns.length != lOther$update_columns.length) {
+    if (_$data.containsKey('update_columns') !=
+        other._$data.containsKey('update_columns')) {
       return false;
     }
-    for (int i = 0; i < l$update_columns.length; i++) {
-      final l$update_columns$entry = l$update_columns[i];
-      final lOther$update_columns$entry = lOther$update_columns[i];
-      if (l$update_columns$entry != lOther$update_columns$entry) {
+    if (l$update_columns != null && lOther$update_columns != null) {
+      if (l$update_columns.length != lOther$update_columns.length) {
         return false;
       }
+      for (int i = 0; i < l$update_columns.length; i++) {
+        final l$update_columns$entry = l$update_columns[i];
+        final lOther$update_columns$entry = lOther$update_columns[i];
+        if (l$update_columns$entry != lOther$update_columns$entry) {
+          return false;
+        }
+      }
+    } else if (l$update_columns != lOther$update_columns) {
+      return false;
     }
     final l$where = where;
     final lOther$where = other.where;
@@ -20103,7 +20203,11 @@ class Input$Step_on_conflict {
     final l$where = where;
     return Object.hashAll([
       l$constraint,
-      Object.hashAll(l$update_columns.map((v) => v)),
+      _$data.containsKey('update_columns')
+          ? l$update_columns == null
+              ? null
+              : Object.hashAll(l$update_columns.map((v) => v))
+          : const {},
       _$data.containsKey('where') ? l$where : const {},
     ]);
   }
@@ -20137,7 +20241,7 @@ class _CopyWithImpl$Input$Step_on_conflict<TRes>
 
   final TRes Function(Input$Step_on_conflict) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? constraint = _undefined,
@@ -20422,7 +20526,7 @@ class _CopyWithImpl$Input$Step_order_by<TRes>
 
   final TRes Function(Input$Step_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? File = _undefined,
@@ -20561,7 +20665,7 @@ class _CopyWithImpl$Input$Step_pk_columns_input<TRes>
 
   final TRes Function(Input$Step_pk_columns_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? id = _undefined}) => _then(Input$Step_pk_columns_input._({
         ..._instance._$data,
@@ -20735,7 +20839,7 @@ class _CopyWithImpl$Input$Step_set_input<TRes>
 
   final TRes Function(Input$Step_set_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? description = _undefined,
@@ -20854,7 +20958,7 @@ class _CopyWithImpl$Input$Step_stddev_order_by<TRes>
 
   final TRes Function(Input$Step_stddev_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? order = _undefined}) =>
       _then(Input$Step_stddev_order_by._({
@@ -20958,7 +21062,7 @@ class _CopyWithImpl$Input$Step_stddev_pop_order_by<TRes>
 
   final TRes Function(Input$Step_stddev_pop_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? order = _undefined}) =>
       _then(Input$Step_stddev_pop_order_by._({
@@ -21062,7 +21166,7 @@ class _CopyWithImpl$Input$Step_stddev_samp_order_by<TRes>
 
   final TRes Function(Input$Step_stddev_samp_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? order = _undefined}) =>
       _then(Input$Step_stddev_samp_order_by._({
@@ -21166,7 +21270,7 @@ class _CopyWithImpl$Input$Step_sum_order_by<TRes>
 
   final TRes Function(Input$Step_sum_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? order = _undefined}) => _then(Input$Step_sum_order_by._({
         ..._instance._$data,
@@ -21317,7 +21421,7 @@ class _CopyWithImpl$Input$Step_updates<TRes>
 
   final TRes Function(Input$Step_updates) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_inc = _undefined,
@@ -21457,7 +21561,7 @@ class _CopyWithImpl$Input$Step_var_pop_order_by<TRes>
 
   final TRes Function(Input$Step_var_pop_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? order = _undefined}) =>
       _then(Input$Step_var_pop_order_by._({
@@ -21561,7 +21665,7 @@ class _CopyWithImpl$Input$Step_var_samp_order_by<TRes>
 
   final TRes Function(Input$Step_var_samp_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? order = _undefined}) =>
       _then(Input$Step_var_samp_order_by._({
@@ -21665,7 +21769,7 @@ class _CopyWithImpl$Input$Step_variance_order_by<TRes>
 
   final TRes Function(Input$Step_variance_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? order = _undefined}) =>
       _then(Input$Step_variance_order_by._({
@@ -22205,7 +22309,7 @@ class _CopyWithImpl$Input$String_comparison_exp<TRes>
 
   final TRes Function(Input$String_comparison_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_eq = _undefined,
@@ -22543,7 +22647,7 @@ class _CopyWithImpl$Input$Tag_bool_exp<TRes>
 
   final TRes Function(Input$Tag_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Recipes = _undefined,
@@ -22778,7 +22882,7 @@ class _CopyWithImpl$Input$Tag_insert_input<TRes>
 
   final TRes Function(Input$Tag_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Recipes = _undefined,
@@ -22931,7 +23035,7 @@ class _CopyWithImpl$Input$Tag_obj_rel_insert_input<TRes>
 
   final TRes Function(Input$Tag_obj_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -22978,12 +23082,12 @@ class _CopyWithStubImpl$Input$Tag_obj_rel_insert_input<TRes>
 class Input$Tag_on_conflict {
   factory Input$Tag_on_conflict({
     required Enum$Tag_constraint constraint,
-    required List<Enum$Tag_update_column> update_columns,
+    List<Enum$Tag_update_column>? update_columns,
     Input$Tag_bool_exp? where,
   }) =>
       Input$Tag_on_conflict._({
         r'constraint': constraint,
-        r'update_columns': update_columns,
+        if (update_columns != null) r'update_columns': update_columns,
         if (where != null) r'where': where,
       });
 
@@ -22994,10 +23098,12 @@ class Input$Tag_on_conflict {
     final l$constraint = data['constraint'];
     result$data['constraint'] =
         fromJson$Enum$Tag_constraint((l$constraint as String));
-    final l$update_columns = data['update_columns'];
-    result$data['update_columns'] = (l$update_columns as List<dynamic>)
-        .map((e) => fromJson$Enum$Tag_update_column((e as String)))
-        .toList();
+    if (data.containsKey('update_columns')) {
+      final l$update_columns = data['update_columns'];
+      result$data['update_columns'] = (l$update_columns as List<dynamic>)
+          .map((e) => fromJson$Enum$Tag_update_column((e as String)))
+          .toList();
+    }
     if (data.containsKey('where')) {
       final l$where = data['where'];
       result$data['where'] = l$where == null
@@ -23011,16 +23117,20 @@ class Input$Tag_on_conflict {
 
   Enum$Tag_constraint get constraint =>
       (_$data['constraint'] as Enum$Tag_constraint);
-  List<Enum$Tag_update_column> get update_columns =>
-      (_$data['update_columns'] as List<Enum$Tag_update_column>);
+  List<Enum$Tag_update_column>? get update_columns =>
+      (_$data['update_columns'] as List<Enum$Tag_update_column>?);
   Input$Tag_bool_exp? get where => (_$data['where'] as Input$Tag_bool_exp?);
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
     result$data['constraint'] = toJson$Enum$Tag_constraint(l$constraint);
-    final l$update_columns = update_columns;
-    result$data['update_columns'] =
-        l$update_columns.map((e) => toJson$Enum$Tag_update_column(e)).toList();
+    if (_$data.containsKey('update_columns')) {
+      final l$update_columns = update_columns;
+      result$data['update_columns'] =
+          (l$update_columns as List<Enum$Tag_update_column>)
+              .map((e) => toJson$Enum$Tag_update_column(e))
+              .toList();
+    }
     if (_$data.containsKey('where')) {
       final l$where = where;
       result$data['where'] = l$where?.toJson();
@@ -23048,15 +23158,23 @@ class Input$Tag_on_conflict {
     }
     final l$update_columns = update_columns;
     final lOther$update_columns = other.update_columns;
-    if (l$update_columns.length != lOther$update_columns.length) {
+    if (_$data.containsKey('update_columns') !=
+        other._$data.containsKey('update_columns')) {
       return false;
     }
-    for (int i = 0; i < l$update_columns.length; i++) {
-      final l$update_columns$entry = l$update_columns[i];
-      final lOther$update_columns$entry = lOther$update_columns[i];
-      if (l$update_columns$entry != lOther$update_columns$entry) {
+    if (l$update_columns != null && lOther$update_columns != null) {
+      if (l$update_columns.length != lOther$update_columns.length) {
         return false;
       }
+      for (int i = 0; i < l$update_columns.length; i++) {
+        final l$update_columns$entry = l$update_columns[i];
+        final lOther$update_columns$entry = lOther$update_columns[i];
+        if (l$update_columns$entry != lOther$update_columns$entry) {
+          return false;
+        }
+      }
+    } else if (l$update_columns != lOther$update_columns) {
+      return false;
     }
     final l$where = where;
     final lOther$where = other.where;
@@ -23076,7 +23194,11 @@ class Input$Tag_on_conflict {
     final l$where = where;
     return Object.hashAll([
       l$constraint,
-      Object.hashAll(l$update_columns.map((v) => v)),
+      _$data.containsKey('update_columns')
+          ? l$update_columns == null
+              ? null
+              : Object.hashAll(l$update_columns.map((v) => v))
+          : const {},
       _$data.containsKey('where') ? l$where : const {},
     ]);
   }
@@ -23110,7 +23232,7 @@ class _CopyWithImpl$Input$Tag_on_conflict<TRes>
 
   final TRes Function(Input$Tag_on_conflict) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? constraint = _undefined,
@@ -23291,7 +23413,7 @@ class _CopyWithImpl$Input$Tag_order_by<TRes>
 
   final TRes Function(Input$Tag_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Recipes_aggregate = _undefined,
@@ -23478,7 +23600,7 @@ class _CopyWithImpl$Input$UnitSize_aggregate_order_by<TRes>
 
   final TRes Function(Input$UnitSize_aggregate_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? count = _undefined,
@@ -23875,7 +23997,7 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
 
   final TRes Function(Input$UnitSize_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? IngredientUnits = _undefined,
@@ -24160,7 +24282,7 @@ class _CopyWithImpl$Input$UnitSize_max_order_by<TRes>
 
   final TRes Function(Input$UnitSize_max_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -24329,7 +24451,7 @@ class _CopyWithImpl$Input$UnitSize_min_order_by<TRes>
 
   final TRes Function(Input$UnitSize_min_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
@@ -24587,7 +24709,7 @@ class _CopyWithImpl$Input$UnitSize_order_by<TRes>
 
   final TRes Function(Input$UnitSize_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? IngredientUnits_aggregate = _undefined,
@@ -24920,7 +25042,7 @@ class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
 
   final TRes Function(Input$UnitType_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? UnitSizes = _undefined,
@@ -25248,7 +25370,7 @@ class _CopyWithImpl$Input$UnitType_enum_comparison_exp<TRes>
 
   final TRes Function(Input$UnitType_enum_comparison_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_eq = _undefined,
@@ -25431,7 +25553,7 @@ class _CopyWithImpl$Input$UnitType_order_by<TRes>
 
   final TRes Function(Input$UnitType_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? UnitSizes_aggregate = _undefined,
@@ -25759,7 +25881,7 @@ class _CopyWithImpl$Input$User_bool_exp<TRes>
 
   final TRes Function(Input$User_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Files = _undefined,
@@ -26037,7 +26159,7 @@ class _CopyWithImpl$Input$User_order_by<TRes>
 
   final TRes Function(Input$User_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? Files_aggregate = _undefined,
@@ -26240,7 +26362,7 @@ class _CopyWithImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
 
   final TRes Function(Input$_RecipeToTag_aggregate_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? count = _undefined,
@@ -26418,7 +26540,7 @@ class _CopyWithImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
 
   final TRes Function(Input$_RecipeToTag_arr_rel_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? data = _undefined,
@@ -26760,7 +26882,7 @@ class _CopyWithImpl$Input$_RecipeToTag_bool_exp<TRes>
 
   final TRes Function(Input$_RecipeToTag_bool_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? A = _undefined,
@@ -27042,7 +27164,7 @@ class _CopyWithImpl$Input$_RecipeToTag_insert_input<TRes>
 
   final TRes Function(Input$_RecipeToTag_insert_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? A = _undefined,
@@ -27208,7 +27330,7 @@ class _CopyWithImpl$Input$_RecipeToTag_max_order_by<TRes>
 
   final TRes Function(Input$_RecipeToTag_max_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? A = _undefined,
@@ -27348,7 +27470,7 @@ class _CopyWithImpl$Input$_RecipeToTag_min_order_by<TRes>
 
   final TRes Function(Input$_RecipeToTag_min_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? A = _undefined,
@@ -27377,12 +27499,12 @@ class _CopyWithStubImpl$Input$_RecipeToTag_min_order_by<TRes>
 class Input$_RecipeToTag_on_conflict {
   factory Input$_RecipeToTag_on_conflict({
     required Enum$_RecipeToTag_constraint constraint,
-    required List<Enum$_RecipeToTag_update_column> update_columns,
+    List<Enum$_RecipeToTag_update_column>? update_columns,
     Input$_RecipeToTag_bool_exp? where,
   }) =>
       Input$_RecipeToTag_on_conflict._({
         r'constraint': constraint,
-        r'update_columns': update_columns,
+        if (update_columns != null) r'update_columns': update_columns,
         if (where != null) r'where': where,
       });
 
@@ -27393,10 +27515,12 @@ class Input$_RecipeToTag_on_conflict {
     final l$constraint = data['constraint'];
     result$data['constraint'] =
         fromJson$Enum$_RecipeToTag_constraint((l$constraint as String));
-    final l$update_columns = data['update_columns'];
-    result$data['update_columns'] = (l$update_columns as List<dynamic>)
-        .map((e) => fromJson$Enum$_RecipeToTag_update_column((e as String)))
-        .toList();
+    if (data.containsKey('update_columns')) {
+      final l$update_columns = data['update_columns'];
+      result$data['update_columns'] = (l$update_columns as List<dynamic>)
+          .map((e) => fromJson$Enum$_RecipeToTag_update_column((e as String)))
+          .toList();
+    }
     if (data.containsKey('where')) {
       final l$where = data['where'];
       result$data['where'] = l$where == null
@@ -27411,8 +27535,8 @@ class Input$_RecipeToTag_on_conflict {
 
   Enum$_RecipeToTag_constraint get constraint =>
       (_$data['constraint'] as Enum$_RecipeToTag_constraint);
-  List<Enum$_RecipeToTag_update_column> get update_columns =>
-      (_$data['update_columns'] as List<Enum$_RecipeToTag_update_column>);
+  List<Enum$_RecipeToTag_update_column>? get update_columns =>
+      (_$data['update_columns'] as List<Enum$_RecipeToTag_update_column>?);
   Input$_RecipeToTag_bool_exp? get where =>
       (_$data['where'] as Input$_RecipeToTag_bool_exp?);
   Map<String, dynamic> toJson() {
@@ -27420,10 +27544,13 @@ class Input$_RecipeToTag_on_conflict {
     final l$constraint = constraint;
     result$data['constraint'] =
         toJson$Enum$_RecipeToTag_constraint(l$constraint);
-    final l$update_columns = update_columns;
-    result$data['update_columns'] = l$update_columns
-        .map((e) => toJson$Enum$_RecipeToTag_update_column(e))
-        .toList();
+    if (_$data.containsKey('update_columns')) {
+      final l$update_columns = update_columns;
+      result$data['update_columns'] =
+          (l$update_columns as List<Enum$_RecipeToTag_update_column>)
+              .map((e) => toJson$Enum$_RecipeToTag_update_column(e))
+              .toList();
+    }
     if (_$data.containsKey('where')) {
       final l$where = where;
       result$data['where'] = l$where?.toJson();
@@ -27452,15 +27579,23 @@ class Input$_RecipeToTag_on_conflict {
     }
     final l$update_columns = update_columns;
     final lOther$update_columns = other.update_columns;
-    if (l$update_columns.length != lOther$update_columns.length) {
+    if (_$data.containsKey('update_columns') !=
+        other._$data.containsKey('update_columns')) {
       return false;
     }
-    for (int i = 0; i < l$update_columns.length; i++) {
-      final l$update_columns$entry = l$update_columns[i];
-      final lOther$update_columns$entry = lOther$update_columns[i];
-      if (l$update_columns$entry != lOther$update_columns$entry) {
+    if (l$update_columns != null && lOther$update_columns != null) {
+      if (l$update_columns.length != lOther$update_columns.length) {
         return false;
       }
+      for (int i = 0; i < l$update_columns.length; i++) {
+        final l$update_columns$entry = l$update_columns[i];
+        final lOther$update_columns$entry = lOther$update_columns[i];
+        if (l$update_columns$entry != lOther$update_columns$entry) {
+          return false;
+        }
+      }
+    } else if (l$update_columns != lOther$update_columns) {
+      return false;
     }
     final l$where = where;
     final lOther$where = other.where;
@@ -27480,7 +27615,11 @@ class Input$_RecipeToTag_on_conflict {
     final l$where = where;
     return Object.hashAll([
       l$constraint,
-      Object.hashAll(l$update_columns.map((v) => v)),
+      _$data.containsKey('update_columns')
+          ? l$update_columns == null
+              ? null
+              : Object.hashAll(l$update_columns.map((v) => v))
+          : const {},
       _$data.containsKey('where') ? l$where : const {},
     ]);
   }
@@ -27514,7 +27653,7 @@ class _CopyWithImpl$Input$_RecipeToTag_on_conflict<TRes>
 
   final TRes Function(Input$_RecipeToTag_on_conflict) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? constraint = _undefined,
@@ -27721,7 +27860,7 @@ class _CopyWithImpl$Input$_RecipeToTag_order_by<TRes>
 
   final TRes Function(Input$_RecipeToTag_order_by) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? A = _undefined,
@@ -27882,7 +28021,7 @@ class _CopyWithImpl$Input$_RecipeToTag_set_input<TRes>
 
   final TRes Function(Input$_RecipeToTag_set_input) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? A = _undefined,
@@ -28021,7 +28160,7 @@ class _CopyWithImpl$Input$_RecipeToTag_updates<TRes>
 
   final TRes Function(Input$_RecipeToTag_updates) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_set = _undefined,
@@ -28365,7 +28504,7 @@ class _CopyWithImpl$Input$bytea_comparison_exp<TRes>
 
   final TRes Function(Input$bytea_comparison_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_eq = _undefined,
@@ -28713,7 +28852,7 @@ class _CopyWithImpl$Input$float8_comparison_exp<TRes>
 
   final TRes Function(Input$float8_comparison_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_eq = _undefined,
@@ -29059,7 +29198,7 @@ class _CopyWithImpl$Input$timestamp_comparison_exp<TRes>
 
   final TRes Function(Input$timestamp_comparison_exp) _then;
 
-  static const _undefined = {};
+  static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? $_eq = _undefined,
@@ -30026,4 +30165,175 @@ Enum$order_by fromJson$Enum$order_by(String value) {
   }
 }
 
-const possibleTypesMap = {};
+enum Enum$__TypeKind {
+  SCALAR,
+  OBJECT,
+  INTERFACE,
+  UNION,
+  ENUM,
+  INPUT_OBJECT,
+  LIST,
+  NON_NULL,
+  $unknown
+}
+
+String toJson$Enum$__TypeKind(Enum$__TypeKind e) {
+  switch (e) {
+    case Enum$__TypeKind.SCALAR:
+      return r'SCALAR';
+    case Enum$__TypeKind.OBJECT:
+      return r'OBJECT';
+    case Enum$__TypeKind.INTERFACE:
+      return r'INTERFACE';
+    case Enum$__TypeKind.UNION:
+      return r'UNION';
+    case Enum$__TypeKind.ENUM:
+      return r'ENUM';
+    case Enum$__TypeKind.INPUT_OBJECT:
+      return r'INPUT_OBJECT';
+    case Enum$__TypeKind.LIST:
+      return r'LIST';
+    case Enum$__TypeKind.NON_NULL:
+      return r'NON_NULL';
+    case Enum$__TypeKind.$unknown:
+      return r'$unknown';
+  }
+}
+
+Enum$__TypeKind fromJson$Enum$__TypeKind(String value) {
+  switch (value) {
+    case r'SCALAR':
+      return Enum$__TypeKind.SCALAR;
+    case r'OBJECT':
+      return Enum$__TypeKind.OBJECT;
+    case r'INTERFACE':
+      return Enum$__TypeKind.INTERFACE;
+    case r'UNION':
+      return Enum$__TypeKind.UNION;
+    case r'ENUM':
+      return Enum$__TypeKind.ENUM;
+    case r'INPUT_OBJECT':
+      return Enum$__TypeKind.INPUT_OBJECT;
+    case r'LIST':
+      return Enum$__TypeKind.LIST;
+    case r'NON_NULL':
+      return Enum$__TypeKind.NON_NULL;
+    default:
+      return Enum$__TypeKind.$unknown;
+  }
+}
+
+enum Enum$__DirectiveLocation {
+  QUERY,
+  MUTATION,
+  SUBSCRIPTION,
+  FIELD,
+  FRAGMENT_DEFINITION,
+  FRAGMENT_SPREAD,
+  INLINE_FRAGMENT,
+  VARIABLE_DEFINITION,
+  SCHEMA,
+  SCALAR,
+  OBJECT,
+  FIELD_DEFINITION,
+  ARGUMENT_DEFINITION,
+  INTERFACE,
+  UNION,
+  ENUM,
+  ENUM_VALUE,
+  INPUT_OBJECT,
+  INPUT_FIELD_DEFINITION,
+  $unknown
+}
+
+String toJson$Enum$__DirectiveLocation(Enum$__DirectiveLocation e) {
+  switch (e) {
+    case Enum$__DirectiveLocation.QUERY:
+      return r'QUERY';
+    case Enum$__DirectiveLocation.MUTATION:
+      return r'MUTATION';
+    case Enum$__DirectiveLocation.SUBSCRIPTION:
+      return r'SUBSCRIPTION';
+    case Enum$__DirectiveLocation.FIELD:
+      return r'FIELD';
+    case Enum$__DirectiveLocation.FRAGMENT_DEFINITION:
+      return r'FRAGMENT_DEFINITION';
+    case Enum$__DirectiveLocation.FRAGMENT_SPREAD:
+      return r'FRAGMENT_SPREAD';
+    case Enum$__DirectiveLocation.INLINE_FRAGMENT:
+      return r'INLINE_FRAGMENT';
+    case Enum$__DirectiveLocation.VARIABLE_DEFINITION:
+      return r'VARIABLE_DEFINITION';
+    case Enum$__DirectiveLocation.SCHEMA:
+      return r'SCHEMA';
+    case Enum$__DirectiveLocation.SCALAR:
+      return r'SCALAR';
+    case Enum$__DirectiveLocation.OBJECT:
+      return r'OBJECT';
+    case Enum$__DirectiveLocation.FIELD_DEFINITION:
+      return r'FIELD_DEFINITION';
+    case Enum$__DirectiveLocation.ARGUMENT_DEFINITION:
+      return r'ARGUMENT_DEFINITION';
+    case Enum$__DirectiveLocation.INTERFACE:
+      return r'INTERFACE';
+    case Enum$__DirectiveLocation.UNION:
+      return r'UNION';
+    case Enum$__DirectiveLocation.ENUM:
+      return r'ENUM';
+    case Enum$__DirectiveLocation.ENUM_VALUE:
+      return r'ENUM_VALUE';
+    case Enum$__DirectiveLocation.INPUT_OBJECT:
+      return r'INPUT_OBJECT';
+    case Enum$__DirectiveLocation.INPUT_FIELD_DEFINITION:
+      return r'INPUT_FIELD_DEFINITION';
+    case Enum$__DirectiveLocation.$unknown:
+      return r'$unknown';
+  }
+}
+
+Enum$__DirectiveLocation fromJson$Enum$__DirectiveLocation(String value) {
+  switch (value) {
+    case r'QUERY':
+      return Enum$__DirectiveLocation.QUERY;
+    case r'MUTATION':
+      return Enum$__DirectiveLocation.MUTATION;
+    case r'SUBSCRIPTION':
+      return Enum$__DirectiveLocation.SUBSCRIPTION;
+    case r'FIELD':
+      return Enum$__DirectiveLocation.FIELD;
+    case r'FRAGMENT_DEFINITION':
+      return Enum$__DirectiveLocation.FRAGMENT_DEFINITION;
+    case r'FRAGMENT_SPREAD':
+      return Enum$__DirectiveLocation.FRAGMENT_SPREAD;
+    case r'INLINE_FRAGMENT':
+      return Enum$__DirectiveLocation.INLINE_FRAGMENT;
+    case r'VARIABLE_DEFINITION':
+      return Enum$__DirectiveLocation.VARIABLE_DEFINITION;
+    case r'SCHEMA':
+      return Enum$__DirectiveLocation.SCHEMA;
+    case r'SCALAR':
+      return Enum$__DirectiveLocation.SCALAR;
+    case r'OBJECT':
+      return Enum$__DirectiveLocation.OBJECT;
+    case r'FIELD_DEFINITION':
+      return Enum$__DirectiveLocation.FIELD_DEFINITION;
+    case r'ARGUMENT_DEFINITION':
+      return Enum$__DirectiveLocation.ARGUMENT_DEFINITION;
+    case r'INTERFACE':
+      return Enum$__DirectiveLocation.INTERFACE;
+    case r'UNION':
+      return Enum$__DirectiveLocation.UNION;
+    case r'ENUM':
+      return Enum$__DirectiveLocation.ENUM;
+    case r'ENUM_VALUE':
+      return Enum$__DirectiveLocation.ENUM_VALUE;
+    case r'INPUT_OBJECT':
+      return Enum$__DirectiveLocation.INPUT_OBJECT;
+    case r'INPUT_FIELD_DEFINITION':
+      return Enum$__DirectiveLocation.INPUT_FIELD_DEFINITION;
+    default:
+      return Enum$__DirectiveLocation.$unknown;
+  }
+}
+
+const possibleTypesMap = <String, Set<String>>{};
