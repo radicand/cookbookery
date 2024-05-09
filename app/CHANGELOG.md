@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/radicand/cookbookery/compare/app-v1.5.2...app-v1.5.3) (2024-05-09)
+
+
+### Bug Fixes
+
+* **ci:** correct build items ([33068fb](https://github.com/radicand/cookbookery/commit/33068fbf400349763d7f4a3260e4e45fd62aa186))
+
 ## [1.5.2](https://github.com/radicand/cookbookery/compare/app-v1.5.1...app-v1.5.2) (2024-05-09)
 
 
