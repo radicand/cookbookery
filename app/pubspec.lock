@@ -555,10 +555,10 @@ packages:
     dependency: "direct main"
     description:
       name: graphql
-      sha256: "1e3720c13cd1c9a345fed40dfac35759b626ff907661567d299616e9d9903e0c"
+      sha256: d066e53446166c12537458386b507f7426f2b8801ebafc184576aab3cbc64d56
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.0-beta.5"
+    version: "5.2.0-beta.7"
   graphql_codegen:
     dependency: "direct dev"
     description:
@@ -968,18 +968,18 @@ packages:
     dependency: transitive
     description:
       name: sentry
-      sha256: "39c23342fc96105da449914f7774139a17a0ca8a4e70d9ad5200171f7e47d6ba"
+      sha256: e572d33a3ff1d69549f33ee828a8ff514047d43ca8eea4ab093d72461205aa3e
       url: "https://pub.dev"
     source: hosted
-    version: "7.9.0"
+    version: "7.20.1"
   sentry_flutter:
     dependency: "direct main"
     description:
       name: sentry_flutter
-      sha256: ff68ab31918690da004a42e20204242a3ad9ad57da7e2712da8487060ac9767f
+      sha256: ac8cf6bb849f3560353ae33672e17b2713809a4e8de0d3cf372e9e9c42013757
       url: "https://pub.dev"
     source: hosted
-    version: "7.9.0"
+    version: "7.20.1"
   shared_preferences:
     dependency: transitive
     description:
@@ -1081,6 +1081,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
+  sprintf:
+    dependency: transitive
+    description:
+      name: sprintf
+      sha256: "1fc9ffe69d4df602376b52949af107d8f5703b77cda567c4d7d86a0693120f23"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.0.0"
   stack_trace:
     dependency: transitive
     description:
@@ -1229,10 +1237,10 @@ packages:
     dependency: transitive
     description:
       name: uuid
-      sha256: "648e103079f7c64a36dc7d39369cabb358d377078a051d6ae2ad3aa539519313"
+      sha256: "814e9e88f21a176ae1359149021870e87f7cddaf633ab678a5d2b0bff7fd1ba8"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.7"
+    version: "4.4.0"
   vector_math:
     dependency: transitive
     description:
