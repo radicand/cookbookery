@@ -107,6 +107,7 @@ jobs:
           bundle exec fastlane ${{ github.event.inputs.lane || 'beta' }}
 
       - name: Release to Apple App Store (${{ github.event.inputs.lane || 'beta' }})
+        if: false
         working-directory: app/ios
         env:
           SUPPLY_PACKAGE_NAME: org.radicand.app.cookbook
