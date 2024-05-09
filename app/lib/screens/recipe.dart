@@ -12,7 +12,7 @@ import 'package:go_router/go_router.dart';
 
 class RecipeScreen extends HookWidget {
   final String id;
-  const RecipeScreen({Key? key, required this.id}) : super(key: key);
+  const RecipeScreen({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {

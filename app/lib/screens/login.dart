@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 enum LoaderState { none, pending, completed, rejected }
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
 }
 
 class LoginButton extends StatefulWidget {
-  const LoginButton({Key? key}) : super(key: key);
+  const LoginButton({super.key});
 
   @override
   State<LoginButton> createState() => _LoginButtonState();

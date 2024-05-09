@@ -4,8 +4,7 @@ import 'package:fraction/fraction.dart';
 
 class RecipeSectionWidget extends StatefulWidget {
   final Fragment$RecipeSectionFragment section;
-  const RecipeSectionWidget({Key? key, required this.section})
-      : super(key: key);
+  const RecipeSectionWidget({super.key, required this.section});
 
   @override
   State<RecipeSectionWidget> createState() => _RecipeSectionWidgetState();

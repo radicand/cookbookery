@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 
 class RecipeCard extends StatelessWidget {
   final Fragment$RecipePreviewFragment recipe;
-  const RecipeCard({Key? key, required this.recipe}) : super(key: key);
+  const RecipeCard({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {

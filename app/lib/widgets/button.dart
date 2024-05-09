@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class CommonButton extends StatelessWidget {
   const CommonButton({
-    Key? key,
+    super.key,
     this.onPressed,
     this.text,
     this.child,
     this.padding = const EdgeInsets.fromLTRB(55, 15, 55, 15),
-  }) : super(key: key);
+  });
 
   final VoidCallback? onPressed;
   final String? text;

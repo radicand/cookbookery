@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key, this.title = 'Profile'}) : super(key: key);
+  const ProfileScreen({super.key, this.title = 'Profile'});
   final String title;
   static String routeName = 'ProfileScreen';
   static Route<ProfileScreen> route() {

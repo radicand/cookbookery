@@ -29,7 +29,7 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 import 'services/graphql_service.dart';
 
 class CookbookApp extends StatelessWidget {
-  CookbookApp({Key? key}) : super(key: key);
+  CookbookApp({super.key});
 
   static const title = 'Family Cookbook';
 
@@ -185,8 +185,8 @@ class SharedScaffold extends StatefulWidget {
   const SharedScaffold({
     required this.selectedIndex,
     required this.body,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final int selectedIndex;
   final Widget body;
@@ -231,8 +231,8 @@ class _SharedScaffoldState extends State<SharedScaffold> {
 class ErrorScaffold extends StatelessWidget {
   const ErrorScaffold({
     required this.body,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Widget body;
   @override
@@ -243,7 +243,7 @@ class ErrorScaffold extends StatelessWidget {
 }
 
 class ErrorView extends StatelessWidget {
-  const ErrorView(this.error, {Key? key}) : super(key: key);
+  const ErrorView(this.error, {super.key});
   final Exception error;
 
   @override

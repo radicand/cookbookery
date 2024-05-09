@@ -7,7 +7,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 class TagScreen extends HookWidget {
   final String id;
-  const TagScreen({Key? key, this.id = ''}) : super(key: key);
+  const TagScreen({super.key, this.id = ''});
 
   @override
   Widget build(BuildContext context) {

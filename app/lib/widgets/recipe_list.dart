@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 
 class RecipeList extends StatelessWidget {
   final List<Fragment$RecipePreviewFragment> items;
-  const RecipeList({Key? key, required this.items}) : super(key: key);
+  const RecipeList({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
