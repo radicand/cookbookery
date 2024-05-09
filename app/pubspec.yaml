@@ -60,7 +60,7 @@ dev_dependencies:
   mobx_codegen: ^2.3.0
   graphql_codegen: ^0.13.5
   json_serializable: ^6.7.1
-  build_runner: ^2.4.6
+  build_runner: ^2.4.9
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
