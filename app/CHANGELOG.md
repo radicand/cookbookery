@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.2](https://github.com/radicand/cookbookery/compare/app-v1.5.1...app-v1.5.2) (2024-05-09)
+
+
+### Bug Fixes
+
+* bring up to latest working condition ([10a80d8](https://github.com/radicand/cookbookery/commit/10a80d80e78fc75b3fc96e2577c6c2069b2b6874))
+* **lint:** correct analyzer warnings ([d67f5a8](https://github.com/radicand/cookbookery/commit/d67f5a8598e0e48938c58f01c760fdee824bd510))
+
 ## [1.5.1](https://github.com/radicand/cookbookery/compare/app-v1.5.0...app-v1.5.1) (2023-08-26)
 
 
