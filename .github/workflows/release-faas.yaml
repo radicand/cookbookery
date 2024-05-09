@@ -1,7 +1,12 @@
 name: Build and release faas
-concurrency: build-faas
+concurrency:
+  cancel-in-progress: true
+  group: build-faas
 
 on:
+  release:
+    types:
+      - published
   workflow_dispatch:
   workflow_call:
 jobs:
