@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/radicand/cookbookery/compare/server-api-v1.4.0...server-api-v1.4.1) (2024-05-09)
+
+
+### Bug Fixes
+
+* bring up to latest working condition ([10a80d8](https://github.com/radicand/cookbookery/commit/10a80d80e78fc75b3fc96e2577c6c2069b2b6874))
+
 ## [1.4.0](https://github.com/radicand/cookbookery/compare/server-api-v1.3.0...server-api-v1.4.0) (2022-08-13)
 
 
