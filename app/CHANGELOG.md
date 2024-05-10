@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/radicand/cookbookery/compare/app-v1.6.1...app-v1.6.2) (2024-05-10)
+
+
+### Bug Fixes
+
+* **ci:** work around ghcr bug ([eb9a2e6](https://github.com/radicand/cookbookery/commit/eb9a2e6023dcbfec507a3d379fe72a2d93f2d6dc))
+
 ## [1.6.1](https://github.com/radicand/cookbookery/compare/app-v1.6.0...app-v1.6.1) (2024-05-10)
 
 
