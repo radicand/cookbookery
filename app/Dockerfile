@@ -1,3 +1,3 @@
-FROM nginx:1.26.0-alpine
+FROM nginxinc/nginx-unprivileged:alpine-slim
 
 COPY --chown=nginx:nginx ./build/web /usr/share/nginx/html
