@@ -24,10 +24,11 @@ jobs:
         run: |
           echo "${{ secrets.DOTENV }}" > .env
 
-      - name: Extract tag
+      - name: Extract version from pubspec
         id: tagdata
-        run: |
-          echo "::set-output name=tag::`cat server/hasura/version.txt`"
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq '.version' app/pubspec.yaml | awk -F+ '{print $1}'
 
       - name: Docker meta
         id: meta
@@ -38,7 +39,7 @@ jobs:
             type=ref,event=branch
             type=ref,event=pr
             type=sha
-            type=raw,value=${{ steps.tagdata.outputs.tag }}
+            type=raw,value=${{ steps.tagdata.outputs.result }}
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
@@ -93,7 +94,7 @@ jobs:
 
       - name: Deploy
         run: |
-          helm upgrade cookbookery-web-production ./app/manifest/cookbook-web --install -n cookbook --set image.repository=ghcr.io/radicand/cookbookery-web --set image.tag=${{ steps.tagdata.outputs.tag }} --set ingress.host=${{ steps.envurl.outputs.url }} --set CI_PROJECT_PATH_SLUG=${{ github.ref_name }} --set CI_ENVIRONMENT_SLUG=production
+          helm upgrade cookbookery-web-production ./app/manifest/cookbook-web --install -n cookbook --set image.repository=ghcr.io/radicand/cookbookery-web --set image.tag=${{ steps.tagdata.outputs.result }} --set ingress.host=${{ steps.envurl.outputs.url }} --set CI_PROJECT_PATH_SLUG=${{ github.ref_name }} --set CI_ENVIRONMENT_SLUG=production
         env:
           KUBECONFIG: .kubeconfig
 
