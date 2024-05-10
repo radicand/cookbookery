@@ -134,37 +134,27 @@ Future<void> main() async {
   await dotenv.load(fileName: ".env");
 
   WidgetsFlutterBinding.ensureInitialized();
-
-  runZonedGuarded<Future<void>>(
-    () async {
-      await SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.portraitUp],
-      );
-
-      final client = await getGQLClient();
-
-      usePathUrlStrategy();
-      await SentryFlutter.init((options) {
-        options.dsn =
-            'https://785380e0a35b434da08919d13ac6bfcb@o376448.ingest.sentry.io/4504668675047424';
-        options.tracesSampleRate = 1.0;
-      },
-          appRunner: () => runApp(DevicePreview(
-                enabled: false, // !kReleaseMode,
-                builder: (context) => GraphQLProvider(
-                    client: client, child: CookbookApp()), // Wrap your app
-                tools: const [
-                  ...DevicePreview.defaultTools,
-                  DevicePreviewScreenshot(),
-                ],
-              )));
-    },
-    (error, stackTrace) async {
-      print('Caught Dart Error!');
-      print('$error');
-      print('$stackTrace');
-    },
+  await SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp],
   );
+
+  final client = await getGQLClient();
+
+  usePathUrlStrategy();
+  await SentryFlutter.init((options) {
+    options.dsn =
+        'https://785380e0a35b434da08919d13ac6bfcb@o376448.ingest.sentry.io/4504668675047424';
+    options.tracesSampleRate = 1.0;
+  },
+      appRunner: () => runApp(DevicePreview(
+            enabled: false, // !kReleaseMode,
+            builder: (context) => GraphQLProvider(
+                client: client, child: CookbookApp()), // Wrap your app
+            tools: const [
+              ...DevicePreview.defaultTools,
+              DevicePreviewScreenshot(),
+            ],
+          )));
 
   // This captures errors reported by the Flutter framework.
   FlutterError.onError = (FlutterErrorDetails details) async {

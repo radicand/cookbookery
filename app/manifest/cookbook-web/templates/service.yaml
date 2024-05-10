@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "cookbook-web.fullname" . }}
+  labels:
+    {{- include "cookbook-web.labels" . | nindent 4 }}
+  annotations:
+    {{- include "cookbook-web.annotations" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "cookbook-web.selectorLabels" . | nindent 4 }}
