@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/radicand/cookbookery/compare/app-v1.6.0...app-v1.6.1) (2024-05-10)
+
+
+### Bug Fixes
+
+* **web:** use unprivileged deployment ([e4ac0e9](https://github.com/radicand/cookbookery/commit/e4ac0e94c71d4c55485db11981866000d1daacae))
+
 ## [1.6.0](https://github.com/radicand/cookbookery/compare/app-v1.5.3...app-v1.6.0) (2024-05-10)
 
 
