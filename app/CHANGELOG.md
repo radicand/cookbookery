@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/radicand/cookbookery/compare/app-v1.5.3...app-v1.6.0) (2024-05-10)
+
+
+### Features
+
+* **web:** add web release from flutter ([79e6e51](https://github.com/radicand/cookbookery/commit/79e6e518fe9d37c321eaa0b0995d6a124f82af80))
+
 ## [1.5.3](https://github.com/radicand/cookbookery/compare/app-v1.5.2...app-v1.5.3) (2024-05-09)
 
 
