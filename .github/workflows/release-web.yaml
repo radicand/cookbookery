@@ -86,7 +86,7 @@ jobs:
           echo "::set-output name=url::cookbookery-web.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}"
 
       - name: Install Helm
-        uses: azure/setup-helm@v3
+        uses: azure/setup-helm@v4
 
       - name: Setup kubeconfig
         run: |
