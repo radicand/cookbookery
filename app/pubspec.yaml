@@ -58,7 +58,7 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   mobx_codegen: ^2.3.0
-  graphql_codegen: ^0.13.5
+  graphql_codegen: ^0.14.0
   json_serializable: ^6.7.1
   build_runner: ^2.4.10
   # The "flutter_lints" package below contains a set of recommended lints to

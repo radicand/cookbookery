@@ -571,10 +571,10 @@ packages:
     dependency: "direct dev"
     description:
       name: graphql_codegen
-      sha256: "943e1d6f04eece8dcdf54c128b53bd4ea62b746d6384ebcbbe15e5adaeaf89ff"
+      sha256: d984935993e5fbbd37358eb6dc47e5feacc49fe731c227db47967474f9da6034
       url: "https://pub.dev"
     source: hosted
-    version: "0.13.11"
+    version: "0.14.0"
   graphql_flutter:
     dependency: "direct main"
     description:
