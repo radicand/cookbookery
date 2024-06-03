@@ -47,7 +47,7 @@ dependencies:
   gql: ^1.0.0
   fraction: ^5.0.2
   url_launcher: ^6.1.12
-  device_preview: ^1.1.0
+  device_preview: ^1.2.0
   device_preview_screenshot: ^1.0.0
   hooks_riverpod: ^2.3.8
   sentry_flutter: ^8.1.0
