@@ -20,8 +20,8 @@ class CommonButton extends StatelessWidget {
       key: key,
       onPressed: onPressed,
       style: ButtonStyle(
-        padding: MaterialStateProperty.all<EdgeInsets>(padding),
-        shape: MaterialStateProperty.all(
+        padding: WidgetStateProperty.all<EdgeInsets>(padding),
+        shape: WidgetStateProperty.all(
           const StadiumBorder(),
         ),
       ),
