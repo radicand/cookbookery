@@ -21,12 +21,12 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - ReachabilitySwift (5.2.2)
-  - Sentry/HybridSDK (8.25.0)
-  - sentry_flutter (7.20.1):
+  - ReachabilitySwift (5.2.3)
+  - Sentry/HybridSDK (8.29.0)
+  - sentry_flutter (8.3.0):
     - Flutter
     - FlutterMacOS
-    - Sentry/HybridSDK (= 8.25.0)
+    - Sentry/HybridSDK (= 8.29.0)
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -79,12 +79,12 @@ SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_appauth: 1ce438877bc111c5d8f42da47729909290624886
   flutter_secure_storage: 23fc622d89d073675f2eaa109381aefbcf5a49be
-  integration_test: 13825b8a9334a850581300559b8839134b124670
+  integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
   package_info_plus: 58f0028419748fad15bf008b270aaa8e54380b1c
   path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  ReachabilitySwift: 2128f3a8c9107e1ad33574c6e58e8285d460b149
-  Sentry: cd86fc55628f5b7c572cabe66cc8f95a9d2f165a
-  sentry_flutter: 4cb24c1055c556d7b27262ab2e179d1e5a0b9b0c
+  ReachabilitySwift: 7f151ff156cea1481a8411701195ac6a984f4979
+  Sentry: 016de45ee5ce5fca2a829996f1bfafeb5e62e8b4
+  sentry_flutter: 5fb57c5b7e6427a9dc1fedde4269eb65823982d4
   shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
   url_launcher_ios: 6116280ddcfe98ab8820085d8d76ae7449447586
 
