@@ -31,6 +31,7 @@ class Variables$Query$recipe {
   Map<String, dynamic> _$data;
 
   String get id => (_$data['id'] as String);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$id = id;
@@ -43,6 +44,7 @@ class Variables$Query$recipe {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -216,6 +218,7 @@ class _CopyWithImpl$Query$recipe<TRes> implements CopyWith$Query$recipe<TRes> {
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   CopyWith$Fragment$RecipeFragment<TRes> get Recipe_by_pk {
     final local$Recipe_by_pk = _instance.Recipe_by_pk;
     return local$Recipe_by_pk == null
@@ -236,6 +239,7 @@ class _CopyWithStubImpl$Query$recipe<TRes>
     String? $__typename,
   }) =>
       _res;
+
   CopyWith$Fragment$RecipeFragment<TRes> get Recipe_by_pk =>
       CopyWith$Fragment$RecipeFragment.stub(_res);
 }

@@ -44,10 +44,13 @@ class Input$File_aggregate_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get count => (_$data['count'] as Enum$order_by?);
+
   Input$File_max_order_by? get max =>
       (_$data['max'] as Input$File_max_order_by?);
+
   Input$File_min_order_by? get min =>
       (_$data['min'] as Input$File_min_order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('count')) {
@@ -71,6 +74,7 @@ class Input$File_aggregate_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -162,6 +166,7 @@ class _CopyWithImpl$Input$File_aggregate_order_by<TRes>
         if (max != _undefined) 'max': (max as Input$File_max_order_by?),
         if (min != _undefined) 'min': (min as Input$File_min_order_by?),
       }));
+
   CopyWith$Input$File_max_order_by<TRes> get max {
     final local$max = _instance.max;
     return local$max == null
@@ -189,8 +194,10 @@ class _CopyWithStubImpl$Input$File_aggregate_order_by<TRes>
     Input$File_min_order_by? min,
   }) =>
       _res;
+
   CopyWith$Input$File_max_order_by<TRes> get max =>
       CopyWith$Input$File_max_order_by.stub(_res);
+
   CopyWith$Input$File_min_order_by<TRes> get min =>
       CopyWith$Input$File_min_order_by.stub(_res);
 }
@@ -228,8 +235,10 @@ class Input$File_arr_rel_insert_input {
 
   List<Input$File_insert_input> get data =>
       (_$data['data'] as List<Input$File_insert_input>);
+
   Input$File_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$File_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -246,6 +255,7 @@ class Input$File_arr_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -335,6 +345,7 @@ class _CopyWithImpl$Input$File_arr_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$File_on_conflict?),
       }));
+
   TRes data(
           Iterable<Input$File_insert_input> Function(
                   Iterable<
@@ -346,6 +357,7 @@ class _CopyWithImpl$Input$File_arr_rel_insert_input<TRes>
                 e,
                 (i) => i,
               ))).toList());
+
   CopyWith$Input$File_on_conflict<TRes> get on_conflict {
     final local$on_conflict = _instance.on_conflict;
     return local$on_conflict == null
@@ -366,7 +378,9 @@ class _CopyWithStubImpl$Input$File_arr_rel_insert_input<TRes>
     Input$File_on_conflict? on_conflict,
   }) =>
       _res;
+
   data(_fn) => _res;
+
   CopyWith$Input$File_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$File_on_conflict.stub(_res);
 }
@@ -483,23 +497,34 @@ class Input$File_bool_exp {
 
   Input$Recipe_bool_exp? get Recipe =>
       (_$data['Recipe'] as Input$Recipe_bool_exp?);
+
   Input$Step_bool_exp? get Steps => (_$data['Steps'] as Input$Step_bool_exp?);
+
   Input$User_bool_exp? get User => (_$data['User'] as Input$User_bool_exp?);
+
   List<Input$File_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$File_bool_exp>?);
+
   Input$File_bool_exp? get $_not => (_$data['_not'] as Input$File_bool_exp?);
+
   List<Input$File_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$File_bool_exp>?);
+
   Input$bytea_comparison_exp? get blob =>
       (_$data['blob'] as Input$bytea_comparison_exp?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get mimetype =>
       (_$data['mimetype'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get recipeId =>
       (_$data['recipeId'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get userId =>
       (_$data['userId'] as Input$String_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Recipe')) {
@@ -554,6 +579,7 @@ class Input$File_bool_exp {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -798,6 +824,7 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
         if (userId != _undefined)
           'userId': (userId as Input$String_comparison_exp?),
       }));
+
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
     return local$Recipe == null
@@ -828,6 +855,7 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$File_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -844,6 +872,7 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$bytea_comparison_exp<TRes> get blob {
     final local$blob = _instance.blob;
     return local$blob == null
@@ -903,24 +932,35 @@ class _CopyWithStubImpl$Input$File_bool_exp<TRes>
     Input$String_comparison_exp? userId,
   }) =>
       _res;
+
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipe =>
       CopyWith$Input$Recipe_bool_exp.stub(_res);
+
   CopyWith$Input$Step_bool_exp<TRes> get Steps =>
       CopyWith$Input$Step_bool_exp.stub(_res);
+
   CopyWith$Input$User_bool_exp<TRes> get User =>
       CopyWith$Input$User_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$File_bool_exp<TRes> get $_not =>
       CopyWith$Input$File_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$bytea_comparison_exp<TRes> get blob =>
       CopyWith$Input$bytea_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get mimetype =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get recipeId =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get userId =>
       CopyWith$Input$String_comparison_exp.stub(_res);
 }
@@ -984,12 +1024,18 @@ class Input$File_insert_input {
 
   Input$Recipe_obj_rel_insert_input? get Recipe =>
       (_$data['Recipe'] as Input$Recipe_obj_rel_insert_input?);
+
   Input$Step_arr_rel_insert_input? get Steps =>
       (_$data['Steps'] as Input$Step_arr_rel_insert_input?);
+
   String? get blob => (_$data['blob'] as String?);
+
   String? get id => (_$data['id'] as String?);
+
   String? get mimetype => (_$data['mimetype'] as String?);
+
   String? get recipeId => (_$data['recipeId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Recipe')) {
@@ -1024,6 +1070,7 @@ class Input$File_insert_input {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -1158,6 +1205,7 @@ class _CopyWithImpl$Input$File_insert_input<TRes>
         if (mimetype != _undefined) 'mimetype': (mimetype as String?),
         if (recipeId != _undefined) 'recipeId': (recipeId as String?),
       }));
+
   CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
     return local$Recipe == null
@@ -1190,8 +1238,10 @@ class _CopyWithStubImpl$Input$File_insert_input<TRes>
     String? recipeId,
   }) =>
       _res;
+
   CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe =>
       CopyWith$Input$Recipe_obj_rel_insert_input.stub(_res);
+
   CopyWith$Input$Step_arr_rel_insert_input<TRes> get Steps =>
       CopyWith$Input$Step_arr_rel_insert_input.stub(_res);
 }
@@ -1243,9 +1293,13 @@ class Input$File_max_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get mimetype => (_$data['mimetype'] as Enum$order_by?);
+
   Enum$order_by? get recipeId => (_$data['recipeId'] as Enum$order_by?);
+
   Enum$order_by? get userId => (_$data['userId'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -1275,6 +1329,7 @@ class Input$File_max_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -1443,9 +1498,13 @@ class Input$File_min_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get mimetype => (_$data['mimetype'] as Enum$order_by?);
+
   Enum$order_by? get recipeId => (_$data['recipeId'] as Enum$order_by?);
+
   Enum$order_by? get userId => (_$data['userId'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -1475,6 +1534,7 @@ class Input$File_min_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -1627,8 +1687,10 @@ class Input$File_obj_rel_insert_input {
 
   Input$File_insert_input get data =>
       (_$data['data'] as Input$File_insert_input);
+
   Input$File_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$File_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -1645,6 +1707,7 @@ class Input$File_obj_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -1723,6 +1786,7 @@ class _CopyWithImpl$Input$File_obj_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$File_on_conflict?),
       }));
+
   CopyWith$Input$File_insert_input<TRes> get data {
     final local$data = _instance.data;
     return CopyWith$Input$File_insert_input(local$data, (e) => call(data: e));
@@ -1748,8 +1812,10 @@ class _CopyWithStubImpl$Input$File_obj_rel_insert_input<TRes>
     Input$File_on_conflict? on_conflict,
   }) =>
       _res;
+
   CopyWith$Input$File_insert_input<TRes> get data =>
       CopyWith$Input$File_insert_input.stub(_res);
+
   CopyWith$Input$File_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$File_on_conflict.stub(_res);
 }
@@ -1792,9 +1858,12 @@ class Input$File_on_conflict {
 
   Enum$File_constraint get constraint =>
       (_$data['constraint'] as Enum$File_constraint);
+
   List<Enum$File_update_column>? get update_columns =>
       (_$data['update_columns'] as List<Enum$File_update_column>?);
+
   Input$File_bool_exp? get where => (_$data['where'] as Input$File_bool_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
@@ -1818,6 +1887,7 @@ class Input$File_on_conflict {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -1923,6 +1993,7 @@ class _CopyWithImpl$Input$File_on_conflict<TRes>
           'update_columns': (update_columns as List<Enum$File_update_column>),
         if (where != _undefined) 'where': (where as Input$File_bool_exp?),
       }));
+
   CopyWith$Input$File_bool_exp<TRes> get where {
     final local$where = _instance.where;
     return local$where == null
@@ -1943,6 +2014,7 @@ class _CopyWithStubImpl$Input$File_on_conflict<TRes>
     Input$File_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$File_bool_exp<TRes> get where =>
       CopyWith$Input$File_bool_exp.stub(_res);
 }
@@ -2027,14 +2099,22 @@ class Input$File_order_by {
 
   Input$Recipe_order_by? get Recipe =>
       (_$data['Recipe'] as Input$Recipe_order_by?);
+
   Input$Step_aggregate_order_by? get Steps_aggregate =>
       (_$data['Steps_aggregate'] as Input$Step_aggregate_order_by?);
+
   Input$User_order_by? get User => (_$data['User'] as Input$User_order_by?);
+
   Enum$order_by? get blob => (_$data['blob'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get mimetype => (_$data['mimetype'] as Enum$order_by?);
+
   Enum$order_by? get recipeId => (_$data['recipeId'] as Enum$order_by?);
+
   Enum$order_by? get userId => (_$data['userId'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Recipe')) {
@@ -2081,6 +2161,7 @@ class Input$File_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -2242,6 +2323,7 @@ class _CopyWithImpl$Input$File_order_by<TRes>
         if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
         if (userId != _undefined) 'userId': (userId as Enum$order_by?),
       }));
+
   CopyWith$Input$Recipe_order_by<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
     return local$Recipe == null
@@ -2282,10 +2364,13 @@ class _CopyWithStubImpl$Input$File_order_by<TRes>
     Enum$order_by? userId,
   }) =>
       _res;
+
   CopyWith$Input$Recipe_order_by<TRes> get Recipe =>
       CopyWith$Input$Recipe_order_by.stub(_res);
+
   CopyWith$Input$Step_aggregate_order_by<TRes> get Steps_aggregate =>
       CopyWith$Input$Step_aggregate_order_by.stub(_res);
+
   CopyWith$Input$User_order_by<TRes> get User =>
       CopyWith$Input$User_order_by.stub(_res);
 }
@@ -2308,6 +2393,7 @@ class Input$File_pk_columns_input {
   Map<String, dynamic> _$data;
 
   String get id => (_$data['id'] as String);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$id = id;
@@ -2320,6 +2406,7 @@ class Input$File_pk_columns_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -2412,7 +2499,9 @@ class Input$File_set_input {
   Map<String, dynamic> _$data;
 
   String? get blob => (_$data['blob'] as String?);
+
   String? get mimetype => (_$data['mimetype'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('blob')) {
@@ -2431,6 +2520,7 @@ class Input$File_set_input {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -2551,7 +2641,9 @@ class Input$File_updates {
   Map<String, dynamic> _$data;
 
   Input$File_set_input? get $_set => (_$data['_set'] as Input$File_set_input?);
+
   Input$File_bool_exp get where => (_$data['where'] as Input$File_bool_exp);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_set')) {
@@ -2568,6 +2660,7 @@ class Input$File_updates {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -2643,6 +2736,7 @@ class _CopyWithImpl$Input$File_updates<TRes>
         if (where != _undefined && where != null)
           'where': (where as Input$File_bool_exp),
       }));
+
   CopyWith$Input$File_set_input<TRes> get $_set {
     final local$$_set = _instance.$_set;
     return local$$_set == null
@@ -2667,8 +2761,10 @@ class _CopyWithStubImpl$Input$File_updates<TRes>
     Input$File_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$File_set_input<TRes> get $_set =>
       CopyWith$Input$File_set_input.stub(_res);
+
   CopyWith$Input$File_bool_exp<TRes> get where =>
       CopyWith$Input$File_bool_exp.stub(_res);
 }
@@ -2788,25 +2884,36 @@ class Input$IngredientUnit_aggregate_order_by {
 
   Input$IngredientUnit_avg_order_by? get avg =>
       (_$data['avg'] as Input$IngredientUnit_avg_order_by?);
+
   Enum$order_by? get count => (_$data['count'] as Enum$order_by?);
+
   Input$IngredientUnit_max_order_by? get max =>
       (_$data['max'] as Input$IngredientUnit_max_order_by?);
+
   Input$IngredientUnit_min_order_by? get min =>
       (_$data['min'] as Input$IngredientUnit_min_order_by?);
+
   Input$IngredientUnit_stddev_order_by? get stddev =>
       (_$data['stddev'] as Input$IngredientUnit_stddev_order_by?);
+
   Input$IngredientUnit_stddev_pop_order_by? get stddev_pop =>
       (_$data['stddev_pop'] as Input$IngredientUnit_stddev_pop_order_by?);
+
   Input$IngredientUnit_stddev_samp_order_by? get stddev_samp =>
       (_$data['stddev_samp'] as Input$IngredientUnit_stddev_samp_order_by?);
+
   Input$IngredientUnit_sum_order_by? get sum =>
       (_$data['sum'] as Input$IngredientUnit_sum_order_by?);
+
   Input$IngredientUnit_var_pop_order_by? get var_pop =>
       (_$data['var_pop'] as Input$IngredientUnit_var_pop_order_by?);
+
   Input$IngredientUnit_var_samp_order_by? get var_samp =>
       (_$data['var_samp'] as Input$IngredientUnit_var_samp_order_by?);
+
   Input$IngredientUnit_variance_order_by? get variance =>
       (_$data['variance'] as Input$IngredientUnit_variance_order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('avg')) {
@@ -2863,6 +2970,7 @@ class Input$IngredientUnit_aggregate_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -3082,6 +3190,7 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
         if (variance != _undefined)
           'variance': (variance as Input$IngredientUnit_variance_order_by?),
       }));
+
   CopyWith$Input$IngredientUnit_avg_order_by<TRes> get avg {
     final local$avg = _instance.avg;
     return local$avg == null
@@ -3185,24 +3294,34 @@ class _CopyWithStubImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     Input$IngredientUnit_variance_order_by? variance,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_avg_order_by<TRes> get avg =>
       CopyWith$Input$IngredientUnit_avg_order_by.stub(_res);
+
   CopyWith$Input$IngredientUnit_max_order_by<TRes> get max =>
       CopyWith$Input$IngredientUnit_max_order_by.stub(_res);
+
   CopyWith$Input$IngredientUnit_min_order_by<TRes> get min =>
       CopyWith$Input$IngredientUnit_min_order_by.stub(_res);
+
   CopyWith$Input$IngredientUnit_stddev_order_by<TRes> get stddev =>
       CopyWith$Input$IngredientUnit_stddev_order_by.stub(_res);
+
   CopyWith$Input$IngredientUnit_stddev_pop_order_by<TRes> get stddev_pop =>
       CopyWith$Input$IngredientUnit_stddev_pop_order_by.stub(_res);
+
   CopyWith$Input$IngredientUnit_stddev_samp_order_by<TRes> get stddev_samp =>
       CopyWith$Input$IngredientUnit_stddev_samp_order_by.stub(_res);
+
   CopyWith$Input$IngredientUnit_sum_order_by<TRes> get sum =>
       CopyWith$Input$IngredientUnit_sum_order_by.stub(_res);
+
   CopyWith$Input$IngredientUnit_var_pop_order_by<TRes> get var_pop =>
       CopyWith$Input$IngredientUnit_var_pop_order_by.stub(_res);
+
   CopyWith$Input$IngredientUnit_var_samp_order_by<TRes> get var_samp =>
       CopyWith$Input$IngredientUnit_var_samp_order_by.stub(_res);
+
   CopyWith$Input$IngredientUnit_variance_order_by<TRes> get variance =>
       CopyWith$Input$IngredientUnit_variance_order_by.stub(_res);
 }
@@ -3241,8 +3360,10 @@ class Input$IngredientUnit_arr_rel_insert_input {
 
   List<Input$IngredientUnit_insert_input> get data =>
       (_$data['data'] as List<Input$IngredientUnit_insert_input>);
+
   Input$IngredientUnit_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$IngredientUnit_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -3260,6 +3381,7 @@ class Input$IngredientUnit_arr_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -3350,6 +3472,7 @@ class _CopyWithImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$IngredientUnit_on_conflict?),
       }));
+
   TRes data(
           Iterable<Input$IngredientUnit_insert_input> Function(
                   Iterable<
@@ -3362,6 +3485,7 @@ class _CopyWithImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
                     e,
                     (i) => i,
                   ))).toList());
+
   CopyWith$Input$IngredientUnit_on_conflict<TRes> get on_conflict {
     final local$on_conflict = _instance.on_conflict;
     return local$on_conflict == null
@@ -3382,7 +3506,9 @@ class _CopyWithStubImpl$Input$IngredientUnit_arr_rel_insert_input<TRes>
     Input$IngredientUnit_on_conflict? on_conflict,
   }) =>
       _res;
+
   data(_fn) => _res;
+
   CopyWith$Input$IngredientUnit_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$IngredientUnit_on_conflict.stub(_res);
 }
@@ -3419,7 +3545,9 @@ class Input$IngredientUnit_avg_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -3440,6 +3568,7 @@ class Input$IngredientUnit_avg_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -3665,30 +3794,43 @@ class Input$IngredientUnit_bool_exp {
 
   Input$Ingredient_bool_exp? get Ingredient =>
       (_$data['Ingredient'] as Input$Ingredient_bool_exp?);
+
   Input$RecipeSection_bool_exp? get RecipeSection =>
       (_$data['RecipeSection'] as Input$RecipeSection_bool_exp?);
+
   Input$UnitSize_bool_exp? get UnitSize =>
       (_$data['UnitSize'] as Input$UnitSize_bool_exp?);
+
   List<Input$IngredientUnit_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$IngredientUnit_bool_exp>?);
+
   Input$IngredientUnit_bool_exp? get $_not =>
       (_$data['_not'] as Input$IngredientUnit_bool_exp?);
+
   List<Input$IngredientUnit_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$IngredientUnit_bool_exp>?);
+
   Input$float8_comparison_exp? get amount =>
       (_$data['amount'] as Input$float8_comparison_exp?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get ingredientId =>
       (_$data['ingredientId'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get notes =>
       (_$data['notes'] as Input$String_comparison_exp?);
+
   Input$Int_comparison_exp? get order =>
       (_$data['order'] as Input$Int_comparison_exp?);
+
   Input$String_comparison_exp? get recipeSectionId =>
       (_$data['recipeSectionId'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get unitId =>
       (_$data['unitId'] as Input$String_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Ingredient')) {
@@ -3751,6 +3893,7 @@ class Input$IngredientUnit_bool_exp {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -4039,6 +4182,7 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
         if (unitId != _undefined)
           'unitId': (unitId as Input$String_comparison_exp?),
       }));
+
   CopyWith$Input$Ingredient_bool_exp<TRes> get Ingredient {
     final local$Ingredient = _instance.Ingredient;
     return local$Ingredient == null
@@ -4075,6 +4219,7 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
                     e,
                     (i) => i,
                   )))?.toList());
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -4095,6 +4240,7 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
                     e,
                     (i) => i,
                   )))?.toList());
+
   CopyWith$Input$float8_comparison_exp<TRes> get amount {
     final local$amount = _instance.amount;
     return local$amount == null
@@ -4172,28 +4318,41 @@ class _CopyWithStubImpl$Input$IngredientUnit_bool_exp<TRes>
     Input$String_comparison_exp? unitId,
   }) =>
       _res;
+
   CopyWith$Input$Ingredient_bool_exp<TRes> get Ingredient =>
       CopyWith$Input$Ingredient_bool_exp.stub(_res);
+
   CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection =>
       CopyWith$Input$RecipeSection_bool_exp.stub(_res);
+
   CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSize =>
       CopyWith$Input$UnitSize_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get $_not =>
       CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$float8_comparison_exp<TRes> get amount =>
       CopyWith$Input$float8_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get ingredientId =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get notes =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$Int_comparison_exp<TRes> get order =>
       CopyWith$Input$Int_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get recipeSectionId =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get unitId =>
       CopyWith$Input$String_comparison_exp.stub(_res);
 }
@@ -4226,7 +4385,9 @@ class Input$IngredientUnit_inc_input {
   Map<String, dynamic> _$data;
 
   double? get amount => (_$data['amount'] as double?);
+
   int? get order => (_$data['order'] as int?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -4245,6 +4406,7 @@ class Input$IngredientUnit_inc_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -4414,15 +4576,24 @@ class Input$IngredientUnit_insert_input {
 
   Input$Ingredient_obj_rel_insert_input? get Ingredient =>
       (_$data['Ingredient'] as Input$Ingredient_obj_rel_insert_input?);
+
   Input$RecipeSection_obj_rel_insert_input? get RecipeSection =>
       (_$data['RecipeSection'] as Input$RecipeSection_obj_rel_insert_input?);
+
   double? get amount => (_$data['amount'] as double?);
+
   String? get id => (_$data['id'] as String?);
+
   String? get ingredientId => (_$data['ingredientId'] as String?);
+
   String? get notes => (_$data['notes'] as String?);
+
   int? get order => (_$data['order'] as int?);
+
   String? get recipeSectionId => (_$data['recipeSectionId'] as String?);
+
   String? get unitId => (_$data['unitId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Ingredient')) {
@@ -4469,6 +4640,7 @@ class Input$IngredientUnit_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -4647,6 +4819,7 @@ class _CopyWithImpl$Input$IngredientUnit_insert_input<TRes>
           'recipeSectionId': (recipeSectionId as String?),
         if (unitId != _undefined) 'unitId': (unitId as String?),
       }));
+
   CopyWith$Input$Ingredient_obj_rel_insert_input<TRes> get Ingredient {
     final local$Ingredient = _instance.Ingredient;
     return local$Ingredient == null
@@ -4683,8 +4856,10 @@ class _CopyWithStubImpl$Input$IngredientUnit_insert_input<TRes>
     String? unitId,
   }) =>
       _res;
+
   CopyWith$Input$Ingredient_obj_rel_insert_input<TRes> get Ingredient =>
       CopyWith$Input$Ingredient_obj_rel_insert_input.stub(_res);
+
   CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> get RecipeSection =>
       CopyWith$Input$RecipeSection_obj_rel_insert_input.stub(_res);
 }
@@ -4759,13 +4934,20 @@ class Input$IngredientUnit_max_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get ingredientId => (_$data['ingredientId'] as Enum$order_by?);
+
   Enum$order_by? get notes => (_$data['notes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get recipeSectionId =>
       (_$data['recipeSectionId'] as Enum$order_by?);
+
   Enum$order_by? get unitId => (_$data['unitId'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -4811,6 +4993,7 @@ class Input$IngredientUnit_max_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -5046,13 +5229,20 @@ class Input$IngredientUnit_min_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get ingredientId => (_$data['ingredientId'] as Enum$order_by?);
+
   Enum$order_by? get notes => (_$data['notes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get recipeSectionId =>
       (_$data['recipeSectionId'] as Enum$order_by?);
+
   Enum$order_by? get unitId => (_$data['unitId'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -5098,6 +5288,7 @@ class Input$IngredientUnit_min_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -5302,10 +5493,13 @@ class Input$IngredientUnit_on_conflict {
 
   Enum$IngredientUnit_constraint get constraint =>
       (_$data['constraint'] as Enum$IngredientUnit_constraint);
+
   List<Enum$IngredientUnit_update_column>? get update_columns =>
       (_$data['update_columns'] as List<Enum$IngredientUnit_update_column>?);
+
   Input$IngredientUnit_bool_exp? get where =>
       (_$data['where'] as Input$IngredientUnit_bool_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
@@ -5330,6 +5524,7 @@ class Input$IngredientUnit_on_conflict {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -5437,6 +5632,7 @@ class _CopyWithImpl$Input$IngredientUnit_on_conflict<TRes>
         if (where != _undefined)
           'where': (where as Input$IngredientUnit_bool_exp?),
       }));
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get where {
     final local$where = _instance.where;
     return local$where == null
@@ -5458,6 +5654,7 @@ class _CopyWithStubImpl$Input$IngredientUnit_on_conflict<TRes>
     Input$IngredientUnit_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get where =>
       CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
 }
@@ -5559,18 +5756,28 @@ class Input$IngredientUnit_order_by {
 
   Input$Ingredient_order_by? get Ingredient =>
       (_$data['Ingredient'] as Input$Ingredient_order_by?);
+
   Input$RecipeSection_order_by? get RecipeSection =>
       (_$data['RecipeSection'] as Input$RecipeSection_order_by?);
+
   Input$UnitSize_order_by? get UnitSize =>
       (_$data['UnitSize'] as Input$UnitSize_order_by?);
+
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get ingredientId => (_$data['ingredientId'] as Enum$order_by?);
+
   Enum$order_by? get notes => (_$data['notes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get recipeSectionId =>
       (_$data['recipeSectionId'] as Enum$order_by?);
+
   Enum$order_by? get unitId => (_$data['unitId'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Ingredient')) {
@@ -5628,6 +5835,7 @@ class Input$IngredientUnit_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -5821,6 +6029,7 @@ class _CopyWithImpl$Input$IngredientUnit_order_by<TRes>
           'recipeSectionId': (recipeSectionId as Enum$order_by?),
         if (unitId != _undefined) 'unitId': (unitId as Enum$order_by?),
       }));
+
   CopyWith$Input$Ingredient_order_by<TRes> get Ingredient {
     final local$Ingredient = _instance.Ingredient;
     return local$Ingredient == null
@@ -5865,10 +6074,13 @@ class _CopyWithStubImpl$Input$IngredientUnit_order_by<TRes>
     Enum$order_by? unitId,
   }) =>
       _res;
+
   CopyWith$Input$Ingredient_order_by<TRes> get Ingredient =>
       CopyWith$Input$Ingredient_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_order_by<TRes> get RecipeSection =>
       CopyWith$Input$RecipeSection_order_by.stub(_res);
+
   CopyWith$Input$UnitSize_order_by<TRes> get UnitSize =>
       CopyWith$Input$UnitSize_order_by.stub(_res);
 }
@@ -5892,6 +6104,7 @@ class Input$IngredientUnit_pk_columns_input {
   Map<String, dynamic> _$data;
 
   String get id => (_$data['id'] as String);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$id = id;
@@ -5905,6 +6118,7 @@ class Input$IngredientUnit_pk_columns_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -6016,10 +6230,15 @@ class Input$IngredientUnit_set_input {
   Map<String, dynamic> _$data;
 
   double? get amount => (_$data['amount'] as double?);
+
   String? get ingredientId => (_$data['ingredientId'] as String?);
+
   String? get notes => (_$data['notes'] as String?);
+
   int? get order => (_$data['order'] as int?);
+
   String? get unitId => (_$data['unitId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -6050,6 +6269,7 @@ class Input$IngredientUnit_set_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -6217,7 +6437,9 @@ class Input$IngredientUnit_stddev_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -6239,6 +6461,7 @@ class Input$IngredientUnit_stddev_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -6362,7 +6585,9 @@ class Input$IngredientUnit_stddev_pop_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -6384,6 +6609,7 @@ class Input$IngredientUnit_stddev_pop_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -6507,7 +6733,9 @@ class Input$IngredientUnit_stddev_samp_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -6529,6 +6757,7 @@ class Input$IngredientUnit_stddev_samp_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -6652,7 +6881,9 @@ class Input$IngredientUnit_sum_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -6673,6 +6904,7 @@ class Input$IngredientUnit_sum_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -6804,10 +7036,13 @@ class Input$IngredientUnit_updates {
 
   Input$IngredientUnit_inc_input? get $_inc =>
       (_$data['_inc'] as Input$IngredientUnit_inc_input?);
+
   Input$IngredientUnit_set_input? get $_set =>
       (_$data['_set'] as Input$IngredientUnit_set_input?);
+
   Input$IngredientUnit_bool_exp get where =>
       (_$data['where'] as Input$IngredientUnit_bool_exp);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_inc')) {
@@ -6828,6 +7063,7 @@ class Input$IngredientUnit_updates {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -6920,6 +7156,7 @@ class _CopyWithImpl$Input$IngredientUnit_updates<TRes>
         if (where != _undefined && where != null)
           'where': (where as Input$IngredientUnit_bool_exp),
       }));
+
   CopyWith$Input$IngredientUnit_inc_input<TRes> get $_inc {
     final local$$_inc = _instance.$_inc;
     return local$$_inc == null
@@ -6955,10 +7192,13 @@ class _CopyWithStubImpl$Input$IngredientUnit_updates<TRes>
     Input$IngredientUnit_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_inc_input<TRes> get $_inc =>
       CopyWith$Input$IngredientUnit_inc_input.stub(_res);
+
   CopyWith$Input$IngredientUnit_set_input<TRes> get $_set =>
       CopyWith$Input$IngredientUnit_set_input.stub(_res);
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get where =>
       CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
 }
@@ -6995,7 +7235,9 @@ class Input$IngredientUnit_var_pop_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -7017,6 +7259,7 @@ class Input$IngredientUnit_var_pop_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -7140,7 +7383,9 @@ class Input$IngredientUnit_var_samp_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -7162,6 +7407,7 @@ class Input$IngredientUnit_var_samp_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -7285,7 +7531,9 @@ class Input$IngredientUnit_variance_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get amount => (_$data['amount'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
@@ -7307,6 +7555,7 @@ class Input$IngredientUnit_variance_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -7469,16 +7718,22 @@ class Input$Ingredient_bool_exp {
 
   Input$IngredientUnit_bool_exp? get IngredientUnits =>
       (_$data['IngredientUnits'] as Input$IngredientUnit_bool_exp?);
+
   List<Input$Ingredient_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$Ingredient_bool_exp>?);
+
   Input$Ingredient_bool_exp? get $_not =>
       (_$data['_not'] as Input$Ingredient_bool_exp?);
+
   List<Input$Ingredient_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$Ingredient_bool_exp>?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get name =>
       (_$data['name'] as Input$String_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits')) {
@@ -7513,6 +7768,7 @@ class Input$Ingredient_bool_exp {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -7692,6 +7948,7 @@ class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
         if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
         if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
       }));
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits {
     final local$IngredientUnits = _instance.IngredientUnits;
     return local$IngredientUnits == null
@@ -7712,6 +7969,7 @@ class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
                     e,
                     (i) => i,
                   )))?.toList());
+
   CopyWith$Input$Ingredient_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -7732,6 +7990,7 @@ class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
                     e,
                     (i) => i,
                   )))?.toList());
+
   CopyWith$Input$String_comparison_exp<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -7763,14 +8022,20 @@ class _CopyWithStubImpl$Input$Ingredient_bool_exp<TRes>
     Input$String_comparison_exp? name,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits =>
       CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$Ingredient_bool_exp<TRes> get $_not =>
       CopyWith$Input$Ingredient_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get name =>
       CopyWith$Input$String_comparison_exp.stub(_res);
 }
@@ -7813,8 +8078,11 @@ class Input$Ingredient_insert_input {
 
   Input$IngredientUnit_arr_rel_insert_input? get IngredientUnits =>
       (_$data['IngredientUnits'] as Input$IngredientUnit_arr_rel_insert_input?);
+
   String? get id => (_$data['id'] as String?);
+
   String? get name => (_$data['name'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits')) {
@@ -7837,6 +8105,7 @@ class Input$Ingredient_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -7930,6 +8199,7 @@ class _CopyWithImpl$Input$Ingredient_insert_input<TRes>
         if (id != _undefined) 'id': (id as String?),
         if (name != _undefined) 'name': (name as String?),
       }));
+
   CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> get IngredientUnits {
     final local$IngredientUnits = _instance.IngredientUnits;
     return local$IngredientUnits == null
@@ -7952,6 +8222,7 @@ class _CopyWithStubImpl$Input$Ingredient_insert_input<TRes>
     String? name,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes>
       get IngredientUnits =>
           CopyWith$Input$IngredientUnit_arr_rel_insert_input.stub(_res);
@@ -7989,8 +8260,10 @@ class Input$Ingredient_obj_rel_insert_input {
 
   Input$Ingredient_insert_input get data =>
       (_$data['data'] as Input$Ingredient_insert_input);
+
   Input$Ingredient_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$Ingredient_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -8008,6 +8281,7 @@ class Input$Ingredient_obj_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -8086,6 +8360,7 @@ class _CopyWithImpl$Input$Ingredient_obj_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$Ingredient_on_conflict?),
       }));
+
   CopyWith$Input$Ingredient_insert_input<TRes> get data {
     final local$data = _instance.data;
     return CopyWith$Input$Ingredient_insert_input(
@@ -8112,8 +8387,10 @@ class _CopyWithStubImpl$Input$Ingredient_obj_rel_insert_input<TRes>
     Input$Ingredient_on_conflict? on_conflict,
   }) =>
       _res;
+
   CopyWith$Input$Ingredient_insert_input<TRes> get data =>
       CopyWith$Input$Ingredient_insert_input.stub(_res);
+
   CopyWith$Input$Ingredient_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$Ingredient_on_conflict.stub(_res);
 }
@@ -8157,10 +8434,13 @@ class Input$Ingredient_on_conflict {
 
   Enum$Ingredient_constraint get constraint =>
       (_$data['constraint'] as Enum$Ingredient_constraint);
+
   List<Enum$Ingredient_update_column>? get update_columns =>
       (_$data['update_columns'] as List<Enum$Ingredient_update_column>?);
+
   Input$Ingredient_bool_exp? get where =>
       (_$data['where'] as Input$Ingredient_bool_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
@@ -8184,6 +8464,7 @@ class Input$Ingredient_on_conflict {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -8290,6 +8571,7 @@ class _CopyWithImpl$Input$Ingredient_on_conflict<TRes>
               (update_columns as List<Enum$Ingredient_update_column>),
         if (where != _undefined) 'where': (where as Input$Ingredient_bool_exp?),
       }));
+
   CopyWith$Input$Ingredient_bool_exp<TRes> get where {
     final local$where = _instance.where;
     return local$where == null
@@ -8311,6 +8593,7 @@ class _CopyWithStubImpl$Input$Ingredient_on_conflict<TRes>
     Input$Ingredient_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$Ingredient_bool_exp<TRes> get where =>
       CopyWith$Input$Ingredient_bool_exp.stub(_res);
 }
@@ -8358,8 +8641,11 @@ class Input$Ingredient_order_by {
   Input$IngredientUnit_aggregate_order_by? get IngredientUnits_aggregate =>
       (_$data['IngredientUnits_aggregate']
           as Input$IngredientUnit_aggregate_order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get name => (_$data['name'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits_aggregate')) {
@@ -8384,6 +8670,7 @@ class Input$Ingredient_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -8480,6 +8767,7 @@ class _CopyWithImpl$Input$Ingredient_order_by<TRes>
         if (id != _undefined) 'id': (id as Enum$order_by?),
         if (name != _undefined) 'name': (name as Enum$order_by?),
       }));
+
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
       get IngredientUnits_aggregate {
     final local$IngredientUnits_aggregate = _instance.IngredientUnits_aggregate;
@@ -8504,6 +8792,7 @@ class _CopyWithStubImpl$Input$Ingredient_order_by<TRes>
     Enum$order_by? name,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
       get IngredientUnits_aggregate =>
           CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
@@ -8581,14 +8870,23 @@ class Input$Int_comparison_exp {
   Map<String, dynamic> _$data;
 
   int? get $_eq => (_$data['_eq'] as int?);
+
   int? get $_gt => (_$data['_gt'] as int?);
+
   int? get $_gte => (_$data['_gte'] as int?);
+
   List<int>? get $_in => (_$data['_in'] as List<int>?);
+
   bool? get $_is_null => (_$data['_is_null'] as bool?);
+
   int? get $_lt => (_$data['_lt'] as int?);
+
   int? get $_lte => (_$data['_lte'] as int?);
+
   int? get $_neq => (_$data['_neq'] as int?);
+
   List<int>? get $_nin => (_$data['_nin'] as List<int>?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_eq')) {
@@ -8635,6 +8933,7 @@ class Input$Int_comparison_exp {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -8970,25 +9269,36 @@ class Input$RecipeSection_aggregate_order_by {
 
   Input$RecipeSection_avg_order_by? get avg =>
       (_$data['avg'] as Input$RecipeSection_avg_order_by?);
+
   Enum$order_by? get count => (_$data['count'] as Enum$order_by?);
+
   Input$RecipeSection_max_order_by? get max =>
       (_$data['max'] as Input$RecipeSection_max_order_by?);
+
   Input$RecipeSection_min_order_by? get min =>
       (_$data['min'] as Input$RecipeSection_min_order_by?);
+
   Input$RecipeSection_stddev_order_by? get stddev =>
       (_$data['stddev'] as Input$RecipeSection_stddev_order_by?);
+
   Input$RecipeSection_stddev_pop_order_by? get stddev_pop =>
       (_$data['stddev_pop'] as Input$RecipeSection_stddev_pop_order_by?);
+
   Input$RecipeSection_stddev_samp_order_by? get stddev_samp =>
       (_$data['stddev_samp'] as Input$RecipeSection_stddev_samp_order_by?);
+
   Input$RecipeSection_sum_order_by? get sum =>
       (_$data['sum'] as Input$RecipeSection_sum_order_by?);
+
   Input$RecipeSection_var_pop_order_by? get var_pop =>
       (_$data['var_pop'] as Input$RecipeSection_var_pop_order_by?);
+
   Input$RecipeSection_var_samp_order_by? get var_samp =>
       (_$data['var_samp'] as Input$RecipeSection_var_samp_order_by?);
+
   Input$RecipeSection_variance_order_by? get variance =>
       (_$data['variance'] as Input$RecipeSection_variance_order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('avg')) {
@@ -9045,6 +9355,7 @@ class Input$RecipeSection_aggregate_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -9264,6 +9575,7 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
         if (variance != _undefined)
           'variance': (variance as Input$RecipeSection_variance_order_by?),
       }));
+
   CopyWith$Input$RecipeSection_avg_order_by<TRes> get avg {
     final local$avg = _instance.avg;
     return local$avg == null
@@ -9367,24 +9679,34 @@ class _CopyWithStubImpl$Input$RecipeSection_aggregate_order_by<TRes>
     Input$RecipeSection_variance_order_by? variance,
   }) =>
       _res;
+
   CopyWith$Input$RecipeSection_avg_order_by<TRes> get avg =>
       CopyWith$Input$RecipeSection_avg_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_max_order_by<TRes> get max =>
       CopyWith$Input$RecipeSection_max_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_min_order_by<TRes> get min =>
       CopyWith$Input$RecipeSection_min_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_stddev_order_by<TRes> get stddev =>
       CopyWith$Input$RecipeSection_stddev_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_stddev_pop_order_by<TRes> get stddev_pop =>
       CopyWith$Input$RecipeSection_stddev_pop_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_stddev_samp_order_by<TRes> get stddev_samp =>
       CopyWith$Input$RecipeSection_stddev_samp_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_sum_order_by<TRes> get sum =>
       CopyWith$Input$RecipeSection_sum_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_var_pop_order_by<TRes> get var_pop =>
       CopyWith$Input$RecipeSection_var_pop_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_var_samp_order_by<TRes> get var_samp =>
       CopyWith$Input$RecipeSection_var_samp_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_variance_order_by<TRes> get variance =>
       CopyWith$Input$RecipeSection_variance_order_by.stub(_res);
 }
@@ -9423,8 +9745,10 @@ class Input$RecipeSection_arr_rel_insert_input {
 
   List<Input$RecipeSection_insert_input> get data =>
       (_$data['data'] as List<Input$RecipeSection_insert_input>);
+
   Input$RecipeSection_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$RecipeSection_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -9442,6 +9766,7 @@ class Input$RecipeSection_arr_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -9532,6 +9857,7 @@ class _CopyWithImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$RecipeSection_on_conflict?),
       }));
+
   TRes data(
           Iterable<Input$RecipeSection_insert_input> Function(
                   Iterable<
@@ -9544,6 +9870,7 @@ class _CopyWithImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
                     e,
                     (i) => i,
                   ))).toList());
+
   CopyWith$Input$RecipeSection_on_conflict<TRes> get on_conflict {
     final local$on_conflict = _instance.on_conflict;
     return local$on_conflict == null
@@ -9564,7 +9891,9 @@ class _CopyWithStubImpl$Input$RecipeSection_arr_rel_insert_input<TRes>
     Input$RecipeSection_on_conflict? on_conflict,
   }) =>
       _res;
+
   data(_fn) => _res;
+
   CopyWith$Input$RecipeSection_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$RecipeSection_on_conflict.stub(_res);
 }
@@ -9617,10 +9946,14 @@ class Input$RecipeSection_avg_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -9653,6 +9986,7 @@ class Input$RecipeSection_avg_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -9927,33 +10261,48 @@ class Input$RecipeSection_bool_exp {
 
   Input$IngredientUnit_bool_exp? get IngredientUnits =>
       (_$data['IngredientUnits'] as Input$IngredientUnit_bool_exp?);
+
   Input$Recipe_bool_exp? get Recipe =>
       (_$data['Recipe'] as Input$Recipe_bool_exp?);
+
   Input$Step_bool_exp? get Steps => (_$data['Steps'] as Input$Step_bool_exp?);
+
   List<Input$RecipeSection_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$RecipeSection_bool_exp>?);
+
   Input$RecipeSection_bool_exp? get $_not =>
       (_$data['_not'] as Input$RecipeSection_bool_exp?);
+
   List<Input$RecipeSection_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$RecipeSection_bool_exp>?);
+
   Input$Int_comparison_exp? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Input$Int_comparison_exp?);
+
   Input$String_comparison_exp? get description =>
       (_$data['description'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get name =>
       (_$data['name'] as Input$String_comparison_exp?);
+
   Input$Int_comparison_exp? get order =>
       (_$data['order'] as Input$Int_comparison_exp?);
+
   Input$Int_comparison_exp? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Input$Int_comparison_exp?);
+
   Input$String_comparison_exp? get recipeId =>
       (_$data['recipeId'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get servingUnit =>
       (_$data['servingUnit'] as Input$String_comparison_exp?);
+
   Input$Int_comparison_exp? get servings =>
       (_$data['servings'] as Input$Int_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits')) {
@@ -10024,6 +10373,7 @@ class Input$RecipeSection_bool_exp {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -10342,6 +10692,7 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
         if (servings != _undefined)
           'servings': (servings as Input$Int_comparison_exp?),
       }));
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits {
     final local$IngredientUnits = _instance.IngredientUnits;
     return local$IngredientUnits == null
@@ -10376,6 +10727,7 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
                     e,
                     (i) => i,
                   )))?.toList());
+
   CopyWith$Input$RecipeSection_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -10396,6 +10748,7 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
                     e,
                     (i) => i,
                   )))?.toList());
+
   CopyWith$Input$Int_comparison_exp<TRes> get cookTimeMinutes {
     final local$cookTimeMinutes = _instance.cookTimeMinutes;
     return local$cookTimeMinutes == null
@@ -10491,32 +10844,47 @@ class _CopyWithStubImpl$Input$RecipeSection_bool_exp<TRes>
     Input$Int_comparison_exp? servings,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits =>
       CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
+
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipe =>
       CopyWith$Input$Recipe_bool_exp.stub(_res);
+
   CopyWith$Input$Step_bool_exp<TRes> get Steps =>
       CopyWith$Input$Step_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$RecipeSection_bool_exp<TRes> get $_not =>
       CopyWith$Input$RecipeSection_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$Int_comparison_exp<TRes> get cookTimeMinutes =>
       CopyWith$Input$Int_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get description =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get name =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$Int_comparison_exp<TRes> get order =>
       CopyWith$Input$Int_comparison_exp.stub(_res);
+
   CopyWith$Input$Int_comparison_exp<TRes> get prepTimeMinutes =>
       CopyWith$Input$Int_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get recipeId =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get servingUnit =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$Int_comparison_exp<TRes> get servings =>
       CopyWith$Input$Int_comparison_exp.stub(_res);
 }
@@ -10561,9 +10929,13 @@ class Input$RecipeSection_inc_input {
   Map<String, dynamic> _$data;
 
   int? get cookTimeMinutes => (_$data['cookTimeMinutes'] as int?);
+
   int? get order => (_$data['order'] as int?);
+
   int? get prepTimeMinutes => (_$data['prepTimeMinutes'] as int?);
+
   int? get servings => (_$data['servings'] as int?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -10590,6 +10962,7 @@ class Input$RecipeSection_inc_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -10812,19 +11185,31 @@ class Input$RecipeSection_insert_input {
 
   Input$IngredientUnit_arr_rel_insert_input? get IngredientUnits =>
       (_$data['IngredientUnits'] as Input$IngredientUnit_arr_rel_insert_input?);
+
   Input$Recipe_obj_rel_insert_input? get Recipe =>
       (_$data['Recipe'] as Input$Recipe_obj_rel_insert_input?);
+
   Input$Step_arr_rel_insert_input? get Steps =>
       (_$data['Steps'] as Input$Step_arr_rel_insert_input?);
+
   int? get cookTimeMinutes => (_$data['cookTimeMinutes'] as int?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get id => (_$data['id'] as String?);
+
   String? get name => (_$data['name'] as String?);
+
   int? get order => (_$data['order'] as int?);
+
   int? get prepTimeMinutes => (_$data['prepTimeMinutes'] as int?);
+
   String? get recipeId => (_$data['recipeId'] as String?);
+
   String? get servingUnit => (_$data['servingUnit'] as String?);
+
   int? get servings => (_$data['servings'] as int?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits')) {
@@ -10883,6 +11268,7 @@ class Input$RecipeSection_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -11105,6 +11491,7 @@ class _CopyWithImpl$Input$RecipeSection_insert_input<TRes>
         if (servingUnit != _undefined) 'servingUnit': (servingUnit as String?),
         if (servings != _undefined) 'servings': (servings as int?),
       }));
+
   CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes> get IngredientUnits {
     final local$IngredientUnits = _instance.IngredientUnits;
     return local$IngredientUnits == null
@@ -11152,11 +11539,14 @@ class _CopyWithStubImpl$Input$RecipeSection_insert_input<TRes>
     int? servings,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_arr_rel_insert_input<TRes>
       get IngredientUnits =>
           CopyWith$Input$IngredientUnit_arr_rel_insert_input.stub(_res);
+
   CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe =>
       CopyWith$Input$Recipe_obj_rel_insert_input.stub(_res);
+
   CopyWith$Input$Step_arr_rel_insert_input<TRes> get Steps =>
       CopyWith$Input$Step_arr_rel_insert_input.stub(_res);
 }
@@ -11247,15 +11637,24 @@ class Input$RecipeSection_max_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get name => (_$data['name'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get recipeId => (_$data['recipeId'] as Enum$order_by?);
+
   Enum$order_by? get servingUnit => (_$data['servingUnit'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -11312,6 +11711,7 @@ class Input$RecipeSection_max_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -11597,15 +11997,24 @@ class Input$RecipeSection_min_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get name => (_$data['name'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get recipeId => (_$data['recipeId'] as Enum$order_by?);
+
   Enum$order_by? get servingUnit => (_$data['servingUnit'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -11662,6 +12071,7 @@ class Input$RecipeSection_min_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -11893,8 +12303,10 @@ class Input$RecipeSection_obj_rel_insert_input {
 
   Input$RecipeSection_insert_input get data =>
       (_$data['data'] as Input$RecipeSection_insert_input);
+
   Input$RecipeSection_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$RecipeSection_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -11912,6 +12324,7 @@ class Input$RecipeSection_obj_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -11990,6 +12403,7 @@ class _CopyWithImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$RecipeSection_on_conflict?),
       }));
+
   CopyWith$Input$RecipeSection_insert_input<TRes> get data {
     final local$data = _instance.data;
     return CopyWith$Input$RecipeSection_insert_input(
@@ -12016,8 +12430,10 @@ class _CopyWithStubImpl$Input$RecipeSection_obj_rel_insert_input<TRes>
     Input$RecipeSection_on_conflict? on_conflict,
   }) =>
       _res;
+
   CopyWith$Input$RecipeSection_insert_input<TRes> get data =>
       CopyWith$Input$RecipeSection_insert_input.stub(_res);
+
   CopyWith$Input$RecipeSection_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$RecipeSection_on_conflict.stub(_res);
 }
@@ -12061,10 +12477,13 @@ class Input$RecipeSection_on_conflict {
 
   Enum$RecipeSection_constraint get constraint =>
       (_$data['constraint'] as Enum$RecipeSection_constraint);
+
   List<Enum$RecipeSection_update_column>? get update_columns =>
       (_$data['update_columns'] as List<Enum$RecipeSection_update_column>?);
+
   Input$RecipeSection_bool_exp? get where =>
       (_$data['where'] as Input$RecipeSection_bool_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
@@ -12089,6 +12508,7 @@ class Input$RecipeSection_on_conflict {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -12196,6 +12616,7 @@ class _CopyWithImpl$Input$RecipeSection_on_conflict<TRes>
         if (where != _undefined)
           'where': (where as Input$RecipeSection_bool_exp?),
       }));
+
   CopyWith$Input$RecipeSection_bool_exp<TRes> get where {
     final local$where = _instance.where;
     return local$where == null
@@ -12217,6 +12638,7 @@ class _CopyWithStubImpl$Input$RecipeSection_on_conflict<TRes>
     Input$RecipeSection_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$RecipeSection_bool_exp<TRes> get where =>
       CopyWith$Input$RecipeSection_bool_exp.stub(_res);
 }
@@ -12336,21 +12758,33 @@ class Input$RecipeSection_order_by {
   Input$IngredientUnit_aggregate_order_by? get IngredientUnits_aggregate =>
       (_$data['IngredientUnits_aggregate']
           as Input$IngredientUnit_aggregate_order_by?);
+
   Input$Recipe_order_by? get Recipe =>
       (_$data['Recipe'] as Input$Recipe_order_by?);
+
   Input$Step_aggregate_order_by? get Steps_aggregate =>
       (_$data['Steps_aggregate'] as Input$Step_aggregate_order_by?);
+
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get name => (_$data['name'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get recipeId => (_$data['recipeId'] as Enum$order_by?);
+
   Enum$order_by? get servingUnit => (_$data['servingUnit'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits_aggregate')) {
@@ -12420,6 +12854,7 @@ class Input$RecipeSection_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -12648,6 +13083,7 @@ class _CopyWithImpl$Input$RecipeSection_order_by<TRes>
           'servingUnit': (servingUnit as Enum$order_by?),
         if (servings != _undefined) 'servings': (servings as Enum$order_by?),
       }));
+
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
       get IngredientUnits_aggregate {
     final local$IngredientUnits_aggregate = _instance.IngredientUnits_aggregate;
@@ -12696,11 +13132,14 @@ class _CopyWithStubImpl$Input$RecipeSection_order_by<TRes>
     Enum$order_by? servings,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
       get IngredientUnits_aggregate =>
           CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
+
   CopyWith$Input$Recipe_order_by<TRes> get Recipe =>
       CopyWith$Input$Recipe_order_by.stub(_res);
+
   CopyWith$Input$Step_aggregate_order_by<TRes> get Steps_aggregate =>
       CopyWith$Input$Step_aggregate_order_by.stub(_res);
 }
@@ -12724,6 +13163,7 @@ class Input$RecipeSection_pk_columns_input {
   Map<String, dynamic> _$data;
 
   String get id => (_$data['id'] as String);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$id = id;
@@ -12737,6 +13177,7 @@ class Input$RecipeSection_pk_columns_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -12860,12 +13301,19 @@ class Input$RecipeSection_set_input {
   Map<String, dynamic> _$data;
 
   int? get cookTimeMinutes => (_$data['cookTimeMinutes'] as int?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get name => (_$data['name'] as String?);
+
   int? get order => (_$data['order'] as int?);
+
   int? get prepTimeMinutes => (_$data['prepTimeMinutes'] as int?);
+
   String? get servingUnit => (_$data['servingUnit'] as String?);
+
   int? get servings => (_$data['servings'] as int?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -12904,6 +13352,7 @@ class Input$RecipeSection_set_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -13121,10 +13570,14 @@ class Input$RecipeSection_stddev_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -13158,6 +13611,7 @@ class Input$RecipeSection_stddev_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -13331,10 +13785,14 @@ class Input$RecipeSection_stddev_pop_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -13368,6 +13826,7 @@ class Input$RecipeSection_stddev_pop_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -13541,10 +14000,14 @@ class Input$RecipeSection_stddev_samp_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -13578,6 +14041,7 @@ class Input$RecipeSection_stddev_samp_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -13750,10 +14214,14 @@ class Input$RecipeSection_sum_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -13786,6 +14254,7 @@ class Input$RecipeSection_sum_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -13950,10 +14419,13 @@ class Input$RecipeSection_updates {
 
   Input$RecipeSection_inc_input? get $_inc =>
       (_$data['_inc'] as Input$RecipeSection_inc_input?);
+
   Input$RecipeSection_set_input? get $_set =>
       (_$data['_set'] as Input$RecipeSection_set_input?);
+
   Input$RecipeSection_bool_exp get where =>
       (_$data['where'] as Input$RecipeSection_bool_exp);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_inc')) {
@@ -13974,6 +14446,7 @@ class Input$RecipeSection_updates {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -14066,6 +14539,7 @@ class _CopyWithImpl$Input$RecipeSection_updates<TRes>
         if (where != _undefined && where != null)
           'where': (where as Input$RecipeSection_bool_exp),
       }));
+
   CopyWith$Input$RecipeSection_inc_input<TRes> get $_inc {
     final local$$_inc = _instance.$_inc;
     return local$$_inc == null
@@ -14101,10 +14575,13 @@ class _CopyWithStubImpl$Input$RecipeSection_updates<TRes>
     Input$RecipeSection_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$RecipeSection_inc_input<TRes> get $_inc =>
       CopyWith$Input$RecipeSection_inc_input.stub(_res);
+
   CopyWith$Input$RecipeSection_set_input<TRes> get $_set =>
       CopyWith$Input$RecipeSection_set_input.stub(_res);
+
   CopyWith$Input$RecipeSection_bool_exp<TRes> get where =>
       CopyWith$Input$RecipeSection_bool_exp.stub(_res);
 }
@@ -14158,10 +14635,14 @@ class Input$RecipeSection_var_pop_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -14195,6 +14676,7 @@ class Input$RecipeSection_var_pop_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -14368,10 +14850,14 @@ class Input$RecipeSection_var_samp_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -14405,6 +14891,7 @@ class Input$RecipeSection_var_samp_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -14578,10 +15065,14 @@ class Input$RecipeSection_variance_order_by {
 
   Enum$order_by? get cookTimeMinutes =>
       (_$data['cookTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get prepTimeMinutes =>
       (_$data['prepTimeMinutes'] as Enum$order_by?);
+
   Enum$order_by? get servings => (_$data['servings'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('cookTimeMinutes')) {
@@ -14615,6 +15106,7 @@ class Input$RecipeSection_variance_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -14778,10 +15270,13 @@ class Input$Recipe_aggregate_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get count => (_$data['count'] as Enum$order_by?);
+
   Input$Recipe_max_order_by? get max =>
       (_$data['max'] as Input$Recipe_max_order_by?);
+
   Input$Recipe_min_order_by? get min =>
       (_$data['min'] as Input$Recipe_min_order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('count')) {
@@ -14805,6 +15300,7 @@ class Input$Recipe_aggregate_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -14896,6 +15392,7 @@ class _CopyWithImpl$Input$Recipe_aggregate_order_by<TRes>
         if (max != _undefined) 'max': (max as Input$Recipe_max_order_by?),
         if (min != _undefined) 'min': (min as Input$Recipe_min_order_by?),
       }));
+
   CopyWith$Input$Recipe_max_order_by<TRes> get max {
     final local$max = _instance.max;
     return local$max == null
@@ -14923,8 +15420,10 @@ class _CopyWithStubImpl$Input$Recipe_aggregate_order_by<TRes>
     Input$Recipe_min_order_by? min,
   }) =>
       _res;
+
   CopyWith$Input$Recipe_max_order_by<TRes> get max =>
       CopyWith$Input$Recipe_max_order_by.stub(_res);
+
   CopyWith$Input$Recipe_min_order_by<TRes> get min =>
       CopyWith$Input$Recipe_min_order_by.stub(_res);
 }
@@ -15077,33 +15576,48 @@ class Input$Recipe_bool_exp {
   Map<String, dynamic> _$data;
 
   Input$User_bool_exp? get Author => (_$data['Author'] as Input$User_bool_exp?);
+
   Input$File_bool_exp? get Files => (_$data['Files'] as Input$File_bool_exp?);
+
   Input$RecipeSection_bool_exp? get RecipeSections =>
       (_$data['RecipeSections'] as Input$RecipeSection_bool_exp?);
+
   Input$_RecipeToTag_bool_exp? get RecipeTags =>
       (_$data['RecipeTags'] as Input$_RecipeToTag_bool_exp?);
+
   List<Input$Recipe_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$Recipe_bool_exp>?);
+
   Input$Recipe_bool_exp? get $_not =>
       (_$data['_not'] as Input$Recipe_bool_exp?);
+
   List<Input$Recipe_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$Recipe_bool_exp>?);
+
   Input$String_comparison_exp? get authorId =>
       (_$data['authorId'] as Input$String_comparison_exp?);
+
   Input$timestamp_comparison_exp? get createdAt =>
       (_$data['createdAt'] as Input$timestamp_comparison_exp?);
+
   Input$String_comparison_exp? get description =>
       (_$data['description'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get notes =>
       (_$data['notes'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get source =>
       (_$data['source'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get title =>
       (_$data['title'] as Input$String_comparison_exp?);
+
   Input$timestamp_comparison_exp? get updatedAt =>
       (_$data['updatedAt'] as Input$timestamp_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Author')) {
@@ -15174,6 +15688,7 @@ class Input$Recipe_bool_exp {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -15485,6 +16000,7 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
         if (updatedAt != _undefined)
           'updatedAt': (updatedAt as Input$timestamp_comparison_exp?),
       }));
+
   CopyWith$Input$User_bool_exp<TRes> get Author {
     final local$Author = _instance.Author;
     return local$Author == null
@@ -15525,6 +16041,7 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$Recipe_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -15542,6 +16059,7 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$String_comparison_exp<TRes> get authorId {
     final local$authorId = _instance.authorId;
     return local$authorId == null
@@ -15630,32 +16148,47 @@ class _CopyWithStubImpl$Input$Recipe_bool_exp<TRes>
     Input$timestamp_comparison_exp? updatedAt,
   }) =>
       _res;
+
   CopyWith$Input$User_bool_exp<TRes> get Author =>
       CopyWith$Input$User_bool_exp.stub(_res);
+
   CopyWith$Input$File_bool_exp<TRes> get Files =>
       CopyWith$Input$File_bool_exp.stub(_res);
+
   CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSections =>
       CopyWith$Input$RecipeSection_bool_exp.stub(_res);
+
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get RecipeTags =>
       CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$Recipe_bool_exp<TRes> get $_not =>
       CopyWith$Input$Recipe_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$String_comparison_exp<TRes> get authorId =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$timestamp_comparison_exp<TRes> get createdAt =>
       CopyWith$Input$timestamp_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get description =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get notes =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get source =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get title =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$timestamp_comparison_exp<TRes> get updatedAt =>
       CopyWith$Input$timestamp_comparison_exp.stub(_res);
 }
@@ -15734,15 +16267,23 @@ class Input$Recipe_insert_input {
 
   Input$File_arr_rel_insert_input? get Files =>
       (_$data['Files'] as Input$File_arr_rel_insert_input?);
+
   Input$RecipeSection_arr_rel_insert_input? get RecipeSections =>
       (_$data['RecipeSections'] as Input$RecipeSection_arr_rel_insert_input?);
+
   Input$_RecipeToTag_arr_rel_insert_input? get RecipeTags =>
       (_$data['RecipeTags'] as Input$_RecipeToTag_arr_rel_insert_input?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get id => (_$data['id'] as String?);
+
   String? get notes => (_$data['notes'] as String?);
+
   String? get source => (_$data['source'] as String?);
+
   String? get title => (_$data['title'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Files')) {
@@ -15785,6 +16326,7 @@ class Input$Recipe_insert_input {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -15950,6 +16492,7 @@ class _CopyWithImpl$Input$Recipe_insert_input<TRes>
         if (source != _undefined) 'source': (source as String?),
         if (title != _undefined) 'title': (title as String?),
       }));
+
   CopyWith$Input$File_arr_rel_insert_input<TRes> get Files {
     final local$Files = _instance.Files;
     return local$Files == null
@@ -15994,10 +16537,13 @@ class _CopyWithStubImpl$Input$Recipe_insert_input<TRes>
     String? title,
   }) =>
       _res;
+
   CopyWith$Input$File_arr_rel_insert_input<TRes> get Files =>
       CopyWith$Input$File_arr_rel_insert_input.stub(_res);
+
   CopyWith$Input$RecipeSection_arr_rel_insert_input<TRes> get RecipeSections =>
       CopyWith$Input$RecipeSection_arr_rel_insert_input.stub(_res);
+
   CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> get RecipeTags =>
       CopyWith$Input$_RecipeToTag_arr_rel_insert_input.stub(_res);
 }
@@ -16079,13 +16625,21 @@ class Input$Recipe_max_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get authorId => (_$data['authorId'] as Enum$order_by?);
+
   Enum$order_by? get createdAt => (_$data['createdAt'] as Enum$order_by?);
+
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get notes => (_$data['notes'] as Enum$order_by?);
+
   Enum$order_by? get source => (_$data['source'] as Enum$order_by?);
+
   Enum$order_by? get title => (_$data['title'] as Enum$order_by?);
+
   Enum$order_by? get updatedAt => (_$data['updatedAt'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('authorId')) {
@@ -16135,6 +16689,7 @@ class Input$Recipe_max_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -16392,13 +16947,21 @@ class Input$Recipe_min_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get authorId => (_$data['authorId'] as Enum$order_by?);
+
   Enum$order_by? get createdAt => (_$data['createdAt'] as Enum$order_by?);
+
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get notes => (_$data['notes'] as Enum$order_by?);
+
   Enum$order_by? get source => (_$data['source'] as Enum$order_by?);
+
   Enum$order_by? get title => (_$data['title'] as Enum$order_by?);
+
   Enum$order_by? get updatedAt => (_$data['updatedAt'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('authorId')) {
@@ -16448,6 +17011,7 @@ class Input$Recipe_min_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -16660,8 +17224,10 @@ class Input$Recipe_obj_rel_insert_input {
 
   Input$Recipe_insert_input get data =>
       (_$data['data'] as Input$Recipe_insert_input);
+
   Input$Recipe_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$Recipe_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -16678,6 +17244,7 @@ class Input$Recipe_obj_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -16756,6 +17323,7 @@ class _CopyWithImpl$Input$Recipe_obj_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$Recipe_on_conflict?),
       }));
+
   CopyWith$Input$Recipe_insert_input<TRes> get data {
     final local$data = _instance.data;
     return CopyWith$Input$Recipe_insert_input(local$data, (e) => call(data: e));
@@ -16781,8 +17349,10 @@ class _CopyWithStubImpl$Input$Recipe_obj_rel_insert_input<TRes>
     Input$Recipe_on_conflict? on_conflict,
   }) =>
       _res;
+
   CopyWith$Input$Recipe_insert_input<TRes> get data =>
       CopyWith$Input$Recipe_insert_input.stub(_res);
+
   CopyWith$Input$Recipe_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$Recipe_on_conflict.stub(_res);
 }
@@ -16825,10 +17395,13 @@ class Input$Recipe_on_conflict {
 
   Enum$Recipe_constraint get constraint =>
       (_$data['constraint'] as Enum$Recipe_constraint);
+
   List<Enum$Recipe_update_column>? get update_columns =>
       (_$data['update_columns'] as List<Enum$Recipe_update_column>?);
+
   Input$Recipe_bool_exp? get where =>
       (_$data['where'] as Input$Recipe_bool_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
@@ -16852,6 +17425,7 @@ class Input$Recipe_on_conflict {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -16957,6 +17531,7 @@ class _CopyWithImpl$Input$Recipe_on_conflict<TRes>
           'update_columns': (update_columns as List<Enum$Recipe_update_column>),
         if (where != _undefined) 'where': (where as Input$Recipe_bool_exp?),
       }));
+
   CopyWith$Input$Recipe_bool_exp<TRes> get where {
     final local$where = _instance.where;
     return local$where == null
@@ -16977,6 +17552,7 @@ class _CopyWithStubImpl$Input$Recipe_on_conflict<TRes>
     Input$Recipe_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$Recipe_bool_exp<TRes> get where =>
       CopyWith$Input$Recipe_bool_exp.stub(_res);
 }
@@ -17096,22 +17672,34 @@ class Input$Recipe_order_by {
   Map<String, dynamic> _$data;
 
   Input$User_order_by? get Author => (_$data['Author'] as Input$User_order_by?);
+
   Input$File_aggregate_order_by? get Files_aggregate =>
       (_$data['Files_aggregate'] as Input$File_aggregate_order_by?);
+
   Input$RecipeSection_aggregate_order_by? get RecipeSections_aggregate =>
       (_$data['RecipeSections_aggregate']
           as Input$RecipeSection_aggregate_order_by?);
+
   Input$_RecipeToTag_aggregate_order_by? get RecipeTags_aggregate =>
       (_$data['RecipeTags_aggregate']
           as Input$_RecipeToTag_aggregate_order_by?);
+
   Enum$order_by? get authorId => (_$data['authorId'] as Enum$order_by?);
+
   Enum$order_by? get createdAt => (_$data['createdAt'] as Enum$order_by?);
+
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get notes => (_$data['notes'] as Enum$order_by?);
+
   Enum$order_by? get source => (_$data['source'] as Enum$order_by?);
+
   Enum$order_by? get title => (_$data['title'] as Enum$order_by?);
+
   Enum$order_by? get updatedAt => (_$data['updatedAt'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Author')) {
@@ -17178,6 +17766,7 @@ class Input$Recipe_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -17406,6 +17995,7 @@ class _CopyWithImpl$Input$Recipe_order_by<TRes>
         if (title != _undefined) 'title': (title as Enum$order_by?),
         if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
       }));
+
   CopyWith$Input$User_order_by<TRes> get Author {
     final local$Author = _instance.Author;
     return local$Author == null
@@ -17462,13 +18052,17 @@ class _CopyWithStubImpl$Input$Recipe_order_by<TRes>
     Enum$order_by? updatedAt,
   }) =>
       _res;
+
   CopyWith$Input$User_order_by<TRes> get Author =>
       CopyWith$Input$User_order_by.stub(_res);
+
   CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate =>
       CopyWith$Input$File_aggregate_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_aggregate_order_by<TRes>
       get RecipeSections_aggregate =>
           CopyWith$Input$RecipeSection_aggregate_order_by.stub(_res);
+
   CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes>
       get RecipeTags_aggregate =>
           CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_res);
@@ -17492,6 +18086,7 @@ class Input$Recipe_pk_columns_input {
   Map<String, dynamic> _$data;
 
   String get id => (_$data['id'] as String);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$id = id;
@@ -17504,6 +18099,7 @@ class Input$Recipe_pk_columns_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -17609,9 +18205,13 @@ class Input$Recipe_set_input {
   Map<String, dynamic> _$data;
 
   String? get description => (_$data['description'] as String?);
+
   String? get notes => (_$data['notes'] as String?);
+
   String? get source => (_$data['source'] as String?);
+
   String? get title => (_$data['title'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('description')) {
@@ -17638,6 +18238,7 @@ class Input$Recipe_set_input {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -17788,7 +18389,9 @@ class Input$Recipe_updates {
 
   Input$Recipe_set_input? get $_set =>
       (_$data['_set'] as Input$Recipe_set_input?);
+
   Input$Recipe_bool_exp get where => (_$data['where'] as Input$Recipe_bool_exp);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_set')) {
@@ -17805,6 +18408,7 @@ class Input$Recipe_updates {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -17880,6 +18484,7 @@ class _CopyWithImpl$Input$Recipe_updates<TRes>
         if (where != _undefined && where != null)
           'where': (where as Input$Recipe_bool_exp),
       }));
+
   CopyWith$Input$Recipe_set_input<TRes> get $_set {
     final local$$_set = _instance.$_set;
     return local$$_set == null
@@ -17904,8 +18509,10 @@ class _CopyWithStubImpl$Input$Recipe_updates<TRes>
     Input$Recipe_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$Recipe_set_input<TRes> get $_set =>
       CopyWith$Input$Recipe_set_input.stub(_res);
+
   CopyWith$Input$Recipe_bool_exp<TRes> get where =>
       CopyWith$Input$Recipe_bool_exp.stub(_res);
 }
@@ -18020,25 +18627,36 @@ class Input$Step_aggregate_order_by {
 
   Input$Step_avg_order_by? get avg =>
       (_$data['avg'] as Input$Step_avg_order_by?);
+
   Enum$order_by? get count => (_$data['count'] as Enum$order_by?);
+
   Input$Step_max_order_by? get max =>
       (_$data['max'] as Input$Step_max_order_by?);
+
   Input$Step_min_order_by? get min =>
       (_$data['min'] as Input$Step_min_order_by?);
+
   Input$Step_stddev_order_by? get stddev =>
       (_$data['stddev'] as Input$Step_stddev_order_by?);
+
   Input$Step_stddev_pop_order_by? get stddev_pop =>
       (_$data['stddev_pop'] as Input$Step_stddev_pop_order_by?);
+
   Input$Step_stddev_samp_order_by? get stddev_samp =>
       (_$data['stddev_samp'] as Input$Step_stddev_samp_order_by?);
+
   Input$Step_sum_order_by? get sum =>
       (_$data['sum'] as Input$Step_sum_order_by?);
+
   Input$Step_var_pop_order_by? get var_pop =>
       (_$data['var_pop'] as Input$Step_var_pop_order_by?);
+
   Input$Step_var_samp_order_by? get var_samp =>
       (_$data['var_samp'] as Input$Step_var_samp_order_by?);
+
   Input$Step_variance_order_by? get variance =>
       (_$data['variance'] as Input$Step_variance_order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('avg')) {
@@ -18094,6 +18712,7 @@ class Input$Step_aggregate_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -18307,6 +18926,7 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
         if (variance != _undefined)
           'variance': (variance as Input$Step_variance_order_by?),
       }));
+
   CopyWith$Input$Step_avg_order_by<TRes> get avg {
     final local$avg = _instance.avg;
     return local$avg == null
@@ -18404,24 +19024,34 @@ class _CopyWithStubImpl$Input$Step_aggregate_order_by<TRes>
     Input$Step_variance_order_by? variance,
   }) =>
       _res;
+
   CopyWith$Input$Step_avg_order_by<TRes> get avg =>
       CopyWith$Input$Step_avg_order_by.stub(_res);
+
   CopyWith$Input$Step_max_order_by<TRes> get max =>
       CopyWith$Input$Step_max_order_by.stub(_res);
+
   CopyWith$Input$Step_min_order_by<TRes> get min =>
       CopyWith$Input$Step_min_order_by.stub(_res);
+
   CopyWith$Input$Step_stddev_order_by<TRes> get stddev =>
       CopyWith$Input$Step_stddev_order_by.stub(_res);
+
   CopyWith$Input$Step_stddev_pop_order_by<TRes> get stddev_pop =>
       CopyWith$Input$Step_stddev_pop_order_by.stub(_res);
+
   CopyWith$Input$Step_stddev_samp_order_by<TRes> get stddev_samp =>
       CopyWith$Input$Step_stddev_samp_order_by.stub(_res);
+
   CopyWith$Input$Step_sum_order_by<TRes> get sum =>
       CopyWith$Input$Step_sum_order_by.stub(_res);
+
   CopyWith$Input$Step_var_pop_order_by<TRes> get var_pop =>
       CopyWith$Input$Step_var_pop_order_by.stub(_res);
+
   CopyWith$Input$Step_var_samp_order_by<TRes> get var_samp =>
       CopyWith$Input$Step_var_samp_order_by.stub(_res);
+
   CopyWith$Input$Step_variance_order_by<TRes> get variance =>
       CopyWith$Input$Step_variance_order_by.stub(_res);
 }
@@ -18459,8 +19089,10 @@ class Input$Step_arr_rel_insert_input {
 
   List<Input$Step_insert_input> get data =>
       (_$data['data'] as List<Input$Step_insert_input>);
+
   Input$Step_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$Step_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -18477,6 +19109,7 @@ class Input$Step_arr_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -18566,6 +19199,7 @@ class _CopyWithImpl$Input$Step_arr_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$Step_on_conflict?),
       }));
+
   TRes data(
           Iterable<Input$Step_insert_input> Function(
                   Iterable<
@@ -18577,6 +19211,7 @@ class _CopyWithImpl$Input$Step_arr_rel_insert_input<TRes>
                 e,
                 (i) => i,
               ))).toList());
+
   CopyWith$Input$Step_on_conflict<TRes> get on_conflict {
     final local$on_conflict = _instance.on_conflict;
     return local$on_conflict == null
@@ -18597,7 +19232,9 @@ class _CopyWithStubImpl$Input$Step_arr_rel_insert_input<TRes>
     Input$Step_on_conflict? on_conflict,
   }) =>
       _res;
+
   data(_fn) => _res;
+
   CopyWith$Input$Step_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$Step_on_conflict.stub(_res);
 }
@@ -18623,6 +19260,7 @@ class Input$Step_avg_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
@@ -18638,6 +19276,7 @@ class Input$Step_avg_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -18809,23 +19448,33 @@ class Input$Step_bool_exp {
   Map<String, dynamic> _$data;
 
   Input$File_bool_exp? get File => (_$data['File'] as Input$File_bool_exp?);
+
   Input$RecipeSection_bool_exp? get RecipeSection =>
       (_$data['RecipeSection'] as Input$RecipeSection_bool_exp?);
+
   List<Input$Step_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$Step_bool_exp>?);
+
   Input$Step_bool_exp? get $_not => (_$data['_not'] as Input$Step_bool_exp?);
+
   List<Input$Step_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$Step_bool_exp>?);
+
   Input$String_comparison_exp? get description =>
       (_$data['description'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get fileId =>
       (_$data['fileId'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Input$Int_comparison_exp? get order =>
       (_$data['order'] as Input$Int_comparison_exp?);
+
   Input$String_comparison_exp? get recipeSectionId =>
       (_$data['recipeSectionId'] as Input$String_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('File')) {
@@ -18876,6 +19525,7 @@ class Input$Step_bool_exp {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -19108,6 +19758,7 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
         if (recipeSectionId != _undefined)
           'recipeSectionId': (recipeSectionId as Input$String_comparison_exp?),
       }));
+
   CopyWith$Input$File_bool_exp<TRes> get File {
     final local$File = _instance.File;
     return local$File == null
@@ -19132,6 +19783,7 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$Step_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -19148,6 +19800,7 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$String_comparison_exp<TRes> get description {
     final local$description = _instance.description;
     return local$description == null
@@ -19206,22 +19859,32 @@ class _CopyWithStubImpl$Input$Step_bool_exp<TRes>
     Input$String_comparison_exp? recipeSectionId,
   }) =>
       _res;
+
   CopyWith$Input$File_bool_exp<TRes> get File =>
       CopyWith$Input$File_bool_exp.stub(_res);
+
   CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection =>
       CopyWith$Input$RecipeSection_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$Step_bool_exp<TRes> get $_not =>
       CopyWith$Input$Step_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$String_comparison_exp<TRes> get description =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get fileId =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$Int_comparison_exp<TRes> get order =>
       CopyWith$Input$Int_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get recipeSectionId =>
       CopyWith$Input$String_comparison_exp.stub(_res);
 }
@@ -19245,6 +19908,7 @@ class Input$Step_inc_input {
   Map<String, dynamic> _$data;
 
   int? get order => (_$data['order'] as int?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
@@ -19259,6 +19923,7 @@ class Input$Step_inc_input {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -19390,13 +20055,20 @@ class Input$Step_insert_input {
 
   Input$File_obj_rel_insert_input? get File =>
       (_$data['File'] as Input$File_obj_rel_insert_input?);
+
   Input$RecipeSection_obj_rel_insert_input? get RecipeSection =>
       (_$data['RecipeSection'] as Input$RecipeSection_obj_rel_insert_input?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get fileId => (_$data['fileId'] as String?);
+
   String? get id => (_$data['id'] as String?);
+
   int? get order => (_$data['order'] as int?);
+
   String? get recipeSectionId => (_$data['recipeSectionId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('File')) {
@@ -19435,6 +20107,7 @@ class Input$Step_insert_input {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -19585,6 +20258,7 @@ class _CopyWithImpl$Input$Step_insert_input<TRes>
         if (recipeSectionId != _undefined)
           'recipeSectionId': (recipeSectionId as String?),
       }));
+
   CopyWith$Input$File_obj_rel_insert_input<TRes> get File {
     final local$File = _instance.File;
     return local$File == null
@@ -19619,8 +20293,10 @@ class _CopyWithStubImpl$Input$Step_insert_input<TRes>
     String? recipeSectionId,
   }) =>
       _res;
+
   CopyWith$Input$File_obj_rel_insert_input<TRes> get File =>
       CopyWith$Input$File_obj_rel_insert_input.stub(_res);
+
   CopyWith$Input$RecipeSection_obj_rel_insert_input<TRes> get RecipeSection =>
       CopyWith$Input$RecipeSection_obj_rel_insert_input.stub(_res);
 }
@@ -19679,11 +20355,16 @@ class Input$Step_max_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get fileId => (_$data['fileId'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get recipeSectionId =>
       (_$data['recipeSectionId'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('description')) {
@@ -19719,6 +20400,7 @@ class Input$Step_max_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -19910,11 +20592,16 @@ class Input$Step_min_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get fileId => (_$data['fileId'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get recipeSectionId =>
       (_$data['recipeSectionId'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('description')) {
@@ -19950,6 +20637,7 @@ class Input$Step_min_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -20125,9 +20813,12 @@ class Input$Step_on_conflict {
 
   Enum$Step_constraint get constraint =>
       (_$data['constraint'] as Enum$Step_constraint);
+
   List<Enum$Step_update_column>? get update_columns =>
       (_$data['update_columns'] as List<Enum$Step_update_column>?);
+
   Input$Step_bool_exp? get where => (_$data['where'] as Input$Step_bool_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
@@ -20151,6 +20842,7 @@ class Input$Step_on_conflict {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -20256,6 +20948,7 @@ class _CopyWithImpl$Input$Step_on_conflict<TRes>
           'update_columns': (update_columns as List<Enum$Step_update_column>),
         if (where != _undefined) 'where': (where as Input$Step_bool_exp?),
       }));
+
   CopyWith$Input$Step_bool_exp<TRes> get where {
     final local$where = _instance.where;
     return local$where == null
@@ -20276,6 +20969,7 @@ class _CopyWithStubImpl$Input$Step_on_conflict<TRes>
     Input$Step_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$Step_bool_exp<TRes> get where =>
       CopyWith$Input$Step_bool_exp.stub(_res);
 }
@@ -20351,14 +21045,21 @@ class Input$Step_order_by {
   Map<String, dynamic> _$data;
 
   Input$File_order_by? get File => (_$data['File'] as Input$File_order_by?);
+
   Input$RecipeSection_order_by? get RecipeSection =>
       (_$data['RecipeSection'] as Input$RecipeSection_order_by?);
+
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get fileId => (_$data['fileId'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Enum$order_by? get recipeSectionId =>
       (_$data['recipeSectionId'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('File')) {
@@ -20402,6 +21103,7 @@ class Input$Step_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -20550,6 +21252,7 @@ class _CopyWithImpl$Input$Step_order_by<TRes>
         if (recipeSectionId != _undefined)
           'recipeSectionId': (recipeSectionId as Enum$order_by?),
       }));
+
   CopyWith$Input$File_order_by<TRes> get File {
     final local$File = _instance.File;
     return local$File == null
@@ -20582,8 +21285,10 @@ class _CopyWithStubImpl$Input$Step_order_by<TRes>
     Enum$order_by? recipeSectionId,
   }) =>
       _res;
+
   CopyWith$Input$File_order_by<TRes> get File =>
       CopyWith$Input$File_order_by.stub(_res);
+
   CopyWith$Input$RecipeSection_order_by<TRes> get RecipeSection =>
       CopyWith$Input$RecipeSection_order_by.stub(_res);
 }
@@ -20606,6 +21311,7 @@ class Input$Step_pk_columns_input {
   Map<String, dynamic> _$data;
 
   String get id => (_$data['id'] as String);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$id = id;
@@ -20618,6 +21324,7 @@ class Input$Step_pk_columns_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -20722,9 +21429,13 @@ class Input$Step_set_input {
   Map<String, dynamic> _$data;
 
   String? get description => (_$data['description'] as String?);
+
   String? get fileId => (_$data['fileId'] as String?);
+
   int? get order => (_$data['order'] as int?);
+
   String? get recipeSectionId => (_$data['recipeSectionId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('description')) {
@@ -20751,6 +21462,7 @@ class Input$Step_set_input {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -20893,6 +21605,7 @@ class Input$Step_stddev_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
@@ -20908,6 +21621,7 @@ class Input$Step_stddev_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -20997,6 +21711,7 @@ class Input$Step_stddev_pop_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
@@ -21012,6 +21727,7 @@ class Input$Step_stddev_pop_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -21101,6 +21817,7 @@ class Input$Step_stddev_samp_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
@@ -21116,6 +21833,7 @@ class Input$Step_stddev_samp_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -21205,6 +21923,7 @@ class Input$Step_sum_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
@@ -21220,6 +21939,7 @@ class Input$Step_sum_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -21324,8 +22044,11 @@ class Input$Step_updates {
   Map<String, dynamic> _$data;
 
   Input$Step_inc_input? get $_inc => (_$data['_inc'] as Input$Step_inc_input?);
+
   Input$Step_set_input? get $_set => (_$data['_set'] as Input$Step_set_input?);
+
   Input$Step_bool_exp get where => (_$data['where'] as Input$Step_bool_exp);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_inc')) {
@@ -21346,6 +22069,7 @@ class Input$Step_updates {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -21435,6 +22159,7 @@ class _CopyWithImpl$Input$Step_updates<TRes>
         if (where != _undefined && where != null)
           'where': (where as Input$Step_bool_exp),
       }));
+
   CopyWith$Input$Step_inc_input<TRes> get $_inc {
     final local$$_inc = _instance.$_inc;
     return local$$_inc == null
@@ -21467,10 +22192,13 @@ class _CopyWithStubImpl$Input$Step_updates<TRes>
     Input$Step_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$Step_inc_input<TRes> get $_inc =>
       CopyWith$Input$Step_inc_input.stub(_res);
+
   CopyWith$Input$Step_set_input<TRes> get $_set =>
       CopyWith$Input$Step_set_input.stub(_res);
+
   CopyWith$Input$Step_bool_exp<TRes> get where =>
       CopyWith$Input$Step_bool_exp.stub(_res);
 }
@@ -21496,6 +22224,7 @@ class Input$Step_var_pop_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
@@ -21511,6 +22240,7 @@ class Input$Step_var_pop_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -21600,6 +22330,7 @@ class Input$Step_var_samp_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
@@ -21615,6 +22346,7 @@ class Input$Step_var_samp_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -21704,6 +22436,7 @@ class Input$Step_variance_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get order => (_$data['order'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
@@ -21719,6 +22452,7 @@ class Input$Step_variance_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -21919,24 +22653,43 @@ class Input$String_comparison_exp {
   Map<String, dynamic> _$data;
 
   String? get $_eq => (_$data['_eq'] as String?);
+
   String? get $_gt => (_$data['_gt'] as String?);
+
   String? get $_gte => (_$data['_gte'] as String?);
+
   String? get $_ilike => (_$data['_ilike'] as String?);
+
   List<String>? get $_in => (_$data['_in'] as List<String>?);
+
   String? get $_iregex => (_$data['_iregex'] as String?);
+
   bool? get $_is_null => (_$data['_is_null'] as bool?);
+
   String? get $_like => (_$data['_like'] as String?);
+
   String? get $_lt => (_$data['_lt'] as String?);
+
   String? get $_lte => (_$data['_lte'] as String?);
+
   String? get $_neq => (_$data['_neq'] as String?);
+
   String? get $_nilike => (_$data['_nilike'] as String?);
+
   List<String>? get $_nin => (_$data['_nin'] as List<String>?);
+
   String? get $_niregex => (_$data['_niregex'] as String?);
+
   String? get $_nlike => (_$data['_nlike'] as String?);
+
   String? get $_nregex => (_$data['_nregex'] as String?);
+
   String? get $_nsimilar => (_$data['_nsimilar'] as String?);
+
   String? get $_regex => (_$data['_regex'] as String?);
+
   String? get $_similar => (_$data['_similar'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_eq')) {
@@ -22023,6 +22776,7 @@ class Input$String_comparison_exp {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -22454,15 +23208,21 @@ class Input$Tag_bool_exp {
 
   Input$_RecipeToTag_bool_exp? get Recipes =>
       (_$data['Recipes'] as Input$_RecipeToTag_bool_exp?);
+
   List<Input$Tag_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$Tag_bool_exp>?);
+
   Input$Tag_bool_exp? get $_not => (_$data['_not'] as Input$Tag_bool_exp?);
+
   List<Input$Tag_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$Tag_bool_exp>?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get name =>
       (_$data['name'] as Input$String_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Recipes')) {
@@ -22497,6 +23257,7 @@ class Input$Tag_bool_exp {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -22667,6 +23428,7 @@ class _CopyWithImpl$Input$Tag_bool_exp<TRes>
         if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
         if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
       }));
+
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get Recipes {
     final local$Recipes = _instance.Recipes;
     return local$Recipes == null
@@ -22684,6 +23446,7 @@ class _CopyWithImpl$Input$Tag_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$Tag_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -22700,6 +23463,7 @@ class _CopyWithImpl$Input$Tag_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$String_comparison_exp<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -22731,14 +23495,20 @@ class _CopyWithStubImpl$Input$Tag_bool_exp<TRes>
     Input$String_comparison_exp? name,
   }) =>
       _res;
+
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get Recipes =>
       CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$Tag_bool_exp<TRes> get $_not =>
       CopyWith$Input$Tag_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get name =>
       CopyWith$Input$String_comparison_exp.stub(_res);
 }
@@ -22781,8 +23551,11 @@ class Input$Tag_insert_input {
 
   Input$_RecipeToTag_arr_rel_insert_input? get Recipes =>
       (_$data['Recipes'] as Input$_RecipeToTag_arr_rel_insert_input?);
+
   String? get id => (_$data['id'] as String?);
+
   String? get name => (_$data['name'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Recipes')) {
@@ -22805,6 +23578,7 @@ class Input$Tag_insert_input {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -22896,6 +23670,7 @@ class _CopyWithImpl$Input$Tag_insert_input<TRes>
         if (id != _undefined) 'id': (id as String?),
         if (name != _undefined) 'name': (name as String?),
       }));
+
   CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> get Recipes {
     final local$Recipes = _instance.Recipes;
     return local$Recipes == null
@@ -22918,6 +23693,7 @@ class _CopyWithStubImpl$Input$Tag_insert_input<TRes>
     String? name,
   }) =>
       _res;
+
   CopyWith$Input$_RecipeToTag_arr_rel_insert_input<TRes> get Recipes =>
       CopyWith$Input$_RecipeToTag_arr_rel_insert_input.stub(_res);
 }
@@ -22952,8 +23728,10 @@ class Input$Tag_obj_rel_insert_input {
   Map<String, dynamic> _$data;
 
   Input$Tag_insert_input get data => (_$data['data'] as Input$Tag_insert_input);
+
   Input$Tag_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$Tag_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -22970,6 +23748,7 @@ class Input$Tag_obj_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -23048,6 +23827,7 @@ class _CopyWithImpl$Input$Tag_obj_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$Tag_on_conflict?),
       }));
+
   CopyWith$Input$Tag_insert_input<TRes> get data {
     final local$data = _instance.data;
     return CopyWith$Input$Tag_insert_input(local$data, (e) => call(data: e));
@@ -23073,8 +23853,10 @@ class _CopyWithStubImpl$Input$Tag_obj_rel_insert_input<TRes>
     Input$Tag_on_conflict? on_conflict,
   }) =>
       _res;
+
   CopyWith$Input$Tag_insert_input<TRes> get data =>
       CopyWith$Input$Tag_insert_input.stub(_res);
+
   CopyWith$Input$Tag_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$Tag_on_conflict.stub(_res);
 }
@@ -23117,9 +23899,12 @@ class Input$Tag_on_conflict {
 
   Enum$Tag_constraint get constraint =>
       (_$data['constraint'] as Enum$Tag_constraint);
+
   List<Enum$Tag_update_column>? get update_columns =>
       (_$data['update_columns'] as List<Enum$Tag_update_column>?);
+
   Input$Tag_bool_exp? get where => (_$data['where'] as Input$Tag_bool_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
@@ -23143,6 +23928,7 @@ class Input$Tag_on_conflict {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -23247,6 +24033,7 @@ class _CopyWithImpl$Input$Tag_on_conflict<TRes>
           'update_columns': (update_columns as List<Enum$Tag_update_column>),
         if (where != _undefined) 'where': (where as Input$Tag_bool_exp?),
       }));
+
   CopyWith$Input$Tag_bool_exp<TRes> get where {
     final local$where = _instance.where;
     return local$where == null
@@ -23267,6 +24054,7 @@ class _CopyWithStubImpl$Input$Tag_on_conflict<TRes>
     Input$Tag_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$Tag_bool_exp<TRes> get where =>
       CopyWith$Input$Tag_bool_exp.stub(_res);
 }
@@ -23311,8 +24099,11 @@ class Input$Tag_order_by {
 
   Input$_RecipeToTag_aggregate_order_by? get Recipes_aggregate =>
       (_$data['Recipes_aggregate'] as Input$_RecipeToTag_aggregate_order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get name => (_$data['name'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Recipes_aggregate')) {
@@ -23336,6 +24127,7 @@ class Input$Tag_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -23428,6 +24220,7 @@ class _CopyWithImpl$Input$Tag_order_by<TRes>
         if (id != _undefined) 'id': (id as Enum$order_by?),
         if (name != _undefined) 'name': (name as Enum$order_by?),
       }));
+
   CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> get Recipes_aggregate {
     final local$Recipes_aggregate = _instance.Recipes_aggregate;
     return local$Recipes_aggregate == null
@@ -23449,6 +24242,7 @@ class _CopyWithStubImpl$Input$Tag_order_by<TRes>
     Enum$order_by? name,
   }) =>
       _res;
+
   CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> get Recipes_aggregate =>
       CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_res);
 }
@@ -23495,10 +24289,13 @@ class Input$UnitSize_aggregate_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get count => (_$data['count'] as Enum$order_by?);
+
   Input$UnitSize_max_order_by? get max =>
       (_$data['max'] as Input$UnitSize_max_order_by?);
+
   Input$UnitSize_min_order_by? get min =>
       (_$data['min'] as Input$UnitSize_min_order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('count')) {
@@ -23522,6 +24319,7 @@ class Input$UnitSize_aggregate_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -23613,6 +24411,7 @@ class _CopyWithImpl$Input$UnitSize_aggregate_order_by<TRes>
         if (max != _undefined) 'max': (max as Input$UnitSize_max_order_by?),
         if (min != _undefined) 'min': (min as Input$UnitSize_min_order_by?),
       }));
+
   CopyWith$Input$UnitSize_max_order_by<TRes> get max {
     final local$max = _instance.max;
     return local$max == null
@@ -23640,8 +24439,10 @@ class _CopyWithStubImpl$Input$UnitSize_aggregate_order_by<TRes>
     Input$UnitSize_min_order_by? min,
   }) =>
       _res;
+
   CopyWith$Input$UnitSize_max_order_by<TRes> get max =>
       CopyWith$Input$UnitSize_max_order_by.stub(_res);
+
   CopyWith$Input$UnitSize_min_order_by<TRes> get min =>
       CopyWith$Input$UnitSize_min_order_by.stub(_res);
 }
@@ -23743,22 +24544,31 @@ class Input$UnitSize_bool_exp {
 
   Input$IngredientUnit_bool_exp? get IngredientUnits =>
       (_$data['IngredientUnits'] as Input$IngredientUnit_bool_exp?);
+
   Input$UnitType_bool_exp? get UnitType =>
       (_$data['UnitType'] as Input$UnitType_bool_exp?);
+
   List<Input$UnitSize_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$UnitSize_bool_exp>?);
+
   Input$UnitSize_bool_exp? get $_not =>
       (_$data['_not'] as Input$UnitSize_bool_exp?);
+
   List<Input$UnitSize_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$UnitSize_bool_exp>?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get name =>
       (_$data['name'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get plural =>
       (_$data['plural'] as Input$String_comparison_exp?);
+
   Input$UnitType_enum_comparison_exp? get unitType =>
       (_$data['unitType'] as Input$UnitType_enum_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits')) {
@@ -23805,6 +24615,7 @@ class Input$UnitSize_bool_exp {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -24028,6 +24839,7 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
         if (unitType != _undefined)
           'unitType': (unitType as Input$UnitType_enum_comparison_exp?),
       }));
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits {
     final local$IngredientUnits = _instance.IngredientUnits;
     return local$IngredientUnits == null
@@ -24056,6 +24868,7 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
                     e,
                     (i) => i,
                   )))?.toList());
+
   CopyWith$Input$UnitSize_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -24074,6 +24887,7 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$String_comparison_exp<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -24124,20 +24938,29 @@ class _CopyWithStubImpl$Input$UnitSize_bool_exp<TRes>
     Input$UnitType_enum_comparison_exp? unitType,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits =>
       CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
+
   CopyWith$Input$UnitType_bool_exp<TRes> get UnitType =>
       CopyWith$Input$UnitType_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$UnitSize_bool_exp<TRes> get $_not =>
       CopyWith$Input$UnitSize_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get name =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get plural =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$UnitType_enum_comparison_exp<TRes> get unitType =>
       CopyWith$Input$UnitType_enum_comparison_exp.stub(_res);
 }
@@ -24180,8 +25003,11 @@ class Input$UnitSize_max_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get name => (_$data['name'] as Enum$order_by?);
+
   Enum$order_by? get plural => (_$data['plural'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -24206,6 +25032,7 @@ class Input$UnitSize_max_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -24349,8 +25176,11 @@ class Input$UnitSize_min_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get name => (_$data['name'] as Enum$order_by?);
+
   Enum$order_by? get plural => (_$data['plural'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -24375,6 +25205,7 @@ class Input$UnitSize_min_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -24548,12 +25379,18 @@ class Input$UnitSize_order_by {
   Input$IngredientUnit_aggregate_order_by? get IngredientUnits_aggregate =>
       (_$data['IngredientUnits_aggregate']
           as Input$IngredientUnit_aggregate_order_by?);
+
   Input$UnitType_order_by? get UnitType =>
       (_$data['UnitType'] as Input$UnitType_order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get name => (_$data['name'] as Enum$order_by?);
+
   Enum$order_by? get plural => (_$data['plural'] as Enum$order_by?);
+
   Enum$order_by? get unitType => (_$data['unitType'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits_aggregate')) {
@@ -24592,6 +25429,7 @@ class Input$UnitSize_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -24731,6 +25569,7 @@ class _CopyWithImpl$Input$UnitSize_order_by<TRes>
         if (plural != _undefined) 'plural': (plural as Enum$order_by?),
         if (unitType != _undefined) 'unitType': (unitType as Enum$order_by?),
       }));
+
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
       get IngredientUnits_aggregate {
     final local$IngredientUnits_aggregate = _instance.IngredientUnits_aggregate;
@@ -24766,9 +25605,11 @@ class _CopyWithStubImpl$Input$UnitSize_order_by<TRes>
     Enum$order_by? unitType,
   }) =>
       _res;
+
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
       get IngredientUnits_aggregate =>
           CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
+
   CopyWith$Input$UnitType_order_by<TRes> get UnitType =>
       CopyWith$Input$UnitType_order_by.stub(_res);
 }
@@ -24843,16 +25684,22 @@ class Input$UnitType_bool_exp {
 
   Input$UnitSize_bool_exp? get UnitSizes =>
       (_$data['UnitSizes'] as Input$UnitSize_bool_exp?);
+
   List<Input$UnitType_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$UnitType_bool_exp>?);
+
   Input$UnitType_bool_exp? get $_not =>
       (_$data['_not'] as Input$UnitType_bool_exp?);
+
   List<Input$UnitType_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$UnitType_bool_exp>?);
+
   Input$String_comparison_exp? get description =>
       (_$data['description'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('UnitSizes')) {
@@ -24887,6 +25734,7 @@ class Input$UnitType_bool_exp {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -25064,6 +25912,7 @@ class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
           'description': (description as Input$String_comparison_exp?),
         if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
       }));
+
   CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSizes {
     final local$UnitSizes = _instance.UnitSizes;
     return local$UnitSizes == null
@@ -25084,6 +25933,7 @@ class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
                     e,
                     (i) => i,
                   )))?.toList());
+
   CopyWith$Input$UnitType_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -25102,6 +25952,7 @@ class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$String_comparison_exp<TRes> get description {
     final local$description = _instance.description;
     return local$description == null
@@ -25133,14 +25984,20 @@ class _CopyWithStubImpl$Input$UnitType_bool_exp<TRes>
     Input$String_comparison_exp? id,
   }) =>
       _res;
+
   CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSizes =>
       CopyWith$Input$UnitSize_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$UnitType_bool_exp<TRes> get $_not =>
       CopyWith$Input$UnitType_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$String_comparison_exp<TRes> get description =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
 }
@@ -25200,12 +26057,17 @@ class Input$UnitType_enum_comparison_exp {
   Map<String, dynamic> _$data;
 
   Enum$UnitType_enum? get $_eq => (_$data['_eq'] as Enum$UnitType_enum?);
+
   List<Enum$UnitType_enum>? get $_in =>
       (_$data['_in'] as List<Enum$UnitType_enum>?);
+
   bool? get $_is_null => (_$data['_is_null'] as bool?);
+
   Enum$UnitType_enum? get $_neq => (_$data['_neq'] as Enum$UnitType_enum?);
+
   List<Enum$UnitType_enum>? get $_nin =>
       (_$data['_nin'] as List<Enum$UnitType_enum>?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_eq')) {
@@ -25241,6 +26103,7 @@ class Input$UnitType_enum_comparison_exp {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -25447,8 +26310,11 @@ class Input$UnitType_order_by {
 
   Input$UnitSize_aggregate_order_by? get UnitSizes_aggregate =>
       (_$data['UnitSizes_aggregate'] as Input$UnitSize_aggregate_order_by?);
+
   Enum$order_by? get description => (_$data['description'] as Enum$order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('UnitSizes_aggregate')) {
@@ -25472,6 +26338,7 @@ class Input$UnitType_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -25569,6 +26436,7 @@ class _CopyWithImpl$Input$UnitType_order_by<TRes>
           'description': (description as Enum$order_by?),
         if (id != _undefined) 'id': (id as Enum$order_by?),
       }));
+
   CopyWith$Input$UnitSize_aggregate_order_by<TRes> get UnitSizes_aggregate {
     final local$UnitSizes_aggregate = _instance.UnitSizes_aggregate;
     return local$UnitSizes_aggregate == null
@@ -25590,6 +26458,7 @@ class _CopyWithStubImpl$Input$UnitType_order_by<TRes>
     Enum$order_by? id,
   }) =>
       _res;
+
   CopyWith$Input$UnitSize_aggregate_order_by<TRes> get UnitSizes_aggregate =>
       CopyWith$Input$UnitSize_aggregate_order_by.stub(_res);
 }
@@ -25670,17 +26539,24 @@ class Input$User_bool_exp {
   Map<String, dynamic> _$data;
 
   Input$File_bool_exp? get Files => (_$data['Files'] as Input$File_bool_exp?);
+
   Input$Recipe_bool_exp? get Recipes =>
       (_$data['Recipes'] as Input$Recipe_bool_exp?);
+
   List<Input$User_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$User_bool_exp>?);
+
   Input$User_bool_exp? get $_not => (_$data['_not'] as Input$User_bool_exp?);
+
   List<Input$User_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$User_bool_exp>?);
+
   Input$String_comparison_exp? get id =>
       (_$data['id'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get name =>
       (_$data['name'] as Input$String_comparison_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Files')) {
@@ -25719,6 +26595,7 @@ class Input$User_bool_exp {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -25903,6 +26780,7 @@ class _CopyWithImpl$Input$User_bool_exp<TRes>
         if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
         if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
       }));
+
   CopyWith$Input$File_bool_exp<TRes> get Files {
     final local$Files = _instance.Files;
     return local$Files == null
@@ -25927,6 +26805,7 @@ class _CopyWithImpl$Input$User_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$User_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -25943,6 +26822,7 @@ class _CopyWithImpl$Input$User_bool_exp<TRes>
                 e,
                 (i) => i,
               )))?.toList());
+
   CopyWith$Input$String_comparison_exp<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -25975,16 +26855,23 @@ class _CopyWithStubImpl$Input$User_bool_exp<TRes>
     Input$String_comparison_exp? name,
   }) =>
       _res;
+
   CopyWith$Input$File_bool_exp<TRes> get Files =>
       CopyWith$Input$File_bool_exp.stub(_res);
+
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipes =>
       CopyWith$Input$Recipe_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$User_bool_exp<TRes> get $_not =>
       CopyWith$Input$User_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
+
   CopyWith$Input$String_comparison_exp<TRes> get id =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get name =>
       CopyWith$Input$String_comparison_exp.stub(_res);
 }
@@ -26038,10 +26925,14 @@ class Input$User_order_by {
 
   Input$File_aggregate_order_by? get Files_aggregate =>
       (_$data['Files_aggregate'] as Input$File_aggregate_order_by?);
+
   Input$Recipe_aggregate_order_by? get Recipes_aggregate =>
       (_$data['Recipes_aggregate'] as Input$Recipe_aggregate_order_by?);
+
   Enum$order_by? get id => (_$data['id'] as Enum$order_by?);
+
   Enum$order_by? get name => (_$data['name'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('Files_aggregate')) {
@@ -26069,6 +26960,7 @@ class Input$User_order_by {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -26178,6 +27070,7 @@ class _CopyWithImpl$Input$User_order_by<TRes>
         if (id != _undefined) 'id': (id as Enum$order_by?),
         if (name != _undefined) 'name': (name as Enum$order_by?),
       }));
+
   CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate {
     final local$Files_aggregate = _instance.Files_aggregate;
     return local$Files_aggregate == null
@@ -26208,8 +27101,10 @@ class _CopyWithStubImpl$Input$User_order_by<TRes>
     Enum$order_by? name,
   }) =>
       _res;
+
   CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate =>
       CopyWith$Input$File_aggregate_order_by.stub(_res);
+
   CopyWith$Input$Recipe_aggregate_order_by<TRes> get Recipes_aggregate =>
       CopyWith$Input$Recipe_aggregate_order_by.stub(_res);
 }
@@ -26256,10 +27151,13 @@ class Input$_RecipeToTag_aggregate_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get count => (_$data['count'] as Enum$order_by?);
+
   Input$_RecipeToTag_max_order_by? get max =>
       (_$data['max'] as Input$_RecipeToTag_max_order_by?);
+
   Input$_RecipeToTag_min_order_by? get min =>
       (_$data['min'] as Input$_RecipeToTag_min_order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('count')) {
@@ -26284,6 +27182,7 @@ class Input$_RecipeToTag_aggregate_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -26375,6 +27274,7 @@ class _CopyWithImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
         if (max != _undefined) 'max': (max as Input$_RecipeToTag_max_order_by?),
         if (min != _undefined) 'min': (min as Input$_RecipeToTag_min_order_by?),
       }));
+
   CopyWith$Input$_RecipeToTag_max_order_by<TRes> get max {
     final local$max = _instance.max;
     return local$max == null
@@ -26404,8 +27304,10 @@ class _CopyWithStubImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
     Input$_RecipeToTag_min_order_by? min,
   }) =>
       _res;
+
   CopyWith$Input$_RecipeToTag_max_order_by<TRes> get max =>
       CopyWith$Input$_RecipeToTag_max_order_by.stub(_res);
+
   CopyWith$Input$_RecipeToTag_min_order_by<TRes> get min =>
       CopyWith$Input$_RecipeToTag_min_order_by.stub(_res);
 }
@@ -26444,8 +27346,10 @@ class Input$_RecipeToTag_arr_rel_insert_input {
 
   List<Input$_RecipeToTag_insert_input> get data =>
       (_$data['data'] as List<Input$_RecipeToTag_insert_input>);
+
   Input$_RecipeToTag_on_conflict? get on_conflict =>
       (_$data['on_conflict'] as Input$_RecipeToTag_on_conflict?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$data = data;
@@ -26463,6 +27367,7 @@ class Input$_RecipeToTag_arr_rel_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -26553,6 +27458,7 @@ class _CopyWithImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
         if (on_conflict != _undefined)
           'on_conflict': (on_conflict as Input$_RecipeToTag_on_conflict?),
       }));
+
   TRes data(
           Iterable<Input$_RecipeToTag_insert_input> Function(
                   Iterable<
@@ -26565,6 +27471,7 @@ class _CopyWithImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
                     e,
                     (i) => i,
                   ))).toList());
+
   CopyWith$Input$_RecipeToTag_on_conflict<TRes> get on_conflict {
     final local$on_conflict = _instance.on_conflict;
     return local$on_conflict == null
@@ -26585,7 +27492,9 @@ class _CopyWithStubImpl$Input$_RecipeToTag_arr_rel_insert_input<TRes>
     Input$_RecipeToTag_on_conflict? on_conflict,
   }) =>
       _res;
+
   data(_fn) => _res;
+
   CopyWith$Input$_RecipeToTag_on_conflict<TRes> get on_conflict =>
       CopyWith$Input$_RecipeToTag_on_conflict.stub(_res);
 }
@@ -26666,17 +27575,24 @@ class Input$_RecipeToTag_bool_exp {
 
   Input$String_comparison_exp? get A =>
       (_$data['A'] as Input$String_comparison_exp?);
+
   Input$String_comparison_exp? get B =>
       (_$data['B'] as Input$String_comparison_exp?);
+
   Input$Recipe_bool_exp? get Recipe =>
       (_$data['Recipe'] as Input$Recipe_bool_exp?);
+
   Input$Tag_bool_exp? get Tag => (_$data['Tag'] as Input$Tag_bool_exp?);
+
   List<Input$_RecipeToTag_bool_exp>? get $_and =>
       (_$data['_and'] as List<Input$_RecipeToTag_bool_exp>?);
+
   Input$_RecipeToTag_bool_exp? get $_not =>
       (_$data['_not'] as Input$_RecipeToTag_bool_exp?);
+
   List<Input$_RecipeToTag_bool_exp>? get $_or =>
       (_$data['_or'] as List<Input$_RecipeToTag_bool_exp>?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('A')) {
@@ -26715,6 +27631,7 @@ class Input$_RecipeToTag_bool_exp {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -26906,6 +27823,7 @@ class _CopyWithImpl$Input$_RecipeToTag_bool_exp<TRes>
         if ($_or != _undefined)
           '_or': ($_or as List<Input$_RecipeToTag_bool_exp>?),
       }));
+
   CopyWith$Input$String_comparison_exp<TRes> get A {
     final local$A = _instance.A;
     return local$A == null
@@ -26946,6 +27864,7 @@ class _CopyWithImpl$Input$_RecipeToTag_bool_exp<TRes>
                     e,
                     (i) => i,
                   )))?.toList());
+
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
@@ -26984,17 +27903,24 @@ class _CopyWithStubImpl$Input$_RecipeToTag_bool_exp<TRes>
     List<Input$_RecipeToTag_bool_exp>? $_or,
   }) =>
       _res;
+
   CopyWith$Input$String_comparison_exp<TRes> get A =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$String_comparison_exp<TRes> get B =>
       CopyWith$Input$String_comparison_exp.stub(_res);
+
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipe =>
       CopyWith$Input$Recipe_bool_exp.stub(_res);
+
   CopyWith$Input$Tag_bool_exp<TRes> get Tag =>
       CopyWith$Input$Tag_bool_exp.stub(_res);
+
   $_and(_fn) => _res;
+
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get $_not =>
       CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
+
   $_or(_fn) => _res;
 }
 
@@ -27044,11 +27970,15 @@ class Input$_RecipeToTag_insert_input {
   Map<String, dynamic> _$data;
 
   String? get A => (_$data['A'] as String?);
+
   String? get B => (_$data['B'] as String?);
+
   Input$Recipe_obj_rel_insert_input? get Recipe =>
       (_$data['Recipe'] as Input$Recipe_obj_rel_insert_input?);
+
   Input$Tag_obj_rel_insert_input? get Tag =>
       (_$data['Tag'] as Input$Tag_obj_rel_insert_input?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('A')) {
@@ -27075,6 +28005,7 @@ class Input$_RecipeToTag_insert_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -27180,6 +28111,7 @@ class _CopyWithImpl$Input$_RecipeToTag_insert_input<TRes>
           'Recipe': (Recipe as Input$Recipe_obj_rel_insert_input?),
         if (Tag != _undefined) 'Tag': (Tag as Input$Tag_obj_rel_insert_input?),
       }));
+
   CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
     return local$Recipe == null
@@ -27210,8 +28142,10 @@ class _CopyWithStubImpl$Input$_RecipeToTag_insert_input<TRes>
     Input$Tag_obj_rel_insert_input? Tag,
   }) =>
       _res;
+
   CopyWith$Input$Recipe_obj_rel_insert_input<TRes> get Recipe =>
       CopyWith$Input$Recipe_obj_rel_insert_input.stub(_res);
+
   CopyWith$Input$Tag_obj_rel_insert_input<TRes> get Tag =>
       CopyWith$Input$Tag_obj_rel_insert_input.stub(_res);
 }
@@ -27246,7 +28180,9 @@ class Input$_RecipeToTag_max_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get A => (_$data['A'] as Enum$order_by?);
+
   Enum$order_by? get B => (_$data['B'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('A')) {
@@ -27265,6 +28201,7 @@ class Input$_RecipeToTag_max_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -27386,7 +28323,9 @@ class Input$_RecipeToTag_min_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get A => (_$data['A'] as Enum$order_by?);
+
   Enum$order_by? get B => (_$data['B'] as Enum$order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('A')) {
@@ -27405,6 +28344,7 @@ class Input$_RecipeToTag_min_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -27535,10 +28475,13 @@ class Input$_RecipeToTag_on_conflict {
 
   Enum$_RecipeToTag_constraint get constraint =>
       (_$data['constraint'] as Enum$_RecipeToTag_constraint);
+
   List<Enum$_RecipeToTag_update_column>? get update_columns =>
       (_$data['update_columns'] as List<Enum$_RecipeToTag_update_column>?);
+
   Input$_RecipeToTag_bool_exp? get where =>
       (_$data['where'] as Input$_RecipeToTag_bool_exp?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$constraint = constraint;
@@ -27563,6 +28506,7 @@ class Input$_RecipeToTag_on_conflict {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -27670,6 +28614,7 @@ class _CopyWithImpl$Input$_RecipeToTag_on_conflict<TRes>
         if (where != _undefined)
           'where': (where as Input$_RecipeToTag_bool_exp?),
       }));
+
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get where {
     final local$where = _instance.where;
     return local$where == null
@@ -27691,6 +28636,7 @@ class _CopyWithStubImpl$Input$_RecipeToTag_on_conflict<TRes>
     Input$_RecipeToTag_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get where =>
       CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
 }
@@ -27741,10 +28687,14 @@ class Input$_RecipeToTag_order_by {
   Map<String, dynamic> _$data;
 
   Enum$order_by? get A => (_$data['A'] as Enum$order_by?);
+
   Enum$order_by? get B => (_$data['B'] as Enum$order_by?);
+
   Input$Recipe_order_by? get Recipe =>
       (_$data['Recipe'] as Input$Recipe_order_by?);
+
   Input$Tag_order_by? get Tag => (_$data['Tag'] as Input$Tag_order_by?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('A')) {
@@ -27771,6 +28721,7 @@ class Input$_RecipeToTag_order_by {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -27875,6 +28826,7 @@ class _CopyWithImpl$Input$_RecipeToTag_order_by<TRes>
         if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_order_by?),
         if (Tag != _undefined) 'Tag': (Tag as Input$Tag_order_by?),
       }));
+
   CopyWith$Input$Recipe_order_by<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
     return local$Recipe == null
@@ -27903,8 +28855,10 @@ class _CopyWithStubImpl$Input$_RecipeToTag_order_by<TRes>
     Input$Tag_order_by? Tag,
   }) =>
       _res;
+
   CopyWith$Input$Recipe_order_by<TRes> get Recipe =>
       CopyWith$Input$Recipe_order_by.stub(_res);
+
   CopyWith$Input$Tag_order_by<TRes> get Tag =>
       CopyWith$Input$Tag_order_by.stub(_res);
 }
@@ -27937,7 +28891,9 @@ class Input$_RecipeToTag_set_input {
   Map<String, dynamic> _$data;
 
   String? get A => (_$data['A'] as String?);
+
   String? get B => (_$data['B'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('A')) {
@@ -27956,6 +28912,7 @@ class Input$_RecipeToTag_set_input {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -28078,8 +29035,10 @@ class Input$_RecipeToTag_updates {
 
   Input$_RecipeToTag_set_input? get $_set =>
       (_$data['_set'] as Input$_RecipeToTag_set_input?);
+
   Input$_RecipeToTag_bool_exp get where =>
       (_$data['where'] as Input$_RecipeToTag_bool_exp);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_set')) {
@@ -28096,6 +29055,7 @@ class Input$_RecipeToTag_updates {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -28173,6 +29133,7 @@ class _CopyWithImpl$Input$_RecipeToTag_updates<TRes>
         if (where != _undefined && where != null)
           'where': (where as Input$_RecipeToTag_bool_exp),
       }));
+
   CopyWith$Input$_RecipeToTag_set_input<TRes> get $_set {
     final local$$_set = _instance.$_set;
     return local$$_set == null
@@ -28199,8 +29160,10 @@ class _CopyWithStubImpl$Input$_RecipeToTag_updates<TRes>
     Input$_RecipeToTag_bool_exp? where,
   }) =>
       _res;
+
   CopyWith$Input$_RecipeToTag_set_input<TRes> get $_set =>
       CopyWith$Input$_RecipeToTag_set_input.stub(_res);
+
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get where =>
       CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
 }
@@ -28277,14 +29240,23 @@ class Input$bytea_comparison_exp {
   Map<String, dynamic> _$data;
 
   String? get $_eq => (_$data['_eq'] as String?);
+
   String? get $_gt => (_$data['_gt'] as String?);
+
   String? get $_gte => (_$data['_gte'] as String?);
+
   List<String>? get $_in => (_$data['_in'] as List<String>?);
+
   bool? get $_is_null => (_$data['_is_null'] as bool?);
+
   String? get $_lt => (_$data['_lt'] as String?);
+
   String? get $_lte => (_$data['_lte'] as String?);
+
   String? get $_neq => (_$data['_neq'] as String?);
+
   List<String>? get $_nin => (_$data['_nin'] as List<String>?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_eq')) {
@@ -28331,6 +29303,7 @@ class Input$bytea_comparison_exp {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -28625,14 +29598,23 @@ class Input$float8_comparison_exp {
   Map<String, dynamic> _$data;
 
   double? get $_eq => (_$data['_eq'] as double?);
+
   double? get $_gt => (_$data['_gt'] as double?);
+
   double? get $_gte => (_$data['_gte'] as double?);
+
   List<double>? get $_in => (_$data['_in'] as List<double>?);
+
   bool? get $_is_null => (_$data['_is_null'] as bool?);
+
   double? get $_lt => (_$data['_lt'] as double?);
+
   double? get $_lte => (_$data['_lte'] as double?);
+
   double? get $_neq => (_$data['_neq'] as double?);
+
   List<double>? get $_nin => (_$data['_nin'] as List<double>?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_eq')) {
@@ -28679,6 +29661,7 @@ class Input$float8_comparison_exp {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -28971,14 +29954,23 @@ class Input$timestamp_comparison_exp {
   Map<String, dynamic> _$data;
 
   DateTime? get $_eq => (_$data['_eq'] as DateTime?);
+
   DateTime? get $_gt => (_$data['_gt'] as DateTime?);
+
   DateTime? get $_gte => (_$data['_gte'] as DateTime?);
+
   List<DateTime>? get $_in => (_$data['_in'] as List<DateTime>?);
+
   bool? get $_is_null => (_$data['_is_null'] as bool?);
+
   DateTime? get $_lt => (_$data['_lt'] as DateTime?);
+
   DateTime? get $_lte => (_$data['_lte'] as DateTime?);
+
   DateTime? get $_neq => (_$data['_neq'] as DateTime?);
+
   List<DateTime>? get $_nin => (_$data['_nin'] as List<DateTime>?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_eq')) {
@@ -29025,6 +30017,7 @@ class Input$timestamp_comparison_exp {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -29245,7 +30238,15 @@ class _CopyWithStubImpl$Input$timestamp_comparison_exp<TRes>
       _res;
 }
 
-enum Enum$File_constraint { File_pkey, $unknown }
+enum Enum$File_constraint {
+  File_pkey,
+  $unknown;
+
+  factory Enum$File_constraint.fromJson(String value) =>
+      fromJson$Enum$File_constraint(value);
+
+  String toJson() => toJson$Enum$File_constraint(this);
+}
 
 String toJson$Enum$File_constraint(Enum$File_constraint e) {
   switch (e) {
@@ -29265,7 +30266,19 @@ Enum$File_constraint fromJson$Enum$File_constraint(String value) {
   }
 }
 
-enum Enum$File_select_column { blob, id, mimetype, recipeId, userId, $unknown }
+enum Enum$File_select_column {
+  blob,
+  id,
+  mimetype,
+  recipeId,
+  userId,
+  $unknown;
+
+  factory Enum$File_select_column.fromJson(String value) =>
+      fromJson$Enum$File_select_column(value);
+
+  String toJson() => toJson$Enum$File_select_column(this);
+}
 
 String toJson$Enum$File_select_column(Enum$File_select_column e) {
   switch (e) {
@@ -29301,7 +30314,16 @@ Enum$File_select_column fromJson$Enum$File_select_column(String value) {
   }
 }
 
-enum Enum$File_update_column { blob, mimetype, $unknown }
+enum Enum$File_update_column {
+  blob,
+  mimetype,
+  $unknown;
+
+  factory Enum$File_update_column.fromJson(String value) =>
+      fromJson$Enum$File_update_column(value);
+
+  String toJson() => toJson$Enum$File_update_column(this);
+}
 
 String toJson$Enum$File_update_column(Enum$File_update_column e) {
   switch (e) {
@@ -29325,7 +30347,15 @@ Enum$File_update_column fromJson$Enum$File_update_column(String value) {
   }
 }
 
-enum Enum$IngredientUnit_constraint { IngredientUnit_pkey, $unknown }
+enum Enum$IngredientUnit_constraint {
+  IngredientUnit_pkey,
+  $unknown;
+
+  factory Enum$IngredientUnit_constraint.fromJson(String value) =>
+      fromJson$Enum$IngredientUnit_constraint(value);
+
+  String toJson() => toJson$Enum$IngredientUnit_constraint(this);
+}
 
 String toJson$Enum$IngredientUnit_constraint(Enum$IngredientUnit_constraint e) {
   switch (e) {
@@ -29354,7 +30384,12 @@ enum Enum$IngredientUnit_select_column {
   order,
   recipeSectionId,
   unitId,
-  $unknown
+  $unknown;
+
+  factory Enum$IngredientUnit_select_column.fromJson(String value) =>
+      fromJson$Enum$IngredientUnit_select_column(value);
+
+  String toJson() => toJson$Enum$IngredientUnit_select_column(this);
 }
 
 String toJson$Enum$IngredientUnit_select_column(
@@ -29407,7 +30442,12 @@ enum Enum$IngredientUnit_update_column {
   notes,
   order,
   unitId,
-  $unknown
+  $unknown;
+
+  factory Enum$IngredientUnit_update_column.fromJson(String value) =>
+      fromJson$Enum$IngredientUnit_update_column(value);
+
+  String toJson() => toJson$Enum$IngredientUnit_update_column(this);
 }
 
 String toJson$Enum$IngredientUnit_update_column(
@@ -29449,7 +30489,12 @@ Enum$IngredientUnit_update_column fromJson$Enum$IngredientUnit_update_column(
 enum Enum$Ingredient_constraint {
   Ingredient_name_unique,
   Ingredient_pkey,
-  $unknown
+  $unknown;
+
+  factory Enum$Ingredient_constraint.fromJson(String value) =>
+      fromJson$Enum$Ingredient_constraint(value);
+
+  String toJson() => toJson$Enum$Ingredient_constraint(this);
 }
 
 String toJson$Enum$Ingredient_constraint(Enum$Ingredient_constraint e) {
@@ -29474,7 +30519,16 @@ Enum$Ingredient_constraint fromJson$Enum$Ingredient_constraint(String value) {
   }
 }
 
-enum Enum$Ingredient_select_column { id, name, $unknown }
+enum Enum$Ingredient_select_column {
+  id,
+  name,
+  $unknown;
+
+  factory Enum$Ingredient_select_column.fromJson(String value) =>
+      fromJson$Enum$Ingredient_select_column(value);
+
+  String toJson() => toJson$Enum$Ingredient_select_column(this);
+}
 
 String toJson$Enum$Ingredient_select_column(Enum$Ingredient_select_column e) {
   switch (e) {
@@ -29499,11 +30553,19 @@ Enum$Ingredient_select_column fromJson$Enum$Ingredient_select_column(
   }
 }
 
-enum Enum$Ingredient_update_column { _PLACEHOLDER, $unknown }
+enum Enum$Ingredient_update_column {
+  $_PLACEHOLDER,
+  $unknown;
+
+  factory Enum$Ingredient_update_column.fromJson(String value) =>
+      fromJson$Enum$Ingredient_update_column(value);
+
+  String toJson() => toJson$Enum$Ingredient_update_column(this);
+}
 
 String toJson$Enum$Ingredient_update_column(Enum$Ingredient_update_column e) {
   switch (e) {
-    case Enum$Ingredient_update_column._PLACEHOLDER:
+    case Enum$Ingredient_update_column.$_PLACEHOLDER:
       return r'_PLACEHOLDER';
     case Enum$Ingredient_update_column.$unknown:
       return r'$unknown';
@@ -29514,13 +30576,21 @@ Enum$Ingredient_update_column fromJson$Enum$Ingredient_update_column(
     String value) {
   switch (value) {
     case r'_PLACEHOLDER':
-      return Enum$Ingredient_update_column._PLACEHOLDER;
+      return Enum$Ingredient_update_column.$_PLACEHOLDER;
     default:
       return Enum$Ingredient_update_column.$unknown;
   }
 }
 
-enum Enum$RecipeSection_constraint { RecipeSection_pkey, $unknown }
+enum Enum$RecipeSection_constraint {
+  RecipeSection_pkey,
+  $unknown;
+
+  factory Enum$RecipeSection_constraint.fromJson(String value) =>
+      fromJson$Enum$RecipeSection_constraint(value);
+
+  String toJson() => toJson$Enum$RecipeSection_constraint(this);
+}
 
 String toJson$Enum$RecipeSection_constraint(Enum$RecipeSection_constraint e) {
   switch (e) {
@@ -29551,7 +30621,12 @@ enum Enum$RecipeSection_select_column {
   recipeId,
   servingUnit,
   servings,
-  $unknown
+  $unknown;
+
+  factory Enum$RecipeSection_select_column.fromJson(String value) =>
+      fromJson$Enum$RecipeSection_select_column(value);
+
+  String toJson() => toJson$Enum$RecipeSection_select_column(this);
 }
 
 String toJson$Enum$RecipeSection_select_column(
@@ -29614,7 +30689,12 @@ enum Enum$RecipeSection_update_column {
   prepTimeMinutes,
   servingUnit,
   servings,
-  $unknown
+  $unknown;
+
+  factory Enum$RecipeSection_update_column.fromJson(String value) =>
+      fromJson$Enum$RecipeSection_update_column(value);
+
+  String toJson() => toJson$Enum$RecipeSection_update_column(this);
 }
 
 String toJson$Enum$RecipeSection_update_column(
@@ -29661,7 +30741,15 @@ Enum$RecipeSection_update_column fromJson$Enum$RecipeSection_update_column(
   }
 }
 
-enum Enum$Recipe_constraint { Recipe_pkey, $unknown }
+enum Enum$Recipe_constraint {
+  Recipe_pkey,
+  $unknown;
+
+  factory Enum$Recipe_constraint.fromJson(String value) =>
+      fromJson$Enum$Recipe_constraint(value);
+
+  String toJson() => toJson$Enum$Recipe_constraint(this);
+}
 
 String toJson$Enum$Recipe_constraint(Enum$Recipe_constraint e) {
   switch (e) {
@@ -29690,7 +30778,12 @@ enum Enum$Recipe_select_column {
   source,
   title,
   updatedAt,
-  $unknown
+  $unknown;
+
+  factory Enum$Recipe_select_column.fromJson(String value) =>
+      fromJson$Enum$Recipe_select_column(value);
+
+  String toJson() => toJson$Enum$Recipe_select_column(this);
 }
 
 String toJson$Enum$Recipe_select_column(Enum$Recipe_select_column e) {
@@ -29739,7 +30832,18 @@ Enum$Recipe_select_column fromJson$Enum$Recipe_select_column(String value) {
   }
 }
 
-enum Enum$Recipe_update_column { description, notes, source, title, $unknown }
+enum Enum$Recipe_update_column {
+  description,
+  notes,
+  source,
+  title,
+  $unknown;
+
+  factory Enum$Recipe_update_column.fromJson(String value) =>
+      fromJson$Enum$Recipe_update_column(value);
+
+  String toJson() => toJson$Enum$Recipe_update_column(this);
+}
 
 String toJson$Enum$Recipe_update_column(Enum$Recipe_update_column e) {
   switch (e) {
@@ -29771,7 +30875,15 @@ Enum$Recipe_update_column fromJson$Enum$Recipe_update_column(String value) {
   }
 }
 
-enum Enum$Step_constraint { Step_pkey, $unknown }
+enum Enum$Step_constraint {
+  Step_pkey,
+  $unknown;
+
+  factory Enum$Step_constraint.fromJson(String value) =>
+      fromJson$Enum$Step_constraint(value);
+
+  String toJson() => toJson$Enum$Step_constraint(this);
+}
 
 String toJson$Enum$Step_constraint(Enum$Step_constraint e) {
   switch (e) {
@@ -29797,7 +30909,12 @@ enum Enum$Step_select_column {
   id,
   order,
   recipeSectionId,
-  $unknown
+  $unknown;
+
+  factory Enum$Step_select_column.fromJson(String value) =>
+      fromJson$Enum$Step_select_column(value);
+
+  String toJson() => toJson$Enum$Step_select_column(this);
 }
 
 String toJson$Enum$Step_select_column(Enum$Step_select_column e) {
@@ -29839,7 +30956,12 @@ enum Enum$Step_update_column {
   fileId,
   order,
   recipeSectionId,
-  $unknown
+  $unknown;
+
+  factory Enum$Step_update_column.fromJson(String value) =>
+      fromJson$Enum$Step_update_column(value);
+
+  String toJson() => toJson$Enum$Step_update_column(this);
 }
 
 String toJson$Enum$Step_update_column(Enum$Step_update_column e) {
@@ -29872,7 +30994,16 @@ Enum$Step_update_column fromJson$Enum$Step_update_column(String value) {
   }
 }
 
-enum Enum$Tag_constraint { Tag_name_unique, Tag_pkey, $unknown }
+enum Enum$Tag_constraint {
+  Tag_name_unique,
+  Tag_pkey,
+  $unknown;
+
+  factory Enum$Tag_constraint.fromJson(String value) =>
+      fromJson$Enum$Tag_constraint(value);
+
+  String toJson() => toJson$Enum$Tag_constraint(this);
+}
 
 String toJson$Enum$Tag_constraint(Enum$Tag_constraint e) {
   switch (e) {
@@ -29896,7 +31027,16 @@ Enum$Tag_constraint fromJson$Enum$Tag_constraint(String value) {
   }
 }
 
-enum Enum$Tag_select_column { id, name, $unknown }
+enum Enum$Tag_select_column {
+  id,
+  name,
+  $unknown;
+
+  factory Enum$Tag_select_column.fromJson(String value) =>
+      fromJson$Enum$Tag_select_column(value);
+
+  String toJson() => toJson$Enum$Tag_select_column(this);
+}
 
 String toJson$Enum$Tag_select_column(Enum$Tag_select_column e) {
   switch (e) {
@@ -29920,11 +31060,19 @@ Enum$Tag_select_column fromJson$Enum$Tag_select_column(String value) {
   }
 }
 
-enum Enum$Tag_update_column { _PLACEHOLDER, $unknown }
+enum Enum$Tag_update_column {
+  $_PLACEHOLDER,
+  $unknown;
+
+  factory Enum$Tag_update_column.fromJson(String value) =>
+      fromJson$Enum$Tag_update_column(value);
+
+  String toJson() => toJson$Enum$Tag_update_column(this);
+}
 
 String toJson$Enum$Tag_update_column(Enum$Tag_update_column e) {
   switch (e) {
-    case Enum$Tag_update_column._PLACEHOLDER:
+    case Enum$Tag_update_column.$_PLACEHOLDER:
       return r'_PLACEHOLDER';
     case Enum$Tag_update_column.$unknown:
       return r'$unknown';
@@ -29934,13 +31082,24 @@ String toJson$Enum$Tag_update_column(Enum$Tag_update_column e) {
 Enum$Tag_update_column fromJson$Enum$Tag_update_column(String value) {
   switch (value) {
     case r'_PLACEHOLDER':
-      return Enum$Tag_update_column._PLACEHOLDER;
+      return Enum$Tag_update_column.$_PLACEHOLDER;
     default:
       return Enum$Tag_update_column.$unknown;
   }
 }
 
-enum Enum$UnitSize_select_column { id, name, plural, unitType, $unknown }
+enum Enum$UnitSize_select_column {
+  id,
+  name,
+  plural,
+  unitType,
+  $unknown;
+
+  factory Enum$UnitSize_select_column.fromJson(String value) =>
+      fromJson$Enum$UnitSize_select_column(value);
+
+  String toJson() => toJson$Enum$UnitSize_select_column(this);
+}
 
 String toJson$Enum$UnitSize_select_column(Enum$UnitSize_select_column e) {
   switch (e) {
@@ -29972,7 +31131,16 @@ Enum$UnitSize_select_column fromJson$Enum$UnitSize_select_column(String value) {
   }
 }
 
-enum Enum$UnitType_enum { IMPERIAL, METRIC, $unknown }
+enum Enum$UnitType_enum {
+  IMPERIAL,
+  METRIC,
+  $unknown;
+
+  factory Enum$UnitType_enum.fromJson(String value) =>
+      fromJson$Enum$UnitType_enum(value);
+
+  String toJson() => toJson$Enum$UnitType_enum(this);
+}
 
 String toJson$Enum$UnitType_enum(Enum$UnitType_enum e) {
   switch (e) {
@@ -29996,7 +31164,16 @@ Enum$UnitType_enum fromJson$Enum$UnitType_enum(String value) {
   }
 }
 
-enum Enum$UnitType_select_column { description, id, $unknown }
+enum Enum$UnitType_select_column {
+  description,
+  id,
+  $unknown;
+
+  factory Enum$UnitType_select_column.fromJson(String value) =>
+      fromJson$Enum$UnitType_select_column(value);
+
+  String toJson() => toJson$Enum$UnitType_select_column(this);
+}
 
 String toJson$Enum$UnitType_select_column(Enum$UnitType_select_column e) {
   switch (e) {
@@ -30020,7 +31197,16 @@ Enum$UnitType_select_column fromJson$Enum$UnitType_select_column(String value) {
   }
 }
 
-enum Enum$User_select_column { id, name, $unknown }
+enum Enum$User_select_column {
+  id,
+  name,
+  $unknown;
+
+  factory Enum$User_select_column.fromJson(String value) =>
+      fromJson$Enum$User_select_column(value);
+
+  String toJson() => toJson$Enum$User_select_column(this);
+}
 
 String toJson$Enum$User_select_column(Enum$User_select_column e) {
   switch (e) {
@@ -30044,11 +31230,19 @@ Enum$User_select_column fromJson$Enum$User_select_column(String value) {
   }
 }
 
-enum Enum$_RecipeToTag_constraint { _RecipeToTag_AB_unique, $unknown }
+enum Enum$_RecipeToTag_constraint {
+  $_RecipeToTag_AB_unique,
+  $unknown;
+
+  factory Enum$_RecipeToTag_constraint.fromJson(String value) =>
+      fromJson$Enum$_RecipeToTag_constraint(value);
+
+  String toJson() => toJson$Enum$_RecipeToTag_constraint(this);
+}
 
 String toJson$Enum$_RecipeToTag_constraint(Enum$_RecipeToTag_constraint e) {
   switch (e) {
-    case Enum$_RecipeToTag_constraint._RecipeToTag_AB_unique:
+    case Enum$_RecipeToTag_constraint.$_RecipeToTag_AB_unique:
       return r'_RecipeToTag_AB_unique';
     case Enum$_RecipeToTag_constraint.$unknown:
       return r'$unknown';
@@ -30059,13 +31253,22 @@ Enum$_RecipeToTag_constraint fromJson$Enum$_RecipeToTag_constraint(
     String value) {
   switch (value) {
     case r'_RecipeToTag_AB_unique':
-      return Enum$_RecipeToTag_constraint._RecipeToTag_AB_unique;
+      return Enum$_RecipeToTag_constraint.$_RecipeToTag_AB_unique;
     default:
       return Enum$_RecipeToTag_constraint.$unknown;
   }
 }
 
-enum Enum$_RecipeToTag_select_column { A, B, $unknown }
+enum Enum$_RecipeToTag_select_column {
+  A,
+  B,
+  $unknown;
+
+  factory Enum$_RecipeToTag_select_column.fromJson(String value) =>
+      fromJson$Enum$_RecipeToTag_select_column(value);
+
+  String toJson() => toJson$Enum$_RecipeToTag_select_column(this);
+}
 
 String toJson$Enum$_RecipeToTag_select_column(
     Enum$_RecipeToTag_select_column e) {
@@ -30091,7 +31294,16 @@ Enum$_RecipeToTag_select_column fromJson$Enum$_RecipeToTag_select_column(
   }
 }
 
-enum Enum$_RecipeToTag_update_column { A, B, $unknown }
+enum Enum$_RecipeToTag_update_column {
+  A,
+  B,
+  $unknown;
+
+  factory Enum$_RecipeToTag_update_column.fromJson(String value) =>
+      fromJson$Enum$_RecipeToTag_update_column(value);
+
+  String toJson() => toJson$Enum$_RecipeToTag_update_column(this);
+}
 
 String toJson$Enum$_RecipeToTag_update_column(
     Enum$_RecipeToTag_update_column e) {
@@ -30124,7 +31336,11 @@ enum Enum$order_by {
   desc,
   desc_nulls_first,
   desc_nulls_last,
-  $unknown
+  $unknown;
+
+  factory Enum$order_by.fromJson(String value) => fromJson$Enum$order_by(value);
+
+  String toJson() => toJson$Enum$order_by(this);
 }
 
 String toJson$Enum$order_by(Enum$order_by e) {
@@ -30174,7 +31390,12 @@ enum Enum$__TypeKind {
   INPUT_OBJECT,
   LIST,
   NON_NULL,
-  $unknown
+  $unknown;
+
+  factory Enum$__TypeKind.fromJson(String value) =>
+      fromJson$Enum$__TypeKind(value);
+
+  String toJson() => toJson$Enum$__TypeKind(this);
 }
 
 String toJson$Enum$__TypeKind(Enum$__TypeKind e) {
@@ -30243,7 +31464,12 @@ enum Enum$__DirectiveLocation {
   ENUM_VALUE,
   INPUT_OBJECT,
   INPUT_FIELD_DEFINITION,
-  $unknown
+  $unknown;
+
+  factory Enum$__DirectiveLocation.fromJson(String value) =>
+      fromJson$Enum$__DirectiveLocation(value);
+
+  String toJson() => toJson$Enum$__DirectiveLocation(this);
 }
 
 String toJson$Enum$__DirectiveLocation(Enum$__DirectiveLocation e) {

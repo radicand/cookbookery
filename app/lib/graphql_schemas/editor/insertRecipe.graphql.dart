@@ -32,6 +32,7 @@ class Variables$Mutation$insertRecipe {
 
   Input$Recipe_insert_input get object =>
       (_$data['object'] as Input$Recipe_insert_input);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$object = object;
@@ -44,6 +45,7 @@ class Variables$Mutation$insertRecipe {
             this,
             (i) => i,
           );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -222,6 +224,7 @@ class _CopyWithImpl$Mutation$insertRecipe<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   CopyWith$Fragment$RecipePreviewFields<TRes> get insert_Recipe_one {
     final local$insert_Recipe_one = _instance.insert_Recipe_one;
     return local$insert_Recipe_one == null
@@ -242,6 +245,7 @@ class _CopyWithStubImpl$Mutation$insertRecipe<TRes>
     String? $__typename,
   }) =>
       _res;
+
   CopyWith$Fragment$RecipePreviewFields<TRes> get insert_Recipe_one =>
       CopyWith$Fragment$RecipePreviewFields.stub(_res);
 }

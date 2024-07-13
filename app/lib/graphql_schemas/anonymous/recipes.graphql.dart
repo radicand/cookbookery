@@ -133,6 +133,7 @@ class _CopyWithImpl$Query$recipes<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   TRes Recipe(
           Iterable<Fragment$RecipePreviewFragment> Function(
                   Iterable<
@@ -158,6 +159,7 @@ class _CopyWithStubImpl$Query$recipes<TRes>
     String? $__typename,
   }) =>
       _res;
+
   Recipe(_fn) => _res;
 }
 

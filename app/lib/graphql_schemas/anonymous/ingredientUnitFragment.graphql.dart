@@ -214,6 +214,7 @@ class _CopyWithImpl$Fragment$IngredientUnitFragment<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   CopyWith$Fragment$UnitSizeFragment<TRes> get UnitSize {
     final local$UnitSize = _instance.UnitSize;
     return local$UnitSize == null
@@ -248,8 +249,10 @@ class _CopyWithStubImpl$Fragment$IngredientUnitFragment<TRes>
     String? $__typename,
   }) =>
       _res;
+
   CopyWith$Fragment$UnitSizeFragment<TRes> get UnitSize =>
       CopyWith$Fragment$UnitSizeFragment.stub(_res);
+
   CopyWith$Fragment$IngredientUnitFragment$Ingredient<TRes> get Ingredient =>
       CopyWith$Fragment$IngredientUnitFragment$Ingredient.stub(_res);
 }

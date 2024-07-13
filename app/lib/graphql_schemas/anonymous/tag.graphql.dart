@@ -27,6 +27,7 @@ class Variables$Query$tag {
   Map<String, dynamic> _$data;
 
   String get id => (_$data['id'] as String);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$id = id;
@@ -39,6 +40,7 @@ class Variables$Query$tag {
         this,
         (i) => i,
       );
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -210,6 +212,7 @@ class _CopyWithImpl$Query$tag<TRes> implements CopyWith$Query$tag<TRes> {
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   CopyWith$Query$tag$Tag_by_pk<TRes> get Tag_by_pk {
     final local$Tag_by_pk = _instance.Tag_by_pk;
     return local$Tag_by_pk == null
@@ -229,6 +232,7 @@ class _CopyWithStubImpl$Query$tag<TRes> implements CopyWith$Query$tag<TRes> {
     String? $__typename,
   }) =>
       _res;
+
   CopyWith$Query$tag$Tag_by_pk<TRes> get Tag_by_pk =>
       CopyWith$Query$tag$Tag_by_pk.stub(_res);
 }
@@ -637,6 +641,7 @@ class _CopyWithImpl$Query$tag$Tag_by_pk<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   TRes Recipes(
           Iterable<Query$tag$Tag_by_pk$Recipes> Function(
                   Iterable<
@@ -664,6 +669,7 @@ class _CopyWithStubImpl$Query$tag$Tag_by_pk<TRes>
     String? $__typename,
   }) =>
       _res;
+
   Recipes(_fn) => _res;
 }
 
@@ -779,6 +785,7 @@ class _CopyWithImpl$Query$tag$Tag_by_pk$Recipes<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   CopyWith$Fragment$RecipePreviewFragment<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
     return CopyWith$Fragment$RecipePreviewFragment(
@@ -797,6 +804,7 @@ class _CopyWithStubImpl$Query$tag$Tag_by_pk$Recipes<TRes>
     String? $__typename,
   }) =>
       _res;
+
   CopyWith$Fragment$RecipePreviewFragment<TRes> get Recipe =>
       CopyWith$Fragment$RecipePreviewFragment.stub(_res);
 }

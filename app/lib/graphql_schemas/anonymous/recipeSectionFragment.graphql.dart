@@ -344,6 +344,7 @@ class _CopyWithImpl$Fragment$RecipeSectionFragment<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   TRes IngredientUnits(
           Iterable<Fragment$IngredientUnitFragment> Function(
                   Iterable<
@@ -356,6 +357,7 @@ class _CopyWithImpl$Fragment$RecipeSectionFragment<TRes>
                     e,
                     (i) => i,
                   ))).toList());
+
   TRes Steps(
           Iterable<Fragment$RecipeSectionFragment$Steps> Function(
                   Iterable<
@@ -368,6 +370,7 @@ class _CopyWithImpl$Fragment$RecipeSectionFragment<TRes>
                     e,
                     (i) => i,
                   ))).toList());
+
   CopyWith$Fragment$RecipeSectionFragment$Recipe<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
     return CopyWith$Fragment$RecipeSectionFragment$Recipe(
@@ -396,8 +399,11 @@ class _CopyWithStubImpl$Fragment$RecipeSectionFragment<TRes>
     String? $__typename,
   }) =>
       _res;
+
   IngredientUnits(_fn) => _res;
+
   Steps(_fn) => _res;
+
   CopyWith$Fragment$RecipeSectionFragment$Recipe<TRes> get Recipe =>
       CopyWith$Fragment$RecipeSectionFragment$Recipe.stub(_res);
 }

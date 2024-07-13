@@ -354,6 +354,7 @@ class _CopyWithImpl$Fragment$RecipeFragment<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   CopyWith$Fragment$RecipeFragment$Author<TRes> get Author {
     final local$Author = _instance.Author;
     return CopyWith$Fragment$RecipeFragment$Author(
@@ -372,6 +373,7 @@ class _CopyWithImpl$Fragment$RecipeFragment<TRes>
                     e,
                     (i) => i,
                   ))).toList());
+
   TRes RecipeSections(
           Iterable<Fragment$RecipeSectionFragment> Function(
                   Iterable<
@@ -384,6 +386,7 @@ class _CopyWithImpl$Fragment$RecipeFragment<TRes>
                     e,
                     (i) => i,
                   ))).toList());
+
   TRes RecipeTags(
           Iterable<Fragment$RecipeFragment$RecipeTags> Function(
                   Iterable<
@@ -419,10 +422,14 @@ class _CopyWithStubImpl$Fragment$RecipeFragment<TRes>
     String? $__typename,
   }) =>
       _res;
+
   CopyWith$Fragment$RecipeFragment$Author<TRes> get Author =>
       CopyWith$Fragment$RecipeFragment$Author.stub(_res);
+
   Files(_fn) => _res;
+
   RecipeSections(_fn) => _res;
+
   RecipeTags(_fn) => _res;
 }
 
@@ -1039,6 +1046,7 @@ class _CopyWithImpl$Fragment$RecipeFragment$RecipeTags<TRes>
             ? _instance.$__typename
             : ($__typename as String),
       ));
+
   CopyWith$Fragment$RecipeFragment$RecipeTags$Tag<TRes> get Tag {
     final local$Tag = _instance.Tag;
     return CopyWith$Fragment$RecipeFragment$RecipeTags$Tag(
@@ -1057,6 +1065,7 @@ class _CopyWithStubImpl$Fragment$RecipeFragment$RecipeTags<TRes>
     String? $__typename,
   }) =>
       _res;
+
   CopyWith$Fragment$RecipeFragment$RecipeTags$Tag<TRes> get Tag =>
       CopyWith$Fragment$RecipeFragment$RecipeTags$Tag.stub(_res);
 }

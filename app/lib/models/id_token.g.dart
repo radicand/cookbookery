@@ -12,8 +12,8 @@ IdToken _$IdTokenFromJson(Map<String, dynamic> json) => IdToken(
       iss: json['iss'] as String,
       sub: json['sub'] as String,
       aud: (json['aud'] as List<dynamic>).map((e) => e as String).toList(),
-      iat: json['iat'] as int,
-      exp: json['exp'] as int,
+      iat: (json['iat'] as num).toInt(),
+      exp: (json['exp'] as num).toInt(),
       azp: json['azp'] as String?,
       scope: json['scope'] as String?,
     );
