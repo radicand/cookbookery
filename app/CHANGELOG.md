@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.3](https://github.com/radicand/cookbookery/compare/app-v1.6.2...app-v1.6.3) (2024-07-13)
+
+
+### Bug Fixes
+
+* bring up to date ([c9b5501](https://github.com/radicand/cookbookery/commit/c9b5501318e7583e0bca5df599168a17c3aade66))
+
 ## [1.6.2](https://github.com/radicand/cookbookery/compare/app-v1.6.1...app-v1.6.2) (2024-05-10)
 
 
