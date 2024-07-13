@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.4](https://github.com/radicand/cookbookery/compare/app-v1.6.3...app-v1.6.4) (2024-07-13)
+
+
+### Bug Fixes
+
+* more update updates ([41aeccb](https://github.com/radicand/cookbookery/commit/41aeccb1aab17abb1fe6a2e1221d19135f0da225))
+* remove errant gradle declaration ([4ccf5f1](https://github.com/radicand/cookbookery/commit/4ccf5f1753f57671bf5bb4ac5a576f3c5f252d3a))
+* update graphql deps ([c71d6ed](https://github.com/radicand/cookbookery/commit/c71d6ed4cb5064792657e84bfd90726e3450c673))
+
 ## [1.6.3](https://github.com/radicand/cookbookery/compare/app-v1.6.2...app-v1.6.3) (2024-07-13)
 
 
