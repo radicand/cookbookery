@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/radicand/cookbookery/compare/common-v1.0.2...common-v1.0.3) (2024-07-13)
+
+
+### Bug Fixes
+
+* update graphql deps ([c71d6ed](https://github.com/radicand/cookbookery/commit/c71d6ed4cb5064792657e84bfd90726e3450c673))
+
 ## [1.0.2](https://github.com/radicand/cookbookery/compare/common-v1.0.1...common-v1.0.2) (2022-12-18)
 
 

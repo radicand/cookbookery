@@ -1,6 +1,6 @@
 {
   "name": "cookbook-common",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "description": "A common set of utilities between the frontend and backend",
   "main": "index.js",
