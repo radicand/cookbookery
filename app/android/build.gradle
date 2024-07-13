@@ -7,9 +7,6 @@ allprojects {
 
 rootProject.buildDir = '../build'
 
-android {
-    namespace 'dev.flutter.integration_test'
-}
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
