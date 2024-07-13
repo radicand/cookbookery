@@ -13,6 +13,6 @@ TBC
 ## Generators
 
 ```sh
-flutter pub run build_runner build --delete-conflicting-outputs
-flutter pub run flutter_launcher_icons
+dart run build_runner build --delete-conflicting-outputs
+dart run flutter_launcher_icons
 ```

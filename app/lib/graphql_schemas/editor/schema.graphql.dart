@@ -2612,6 +2612,384 @@ class _CopyWithStubImpl$Input$File_set_input<TRes>
       _res;
 }
 
+class Input$File_stream_cursor_input {
+  factory Input$File_stream_cursor_input({
+    required Input$File_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$File_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$File_stream_cursor_input._(this._$data);
+
+  factory Input$File_stream_cursor_input.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$File_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$File_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$File_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value'] as Input$File_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$File_stream_cursor_input<Input$File_stream_cursor_input>
+      get copyWith => CopyWith$Input$File_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$File_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$File_stream_cursor_input<TRes> {
+  factory CopyWith$Input$File_stream_cursor_input(
+    Input$File_stream_cursor_input instance,
+    TRes Function(Input$File_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$File_stream_cursor_input;
+
+  factory CopyWith$Input$File_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_stream_cursor_input;
+
+  TRes call({
+    Input$File_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$File_stream_cursor_value_input<TRes> get initial_value;
+}
+
+class _CopyWithImpl$Input$File_stream_cursor_input<TRes>
+    implements CopyWith$Input$File_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$File_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$File_stream_cursor_input _instance;
+
+  final TRes Function(Input$File_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$File_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$File_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$File_stream_cursor_value_input<TRes> get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$File_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$File_stream_cursor_input<TRes>
+    implements CopyWith$Input$File_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$File_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$File_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$File_stream_cursor_value_input<TRes> get initial_value =>
+      CopyWith$Input$File_stream_cursor_value_input.stub(_res);
+}
+
+class Input$File_stream_cursor_value_input {
+  factory Input$File_stream_cursor_value_input({
+    String? blob,
+    String? id,
+    String? mimetype,
+    String? recipeId,
+    String? userId,
+  }) =>
+      Input$File_stream_cursor_value_input._({
+        if (blob != null) r'blob': blob,
+        if (id != null) r'id': id,
+        if (mimetype != null) r'mimetype': mimetype,
+        if (recipeId != null) r'recipeId': recipeId,
+        if (userId != null) r'userId': userId,
+      });
+
+  Input$File_stream_cursor_value_input._(this._$data);
+
+  factory Input$File_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('blob')) {
+      final l$blob = data['blob'];
+      result$data['blob'] = (l$blob as String?);
+    }
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    if (data.containsKey('mimetype')) {
+      final l$mimetype = data['mimetype'];
+      result$data['mimetype'] = (l$mimetype as String?);
+    }
+    if (data.containsKey('recipeId')) {
+      final l$recipeId = data['recipeId'];
+      result$data['recipeId'] = (l$recipeId as String?);
+    }
+    if (data.containsKey('userId')) {
+      final l$userId = data['userId'];
+      result$data['userId'] = (l$userId as String?);
+    }
+    return Input$File_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get blob => (_$data['blob'] as String?);
+
+  String? get id => (_$data['id'] as String?);
+
+  String? get mimetype => (_$data['mimetype'] as String?);
+
+  String? get recipeId => (_$data['recipeId'] as String?);
+
+  String? get userId => (_$data['userId'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('blob')) {
+      final l$blob = blob;
+      result$data['blob'] = l$blob;
+    }
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    if (_$data.containsKey('mimetype')) {
+      final l$mimetype = mimetype;
+      result$data['mimetype'] = l$mimetype;
+    }
+    if (_$data.containsKey('recipeId')) {
+      final l$recipeId = recipeId;
+      result$data['recipeId'] = l$recipeId;
+    }
+    if (_$data.containsKey('userId')) {
+      final l$userId = userId;
+      result$data['userId'] = l$userId;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$File_stream_cursor_value_input<
+          Input$File_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$File_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$File_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$blob = blob;
+    final lOther$blob = other.blob;
+    if (_$data.containsKey('blob') != other._$data.containsKey('blob')) {
+      return false;
+    }
+    if (l$blob != lOther$blob) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$mimetype = mimetype;
+    final lOther$mimetype = other.mimetype;
+    if (_$data.containsKey('mimetype') !=
+        other._$data.containsKey('mimetype')) {
+      return false;
+    }
+    if (l$mimetype != lOther$mimetype) {
+      return false;
+    }
+    final l$recipeId = recipeId;
+    final lOther$recipeId = other.recipeId;
+    if (_$data.containsKey('recipeId') !=
+        other._$data.containsKey('recipeId')) {
+      return false;
+    }
+    if (l$recipeId != lOther$recipeId) {
+      return false;
+    }
+    final l$userId = userId;
+    final lOther$userId = other.userId;
+    if (_$data.containsKey('userId') != other._$data.containsKey('userId')) {
+      return false;
+    }
+    if (l$userId != lOther$userId) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$blob = blob;
+    final l$id = id;
+    final l$mimetype = mimetype;
+    final l$recipeId = recipeId;
+    final l$userId = userId;
+    return Object.hashAll([
+      _$data.containsKey('blob') ? l$blob : const {},
+      _$data.containsKey('id') ? l$id : const {},
+      _$data.containsKey('mimetype') ? l$mimetype : const {},
+      _$data.containsKey('recipeId') ? l$recipeId : const {},
+      _$data.containsKey('userId') ? l$userId : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$File_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$File_stream_cursor_value_input(
+    Input$File_stream_cursor_value_input instance,
+    TRes Function(Input$File_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$File_stream_cursor_value_input;
+
+  factory CopyWith$Input$File_stream_cursor_value_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$File_stream_cursor_value_input;
+
+  TRes call({
+    String? blob,
+    String? id,
+    String? mimetype,
+    String? recipeId,
+    String? userId,
+  });
+}
+
+class _CopyWithImpl$Input$File_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$File_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$File_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$File_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$File_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? blob = _undefined,
+    Object? id = _undefined,
+    Object? mimetype = _undefined,
+    Object? recipeId = _undefined,
+    Object? userId = _undefined,
+  }) =>
+      _then(Input$File_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (blob != _undefined) 'blob': (blob as String?),
+        if (id != _undefined) 'id': (id as String?),
+        if (mimetype != _undefined) 'mimetype': (mimetype as String?),
+        if (recipeId != _undefined) 'recipeId': (recipeId as String?),
+        if (userId != _undefined) 'userId': (userId as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$File_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$File_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$File_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    String? blob,
+    String? id,
+    String? mimetype,
+    String? recipeId,
+    String? userId,
+  }) =>
+      _res;
+}
+
 class Input$File_updates {
   factory Input$File_updates({
     Input$File_set_input? $_set,
@@ -6849,6 +7227,445 @@ class _CopyWithStubImpl$Input$IngredientUnit_stddev_samp_order_by<TRes>
       _res;
 }
 
+class Input$IngredientUnit_stream_cursor_input {
+  factory Input$IngredientUnit_stream_cursor_input({
+    required Input$IngredientUnit_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$IngredientUnit_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$IngredientUnit_stream_cursor_input._(this._$data);
+
+  factory Input$IngredientUnit_stream_cursor_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$IngredientUnit_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$IngredientUnit_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$IngredientUnit_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value']
+          as Input$IngredientUnit_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$IngredientUnit_stream_cursor_input<
+          Input$IngredientUnit_stream_cursor_input>
+      get copyWith => CopyWith$Input$IngredientUnit_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$IngredientUnit_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$IngredientUnit_stream_cursor_input<TRes> {
+  factory CopyWith$Input$IngredientUnit_stream_cursor_input(
+    Input$IngredientUnit_stream_cursor_input instance,
+    TRes Function(Input$IngredientUnit_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$IngredientUnit_stream_cursor_input;
+
+  factory CopyWith$Input$IngredientUnit_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_input;
+
+  TRes call({
+    Input$IngredientUnit_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes>
+      get initial_value;
+}
+
+class _CopyWithImpl$Input$IngredientUnit_stream_cursor_input<TRes>
+    implements CopyWith$Input$IngredientUnit_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$IngredientUnit_stream_cursor_input _instance;
+
+  final TRes Function(Input$IngredientUnit_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$IngredientUnit_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$IngredientUnit_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes>
+      get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$IngredientUnit_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_input<TRes>
+    implements CopyWith$Input$IngredientUnit_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$IngredientUnit_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes>
+      get initial_value =>
+          CopyWith$Input$IngredientUnit_stream_cursor_value_input.stub(_res);
+}
+
+class Input$IngredientUnit_stream_cursor_value_input {
+  factory Input$IngredientUnit_stream_cursor_value_input({
+    double? amount,
+    String? id,
+    String? ingredientId,
+    String? notes,
+    int? order,
+    String? recipeSectionId,
+    String? unitId,
+  }) =>
+      Input$IngredientUnit_stream_cursor_value_input._({
+        if (amount != null) r'amount': amount,
+        if (id != null) r'id': id,
+        if (ingredientId != null) r'ingredientId': ingredientId,
+        if (notes != null) r'notes': notes,
+        if (order != null) r'order': order,
+        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+        if (unitId != null) r'unitId': unitId,
+      });
+
+  Input$IngredientUnit_stream_cursor_value_input._(this._$data);
+
+  factory Input$IngredientUnit_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('amount')) {
+      final l$amount = data['amount'];
+      result$data['amount'] = (l$amount as num?)?.toDouble();
+    }
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    if (data.containsKey('ingredientId')) {
+      final l$ingredientId = data['ingredientId'];
+      result$data['ingredientId'] = (l$ingredientId as String?);
+    }
+    if (data.containsKey('notes')) {
+      final l$notes = data['notes'];
+      result$data['notes'] = (l$notes as String?);
+    }
+    if (data.containsKey('order')) {
+      final l$order = data['order'];
+      result$data['order'] = (l$order as int?);
+    }
+    if (data.containsKey('recipeSectionId')) {
+      final l$recipeSectionId = data['recipeSectionId'];
+      result$data['recipeSectionId'] = (l$recipeSectionId as String?);
+    }
+    if (data.containsKey('unitId')) {
+      final l$unitId = data['unitId'];
+      result$data['unitId'] = (l$unitId as String?);
+    }
+    return Input$IngredientUnit_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  double? get amount => (_$data['amount'] as double?);
+
+  String? get id => (_$data['id'] as String?);
+
+  String? get ingredientId => (_$data['ingredientId'] as String?);
+
+  String? get notes => (_$data['notes'] as String?);
+
+  int? get order => (_$data['order'] as int?);
+
+  String? get recipeSectionId => (_$data['recipeSectionId'] as String?);
+
+  String? get unitId => (_$data['unitId'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('amount')) {
+      final l$amount = amount;
+      result$data['amount'] = l$amount;
+    }
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    if (_$data.containsKey('ingredientId')) {
+      final l$ingredientId = ingredientId;
+      result$data['ingredientId'] = l$ingredientId;
+    }
+    if (_$data.containsKey('notes')) {
+      final l$notes = notes;
+      result$data['notes'] = l$notes;
+    }
+    if (_$data.containsKey('order')) {
+      final l$order = order;
+      result$data['order'] = l$order;
+    }
+    if (_$data.containsKey('recipeSectionId')) {
+      final l$recipeSectionId = recipeSectionId;
+      result$data['recipeSectionId'] = l$recipeSectionId;
+    }
+    if (_$data.containsKey('unitId')) {
+      final l$unitId = unitId;
+      result$data['unitId'] = l$unitId;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$IngredientUnit_stream_cursor_value_input<
+          Input$IngredientUnit_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$IngredientUnit_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$IngredientUnit_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$amount = amount;
+    final lOther$amount = other.amount;
+    if (_$data.containsKey('amount') != other._$data.containsKey('amount')) {
+      return false;
+    }
+    if (l$amount != lOther$amount) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$ingredientId = ingredientId;
+    final lOther$ingredientId = other.ingredientId;
+    if (_$data.containsKey('ingredientId') !=
+        other._$data.containsKey('ingredientId')) {
+      return false;
+    }
+    if (l$ingredientId != lOther$ingredientId) {
+      return false;
+    }
+    final l$notes = notes;
+    final lOther$notes = other.notes;
+    if (_$data.containsKey('notes') != other._$data.containsKey('notes')) {
+      return false;
+    }
+    if (l$notes != lOther$notes) {
+      return false;
+    }
+    final l$order = order;
+    final lOther$order = other.order;
+    if (_$data.containsKey('order') != other._$data.containsKey('order')) {
+      return false;
+    }
+    if (l$order != lOther$order) {
+      return false;
+    }
+    final l$recipeSectionId = recipeSectionId;
+    final lOther$recipeSectionId = other.recipeSectionId;
+    if (_$data.containsKey('recipeSectionId') !=
+        other._$data.containsKey('recipeSectionId')) {
+      return false;
+    }
+    if (l$recipeSectionId != lOther$recipeSectionId) {
+      return false;
+    }
+    final l$unitId = unitId;
+    final lOther$unitId = other.unitId;
+    if (_$data.containsKey('unitId') != other._$data.containsKey('unitId')) {
+      return false;
+    }
+    if (l$unitId != lOther$unitId) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$amount = amount;
+    final l$id = id;
+    final l$ingredientId = ingredientId;
+    final l$notes = notes;
+    final l$order = order;
+    final l$recipeSectionId = recipeSectionId;
+    final l$unitId = unitId;
+    return Object.hashAll([
+      _$data.containsKey('amount') ? l$amount : const {},
+      _$data.containsKey('id') ? l$id : const {},
+      _$data.containsKey('ingredientId') ? l$ingredientId : const {},
+      _$data.containsKey('notes') ? l$notes : const {},
+      _$data.containsKey('order') ? l$order : const {},
+      _$data.containsKey('recipeSectionId') ? l$recipeSectionId : const {},
+      _$data.containsKey('unitId') ? l$unitId : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$IngredientUnit_stream_cursor_value_input(
+    Input$IngredientUnit_stream_cursor_value_input instance,
+    TRes Function(Input$IngredientUnit_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$IngredientUnit_stream_cursor_value_input;
+
+  factory CopyWith$Input$IngredientUnit_stream_cursor_value_input.stub(
+          TRes res) =
+      _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_value_input;
+
+  TRes call({
+    double? amount,
+    String? id,
+    String? ingredientId,
+    String? notes,
+    int? order,
+    String? recipeSectionId,
+    String? unitId,
+  });
+}
+
+class _CopyWithImpl$Input$IngredientUnit_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$IngredientUnit_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$IngredientUnit_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$IngredientUnit_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? amount = _undefined,
+    Object? id = _undefined,
+    Object? ingredientId = _undefined,
+    Object? notes = _undefined,
+    Object? order = _undefined,
+    Object? recipeSectionId = _undefined,
+    Object? unitId = _undefined,
+  }) =>
+      _then(Input$IngredientUnit_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (amount != _undefined) 'amount': (amount as double?),
+        if (id != _undefined) 'id': (id as String?),
+        if (ingredientId != _undefined)
+          'ingredientId': (ingredientId as String?),
+        if (notes != _undefined) 'notes': (notes as String?),
+        if (order != _undefined) 'order': (order as int?),
+        if (recipeSectionId != _undefined)
+          'recipeSectionId': (recipeSectionId as String?),
+        if (unitId != _undefined) 'unitId': (unitId as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    double? amount,
+    String? id,
+    String? ingredientId,
+    String? notes,
+    int? order,
+    String? recipeSectionId,
+    String? unitId,
+  }) =>
+      _res;
+}
+
 class Input$IngredientUnit_sum_order_by {
   factory Input$IngredientUnit_sum_order_by({
     Enum$order_by? amount,
@@ -8796,6 +9613,306 @@ class _CopyWithStubImpl$Input$Ingredient_order_by<TRes>
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
       get IngredientUnits_aggregate =>
           CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
+}
+
+class Input$Ingredient_stream_cursor_input {
+  factory Input$Ingredient_stream_cursor_input({
+    required Input$Ingredient_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$Ingredient_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$Ingredient_stream_cursor_input._(this._$data);
+
+  factory Input$Ingredient_stream_cursor_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$Ingredient_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$Ingredient_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$Ingredient_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value'] as Input$Ingredient_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$Ingredient_stream_cursor_input<
+          Input$Ingredient_stream_cursor_input>
+      get copyWith => CopyWith$Input$Ingredient_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Ingredient_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Ingredient_stream_cursor_input<TRes> {
+  factory CopyWith$Input$Ingredient_stream_cursor_input(
+    Input$Ingredient_stream_cursor_input instance,
+    TRes Function(Input$Ingredient_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$Ingredient_stream_cursor_input;
+
+  factory CopyWith$Input$Ingredient_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Ingredient_stream_cursor_input;
+
+  TRes call({
+    Input$Ingredient_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$Ingredient_stream_cursor_value_input<TRes> get initial_value;
+}
+
+class _CopyWithImpl$Input$Ingredient_stream_cursor_input<TRes>
+    implements CopyWith$Input$Ingredient_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$Ingredient_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Ingredient_stream_cursor_input _instance;
+
+  final TRes Function(Input$Ingredient_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$Ingredient_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$Ingredient_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$Ingredient_stream_cursor_value_input<TRes> get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$Ingredient_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$Ingredient_stream_cursor_input<TRes>
+    implements CopyWith$Input$Ingredient_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$Ingredient_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$Ingredient_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$Ingredient_stream_cursor_value_input<TRes> get initial_value =>
+      CopyWith$Input$Ingredient_stream_cursor_value_input.stub(_res);
+}
+
+class Input$Ingredient_stream_cursor_value_input {
+  factory Input$Ingredient_stream_cursor_value_input({
+    String? id,
+    String? name,
+  }) =>
+      Input$Ingredient_stream_cursor_value_input._({
+        if (id != null) r'id': id,
+        if (name != null) r'name': name,
+      });
+
+  Input$Ingredient_stream_cursor_value_input._(this._$data);
+
+  factory Input$Ingredient_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    if (data.containsKey('name')) {
+      final l$name = data['name'];
+      result$data['name'] = (l$name as String?);
+    }
+    return Input$Ingredient_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get id => (_$data['id'] as String?);
+
+  String? get name => (_$data['name'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    if (_$data.containsKey('name')) {
+      final l$name = name;
+      result$data['name'] = l$name;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$Ingredient_stream_cursor_value_input<
+          Input$Ingredient_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$Ingredient_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Ingredient_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$name = name;
+    final lOther$name = other.name;
+    if (_$data.containsKey('name') != other._$data.containsKey('name')) {
+      return false;
+    }
+    if (l$name != lOther$name) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$id = id;
+    final l$name = name;
+    return Object.hashAll([
+      _$data.containsKey('id') ? l$id : const {},
+      _$data.containsKey('name') ? l$name : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Ingredient_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$Ingredient_stream_cursor_value_input(
+    Input$Ingredient_stream_cursor_value_input instance,
+    TRes Function(Input$Ingredient_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$Ingredient_stream_cursor_value_input;
+
+  factory CopyWith$Input$Ingredient_stream_cursor_value_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Ingredient_stream_cursor_value_input;
+
+  TRes call({
+    String? id,
+    String? name,
+  });
+}
+
+class _CopyWithImpl$Input$Ingredient_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$Ingredient_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$Ingredient_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Ingredient_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$Ingredient_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? id = _undefined,
+    Object? name = _undefined,
+  }) =>
+      _then(Input$Ingredient_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (id != _undefined) 'id': (id as String?),
+        if (name != _undefined) 'name': (name as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$Ingredient_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$Ingredient_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$Ingredient_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    String? id,
+    String? name,
+  }) =>
+      _res;
 }
 
 class Input$Int_comparison_exp {
@@ -14166,6 +15283,501 @@ class _CopyWithStubImpl$Input$RecipeSection_stddev_samp_order_by<TRes>
       _res;
 }
 
+class Input$RecipeSection_stream_cursor_input {
+  factory Input$RecipeSection_stream_cursor_input({
+    required Input$RecipeSection_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$RecipeSection_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$RecipeSection_stream_cursor_input._(this._$data);
+
+  factory Input$RecipeSection_stream_cursor_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$RecipeSection_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$RecipeSection_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$RecipeSection_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value']
+          as Input$RecipeSection_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$RecipeSection_stream_cursor_input<
+          Input$RecipeSection_stream_cursor_input>
+      get copyWith => CopyWith$Input$RecipeSection_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$RecipeSection_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$RecipeSection_stream_cursor_input<TRes> {
+  factory CopyWith$Input$RecipeSection_stream_cursor_input(
+    Input$RecipeSection_stream_cursor_input instance,
+    TRes Function(Input$RecipeSection_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$RecipeSection_stream_cursor_input;
+
+  factory CopyWith$Input$RecipeSection_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_stream_cursor_input;
+
+  TRes call({
+    Input$RecipeSection_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes>
+      get initial_value;
+}
+
+class _CopyWithImpl$Input$RecipeSection_stream_cursor_input<TRes>
+    implements CopyWith$Input$RecipeSection_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$RecipeSection_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$RecipeSection_stream_cursor_input _instance;
+
+  final TRes Function(Input$RecipeSection_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$RecipeSection_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$RecipeSection_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes>
+      get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$RecipeSection_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_stream_cursor_input<TRes>
+    implements CopyWith$Input$RecipeSection_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$RecipeSection_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes>
+      get initial_value =>
+          CopyWith$Input$RecipeSection_stream_cursor_value_input.stub(_res);
+}
+
+class Input$RecipeSection_stream_cursor_value_input {
+  factory Input$RecipeSection_stream_cursor_value_input({
+    int? cookTimeMinutes,
+    String? description,
+    String? id,
+    String? name,
+    int? order,
+    int? prepTimeMinutes,
+    String? recipeId,
+    String? servingUnit,
+    int? servings,
+  }) =>
+      Input$RecipeSection_stream_cursor_value_input._({
+        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+        if (description != null) r'description': description,
+        if (id != null) r'id': id,
+        if (name != null) r'name': name,
+        if (order != null) r'order': order,
+        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+        if (recipeId != null) r'recipeId': recipeId,
+        if (servingUnit != null) r'servingUnit': servingUnit,
+        if (servings != null) r'servings': servings,
+      });
+
+  Input$RecipeSection_stream_cursor_value_input._(this._$data);
+
+  factory Input$RecipeSection_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('cookTimeMinutes')) {
+      final l$cookTimeMinutes = data['cookTimeMinutes'];
+      result$data['cookTimeMinutes'] = (l$cookTimeMinutes as int?);
+    }
+    if (data.containsKey('description')) {
+      final l$description = data['description'];
+      result$data['description'] = (l$description as String?);
+    }
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    if (data.containsKey('name')) {
+      final l$name = data['name'];
+      result$data['name'] = (l$name as String?);
+    }
+    if (data.containsKey('order')) {
+      final l$order = data['order'];
+      result$data['order'] = (l$order as int?);
+    }
+    if (data.containsKey('prepTimeMinutes')) {
+      final l$prepTimeMinutes = data['prepTimeMinutes'];
+      result$data['prepTimeMinutes'] = (l$prepTimeMinutes as int?);
+    }
+    if (data.containsKey('recipeId')) {
+      final l$recipeId = data['recipeId'];
+      result$data['recipeId'] = (l$recipeId as String?);
+    }
+    if (data.containsKey('servingUnit')) {
+      final l$servingUnit = data['servingUnit'];
+      result$data['servingUnit'] = (l$servingUnit as String?);
+    }
+    if (data.containsKey('servings')) {
+      final l$servings = data['servings'];
+      result$data['servings'] = (l$servings as int?);
+    }
+    return Input$RecipeSection_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  int? get cookTimeMinutes => (_$data['cookTimeMinutes'] as int?);
+
+  String? get description => (_$data['description'] as String?);
+
+  String? get id => (_$data['id'] as String?);
+
+  String? get name => (_$data['name'] as String?);
+
+  int? get order => (_$data['order'] as int?);
+
+  int? get prepTimeMinutes => (_$data['prepTimeMinutes'] as int?);
+
+  String? get recipeId => (_$data['recipeId'] as String?);
+
+  String? get servingUnit => (_$data['servingUnit'] as String?);
+
+  int? get servings => (_$data['servings'] as int?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('cookTimeMinutes')) {
+      final l$cookTimeMinutes = cookTimeMinutes;
+      result$data['cookTimeMinutes'] = l$cookTimeMinutes;
+    }
+    if (_$data.containsKey('description')) {
+      final l$description = description;
+      result$data['description'] = l$description;
+    }
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    if (_$data.containsKey('name')) {
+      final l$name = name;
+      result$data['name'] = l$name;
+    }
+    if (_$data.containsKey('order')) {
+      final l$order = order;
+      result$data['order'] = l$order;
+    }
+    if (_$data.containsKey('prepTimeMinutes')) {
+      final l$prepTimeMinutes = prepTimeMinutes;
+      result$data['prepTimeMinutes'] = l$prepTimeMinutes;
+    }
+    if (_$data.containsKey('recipeId')) {
+      final l$recipeId = recipeId;
+      result$data['recipeId'] = l$recipeId;
+    }
+    if (_$data.containsKey('servingUnit')) {
+      final l$servingUnit = servingUnit;
+      result$data['servingUnit'] = l$servingUnit;
+    }
+    if (_$data.containsKey('servings')) {
+      final l$servings = servings;
+      result$data['servings'] = l$servings;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$RecipeSection_stream_cursor_value_input<
+          Input$RecipeSection_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$RecipeSection_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$RecipeSection_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$cookTimeMinutes = cookTimeMinutes;
+    final lOther$cookTimeMinutes = other.cookTimeMinutes;
+    if (_$data.containsKey('cookTimeMinutes') !=
+        other._$data.containsKey('cookTimeMinutes')) {
+      return false;
+    }
+    if (l$cookTimeMinutes != lOther$cookTimeMinutes) {
+      return false;
+    }
+    final l$description = description;
+    final lOther$description = other.description;
+    if (_$data.containsKey('description') !=
+        other._$data.containsKey('description')) {
+      return false;
+    }
+    if (l$description != lOther$description) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$name = name;
+    final lOther$name = other.name;
+    if (_$data.containsKey('name') != other._$data.containsKey('name')) {
+      return false;
+    }
+    if (l$name != lOther$name) {
+      return false;
+    }
+    final l$order = order;
+    final lOther$order = other.order;
+    if (_$data.containsKey('order') != other._$data.containsKey('order')) {
+      return false;
+    }
+    if (l$order != lOther$order) {
+      return false;
+    }
+    final l$prepTimeMinutes = prepTimeMinutes;
+    final lOther$prepTimeMinutes = other.prepTimeMinutes;
+    if (_$data.containsKey('prepTimeMinutes') !=
+        other._$data.containsKey('prepTimeMinutes')) {
+      return false;
+    }
+    if (l$prepTimeMinutes != lOther$prepTimeMinutes) {
+      return false;
+    }
+    final l$recipeId = recipeId;
+    final lOther$recipeId = other.recipeId;
+    if (_$data.containsKey('recipeId') !=
+        other._$data.containsKey('recipeId')) {
+      return false;
+    }
+    if (l$recipeId != lOther$recipeId) {
+      return false;
+    }
+    final l$servingUnit = servingUnit;
+    final lOther$servingUnit = other.servingUnit;
+    if (_$data.containsKey('servingUnit') !=
+        other._$data.containsKey('servingUnit')) {
+      return false;
+    }
+    if (l$servingUnit != lOther$servingUnit) {
+      return false;
+    }
+    final l$servings = servings;
+    final lOther$servings = other.servings;
+    if (_$data.containsKey('servings') !=
+        other._$data.containsKey('servings')) {
+      return false;
+    }
+    if (l$servings != lOther$servings) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$cookTimeMinutes = cookTimeMinutes;
+    final l$description = description;
+    final l$id = id;
+    final l$name = name;
+    final l$order = order;
+    final l$prepTimeMinutes = prepTimeMinutes;
+    final l$recipeId = recipeId;
+    final l$servingUnit = servingUnit;
+    final l$servings = servings;
+    return Object.hashAll([
+      _$data.containsKey('cookTimeMinutes') ? l$cookTimeMinutes : const {},
+      _$data.containsKey('description') ? l$description : const {},
+      _$data.containsKey('id') ? l$id : const {},
+      _$data.containsKey('name') ? l$name : const {},
+      _$data.containsKey('order') ? l$order : const {},
+      _$data.containsKey('prepTimeMinutes') ? l$prepTimeMinutes : const {},
+      _$data.containsKey('recipeId') ? l$recipeId : const {},
+      _$data.containsKey('servingUnit') ? l$servingUnit : const {},
+      _$data.containsKey('servings') ? l$servings : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$RecipeSection_stream_cursor_value_input(
+    Input$RecipeSection_stream_cursor_value_input instance,
+    TRes Function(Input$RecipeSection_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$RecipeSection_stream_cursor_value_input;
+
+  factory CopyWith$Input$RecipeSection_stream_cursor_value_input.stub(
+          TRes res) =
+      _CopyWithStubImpl$Input$RecipeSection_stream_cursor_value_input;
+
+  TRes call({
+    int? cookTimeMinutes,
+    String? description,
+    String? id,
+    String? name,
+    int? order,
+    int? prepTimeMinutes,
+    String? recipeId,
+    String? servingUnit,
+    int? servings,
+  });
+}
+
+class _CopyWithImpl$Input$RecipeSection_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$RecipeSection_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$RecipeSection_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$RecipeSection_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? cookTimeMinutes = _undefined,
+    Object? description = _undefined,
+    Object? id = _undefined,
+    Object? name = _undefined,
+    Object? order = _undefined,
+    Object? prepTimeMinutes = _undefined,
+    Object? recipeId = _undefined,
+    Object? servingUnit = _undefined,
+    Object? servings = _undefined,
+  }) =>
+      _then(Input$RecipeSection_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (cookTimeMinutes != _undefined)
+          'cookTimeMinutes': (cookTimeMinutes as int?),
+        if (description != _undefined) 'description': (description as String?),
+        if (id != _undefined) 'id': (id as String?),
+        if (name != _undefined) 'name': (name as String?),
+        if (order != _undefined) 'order': (order as int?),
+        if (prepTimeMinutes != _undefined)
+          'prepTimeMinutes': (prepTimeMinutes as int?),
+        if (recipeId != _undefined) 'recipeId': (recipeId as String?),
+        if (servingUnit != _undefined) 'servingUnit': (servingUnit as String?),
+        if (servings != _undefined) 'servings': (servings as int?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$RecipeSection_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$RecipeSection_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    int? cookTimeMinutes,
+    String? description,
+    String? id,
+    String? name,
+    int? order,
+    int? prepTimeMinutes,
+    String? recipeId,
+    String? servingUnit,
+    int? servings,
+  }) =>
+      _res;
+}
+
 class Input$RecipeSection_sum_order_by {
   factory Input$RecipeSection_sum_order_by({
     Enum$order_by? cookTimeMinutes,
@@ -18359,6 +19971,468 @@ class _CopyWithStubImpl$Input$Recipe_set_input<TRes>
       _res;
 }
 
+class Input$Recipe_stream_cursor_input {
+  factory Input$Recipe_stream_cursor_input({
+    required Input$Recipe_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$Recipe_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$Recipe_stream_cursor_input._(this._$data);
+
+  factory Input$Recipe_stream_cursor_input.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$Recipe_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$Recipe_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$Recipe_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value'] as Input$Recipe_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$Recipe_stream_cursor_input<Input$Recipe_stream_cursor_input>
+      get copyWith => CopyWith$Input$Recipe_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Recipe_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Recipe_stream_cursor_input<TRes> {
+  factory CopyWith$Input$Recipe_stream_cursor_input(
+    Input$Recipe_stream_cursor_input instance,
+    TRes Function(Input$Recipe_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$Recipe_stream_cursor_input;
+
+  factory CopyWith$Input$Recipe_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_stream_cursor_input;
+
+  TRes call({
+    Input$Recipe_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$Recipe_stream_cursor_value_input<TRes> get initial_value;
+}
+
+class _CopyWithImpl$Input$Recipe_stream_cursor_input<TRes>
+    implements CopyWith$Input$Recipe_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$Recipe_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Recipe_stream_cursor_input _instance;
+
+  final TRes Function(Input$Recipe_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$Recipe_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$Recipe_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$Recipe_stream_cursor_value_input<TRes> get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$Recipe_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$Recipe_stream_cursor_input<TRes>
+    implements CopyWith$Input$Recipe_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$Recipe_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$Recipe_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$Recipe_stream_cursor_value_input<TRes> get initial_value =>
+      CopyWith$Input$Recipe_stream_cursor_value_input.stub(_res);
+}
+
+class Input$Recipe_stream_cursor_value_input {
+  factory Input$Recipe_stream_cursor_value_input({
+    String? authorId,
+    DateTime? createdAt,
+    String? description,
+    String? id,
+    String? notes,
+    String? source,
+    String? title,
+    DateTime? updatedAt,
+  }) =>
+      Input$Recipe_stream_cursor_value_input._({
+        if (authorId != null) r'authorId': authorId,
+        if (createdAt != null) r'createdAt': createdAt,
+        if (description != null) r'description': description,
+        if (id != null) r'id': id,
+        if (notes != null) r'notes': notes,
+        if (source != null) r'source': source,
+        if (title != null) r'title': title,
+        if (updatedAt != null) r'updatedAt': updatedAt,
+      });
+
+  Input$Recipe_stream_cursor_value_input._(this._$data);
+
+  factory Input$Recipe_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('authorId')) {
+      final l$authorId = data['authorId'];
+      result$data['authorId'] = (l$authorId as String?);
+    }
+    if (data.containsKey('createdAt')) {
+      final l$createdAt = data['createdAt'];
+      result$data['createdAt'] =
+          l$createdAt == null ? null : dateTimeFromJson(l$createdAt);
+    }
+    if (data.containsKey('description')) {
+      final l$description = data['description'];
+      result$data['description'] = (l$description as String?);
+    }
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    if (data.containsKey('notes')) {
+      final l$notes = data['notes'];
+      result$data['notes'] = (l$notes as String?);
+    }
+    if (data.containsKey('source')) {
+      final l$source = data['source'];
+      result$data['source'] = (l$source as String?);
+    }
+    if (data.containsKey('title')) {
+      final l$title = data['title'];
+      result$data['title'] = (l$title as String?);
+    }
+    if (data.containsKey('updatedAt')) {
+      final l$updatedAt = data['updatedAt'];
+      result$data['updatedAt'] =
+          l$updatedAt == null ? null : dateTimeFromJson(l$updatedAt);
+    }
+    return Input$Recipe_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get authorId => (_$data['authorId'] as String?);
+
+  DateTime? get createdAt => (_$data['createdAt'] as DateTime?);
+
+  String? get description => (_$data['description'] as String?);
+
+  String? get id => (_$data['id'] as String?);
+
+  String? get notes => (_$data['notes'] as String?);
+
+  String? get source => (_$data['source'] as String?);
+
+  String? get title => (_$data['title'] as String?);
+
+  DateTime? get updatedAt => (_$data['updatedAt'] as DateTime?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('authorId')) {
+      final l$authorId = authorId;
+      result$data['authorId'] = l$authorId;
+    }
+    if (_$data.containsKey('createdAt')) {
+      final l$createdAt = createdAt;
+      result$data['createdAt'] =
+          l$createdAt == null ? null : dateTimeToJson(l$createdAt);
+    }
+    if (_$data.containsKey('description')) {
+      final l$description = description;
+      result$data['description'] = l$description;
+    }
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    if (_$data.containsKey('notes')) {
+      final l$notes = notes;
+      result$data['notes'] = l$notes;
+    }
+    if (_$data.containsKey('source')) {
+      final l$source = source;
+      result$data['source'] = l$source;
+    }
+    if (_$data.containsKey('title')) {
+      final l$title = title;
+      result$data['title'] = l$title;
+    }
+    if (_$data.containsKey('updatedAt')) {
+      final l$updatedAt = updatedAt;
+      result$data['updatedAt'] =
+          l$updatedAt == null ? null : dateTimeToJson(l$updatedAt);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$Recipe_stream_cursor_value_input<
+          Input$Recipe_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$Recipe_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Recipe_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$authorId = authorId;
+    final lOther$authorId = other.authorId;
+    if (_$data.containsKey('authorId') !=
+        other._$data.containsKey('authorId')) {
+      return false;
+    }
+    if (l$authorId != lOther$authorId) {
+      return false;
+    }
+    final l$createdAt = createdAt;
+    final lOther$createdAt = other.createdAt;
+    if (_$data.containsKey('createdAt') !=
+        other._$data.containsKey('createdAt')) {
+      return false;
+    }
+    if (l$createdAt != lOther$createdAt) {
+      return false;
+    }
+    final l$description = description;
+    final lOther$description = other.description;
+    if (_$data.containsKey('description') !=
+        other._$data.containsKey('description')) {
+      return false;
+    }
+    if (l$description != lOther$description) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$notes = notes;
+    final lOther$notes = other.notes;
+    if (_$data.containsKey('notes') != other._$data.containsKey('notes')) {
+      return false;
+    }
+    if (l$notes != lOther$notes) {
+      return false;
+    }
+    final l$source = source;
+    final lOther$source = other.source;
+    if (_$data.containsKey('source') != other._$data.containsKey('source')) {
+      return false;
+    }
+    if (l$source != lOther$source) {
+      return false;
+    }
+    final l$title = title;
+    final lOther$title = other.title;
+    if (_$data.containsKey('title') != other._$data.containsKey('title')) {
+      return false;
+    }
+    if (l$title != lOther$title) {
+      return false;
+    }
+    final l$updatedAt = updatedAt;
+    final lOther$updatedAt = other.updatedAt;
+    if (_$data.containsKey('updatedAt') !=
+        other._$data.containsKey('updatedAt')) {
+      return false;
+    }
+    if (l$updatedAt != lOther$updatedAt) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$authorId = authorId;
+    final l$createdAt = createdAt;
+    final l$description = description;
+    final l$id = id;
+    final l$notes = notes;
+    final l$source = source;
+    final l$title = title;
+    final l$updatedAt = updatedAt;
+    return Object.hashAll([
+      _$data.containsKey('authorId') ? l$authorId : const {},
+      _$data.containsKey('createdAt') ? l$createdAt : const {},
+      _$data.containsKey('description') ? l$description : const {},
+      _$data.containsKey('id') ? l$id : const {},
+      _$data.containsKey('notes') ? l$notes : const {},
+      _$data.containsKey('source') ? l$source : const {},
+      _$data.containsKey('title') ? l$title : const {},
+      _$data.containsKey('updatedAt') ? l$updatedAt : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Recipe_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$Recipe_stream_cursor_value_input(
+    Input$Recipe_stream_cursor_value_input instance,
+    TRes Function(Input$Recipe_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$Recipe_stream_cursor_value_input;
+
+  factory CopyWith$Input$Recipe_stream_cursor_value_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Recipe_stream_cursor_value_input;
+
+  TRes call({
+    String? authorId,
+    DateTime? createdAt,
+    String? description,
+    String? id,
+    String? notes,
+    String? source,
+    String? title,
+    DateTime? updatedAt,
+  });
+}
+
+class _CopyWithImpl$Input$Recipe_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$Recipe_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$Recipe_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Recipe_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$Recipe_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? authorId = _undefined,
+    Object? createdAt = _undefined,
+    Object? description = _undefined,
+    Object? id = _undefined,
+    Object? notes = _undefined,
+    Object? source = _undefined,
+    Object? title = _undefined,
+    Object? updatedAt = _undefined,
+  }) =>
+      _then(Input$Recipe_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (authorId != _undefined) 'authorId': (authorId as String?),
+        if (createdAt != _undefined) 'createdAt': (createdAt as DateTime?),
+        if (description != _undefined) 'description': (description as String?),
+        if (id != _undefined) 'id': (id as String?),
+        if (notes != _undefined) 'notes': (notes as String?),
+        if (source != _undefined) 'source': (source as String?),
+        if (title != _undefined) 'title': (title as String?),
+        if (updatedAt != _undefined) 'updatedAt': (updatedAt as DateTime?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$Recipe_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$Recipe_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$Recipe_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    String? authorId,
+    DateTime? createdAt,
+    String? description,
+    String? id,
+    String? notes,
+    String? source,
+    String? title,
+    DateTime? updatedAt,
+  }) =>
+      _res;
+}
+
 class Input$Recipe_updates {
   factory Input$Recipe_updates({
     Input$Recipe_set_input? $_set,
@@ -21902,6 +23976,385 @@ class _CopyWithStubImpl$Input$Step_stddev_samp_order_by<TRes>
   call({Enum$order_by? order}) => _res;
 }
 
+class Input$Step_stream_cursor_input {
+  factory Input$Step_stream_cursor_input({
+    required Input$Step_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$Step_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$Step_stream_cursor_input._(this._$data);
+
+  factory Input$Step_stream_cursor_input.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$Step_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$Step_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$Step_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value'] as Input$Step_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$Step_stream_cursor_input<Input$Step_stream_cursor_input>
+      get copyWith => CopyWith$Input$Step_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Step_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Step_stream_cursor_input<TRes> {
+  factory CopyWith$Input$Step_stream_cursor_input(
+    Input$Step_stream_cursor_input instance,
+    TRes Function(Input$Step_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$Step_stream_cursor_input;
+
+  factory CopyWith$Input$Step_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_stream_cursor_input;
+
+  TRes call({
+    Input$Step_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$Step_stream_cursor_value_input<TRes> get initial_value;
+}
+
+class _CopyWithImpl$Input$Step_stream_cursor_input<TRes>
+    implements CopyWith$Input$Step_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$Step_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Step_stream_cursor_input _instance;
+
+  final TRes Function(Input$Step_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$Step_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$Step_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$Step_stream_cursor_value_input<TRes> get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$Step_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$Step_stream_cursor_input<TRes>
+    implements CopyWith$Input$Step_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$Step_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$Step_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$Step_stream_cursor_value_input<TRes> get initial_value =>
+      CopyWith$Input$Step_stream_cursor_value_input.stub(_res);
+}
+
+class Input$Step_stream_cursor_value_input {
+  factory Input$Step_stream_cursor_value_input({
+    String? description,
+    String? fileId,
+    String? id,
+    int? order,
+    String? recipeSectionId,
+  }) =>
+      Input$Step_stream_cursor_value_input._({
+        if (description != null) r'description': description,
+        if (fileId != null) r'fileId': fileId,
+        if (id != null) r'id': id,
+        if (order != null) r'order': order,
+        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+      });
+
+  Input$Step_stream_cursor_value_input._(this._$data);
+
+  factory Input$Step_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('description')) {
+      final l$description = data['description'];
+      result$data['description'] = (l$description as String?);
+    }
+    if (data.containsKey('fileId')) {
+      final l$fileId = data['fileId'];
+      result$data['fileId'] = (l$fileId as String?);
+    }
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    if (data.containsKey('order')) {
+      final l$order = data['order'];
+      result$data['order'] = (l$order as int?);
+    }
+    if (data.containsKey('recipeSectionId')) {
+      final l$recipeSectionId = data['recipeSectionId'];
+      result$data['recipeSectionId'] = (l$recipeSectionId as String?);
+    }
+    return Input$Step_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get description => (_$data['description'] as String?);
+
+  String? get fileId => (_$data['fileId'] as String?);
+
+  String? get id => (_$data['id'] as String?);
+
+  int? get order => (_$data['order'] as int?);
+
+  String? get recipeSectionId => (_$data['recipeSectionId'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('description')) {
+      final l$description = description;
+      result$data['description'] = l$description;
+    }
+    if (_$data.containsKey('fileId')) {
+      final l$fileId = fileId;
+      result$data['fileId'] = l$fileId;
+    }
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    if (_$data.containsKey('order')) {
+      final l$order = order;
+      result$data['order'] = l$order;
+    }
+    if (_$data.containsKey('recipeSectionId')) {
+      final l$recipeSectionId = recipeSectionId;
+      result$data['recipeSectionId'] = l$recipeSectionId;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$Step_stream_cursor_value_input<
+          Input$Step_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$Step_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Step_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$description = description;
+    final lOther$description = other.description;
+    if (_$data.containsKey('description') !=
+        other._$data.containsKey('description')) {
+      return false;
+    }
+    if (l$description != lOther$description) {
+      return false;
+    }
+    final l$fileId = fileId;
+    final lOther$fileId = other.fileId;
+    if (_$data.containsKey('fileId') != other._$data.containsKey('fileId')) {
+      return false;
+    }
+    if (l$fileId != lOther$fileId) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$order = order;
+    final lOther$order = other.order;
+    if (_$data.containsKey('order') != other._$data.containsKey('order')) {
+      return false;
+    }
+    if (l$order != lOther$order) {
+      return false;
+    }
+    final l$recipeSectionId = recipeSectionId;
+    final lOther$recipeSectionId = other.recipeSectionId;
+    if (_$data.containsKey('recipeSectionId') !=
+        other._$data.containsKey('recipeSectionId')) {
+      return false;
+    }
+    if (l$recipeSectionId != lOther$recipeSectionId) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$description = description;
+    final l$fileId = fileId;
+    final l$id = id;
+    final l$order = order;
+    final l$recipeSectionId = recipeSectionId;
+    return Object.hashAll([
+      _$data.containsKey('description') ? l$description : const {},
+      _$data.containsKey('fileId') ? l$fileId : const {},
+      _$data.containsKey('id') ? l$id : const {},
+      _$data.containsKey('order') ? l$order : const {},
+      _$data.containsKey('recipeSectionId') ? l$recipeSectionId : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Step_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$Step_stream_cursor_value_input(
+    Input$Step_stream_cursor_value_input instance,
+    TRes Function(Input$Step_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$Step_stream_cursor_value_input;
+
+  factory CopyWith$Input$Step_stream_cursor_value_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Step_stream_cursor_value_input;
+
+  TRes call({
+    String? description,
+    String? fileId,
+    String? id,
+    int? order,
+    String? recipeSectionId,
+  });
+}
+
+class _CopyWithImpl$Input$Step_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$Step_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$Step_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Step_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$Step_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? description = _undefined,
+    Object? fileId = _undefined,
+    Object? id = _undefined,
+    Object? order = _undefined,
+    Object? recipeSectionId = _undefined,
+  }) =>
+      _then(Input$Step_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (description != _undefined) 'description': (description as String?),
+        if (fileId != _undefined) 'fileId': (fileId as String?),
+        if (id != _undefined) 'id': (id as String?),
+        if (order != _undefined) 'order': (order as int?),
+        if (recipeSectionId != _undefined)
+          'recipeSectionId': (recipeSectionId as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$Step_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$Step_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$Step_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    String? description,
+    String? fileId,
+    String? id,
+    int? order,
+    String? recipeSectionId,
+  }) =>
+      _res;
+}
+
 class Input$Step_sum_order_by {
   factory Input$Step_sum_order_by({Enum$order_by? order}) =>
       Input$Step_sum_order_by._({
@@ -24247,6 +26700,303 @@ class _CopyWithStubImpl$Input$Tag_order_by<TRes>
       CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_res);
 }
 
+class Input$Tag_stream_cursor_input {
+  factory Input$Tag_stream_cursor_input({
+    required Input$Tag_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$Tag_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$Tag_stream_cursor_input._(this._$data);
+
+  factory Input$Tag_stream_cursor_input.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] = Input$Tag_stream_cursor_value_input.fromJson(
+        (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$Tag_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$Tag_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value'] as Input$Tag_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$Tag_stream_cursor_input<Input$Tag_stream_cursor_input>
+      get copyWith => CopyWith$Input$Tag_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Tag_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Tag_stream_cursor_input<TRes> {
+  factory CopyWith$Input$Tag_stream_cursor_input(
+    Input$Tag_stream_cursor_input instance,
+    TRes Function(Input$Tag_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$Tag_stream_cursor_input;
+
+  factory CopyWith$Input$Tag_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Tag_stream_cursor_input;
+
+  TRes call({
+    Input$Tag_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$Tag_stream_cursor_value_input<TRes> get initial_value;
+}
+
+class _CopyWithImpl$Input$Tag_stream_cursor_input<TRes>
+    implements CopyWith$Input$Tag_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$Tag_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Tag_stream_cursor_input _instance;
+
+  final TRes Function(Input$Tag_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$Tag_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$Tag_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$Tag_stream_cursor_value_input<TRes> get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$Tag_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$Tag_stream_cursor_input<TRes>
+    implements CopyWith$Input$Tag_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$Tag_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$Tag_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$Tag_stream_cursor_value_input<TRes> get initial_value =>
+      CopyWith$Input$Tag_stream_cursor_value_input.stub(_res);
+}
+
+class Input$Tag_stream_cursor_value_input {
+  factory Input$Tag_stream_cursor_value_input({
+    String? id,
+    String? name,
+  }) =>
+      Input$Tag_stream_cursor_value_input._({
+        if (id != null) r'id': id,
+        if (name != null) r'name': name,
+      });
+
+  Input$Tag_stream_cursor_value_input._(this._$data);
+
+  factory Input$Tag_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    if (data.containsKey('name')) {
+      final l$name = data['name'];
+      result$data['name'] = (l$name as String?);
+    }
+    return Input$Tag_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get id => (_$data['id'] as String?);
+
+  String? get name => (_$data['name'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    if (_$data.containsKey('name')) {
+      final l$name = name;
+      result$data['name'] = l$name;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$Tag_stream_cursor_value_input<
+          Input$Tag_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$Tag_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$Tag_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$name = name;
+    final lOther$name = other.name;
+    if (_$data.containsKey('name') != other._$data.containsKey('name')) {
+      return false;
+    }
+    if (l$name != lOther$name) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$id = id;
+    final l$name = name;
+    return Object.hashAll([
+      _$data.containsKey('id') ? l$id : const {},
+      _$data.containsKey('name') ? l$name : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$Tag_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$Tag_stream_cursor_value_input(
+    Input$Tag_stream_cursor_value_input instance,
+    TRes Function(Input$Tag_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$Tag_stream_cursor_value_input;
+
+  factory CopyWith$Input$Tag_stream_cursor_value_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$Tag_stream_cursor_value_input;
+
+  TRes call({
+    String? id,
+    String? name,
+  });
+}
+
+class _CopyWithImpl$Input$Tag_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$Tag_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$Tag_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$Tag_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$Tag_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? id = _undefined,
+    Object? name = _undefined,
+  }) =>
+      _then(Input$Tag_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (id != _undefined) 'id': (id as String?),
+        if (name != _undefined) 'name': (name as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$Tag_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$Tag_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$Tag_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    String? id,
+    String? name,
+  }) =>
+      _res;
+}
+
 class Input$UnitSize_aggregate_order_by {
   factory Input$UnitSize_aggregate_order_by({
     Enum$order_by? count,
@@ -25614,6 +28364,364 @@ class _CopyWithStubImpl$Input$UnitSize_order_by<TRes>
       CopyWith$Input$UnitType_order_by.stub(_res);
 }
 
+class Input$UnitSize_stream_cursor_input {
+  factory Input$UnitSize_stream_cursor_input({
+    required Input$UnitSize_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$UnitSize_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$UnitSize_stream_cursor_input._(this._$data);
+
+  factory Input$UnitSize_stream_cursor_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$UnitSize_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$UnitSize_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$UnitSize_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value'] as Input$UnitSize_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$UnitSize_stream_cursor_input<
+          Input$UnitSize_stream_cursor_input>
+      get copyWith => CopyWith$Input$UnitSize_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$UnitSize_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$UnitSize_stream_cursor_input<TRes> {
+  factory CopyWith$Input$UnitSize_stream_cursor_input(
+    Input$UnitSize_stream_cursor_input instance,
+    TRes Function(Input$UnitSize_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$UnitSize_stream_cursor_input;
+
+  factory CopyWith$Input$UnitSize_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitSize_stream_cursor_input;
+
+  TRes call({
+    Input$UnitSize_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$UnitSize_stream_cursor_value_input<TRes> get initial_value;
+}
+
+class _CopyWithImpl$Input$UnitSize_stream_cursor_input<TRes>
+    implements CopyWith$Input$UnitSize_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$UnitSize_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$UnitSize_stream_cursor_input _instance;
+
+  final TRes Function(Input$UnitSize_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$UnitSize_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$UnitSize_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$UnitSize_stream_cursor_value_input<TRes> get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$UnitSize_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$UnitSize_stream_cursor_input<TRes>
+    implements CopyWith$Input$UnitSize_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$UnitSize_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$UnitSize_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$UnitSize_stream_cursor_value_input<TRes> get initial_value =>
+      CopyWith$Input$UnitSize_stream_cursor_value_input.stub(_res);
+}
+
+class Input$UnitSize_stream_cursor_value_input {
+  factory Input$UnitSize_stream_cursor_value_input({
+    String? id,
+    String? name,
+    String? plural,
+    Enum$UnitType_enum? unitType,
+  }) =>
+      Input$UnitSize_stream_cursor_value_input._({
+        if (id != null) r'id': id,
+        if (name != null) r'name': name,
+        if (plural != null) r'plural': plural,
+        if (unitType != null) r'unitType': unitType,
+      });
+
+  Input$UnitSize_stream_cursor_value_input._(this._$data);
+
+  factory Input$UnitSize_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    if (data.containsKey('name')) {
+      final l$name = data['name'];
+      result$data['name'] = (l$name as String?);
+    }
+    if (data.containsKey('plural')) {
+      final l$plural = data['plural'];
+      result$data['plural'] = (l$plural as String?);
+    }
+    if (data.containsKey('unitType')) {
+      final l$unitType = data['unitType'];
+      result$data['unitType'] = l$unitType == null
+          ? null
+          : fromJson$Enum$UnitType_enum((l$unitType as String));
+    }
+    return Input$UnitSize_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get id => (_$data['id'] as String?);
+
+  String? get name => (_$data['name'] as String?);
+
+  String? get plural => (_$data['plural'] as String?);
+
+  Enum$UnitType_enum? get unitType =>
+      (_$data['unitType'] as Enum$UnitType_enum?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    if (_$data.containsKey('name')) {
+      final l$name = name;
+      result$data['name'] = l$name;
+    }
+    if (_$data.containsKey('plural')) {
+      final l$plural = plural;
+      result$data['plural'] = l$plural;
+    }
+    if (_$data.containsKey('unitType')) {
+      final l$unitType = unitType;
+      result$data['unitType'] =
+          l$unitType == null ? null : toJson$Enum$UnitType_enum(l$unitType);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$UnitSize_stream_cursor_value_input<
+          Input$UnitSize_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$UnitSize_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$UnitSize_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$name = name;
+    final lOther$name = other.name;
+    if (_$data.containsKey('name') != other._$data.containsKey('name')) {
+      return false;
+    }
+    if (l$name != lOther$name) {
+      return false;
+    }
+    final l$plural = plural;
+    final lOther$plural = other.plural;
+    if (_$data.containsKey('plural') != other._$data.containsKey('plural')) {
+      return false;
+    }
+    if (l$plural != lOther$plural) {
+      return false;
+    }
+    final l$unitType = unitType;
+    final lOther$unitType = other.unitType;
+    if (_$data.containsKey('unitType') !=
+        other._$data.containsKey('unitType')) {
+      return false;
+    }
+    if (l$unitType != lOther$unitType) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$id = id;
+    final l$name = name;
+    final l$plural = plural;
+    final l$unitType = unitType;
+    return Object.hashAll([
+      _$data.containsKey('id') ? l$id : const {},
+      _$data.containsKey('name') ? l$name : const {},
+      _$data.containsKey('plural') ? l$plural : const {},
+      _$data.containsKey('unitType') ? l$unitType : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$UnitSize_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$UnitSize_stream_cursor_value_input(
+    Input$UnitSize_stream_cursor_value_input instance,
+    TRes Function(Input$UnitSize_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$UnitSize_stream_cursor_value_input;
+
+  factory CopyWith$Input$UnitSize_stream_cursor_value_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitSize_stream_cursor_value_input;
+
+  TRes call({
+    String? id,
+    String? name,
+    String? plural,
+    Enum$UnitType_enum? unitType,
+  });
+}
+
+class _CopyWithImpl$Input$UnitSize_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$UnitSize_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$UnitSize_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$UnitSize_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$UnitSize_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? id = _undefined,
+    Object? name = _undefined,
+    Object? plural = _undefined,
+    Object? unitType = _undefined,
+  }) =>
+      _then(Input$UnitSize_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (id != _undefined) 'id': (id as String?),
+        if (name != _undefined) 'name': (name as String?),
+        if (plural != _undefined) 'plural': (plural as String?),
+        if (unitType != _undefined)
+          'unitType': (unitType as Enum$UnitType_enum?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$UnitSize_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$UnitSize_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$UnitSize_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    String? id,
+    String? name,
+    String? plural,
+    Enum$UnitType_enum? unitType,
+  }) =>
+      _res;
+}
+
 class Input$UnitType_bool_exp {
   factory Input$UnitType_bool_exp({
     Input$UnitSize_bool_exp? UnitSizes,
@@ -26463,6 +29571,307 @@ class _CopyWithStubImpl$Input$UnitType_order_by<TRes>
       CopyWith$Input$UnitSize_aggregate_order_by.stub(_res);
 }
 
+class Input$UnitType_stream_cursor_input {
+  factory Input$UnitType_stream_cursor_input({
+    required Input$UnitType_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$UnitType_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$UnitType_stream_cursor_input._(this._$data);
+
+  factory Input$UnitType_stream_cursor_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$UnitType_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$UnitType_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$UnitType_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value'] as Input$UnitType_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$UnitType_stream_cursor_input<
+          Input$UnitType_stream_cursor_input>
+      get copyWith => CopyWith$Input$UnitType_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$UnitType_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$UnitType_stream_cursor_input<TRes> {
+  factory CopyWith$Input$UnitType_stream_cursor_input(
+    Input$UnitType_stream_cursor_input instance,
+    TRes Function(Input$UnitType_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$UnitType_stream_cursor_input;
+
+  factory CopyWith$Input$UnitType_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitType_stream_cursor_input;
+
+  TRes call({
+    Input$UnitType_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$UnitType_stream_cursor_value_input<TRes> get initial_value;
+}
+
+class _CopyWithImpl$Input$UnitType_stream_cursor_input<TRes>
+    implements CopyWith$Input$UnitType_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$UnitType_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$UnitType_stream_cursor_input _instance;
+
+  final TRes Function(Input$UnitType_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$UnitType_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$UnitType_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$UnitType_stream_cursor_value_input<TRes> get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$UnitType_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$UnitType_stream_cursor_input<TRes>
+    implements CopyWith$Input$UnitType_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$UnitType_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$UnitType_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$UnitType_stream_cursor_value_input<TRes> get initial_value =>
+      CopyWith$Input$UnitType_stream_cursor_value_input.stub(_res);
+}
+
+class Input$UnitType_stream_cursor_value_input {
+  factory Input$UnitType_stream_cursor_value_input({
+    String? description,
+    String? id,
+  }) =>
+      Input$UnitType_stream_cursor_value_input._({
+        if (description != null) r'description': description,
+        if (id != null) r'id': id,
+      });
+
+  Input$UnitType_stream_cursor_value_input._(this._$data);
+
+  factory Input$UnitType_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('description')) {
+      final l$description = data['description'];
+      result$data['description'] = (l$description as String?);
+    }
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    return Input$UnitType_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get description => (_$data['description'] as String?);
+
+  String? get id => (_$data['id'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('description')) {
+      final l$description = description;
+      result$data['description'] = l$description;
+    }
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$UnitType_stream_cursor_value_input<
+          Input$UnitType_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$UnitType_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$UnitType_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$description = description;
+    final lOther$description = other.description;
+    if (_$data.containsKey('description') !=
+        other._$data.containsKey('description')) {
+      return false;
+    }
+    if (l$description != lOther$description) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$description = description;
+    final l$id = id;
+    return Object.hashAll([
+      _$data.containsKey('description') ? l$description : const {},
+      _$data.containsKey('id') ? l$id : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$UnitType_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$UnitType_stream_cursor_value_input(
+    Input$UnitType_stream_cursor_value_input instance,
+    TRes Function(Input$UnitType_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$UnitType_stream_cursor_value_input;
+
+  factory CopyWith$Input$UnitType_stream_cursor_value_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$UnitType_stream_cursor_value_input;
+
+  TRes call({
+    String? description,
+    String? id,
+  });
+}
+
+class _CopyWithImpl$Input$UnitType_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$UnitType_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$UnitType_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$UnitType_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$UnitType_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? description = _undefined,
+    Object? id = _undefined,
+  }) =>
+      _then(Input$UnitType_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (description != _undefined) 'description': (description as String?),
+        if (id != _undefined) 'id': (id as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$UnitType_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$UnitType_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$UnitType_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    String? description,
+    String? id,
+  }) =>
+      _res;
+}
+
 class Input$User_bool_exp {
   factory Input$User_bool_exp({
     Input$File_bool_exp? Files,
@@ -27107,6 +30516,304 @@ class _CopyWithStubImpl$Input$User_order_by<TRes>
 
   CopyWith$Input$Recipe_aggregate_order_by<TRes> get Recipes_aggregate =>
       CopyWith$Input$Recipe_aggregate_order_by.stub(_res);
+}
+
+class Input$User_stream_cursor_input {
+  factory Input$User_stream_cursor_input({
+    required Input$User_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$User_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$User_stream_cursor_input._(this._$data);
+
+  factory Input$User_stream_cursor_input.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$User_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$User_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$User_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value'] as Input$User_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$User_stream_cursor_input<Input$User_stream_cursor_input>
+      get copyWith => CopyWith$Input$User_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$User_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$User_stream_cursor_input<TRes> {
+  factory CopyWith$Input$User_stream_cursor_input(
+    Input$User_stream_cursor_input instance,
+    TRes Function(Input$User_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$User_stream_cursor_input;
+
+  factory CopyWith$Input$User_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$User_stream_cursor_input;
+
+  TRes call({
+    Input$User_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$User_stream_cursor_value_input<TRes> get initial_value;
+}
+
+class _CopyWithImpl$Input$User_stream_cursor_input<TRes>
+    implements CopyWith$Input$User_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$User_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$User_stream_cursor_input _instance;
+
+  final TRes Function(Input$User_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$User_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$User_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$User_stream_cursor_value_input<TRes> get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$User_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$User_stream_cursor_input<TRes>
+    implements CopyWith$Input$User_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$User_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$User_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$User_stream_cursor_value_input<TRes> get initial_value =>
+      CopyWith$Input$User_stream_cursor_value_input.stub(_res);
+}
+
+class Input$User_stream_cursor_value_input {
+  factory Input$User_stream_cursor_value_input({
+    String? id,
+    String? name,
+  }) =>
+      Input$User_stream_cursor_value_input._({
+        if (id != null) r'id': id,
+        if (name != null) r'name': name,
+      });
+
+  Input$User_stream_cursor_value_input._(this._$data);
+
+  factory Input$User_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('id')) {
+      final l$id = data['id'];
+      result$data['id'] = (l$id as String?);
+    }
+    if (data.containsKey('name')) {
+      final l$name = data['name'];
+      result$data['name'] = (l$name as String?);
+    }
+    return Input$User_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get id => (_$data['id'] as String?);
+
+  String? get name => (_$data['name'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('id')) {
+      final l$id = id;
+      result$data['id'] = l$id;
+    }
+    if (_$data.containsKey('name')) {
+      final l$name = name;
+      result$data['name'] = l$name;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$User_stream_cursor_value_input<
+          Input$User_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$User_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$User_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (_$data.containsKey('id') != other._$data.containsKey('id')) {
+      return false;
+    }
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$name = name;
+    final lOther$name = other.name;
+    if (_$data.containsKey('name') != other._$data.containsKey('name')) {
+      return false;
+    }
+    if (l$name != lOther$name) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$id = id;
+    final l$name = name;
+    return Object.hashAll([
+      _$data.containsKey('id') ? l$id : const {},
+      _$data.containsKey('name') ? l$name : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$User_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$User_stream_cursor_value_input(
+    Input$User_stream_cursor_value_input instance,
+    TRes Function(Input$User_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$User_stream_cursor_value_input;
+
+  factory CopyWith$Input$User_stream_cursor_value_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$User_stream_cursor_value_input;
+
+  TRes call({
+    String? id,
+    String? name,
+  });
+}
+
+class _CopyWithImpl$Input$User_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$User_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$User_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$User_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$User_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? id = _undefined,
+    Object? name = _undefined,
+  }) =>
+      _then(Input$User_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (id != _undefined) 'id': (id as String?),
+        if (name != _undefined) 'name': (name as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$User_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$User_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$User_stream_cursor_value_input(this._res);
+
+  TRes _res;
+
+  call({
+    String? id,
+    String? name,
+  }) =>
+      _res;
 }
 
 class Input$_RecipeToTag_aggregate_order_by {
@@ -28994,6 +32701,308 @@ class _CopyWithImpl$Input$_RecipeToTag_set_input<TRes>
 class _CopyWithStubImpl$Input$_RecipeToTag_set_input<TRes>
     implements CopyWith$Input$_RecipeToTag_set_input<TRes> {
   _CopyWithStubImpl$Input$_RecipeToTag_set_input(this._res);
+
+  TRes _res;
+
+  call({
+    String? A,
+    String? B,
+  }) =>
+      _res;
+}
+
+class Input$_RecipeToTag_stream_cursor_input {
+  factory Input$_RecipeToTag_stream_cursor_input({
+    required Input$_RecipeToTag_stream_cursor_value_input initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      Input$_RecipeToTag_stream_cursor_input._({
+        r'initial_value': initial_value,
+        if (ordering != null) r'ordering': ordering,
+      });
+
+  Input$_RecipeToTag_stream_cursor_input._(this._$data);
+
+  factory Input$_RecipeToTag_stream_cursor_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = data['initial_value'];
+    result$data['initial_value'] =
+        Input$_RecipeToTag_stream_cursor_value_input.fromJson(
+            (l$initial_value as Map<String, dynamic>));
+    if (data.containsKey('ordering')) {
+      final l$ordering = data['ordering'];
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : fromJson$Enum$cursor_ordering((l$ordering as String));
+    }
+    return Input$_RecipeToTag_stream_cursor_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  Input$_RecipeToTag_stream_cursor_value_input get initial_value =>
+      (_$data['initial_value'] as Input$_RecipeToTag_stream_cursor_value_input);
+
+  Enum$cursor_ordering? get ordering =>
+      (_$data['ordering'] as Enum$cursor_ordering?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$initial_value = initial_value;
+    result$data['initial_value'] = l$initial_value.toJson();
+    if (_$data.containsKey('ordering')) {
+      final l$ordering = ordering;
+      result$data['ordering'] =
+          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$_RecipeToTag_stream_cursor_input<
+          Input$_RecipeToTag_stream_cursor_input>
+      get copyWith => CopyWith$Input$_RecipeToTag_stream_cursor_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$_RecipeToTag_stream_cursor_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$initial_value = initial_value;
+    final lOther$initial_value = other.initial_value;
+    if (l$initial_value != lOther$initial_value) {
+      return false;
+    }
+    final l$ordering = ordering;
+    final lOther$ordering = other.ordering;
+    if (_$data.containsKey('ordering') !=
+        other._$data.containsKey('ordering')) {
+      return false;
+    }
+    if (l$ordering != lOther$ordering) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$initial_value = initial_value;
+    final l$ordering = ordering;
+    return Object.hashAll([
+      l$initial_value,
+      _$data.containsKey('ordering') ? l$ordering : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$_RecipeToTag_stream_cursor_input<TRes> {
+  factory CopyWith$Input$_RecipeToTag_stream_cursor_input(
+    Input$_RecipeToTag_stream_cursor_input instance,
+    TRes Function(Input$_RecipeToTag_stream_cursor_input) then,
+  ) = _CopyWithImpl$Input$_RecipeToTag_stream_cursor_input;
+
+  factory CopyWith$Input$_RecipeToTag_stream_cursor_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_input;
+
+  TRes call({
+    Input$_RecipeToTag_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  });
+  CopyWith$Input$_RecipeToTag_stream_cursor_value_input<TRes> get initial_value;
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_stream_cursor_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_stream_cursor_input<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_stream_cursor_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$_RecipeToTag_stream_cursor_input _instance;
+
+  final TRes Function(Input$_RecipeToTag_stream_cursor_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? initial_value = _undefined,
+    Object? ordering = _undefined,
+  }) =>
+      _then(Input$_RecipeToTag_stream_cursor_input._({
+        ..._instance._$data,
+        if (initial_value != _undefined && initial_value != null)
+          'initial_value':
+              (initial_value as Input$_RecipeToTag_stream_cursor_value_input),
+        if (ordering != _undefined)
+          'ordering': (ordering as Enum$cursor_ordering?),
+      }));
+
+  CopyWith$Input$_RecipeToTag_stream_cursor_value_input<TRes>
+      get initial_value {
+    final local$initial_value = _instance.initial_value;
+    return CopyWith$Input$_RecipeToTag_stream_cursor_value_input(
+        local$initial_value, (e) => call(initial_value: e));
+  }
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_stream_cursor_input<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_input(this._res);
+
+  TRes _res;
+
+  call({
+    Input$_RecipeToTag_stream_cursor_value_input? initial_value,
+    Enum$cursor_ordering? ordering,
+  }) =>
+      _res;
+
+  CopyWith$Input$_RecipeToTag_stream_cursor_value_input<TRes>
+      get initial_value =>
+          CopyWith$Input$_RecipeToTag_stream_cursor_value_input.stub(_res);
+}
+
+class Input$_RecipeToTag_stream_cursor_value_input {
+  factory Input$_RecipeToTag_stream_cursor_value_input({
+    String? A,
+    String? B,
+  }) =>
+      Input$_RecipeToTag_stream_cursor_value_input._({
+        if (A != null) r'A': A,
+        if (B != null) r'B': B,
+      });
+
+  Input$_RecipeToTag_stream_cursor_value_input._(this._$data);
+
+  factory Input$_RecipeToTag_stream_cursor_value_input.fromJson(
+      Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('A')) {
+      final l$A = data['A'];
+      result$data['A'] = (l$A as String?);
+    }
+    if (data.containsKey('B')) {
+      final l$B = data['B'];
+      result$data['B'] = (l$B as String?);
+    }
+    return Input$_RecipeToTag_stream_cursor_value_input._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get A => (_$data['A'] as String?);
+
+  String? get B => (_$data['B'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('A')) {
+      final l$A = A;
+      result$data['A'] = l$A;
+    }
+    if (_$data.containsKey('B')) {
+      final l$B = B;
+      result$data['B'] = l$B;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$_RecipeToTag_stream_cursor_value_input<
+          Input$_RecipeToTag_stream_cursor_value_input>
+      get copyWith => CopyWith$Input$_RecipeToTag_stream_cursor_value_input(
+            this,
+            (i) => i,
+          );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Input$_RecipeToTag_stream_cursor_value_input) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$A = A;
+    final lOther$A = other.A;
+    if (_$data.containsKey('A') != other._$data.containsKey('A')) {
+      return false;
+    }
+    if (l$A != lOther$A) {
+      return false;
+    }
+    final l$B = B;
+    final lOther$B = other.B;
+    if (_$data.containsKey('B') != other._$data.containsKey('B')) {
+      return false;
+    }
+    if (l$B != lOther$B) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$A = A;
+    final l$B = B;
+    return Object.hashAll([
+      _$data.containsKey('A') ? l$A : const {},
+      _$data.containsKey('B') ? l$B : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$_RecipeToTag_stream_cursor_value_input<TRes> {
+  factory CopyWith$Input$_RecipeToTag_stream_cursor_value_input(
+    Input$_RecipeToTag_stream_cursor_value_input instance,
+    TRes Function(Input$_RecipeToTag_stream_cursor_value_input) then,
+  ) = _CopyWithImpl$Input$_RecipeToTag_stream_cursor_value_input;
+
+  factory CopyWith$Input$_RecipeToTag_stream_cursor_value_input.stub(TRes res) =
+      _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_value_input;
+
+  TRes call({
+    String? A,
+    String? B,
+  });
+}
+
+class _CopyWithImpl$Input$_RecipeToTag_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_stream_cursor_value_input<TRes> {
+  _CopyWithImpl$Input$_RecipeToTag_stream_cursor_value_input(
+    this._instance,
+    this._then,
+  );
+
+  final Input$_RecipeToTag_stream_cursor_value_input _instance;
+
+  final TRes Function(Input$_RecipeToTag_stream_cursor_value_input) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? A = _undefined,
+    Object? B = _undefined,
+  }) =>
+      _then(Input$_RecipeToTag_stream_cursor_value_input._({
+        ..._instance._$data,
+        if (A != _undefined) 'A': (A as String?),
+        if (B != _undefined) 'B': (B as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_value_input<TRes>
+    implements CopyWith$Input$_RecipeToTag_stream_cursor_value_input<TRes> {
+  _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_value_input(this._res);
 
   TRes _res;
 
@@ -31326,6 +35335,39 @@ Enum$_RecipeToTag_update_column fromJson$Enum$_RecipeToTag_update_column(
       return Enum$_RecipeToTag_update_column.B;
     default:
       return Enum$_RecipeToTag_update_column.$unknown;
+  }
+}
+
+enum Enum$cursor_ordering {
+  ASC,
+  DESC,
+  $unknown;
+
+  factory Enum$cursor_ordering.fromJson(String value) =>
+      fromJson$Enum$cursor_ordering(value);
+
+  String toJson() => toJson$Enum$cursor_ordering(this);
+}
+
+String toJson$Enum$cursor_ordering(Enum$cursor_ordering e) {
+  switch (e) {
+    case Enum$cursor_ordering.ASC:
+      return r'ASC';
+    case Enum$cursor_ordering.DESC:
+      return r'DESC';
+    case Enum$cursor_ordering.$unknown:
+      return r'$unknown';
+  }
+}
+
+Enum$cursor_ordering fromJson$Enum$cursor_ordering(String value) {
+  switch (value) {
+    case r'ASC':
+      return Enum$cursor_ordering.ASC;
+    case r'DESC':
+      return Enum$cursor_ordering.DESC;
+    default:
+      return Enum$cursor_ordering.$unknown;
   }
 }
 

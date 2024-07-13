@@ -141,6 +141,28 @@ enum File_select_column {
 }
 
 """
+Streaming cursor of the table "File"
+"""
+input File_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: File_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input File_stream_cursor_value_input {
+  blob: bytea
+  createdAt: timestamp
+  id: String
+  mimetype: String
+  recipeId: String
+  updatedAt: timestamp
+  userId: String
+}
+
+"""
 columns and relationships of "Ingredient"
 """
 type Ingredient {
@@ -321,6 +343,28 @@ input IngredientUnit_stddev_samp_order_by {
 }
 
 """
+Streaming cursor of the table "IngredientUnit"
+"""
+input IngredientUnit_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: IngredientUnit_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input IngredientUnit_stream_cursor_value_input {
+  amount: float8
+  id: String
+  ingredientId: String
+  notes: String
+  order: Int
+  recipeSectionId: String
+  unitId: String
+}
+
+"""
 order by sum() on columns of table "IngredientUnit"
 """
 input IngredientUnit_sum_order_by {
@@ -380,6 +424,23 @@ enum Ingredient_select_column {
 
   """column name"""
   name
+}
+
+"""
+Streaming cursor of the table "Ingredient"
+"""
+input Ingredient_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: Ingredient_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input Ingredient_stream_cursor_value_input {
+  id: String
+  name: String
 }
 
 """
@@ -677,6 +738,30 @@ input RecipeSection_stddev_samp_order_by {
 }
 
 """
+Streaming cursor of the table "RecipeSection"
+"""
+input RecipeSection_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: RecipeSection_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input RecipeSection_stream_cursor_value_input {
+  cookTimeMinutes: Int
+  description: String
+  id: String
+  name: String
+  order: Int
+  prepTimeMinutes: Int
+  recipeId: String
+  servingUnit: String
+  servings: Int
+}
+
+"""
 order by sum() on columns of table "RecipeSection"
 """
 input RecipeSection_sum_order_by {
@@ -820,6 +905,29 @@ enum Recipe_select_column {
 }
 
 """
+Streaming cursor of the table "Recipe"
+"""
+input Recipe_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: Recipe_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input Recipe_stream_cursor_value_input {
+  authorId: String
+  createdAt: timestamp
+  description: String
+  id: String
+  notes: String
+  source: String
+  title: String
+  updatedAt: timestamp
+}
+
+"""
 columns and relationships of "Step"
 """
 type Step {
@@ -947,6 +1055,26 @@ order by stddev_samp() on columns of table "Step"
 """
 input Step_stddev_samp_order_by {
   order: order_by
+}
+
+"""
+Streaming cursor of the table "Step"
+"""
+input Step_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: Step_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input Step_stream_cursor_value_input {
+  description: String
+  fileId: String
+  id: String
+  order: Int
+  recipeSectionId: String
 }
 
 """
@@ -1086,6 +1214,23 @@ enum Tag_select_column {
 }
 
 """
+Streaming cursor of the table "Tag"
+"""
+input Tag_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: Tag_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input Tag_stream_cursor_value_input {
+  id: String
+  name: String
+}
+
+"""
 columns and relationships of "UnitSize"
 """
 type UnitSize {
@@ -1185,6 +1330,25 @@ enum UnitSize_select_column {
 }
 
 """
+Streaming cursor of the table "UnitSize"
+"""
+input UnitSize_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: UnitSize_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input UnitSize_stream_cursor_value_input {
+  id: String
+  name: String
+  plural: String
+  unitType: UnitType_enum
+}
+
+"""
 columns and relationships of "UnitType"
 """
 type UnitType {
@@ -1253,6 +1417,23 @@ enum UnitType_select_column {
 
   """column name"""
   id
+}
+
+"""
+Streaming cursor of the table "UnitType"
+"""
+input UnitType_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: UnitType_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input UnitType_stream_cursor_value_input {
+  description: String
+  id: String
 }
 
 """
@@ -1331,6 +1512,23 @@ enum User_select_column {
 }
 
 """
+Streaming cursor of the table "User"
+"""
+input User_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: User_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input User_stream_cursor_value_input {
+  id: String
+  name: String
+}
+
+"""
 columns and relationships of "_RecipeToTag"
 """
 type _RecipeToTag {
@@ -1401,6 +1599,23 @@ enum _RecipeToTag_select_column {
   B
 }
 
+"""
+Streaming cursor of the table "_RecipeToTag"
+"""
+input _RecipeToTag_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: _RecipeToTag_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input _RecipeToTag_stream_cursor_value_input {
+  A: String
+  B: String
+}
+
 scalar bytea
 
 """
@@ -1416,6 +1631,15 @@ input bytea_comparison_exp {
   _lte: bytea
   _neq: bytea
   _nin: [bytea!]
+}
+
+"""ordering argument of a cursor"""
+enum cursor_ordering {
+  """ascending ordering of the cursor"""
+  ASC
+
+  """descending ordering of the cursor"""
+  DESC
 }
 
 scalar float8
@@ -1733,6 +1957,20 @@ type subscription_root {
   File_by_pk(id: String!): File
 
   """
+  fetch data from the table in a streaming manner: "File"
+  """
+  File_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [File_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: File_bool_exp
+  ): [File!]!
+
+  """
   fetch data from the table: "Ingredient"
   """
   Ingredient(
@@ -1775,8 +2013,36 @@ type subscription_root {
   """fetch data from the table: "IngredientUnit" using primary key columns"""
   IngredientUnit_by_pk(id: String!): IngredientUnit
 
+  """
+  fetch data from the table in a streaming manner: "IngredientUnit"
+  """
+  IngredientUnit_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [IngredientUnit_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: IngredientUnit_bool_exp
+  ): [IngredientUnit!]!
+
   """fetch data from the table: "Ingredient" using primary key columns"""
   Ingredient_by_pk(id: String!): Ingredient
+
+  """
+  fetch data from the table in a streaming manner: "Ingredient"
+  """
+  Ingredient_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [Ingredient_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: Ingredient_bool_exp
+  ): [Ingredient!]!
 
   """
   fetch data from the table: "Recipe"
@@ -1821,8 +2087,36 @@ type subscription_root {
   """fetch data from the table: "RecipeSection" using primary key columns"""
   RecipeSection_by_pk(id: String!): RecipeSection
 
+  """
+  fetch data from the table in a streaming manner: "RecipeSection"
+  """
+  RecipeSection_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [RecipeSection_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: RecipeSection_bool_exp
+  ): [RecipeSection!]!
+
   """fetch data from the table: "Recipe" using primary key columns"""
   Recipe_by_pk(id: String!): Recipe
+
+  """
+  fetch data from the table in a streaming manner: "Recipe"
+  """
+  Recipe_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [Recipe_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: Recipe_bool_exp
+  ): [Recipe!]!
 
   """
   fetch data from the table: "Step"
@@ -1848,6 +2142,20 @@ type subscription_root {
   Step_by_pk(id: String!): Step
 
   """
+  fetch data from the table in a streaming manner: "Step"
+  """
+  Step_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [Step_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: Step_bool_exp
+  ): [Step!]!
+
+  """
   fetch data from the table: "Tag"
   """
   Tag(
@@ -1869,6 +2177,20 @@ type subscription_root {
 
   """fetch data from the table: "Tag" using primary key columns"""
   Tag_by_pk(id: String!): Tag
+
+  """
+  fetch data from the table in a streaming manner: "Tag"
+  """
+  Tag_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [Tag_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: Tag_bool_exp
+  ): [Tag!]!
 
   """
   fetch data from the table: "UnitSize"
@@ -1894,6 +2216,20 @@ type subscription_root {
   UnitSize_by_pk(id: String!): UnitSize
 
   """
+  fetch data from the table in a streaming manner: "UnitSize"
+  """
+  UnitSize_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [UnitSize_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: UnitSize_bool_exp
+  ): [UnitSize!]!
+
+  """
   fetch data from the table: "UnitType"
   """
   UnitType(
@@ -1915,6 +2251,20 @@ type subscription_root {
 
   """fetch data from the table: "UnitType" using primary key columns"""
   UnitType_by_pk(id: String!): UnitType
+
+  """
+  fetch data from the table in a streaming manner: "UnitType"
+  """
+  UnitType_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [UnitType_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: UnitType_bool_exp
+  ): [UnitType!]!
 
   """
   fetch data from the table: "User"
@@ -1940,6 +2290,20 @@ type subscription_root {
   User_by_pk(id: String!): User
 
   """
+  fetch data from the table in a streaming manner: "User"
+  """
+  User_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [User_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: User_bool_exp
+  ): [User!]!
+
+  """
   fetch data from the table: "_RecipeToTag"
   """
   _RecipeToTag(
@@ -1954,6 +2318,20 @@ type subscription_root {
 
     """sort the rows by one or more columns"""
     order_by: [_RecipeToTag_order_by!]
+
+    """filter the rows returned"""
+    where: _RecipeToTag_bool_exp
+  ): [_RecipeToTag!]!
+
+  """
+  fetch data from the table in a streaming manner: "_RecipeToTag"
+  """
+  _RecipeToTag_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [_RecipeToTag_stream_cursor_input]!
 
     """filter the rows returned"""
     where: _RecipeToTag_bool_exp
