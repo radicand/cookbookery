@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.6](https://github.com/radicand/cookbookery/compare/app-v1.6.5...app-v1.6.6) (2024-07-13)
+
+
+### Bug Fixes
+
+* gemfile ([9c8ac86](https://github.com/radicand/cookbookery/commit/9c8ac86005f0882b7d8205db3e4f4f0c040c258b))
+
 ## [1.6.5](https://github.com/radicand/cookbookery/compare/app-v1.6.4...app-v1.6.5) (2024-07-13)
 
 
