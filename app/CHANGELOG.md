@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.5](https://github.com/radicand/cookbookery/compare/app-v1.6.4...app-v1.6.5) (2024-07-13)
+
+
+### Bug Fixes
+
+* minSdk version ([fada871](https://github.com/radicand/cookbookery/commit/fada871a8fbf1cdb8d188aaa6d7bfd2dbb71bd6b))
+* **sec:** close rexml alert ([7e7692e](https://github.com/radicand/cookbookery/commit/7e7692e8cb554c84d3cae312f8e73fdd0013fa18))
+
 ## [1.6.4](https://github.com/radicand/cookbookery/compare/app-v1.6.3...app-v1.6.4) (2024-07-13)
 
 
