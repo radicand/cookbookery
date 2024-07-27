@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/radicand/cookbookery/compare/server-api-v1.5.0...server-api-v1.5.1) (2024-07-27)
+
+
+### Bug Fixes
+
+* correct release pipeline for server components ([91bcef5](https://github.com/radicand/cookbookery/commit/91bcef5b6b60d0c5f2eb66a6a2e65f955f73b1f7))
+
 ## [1.5.0](https://github.com/radicand/cookbookery/compare/server-api-v1.4.1...server-api-v1.5.0) (2024-07-27)
 
 
