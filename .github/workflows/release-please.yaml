@@ -5,12 +5,62 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      api--tag_name: ${{ steps.release.outputs.api--tag_name}}
+      api--release_created: ${{ steps.release.outputs.api--release_created}}
+      app--tag_name: ${{ steps.release.outputs.app--tag_name}}
+      app--release_created: ${{ steps.release.outputs.app--release_created}}
+      faas--tag_name: ${{ steps.release.outputs.faas--tag_name}}
+      faas--release_created: ${{ steps.release.outputs.faas--release_created}}
+      web--tag_name: ${{ steps.release.outputs.web--tag_name}}
+      web--release_created: ${{ steps.release.outputs.web--release_created}}
     steps:
-      - uses: google-github-actions/release-please-action@v4
+      - uses: googleapis/release-please-action@v4
         id: release
         with:
           token: ${{ secrets.GH_PAT }}
-          
+      - name: Print release outputs for debugging
+        continue-on-error: true
+        run: |
+          echo "Release outputs:"
+          echo "${{ toJson(steps.release.outputs) }}"
+
+  release-api:
+    if: ${{needs.release-please.outputs.api--release_created}}
+    needs: release-please
+    uses: .github/workflows/release-api.yaml@main
+    secrets: inherit
+    with:
+      tag_name: ${{needs.release-please.outputs.api--tag_name}}
+  
+  release-app:
+    if: ${{needs.release-please.outputs.app--release_created}}
+    needs: release-please
+    uses: .github/workflows/release-app.yaml@main
+    secrets: inherit
+    with:
+      tag_name: ${{needs.release-please.outputs.app--tag_name}}
+      lane: beta
+
+  release-faas:
+    if: ${{needs.release-please.outputs.faas--release_created}}
+    needs: release-please
+    uses: .github/workflows/release-faas.yaml@main
+    secrets: inherit
+    with:
+      tag_name: ${{needs.release-please.outputs.faas--tag_name}}
+
+  release-web:
+    if: ${{needs.release-please.outputs.web--release_created}}
+    needs: release-please
+    uses: .github/workflows/release-web.yaml@main
+    secrets: inherit
+    with:
+      tag_name: ${{needs.release-please.outputs.web--tag_name}}

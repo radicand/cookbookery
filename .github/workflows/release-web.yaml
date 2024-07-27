@@ -4,11 +4,31 @@ concurrency:
   group: build-web
 
 on:
-  release:
-    types:
-      - published
   workflow_dispatch:
+    inputs:
+      tag_name:
+        type: string
+        description: 'Tag name'
+        required: true
   workflow_call:
+    inputs:
+      tag_name:
+        type: string
+        description: 'Tag name'
+        required: true
+    secrets:
+      DOTENV:
+        description: '.env file content'
+        required: true
+      CR_PAT:
+        description: 'GitHub Container Registry Personal Access Token'
+        required: true
+      KUBE_CONFIG:
+        description: 'Kubeconfig'
+        required: true
+      KUBE_INGRESS_BASE_DOMAIN:
+        description: 'Kube ingress base domain'
+        required: true
 jobs:
   build:
     environment:

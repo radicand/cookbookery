@@ -3,12 +3,33 @@ concurrency:
   cancel-in-progress: true
   group: build-faas
 
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
-  release:
-    types:
-      - published
   workflow_dispatch:
+    inputs:
+      tag_name:
+        type: string
+        description: 'Tag name'
+        required: true
   workflow_call:
+    inputs:
+      tag_name:
+        type: string
+        description: 'Tag name'
+        required: true
+    secrets:
+      CR_PAT:
+        description: 'GitHub Container Registry Personal Access Token'
+        required: true
+      OPENFAAS_GATEWAY:
+        description: 'OpenFaaS Gateway'
+        required: true
+      OPENFAAS_GATEWAY_PASSWD:
+        description: 'OpenFaaS Gateway password'
+        required: true
 jobs:
   build:
     environment:

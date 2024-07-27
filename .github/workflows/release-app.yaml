@@ -3,17 +3,77 @@ concurrency:
   cancel-in-progress: true
   group: build-app
 
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
-  release:
-    types:
-      - published
   workflow_call:
     inputs:
-      lane:
-        required: true
+      tag_name:
         type: string
+        description: 'Tag name'
+        required: true
+      lane:
+        type: string
+        description: "Fastlane lane"
+        required: true
+        default: "beta"
+    secrets:
+      GH_PAT:
+        description: 'GitHub Personal Access Token'
+        required: true
+      DOTENV:
+        description: '.env file content'
+        required: true
+      ANDROID_KEYSTORE_BASE64:
+        description: 'Android keystore base64'
+        required: true
+      ANDROID_KEYSTORE_PASSWORD:
+        description: 'Android keystore password'
+        required: true
+      ANDROID_KEY_ALIAS:
+        description: 'Android key alias'
+        required: true
+      GOOGLE_PLAY_SERVICE_JSON:
+        description: 'Google Play service JSON'
+        required: true
+      TEAM_ID:
+        description: 'Apple Team ID'
+        required: true
+      ITC_TEAM_ID:
+        description: 'Apple ITC Team ID'
+        required: true
+      FASTLANE_USER_APPLE:
+        description: 'Apple Fastlane user'
+        required: true
+      FASTLANE_PASSWORD_APPLE:
+        description: 'Apple Fastlane password'
+        required: true
+      FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD:
+        description: 'Apple Fastlane application specific password'
+        required: true
+      FASTLANE_SESSION:
+        description: 'Apple Fastlane session'
+        required: true
+      MATCH_PASSWORD:
+        description: 'Apple Match password'
+        required: true
+      MATCH_KEYCHAIN_NAME:
+        description: 'Apple Match keychain name'
+        required: true
+      MATCH_KEYCHAIN_PASSWORD:
+        description: 'Apple Match keychain password'
+        required: true
+      DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS:
+        description: 'Apple Deliver ITMSTRANSPORTER additional upload parameters'
+        required: true
+        
   workflow_dispatch:
     inputs:
+      tag_name:
+        description: 'Tag name'
+        required: true
       lane:
         description: "Fastlane lane"
         required: true
@@ -25,9 +85,6 @@ on:
           - beta
           - promote_to_production
           - production
-
-# Declare default permissions as read only.
-permissions: read-all
 
 jobs:
   test:
@@ -107,7 +164,7 @@ jobs:
           bundle exec fastlane ${{ github.event.inputs.lane || 'beta' }}
 
       - name: Release to Apple App Store (${{ github.event.inputs.lane || 'beta' }})
-        if: false
+        if: false # apple app store currently disabled
         working-directory: app/ios
         env:
           SUPPLY_PACKAGE_NAME: org.radicand.app.cookbook

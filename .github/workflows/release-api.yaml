@@ -3,12 +3,56 @@ concurrency:
   cancel-in-progress: true
   group: build-api
 
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
-  release:
-    types:
-      - published
   workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name'
+        required: true
   workflow_call:
+    inputs:
+      tag_name:
+        description: 'Tag name'
+        type: string
+        required: true
+    secrets:
+      GH_PAT:
+        description: 'GitHub Personal Access Token'
+        required: true
+      CR_PAT:
+        description: 'Docker Personal Access Token'
+        required: true
+      KUBE_INGRESS_BASE_DOMAIN:
+        description: 'Kubernetes Ingress Base Domain'
+        required: true
+      KUBE_CONFIG:
+        description: 'Kubernetes Config'
+        required: true
+      DATABASE_URL:
+        description: 'Database URL'
+        required: true
+      METADATA_DB_URL:
+        description: 'Metadata Database URL'
+        required: true
+      JWT_AUD:
+        description: 'JWT Audience'
+        required: true
+      JWT_ISS:
+        description: 'JWT Issuer'
+        required: true
+      JWT_JWKS:
+        description: 'JWT JWKS URL'
+        required: true
+      HASURA_ADMIN_SECRET:
+        description: 'Hasura Admin Secret'
+        required: true
+      HASURA_CORS_DOMAINS:
+        description: 'Hasura CORS Domains'
+        required: true
 jobs:
   build:
     environment:
@@ -18,6 +62,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
 
       - name: Extract tag
         id: tagdata
