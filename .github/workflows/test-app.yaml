@@ -16,9 +16,6 @@ on:
       CODECOV_TOKEN:
         required: true
 
-# Declare default permissions as read only.
-permissions: read-all
-
 jobs:
   build:
     environment: production

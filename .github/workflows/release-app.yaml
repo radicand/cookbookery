@@ -3,10 +3,6 @@ concurrency:
   cancel-in-progress: true
   group: build-app
 
-permissions:
-  contents: write
-  pull-requests: write
-
 on:
   workflow_call:
     inputs:
@@ -20,9 +16,6 @@ on:
         required: true
         default: "beta"
     secrets:
-      GH_PAT:
-        description: 'GitHub Personal Access Token'
-        required: true
       DOTENV:
         description: '.env file content'
         required: true

@@ -35,7 +35,7 @@ jobs:
   release-api:
     if: ${{needs.release-please.outputs.api--release_created}}
     needs: release-please
-    uses: .github/workflows/release-api.yaml@main
+    uses: ./.github/workflows/release-api.yaml
     secrets: inherit
     with:
       tag_name: ${{needs.release-please.outputs.api--tag_name}}
@@ -43,7 +43,7 @@ jobs:
   release-app:
     if: ${{needs.release-please.outputs.app--release_created}}
     needs: release-please
-    uses: .github/workflows/release-app.yaml@main
+    uses: ./.github/workflows/release-app.yaml
     secrets: inherit
     with:
       tag_name: ${{needs.release-please.outputs.app--tag_name}}
@@ -52,7 +52,7 @@ jobs:
   release-faas:
     if: ${{needs.release-please.outputs.faas--release_created}}
     needs: release-please
-    uses: .github/workflows/release-faas.yaml@main
+    uses: ./.github/workflows/release-faas.yaml
     secrets: inherit
     with:
       tag_name: ${{needs.release-please.outputs.faas--tag_name}}
@@ -60,7 +60,7 @@ jobs:
   release-web:
     if: ${{needs.release-please.outputs.web--release_created}}
     needs: release-please
-    uses: .github/workflows/release-web.yaml@main
+    uses: ./.github/workflows/release-web.yaml
     secrets: inherit
     with:
       tag_name: ${{needs.release-please.outputs.web--tag_name}}
