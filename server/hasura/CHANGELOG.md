@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/radicand/cookbookery/compare/server-api-v1.4.1...server-api-v1.5.0) (2024-07-27)
+
+
+### Features
+
+* **server:** update hasura ([6ac61d0](https://github.com/radicand/cookbookery/commit/6ac61d08dab44ddc2f0645b2486c5734c00c334e))
+
 ## [1.4.1](https://github.com/radicand/cookbookery/compare/server-api-v1.4.0...server-api-v1.4.1) (2024-05-09)
 
 
