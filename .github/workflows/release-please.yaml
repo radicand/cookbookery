@@ -13,14 +13,14 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     outputs:
-      api--tag_name: ${{ steps.release.outputs.api--tag_name}}
-      api--release_created: ${{ steps.release.outputs.api--release_created}}
+      api--tag_name: ${{ steps.release.outputs['server/hasura--tag_name']}}
+      api--release_created: ${{ steps.release.outputs['server/hasura--release_created']}}
       app--tag_name: ${{ steps.release.outputs.app--tag_name}}
       app--release_created: ${{ steps.release.outputs.app--release_created}}
-      faas--tag_name: ${{ steps.release.outputs.faas--tag_name}}
-      faas--release_created: ${{ steps.release.outputs.faas--release_created}}
-      web--tag_name: ${{ steps.release.outputs.web--tag_name}}
-      web--release_created: ${{ steps.release.outputs.web--release_created}}
+      faas--tag_name: ${{ steps.release.outputs['server/faas--tag_name']}}
+      faas--release_created: ${{ steps.release.outputs['server/faas--release_created']}}
+      web--tag_name: ${{ steps.release.outputs.app--tag_name}}
+      web--release_created: ${{ steps.release.outputs.app--release_created}}
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
@@ -30,7 +30,7 @@ jobs:
         continue-on-error: true
         run: |
           echo "Release outputs:"
-          echo "${{ toJson(steps.release.outputs) }}"
+          echo '${{ toJson(steps.release.outputs) }}'
 
   release-api:
     if: ${{needs.release-please.outputs.api--release_created}}
