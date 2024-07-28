@@ -20,7 +20,7 @@
       "package-name": "server-api",
       "extra-files": [
         {
-          "path": "manifest/Chart.yaml",
+          "path": "manifest/cookbook-hasura/Chart.yaml",
           "type": "yaml",
           "jsonpath": "$.appVersion"
         }
