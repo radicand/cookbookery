@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.7](https://github.com/radicand/cookbookery/compare/app-v1.6.6...app-v1.6.7) (2024-07-28)
+
+
+### Bug Fixes
+
+* attempt fix to Chart updater ([983caf3](https://github.com/radicand/cookbookery/commit/983caf337ae6962636eb91aa3ee5cd2b1c90bc93))
+
 ## [1.6.6](https://github.com/radicand/cookbookery/compare/app-v1.6.5...app-v1.6.6) (2024-07-13)
 
 
