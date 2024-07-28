@@ -19,7 +19,11 @@
     "server/hasura": {
       "package-name": "server-api",
       "extra-files": [
-        "manifest/Chart.yaml"
+        {
+          "path": "server/hasura/manifest/Chart.yaml",
+          "type": "yaml",
+          "jsonpath": "$.appVersion"
+        }
       ],
       "release-type": "simple",
       "monorepo-tags": true
