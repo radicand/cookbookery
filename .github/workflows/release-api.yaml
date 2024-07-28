@@ -64,7 +64,7 @@ jobs:
       - name: Extract tag
         id: tagdata
         run: |
-          echo "::set-output name=tag::`cat server/hasura/version.txt`"
+          echo "tag=`cat server/hasura/version.txt`" >> $GITHUB_OUTPUT
 
       - name: Docker meta
         id: meta
@@ -106,7 +106,7 @@ jobs:
       - name: Extract env url
         id: envurl
         run: |
-          echo "::set-output name=url::cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}"
+            echo "url=cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}" >> $GITHUB_OUTPUT
 
       - name: Install Helm
         uses: azure/setup-helm@v4

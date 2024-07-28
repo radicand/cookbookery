@@ -103,7 +103,7 @@ jobs:
       - name: Extract env url
         id: envurl
         run: |
-          echo "::set-output name=url::cookbookery-web.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}"
+          echo "url=cookbookery-web.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}" >> $GITHUB_OUTPUT
 
       - name: Install Helm
         uses: azure/setup-helm@v4
