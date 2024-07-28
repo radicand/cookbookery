@@ -20,7 +20,7 @@
       "package-name": "server-api",
       "extra-files": [
         {
-          "path": "server/hasura/manifest/Chart.yaml",
+          "path": "manifest/Chart.yaml",
           "type": "yaml",
           "jsonpath": "$.appVersion"
         }
