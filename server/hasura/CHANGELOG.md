@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.6.0](https://github.com/radicand/cookbookery/compare/server-api-v1.5.1...server-api-v1.6.0) (2024-07-28)
+
+
+### Features
+
+* make api use helm updater ([a068e0a](https://github.com/radicand/cookbookery/commit/a068e0a9bab404c2e08a189def9b6f1f440b3d5e))
+
+
+### Bug Fixes
+
+* attempt fix to Chart updater ([983caf3](https://github.com/radicand/cookbookery/commit/983caf337ae6962636eb91aa3ee5cd2b1c90bc93))
+* force ([5831836](https://github.com/radicand/cookbookery/commit/5831836b2b3b200ec0c991ac11adb06d842a0a7a))
+* rp ([066955a](https://github.com/radicand/cookbookery/commit/066955a77ef991d4b9665e5ee0238ca6274a4659))
+* rp ([08b3d18](https://github.com/radicand/cookbookery/commit/08b3d187afb61a1d98d917fdbe9f12776416930c))
+
 ## [1.5.1](https://github.com/radicand/cookbookery/compare/server-api-v1.5.0...server-api-v1.5.1) (2024-07-27)
 
 
