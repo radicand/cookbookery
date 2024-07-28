@@ -39,6 +39,7 @@ jobs:
     secrets: inherit
     with:
       tag_name: ${{needs.release-please.outputs.api--tag_name}}
+      
   
   release-app:
     if: ${{needs.release-please.outputs.app--release_created}}
