@@ -17,7 +17,7 @@
     },
     "server/hasura": {
       "package-name": "server-api",
-      "release-type": "simple",
+      "release-type": "helm",
       "monorepo-tags": true
     }
   }
