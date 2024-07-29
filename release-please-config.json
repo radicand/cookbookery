@@ -3,6 +3,13 @@
   "packages": {
     "app": {
       "package-name": "app",
+      "extra-files": [
+        {
+          "path": "manifest/cookbook-web/Chart.yaml",
+          "type": "yaml",
+          "jsonpath": "$.appVersion"
+        }
+      ],
       "release-type": "dart",
       "monorepo-tags": true
     },
