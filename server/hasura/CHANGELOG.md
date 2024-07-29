@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/radicand/cookbookery/compare/server-api-v1.6.0...server-api-v1.6.1) (2024-07-29)
+
+
+### Bug Fixes
+
+* force bump again to test ([319fff8](https://github.com/radicand/cookbookery/commit/319fff828d782fbf7aaa01461161942273e1f232))
+
 ## [1.6.0](https://github.com/radicand/cookbookery/compare/server-api-v1.5.1...server-api-v1.6.0) (2024-07-28)
 
 

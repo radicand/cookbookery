@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.8](https://github.com/radicand/cookbookery/compare/app-v1.6.7...app-v1.6.8) (2024-07-29)
+
+
+### Bug Fixes
+
+* force bump again to test ([319fff8](https://github.com/radicand/cookbookery/commit/319fff828d782fbf7aaa01461161942273e1f232))
+
 ## [1.6.7](https://github.com/radicand/cookbookery/compare/app-v1.6.6...app-v1.6.7) (2024-07-28)
 
 

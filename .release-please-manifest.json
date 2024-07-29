@@ -1,6 +1,6 @@
 {
-  "app": "1.6.7",
-  "common": "1.0.3",
-  "server/hasura": "1.6.0",
+  "app": "1.6.8",
+  "common": "1.0.4",
+  "server/hasura": "1.6.1",
   "server/faas": "1.2.0"
 }

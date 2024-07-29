@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/radicand/cookbookery/compare/common-v1.0.3...common-v1.0.4) (2024-07-29)
+
+
+### Bug Fixes
+
+* force bump again to test ([319fff8](https://github.com/radicand/cookbookery/commit/319fff828d782fbf7aaa01461161942273e1f232))
+
 ## [1.0.3](https://github.com/radicand/cookbookery/compare/common-v1.0.2...common-v1.0.3) (2024-07-13)
 
 
