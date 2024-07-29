@@ -13,13 +13,13 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     outputs:
-      api--tag_name: ${{ steps.release.outputs['server/hasura--tag_name']}}
+      api--tag_name: ${{ steps.release.outputs['server/hasura--version']}}
       api--release_created: ${{ steps.release.outputs['server/hasura--release_created']}}
-      app--tag_name: ${{ steps.release.outputs.app--tag_name}}
+      app--tag_name: ${{ steps.release.outputs.app--version}}
       app--release_created: ${{ steps.release.outputs.app--release_created}}
-      faas--tag_name: ${{ steps.release.outputs['server/faas--tag_name']}}
+      faas--tag_name: ${{ steps.release.outputs['server/faas--version']}}
       faas--release_created: ${{ steps.release.outputs['server/faas--release_created']}}
-      web--tag_name: ${{ steps.release.outputs.app--tag_name}}
+      web--tag_name: ${{ steps.release.outputs.app--version}}
       web--release_created: ${{ steps.release.outputs.app--release_created}}
     steps:
       - uses: googleapis/release-please-action@v4
@@ -39,7 +39,7 @@ jobs:
     secrets: inherit
     with:
       tag_name: ${{needs.release-please.outputs.api--tag_name}}
-      
+      environment: production
   
   release-app:
     if: ${{needs.release-please.outputs.app--release_created}}
@@ -65,3 +65,4 @@ jobs:
     secrets: inherit
     with:
       tag_name: ${{needs.release-please.outputs.web--tag_name}}
+      environment: production

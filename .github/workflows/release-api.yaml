@@ -9,11 +9,23 @@ on:
       tag_name:
         description: 'Tag name'
         required: true
+      environment:
+        type: choice
+        options:
+          - production
+          - staging
+        description: 'Environment'
+        required: true
+        default: production
   workflow_call:
     inputs:
       tag_name:
         description: 'Tag name'
         type: string
+        required: true
+      environment:
+        type: string
+        description: 'Environment'
         required: true
     secrets:
       GH_PAT:

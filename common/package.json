@@ -15,7 +15,7 @@
     "@graphql-codegen/fragment-matcher": "^5.0.2",
     "@graphql-codegen/introspection": "4.0.3",
     "@graphql-codegen/schema-ast": "^4.1.0",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.14.13",
     "cross-fetch": "^4.0.0",
     "graphql": "^16.9.0",
     "ts-node": "^10.9.2"

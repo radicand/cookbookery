@@ -41,10 +41,10 @@ dependencies:
   flutter_mobx: ^2.2.1
   flutter_dotenv: ^5.1.0
   adaptive_navigation: ^0.0.10
-  graphql_flutter: ^5.2.0-beta.5
+  graphql_flutter: ^5.2.0-beta.6
   flutter_hooks: ^0.20.5
   graphql: ^5.2.0-beta.8
-  gql: ^1.0.0
+  gql: 1.0.1-alpha+1717789143880
   fraction: ^5.0.2
   url_launcher: ^6.3.0
   device_preview: ^1.2.0
