@@ -68,7 +68,7 @@ class CookbookApp extends StatelessWidget {
           // root provides an Overlay needed for the adaptive navigation scaffold and
           // a root Navigator to show the About box
           builder: (context, state, child) => Navigator(
-                onPopPage: (route, dynamic result) {
+                onDidRemovePage: (route, dynamic result) {
                   route.didPop(result);
                   return false; // don't pop the single page on the root navigator
                 },
