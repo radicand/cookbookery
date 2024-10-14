@@ -49,7 +49,7 @@ dependencies:
   url_launcher: ^6.3.0
   device_preview: ^1.2.0
   device_preview_screenshot: ^1.0.0
-  hooks_riverpod: ^2.5.1
+  hooks_riverpod: ^2.5.4
   sentry_flutter: ^8.5.0
   connectivity_plus_web: ^1.2.5
 dev_dependencies:
