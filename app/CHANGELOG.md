@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/radicand/cookbookery/compare/app-v1.7.0...app-v1.7.1) (2025-02-28)
+
+
+### Bug Fixes
+
+* **deps:** bump gems ([6bca741](https://github.com/radicand/cookbookery/commit/6bca741b84eb12d41d40bf7a2a1772d1f66abd30))
+
 ## [1.7.0](https://github.com/radicand/cookbookery/compare/app-v1.6.8...app-v1.7.0) (2025-02-28)
 
 
