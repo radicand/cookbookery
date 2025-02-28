@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/radicand/cookbookery/compare/app-v1.7.1...app-v1.7.2) (2025-02-28)
+
+
+### Bug Fixes
+
+* **android:** make it build ([514d5b1](https://github.com/radicand/cookbookery/commit/514d5b1b945b8a0164ae0270865c4f619ef1aa3e))
+
 ## [1.7.1](https://github.com/radicand/cookbookery/compare/app-v1.7.0...app-v1.7.1) (2025-02-28)
 
 
