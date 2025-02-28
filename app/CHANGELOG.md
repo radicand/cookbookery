@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/radicand/cookbookery/compare/app-v1.6.8...app-v1.7.0) (2025-02-28)
+
+
+### Features
+
+* replace static loading text with centered spinner ([d2054f0](https://github.com/radicand/cookbookery/commit/d2054f0d545e3d4ba75f954b372e2c8a1608bf8e))
+
+
+### Bug Fixes
+
+* add ignore for known deprecated usage ([1532bea](https://github.com/radicand/cookbookery/commit/1532bea99632dad8071b3c591aa805da8079febc))
+
 ## [1.6.8](https://github.com/radicand/cookbookery/compare/app-v1.6.7...app-v1.6.8) (2024-07-29)
 
 
