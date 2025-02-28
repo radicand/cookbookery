@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.3](https://github.com/radicand/cookbookery/compare/app-v1.7.2...app-v1.7.3) (2025-02-28)
+
+
+### Bug Fixes
+
+* set correct sdk version for Android ([3193029](https://github.com/radicand/cookbookery/commit/3193029ebdb07aea35ca54c15ea73a6516213472))
+
 ## [1.7.2](https://github.com/radicand/cookbookery/compare/app-v1.7.1...app-v1.7.2) (2025-02-28)
 
 
