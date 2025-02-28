@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:cookbook/graphql_schemas/anonymous/recipe.graphql.dart';
 import 'package:cookbook/helpers/constants.dart';
 import 'package:cookbook/helpers/urls.dart';
+import 'package:cookbook/widgets/loading_widget.dart';
 // import 'package:cookbook/helpers/urls.dart';
 import 'package:cookbook/widgets/rating_bar.dart';
 import 'package:cookbook/widgets/recipe_section.dart';
@@ -21,7 +22,7 @@ class RecipeScreen extends HookWidget {
     final recipe = res.result.parsedData?.Recipe_by_pk;
 
     if (res.result.isLoading && res.result.data == null) {
-      return const Text("Loading");
+      return const LoadingWidget();
     }
 
     if (recipe == null) {

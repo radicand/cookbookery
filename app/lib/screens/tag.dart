@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:cookbook/graphql_schemas/anonymous/tag.graphql.dart';
+import 'package:cookbook/widgets/loading_widget.dart';
 import 'package:cookbook/widgets/recipe_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -14,7 +15,7 @@ class TagScreen extends HookWidget {
     final res =
         useQuery$tag(Options$Query$tag(variables: Variables$Query$tag(id: id)));
     if (res.result.isLoading) {
-      return const Text("Loading");
+      return const LoadingWidget();
     }
 
     if (res.result.hasException) {
