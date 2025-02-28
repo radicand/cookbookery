@@ -29,7 +29,7 @@ def keystoreProperties = new Properties()
    }
 
 android {
-    compileSdkVersion Math.max(flutter.compileSdkVersion, 34)
+    compileSdkVersion Math.min(flutter.compileSdkVersion, 34)
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -50,7 +50,7 @@ android {
         applicationId "org.radicand.app.cookbook"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion Math.max(flutter.compileSdkVersion, 34)
+        minSdkVersion Math.min(flutter.compileSdkVersion, 34)
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
