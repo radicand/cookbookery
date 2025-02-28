@@ -141,6 +141,7 @@ jobs:
           bundle install
 
       - name: Download bundle dependencies (ios)
+        if: false # apple app store currently disabled
         working-directory: app/ios
         run: |
           gem install bundler:2.3.26
