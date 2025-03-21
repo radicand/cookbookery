@@ -37,7 +37,7 @@ class AuthService {
     }
 
     try {
-      final TokenResponse? result = await appAuth.token(TokenRequest(
+      final TokenResponse result = await appAuth.token(TokenRequest(
         OAUTH_CLIENT_ID,
         OAUTH_REDIRECT_URI,
         issuer: OAUTH_ISSUER,
@@ -67,7 +67,7 @@ class AuthService {
           scopes: scopes,
           promptValues: ['login']);
 
-      final AuthorizationTokenResponse? result =
+      final AuthorizationTokenResponse result =
           await appAuth.authorizeAndExchangeCode(
         authorizationTokenRequest,
       );
