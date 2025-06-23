@@ -50,7 +50,7 @@ dependencies:
   device_preview: ^1.2.0
   device_preview_screenshot: ^1.0.0
   hooks_riverpod: ^2.6.1
-  sentry_flutter: ^8.14.1
+  sentry_flutter: ^9.0.0
   connectivity_plus_web: ^1.2.5
 dev_dependencies:
   flutter_test:
