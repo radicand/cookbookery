@@ -11,9 +11,8 @@ import 'package:graphql_flutter/graphql_flutter.dart' as graphql_flutter;
 import 'recipePreviewFragment.graphql.dart';
 
 class Variables$Query$tag {
-  factory Variables$Query$tag({required String id}) => Variables$Query$tag._({
-        r'id': id,
-      });
+  factory Variables$Query$tag({required String id}) =>
+      Variables$Query$tag._({r'id': id});
 
   Variables$Query$tag._(this._$data);
 
@@ -36,17 +35,14 @@ class Variables$Query$tag {
   }
 
   CopyWith$Variables$Query$tag<Variables$Query$tag> get copyWith =>
-      CopyWith$Variables$Query$tag(
-        this,
-        (i) => i,
-      );
+      CopyWith$Variables$Query$tag(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$tag) || runtimeType != other.runtimeType) {
+    if (other is! Variables$Query$tag || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -78,10 +74,7 @@ abstract class CopyWith$Variables$Query$tag<TRes> {
 
 class _CopyWithImpl$Variables$Query$tag<TRes>
     implements CopyWith$Variables$Query$tag<TRes> {
-  _CopyWithImpl$Variables$Query$tag(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$tag(this._instance, this._then);
 
   final Variables$Query$tag _instance;
 
@@ -89,10 +82,12 @@ class _CopyWithImpl$Variables$Query$tag<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? id = _undefined}) => _then(Variables$Query$tag._({
-        ..._instance._$data,
-        if (id != _undefined && id != null) 'id': (id as String),
-      }));
+  TRes call({Object? id = _undefined}) => _then(
+    Variables$Query$tag._({
+      ..._instance._$data,
+      if (id != _undefined && id != null) 'id': (id as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$tag<TRes>
@@ -105,10 +100,7 @@ class _CopyWithStubImpl$Variables$Query$tag<TRes>
 }
 
 class Query$tag {
-  Query$tag({
-    this.Tag_by_pk,
-    this.$__typename = 'query_root',
-  });
+  Query$tag({this.Tag_by_pk, this.$__typename = 'query_root'});
 
   factory Query$tag.fromJson(Map<String, dynamic> json) {
     final l$Tag_by_pk = json['Tag_by_pk'];
@@ -138,10 +130,7 @@ class Query$tag {
   int get hashCode {
     final l$Tag_by_pk = Tag_by_pk;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$Tag_by_pk,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$Tag_by_pk, l$$__typename]);
   }
 
   @override
@@ -149,7 +138,7 @@ class Query$tag {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$tag) || runtimeType != other.runtimeType) {
+    if (other is! Query$tag || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Tag_by_pk = Tag_by_pk;
@@ -167,10 +156,8 @@ class Query$tag {
 }
 
 extension UtilityExtension$Query$tag on Query$tag {
-  CopyWith$Query$tag<Query$tag> get copyWith => CopyWith$Query$tag(
-        this,
-        (i) => i,
-      );
+  CopyWith$Query$tag<Query$tag> get copyWith =>
+      CopyWith$Query$tag(this, (i) => i);
 }
 
 abstract class CopyWith$Query$tag<TRes> {
@@ -181,18 +168,12 @@ abstract class CopyWith$Query$tag<TRes> {
 
   factory CopyWith$Query$tag.stub(TRes res) = _CopyWithStubImpl$Query$tag;
 
-  TRes call({
-    Query$tag$Tag_by_pk? Tag_by_pk,
-    String? $__typename,
-  });
+  TRes call({Query$tag$Tag_by_pk? Tag_by_pk, String? $__typename});
   CopyWith$Query$tag$Tag_by_pk<TRes> get Tag_by_pk;
 }
 
 class _CopyWithImpl$Query$tag<TRes> implements CopyWith$Query$tag<TRes> {
-  _CopyWithImpl$Query$tag(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$tag(this._instance, this._then);
 
   final Query$tag _instance;
 
@@ -203,22 +184,25 @@ class _CopyWithImpl$Query$tag<TRes> implements CopyWith$Query$tag<TRes> {
   TRes call({
     Object? Tag_by_pk = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$tag(
-        Tag_by_pk: Tag_by_pk == _undefined
-            ? _instance.Tag_by_pk
-            : (Tag_by_pk as Query$tag$Tag_by_pk?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$tag(
+      Tag_by_pk: Tag_by_pk == _undefined
+          ? _instance.Tag_by_pk
+          : (Tag_by_pk as Query$tag$Tag_by_pk?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$tag$Tag_by_pk<TRes> get Tag_by_pk {
     final local$Tag_by_pk = _instance.Tag_by_pk;
     return local$Tag_by_pk == null
         ? CopyWith$Query$tag$Tag_by_pk.stub(_then(_instance))
         : CopyWith$Query$tag$Tag_by_pk(
-            local$Tag_by_pk, (e) => call(Tag_by_pk: e));
+            local$Tag_by_pk,
+            (e) => call(Tag_by_pk: e),
+          );
   }
 }
 
@@ -227,91 +211,101 @@ class _CopyWithStubImpl$Query$tag<TRes> implements CopyWith$Query$tag<TRes> {
 
   TRes _res;
 
-  call({
-    Query$tag$Tag_by_pk? Tag_by_pk,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Query$tag$Tag_by_pk? Tag_by_pk, String? $__typename}) => _res;
 
   CopyWith$Query$tag$Tag_by_pk<TRes> get Tag_by_pk =>
       CopyWith$Query$tag$Tag_by_pk.stub(_res);
 }
 
-const documentNodeQuerytag = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'tag'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'id')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeQuerytag = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'tag'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'id')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'Tag_by_pk'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'id'),
-            value: VariableNode(name: NameNode(value: 'id')),
-          )
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'id'),
+            name: NameNode(value: 'Tag_by_pk'),
             alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'name'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'Recipes'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'Recipe'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FragmentSpreadNode(
-                    name: NameNode(value: 'RecipePreviewFragment'),
-                    directives: [],
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'id'),
+                value: VariableNode(name: NameNode(value: 'id')),
               ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            ],
+            directives: [],
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'Recipes'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'Recipe'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FragmentSpreadNode(
+                              name: NameNode(value: 'RecipePreviewFragment'),
+                              directives: [],
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -320,25 +314,16 @@ const documentNodeQuerytag = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-  fragmentDefinitionRecipePreviewFragment,
-]);
+    ),
+    fragmentDefinitionRecipePreviewFragment,
+  ],
+);
 Query$tag _parserFn$Query$tag(Map<String, dynamic> data) =>
     Query$tag.fromJson(data);
-typedef OnQueryComplete$Query$tag = FutureOr<void> Function(
-  Map<String, dynamic>?,
-  Query$tag?,
-);
+typedef OnQueryComplete$Query$tag =
+    FutureOr<void> Function(Map<String, dynamic>?, Query$tag?);
 
 class Options$Query$tag extends graphql.QueryOptions<Query$tag> {
   Options$Query$tag({
@@ -353,36 +338,36 @@ class Options$Query$tag extends graphql.QueryOptions<Query$tag> {
     graphql.Context? context,
     OnQueryComplete$Query$tag? onComplete,
     graphql.OnQueryError? onError,
-  })  : onCompleteWithParsed = onComplete,
-        super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          pollInterval: pollInterval,
-          context: context,
-          onComplete: onComplete == null
-              ? null
-              : (data) => onComplete(
-                    data,
-                    data == null ? null : _parserFn$Query$tag(data),
-                  ),
-          onError: onError,
-          document: documentNodeQuerytag,
-          parserFn: _parserFn$Query$tag,
-        );
+  }) : onCompleteWithParsed = onComplete,
+       super(
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         pollInterval: pollInterval,
+         context: context,
+         onComplete: onComplete == null
+             ? null
+             : (data) => onComplete(
+                 data,
+                 data == null ? null : _parserFn$Query$tag(data),
+               ),
+         onError: onError,
+         document: documentNodeQuerytag,
+         parserFn: _parserFn$Query$tag,
+       );
 
   final OnQueryComplete$Query$tag? onCompleteWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onComplete == null
-            ? super.properties
-            : super.properties.where((property) => property != onComplete),
-        onCompleteWithParsed,
-      ];
+    ...super.onComplete == null
+        ? super.properties
+        : super.properties.where((property) => property != onComplete),
+    onCompleteWithParsed,
+  ];
 }
 
 class WatchOptions$Query$tag extends graphql.WatchQueryOptions<Query$tag> {
@@ -400,20 +385,20 @@ class WatchOptions$Query$tag extends graphql.WatchQueryOptions<Query$tag> {
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeQuerytag,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Query$tag,
-        );
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeQuerytag,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Query$tag,
+       );
 }
 
 class FetchMoreOptions$Query$tag extends graphql.FetchMoreOptions {
@@ -421,32 +406,31 @@ class FetchMoreOptions$Query$tag extends graphql.FetchMoreOptions {
     required graphql.UpdateQuery updateQuery,
     required Variables$Query$tag variables,
   }) : super(
-          updateQuery: updateQuery,
-          variables: variables.toJson(),
-          document: documentNodeQuerytag,
-        );
+         updateQuery: updateQuery,
+         variables: variables.toJson(),
+         document: documentNodeQuerytag,
+       );
 }
 
 extension ClientExtension$Query$tag on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$tag>> query$tag(
-          Options$Query$tag options) async =>
-      await this.query(options);
+    Options$Query$tag options,
+  ) async => await this.query(options);
   graphql.ObservableQuery<Query$tag> watchQuery$tag(
-          WatchOptions$Query$tag options) =>
-      this.watchQuery(options);
+    WatchOptions$Query$tag options,
+  ) => this.watchQuery(options);
   void writeQuery$tag({
     required Query$tag data,
     required Variables$Query$tag variables,
     bool broadcast = true,
-  }) =>
-      this.writeQuery(
-        graphql.Request(
-          operation: graphql.Operation(document: documentNodeQuerytag),
-          variables: variables.toJson(),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeQuery(
+    graphql.Request(
+      operation: graphql.Operation(document: documentNodeQuerytag),
+      variables: variables.toJson(),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
   Query$tag? readQuery$tag({
     required Variables$Query$tag variables,
     bool optimistic = true,
@@ -463,22 +447,18 @@ extension ClientExtension$Query$tag on graphql.GraphQLClient {
 }
 
 graphql_flutter.QueryHookResult<Query$tag> useQuery$tag(
-        Options$Query$tag options) =>
-    graphql_flutter.useQuery(options);
+  Options$Query$tag options,
+) => graphql_flutter.useQuery(options);
 graphql.ObservableQuery<Query$tag> useWatchQuery$tag(
-        WatchOptions$Query$tag options) =>
-    graphql_flutter.useWatchQuery(options);
+  WatchOptions$Query$tag options,
+) => graphql_flutter.useWatchQuery(options);
 
 class Query$tag$Widget extends graphql_flutter.Query<Query$tag> {
   Query$tag$Widget({
     widgets.Key? key,
     required Options$Query$tag options,
     required graphql_flutter.QueryBuilder<Query$tag> builder,
-  }) : super(
-          key: key,
-          options: options,
-          builder: builder,
-        );
+  }) : super(key: key, options: options, builder: builder);
 }
 
 class Query$tag$Tag_by_pk {
@@ -498,8 +478,11 @@ class Query$tag$Tag_by_pk {
       id: (l$id as String),
       name: (l$name as String),
       Recipes: (l$Recipes as List<dynamic>)
-          .map((e) =>
-              Query$tag$Tag_by_pk$Recipes.fromJson((e as Map<String, dynamic>)))
+          .map(
+            (e) => Query$tag$Tag_by_pk$Recipes.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -545,7 +528,7 @@ class Query$tag$Tag_by_pk {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$tag$Tag_by_pk) || runtimeType != other.runtimeType) {
+    if (other is! Query$tag$Tag_by_pk || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -581,10 +564,7 @@ class Query$tag$Tag_by_pk {
 
 extension UtilityExtension$Query$tag$Tag_by_pk on Query$tag$Tag_by_pk {
   CopyWith$Query$tag$Tag_by_pk<Query$tag$Tag_by_pk> get copyWith =>
-      CopyWith$Query$tag$Tag_by_pk(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$tag$Tag_by_pk(this, (i) => i);
 }
 
 abstract class CopyWith$Query$tag$Tag_by_pk<TRes> {
@@ -603,19 +583,18 @@ abstract class CopyWith$Query$tag$Tag_by_pk<TRes> {
     String? $__typename,
   });
   TRes Recipes(
-      Iterable<Query$tag$Tag_by_pk$Recipes> Function(
-              Iterable<
-                  CopyWith$Query$tag$Tag_by_pk$Recipes<
-                      Query$tag$Tag_by_pk$Recipes>>)
-          _fn);
+    Iterable<Query$tag$Tag_by_pk$Recipes> Function(
+      Iterable<
+        CopyWith$Query$tag$Tag_by_pk$Recipes<Query$tag$Tag_by_pk$Recipes>
+      >,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$tag$Tag_by_pk<TRes>
     implements CopyWith$Query$tag$Tag_by_pk<TRes> {
-  _CopyWithImpl$Query$tag$Tag_by_pk(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$tag$Tag_by_pk(this._instance, this._then);
 
   final Query$tag$Tag_by_pk _instance;
 
@@ -628,32 +607,35 @@ class _CopyWithImpl$Query$tag$Tag_by_pk<TRes>
     Object? name = _undefined,
     Object? Recipes = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$tag$Tag_by_pk(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        Recipes: Recipes == _undefined || Recipes == null
-            ? _instance.Recipes
-            : (Recipes as List<Query$tag$Tag_by_pk$Recipes>),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$tag$Tag_by_pk(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      Recipes: Recipes == _undefined || Recipes == null
+          ? _instance.Recipes
+          : (Recipes as List<Query$tag$Tag_by_pk$Recipes>),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes Recipes(
-          Iterable<Query$tag$Tag_by_pk$Recipes> Function(
-                  Iterable<
-                      CopyWith$Query$tag$Tag_by_pk$Recipes<
-                          Query$tag$Tag_by_pk$Recipes>>)
-              _fn) =>
-      call(
-          Recipes: _fn(
-              _instance.Recipes.map((e) => CopyWith$Query$tag$Tag_by_pk$Recipes(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Query$tag$Tag_by_pk$Recipes> Function(
+      Iterable<
+        CopyWith$Query$tag$Tag_by_pk$Recipes<Query$tag$Tag_by_pk$Recipes>
+      >,
+    )
+    _fn,
+  ) => call(
+    Recipes: _fn(
+      _instance.Recipes.map(
+        (e) => CopyWith$Query$tag$Tag_by_pk$Recipes(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$tag$Tag_by_pk<TRes>
@@ -667,8 +649,7 @@ class _CopyWithStubImpl$Query$tag$Tag_by_pk<TRes>
     String? name,
     List<Query$tag$Tag_by_pk$Recipes>? Recipes,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   Recipes(_fn) => _res;
 }
@@ -684,7 +665,8 @@ class Query$tag$Tag_by_pk$Recipes {
     final l$$__typename = json['__typename'];
     return Query$tag$Tag_by_pk$Recipes(
       Recipe: Fragment$RecipePreviewFragment.fromJson(
-          (l$Recipe as Map<String, dynamic>)),
+        (l$Recipe as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -706,10 +688,7 @@ class Query$tag$Tag_by_pk$Recipes {
   int get hashCode {
     final l$Recipe = Recipe;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$Recipe,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$Recipe, l$$__typename]);
   }
 
   @override
@@ -717,7 +696,7 @@ class Query$tag$Tag_by_pk$Recipes {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$tag$Tag_by_pk$Recipes) ||
+    if (other is! Query$tag$Tag_by_pk$Recipes ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -738,10 +717,7 @@ class Query$tag$Tag_by_pk$Recipes {
 extension UtilityExtension$Query$tag$Tag_by_pk$Recipes
     on Query$tag$Tag_by_pk$Recipes {
   CopyWith$Query$tag$Tag_by_pk$Recipes<Query$tag$Tag_by_pk$Recipes>
-      get copyWith => CopyWith$Query$tag$Tag_by_pk$Recipes(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$tag$Tag_by_pk$Recipes(this, (i) => i);
 }
 
 abstract class CopyWith$Query$tag$Tag_by_pk$Recipes<TRes> {
@@ -753,19 +729,13 @@ abstract class CopyWith$Query$tag$Tag_by_pk$Recipes<TRes> {
   factory CopyWith$Query$tag$Tag_by_pk$Recipes.stub(TRes res) =
       _CopyWithStubImpl$Query$tag$Tag_by_pk$Recipes;
 
-  TRes call({
-    Fragment$RecipePreviewFragment? Recipe,
-    String? $__typename,
-  });
+  TRes call({Fragment$RecipePreviewFragment? Recipe, String? $__typename});
   CopyWith$Fragment$RecipePreviewFragment<TRes> get Recipe;
 }
 
 class _CopyWithImpl$Query$tag$Tag_by_pk$Recipes<TRes>
     implements CopyWith$Query$tag$Tag_by_pk$Recipes<TRes> {
-  _CopyWithImpl$Query$tag$Tag_by_pk$Recipes(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$tag$Tag_by_pk$Recipes(this._instance, this._then);
 
   final Query$tag$Tag_by_pk$Recipes _instance;
 
@@ -773,23 +743,24 @@ class _CopyWithImpl$Query$tag$Tag_by_pk$Recipes<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? Recipe = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$tag$Tag_by_pk$Recipes(
-        Recipe: Recipe == _undefined || Recipe == null
-            ? _instance.Recipe
-            : (Recipe as Fragment$RecipePreviewFragment),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? Recipe = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$tag$Tag_by_pk$Recipes(
+          Recipe: Recipe == _undefined || Recipe == null
+              ? _instance.Recipe
+              : (Recipe as Fragment$RecipePreviewFragment),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 
   CopyWith$Fragment$RecipePreviewFragment<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
     return CopyWith$Fragment$RecipePreviewFragment(
-        local$Recipe, (e) => call(Recipe: e));
+      local$Recipe,
+      (e) => call(Recipe: e),
+    );
   }
 }
 
@@ -799,11 +770,7 @@ class _CopyWithStubImpl$Query$tag$Tag_by_pk$Recipes<TRes>
 
   TRes _res;
 
-  call({
-    Fragment$RecipePreviewFragment? Recipe,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Fragment$RecipePreviewFragment? Recipe, String? $__typename}) => _res;
 
   CopyWith$Fragment$RecipePreviewFragment<TRes> get Recipe =>
       CopyWith$Fragment$RecipePreviewFragment.stub(_res);

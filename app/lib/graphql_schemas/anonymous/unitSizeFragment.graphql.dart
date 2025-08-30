@@ -63,13 +63,7 @@ class Fragment$UnitSizeFragment {
     final l$plural = plural;
     final l$unitType = unitType;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$name,
-      l$plural,
-      l$unitType,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$name, l$plural, l$unitType, l$$__typename]);
   }
 
   @override
@@ -77,7 +71,7 @@ class Fragment$UnitSizeFragment {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$UnitSizeFragment) ||
+    if (other is! Fragment$UnitSizeFragment ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -113,10 +107,7 @@ class Fragment$UnitSizeFragment {
 extension UtilityExtension$Fragment$UnitSizeFragment
     on Fragment$UnitSizeFragment {
   CopyWith$Fragment$UnitSizeFragment<Fragment$UnitSizeFragment> get copyWith =>
-      CopyWith$Fragment$UnitSizeFragment(
-        this,
-        (i) => i,
-      );
+      CopyWith$Fragment$UnitSizeFragment(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$UnitSizeFragment<TRes> {
@@ -139,10 +130,7 @@ abstract class CopyWith$Fragment$UnitSizeFragment<TRes> {
 
 class _CopyWithImpl$Fragment$UnitSizeFragment<TRes>
     implements CopyWith$Fragment$UnitSizeFragment<TRes> {
-  _CopyWithImpl$Fragment$UnitSizeFragment(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Fragment$UnitSizeFragment(this._instance, this._then);
 
   final Fragment$UnitSizeFragment _instance;
 
@@ -156,22 +144,23 @@ class _CopyWithImpl$Fragment$UnitSizeFragment<TRes>
     Object? plural = _undefined,
     Object? unitType = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$UnitSizeFragment(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        plural: plural == _undefined || plural == null
-            ? _instance.plural
-            : (plural as String),
-        unitType: unitType == _undefined || unitType == null
-            ? _instance.unitType
-            : (unitType as Enum$UnitType_enum),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$UnitSizeFragment(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      plural: plural == _undefined || plural == null
+          ? _instance.plural
+          : (plural as String),
+      unitType: unitType == _undefined || unitType == null
+          ? _instance.unitType
+          : (unitType as Enum$UnitType_enum),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Fragment$UnitSizeFragment<TRes>
@@ -186,77 +175,75 @@ class _CopyWithStubImpl$Fragment$UnitSizeFragment<TRes>
     String? plural,
     Enum$UnitType_enum? unitType,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 const fragmentDefinitionUnitSizeFragment = FragmentDefinitionNode(
   name: NameNode(value: 'UnitSizeFragment'),
   typeCondition: TypeConditionNode(
-      on: NamedTypeNode(
-    name: NameNode(value: 'UnitSize'),
-    isNonNull: false,
-  )),
+    on: NamedTypeNode(name: NameNode(value: 'UnitSize'), isNonNull: false),
+  ),
   directives: [],
-  selectionSet: SelectionSetNode(selections: [
-    FieldNode(
-      name: NameNode(value: 'id'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'name'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'plural'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'unitType'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: '__typename'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-  ]),
+  selectionSet: SelectionSetNode(
+    selections: [
+      FieldNode(
+        name: NameNode(value: 'id'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'name'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'plural'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'unitType'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: '__typename'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+    ],
+  ),
 );
-const documentNodeFragmentUnitSizeFragment = DocumentNode(definitions: [
-  fragmentDefinitionUnitSizeFragment,
-]);
+const documentNodeFragmentUnitSizeFragment = DocumentNode(
+  definitions: [fragmentDefinitionUnitSizeFragment],
+);
 
 extension ClientExtension$Fragment$UnitSizeFragment on graphql.GraphQLClient {
   void writeFragment$UnitSizeFragment({
     required Fragment$UnitSizeFragment data,
     required Map<String, dynamic> idFields,
     bool broadcast = true,
-  }) =>
-      this.writeFragment(
-        graphql.FragmentRequest(
-          idFields: idFields,
-          fragment: const graphql.Fragment(
-            fragmentName: 'UnitSizeFragment',
-            document: documentNodeFragmentUnitSizeFragment,
-          ),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeFragment(
+    graphql.FragmentRequest(
+      idFields: idFields,
+      fragment: const graphql.Fragment(
+        fragmentName: 'UnitSizeFragment',
+        document: documentNodeFragmentUnitSizeFragment,
+      ),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
   Fragment$UnitSizeFragment? readFragment$UnitSizeFragment({
     required Map<String, dynamic> idFields,
     bool optimistic = true,

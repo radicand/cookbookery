@@ -44,18 +44,25 @@ class Fragment$RecipeSectionFragment {
       prepTimeMinutes: (l$prepTimeMinutes as int),
       description: (l$description as String?),
       IngredientUnits: (l$IngredientUnits as List<dynamic>)
-          .map((e) => Fragment$IngredientUnitFragment.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Fragment$IngredientUnitFragment.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       name: (l$name as String),
       servingUnit: (l$servingUnit as String),
       servings: (l$servings as int),
       Steps: (l$Steps as List<dynamic>)
-          .map((e) => Fragment$RecipeSectionFragment$Steps.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Fragment$RecipeSectionFragment$Steps.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       Recipe: Fragment$RecipeSectionFragment$Recipe.fromJson(
-          (l$Recipe as Map<String, dynamic>)),
+        (l$Recipe as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -97,8 +104,9 @@ class Fragment$RecipeSectionFragment {
     final l$description = description;
     _resultData['description'] = l$description;
     final l$IngredientUnits = IngredientUnits;
-    _resultData['IngredientUnits'] =
-        l$IngredientUnits.map((e) => e.toJson()).toList();
+    _resultData['IngredientUnits'] = l$IngredientUnits
+        .map((e) => e.toJson())
+        .toList();
     final l$name = name;
     _resultData['name'] = l$name;
     final l$servingUnit = servingUnit;
@@ -149,7 +157,7 @@ class Fragment$RecipeSectionFragment {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$RecipeSectionFragment) ||
+    if (other is! Fragment$RecipeSectionFragment ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -234,10 +242,7 @@ class Fragment$RecipeSectionFragment {
 extension UtilityExtension$Fragment$RecipeSectionFragment
     on Fragment$RecipeSectionFragment {
   CopyWith$Fragment$RecipeSectionFragment<Fragment$RecipeSectionFragment>
-      get copyWith => CopyWith$Fragment$RecipeSectionFragment(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Fragment$RecipeSectionFragment(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$RecipeSectionFragment<TRes> {
@@ -264,26 +269,31 @@ abstract class CopyWith$Fragment$RecipeSectionFragment<TRes> {
     String? $__typename,
   });
   TRes IngredientUnits(
-      Iterable<Fragment$IngredientUnitFragment> Function(
-              Iterable<
-                  CopyWith$Fragment$IngredientUnitFragment<
-                      Fragment$IngredientUnitFragment>>)
-          _fn);
+    Iterable<Fragment$IngredientUnitFragment> Function(
+      Iterable<
+        CopyWith$Fragment$IngredientUnitFragment<
+          Fragment$IngredientUnitFragment
+        >
+      >,
+    )
+    _fn,
+  );
   TRes Steps(
-      Iterable<Fragment$RecipeSectionFragment$Steps> Function(
-              Iterable<
-                  CopyWith$Fragment$RecipeSectionFragment$Steps<
-                      Fragment$RecipeSectionFragment$Steps>>)
-          _fn);
+    Iterable<Fragment$RecipeSectionFragment$Steps> Function(
+      Iterable<
+        CopyWith$Fragment$RecipeSectionFragment$Steps<
+          Fragment$RecipeSectionFragment$Steps
+        >
+      >,
+    )
+    _fn,
+  );
   CopyWith$Fragment$RecipeSectionFragment$Recipe<TRes> get Recipe;
 }
 
 class _CopyWithImpl$Fragment$RecipeSectionFragment<TRes>
     implements CopyWith$Fragment$RecipeSectionFragment<TRes> {
-  _CopyWithImpl$Fragment$RecipeSectionFragment(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Fragment$RecipeSectionFragment(this._instance, this._then);
 
   final Fragment$RecipeSectionFragment _instance;
 
@@ -304,77 +314,85 @@ class _CopyWithImpl$Fragment$RecipeSectionFragment<TRes>
     Object? Steps = _undefined,
     Object? Recipe = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$RecipeSectionFragment(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        order: order == _undefined || order == null
-            ? _instance.order
-            : (order as int),
-        cookTimeMinutes:
-            cookTimeMinutes == _undefined || cookTimeMinutes == null
-                ? _instance.cookTimeMinutes
-                : (cookTimeMinutes as int),
-        prepTimeMinutes:
-            prepTimeMinutes == _undefined || prepTimeMinutes == null
-                ? _instance.prepTimeMinutes
-                : (prepTimeMinutes as int),
-        description: description == _undefined
-            ? _instance.description
-            : (description as String?),
-        IngredientUnits:
-            IngredientUnits == _undefined || IngredientUnits == null
-                ? _instance.IngredientUnits
-                : (IngredientUnits as List<Fragment$IngredientUnitFragment>),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        servingUnit: servingUnit == _undefined || servingUnit == null
-            ? _instance.servingUnit
-            : (servingUnit as String),
-        servings: servings == _undefined || servings == null
-            ? _instance.servings
-            : (servings as int),
-        Steps: Steps == _undefined || Steps == null
-            ? _instance.Steps
-            : (Steps as List<Fragment$RecipeSectionFragment$Steps>),
-        Recipe: Recipe == _undefined || Recipe == null
-            ? _instance.Recipe
-            : (Recipe as Fragment$RecipeSectionFragment$Recipe),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$RecipeSectionFragment(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      order: order == _undefined || order == null
+          ? _instance.order
+          : (order as int),
+      cookTimeMinutes: cookTimeMinutes == _undefined || cookTimeMinutes == null
+          ? _instance.cookTimeMinutes
+          : (cookTimeMinutes as int),
+      prepTimeMinutes: prepTimeMinutes == _undefined || prepTimeMinutes == null
+          ? _instance.prepTimeMinutes
+          : (prepTimeMinutes as int),
+      description: description == _undefined
+          ? _instance.description
+          : (description as String?),
+      IngredientUnits: IngredientUnits == _undefined || IngredientUnits == null
+          ? _instance.IngredientUnits
+          : (IngredientUnits as List<Fragment$IngredientUnitFragment>),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      servingUnit: servingUnit == _undefined || servingUnit == null
+          ? _instance.servingUnit
+          : (servingUnit as String),
+      servings: servings == _undefined || servings == null
+          ? _instance.servings
+          : (servings as int),
+      Steps: Steps == _undefined || Steps == null
+          ? _instance.Steps
+          : (Steps as List<Fragment$RecipeSectionFragment$Steps>),
+      Recipe: Recipe == _undefined || Recipe == null
+          ? _instance.Recipe
+          : (Recipe as Fragment$RecipeSectionFragment$Recipe),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes IngredientUnits(
-          Iterable<Fragment$IngredientUnitFragment> Function(
-                  Iterable<
-                      CopyWith$Fragment$IngredientUnitFragment<
-                          Fragment$IngredientUnitFragment>>)
-              _fn) =>
-      call(
-          IngredientUnits: _fn(_instance.IngredientUnits.map(
-              (e) => CopyWith$Fragment$IngredientUnitFragment(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Fragment$IngredientUnitFragment> Function(
+      Iterable<
+        CopyWith$Fragment$IngredientUnitFragment<
+          Fragment$IngredientUnitFragment
+        >
+      >,
+    )
+    _fn,
+  ) => call(
+    IngredientUnits: _fn(
+      _instance.IngredientUnits.map(
+        (e) => CopyWith$Fragment$IngredientUnitFragment(e, (i) => i),
+      ),
+    ).toList(),
+  );
 
   TRes Steps(
-          Iterable<Fragment$RecipeSectionFragment$Steps> Function(
-                  Iterable<
-                      CopyWith$Fragment$RecipeSectionFragment$Steps<
-                          Fragment$RecipeSectionFragment$Steps>>)
-              _fn) =>
-      call(
-          Steps: _fn(_instance.Steps.map(
-              (e) => CopyWith$Fragment$RecipeSectionFragment$Steps(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Fragment$RecipeSectionFragment$Steps> Function(
+      Iterable<
+        CopyWith$Fragment$RecipeSectionFragment$Steps<
+          Fragment$RecipeSectionFragment$Steps
+        >
+      >,
+    )
+    _fn,
+  ) => call(
+    Steps: _fn(
+      _instance.Steps.map(
+        (e) => CopyWith$Fragment$RecipeSectionFragment$Steps(e, (i) => i),
+      ),
+    ).toList(),
+  );
 
   CopyWith$Fragment$RecipeSectionFragment$Recipe<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
     return CopyWith$Fragment$RecipeSectionFragment$Recipe(
-        local$Recipe, (e) => call(Recipe: e));
+      local$Recipe,
+      (e) => call(Recipe: e),
+    );
   }
 }
 
@@ -397,8 +415,7 @@ class _CopyWithStubImpl$Fragment$RecipeSectionFragment<TRes>
     List<Fragment$RecipeSectionFragment$Steps>? Steps,
     Fragment$RecipeSectionFragment$Recipe? Recipe,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   IngredientUnits(_fn) => _res;
 
@@ -411,179 +428,191 @@ class _CopyWithStubImpl$Fragment$RecipeSectionFragment<TRes>
 const fragmentDefinitionRecipeSectionFragment = FragmentDefinitionNode(
   name: NameNode(value: 'RecipeSectionFragment'),
   typeCondition: TypeConditionNode(
-      on: NamedTypeNode(
-    name: NameNode(value: 'RecipeSection'),
-    isNonNull: false,
-  )),
+    on: NamedTypeNode(name: NameNode(value: 'RecipeSection'), isNonNull: false),
+  ),
   directives: [],
-  selectionSet: SelectionSetNode(selections: [
-    FieldNode(
-      name: NameNode(value: 'id'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'order'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'cookTimeMinutes'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'prepTimeMinutes'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'description'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'IngredientUnits'),
-      alias: null,
-      arguments: [
-        ArgumentNode(
-          name: NameNode(value: 'order_by'),
-          value: ObjectValueNode(fields: [
-            ObjectFieldNode(
+  selectionSet: SelectionSetNode(
+    selections: [
+      FieldNode(
+        name: NameNode(value: 'id'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'order'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'cookTimeMinutes'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'prepTimeMinutes'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'description'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'IngredientUnits'),
+        alias: null,
+        arguments: [
+          ArgumentNode(
+            name: NameNode(value: 'order_by'),
+            value: ObjectValueNode(
+              fields: [
+                ObjectFieldNode(
+                  name: NameNode(value: 'order'),
+                  value: EnumValueNode(name: NameNode(value: 'asc')),
+                ),
+              ],
+            ),
+          ),
+        ],
+        directives: [],
+        selectionSet: SelectionSetNode(
+          selections: [
+            FragmentSpreadNode(
+              name: NameNode(value: 'IngredientUnitFragment'),
+              directives: [],
+            ),
+            FieldNode(
+              name: NameNode(value: '__typename'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+          ],
+        ),
+      ),
+      FieldNode(
+        name: NameNode(value: 'name'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'servingUnit'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'servings'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'Steps'),
+        alias: null,
+        arguments: [
+          ArgumentNode(
+            name: NameNode(value: 'order_by'),
+            value: ObjectValueNode(
+              fields: [
+                ObjectFieldNode(
+                  name: NameNode(value: 'order'),
+                  value: EnumValueNode(name: NameNode(value: 'asc')),
+                ),
+              ],
+            ),
+          ),
+        ],
+        directives: [],
+        selectionSet: SelectionSetNode(
+          selections: [
+            FieldNode(
+              name: NameNode(value: 'id'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            FieldNode(
+              name: NameNode(value: 'description'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            FieldNode(
               name: NameNode(value: 'order'),
-              value: EnumValueNode(name: NameNode(value: 'asc')),
-            )
-          ]),
-        )
-      ],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FragmentSpreadNode(
-          name: NameNode(value: 'IngredientUnitFragment'),
-          directives: [],
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            FieldNode(
+              name: NameNode(value: '__typename'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+          ],
         ),
-        FieldNode(
-          name: NameNode(value: '__typename'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'Recipe'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: SelectionSetNode(
+          selections: [
+            FieldNode(
+              name: NameNode(value: 'id'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            FieldNode(
+              name: NameNode(value: '__typename'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+          ],
         ),
-      ]),
-    ),
-    FieldNode(
-      name: NameNode(value: 'name'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'servingUnit'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'servings'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'Steps'),
-      alias: null,
-      arguments: [
-        ArgumentNode(
-          name: NameNode(value: 'order_by'),
-          value: ObjectValueNode(fields: [
-            ObjectFieldNode(
-              name: NameNode(value: 'order'),
-              value: EnumValueNode(name: NameNode(value: 'asc')),
-            )
-          ]),
-        )
-      ],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FieldNode(
-          name: NameNode(value: 'id'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        FieldNode(
-          name: NameNode(value: 'description'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        FieldNode(
-          name: NameNode(value: 'order'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        FieldNode(
-          name: NameNode(value: '__typename'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-      ]),
-    ),
-    FieldNode(
-      name: NameNode(value: 'Recipe'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FieldNode(
-          name: NameNode(value: 'id'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        FieldNode(
-          name: NameNode(value: '__typename'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-      ]),
-    ),
-    FieldNode(
-      name: NameNode(value: '__typename'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-  ]),
+      ),
+      FieldNode(
+        name: NameNode(value: '__typename'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+    ],
+  ),
 );
-const documentNodeFragmentRecipeSectionFragment = DocumentNode(definitions: [
-  fragmentDefinitionRecipeSectionFragment,
-  fragmentDefinitionIngredientUnitFragment,
-  fragmentDefinitionUnitSizeFragment,
-]);
+const documentNodeFragmentRecipeSectionFragment = DocumentNode(
+  definitions: [
+    fragmentDefinitionRecipeSectionFragment,
+    fragmentDefinitionIngredientUnitFragment,
+    fragmentDefinitionUnitSizeFragment,
+  ],
+);
 
 extension ClientExtension$Fragment$RecipeSectionFragment
     on graphql.GraphQLClient {
@@ -591,18 +620,17 @@ extension ClientExtension$Fragment$RecipeSectionFragment
     required Fragment$RecipeSectionFragment data,
     required Map<String, dynamic> idFields,
     bool broadcast = true,
-  }) =>
-      this.writeFragment(
-        graphql.FragmentRequest(
-          idFields: idFields,
-          fragment: const graphql.Fragment(
-            fragmentName: 'RecipeSectionFragment',
-            document: documentNodeFragmentRecipeSectionFragment,
-          ),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeFragment(
+    graphql.FragmentRequest(
+      idFields: idFields,
+      fragment: const graphql.Fragment(
+        fragmentName: 'RecipeSectionFragment',
+        document: documentNodeFragmentRecipeSectionFragment,
+      ),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
   Fragment$RecipeSectionFragment? readFragment$RecipeSectionFragment({
     required Map<String, dynamic> idFields,
     bool optimistic = true,
@@ -632,7 +660,8 @@ class Fragment$RecipeSectionFragment$Steps {
   });
 
   factory Fragment$RecipeSectionFragment$Steps.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$description = json['description'];
     final l$order = json['order'];
@@ -672,12 +701,7 @@ class Fragment$RecipeSectionFragment$Steps {
     final l$description = description;
     final l$order = order;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$description,
-      l$order,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$description, l$order, l$$__typename]);
   }
 
   @override
@@ -685,7 +709,7 @@ class Fragment$RecipeSectionFragment$Steps {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$RecipeSectionFragment$Steps) ||
+    if (other is! Fragment$RecipeSectionFragment$Steps ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -716,11 +740,9 @@ class Fragment$RecipeSectionFragment$Steps {
 extension UtilityExtension$Fragment$RecipeSectionFragment$Steps
     on Fragment$RecipeSectionFragment$Steps {
   CopyWith$Fragment$RecipeSectionFragment$Steps<
-          Fragment$RecipeSectionFragment$Steps>
-      get copyWith => CopyWith$Fragment$RecipeSectionFragment$Steps(
-            this,
-            (i) => i,
-          );
+    Fragment$RecipeSectionFragment$Steps
+  >
+  get copyWith => CopyWith$Fragment$RecipeSectionFragment$Steps(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$RecipeSectionFragment$Steps<TRes> {
@@ -732,12 +754,7 @@ abstract class CopyWith$Fragment$RecipeSectionFragment$Steps<TRes> {
   factory CopyWith$Fragment$RecipeSectionFragment$Steps.stub(TRes res) =
       _CopyWithStubImpl$Fragment$RecipeSectionFragment$Steps;
 
-  TRes call({
-    String? id,
-    String? description,
-    int? order,
-    String? $__typename,
-  });
+  TRes call({String? id, String? description, int? order, String? $__typename});
 }
 
 class _CopyWithImpl$Fragment$RecipeSectionFragment$Steps<TRes>
@@ -758,19 +775,20 @@ class _CopyWithImpl$Fragment$RecipeSectionFragment$Steps<TRes>
     Object? description = _undefined,
     Object? order = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$RecipeSectionFragment$Steps(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        description: description == _undefined || description == null
-            ? _instance.description
-            : (description as String),
-        order: order == _undefined || order == null
-            ? _instance.order
-            : (order as int),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$RecipeSectionFragment$Steps(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      description: description == _undefined || description == null
+          ? _instance.description
+          : (description as String),
+      order: order == _undefined || order == null
+          ? _instance.order
+          : (order as int),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Fragment$RecipeSectionFragment$Steps<TRes>
@@ -779,12 +797,7 @@ class _CopyWithStubImpl$Fragment$RecipeSectionFragment$Steps<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? description,
-    int? order,
-    String? $__typename,
-  }) =>
+  call({String? id, String? description, int? order, String? $__typename}) =>
       _res;
 }
 
@@ -795,7 +808,8 @@ class Fragment$RecipeSectionFragment$Recipe {
   });
 
   factory Fragment$RecipeSectionFragment$Recipe.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$$__typename = json['__typename'];
     return Fragment$RecipeSectionFragment$Recipe(
@@ -821,10 +835,7 @@ class Fragment$RecipeSectionFragment$Recipe {
   int get hashCode {
     final l$id = id;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$$__typename]);
   }
 
   @override
@@ -832,7 +843,7 @@ class Fragment$RecipeSectionFragment$Recipe {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$RecipeSectionFragment$Recipe) ||
+    if (other is! Fragment$RecipeSectionFragment$Recipe ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -853,11 +864,10 @@ class Fragment$RecipeSectionFragment$Recipe {
 extension UtilityExtension$Fragment$RecipeSectionFragment$Recipe
     on Fragment$RecipeSectionFragment$Recipe {
   CopyWith$Fragment$RecipeSectionFragment$Recipe<
-          Fragment$RecipeSectionFragment$Recipe>
-      get copyWith => CopyWith$Fragment$RecipeSectionFragment$Recipe(
-            this,
-            (i) => i,
-          );
+    Fragment$RecipeSectionFragment$Recipe
+  >
+  get copyWith =>
+      CopyWith$Fragment$RecipeSectionFragment$Recipe(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$RecipeSectionFragment$Recipe<TRes> {
@@ -869,10 +879,7 @@ abstract class CopyWith$Fragment$RecipeSectionFragment$Recipe<TRes> {
   factory CopyWith$Fragment$RecipeSectionFragment$Recipe.stub(TRes res) =
       _CopyWithStubImpl$Fragment$RecipeSectionFragment$Recipe;
 
-  TRes call({
-    String? id,
-    String? $__typename,
-  });
+  TRes call({String? id, String? $__typename});
 }
 
 class _CopyWithImpl$Fragment$RecipeSectionFragment$Recipe<TRes>
@@ -888,16 +895,15 @@ class _CopyWithImpl$Fragment$RecipeSectionFragment$Recipe<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$RecipeSectionFragment$Recipe(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? id = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Fragment$RecipeSectionFragment$Recipe(
+          id: id == _undefined || id == null ? _instance.id : (id as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Fragment$RecipeSectionFragment$Recipe<TRes>
@@ -906,9 +912,5 @@ class _CopyWithStubImpl$Fragment$RecipeSectionFragment$Recipe<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? $__typename}) => _res;
 }

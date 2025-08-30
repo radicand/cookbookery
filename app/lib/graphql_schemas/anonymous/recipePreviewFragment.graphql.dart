@@ -32,16 +32,23 @@ class Fragment$RecipePreviewFragment {
       id: (l$id as String),
       title: (l$title as String),
       Author: Fragment$RecipePreviewFragment$Author.fromJson(
-          (l$Author as Map<String, dynamic>)),
+        (l$Author as Map<String, dynamic>),
+      ),
       description: (l$description as String?),
       Files: (l$Files as List<dynamic>)
-          .map((e) => Fragment$RecipePreviewFragment$Files.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Fragment$RecipePreviewFragment$Files.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       createdAt: dateTimeFromJson(l$createdAt),
       RecipeTags: (l$RecipeTags as List<dynamic>)
-          .map((e) => Fragment$RecipePreviewFragment$RecipeTags.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Fragment$RecipePreviewFragment$RecipeTags.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -111,7 +118,7 @@ class Fragment$RecipePreviewFragment {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$RecipePreviewFragment) ||
+    if (other is! Fragment$RecipePreviewFragment ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -176,10 +183,7 @@ class Fragment$RecipePreviewFragment {
 extension UtilityExtension$Fragment$RecipePreviewFragment
     on Fragment$RecipePreviewFragment {
   CopyWith$Fragment$RecipePreviewFragment<Fragment$RecipePreviewFragment>
-      get copyWith => CopyWith$Fragment$RecipePreviewFragment(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Fragment$RecipePreviewFragment(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$RecipePreviewFragment<TRes> {
@@ -203,25 +207,30 @@ abstract class CopyWith$Fragment$RecipePreviewFragment<TRes> {
   });
   CopyWith$Fragment$RecipePreviewFragment$Author<TRes> get Author;
   TRes Files(
-      Iterable<Fragment$RecipePreviewFragment$Files> Function(
-              Iterable<
-                  CopyWith$Fragment$RecipePreviewFragment$Files<
-                      Fragment$RecipePreviewFragment$Files>>)
-          _fn);
+    Iterable<Fragment$RecipePreviewFragment$Files> Function(
+      Iterable<
+        CopyWith$Fragment$RecipePreviewFragment$Files<
+          Fragment$RecipePreviewFragment$Files
+        >
+      >,
+    )
+    _fn,
+  );
   TRes RecipeTags(
-      Iterable<Fragment$RecipePreviewFragment$RecipeTags> Function(
-              Iterable<
-                  CopyWith$Fragment$RecipePreviewFragment$RecipeTags<
-                      Fragment$RecipePreviewFragment$RecipeTags>>)
-          _fn);
+    Iterable<Fragment$RecipePreviewFragment$RecipeTags> Function(
+      Iterable<
+        CopyWith$Fragment$RecipePreviewFragment$RecipeTags<
+          Fragment$RecipePreviewFragment$RecipeTags
+        >
+      >,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Fragment$RecipePreviewFragment<TRes>
     implements CopyWith$Fragment$RecipePreviewFragment<TRes> {
-  _CopyWithImpl$Fragment$RecipePreviewFragment(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Fragment$RecipePreviewFragment(this._instance, this._then);
 
   final Fragment$RecipePreviewFragment _instance;
 
@@ -238,63 +247,74 @@ class _CopyWithImpl$Fragment$RecipePreviewFragment<TRes>
     Object? createdAt = _undefined,
     Object? RecipeTags = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$RecipePreviewFragment(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        title: title == _undefined || title == null
-            ? _instance.title
-            : (title as String),
-        Author: Author == _undefined || Author == null
-            ? _instance.Author
-            : (Author as Fragment$RecipePreviewFragment$Author),
-        description: description == _undefined
-            ? _instance.description
-            : (description as String?),
-        Files: Files == _undefined || Files == null
-            ? _instance.Files
-            : (Files as List<Fragment$RecipePreviewFragment$Files>),
-        createdAt: createdAt == _undefined || createdAt == null
-            ? _instance.createdAt
-            : (createdAt as DateTime),
-        RecipeTags: RecipeTags == _undefined || RecipeTags == null
-            ? _instance.RecipeTags
-            : (RecipeTags as List<Fragment$RecipePreviewFragment$RecipeTags>),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$RecipePreviewFragment(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      title: title == _undefined || title == null
+          ? _instance.title
+          : (title as String),
+      Author: Author == _undefined || Author == null
+          ? _instance.Author
+          : (Author as Fragment$RecipePreviewFragment$Author),
+      description: description == _undefined
+          ? _instance.description
+          : (description as String?),
+      Files: Files == _undefined || Files == null
+          ? _instance.Files
+          : (Files as List<Fragment$RecipePreviewFragment$Files>),
+      createdAt: createdAt == _undefined || createdAt == null
+          ? _instance.createdAt
+          : (createdAt as DateTime),
+      RecipeTags: RecipeTags == _undefined || RecipeTags == null
+          ? _instance.RecipeTags
+          : (RecipeTags as List<Fragment$RecipePreviewFragment$RecipeTags>),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Fragment$RecipePreviewFragment$Author<TRes> get Author {
     final local$Author = _instance.Author;
     return CopyWith$Fragment$RecipePreviewFragment$Author(
-        local$Author, (e) => call(Author: e));
+      local$Author,
+      (e) => call(Author: e),
+    );
   }
 
   TRes Files(
-          Iterable<Fragment$RecipePreviewFragment$Files> Function(
-                  Iterable<
-                      CopyWith$Fragment$RecipePreviewFragment$Files<
-                          Fragment$RecipePreviewFragment$Files>>)
-              _fn) =>
-      call(
-          Files: _fn(_instance.Files.map(
-              (e) => CopyWith$Fragment$RecipePreviewFragment$Files(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Fragment$RecipePreviewFragment$Files> Function(
+      Iterable<
+        CopyWith$Fragment$RecipePreviewFragment$Files<
+          Fragment$RecipePreviewFragment$Files
+        >
+      >,
+    )
+    _fn,
+  ) => call(
+    Files: _fn(
+      _instance.Files.map(
+        (e) => CopyWith$Fragment$RecipePreviewFragment$Files(e, (i) => i),
+      ),
+    ).toList(),
+  );
 
   TRes RecipeTags(
-          Iterable<Fragment$RecipePreviewFragment$RecipeTags> Function(
-                  Iterable<
-                      CopyWith$Fragment$RecipePreviewFragment$RecipeTags<
-                          Fragment$RecipePreviewFragment$RecipeTags>>)
-              _fn) =>
-      call(
-          RecipeTags: _fn(_instance.RecipeTags.map(
-              (e) => CopyWith$Fragment$RecipePreviewFragment$RecipeTags(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Fragment$RecipePreviewFragment$RecipeTags> Function(
+      Iterable<
+        CopyWith$Fragment$RecipePreviewFragment$RecipeTags<
+          Fragment$RecipePreviewFragment$RecipeTags
+        >
+      >,
+    )
+    _fn,
+  ) => call(
+    RecipeTags: _fn(
+      _instance.RecipeTags.map(
+        (e) => CopyWith$Fragment$RecipePreviewFragment$RecipeTags(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Fragment$RecipePreviewFragment<TRes>
@@ -312,8 +332,7 @@ class _CopyWithStubImpl$Fragment$RecipePreviewFragment<TRes>
     DateTime? createdAt,
     List<Fragment$RecipePreviewFragment$RecipeTags>? RecipeTags,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Fragment$RecipePreviewFragment$Author<TRes> get Author =>
       CopyWith$Fragment$RecipePreviewFragment$Author.stub(_res);
@@ -326,103 +345,32 @@ class _CopyWithStubImpl$Fragment$RecipePreviewFragment<TRes>
 const fragmentDefinitionRecipePreviewFragment = FragmentDefinitionNode(
   name: NameNode(value: 'RecipePreviewFragment'),
   typeCondition: TypeConditionNode(
-      on: NamedTypeNode(
-    name: NameNode(value: 'Recipe'),
-    isNonNull: false,
-  )),
+    on: NamedTypeNode(name: NameNode(value: 'Recipe'), isNonNull: false),
+  ),
   directives: [],
-  selectionSet: SelectionSetNode(selections: [
-    FieldNode(
-      name: NameNode(value: 'id'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'title'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'Author'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FieldNode(
-          name: NameNode(value: 'id'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        FieldNode(
-          name: NameNode(value: 'name'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        FieldNode(
-          name: NameNode(value: '__typename'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-      ]),
-    ),
-    FieldNode(
-      name: NameNode(value: 'description'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'Files'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FieldNode(
-          name: NameNode(value: 'id'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        FieldNode(
-          name: NameNode(value: '__typename'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-      ]),
-    ),
-    FieldNode(
-      name: NameNode(value: 'createdAt'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'RecipeTags'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FieldNode(
-          name: NameNode(value: 'Tag'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: SelectionSetNode(selections: [
+  selectionSet: SelectionSetNode(
+    selections: [
+      FieldNode(
+        name: NameNode(value: 'id'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'title'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'Author'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: SelectionSetNode(
+          selections: [
             FieldNode(
               name: NameNode(value: 'id'),
               alias: null,
@@ -444,29 +392,108 @@ const fragmentDefinitionRecipePreviewFragment = FragmentDefinitionNode(
               directives: [],
               selectionSet: null,
             ),
-          ]),
+          ],
         ),
-        FieldNode(
-          name: NameNode(value: '__typename'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'description'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'Files'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: SelectionSetNode(
+          selections: [
+            FieldNode(
+              name: NameNode(value: 'id'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            FieldNode(
+              name: NameNode(value: '__typename'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+          ],
         ),
-      ]),
-    ),
-    FieldNode(
-      name: NameNode(value: '__typename'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-  ]),
+      ),
+      FieldNode(
+        name: NameNode(value: 'createdAt'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'RecipeTags'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: SelectionSetNode(
+          selections: [
+            FieldNode(
+              name: NameNode(value: 'Tag'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: SelectionSetNode(
+                selections: [
+                  FieldNode(
+                    name: NameNode(value: 'id'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null,
+                  ),
+                  FieldNode(
+                    name: NameNode(value: 'name'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null,
+                  ),
+                  FieldNode(
+                    name: NameNode(value: '__typename'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null,
+                  ),
+                ],
+              ),
+            ),
+            FieldNode(
+              name: NameNode(value: '__typename'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+          ],
+        ),
+      ),
+      FieldNode(
+        name: NameNode(value: '__typename'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+    ],
+  ),
 );
-const documentNodeFragmentRecipePreviewFragment = DocumentNode(definitions: [
-  fragmentDefinitionRecipePreviewFragment,
-]);
+const documentNodeFragmentRecipePreviewFragment = DocumentNode(
+  definitions: [fragmentDefinitionRecipePreviewFragment],
+);
 
 extension ClientExtension$Fragment$RecipePreviewFragment
     on graphql.GraphQLClient {
@@ -474,18 +501,17 @@ extension ClientExtension$Fragment$RecipePreviewFragment
     required Fragment$RecipePreviewFragment data,
     required Map<String, dynamic> idFields,
     bool broadcast = true,
-  }) =>
-      this.writeFragment(
-        graphql.FragmentRequest(
-          idFields: idFields,
-          fragment: const graphql.Fragment(
-            fragmentName: 'RecipePreviewFragment',
-            document: documentNodeFragmentRecipePreviewFragment,
-          ),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeFragment(
+    graphql.FragmentRequest(
+      idFields: idFields,
+      fragment: const graphql.Fragment(
+        fragmentName: 'RecipePreviewFragment',
+        document: documentNodeFragmentRecipePreviewFragment,
+      ),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
   Fragment$RecipePreviewFragment? readFragment$RecipePreviewFragment({
     required Map<String, dynamic> idFields,
     bool optimistic = true,
@@ -514,7 +540,8 @@ class Fragment$RecipePreviewFragment$Author {
   });
 
   factory Fragment$RecipePreviewFragment$Author.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$$__typename = json['__typename'];
@@ -547,11 +574,7 @@ class Fragment$RecipePreviewFragment$Author {
     final l$id = id;
     final l$name = name;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$name,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$name, l$$__typename]);
   }
 
   @override
@@ -559,7 +582,7 @@ class Fragment$RecipePreviewFragment$Author {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$RecipePreviewFragment$Author) ||
+    if (other is! Fragment$RecipePreviewFragment$Author ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -585,11 +608,10 @@ class Fragment$RecipePreviewFragment$Author {
 extension UtilityExtension$Fragment$RecipePreviewFragment$Author
     on Fragment$RecipePreviewFragment$Author {
   CopyWith$Fragment$RecipePreviewFragment$Author<
-          Fragment$RecipePreviewFragment$Author>
-      get copyWith => CopyWith$Fragment$RecipePreviewFragment$Author(
-            this,
-            (i) => i,
-          );
+    Fragment$RecipePreviewFragment$Author
+  >
+  get copyWith =>
+      CopyWith$Fragment$RecipePreviewFragment$Author(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$RecipePreviewFragment$Author<TRes> {
@@ -601,11 +623,7 @@ abstract class CopyWith$Fragment$RecipePreviewFragment$Author<TRes> {
   factory CopyWith$Fragment$RecipePreviewFragment$Author.stub(TRes res) =
       _CopyWithStubImpl$Fragment$RecipePreviewFragment$Author;
 
-  TRes call({
-    String? id,
-    String? name,
-    String? $__typename,
-  });
+  TRes call({String? id, String? name, String? $__typename});
 }
 
 class _CopyWithImpl$Fragment$RecipePreviewFragment$Author<TRes>
@@ -625,16 +643,17 @@ class _CopyWithImpl$Fragment$RecipePreviewFragment$Author<TRes>
     Object? id = _undefined,
     Object? name = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$RecipePreviewFragment$Author(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$RecipePreviewFragment$Author(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Fragment$RecipePreviewFragment$Author<TRes>
@@ -643,12 +662,7 @@ class _CopyWithStubImpl$Fragment$RecipePreviewFragment$Author<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? name,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? name, String? $__typename}) => _res;
 }
 
 class Fragment$RecipePreviewFragment$Files {
@@ -658,7 +672,8 @@ class Fragment$RecipePreviewFragment$Files {
   });
 
   factory Fragment$RecipePreviewFragment$Files.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$$__typename = json['__typename'];
     return Fragment$RecipePreviewFragment$Files(
@@ -684,10 +699,7 @@ class Fragment$RecipePreviewFragment$Files {
   int get hashCode {
     final l$id = id;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$$__typename]);
   }
 
   @override
@@ -695,7 +707,7 @@ class Fragment$RecipePreviewFragment$Files {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$RecipePreviewFragment$Files) ||
+    if (other is! Fragment$RecipePreviewFragment$Files ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -716,11 +728,9 @@ class Fragment$RecipePreviewFragment$Files {
 extension UtilityExtension$Fragment$RecipePreviewFragment$Files
     on Fragment$RecipePreviewFragment$Files {
   CopyWith$Fragment$RecipePreviewFragment$Files<
-          Fragment$RecipePreviewFragment$Files>
-      get copyWith => CopyWith$Fragment$RecipePreviewFragment$Files(
-            this,
-            (i) => i,
-          );
+    Fragment$RecipePreviewFragment$Files
+  >
+  get copyWith => CopyWith$Fragment$RecipePreviewFragment$Files(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$RecipePreviewFragment$Files<TRes> {
@@ -732,10 +742,7 @@ abstract class CopyWith$Fragment$RecipePreviewFragment$Files<TRes> {
   factory CopyWith$Fragment$RecipePreviewFragment$Files.stub(TRes res) =
       _CopyWithStubImpl$Fragment$RecipePreviewFragment$Files;
 
-  TRes call({
-    String? id,
-    String? $__typename,
-  });
+  TRes call({String? id, String? $__typename});
 }
 
 class _CopyWithImpl$Fragment$RecipePreviewFragment$Files<TRes>
@@ -751,16 +758,15 @@ class _CopyWithImpl$Fragment$RecipePreviewFragment$Files<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$RecipePreviewFragment$Files(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? id = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Fragment$RecipePreviewFragment$Files(
+          id: id == _undefined || id == null ? _instance.id : (id as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Fragment$RecipePreviewFragment$Files<TRes>
@@ -769,11 +775,7 @@ class _CopyWithStubImpl$Fragment$RecipePreviewFragment$Files<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? $__typename}) => _res;
 }
 
 class Fragment$RecipePreviewFragment$RecipeTags {
@@ -783,12 +785,14 @@ class Fragment$RecipePreviewFragment$RecipeTags {
   });
 
   factory Fragment$RecipePreviewFragment$RecipeTags.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$Tag = json['Tag'];
     final l$$__typename = json['__typename'];
     return Fragment$RecipePreviewFragment$RecipeTags(
       Tag: Fragment$RecipePreviewFragment$RecipeTags$Tag.fromJson(
-          (l$Tag as Map<String, dynamic>)),
+        (l$Tag as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -810,10 +814,7 @@ class Fragment$RecipePreviewFragment$RecipeTags {
   int get hashCode {
     final l$Tag = Tag;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$Tag,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$Tag, l$$__typename]);
   }
 
   @override
@@ -821,7 +822,7 @@ class Fragment$RecipePreviewFragment$RecipeTags {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$RecipePreviewFragment$RecipeTags) ||
+    if (other is! Fragment$RecipePreviewFragment$RecipeTags ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -842,11 +843,10 @@ class Fragment$RecipePreviewFragment$RecipeTags {
 extension UtilityExtension$Fragment$RecipePreviewFragment$RecipeTags
     on Fragment$RecipePreviewFragment$RecipeTags {
   CopyWith$Fragment$RecipePreviewFragment$RecipeTags<
-          Fragment$RecipePreviewFragment$RecipeTags>
-      get copyWith => CopyWith$Fragment$RecipePreviewFragment$RecipeTags(
-            this,
-            (i) => i,
-          );
+    Fragment$RecipePreviewFragment$RecipeTags
+  >
+  get copyWith =>
+      CopyWith$Fragment$RecipePreviewFragment$RecipeTags(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$RecipePreviewFragment$RecipeTags<TRes> {
@@ -878,23 +878,24 @@ class _CopyWithImpl$Fragment$RecipePreviewFragment$RecipeTags<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? Tag = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$RecipePreviewFragment$RecipeTags(
-        Tag: Tag == _undefined || Tag == null
-            ? _instance.Tag
-            : (Tag as Fragment$RecipePreviewFragment$RecipeTags$Tag),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? Tag = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Fragment$RecipePreviewFragment$RecipeTags(
+          Tag: Tag == _undefined || Tag == null
+              ? _instance.Tag
+              : (Tag as Fragment$RecipePreviewFragment$RecipeTags$Tag),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 
   CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag<TRes> get Tag {
     final local$Tag = _instance.Tag;
     return CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag(
-        local$Tag, (e) => call(Tag: e));
+      local$Tag,
+      (e) => call(Tag: e),
+    );
   }
 }
 
@@ -907,8 +908,7 @@ class _CopyWithStubImpl$Fragment$RecipePreviewFragment$RecipeTags<TRes>
   call({
     Fragment$RecipePreviewFragment$RecipeTags$Tag? Tag,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag<TRes> get Tag =>
       CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag.stub(_res);
@@ -922,7 +922,8 @@ class Fragment$RecipePreviewFragment$RecipeTags$Tag {
   });
 
   factory Fragment$RecipePreviewFragment$RecipeTags$Tag.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$$__typename = json['__typename'];
@@ -955,11 +956,7 @@ class Fragment$RecipePreviewFragment$RecipeTags$Tag {
     final l$id = id;
     final l$name = name;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$name,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$name, l$$__typename]);
   }
 
   @override
@@ -967,7 +964,7 @@ class Fragment$RecipePreviewFragment$RecipeTags$Tag {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$RecipePreviewFragment$RecipeTags$Tag) ||
+    if (other is! Fragment$RecipePreviewFragment$RecipeTags$Tag ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -993,11 +990,10 @@ class Fragment$RecipePreviewFragment$RecipeTags$Tag {
 extension UtilityExtension$Fragment$RecipePreviewFragment$RecipeTags$Tag
     on Fragment$RecipePreviewFragment$RecipeTags$Tag {
   CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag<
-          Fragment$RecipePreviewFragment$RecipeTags$Tag>
-      get copyWith => CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag(
-            this,
-            (i) => i,
-          );
+    Fragment$RecipePreviewFragment$RecipeTags$Tag
+  >
+  get copyWith =>
+      CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag<TRes> {
@@ -1007,14 +1003,10 @@ abstract class CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag<TRes> {
   ) = _CopyWithImpl$Fragment$RecipePreviewFragment$RecipeTags$Tag;
 
   factory CopyWith$Fragment$RecipePreviewFragment$RecipeTags$Tag.stub(
-          TRes res) =
-      _CopyWithStubImpl$Fragment$RecipePreviewFragment$RecipeTags$Tag;
+    TRes res,
+  ) = _CopyWithStubImpl$Fragment$RecipePreviewFragment$RecipeTags$Tag;
 
-  TRes call({
-    String? id,
-    String? name,
-    String? $__typename,
-  });
+  TRes call({String? id, String? name, String? $__typename});
 }
 
 class _CopyWithImpl$Fragment$RecipePreviewFragment$RecipeTags$Tag<TRes>
@@ -1034,16 +1026,17 @@ class _CopyWithImpl$Fragment$RecipePreviewFragment$RecipeTags$Tag<TRes>
     Object? id = _undefined,
     Object? name = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$RecipePreviewFragment$RecipeTags$Tag(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$RecipePreviewFragment$RecipeTags$Tag(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Fragment$RecipePreviewFragment$RecipeTags$Tag<TRes>
@@ -1052,10 +1045,5 @@ class _CopyWithStubImpl$Fragment$RecipePreviewFragment$RecipeTags$Tag<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? name,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? name, String? $__typename}) => _res;
 }

@@ -32,12 +32,14 @@ class Fragment$IngredientUnitFragment {
       UnitSize: l$UnitSize == null
           ? null
           : Fragment$UnitSizeFragment.fromJson(
-              (l$UnitSize as Map<String, dynamic>)),
+              (l$UnitSize as Map<String, dynamic>),
+            ),
       notes: (l$notes as String?),
       Ingredient: l$Ingredient == null
           ? null
           : Fragment$IngredientUnitFragment$Ingredient.fromJson(
-              (l$Ingredient as Map<String, dynamic>)),
+              (l$Ingredient as Map<String, dynamic>),
+            ),
       order: (l$order as int),
       $__typename: (l$$__typename as String),
     );
@@ -101,7 +103,7 @@ class Fragment$IngredientUnitFragment {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$IngredientUnitFragment) ||
+    if (other is! Fragment$IngredientUnitFragment ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -147,10 +149,7 @@ class Fragment$IngredientUnitFragment {
 extension UtilityExtension$Fragment$IngredientUnitFragment
     on Fragment$IngredientUnitFragment {
   CopyWith$Fragment$IngredientUnitFragment<Fragment$IngredientUnitFragment>
-      get copyWith => CopyWith$Fragment$IngredientUnitFragment(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Fragment$IngredientUnitFragment(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$IngredientUnitFragment<TRes> {
@@ -177,10 +176,7 @@ abstract class CopyWith$Fragment$IngredientUnitFragment<TRes> {
 
 class _CopyWithImpl$Fragment$IngredientUnitFragment<TRes>
     implements CopyWith$Fragment$IngredientUnitFragment<TRes> {
-  _CopyWithImpl$Fragment$IngredientUnitFragment(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Fragment$IngredientUnitFragment(this._instance, this._then);
 
   final Fragment$IngredientUnitFragment _instance;
 
@@ -196,40 +192,46 @@ class _CopyWithImpl$Fragment$IngredientUnitFragment<TRes>
     Object? Ingredient = _undefined,
     Object? order = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$IngredientUnitFragment(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        amount: amount == _undefined ? _instance.amount : (amount as double?),
-        UnitSize: UnitSize == _undefined
-            ? _instance.UnitSize
-            : (UnitSize as Fragment$UnitSizeFragment?),
-        notes: notes == _undefined ? _instance.notes : (notes as String?),
-        Ingredient: Ingredient == _undefined
-            ? _instance.Ingredient
-            : (Ingredient as Fragment$IngredientUnitFragment$Ingredient?),
-        order: order == _undefined || order == null
-            ? _instance.order
-            : (order as int),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$IngredientUnitFragment(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      amount: amount == _undefined ? _instance.amount : (amount as double?),
+      UnitSize: UnitSize == _undefined
+          ? _instance.UnitSize
+          : (UnitSize as Fragment$UnitSizeFragment?),
+      notes: notes == _undefined ? _instance.notes : (notes as String?),
+      Ingredient: Ingredient == _undefined
+          ? _instance.Ingredient
+          : (Ingredient as Fragment$IngredientUnitFragment$Ingredient?),
+      order: order == _undefined || order == null
+          ? _instance.order
+          : (order as int),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Fragment$UnitSizeFragment<TRes> get UnitSize {
     final local$UnitSize = _instance.UnitSize;
     return local$UnitSize == null
         ? CopyWith$Fragment$UnitSizeFragment.stub(_then(_instance))
         : CopyWith$Fragment$UnitSizeFragment(
-            local$UnitSize, (e) => call(UnitSize: e));
+            local$UnitSize,
+            (e) => call(UnitSize: e),
+          );
   }
 
   CopyWith$Fragment$IngredientUnitFragment$Ingredient<TRes> get Ingredient {
     final local$Ingredient = _instance.Ingredient;
     return local$Ingredient == null
         ? CopyWith$Fragment$IngredientUnitFragment$Ingredient.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Fragment$IngredientUnitFragment$Ingredient(
-            local$Ingredient, (e) => call(Ingredient: e));
+            local$Ingredient,
+            (e) => call(Ingredient: e),
+          );
   }
 }
 
@@ -247,8 +249,7 @@ class _CopyWithStubImpl$Fragment$IngredientUnitFragment<TRes>
     Fragment$IngredientUnitFragment$Ingredient? Ingredient,
     int? order,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Fragment$UnitSizeFragment<TRes> get UnitSize =>
       CopyWith$Fragment$UnitSizeFragment.stub(_res);
@@ -260,101 +261,110 @@ class _CopyWithStubImpl$Fragment$IngredientUnitFragment<TRes>
 const fragmentDefinitionIngredientUnitFragment = FragmentDefinitionNode(
   name: NameNode(value: 'IngredientUnitFragment'),
   typeCondition: TypeConditionNode(
-      on: NamedTypeNode(
-    name: NameNode(value: 'IngredientUnit'),
-    isNonNull: false,
-  )),
+    on: NamedTypeNode(
+      name: NameNode(value: 'IngredientUnit'),
+      isNonNull: false,
+    ),
+  ),
   directives: [],
-  selectionSet: SelectionSetNode(selections: [
-    FieldNode(
-      name: NameNode(value: 'id'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'amount'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'UnitSize'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FragmentSpreadNode(
-          name: NameNode(value: 'UnitSizeFragment'),
-          directives: [],
+  selectionSet: SelectionSetNode(
+    selections: [
+      FieldNode(
+        name: NameNode(value: 'id'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'amount'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'UnitSize'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: SelectionSetNode(
+          selections: [
+            FragmentSpreadNode(
+              name: NameNode(value: 'UnitSizeFragment'),
+              directives: [],
+            ),
+            FieldNode(
+              name: NameNode(value: '__typename'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+          ],
         ),
-        FieldNode(
-          name: NameNode(value: '__typename'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'notes'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'Ingredient'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: SelectionSetNode(
+          selections: [
+            FieldNode(
+              name: NameNode(value: 'id'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            FieldNode(
+              name: NameNode(value: 'name'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            FieldNode(
+              name: NameNode(value: '__typename'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+          ],
         ),
-      ]),
-    ),
-    FieldNode(
-      name: NameNode(value: 'notes'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'Ingredient'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FieldNode(
-          name: NameNode(value: 'id'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        FieldNode(
-          name: NameNode(value: 'name'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        FieldNode(
-          name: NameNode(value: '__typename'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-      ]),
-    ),
-    FieldNode(
-      name: NameNode(value: 'order'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: '__typename'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-  ]),
+      ),
+      FieldNode(
+        name: NameNode(value: 'order'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: '__typename'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+    ],
+  ),
 );
-const documentNodeFragmentIngredientUnitFragment = DocumentNode(definitions: [
-  fragmentDefinitionIngredientUnitFragment,
-  fragmentDefinitionUnitSizeFragment,
-]);
+const documentNodeFragmentIngredientUnitFragment = DocumentNode(
+  definitions: [
+    fragmentDefinitionIngredientUnitFragment,
+    fragmentDefinitionUnitSizeFragment,
+  ],
+);
 
 extension ClientExtension$Fragment$IngredientUnitFragment
     on graphql.GraphQLClient {
@@ -362,18 +372,17 @@ extension ClientExtension$Fragment$IngredientUnitFragment
     required Fragment$IngredientUnitFragment data,
     required Map<String, dynamic> idFields,
     bool broadcast = true,
-  }) =>
-      this.writeFragment(
-        graphql.FragmentRequest(
-          idFields: idFields,
-          fragment: const graphql.Fragment(
-            fragmentName: 'IngredientUnitFragment',
-            document: documentNodeFragmentIngredientUnitFragment,
-          ),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeFragment(
+    graphql.FragmentRequest(
+      idFields: idFields,
+      fragment: const graphql.Fragment(
+        fragmentName: 'IngredientUnitFragment',
+        document: documentNodeFragmentIngredientUnitFragment,
+      ),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
   Fragment$IngredientUnitFragment? readFragment$IngredientUnitFragment({
     required Map<String, dynamic> idFields,
     bool optimistic = true,
@@ -402,7 +411,8 @@ class Fragment$IngredientUnitFragment$Ingredient {
   });
 
   factory Fragment$IngredientUnitFragment$Ingredient.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$$__typename = json['__typename'];
@@ -435,11 +445,7 @@ class Fragment$IngredientUnitFragment$Ingredient {
     final l$id = id;
     final l$name = name;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$name,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$name, l$$__typename]);
   }
 
   @override
@@ -447,7 +453,7 @@ class Fragment$IngredientUnitFragment$Ingredient {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$IngredientUnitFragment$Ingredient) ||
+    if (other is! Fragment$IngredientUnitFragment$Ingredient ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -473,11 +479,10 @@ class Fragment$IngredientUnitFragment$Ingredient {
 extension UtilityExtension$Fragment$IngredientUnitFragment$Ingredient
     on Fragment$IngredientUnitFragment$Ingredient {
   CopyWith$Fragment$IngredientUnitFragment$Ingredient<
-          Fragment$IngredientUnitFragment$Ingredient>
-      get copyWith => CopyWith$Fragment$IngredientUnitFragment$Ingredient(
-            this,
-            (i) => i,
-          );
+    Fragment$IngredientUnitFragment$Ingredient
+  >
+  get copyWith =>
+      CopyWith$Fragment$IngredientUnitFragment$Ingredient(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$IngredientUnitFragment$Ingredient<TRes> {
@@ -489,11 +494,7 @@ abstract class CopyWith$Fragment$IngredientUnitFragment$Ingredient<TRes> {
   factory CopyWith$Fragment$IngredientUnitFragment$Ingredient.stub(TRes res) =
       _CopyWithStubImpl$Fragment$IngredientUnitFragment$Ingredient;
 
-  TRes call({
-    String? id,
-    String? name,
-    String? $__typename,
-  });
+  TRes call({String? id, String? name, String? $__typename});
 }
 
 class _CopyWithImpl$Fragment$IngredientUnitFragment$Ingredient<TRes>
@@ -513,16 +514,17 @@ class _CopyWithImpl$Fragment$IngredientUnitFragment$Ingredient<TRes>
     Object? id = _undefined,
     Object? name = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$IngredientUnitFragment$Ingredient(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$IngredientUnitFragment$Ingredient(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Fragment$IngredientUnitFragment$Ingredient<TRes>
@@ -531,10 +533,5 @@ class _CopyWithStubImpl$Fragment$IngredientUnitFragment$Ingredient<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? name,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? name, String? $__typename}) => _res;
 }

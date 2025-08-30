@@ -10,12 +10,11 @@ class Input$File_aggregate_order_by {
     Enum$order_by? count,
     Input$File_max_order_by? max,
     Input$File_min_order_by? min,
-  }) =>
-      Input$File_aggregate_order_by._({
-        if (count != null) r'count': count,
-        if (max != null) r'max': max,
-        if (min != null) r'min': min,
-      });
+  }) => Input$File_aggregate_order_by._({
+    if (count != null) r'count': count,
+    if (max != null) r'max': max,
+    if (min != null) r'min': min,
+  });
 
   Input$File_aggregate_order_by._(this._$data);
 
@@ -23,8 +22,9 @@ class Input$File_aggregate_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('count')) {
       final l$count = data['count'];
-      result$data['count'] =
-          l$count == null ? null : fromJson$Enum$order_by((l$count as String));
+      result$data['count'] = l$count == null
+          ? null
+          : fromJson$Enum$order_by((l$count as String));
     }
     if (data.containsKey('max')) {
       final l$max = data['max'];
@@ -55,8 +55,9 @@ class Input$File_aggregate_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('count')) {
       final l$count = count;
-      result$data['count'] =
-          l$count == null ? null : toJson$Enum$order_by(l$count);
+      result$data['count'] = l$count == null
+          ? null
+          : toJson$Enum$order_by(l$count);
     }
     if (_$data.containsKey('max')) {
       final l$max = max;
@@ -70,17 +71,14 @@ class Input$File_aggregate_order_by {
   }
 
   CopyWith$Input$File_aggregate_order_by<Input$File_aggregate_order_by>
-      get copyWith => CopyWith$Input$File_aggregate_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$File_aggregate_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$File_aggregate_order_by) ||
+    if (other is! Input$File_aggregate_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -144,10 +142,7 @@ abstract class CopyWith$Input$File_aggregate_order_by<TRes> {
 
 class _CopyWithImpl$Input$File_aggregate_order_by<TRes>
     implements CopyWith$Input$File_aggregate_order_by<TRes> {
-  _CopyWithImpl$Input$File_aggregate_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$File_aggregate_order_by(this._instance, this._then);
 
   final Input$File_aggregate_order_by _instance;
 
@@ -159,13 +154,14 @@ class _CopyWithImpl$Input$File_aggregate_order_by<TRes>
     Object? count = _undefined,
     Object? max = _undefined,
     Object? min = _undefined,
-  }) =>
-      _then(Input$File_aggregate_order_by._({
-        ..._instance._$data,
-        if (count != _undefined) 'count': (count as Enum$order_by?),
-        if (max != _undefined) 'max': (max as Input$File_max_order_by?),
-        if (min != _undefined) 'min': (min as Input$File_min_order_by?),
-      }));
+  }) => _then(
+    Input$File_aggregate_order_by._({
+      ..._instance._$data,
+      if (count != _undefined) 'count': (count as Enum$order_by?),
+      if (max != _undefined) 'max': (max as Input$File_max_order_by?),
+      if (min != _undefined) 'min': (min as Input$File_min_order_by?),
+    }),
+  );
 
   CopyWith$Input$File_max_order_by<TRes> get max {
     final local$max = _instance.max;
@@ -192,8 +188,7 @@ class _CopyWithStubImpl$Input$File_aggregate_order_by<TRes>
     Enum$order_by? count,
     Input$File_max_order_by? max,
     Input$File_min_order_by? min,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$File_max_order_by<TRes> get max =>
       CopyWith$Input$File_max_order_by.stub(_res);
@@ -217,22 +212,21 @@ class Input$File_bool_exp {
     Input$String_comparison_exp? recipeId,
     Input$timestamp_comparison_exp? updatedAt,
     Input$String_comparison_exp? userId,
-  }) =>
-      Input$File_bool_exp._({
-        if (Recipe != null) r'Recipe': Recipe,
-        if (Steps != null) r'Steps': Steps,
-        if (User != null) r'User': User,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (blob != null) r'blob': blob,
-        if (createdAt != null) r'createdAt': createdAt,
-        if (id != null) r'id': id,
-        if (mimetype != null) r'mimetype': mimetype,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-        if (userId != null) r'userId': userId,
-      });
+  }) => Input$File_bool_exp._({
+    if (Recipe != null) r'Recipe': Recipe,
+    if (Steps != null) r'Steps': Steps,
+    if (User != null) r'User': User,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (blob != null) r'blob': blob,
+    if (createdAt != null) r'createdAt': createdAt,
+    if (id != null) r'id': id,
+    if (mimetype != null) r'mimetype': mimetype,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+    if (userId != null) r'userId': userId,
+  });
 
   Input$File_bool_exp._(this._$data);
 
@@ -260,7 +254,8 @@ class Input$File_bool_exp {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
           ?.map(
-              (e) => Input$File_bool_exp.fromJson((e as Map<String, dynamic>)))
+            (e) => Input$File_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -273,7 +268,8 @@ class Input$File_bool_exp {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
           ?.map(
-              (e) => Input$File_bool_exp.fromJson((e as Map<String, dynamic>)))
+            (e) => Input$File_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('blob')) {
@@ -281,49 +277,56 @@ class Input$File_bool_exp {
       result$data['blob'] = l$blob == null
           ? null
           : Input$bytea_comparison_exp.fromJson(
-              (l$blob as Map<String, dynamic>));
+              (l$blob as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('createdAt')) {
       final l$createdAt = data['createdAt'];
       result$data['createdAt'] = l$createdAt == null
           ? null
           : Input$timestamp_comparison_exp.fromJson(
-              (l$createdAt as Map<String, dynamic>));
+              (l$createdAt as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('mimetype')) {
       final l$mimetype = data['mimetype'];
       result$data['mimetype'] = l$mimetype == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$mimetype as Map<String, dynamic>));
+              (l$mimetype as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('recipeId')) {
       final l$recipeId = data['recipeId'];
       result$data['recipeId'] = l$recipeId == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$recipeId as Map<String, dynamic>));
+              (l$recipeId as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('updatedAt')) {
       final l$updatedAt = data['updatedAt'];
       result$data['updatedAt'] = l$updatedAt == null
           ? null
           : Input$timestamp_comparison_exp.fromJson(
-              (l$updatedAt as Map<String, dynamic>));
+              (l$updatedAt as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('userId')) {
       final l$userId = data['userId'];
       result$data['userId'] = l$userId == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$userId as Map<String, dynamic>));
+              (l$userId as Map<String, dynamic>),
+            );
     }
     return Input$File_bool_exp._(result$data);
   }
@@ -424,17 +427,14 @@ class Input$File_bool_exp {
   }
 
   CopyWith$Input$File_bool_exp<Input$File_bool_exp> get copyWith =>
-      CopyWith$Input$File_bool_exp(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$File_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$File_bool_exp) || runtimeType != other.runtimeType) {
+    if (other is! Input$File_bool_exp || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Recipe = Recipe;
@@ -591,14 +591,14 @@ class Input$File_bool_exp {
       _$data.containsKey('User') ? l$User : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('blob') ? l$blob : const {},
       _$data.containsKey('createdAt') ? l$createdAt : const {},
@@ -639,14 +639,18 @@ abstract class CopyWith$Input$File_bool_exp<TRes> {
   CopyWith$Input$Step_bool_exp<TRes> get Steps;
   CopyWith$Input$User_bool_exp<TRes> get User;
   TRes $_and(
-      Iterable<Input$File_bool_exp>? Function(
-              Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?)
-          _fn);
+    Iterable<Input$File_bool_exp>? Function(
+      Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$File_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$File_bool_exp>? Function(
-              Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?)
-          _fn);
+    Iterable<Input$File_bool_exp>? Function(
+      Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$bytea_comparison_exp<TRes> get blob;
   CopyWith$Input$timestamp_comparison_exp<TRes> get createdAt;
   CopyWith$Input$String_comparison_exp<TRes> get id;
@@ -658,10 +662,7 @@ abstract class CopyWith$Input$File_bool_exp<TRes> {
 
 class _CopyWithImpl$Input$File_bool_exp<TRes>
     implements CopyWith$Input$File_bool_exp<TRes> {
-  _CopyWithImpl$Input$File_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$File_bool_exp(this._instance, this._then);
 
   final Input$File_bool_exp _instance;
 
@@ -683,28 +684,29 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
     Object? recipeId = _undefined,
     Object? updatedAt = _undefined,
     Object? userId = _undefined,
-  }) =>
-      _then(Input$File_bool_exp._({
-        ..._instance._$data,
-        if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_bool_exp?),
-        if (Steps != _undefined) 'Steps': (Steps as Input$Step_bool_exp?),
-        if (User != _undefined) 'User': (User as Input$User_bool_exp?),
-        if ($_and != _undefined) '_and': ($_and as List<Input$File_bool_exp>?),
-        if ($_not != _undefined) '_not': ($_not as Input$File_bool_exp?),
-        if ($_or != _undefined) '_or': ($_or as List<Input$File_bool_exp>?),
-        if (blob != _undefined) 'blob': (blob as Input$bytea_comparison_exp?),
-        if (createdAt != _undefined)
-          'createdAt': (createdAt as Input$timestamp_comparison_exp?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-        if (mimetype != _undefined)
-          'mimetype': (mimetype as Input$String_comparison_exp?),
-        if (recipeId != _undefined)
-          'recipeId': (recipeId as Input$String_comparison_exp?),
-        if (updatedAt != _undefined)
-          'updatedAt': (updatedAt as Input$timestamp_comparison_exp?),
-        if (userId != _undefined)
-          'userId': (userId as Input$String_comparison_exp?),
-      }));
+  }) => _then(
+    Input$File_bool_exp._({
+      ..._instance._$data,
+      if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_bool_exp?),
+      if (Steps != _undefined) 'Steps': (Steps as Input$Step_bool_exp?),
+      if (User != _undefined) 'User': (User as Input$User_bool_exp?),
+      if ($_and != _undefined) '_and': ($_and as List<Input$File_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$File_bool_exp?),
+      if ($_or != _undefined) '_or': ($_or as List<Input$File_bool_exp>?),
+      if (blob != _undefined) 'blob': (blob as Input$bytea_comparison_exp?),
+      if (createdAt != _undefined)
+        'createdAt': (createdAt as Input$timestamp_comparison_exp?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+      if (mimetype != _undefined)
+        'mimetype': (mimetype as Input$String_comparison_exp?),
+      if (recipeId != _undefined)
+        'recipeId': (recipeId as Input$String_comparison_exp?),
+      if (updatedAt != _undefined)
+        'updatedAt': (updatedAt as Input$timestamp_comparison_exp?),
+      if (userId != _undefined)
+        'userId': (userId as Input$String_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
@@ -728,14 +730,15 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
   }
 
   TRes $_and(
-          Iterable<Input$File_bool_exp>? Function(
-                  Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and: _fn(_instance.$_and?.map((e) => CopyWith$Input$File_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$File_bool_exp>? Function(
+      Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map((e) => CopyWith$Input$File_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$File_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
@@ -745,14 +748,15 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
   }
 
   TRes $_or(
-          Iterable<Input$File_bool_exp>? Function(
-                  Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(_instance.$_or?.map((e) => CopyWith$Input$File_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$File_bool_exp>? Function(
+      Iterable<CopyWith$Input$File_bool_exp<Input$File_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map((e) => CopyWith$Input$File_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$bytea_comparison_exp<TRes> get blob {
     final local$blob = _instance.blob;
@@ -766,7 +770,9 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
     return local$createdAt == null
         ? CopyWith$Input$timestamp_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$timestamp_comparison_exp(
-            local$createdAt, (e) => call(createdAt: e));
+            local$createdAt,
+            (e) => call(createdAt: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
@@ -781,7 +787,9 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
     return local$mimetype == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$mimetype, (e) => call(mimetype: e));
+            local$mimetype,
+            (e) => call(mimetype: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get recipeId {
@@ -789,7 +797,9 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
     return local$recipeId == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$recipeId, (e) => call(recipeId: e));
+            local$recipeId,
+            (e) => call(recipeId: e),
+          );
   }
 
   CopyWith$Input$timestamp_comparison_exp<TRes> get updatedAt {
@@ -797,7 +807,9 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
     return local$updatedAt == null
         ? CopyWith$Input$timestamp_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$timestamp_comparison_exp(
-            local$updatedAt, (e) => call(updatedAt: e));
+            local$updatedAt,
+            (e) => call(updatedAt: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get userId {
@@ -805,7 +817,9 @@ class _CopyWithImpl$Input$File_bool_exp<TRes>
     return local$userId == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$userId, (e) => call(userId: e));
+            local$userId,
+            (e) => call(userId: e),
+          );
   }
 }
 
@@ -829,8 +843,7 @@ class _CopyWithStubImpl$Input$File_bool_exp<TRes>
     Input$String_comparison_exp? recipeId,
     Input$timestamp_comparison_exp? updatedAt,
     Input$String_comparison_exp? userId,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipe =>
       CopyWith$Input$Recipe_bool_exp.stub(_res);
@@ -878,15 +891,14 @@ class Input$File_max_order_by {
     Enum$order_by? recipeId,
     Enum$order_by? updatedAt,
     Enum$order_by? userId,
-  }) =>
-      Input$File_max_order_by._({
-        if (createdAt != null) r'createdAt': createdAt,
-        if (id != null) r'id': id,
-        if (mimetype != null) r'mimetype': mimetype,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-        if (userId != null) r'userId': userId,
-      });
+  }) => Input$File_max_order_by._({
+    if (createdAt != null) r'createdAt': createdAt,
+    if (id != null) r'id': id,
+    if (mimetype != null) r'mimetype': mimetype,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+    if (userId != null) r'userId': userId,
+  });
 
   Input$File_max_order_by._(this._$data);
 
@@ -900,8 +912,9 @@ class Input$File_max_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('mimetype')) {
       final l$mimetype = data['mimetype'];
@@ -948,8 +961,9 @@ class Input$File_max_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('createdAt')) {
       final l$createdAt = createdAt;
-      result$data['createdAt'] =
-          l$createdAt == null ? null : toJson$Enum$order_by(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : toJson$Enum$order_by(l$createdAt);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -957,40 +971,40 @@ class Input$File_max_order_by {
     }
     if (_$data.containsKey('mimetype')) {
       final l$mimetype = mimetype;
-      result$data['mimetype'] =
-          l$mimetype == null ? null : toJson$Enum$order_by(l$mimetype);
+      result$data['mimetype'] = l$mimetype == null
+          ? null
+          : toJson$Enum$order_by(l$mimetype);
     }
     if (_$data.containsKey('recipeId')) {
       final l$recipeId = recipeId;
-      result$data['recipeId'] =
-          l$recipeId == null ? null : toJson$Enum$order_by(l$recipeId);
+      result$data['recipeId'] = l$recipeId == null
+          ? null
+          : toJson$Enum$order_by(l$recipeId);
     }
     if (_$data.containsKey('updatedAt')) {
       final l$updatedAt = updatedAt;
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : toJson$Enum$order_by(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : toJson$Enum$order_by(l$updatedAt);
     }
     if (_$data.containsKey('userId')) {
       final l$userId = userId;
-      result$data['userId'] =
-          l$userId == null ? null : toJson$Enum$order_by(l$userId);
+      result$data['userId'] = l$userId == null
+          ? null
+          : toJson$Enum$order_by(l$userId);
     }
     return result$data;
   }
 
   CopyWith$Input$File_max_order_by<Input$File_max_order_by> get copyWith =>
-      CopyWith$Input$File_max_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$File_max_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$File_max_order_by) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$File_max_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$createdAt = createdAt;
@@ -1088,10 +1102,7 @@ abstract class CopyWith$Input$File_max_order_by<TRes> {
 
 class _CopyWithImpl$Input$File_max_order_by<TRes>
     implements CopyWith$Input$File_max_order_by<TRes> {
-  _CopyWithImpl$Input$File_max_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$File_max_order_by(this._instance, this._then);
 
   final Input$File_max_order_by _instance;
 
@@ -1106,16 +1117,17 @@ class _CopyWithImpl$Input$File_max_order_by<TRes>
     Object? recipeId = _undefined,
     Object? updatedAt = _undefined,
     Object? userId = _undefined,
-  }) =>
-      _then(Input$File_max_order_by._({
-        ..._instance._$data,
-        if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (mimetype != _undefined) 'mimetype': (mimetype as Enum$order_by?),
-        if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
-        if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
-        if (userId != _undefined) 'userId': (userId as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$File_max_order_by._({
+      ..._instance._$data,
+      if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (mimetype != _undefined) 'mimetype': (mimetype as Enum$order_by?),
+      if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
+      if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
+      if (userId != _undefined) 'userId': (userId as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$File_max_order_by<TRes>
@@ -1131,8 +1143,7 @@ class _CopyWithStubImpl$Input$File_max_order_by<TRes>
     Enum$order_by? recipeId,
     Enum$order_by? updatedAt,
     Enum$order_by? userId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$File_min_order_by {
@@ -1143,15 +1154,14 @@ class Input$File_min_order_by {
     Enum$order_by? recipeId,
     Enum$order_by? updatedAt,
     Enum$order_by? userId,
-  }) =>
-      Input$File_min_order_by._({
-        if (createdAt != null) r'createdAt': createdAt,
-        if (id != null) r'id': id,
-        if (mimetype != null) r'mimetype': mimetype,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-        if (userId != null) r'userId': userId,
-      });
+  }) => Input$File_min_order_by._({
+    if (createdAt != null) r'createdAt': createdAt,
+    if (id != null) r'id': id,
+    if (mimetype != null) r'mimetype': mimetype,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+    if (userId != null) r'userId': userId,
+  });
 
   Input$File_min_order_by._(this._$data);
 
@@ -1165,8 +1175,9 @@ class Input$File_min_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('mimetype')) {
       final l$mimetype = data['mimetype'];
@@ -1213,8 +1224,9 @@ class Input$File_min_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('createdAt')) {
       final l$createdAt = createdAt;
-      result$data['createdAt'] =
-          l$createdAt == null ? null : toJson$Enum$order_by(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : toJson$Enum$order_by(l$createdAt);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -1222,40 +1234,40 @@ class Input$File_min_order_by {
     }
     if (_$data.containsKey('mimetype')) {
       final l$mimetype = mimetype;
-      result$data['mimetype'] =
-          l$mimetype == null ? null : toJson$Enum$order_by(l$mimetype);
+      result$data['mimetype'] = l$mimetype == null
+          ? null
+          : toJson$Enum$order_by(l$mimetype);
     }
     if (_$data.containsKey('recipeId')) {
       final l$recipeId = recipeId;
-      result$data['recipeId'] =
-          l$recipeId == null ? null : toJson$Enum$order_by(l$recipeId);
+      result$data['recipeId'] = l$recipeId == null
+          ? null
+          : toJson$Enum$order_by(l$recipeId);
     }
     if (_$data.containsKey('updatedAt')) {
       final l$updatedAt = updatedAt;
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : toJson$Enum$order_by(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : toJson$Enum$order_by(l$updatedAt);
     }
     if (_$data.containsKey('userId')) {
       final l$userId = userId;
-      result$data['userId'] =
-          l$userId == null ? null : toJson$Enum$order_by(l$userId);
+      result$data['userId'] = l$userId == null
+          ? null
+          : toJson$Enum$order_by(l$userId);
     }
     return result$data;
   }
 
   CopyWith$Input$File_min_order_by<Input$File_min_order_by> get copyWith =>
-      CopyWith$Input$File_min_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$File_min_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$File_min_order_by) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$File_min_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$createdAt = createdAt;
@@ -1353,10 +1365,7 @@ abstract class CopyWith$Input$File_min_order_by<TRes> {
 
 class _CopyWithImpl$Input$File_min_order_by<TRes>
     implements CopyWith$Input$File_min_order_by<TRes> {
-  _CopyWithImpl$Input$File_min_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$File_min_order_by(this._instance, this._then);
 
   final Input$File_min_order_by _instance;
 
@@ -1371,16 +1380,17 @@ class _CopyWithImpl$Input$File_min_order_by<TRes>
     Object? recipeId = _undefined,
     Object? updatedAt = _undefined,
     Object? userId = _undefined,
-  }) =>
-      _then(Input$File_min_order_by._({
-        ..._instance._$data,
-        if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (mimetype != _undefined) 'mimetype': (mimetype as Enum$order_by?),
-        if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
-        if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
-        if (userId != _undefined) 'userId': (userId as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$File_min_order_by._({
+      ..._instance._$data,
+      if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (mimetype != _undefined) 'mimetype': (mimetype as Enum$order_by?),
+      if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
+      if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
+      if (userId != _undefined) 'userId': (userId as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$File_min_order_by<TRes>
@@ -1396,8 +1406,7 @@ class _CopyWithStubImpl$Input$File_min_order_by<TRes>
     Enum$order_by? recipeId,
     Enum$order_by? updatedAt,
     Enum$order_by? userId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$File_order_by {
@@ -1412,19 +1421,18 @@ class Input$File_order_by {
     Enum$order_by? recipeId,
     Enum$order_by? updatedAt,
     Enum$order_by? userId,
-  }) =>
-      Input$File_order_by._({
-        if (Recipe != null) r'Recipe': Recipe,
-        if (Steps_aggregate != null) r'Steps_aggregate': Steps_aggregate,
-        if (User != null) r'User': User,
-        if (blob != null) r'blob': blob,
-        if (createdAt != null) r'createdAt': createdAt,
-        if (id != null) r'id': id,
-        if (mimetype != null) r'mimetype': mimetype,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-        if (userId != null) r'userId': userId,
-      });
+  }) => Input$File_order_by._({
+    if (Recipe != null) r'Recipe': Recipe,
+    if (Steps_aggregate != null) r'Steps_aggregate': Steps_aggregate,
+    if (User != null) r'User': User,
+    if (blob != null) r'blob': blob,
+    if (createdAt != null) r'createdAt': createdAt,
+    if (id != null) r'id': id,
+    if (mimetype != null) r'mimetype': mimetype,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+    if (userId != null) r'userId': userId,
+  });
 
   Input$File_order_by._(this._$data);
 
@@ -1441,7 +1449,8 @@ class Input$File_order_by {
       result$data['Steps_aggregate'] = l$Steps_aggregate == null
           ? null
           : Input$Step_aggregate_order_by.fromJson(
-              (l$Steps_aggregate as Map<String, dynamic>));
+              (l$Steps_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('User')) {
       final l$User = data['User'];
@@ -1451,8 +1460,9 @@ class Input$File_order_by {
     }
     if (data.containsKey('blob')) {
       final l$blob = data['blob'];
-      result$data['blob'] =
-          l$blob == null ? null : fromJson$Enum$order_by((l$blob as String));
+      result$data['blob'] = l$blob == null
+          ? null
+          : fromJson$Enum$order_by((l$blob as String));
     }
     if (data.containsKey('createdAt')) {
       final l$createdAt = data['createdAt'];
@@ -1462,8 +1472,9 @@ class Input$File_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('mimetype')) {
       final l$mimetype = data['mimetype'];
@@ -1532,13 +1543,15 @@ class Input$File_order_by {
     }
     if (_$data.containsKey('blob')) {
       final l$blob = blob;
-      result$data['blob'] =
-          l$blob == null ? null : toJson$Enum$order_by(l$blob);
+      result$data['blob'] = l$blob == null
+          ? null
+          : toJson$Enum$order_by(l$blob);
     }
     if (_$data.containsKey('createdAt')) {
       final l$createdAt = createdAt;
-      result$data['createdAt'] =
-          l$createdAt == null ? null : toJson$Enum$order_by(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : toJson$Enum$order_by(l$createdAt);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -1546,39 +1559,40 @@ class Input$File_order_by {
     }
     if (_$data.containsKey('mimetype')) {
       final l$mimetype = mimetype;
-      result$data['mimetype'] =
-          l$mimetype == null ? null : toJson$Enum$order_by(l$mimetype);
+      result$data['mimetype'] = l$mimetype == null
+          ? null
+          : toJson$Enum$order_by(l$mimetype);
     }
     if (_$data.containsKey('recipeId')) {
       final l$recipeId = recipeId;
-      result$data['recipeId'] =
-          l$recipeId == null ? null : toJson$Enum$order_by(l$recipeId);
+      result$data['recipeId'] = l$recipeId == null
+          ? null
+          : toJson$Enum$order_by(l$recipeId);
     }
     if (_$data.containsKey('updatedAt')) {
       final l$updatedAt = updatedAt;
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : toJson$Enum$order_by(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : toJson$Enum$order_by(l$updatedAt);
     }
     if (_$data.containsKey('userId')) {
       final l$userId = userId;
-      result$data['userId'] =
-          l$userId == null ? null : toJson$Enum$order_by(l$userId);
+      result$data['userId'] = l$userId == null
+          ? null
+          : toJson$Enum$order_by(l$userId);
     }
     return result$data;
   }
 
   CopyWith$Input$File_order_by<Input$File_order_by> get copyWith =>
-      CopyWith$Input$File_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$File_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$File_order_by) || runtimeType != other.runtimeType) {
+    if (other is! Input$File_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Recipe = Recipe;
@@ -1724,10 +1738,7 @@ abstract class CopyWith$Input$File_order_by<TRes> {
 
 class _CopyWithImpl$Input$File_order_by<TRes>
     implements CopyWith$Input$File_order_by<TRes> {
-  _CopyWithImpl$Input$File_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$File_order_by(this._instance, this._then);
 
   final Input$File_order_by _instance;
 
@@ -1746,22 +1757,22 @@ class _CopyWithImpl$Input$File_order_by<TRes>
     Object? recipeId = _undefined,
     Object? updatedAt = _undefined,
     Object? userId = _undefined,
-  }) =>
-      _then(Input$File_order_by._({
-        ..._instance._$data,
-        if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_order_by?),
-        if (Steps_aggregate != _undefined)
-          'Steps_aggregate':
-              (Steps_aggregate as Input$Step_aggregate_order_by?),
-        if (User != _undefined) 'User': (User as Input$User_order_by?),
-        if (blob != _undefined) 'blob': (blob as Enum$order_by?),
-        if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (mimetype != _undefined) 'mimetype': (mimetype as Enum$order_by?),
-        if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
-        if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
-        if (userId != _undefined) 'userId': (userId as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$File_order_by._({
+      ..._instance._$data,
+      if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_order_by?),
+      if (Steps_aggregate != _undefined)
+        'Steps_aggregate': (Steps_aggregate as Input$Step_aggregate_order_by?),
+      if (User != _undefined) 'User': (User as Input$User_order_by?),
+      if (blob != _undefined) 'blob': (blob as Enum$order_by?),
+      if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (mimetype != _undefined) 'mimetype': (mimetype as Enum$order_by?),
+      if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
+      if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
+      if (userId != _undefined) 'userId': (userId as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$Recipe_order_by<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
@@ -1775,7 +1786,9 @@ class _CopyWithImpl$Input$File_order_by<TRes>
     return local$Steps_aggregate == null
         ? CopyWith$Input$Step_aggregate_order_by.stub(_then(_instance))
         : CopyWith$Input$Step_aggregate_order_by(
-            local$Steps_aggregate, (e) => call(Steps_aggregate: e));
+            local$Steps_aggregate,
+            (e) => call(Steps_aggregate: e),
+          );
   }
 
   CopyWith$Input$User_order_by<TRes> get User {
@@ -1803,8 +1816,7 @@ class _CopyWithStubImpl$Input$File_order_by<TRes>
     Enum$order_by? recipeId,
     Enum$order_by? updatedAt,
     Enum$order_by? userId,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Recipe_order_by<TRes> get Recipe =>
       CopyWith$Input$Recipe_order_by.stub(_res);
@@ -1820,11 +1832,10 @@ class Input$File_stream_cursor_input {
   factory Input$File_stream_cursor_input({
     required Input$File_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$File_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$File_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$File_stream_cursor_input._(this._$data);
 
@@ -1833,7 +1844,8 @@ class Input$File_stream_cursor_input {
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$File_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -1857,24 +1869,22 @@ class Input$File_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$File_stream_cursor_input<Input$File_stream_cursor_input>
-      get copyWith => CopyWith$Input$File_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$File_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$File_stream_cursor_input) ||
+    if (other is! Input$File_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1924,10 +1934,7 @@ abstract class CopyWith$Input$File_stream_cursor_input<TRes> {
 
 class _CopyWithImpl$Input$File_stream_cursor_input<TRes>
     implements CopyWith$Input$File_stream_cursor_input<TRes> {
-  _CopyWithImpl$Input$File_stream_cursor_input(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$File_stream_cursor_input(this._instance, this._then);
 
   final Input$File_stream_cursor_input _instance;
 
@@ -1938,20 +1945,23 @@ class _CopyWithImpl$Input$File_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$File_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$File_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$File_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$File_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$File_stream_cursor_value_input<TRes> get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$File_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -1964,8 +1974,7 @@ class _CopyWithStubImpl$Input$File_stream_cursor_input<TRes>
   call({
     Input$File_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$File_stream_cursor_value_input<TRes> get initial_value =>
       CopyWith$Input$File_stream_cursor_value_input.stub(_res);
@@ -1980,21 +1989,21 @@ class Input$File_stream_cursor_value_input {
     String? recipeId,
     DateTime? updatedAt,
     String? userId,
-  }) =>
-      Input$File_stream_cursor_value_input._({
-        if (blob != null) r'blob': blob,
-        if (createdAt != null) r'createdAt': createdAt,
-        if (id != null) r'id': id,
-        if (mimetype != null) r'mimetype': mimetype,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-        if (userId != null) r'userId': userId,
-      });
+  }) => Input$File_stream_cursor_value_input._({
+    if (blob != null) r'blob': blob,
+    if (createdAt != null) r'createdAt': createdAt,
+    if (id != null) r'id': id,
+    if (mimetype != null) r'mimetype': mimetype,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+    if (userId != null) r'userId': userId,
+  });
 
   Input$File_stream_cursor_value_input._(this._$data);
 
   factory Input$File_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('blob')) {
       final l$blob = data['blob'];
@@ -2002,8 +2011,9 @@ class Input$File_stream_cursor_value_input {
     }
     if (data.containsKey('createdAt')) {
       final l$createdAt = data['createdAt'];
-      result$data['createdAt'] =
-          l$createdAt == null ? null : dateTimeFromJson(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : dateTimeFromJson(l$createdAt);
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
@@ -2019,8 +2029,9 @@ class Input$File_stream_cursor_value_input {
     }
     if (data.containsKey('updatedAt')) {
       final l$updatedAt = data['updatedAt'];
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : dateTimeFromJson(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : dateTimeFromJson(l$updatedAt);
     }
     if (data.containsKey('userId')) {
       final l$userId = data['userId'];
@@ -2053,8 +2064,9 @@ class Input$File_stream_cursor_value_input {
     }
     if (_$data.containsKey('createdAt')) {
       final l$createdAt = createdAt;
-      result$data['createdAt'] =
-          l$createdAt == null ? null : dateTimeToJson(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : dateTimeToJson(l$createdAt);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -2070,8 +2082,9 @@ class Input$File_stream_cursor_value_input {
     }
     if (_$data.containsKey('updatedAt')) {
       final l$updatedAt = updatedAt;
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : dateTimeToJson(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : dateTimeToJson(l$updatedAt);
     }
     if (_$data.containsKey('userId')) {
       final l$userId = userId;
@@ -2081,18 +2094,16 @@ class Input$File_stream_cursor_value_input {
   }
 
   CopyWith$Input$File_stream_cursor_value_input<
-          Input$File_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$File_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$File_stream_cursor_value_input
+  >
+  get copyWith => CopyWith$Input$File_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$File_stream_cursor_value_input) ||
+    if (other is! Input$File_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2221,17 +2232,18 @@ class _CopyWithImpl$Input$File_stream_cursor_value_input<TRes>
     Object? recipeId = _undefined,
     Object? updatedAt = _undefined,
     Object? userId = _undefined,
-  }) =>
-      _then(Input$File_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (blob != _undefined) 'blob': (blob as String?),
-        if (createdAt != _undefined) 'createdAt': (createdAt as DateTime?),
-        if (id != _undefined) 'id': (id as String?),
-        if (mimetype != _undefined) 'mimetype': (mimetype as String?),
-        if (recipeId != _undefined) 'recipeId': (recipeId as String?),
-        if (updatedAt != _undefined) 'updatedAt': (updatedAt as DateTime?),
-        if (userId != _undefined) 'userId': (userId as String?),
-      }));
+  }) => _then(
+    Input$File_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (blob != _undefined) 'blob': (blob as String?),
+      if (createdAt != _undefined) 'createdAt': (createdAt as DateTime?),
+      if (id != _undefined) 'id': (id as String?),
+      if (mimetype != _undefined) 'mimetype': (mimetype as String?),
+      if (recipeId != _undefined) 'recipeId': (recipeId as String?),
+      if (updatedAt != _undefined) 'updatedAt': (updatedAt as DateTime?),
+      if (userId != _undefined) 'userId': (userId as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$File_stream_cursor_value_input<TRes>
@@ -2248,8 +2260,7 @@ class _CopyWithStubImpl$Input$File_stream_cursor_value_input<TRes>
     String? recipeId,
     DateTime? updatedAt,
     String? userId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$IngredientUnit_aggregate_order_by {
@@ -2265,100 +2276,111 @@ class Input$IngredientUnit_aggregate_order_by {
     Input$IngredientUnit_var_pop_order_by? var_pop,
     Input$IngredientUnit_var_samp_order_by? var_samp,
     Input$IngredientUnit_variance_order_by? variance,
-  }) =>
-      Input$IngredientUnit_aggregate_order_by._({
-        if (avg != null) r'avg': avg,
-        if (count != null) r'count': count,
-        if (max != null) r'max': max,
-        if (min != null) r'min': min,
-        if (stddev != null) r'stddev': stddev,
-        if (stddev_pop != null) r'stddev_pop': stddev_pop,
-        if (stddev_samp != null) r'stddev_samp': stddev_samp,
-        if (sum != null) r'sum': sum,
-        if (var_pop != null) r'var_pop': var_pop,
-        if (var_samp != null) r'var_samp': var_samp,
-        if (variance != null) r'variance': variance,
-      });
+  }) => Input$IngredientUnit_aggregate_order_by._({
+    if (avg != null) r'avg': avg,
+    if (count != null) r'count': count,
+    if (max != null) r'max': max,
+    if (min != null) r'min': min,
+    if (stddev != null) r'stddev': stddev,
+    if (stddev_pop != null) r'stddev_pop': stddev_pop,
+    if (stddev_samp != null) r'stddev_samp': stddev_samp,
+    if (sum != null) r'sum': sum,
+    if (var_pop != null) r'var_pop': var_pop,
+    if (var_samp != null) r'var_samp': var_samp,
+    if (variance != null) r'variance': variance,
+  });
 
   Input$IngredientUnit_aggregate_order_by._(this._$data);
 
   factory Input$IngredientUnit_aggregate_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('avg')) {
       final l$avg = data['avg'];
       result$data['avg'] = l$avg == null
           ? null
           : Input$IngredientUnit_avg_order_by.fromJson(
-              (l$avg as Map<String, dynamic>));
+              (l$avg as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('count')) {
       final l$count = data['count'];
-      result$data['count'] =
-          l$count == null ? null : fromJson$Enum$order_by((l$count as String));
+      result$data['count'] = l$count == null
+          ? null
+          : fromJson$Enum$order_by((l$count as String));
     }
     if (data.containsKey('max')) {
       final l$max = data['max'];
       result$data['max'] = l$max == null
           ? null
           : Input$IngredientUnit_max_order_by.fromJson(
-              (l$max as Map<String, dynamic>));
+              (l$max as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('min')) {
       final l$min = data['min'];
       result$data['min'] = l$min == null
           ? null
           : Input$IngredientUnit_min_order_by.fromJson(
-              (l$min as Map<String, dynamic>));
+              (l$min as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('stddev')) {
       final l$stddev = data['stddev'];
       result$data['stddev'] = l$stddev == null
           ? null
           : Input$IngredientUnit_stddev_order_by.fromJson(
-              (l$stddev as Map<String, dynamic>));
+              (l$stddev as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('stddev_pop')) {
       final l$stddev_pop = data['stddev_pop'];
       result$data['stddev_pop'] = l$stddev_pop == null
           ? null
           : Input$IngredientUnit_stddev_pop_order_by.fromJson(
-              (l$stddev_pop as Map<String, dynamic>));
+              (l$stddev_pop as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('stddev_samp')) {
       final l$stddev_samp = data['stddev_samp'];
       result$data['stddev_samp'] = l$stddev_samp == null
           ? null
           : Input$IngredientUnit_stddev_samp_order_by.fromJson(
-              (l$stddev_samp as Map<String, dynamic>));
+              (l$stddev_samp as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('sum')) {
       final l$sum = data['sum'];
       result$data['sum'] = l$sum == null
           ? null
           : Input$IngredientUnit_sum_order_by.fromJson(
-              (l$sum as Map<String, dynamic>));
+              (l$sum as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('var_pop')) {
       final l$var_pop = data['var_pop'];
       result$data['var_pop'] = l$var_pop == null
           ? null
           : Input$IngredientUnit_var_pop_order_by.fromJson(
-              (l$var_pop as Map<String, dynamic>));
+              (l$var_pop as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('var_samp')) {
       final l$var_samp = data['var_samp'];
       result$data['var_samp'] = l$var_samp == null
           ? null
           : Input$IngredientUnit_var_samp_order_by.fromJson(
-              (l$var_samp as Map<String, dynamic>));
+              (l$var_samp as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('variance')) {
       final l$variance = data['variance'];
       result$data['variance'] = l$variance == null
           ? null
           : Input$IngredientUnit_variance_order_by.fromJson(
-              (l$variance as Map<String, dynamic>));
+              (l$variance as Map<String, dynamic>),
+            );
     }
     return Input$IngredientUnit_aggregate_order_by._(result$data);
   }
@@ -2405,8 +2427,9 @@ class Input$IngredientUnit_aggregate_order_by {
     }
     if (_$data.containsKey('count')) {
       final l$count = count;
-      result$data['count'] =
-          l$count == null ? null : toJson$Enum$order_by(l$count);
+      result$data['count'] = l$count == null
+          ? null
+          : toJson$Enum$order_by(l$count);
     }
     if (_$data.containsKey('max')) {
       final l$max = max;
@@ -2448,18 +2471,17 @@ class Input$IngredientUnit_aggregate_order_by {
   }
 
   CopyWith$Input$IngredientUnit_aggregate_order_by<
-          Input$IngredientUnit_aggregate_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_aggregate_order_by(
-            this,
-            (i) => i,
-          );
+    Input$IngredientUnit_aggregate_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$IngredientUnit_aggregate_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_aggregate_order_by) ||
+    if (other is! Input$IngredientUnit_aggregate_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2646,40 +2668,38 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     Object? var_pop = _undefined,
     Object? var_samp = _undefined,
     Object? variance = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_aggregate_order_by._({
-        ..._instance._$data,
-        if (avg != _undefined)
-          'avg': (avg as Input$IngredientUnit_avg_order_by?),
-        if (count != _undefined) 'count': (count as Enum$order_by?),
-        if (max != _undefined)
-          'max': (max as Input$IngredientUnit_max_order_by?),
-        if (min != _undefined)
-          'min': (min as Input$IngredientUnit_min_order_by?),
-        if (stddev != _undefined)
-          'stddev': (stddev as Input$IngredientUnit_stddev_order_by?),
-        if (stddev_pop != _undefined)
-          'stddev_pop':
-              (stddev_pop as Input$IngredientUnit_stddev_pop_order_by?),
-        if (stddev_samp != _undefined)
-          'stddev_samp':
-              (stddev_samp as Input$IngredientUnit_stddev_samp_order_by?),
-        if (sum != _undefined)
-          'sum': (sum as Input$IngredientUnit_sum_order_by?),
-        if (var_pop != _undefined)
-          'var_pop': (var_pop as Input$IngredientUnit_var_pop_order_by?),
-        if (var_samp != _undefined)
-          'var_samp': (var_samp as Input$IngredientUnit_var_samp_order_by?),
-        if (variance != _undefined)
-          'variance': (variance as Input$IngredientUnit_variance_order_by?),
-      }));
+  }) => _then(
+    Input$IngredientUnit_aggregate_order_by._({
+      ..._instance._$data,
+      if (avg != _undefined) 'avg': (avg as Input$IngredientUnit_avg_order_by?),
+      if (count != _undefined) 'count': (count as Enum$order_by?),
+      if (max != _undefined) 'max': (max as Input$IngredientUnit_max_order_by?),
+      if (min != _undefined) 'min': (min as Input$IngredientUnit_min_order_by?),
+      if (stddev != _undefined)
+        'stddev': (stddev as Input$IngredientUnit_stddev_order_by?),
+      if (stddev_pop != _undefined)
+        'stddev_pop': (stddev_pop as Input$IngredientUnit_stddev_pop_order_by?),
+      if (stddev_samp != _undefined)
+        'stddev_samp':
+            (stddev_samp as Input$IngredientUnit_stddev_samp_order_by?),
+      if (sum != _undefined) 'sum': (sum as Input$IngredientUnit_sum_order_by?),
+      if (var_pop != _undefined)
+        'var_pop': (var_pop as Input$IngredientUnit_var_pop_order_by?),
+      if (var_samp != _undefined)
+        'var_samp': (var_samp as Input$IngredientUnit_var_samp_order_by?),
+      if (variance != _undefined)
+        'variance': (variance as Input$IngredientUnit_variance_order_by?),
+    }),
+  );
 
   CopyWith$Input$IngredientUnit_avg_order_by<TRes> get avg {
     final local$avg = _instance.avg;
     return local$avg == null
         ? CopyWith$Input$IngredientUnit_avg_order_by.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_avg_order_by(
-            local$avg, (e) => call(avg: e));
+            local$avg,
+            (e) => call(avg: e),
+          );
   }
 
   CopyWith$Input$IngredientUnit_max_order_by<TRes> get max {
@@ -2687,7 +2707,9 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     return local$max == null
         ? CopyWith$Input$IngredientUnit_max_order_by.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_max_order_by(
-            local$max, (e) => call(max: e));
+            local$max,
+            (e) => call(max: e),
+          );
   }
 
   CopyWith$Input$IngredientUnit_min_order_by<TRes> get min {
@@ -2695,7 +2717,9 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     return local$min == null
         ? CopyWith$Input$IngredientUnit_min_order_by.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_min_order_by(
-            local$min, (e) => call(min: e));
+            local$min,
+            (e) => call(min: e),
+          );
   }
 
   CopyWith$Input$IngredientUnit_stddev_order_by<TRes> get stddev {
@@ -2703,25 +2727,33 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     return local$stddev == null
         ? CopyWith$Input$IngredientUnit_stddev_order_by.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_stddev_order_by(
-            local$stddev, (e) => call(stddev: e));
+            local$stddev,
+            (e) => call(stddev: e),
+          );
   }
 
   CopyWith$Input$IngredientUnit_stddev_pop_order_by<TRes> get stddev_pop {
     final local$stddev_pop = _instance.stddev_pop;
     return local$stddev_pop == null
         ? CopyWith$Input$IngredientUnit_stddev_pop_order_by.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Input$IngredientUnit_stddev_pop_order_by(
-            local$stddev_pop, (e) => call(stddev_pop: e));
+            local$stddev_pop,
+            (e) => call(stddev_pop: e),
+          );
   }
 
   CopyWith$Input$IngredientUnit_stddev_samp_order_by<TRes> get stddev_samp {
     final local$stddev_samp = _instance.stddev_samp;
     return local$stddev_samp == null
         ? CopyWith$Input$IngredientUnit_stddev_samp_order_by.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Input$IngredientUnit_stddev_samp_order_by(
-            local$stddev_samp, (e) => call(stddev_samp: e));
+            local$stddev_samp,
+            (e) => call(stddev_samp: e),
+          );
   }
 
   CopyWith$Input$IngredientUnit_sum_order_by<TRes> get sum {
@@ -2729,7 +2761,9 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     return local$sum == null
         ? CopyWith$Input$IngredientUnit_sum_order_by.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_sum_order_by(
-            local$sum, (e) => call(sum: e));
+            local$sum,
+            (e) => call(sum: e),
+          );
   }
 
   CopyWith$Input$IngredientUnit_var_pop_order_by<TRes> get var_pop {
@@ -2737,7 +2771,9 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     return local$var_pop == null
         ? CopyWith$Input$IngredientUnit_var_pop_order_by.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_var_pop_order_by(
-            local$var_pop, (e) => call(var_pop: e));
+            local$var_pop,
+            (e) => call(var_pop: e),
+          );
   }
 
   CopyWith$Input$IngredientUnit_var_samp_order_by<TRes> get var_samp {
@@ -2745,7 +2781,9 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     return local$var_samp == null
         ? CopyWith$Input$IngredientUnit_var_samp_order_by.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_var_samp_order_by(
-            local$var_samp, (e) => call(var_samp: e));
+            local$var_samp,
+            (e) => call(var_samp: e),
+          );
   }
 
   CopyWith$Input$IngredientUnit_variance_order_by<TRes> get variance {
@@ -2753,7 +2791,9 @@ class _CopyWithImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     return local$variance == null
         ? CopyWith$Input$IngredientUnit_variance_order_by.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_variance_order_by(
-            local$variance, (e) => call(variance: e));
+            local$variance,
+            (e) => call(variance: e),
+          );
   }
 }
 
@@ -2775,8 +2815,7 @@ class _CopyWithStubImpl$Input$IngredientUnit_aggregate_order_by<TRes>
     Input$IngredientUnit_var_pop_order_by? var_pop,
     Input$IngredientUnit_var_samp_order_by? var_samp,
     Input$IngredientUnit_variance_order_by? variance,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$IngredientUnit_avg_order_by<TRes> get avg =>
       CopyWith$Input$IngredientUnit_avg_order_by.stub(_res);
@@ -2813,16 +2852,16 @@ class Input$IngredientUnit_avg_order_by {
   factory Input$IngredientUnit_avg_order_by({
     Enum$order_by? amount,
     Enum$order_by? order,
-  }) =>
-      Input$IngredientUnit_avg_order_by._({
-        if (amount != null) r'amount': amount,
-        if (order != null) r'order': order,
-      });
+  }) => Input$IngredientUnit_avg_order_by._({
+    if (amount != null) r'amount': amount,
+    if (order != null) r'order': order,
+  });
 
   Input$IngredientUnit_avg_order_by._(this._$data);
 
   factory Input$IngredientUnit_avg_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -2832,8 +2871,9 @@ class Input$IngredientUnit_avg_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$IngredientUnit_avg_order_by._(result$data);
   }
@@ -2848,29 +2888,28 @@ class Input$IngredientUnit_avg_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_avg_order_by<Input$IngredientUnit_avg_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_avg_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$IngredientUnit_avg_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_avg_order_by) ||
+    if (other is! Input$IngredientUnit_avg_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2913,18 +2952,12 @@ abstract class CopyWith$Input$IngredientUnit_avg_order_by<TRes> {
   factory CopyWith$Input$IngredientUnit_avg_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$IngredientUnit_avg_order_by;
 
-  TRes call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  });
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
 }
 
 class _CopyWithImpl$Input$IngredientUnit_avg_order_by<TRes>
     implements CopyWith$Input$IngredientUnit_avg_order_by<TRes> {
-  _CopyWithImpl$Input$IngredientUnit_avg_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$IngredientUnit_avg_order_by(this._instance, this._then);
 
   final Input$IngredientUnit_avg_order_by _instance;
 
@@ -2932,15 +2965,13 @@ class _CopyWithImpl$Input$IngredientUnit_avg_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? amount = _undefined,
-    Object? order = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_avg_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) => _then(
+    Input$IngredientUnit_avg_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_avg_order_by<TRes>
@@ -2949,11 +2980,7 @@ class _CopyWithStubImpl$Input$IngredientUnit_avg_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  }) =>
-      _res;
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 class Input$IngredientUnit_bool_exp {
@@ -2971,22 +2998,21 @@ class Input$IngredientUnit_bool_exp {
     Input$Int_comparison_exp? order,
     Input$String_comparison_exp? recipeSectionId,
     Input$String_comparison_exp? unitId,
-  }) =>
-      Input$IngredientUnit_bool_exp._({
-        if (Ingredient != null) r'Ingredient': Ingredient,
-        if (RecipeSection != null) r'RecipeSection': RecipeSection,
-        if (UnitSize != null) r'UnitSize': UnitSize,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (amount != null) r'amount': amount,
-        if (id != null) r'id': id,
-        if (ingredientId != null) r'ingredientId': ingredientId,
-        if (notes != null) r'notes': notes,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-        if (unitId != null) r'unitId': unitId,
-      });
+  }) => Input$IngredientUnit_bool_exp._({
+    if (Ingredient != null) r'Ingredient': Ingredient,
+    if (RecipeSection != null) r'RecipeSection': RecipeSection,
+    if (UnitSize != null) r'UnitSize': UnitSize,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (amount != null) r'amount': amount,
+    if (id != null) r'id': id,
+    if (ingredientId != null) r'ingredientId': ingredientId,
+    if (notes != null) r'notes': notes,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+    if (unitId != null) r'unitId': unitId,
+  });
 
   Input$IngredientUnit_bool_exp._(this._$data);
 
@@ -2997,27 +3023,33 @@ class Input$IngredientUnit_bool_exp {
       result$data['Ingredient'] = l$Ingredient == null
           ? null
           : Input$Ingredient_bool_exp.fromJson(
-              (l$Ingredient as Map<String, dynamic>));
+              (l$Ingredient as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('RecipeSection')) {
       final l$RecipeSection = data['RecipeSection'];
       result$data['RecipeSection'] = l$RecipeSection == null
           ? null
           : Input$RecipeSection_bool_exp.fromJson(
-              (l$RecipeSection as Map<String, dynamic>));
+              (l$RecipeSection as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('UnitSize')) {
       final l$UnitSize = data['UnitSize'];
       result$data['UnitSize'] = l$UnitSize == null
           ? null
           : Input$UnitSize_bool_exp.fromJson(
-              (l$UnitSize as Map<String, dynamic>));
+              (l$UnitSize as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_and')) {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
-          ?.map((e) => Input$IngredientUnit_bool_exp.fromJson(
-              (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Input$IngredientUnit_bool_exp.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -3025,13 +3057,17 @@ class Input$IngredientUnit_bool_exp {
       result$data['_not'] = l$$_not == null
           ? null
           : Input$IngredientUnit_bool_exp.fromJson(
-              (l$$_not as Map<String, dynamic>));
+              (l$$_not as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_or')) {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
-          ?.map((e) => Input$IngredientUnit_bool_exp.fromJson(
-              (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Input$IngredientUnit_bool_exp.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList();
     }
     if (data.containsKey('amount')) {
@@ -3039,49 +3075,56 @@ class Input$IngredientUnit_bool_exp {
       result$data['amount'] = l$amount == null
           ? null
           : Input$float8_comparison_exp.fromJson(
-              (l$amount as Map<String, dynamic>));
+              (l$amount as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('ingredientId')) {
       final l$ingredientId = data['ingredientId'];
       result$data['ingredientId'] = l$ingredientId == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$ingredientId as Map<String, dynamic>));
+              (l$ingredientId as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('notes')) {
       final l$notes = data['notes'];
       result$data['notes'] = l$notes == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$notes as Map<String, dynamic>));
+              (l$notes as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
       result$data['order'] = l$order == null
           ? null
           : Input$Int_comparison_exp.fromJson(
-              (l$order as Map<String, dynamic>));
+              (l$order as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = data['recipeSectionId'];
       result$data['recipeSectionId'] = l$recipeSectionId == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$recipeSectionId as Map<String, dynamic>));
+              (l$recipeSectionId as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('unitId')) {
       final l$unitId = data['unitId'];
       result$data['unitId'] = l$unitId == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$unitId as Map<String, dynamic>));
+              (l$unitId as Map<String, dynamic>),
+            );
     }
     return Input$IngredientUnit_bool_exp._(result$data);
   }
@@ -3185,17 +3228,14 @@ class Input$IngredientUnit_bool_exp {
   }
 
   CopyWith$Input$IngredientUnit_bool_exp<Input$IngredientUnit_bool_exp>
-      get copyWith => CopyWith$Input$IngredientUnit_bool_exp(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$IngredientUnit_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_bool_exp) ||
+    if (other is! Input$IngredientUnit_bool_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3354,14 +3394,14 @@ class Input$IngredientUnit_bool_exp {
       _$data.containsKey('UnitSize') ? l$UnitSize : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('amount') ? l$amount : const {},
       _$data.containsKey('id') ? l$id : const {},
@@ -3402,18 +3442,22 @@ abstract class CopyWith$Input$IngredientUnit_bool_exp<TRes> {
   CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection;
   CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSize;
   TRes $_and(
-      Iterable<Input$IngredientUnit_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$IngredientUnit_bool_exp<
-                      Input$IngredientUnit_bool_exp>>?)
-          _fn);
+    Iterable<Input$IngredientUnit_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$IngredientUnit_bool_exp<Input$IngredientUnit_bool_exp>
+      >?,
+    )
+    _fn,
+  );
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$IngredientUnit_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$IngredientUnit_bool_exp<
-                      Input$IngredientUnit_bool_exp>>?)
-          _fn);
+    Iterable<Input$IngredientUnit_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$IngredientUnit_bool_exp<Input$IngredientUnit_bool_exp>
+      >?,
+    )
+    _fn,
+  );
   CopyWith$Input$float8_comparison_exp<TRes> get amount;
   CopyWith$Input$String_comparison_exp<TRes> get id;
   CopyWith$Input$String_comparison_exp<TRes> get ingredientId;
@@ -3425,10 +3469,7 @@ abstract class CopyWith$Input$IngredientUnit_bool_exp<TRes> {
 
 class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
     implements CopyWith$Input$IngredientUnit_bool_exp<TRes> {
-  _CopyWithImpl$Input$IngredientUnit_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$IngredientUnit_bool_exp(this._instance, this._then);
 
   final Input$IngredientUnit_bool_exp _instance;
 
@@ -3450,41 +3491,43 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
     Object? unitId = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_bool_exp._({
-        ..._instance._$data,
-        if (Ingredient != _undefined)
-          'Ingredient': (Ingredient as Input$Ingredient_bool_exp?),
-        if (RecipeSection != _undefined)
-          'RecipeSection': (RecipeSection as Input$RecipeSection_bool_exp?),
-        if (UnitSize != _undefined)
-          'UnitSize': (UnitSize as Input$UnitSize_bool_exp?),
-        if ($_and != _undefined)
-          '_and': ($_and as List<Input$IngredientUnit_bool_exp>?),
-        if ($_not != _undefined)
-          '_not': ($_not as Input$IngredientUnit_bool_exp?),
-        if ($_or != _undefined)
-          '_or': ($_or as List<Input$IngredientUnit_bool_exp>?),
-        if (amount != _undefined)
-          'amount': (amount as Input$float8_comparison_exp?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-        if (ingredientId != _undefined)
-          'ingredientId': (ingredientId as Input$String_comparison_exp?),
-        if (notes != _undefined)
-          'notes': (notes as Input$String_comparison_exp?),
-        if (order != _undefined) 'order': (order as Input$Int_comparison_exp?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as Input$String_comparison_exp?),
-        if (unitId != _undefined)
-          'unitId': (unitId as Input$String_comparison_exp?),
-      }));
+  }) => _then(
+    Input$IngredientUnit_bool_exp._({
+      ..._instance._$data,
+      if (Ingredient != _undefined)
+        'Ingredient': (Ingredient as Input$Ingredient_bool_exp?),
+      if (RecipeSection != _undefined)
+        'RecipeSection': (RecipeSection as Input$RecipeSection_bool_exp?),
+      if (UnitSize != _undefined)
+        'UnitSize': (UnitSize as Input$UnitSize_bool_exp?),
+      if ($_and != _undefined)
+        '_and': ($_and as List<Input$IngredientUnit_bool_exp>?),
+      if ($_not != _undefined)
+        '_not': ($_not as Input$IngredientUnit_bool_exp?),
+      if ($_or != _undefined)
+        '_or': ($_or as List<Input$IngredientUnit_bool_exp>?),
+      if (amount != _undefined)
+        'amount': (amount as Input$float8_comparison_exp?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+      if (ingredientId != _undefined)
+        'ingredientId': (ingredientId as Input$String_comparison_exp?),
+      if (notes != _undefined) 'notes': (notes as Input$String_comparison_exp?),
+      if (order != _undefined) 'order': (order as Input$Int_comparison_exp?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as Input$String_comparison_exp?),
+      if (unitId != _undefined)
+        'unitId': (unitId as Input$String_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$Ingredient_bool_exp<TRes> get Ingredient {
     final local$Ingredient = _instance.Ingredient;
     return local$Ingredient == null
         ? CopyWith$Input$Ingredient_bool_exp.stub(_then(_instance))
         : CopyWith$Input$Ingredient_bool_exp(
-            local$Ingredient, (e) => call(Ingredient: e));
+            local$Ingredient,
+            (e) => call(Ingredient: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection {
@@ -3492,7 +3535,9 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
     return local$RecipeSection == null
         ? CopyWith$Input$RecipeSection_bool_exp.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_bool_exp(
-            local$RecipeSection, (e) => call(RecipeSection: e));
+            local$RecipeSection,
+            (e) => call(RecipeSection: e),
+          );
   }
 
   CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSize {
@@ -3500,49 +3545,59 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
     return local$UnitSize == null
         ? CopyWith$Input$UnitSize_bool_exp.stub(_then(_instance))
         : CopyWith$Input$UnitSize_bool_exp(
-            local$UnitSize, (e) => call(UnitSize: e));
+            local$UnitSize,
+            (e) => call(UnitSize: e),
+          );
   }
 
   TRes $_and(
-          Iterable<Input$IngredientUnit_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$IngredientUnit_bool_exp<
-                          Input$IngredientUnit_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and: _fn(_instance.$_and
-              ?.map((e) => CopyWith$Input$IngredientUnit_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$IngredientUnit_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$IngredientUnit_bool_exp<Input$IngredientUnit_bool_exp>
+      >?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map(
+        (e) => CopyWith$Input$IngredientUnit_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
         ? CopyWith$Input$IngredientUnit_bool_exp.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_bool_exp(
-            local$$_not, (e) => call($_not: e));
+            local$$_not,
+            (e) => call($_not: e),
+          );
   }
 
   TRes $_or(
-          Iterable<Input$IngredientUnit_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$IngredientUnit_bool_exp<
-                          Input$IngredientUnit_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(
-              _instance.$_or?.map((e) => CopyWith$Input$IngredientUnit_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$IngredientUnit_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$IngredientUnit_bool_exp<Input$IngredientUnit_bool_exp>
+      >?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map(
+        (e) => CopyWith$Input$IngredientUnit_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   CopyWith$Input$float8_comparison_exp<TRes> get amount {
     final local$amount = _instance.amount;
     return local$amount == null
         ? CopyWith$Input$float8_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$float8_comparison_exp(
-            local$amount, (e) => call(amount: e));
+            local$amount,
+            (e) => call(amount: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
@@ -3557,7 +3612,9 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
     return local$ingredientId == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$ingredientId, (e) => call(ingredientId: e));
+            local$ingredientId,
+            (e) => call(ingredientId: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get notes {
@@ -3565,7 +3622,9 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
     return local$notes == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$notes, (e) => call(notes: e));
+            local$notes,
+            (e) => call(notes: e),
+          );
   }
 
   CopyWith$Input$Int_comparison_exp<TRes> get order {
@@ -3580,7 +3639,9 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
     return local$recipeSectionId == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$recipeSectionId, (e) => call(recipeSectionId: e));
+            local$recipeSectionId,
+            (e) => call(recipeSectionId: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get unitId {
@@ -3588,7 +3649,9 @@ class _CopyWithImpl$Input$IngredientUnit_bool_exp<TRes>
     return local$unitId == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$unitId, (e) => call(unitId: e));
+            local$unitId,
+            (e) => call(unitId: e),
+          );
   }
 }
 
@@ -3612,8 +3675,7 @@ class _CopyWithStubImpl$Input$IngredientUnit_bool_exp<TRes>
     Input$Int_comparison_exp? order,
     Input$String_comparison_exp? recipeSectionId,
     Input$String_comparison_exp? unitId,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Ingredient_bool_exp<TRes> get Ingredient =>
       CopyWith$Input$Ingredient_bool_exp.stub(_res);
@@ -3662,21 +3724,21 @@ class Input$IngredientUnit_max_order_by {
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
     Enum$order_by? unitId,
-  }) =>
-      Input$IngredientUnit_max_order_by._({
-        if (amount != null) r'amount': amount,
-        if (id != null) r'id': id,
-        if (ingredientId != null) r'ingredientId': ingredientId,
-        if (notes != null) r'notes': notes,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-        if (unitId != null) r'unitId': unitId,
-      });
+  }) => Input$IngredientUnit_max_order_by._({
+    if (amount != null) r'amount': amount,
+    if (id != null) r'id': id,
+    if (ingredientId != null) r'ingredientId': ingredientId,
+    if (notes != null) r'notes': notes,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+    if (unitId != null) r'unitId': unitId,
+  });
 
   Input$IngredientUnit_max_order_by._(this._$data);
 
   factory Input$IngredientUnit_max_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -3686,8 +3748,9 @@ class Input$IngredientUnit_max_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('ingredientId')) {
       final l$ingredientId = data['ingredientId'];
@@ -3697,13 +3760,15 @@ class Input$IngredientUnit_max_order_by {
     }
     if (data.containsKey('notes')) {
       final l$notes = data['notes'];
-      result$data['notes'] =
-          l$notes == null ? null : fromJson$Enum$order_by((l$notes as String));
+      result$data['notes'] = l$notes == null
+          ? null
+          : fromJson$Enum$order_by((l$notes as String));
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = data['recipeSectionId'];
@@ -3741,8 +3806,9 @@ class Input$IngredientUnit_max_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -3750,18 +3816,21 @@ class Input$IngredientUnit_max_order_by {
     }
     if (_$data.containsKey('ingredientId')) {
       final l$ingredientId = ingredientId;
-      result$data['ingredientId'] =
-          l$ingredientId == null ? null : toJson$Enum$order_by(l$ingredientId);
+      result$data['ingredientId'] = l$ingredientId == null
+          ? null
+          : toJson$Enum$order_by(l$ingredientId);
     }
     if (_$data.containsKey('notes')) {
       final l$notes = notes;
-      result$data['notes'] =
-          l$notes == null ? null : toJson$Enum$order_by(l$notes);
+      result$data['notes'] = l$notes == null
+          ? null
+          : toJson$Enum$order_by(l$notes);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = recipeSectionId;
@@ -3771,24 +3840,22 @@ class Input$IngredientUnit_max_order_by {
     }
     if (_$data.containsKey('unitId')) {
       final l$unitId = unitId;
-      result$data['unitId'] =
-          l$unitId == null ? null : toJson$Enum$order_by(l$unitId);
+      result$data['unitId'] = l$unitId == null
+          ? null
+          : toJson$Enum$order_by(l$unitId);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_max_order_by<Input$IngredientUnit_max_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_max_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$IngredientUnit_max_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_max_order_by) ||
+    if (other is! Input$IngredientUnit_max_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3896,10 +3963,7 @@ abstract class CopyWith$Input$IngredientUnit_max_order_by<TRes> {
 
 class _CopyWithImpl$Input$IngredientUnit_max_order_by<TRes>
     implements CopyWith$Input$IngredientUnit_max_order_by<TRes> {
-  _CopyWithImpl$Input$IngredientUnit_max_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$IngredientUnit_max_order_by(this._instance, this._then);
 
   final Input$IngredientUnit_max_order_by _instance;
 
@@ -3915,19 +3979,20 @@ class _CopyWithImpl$Input$IngredientUnit_max_order_by<TRes>
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
     Object? unitId = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_max_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (ingredientId != _undefined)
-          'ingredientId': (ingredientId as Enum$order_by?),
-        if (notes != _undefined) 'notes': (notes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as Enum$order_by?),
-        if (unitId != _undefined) 'unitId': (unitId as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$IngredientUnit_max_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (ingredientId != _undefined)
+        'ingredientId': (ingredientId as Enum$order_by?),
+      if (notes != _undefined) 'notes': (notes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as Enum$order_by?),
+      if (unitId != _undefined) 'unitId': (unitId as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_max_order_by<TRes>
@@ -3944,8 +4009,7 @@ class _CopyWithStubImpl$Input$IngredientUnit_max_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
     Enum$order_by? unitId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$IngredientUnit_min_order_by {
@@ -3957,21 +4021,21 @@ class Input$IngredientUnit_min_order_by {
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
     Enum$order_by? unitId,
-  }) =>
-      Input$IngredientUnit_min_order_by._({
-        if (amount != null) r'amount': amount,
-        if (id != null) r'id': id,
-        if (ingredientId != null) r'ingredientId': ingredientId,
-        if (notes != null) r'notes': notes,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-        if (unitId != null) r'unitId': unitId,
-      });
+  }) => Input$IngredientUnit_min_order_by._({
+    if (amount != null) r'amount': amount,
+    if (id != null) r'id': id,
+    if (ingredientId != null) r'ingredientId': ingredientId,
+    if (notes != null) r'notes': notes,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+    if (unitId != null) r'unitId': unitId,
+  });
 
   Input$IngredientUnit_min_order_by._(this._$data);
 
   factory Input$IngredientUnit_min_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -3981,8 +4045,9 @@ class Input$IngredientUnit_min_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('ingredientId')) {
       final l$ingredientId = data['ingredientId'];
@@ -3992,13 +4057,15 @@ class Input$IngredientUnit_min_order_by {
     }
     if (data.containsKey('notes')) {
       final l$notes = data['notes'];
-      result$data['notes'] =
-          l$notes == null ? null : fromJson$Enum$order_by((l$notes as String));
+      result$data['notes'] = l$notes == null
+          ? null
+          : fromJson$Enum$order_by((l$notes as String));
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = data['recipeSectionId'];
@@ -4036,8 +4103,9 @@ class Input$IngredientUnit_min_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -4045,18 +4113,21 @@ class Input$IngredientUnit_min_order_by {
     }
     if (_$data.containsKey('ingredientId')) {
       final l$ingredientId = ingredientId;
-      result$data['ingredientId'] =
-          l$ingredientId == null ? null : toJson$Enum$order_by(l$ingredientId);
+      result$data['ingredientId'] = l$ingredientId == null
+          ? null
+          : toJson$Enum$order_by(l$ingredientId);
     }
     if (_$data.containsKey('notes')) {
       final l$notes = notes;
-      result$data['notes'] =
-          l$notes == null ? null : toJson$Enum$order_by(l$notes);
+      result$data['notes'] = l$notes == null
+          ? null
+          : toJson$Enum$order_by(l$notes);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = recipeSectionId;
@@ -4066,24 +4137,22 @@ class Input$IngredientUnit_min_order_by {
     }
     if (_$data.containsKey('unitId')) {
       final l$unitId = unitId;
-      result$data['unitId'] =
-          l$unitId == null ? null : toJson$Enum$order_by(l$unitId);
+      result$data['unitId'] = l$unitId == null
+          ? null
+          : toJson$Enum$order_by(l$unitId);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_min_order_by<Input$IngredientUnit_min_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_min_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$IngredientUnit_min_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_min_order_by) ||
+    if (other is! Input$IngredientUnit_min_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4191,10 +4260,7 @@ abstract class CopyWith$Input$IngredientUnit_min_order_by<TRes> {
 
 class _CopyWithImpl$Input$IngredientUnit_min_order_by<TRes>
     implements CopyWith$Input$IngredientUnit_min_order_by<TRes> {
-  _CopyWithImpl$Input$IngredientUnit_min_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$IngredientUnit_min_order_by(this._instance, this._then);
 
   final Input$IngredientUnit_min_order_by _instance;
 
@@ -4210,19 +4276,20 @@ class _CopyWithImpl$Input$IngredientUnit_min_order_by<TRes>
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
     Object? unitId = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_min_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (ingredientId != _undefined)
-          'ingredientId': (ingredientId as Enum$order_by?),
-        if (notes != _undefined) 'notes': (notes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as Enum$order_by?),
-        if (unitId != _undefined) 'unitId': (unitId as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$IngredientUnit_min_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (ingredientId != _undefined)
+        'ingredientId': (ingredientId as Enum$order_by?),
+      if (notes != _undefined) 'notes': (notes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as Enum$order_by?),
+      if (unitId != _undefined) 'unitId': (unitId as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_min_order_by<TRes>
@@ -4239,8 +4306,7 @@ class _CopyWithStubImpl$Input$IngredientUnit_min_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
     Enum$order_by? unitId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$IngredientUnit_order_by {
@@ -4255,19 +4321,18 @@ class Input$IngredientUnit_order_by {
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
     Enum$order_by? unitId,
-  }) =>
-      Input$IngredientUnit_order_by._({
-        if (Ingredient != null) r'Ingredient': Ingredient,
-        if (RecipeSection != null) r'RecipeSection': RecipeSection,
-        if (UnitSize != null) r'UnitSize': UnitSize,
-        if (amount != null) r'amount': amount,
-        if (id != null) r'id': id,
-        if (ingredientId != null) r'ingredientId': ingredientId,
-        if (notes != null) r'notes': notes,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-        if (unitId != null) r'unitId': unitId,
-      });
+  }) => Input$IngredientUnit_order_by._({
+    if (Ingredient != null) r'Ingredient': Ingredient,
+    if (RecipeSection != null) r'RecipeSection': RecipeSection,
+    if (UnitSize != null) r'UnitSize': UnitSize,
+    if (amount != null) r'amount': amount,
+    if (id != null) r'id': id,
+    if (ingredientId != null) r'ingredientId': ingredientId,
+    if (notes != null) r'notes': notes,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+    if (unitId != null) r'unitId': unitId,
+  });
 
   Input$IngredientUnit_order_by._(this._$data);
 
@@ -4278,21 +4343,24 @@ class Input$IngredientUnit_order_by {
       result$data['Ingredient'] = l$Ingredient == null
           ? null
           : Input$Ingredient_order_by.fromJson(
-              (l$Ingredient as Map<String, dynamic>));
+              (l$Ingredient as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('RecipeSection')) {
       final l$RecipeSection = data['RecipeSection'];
       result$data['RecipeSection'] = l$RecipeSection == null
           ? null
           : Input$RecipeSection_order_by.fromJson(
-              (l$RecipeSection as Map<String, dynamic>));
+              (l$RecipeSection as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('UnitSize')) {
       final l$UnitSize = data['UnitSize'];
       result$data['UnitSize'] = l$UnitSize == null
           ? null
           : Input$UnitSize_order_by.fromJson(
-              (l$UnitSize as Map<String, dynamic>));
+              (l$UnitSize as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -4302,8 +4370,9 @@ class Input$IngredientUnit_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('ingredientId')) {
       final l$ingredientId = data['ingredientId'];
@@ -4313,13 +4382,15 @@ class Input$IngredientUnit_order_by {
     }
     if (data.containsKey('notes')) {
       final l$notes = data['notes'];
-      result$data['notes'] =
-          l$notes == null ? null : fromJson$Enum$order_by((l$notes as String));
+      result$data['notes'] = l$notes == null
+          ? null
+          : fromJson$Enum$order_by((l$notes as String));
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = data['recipeSectionId'];
@@ -4378,8 +4449,9 @@ class Input$IngredientUnit_order_by {
     }
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -4387,18 +4459,21 @@ class Input$IngredientUnit_order_by {
     }
     if (_$data.containsKey('ingredientId')) {
       final l$ingredientId = ingredientId;
-      result$data['ingredientId'] =
-          l$ingredientId == null ? null : toJson$Enum$order_by(l$ingredientId);
+      result$data['ingredientId'] = l$ingredientId == null
+          ? null
+          : toJson$Enum$order_by(l$ingredientId);
     }
     if (_$data.containsKey('notes')) {
       final l$notes = notes;
-      result$data['notes'] =
-          l$notes == null ? null : toJson$Enum$order_by(l$notes);
+      result$data['notes'] = l$notes == null
+          ? null
+          : toJson$Enum$order_by(l$notes);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = recipeSectionId;
@@ -4408,24 +4483,22 @@ class Input$IngredientUnit_order_by {
     }
     if (_$data.containsKey('unitId')) {
       final l$unitId = unitId;
-      result$data['unitId'] =
-          l$unitId == null ? null : toJson$Enum$order_by(l$unitId);
+      result$data['unitId'] = l$unitId == null
+          ? null
+          : toJson$Enum$order_by(l$unitId);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_order_by<Input$IngredientUnit_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$IngredientUnit_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_order_by) ||
+    if (other is! Input$IngredientUnit_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4572,10 +4645,7 @@ abstract class CopyWith$Input$IngredientUnit_order_by<TRes> {
 
 class _CopyWithImpl$Input$IngredientUnit_order_by<TRes>
     implements CopyWith$Input$IngredientUnit_order_by<TRes> {
-  _CopyWithImpl$Input$IngredientUnit_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$IngredientUnit_order_by(this._instance, this._then);
 
   final Input$IngredientUnit_order_by _instance;
 
@@ -4594,32 +4664,35 @@ class _CopyWithImpl$Input$IngredientUnit_order_by<TRes>
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
     Object? unitId = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_order_by._({
-        ..._instance._$data,
-        if (Ingredient != _undefined)
-          'Ingredient': (Ingredient as Input$Ingredient_order_by?),
-        if (RecipeSection != _undefined)
-          'RecipeSection': (RecipeSection as Input$RecipeSection_order_by?),
-        if (UnitSize != _undefined)
-          'UnitSize': (UnitSize as Input$UnitSize_order_by?),
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (ingredientId != _undefined)
-          'ingredientId': (ingredientId as Enum$order_by?),
-        if (notes != _undefined) 'notes': (notes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as Enum$order_by?),
-        if (unitId != _undefined) 'unitId': (unitId as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$IngredientUnit_order_by._({
+      ..._instance._$data,
+      if (Ingredient != _undefined)
+        'Ingredient': (Ingredient as Input$Ingredient_order_by?),
+      if (RecipeSection != _undefined)
+        'RecipeSection': (RecipeSection as Input$RecipeSection_order_by?),
+      if (UnitSize != _undefined)
+        'UnitSize': (UnitSize as Input$UnitSize_order_by?),
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (ingredientId != _undefined)
+        'ingredientId': (ingredientId as Enum$order_by?),
+      if (notes != _undefined) 'notes': (notes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as Enum$order_by?),
+      if (unitId != _undefined) 'unitId': (unitId as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$Ingredient_order_by<TRes> get Ingredient {
     final local$Ingredient = _instance.Ingredient;
     return local$Ingredient == null
         ? CopyWith$Input$Ingredient_order_by.stub(_then(_instance))
         : CopyWith$Input$Ingredient_order_by(
-            local$Ingredient, (e) => call(Ingredient: e));
+            local$Ingredient,
+            (e) => call(Ingredient: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_order_by<TRes> get RecipeSection {
@@ -4627,7 +4700,9 @@ class _CopyWithImpl$Input$IngredientUnit_order_by<TRes>
     return local$RecipeSection == null
         ? CopyWith$Input$RecipeSection_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_order_by(
-            local$RecipeSection, (e) => call(RecipeSection: e));
+            local$RecipeSection,
+            (e) => call(RecipeSection: e),
+          );
   }
 
   CopyWith$Input$UnitSize_order_by<TRes> get UnitSize {
@@ -4635,7 +4710,9 @@ class _CopyWithImpl$Input$IngredientUnit_order_by<TRes>
     return local$UnitSize == null
         ? CopyWith$Input$UnitSize_order_by.stub(_then(_instance))
         : CopyWith$Input$UnitSize_order_by(
-            local$UnitSize, (e) => call(UnitSize: e));
+            local$UnitSize,
+            (e) => call(UnitSize: e),
+          );
   }
 }
 
@@ -4656,8 +4733,7 @@ class _CopyWithStubImpl$Input$IngredientUnit_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
     Enum$order_by? unitId,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Ingredient_order_by<TRes> get Ingredient =>
       CopyWith$Input$Ingredient_order_by.stub(_res);
@@ -4673,16 +4749,16 @@ class Input$IngredientUnit_stddev_order_by {
   factory Input$IngredientUnit_stddev_order_by({
     Enum$order_by? amount,
     Enum$order_by? order,
-  }) =>
-      Input$IngredientUnit_stddev_order_by._({
-        if (amount != null) r'amount': amount,
-        if (order != null) r'order': order,
-      });
+  }) => Input$IngredientUnit_stddev_order_by._({
+    if (amount != null) r'amount': amount,
+    if (order != null) r'order': order,
+  });
 
   Input$IngredientUnit_stddev_order_by._(this._$data);
 
   factory Input$IngredientUnit_stddev_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -4692,8 +4768,9 @@ class Input$IngredientUnit_stddev_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$IngredientUnit_stddev_order_by._(result$data);
   }
@@ -4708,30 +4785,30 @@ class Input$IngredientUnit_stddev_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_stddev_order_by<
-          Input$IngredientUnit_stddev_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_stddev_order_by(
-            this,
-            (i) => i,
-          );
+    Input$IngredientUnit_stddev_order_by
+  >
+  get copyWith => CopyWith$Input$IngredientUnit_stddev_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_stddev_order_by) ||
+    if (other is! Input$IngredientUnit_stddev_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4774,10 +4851,7 @@ abstract class CopyWith$Input$IngredientUnit_stddev_order_by<TRes> {
   factory CopyWith$Input$IngredientUnit_stddev_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$IngredientUnit_stddev_order_by;
 
-  TRes call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  });
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
 }
 
 class _CopyWithImpl$Input$IngredientUnit_stddev_order_by<TRes>
@@ -4793,15 +4867,13 @@ class _CopyWithImpl$Input$IngredientUnit_stddev_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? amount = _undefined,
-    Object? order = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_stddev_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) => _then(
+    Input$IngredientUnit_stddev_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_stddev_order_by<TRes>
@@ -4810,27 +4882,23 @@ class _CopyWithStubImpl$Input$IngredientUnit_stddev_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  }) =>
-      _res;
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 class Input$IngredientUnit_stddev_pop_order_by {
   factory Input$IngredientUnit_stddev_pop_order_by({
     Enum$order_by? amount,
     Enum$order_by? order,
-  }) =>
-      Input$IngredientUnit_stddev_pop_order_by._({
-        if (amount != null) r'amount': amount,
-        if (order != null) r'order': order,
-      });
+  }) => Input$IngredientUnit_stddev_pop_order_by._({
+    if (amount != null) r'amount': amount,
+    if (order != null) r'order': order,
+  });
 
   Input$IngredientUnit_stddev_pop_order_by._(this._$data);
 
   factory Input$IngredientUnit_stddev_pop_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -4840,8 +4908,9 @@ class Input$IngredientUnit_stddev_pop_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$IngredientUnit_stddev_pop_order_by._(result$data);
   }
@@ -4856,30 +4925,31 @@ class Input$IngredientUnit_stddev_pop_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_stddev_pop_order_by<
-          Input$IngredientUnit_stddev_pop_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_stddev_pop_order_by(
-            this,
-            (i) => i,
-          );
+    Input$IngredientUnit_stddev_pop_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$IngredientUnit_stddev_pop_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_stddev_pop_order_by) ||
+    if (other is! Input$IngredientUnit_stddev_pop_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4922,10 +4992,7 @@ abstract class CopyWith$Input$IngredientUnit_stddev_pop_order_by<TRes> {
   factory CopyWith$Input$IngredientUnit_stddev_pop_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$IngredientUnit_stddev_pop_order_by;
 
-  TRes call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  });
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
 }
 
 class _CopyWithImpl$Input$IngredientUnit_stddev_pop_order_by<TRes>
@@ -4941,15 +5008,13 @@ class _CopyWithImpl$Input$IngredientUnit_stddev_pop_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? amount = _undefined,
-    Object? order = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_stddev_pop_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) => _then(
+    Input$IngredientUnit_stddev_pop_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_stddev_pop_order_by<TRes>
@@ -4958,27 +5023,23 @@ class _CopyWithStubImpl$Input$IngredientUnit_stddev_pop_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  }) =>
-      _res;
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 class Input$IngredientUnit_stddev_samp_order_by {
   factory Input$IngredientUnit_stddev_samp_order_by({
     Enum$order_by? amount,
     Enum$order_by? order,
-  }) =>
-      Input$IngredientUnit_stddev_samp_order_by._({
-        if (amount != null) r'amount': amount,
-        if (order != null) r'order': order,
-      });
+  }) => Input$IngredientUnit_stddev_samp_order_by._({
+    if (amount != null) r'amount': amount,
+    if (order != null) r'order': order,
+  });
 
   Input$IngredientUnit_stddev_samp_order_by._(this._$data);
 
   factory Input$IngredientUnit_stddev_samp_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -4988,8 +5049,9 @@ class Input$IngredientUnit_stddev_samp_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$IngredientUnit_stddev_samp_order_by._(result$data);
   }
@@ -5004,30 +5066,31 @@ class Input$IngredientUnit_stddev_samp_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_stddev_samp_order_by<
-          Input$IngredientUnit_stddev_samp_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_stddev_samp_order_by(
-            this,
-            (i) => i,
-          );
+    Input$IngredientUnit_stddev_samp_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$IngredientUnit_stddev_samp_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_stddev_samp_order_by) ||
+    if (other is! Input$IngredientUnit_stddev_samp_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5070,10 +5133,7 @@ abstract class CopyWith$Input$IngredientUnit_stddev_samp_order_by<TRes> {
   factory CopyWith$Input$IngredientUnit_stddev_samp_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$IngredientUnit_stddev_samp_order_by;
 
-  TRes call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  });
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
 }
 
 class _CopyWithImpl$Input$IngredientUnit_stddev_samp_order_by<TRes>
@@ -5089,15 +5149,13 @@ class _CopyWithImpl$Input$IngredientUnit_stddev_samp_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? amount = _undefined,
-    Object? order = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_stddev_samp_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) => _then(
+    Input$IngredientUnit_stddev_samp_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_stddev_samp_order_by<TRes>
@@ -5106,32 +5164,29 @@ class _CopyWithStubImpl$Input$IngredientUnit_stddev_samp_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  }) =>
-      _res;
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 class Input$IngredientUnit_stream_cursor_input {
   factory Input$IngredientUnit_stream_cursor_input({
     required Input$IngredientUnit_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$IngredientUnit_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$IngredientUnit_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$IngredientUnit_stream_cursor_input._(this._$data);
 
   factory Input$IngredientUnit_stream_cursor_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$IngredientUnit_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -5156,25 +5211,25 @@ class Input$IngredientUnit_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_stream_cursor_input<
-          Input$IngredientUnit_stream_cursor_input>
-      get copyWith => CopyWith$Input$IngredientUnit_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+    Input$IngredientUnit_stream_cursor_input
+  >
+  get copyWith =>
+      CopyWith$Input$IngredientUnit_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_stream_cursor_input) ||
+    if (other is! Input$IngredientUnit_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5220,7 +5275,7 @@ abstract class CopyWith$Input$IngredientUnit_stream_cursor_input<TRes> {
     Enum$cursor_ordering? ordering,
   });
   CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes>
-      get initial_value;
+  get initial_value;
 }
 
 class _CopyWithImpl$Input$IngredientUnit_stream_cursor_input<TRes>
@@ -5239,21 +5294,24 @@ class _CopyWithImpl$Input$IngredientUnit_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$IngredientUnit_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$IngredientUnit_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$IngredientUnit_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes>
-      get initial_value {
+  get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$IngredientUnit_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -5266,12 +5324,11 @@ class _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_input<TRes>
   call({
     Input$IngredientUnit_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes>
-      get initial_value =>
-          CopyWith$Input$IngredientUnit_stream_cursor_value_input.stub(_res);
+  get initial_value =>
+      CopyWith$Input$IngredientUnit_stream_cursor_value_input.stub(_res);
 }
 
 class Input$IngredientUnit_stream_cursor_value_input {
@@ -5283,21 +5340,21 @@ class Input$IngredientUnit_stream_cursor_value_input {
     int? order,
     String? recipeSectionId,
     String? unitId,
-  }) =>
-      Input$IngredientUnit_stream_cursor_value_input._({
-        if (amount != null) r'amount': amount,
-        if (id != null) r'id': id,
-        if (ingredientId != null) r'ingredientId': ingredientId,
-        if (notes != null) r'notes': notes,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-        if (unitId != null) r'unitId': unitId,
-      });
+  }) => Input$IngredientUnit_stream_cursor_value_input._({
+    if (amount != null) r'amount': amount,
+    if (id != null) r'id': id,
+    if (ingredientId != null) r'ingredientId': ingredientId,
+    if (notes != null) r'notes': notes,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+    if (unitId != null) r'unitId': unitId,
+  });
 
   Input$IngredientUnit_stream_cursor_value_input._(this._$data);
 
   factory Input$IngredientUnit_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -5380,18 +5437,17 @@ class Input$IngredientUnit_stream_cursor_value_input {
   }
 
   CopyWith$Input$IngredientUnit_stream_cursor_value_input<
-          Input$IngredientUnit_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$IngredientUnit_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$IngredientUnit_stream_cursor_value_input
+  >
+  get copyWith =>
+      CopyWith$Input$IngredientUnit_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_stream_cursor_value_input) ||
+    if (other is! Input$IngredientUnit_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5484,8 +5540,8 @@ abstract class CopyWith$Input$IngredientUnit_stream_cursor_value_input<TRes> {
   ) = _CopyWithImpl$Input$IngredientUnit_stream_cursor_value_input;
 
   factory CopyWith$Input$IngredientUnit_stream_cursor_value_input.stub(
-          TRes res) =
-      _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_value_input;
+    TRes res,
+  ) = _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_value_input;
 
   TRes call({
     double? amount,
@@ -5519,19 +5575,19 @@ class _CopyWithImpl$Input$IngredientUnit_stream_cursor_value_input<TRes>
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
     Object? unitId = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as double?),
-        if (id != _undefined) 'id': (id as String?),
-        if (ingredientId != _undefined)
-          'ingredientId': (ingredientId as String?),
-        if (notes != _undefined) 'notes': (notes as String?),
-        if (order != _undefined) 'order': (order as int?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as String?),
-        if (unitId != _undefined) 'unitId': (unitId as String?),
-      }));
+  }) => _then(
+    Input$IngredientUnit_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as double?),
+      if (id != _undefined) 'id': (id as String?),
+      if (ingredientId != _undefined) 'ingredientId': (ingredientId as String?),
+      if (notes != _undefined) 'notes': (notes as String?),
+      if (order != _undefined) 'order': (order as int?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as String?),
+      if (unitId != _undefined) 'unitId': (unitId as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_value_input<TRes>
@@ -5548,24 +5604,23 @@ class _CopyWithStubImpl$Input$IngredientUnit_stream_cursor_value_input<TRes>
     int? order,
     String? recipeSectionId,
     String? unitId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$IngredientUnit_sum_order_by {
   factory Input$IngredientUnit_sum_order_by({
     Enum$order_by? amount,
     Enum$order_by? order,
-  }) =>
-      Input$IngredientUnit_sum_order_by._({
-        if (amount != null) r'amount': amount,
-        if (order != null) r'order': order,
-      });
+  }) => Input$IngredientUnit_sum_order_by._({
+    if (amount != null) r'amount': amount,
+    if (order != null) r'order': order,
+  });
 
   Input$IngredientUnit_sum_order_by._(this._$data);
 
   factory Input$IngredientUnit_sum_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -5575,8 +5630,9 @@ class Input$IngredientUnit_sum_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$IngredientUnit_sum_order_by._(result$data);
   }
@@ -5591,29 +5647,28 @@ class Input$IngredientUnit_sum_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_sum_order_by<Input$IngredientUnit_sum_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_sum_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$IngredientUnit_sum_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_sum_order_by) ||
+    if (other is! Input$IngredientUnit_sum_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5656,18 +5711,12 @@ abstract class CopyWith$Input$IngredientUnit_sum_order_by<TRes> {
   factory CopyWith$Input$IngredientUnit_sum_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$IngredientUnit_sum_order_by;
 
-  TRes call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  });
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
 }
 
 class _CopyWithImpl$Input$IngredientUnit_sum_order_by<TRes>
     implements CopyWith$Input$IngredientUnit_sum_order_by<TRes> {
-  _CopyWithImpl$Input$IngredientUnit_sum_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$IngredientUnit_sum_order_by(this._instance, this._then);
 
   final Input$IngredientUnit_sum_order_by _instance;
 
@@ -5675,15 +5724,13 @@ class _CopyWithImpl$Input$IngredientUnit_sum_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? amount = _undefined,
-    Object? order = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_sum_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) => _then(
+    Input$IngredientUnit_sum_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_sum_order_by<TRes>
@@ -5692,27 +5739,23 @@ class _CopyWithStubImpl$Input$IngredientUnit_sum_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  }) =>
-      _res;
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 class Input$IngredientUnit_var_pop_order_by {
   factory Input$IngredientUnit_var_pop_order_by({
     Enum$order_by? amount,
     Enum$order_by? order,
-  }) =>
-      Input$IngredientUnit_var_pop_order_by._({
-        if (amount != null) r'amount': amount,
-        if (order != null) r'order': order,
-      });
+  }) => Input$IngredientUnit_var_pop_order_by._({
+    if (amount != null) r'amount': amount,
+    if (order != null) r'order': order,
+  });
 
   Input$IngredientUnit_var_pop_order_by._(this._$data);
 
   factory Input$IngredientUnit_var_pop_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -5722,8 +5765,9 @@ class Input$IngredientUnit_var_pop_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$IngredientUnit_var_pop_order_by._(result$data);
   }
@@ -5738,30 +5782,31 @@ class Input$IngredientUnit_var_pop_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_var_pop_order_by<
-          Input$IngredientUnit_var_pop_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_var_pop_order_by(
-            this,
-            (i) => i,
-          );
+    Input$IngredientUnit_var_pop_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$IngredientUnit_var_pop_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_var_pop_order_by) ||
+    if (other is! Input$IngredientUnit_var_pop_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5804,10 +5849,7 @@ abstract class CopyWith$Input$IngredientUnit_var_pop_order_by<TRes> {
   factory CopyWith$Input$IngredientUnit_var_pop_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$IngredientUnit_var_pop_order_by;
 
-  TRes call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  });
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
 }
 
 class _CopyWithImpl$Input$IngredientUnit_var_pop_order_by<TRes>
@@ -5823,15 +5865,13 @@ class _CopyWithImpl$Input$IngredientUnit_var_pop_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? amount = _undefined,
-    Object? order = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_var_pop_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) => _then(
+    Input$IngredientUnit_var_pop_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_var_pop_order_by<TRes>
@@ -5840,27 +5880,23 @@ class _CopyWithStubImpl$Input$IngredientUnit_var_pop_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  }) =>
-      _res;
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 class Input$IngredientUnit_var_samp_order_by {
   factory Input$IngredientUnit_var_samp_order_by({
     Enum$order_by? amount,
     Enum$order_by? order,
-  }) =>
-      Input$IngredientUnit_var_samp_order_by._({
-        if (amount != null) r'amount': amount,
-        if (order != null) r'order': order,
-      });
+  }) => Input$IngredientUnit_var_samp_order_by._({
+    if (amount != null) r'amount': amount,
+    if (order != null) r'order': order,
+  });
 
   Input$IngredientUnit_var_samp_order_by._(this._$data);
 
   factory Input$IngredientUnit_var_samp_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -5870,8 +5906,9 @@ class Input$IngredientUnit_var_samp_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$IngredientUnit_var_samp_order_by._(result$data);
   }
@@ -5886,30 +5923,31 @@ class Input$IngredientUnit_var_samp_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_var_samp_order_by<
-          Input$IngredientUnit_var_samp_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_var_samp_order_by(
-            this,
-            (i) => i,
-          );
+    Input$IngredientUnit_var_samp_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$IngredientUnit_var_samp_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_var_samp_order_by) ||
+    if (other is! Input$IngredientUnit_var_samp_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -5952,10 +5990,7 @@ abstract class CopyWith$Input$IngredientUnit_var_samp_order_by<TRes> {
   factory CopyWith$Input$IngredientUnit_var_samp_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$IngredientUnit_var_samp_order_by;
 
-  TRes call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  });
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
 }
 
 class _CopyWithImpl$Input$IngredientUnit_var_samp_order_by<TRes>
@@ -5971,15 +6006,13 @@ class _CopyWithImpl$Input$IngredientUnit_var_samp_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? amount = _undefined,
-    Object? order = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_var_samp_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) => _then(
+    Input$IngredientUnit_var_samp_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_var_samp_order_by<TRes>
@@ -5988,27 +6021,23 @@ class _CopyWithStubImpl$Input$IngredientUnit_var_samp_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  }) =>
-      _res;
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 class Input$IngredientUnit_variance_order_by {
   factory Input$IngredientUnit_variance_order_by({
     Enum$order_by? amount,
     Enum$order_by? order,
-  }) =>
-      Input$IngredientUnit_variance_order_by._({
-        if (amount != null) r'amount': amount,
-        if (order != null) r'order': order,
-      });
+  }) => Input$IngredientUnit_variance_order_by._({
+    if (amount != null) r'amount': amount,
+    if (order != null) r'order': order,
+  });
 
   Input$IngredientUnit_variance_order_by._(this._$data);
 
   factory Input$IngredientUnit_variance_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('amount')) {
       final l$amount = data['amount'];
@@ -6018,8 +6047,9 @@ class Input$IngredientUnit_variance_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$IngredientUnit_variance_order_by._(result$data);
   }
@@ -6034,30 +6064,31 @@ class Input$IngredientUnit_variance_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('amount')) {
       final l$amount = amount;
-      result$data['amount'] =
-          l$amount == null ? null : toJson$Enum$order_by(l$amount);
+      result$data['amount'] = l$amount == null
+          ? null
+          : toJson$Enum$order_by(l$amount);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$IngredientUnit_variance_order_by<
-          Input$IngredientUnit_variance_order_by>
-      get copyWith => CopyWith$Input$IngredientUnit_variance_order_by(
-            this,
-            (i) => i,
-          );
+    Input$IngredientUnit_variance_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$IngredientUnit_variance_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IngredientUnit_variance_order_by) ||
+    if (other is! Input$IngredientUnit_variance_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6100,10 +6131,7 @@ abstract class CopyWith$Input$IngredientUnit_variance_order_by<TRes> {
   factory CopyWith$Input$IngredientUnit_variance_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$IngredientUnit_variance_order_by;
 
-  TRes call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  });
+  TRes call({Enum$order_by? amount, Enum$order_by? order});
 }
 
 class _CopyWithImpl$Input$IngredientUnit_variance_order_by<TRes>
@@ -6119,15 +6147,13 @@ class _CopyWithImpl$Input$IngredientUnit_variance_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? amount = _undefined,
-    Object? order = _undefined,
-  }) =>
-      _then(Input$IngredientUnit_variance_order_by._({
-        ..._instance._$data,
-        if (amount != _undefined) 'amount': (amount as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? amount = _undefined, Object? order = _undefined}) => _then(
+    Input$IngredientUnit_variance_order_by._({
+      ..._instance._$data,
+      if (amount != _undefined) 'amount': (amount as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IngredientUnit_variance_order_by<TRes>
@@ -6136,11 +6162,7 @@ class _CopyWithStubImpl$Input$IngredientUnit_variance_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? amount,
-    Enum$order_by? order,
-  }) =>
-      _res;
+  call({Enum$order_by? amount, Enum$order_by? order}) => _res;
 }
 
 class Input$Ingredient_bool_exp {
@@ -6151,15 +6173,14 @@ class Input$Ingredient_bool_exp {
     List<Input$Ingredient_bool_exp>? $_or,
     Input$String_comparison_exp? id,
     Input$String_comparison_exp? name,
-  }) =>
-      Input$Ingredient_bool_exp._({
-        if (IngredientUnits != null) r'IngredientUnits': IngredientUnits,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-      });
+  }) => Input$Ingredient_bool_exp._({
+    if (IngredientUnits != null) r'IngredientUnits': IngredientUnits,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+  });
 
   Input$Ingredient_bool_exp._(this._$data);
 
@@ -6170,13 +6191,16 @@ class Input$Ingredient_bool_exp {
       result$data['IngredientUnits'] = l$IngredientUnits == null
           ? null
           : Input$IngredientUnit_bool_exp.fromJson(
-              (l$IngredientUnits as Map<String, dynamic>));
+              (l$IngredientUnits as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_and')) {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
-          ?.map((e) =>
-              Input$Ingredient_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Input$Ingredient_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -6184,13 +6208,16 @@ class Input$Ingredient_bool_exp {
       result$data['_not'] = l$$_not == null
           ? null
           : Input$Ingredient_bool_exp.fromJson(
-              (l$$_not as Map<String, dynamic>));
+              (l$$_not as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_or')) {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
-          ?.map((e) =>
-              Input$Ingredient_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Input$Ingredient_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('id')) {
@@ -6198,14 +6225,16 @@ class Input$Ingredient_bool_exp {
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
       result$data['name'] = l$name == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$name as Map<String, dynamic>));
+              (l$name as Map<String, dynamic>),
+            );
     }
     return Input$Ingredient_bool_exp._(result$data);
   }
@@ -6260,17 +6289,14 @@ class Input$Ingredient_bool_exp {
   }
 
   CopyWith$Input$Ingredient_bool_exp<Input$Ingredient_bool_exp> get copyWith =>
-      CopyWith$Input$Ingredient_bool_exp(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Ingredient_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Ingredient_bool_exp) ||
+    if (other is! Input$Ingredient_bool_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6360,14 +6386,14 @@ class Input$Ingredient_bool_exp {
       _$data.containsKey('IngredientUnits') ? l$IngredientUnits : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('id') ? l$id : const {},
       _$data.containsKey('name') ? l$name : const {},
@@ -6394,28 +6420,25 @@ abstract class CopyWith$Input$Ingredient_bool_exp<TRes> {
   });
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits;
   TRes $_and(
-      Iterable<Input$Ingredient_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$Ingredient_bool_exp<
-                      Input$Ingredient_bool_exp>>?)
-          _fn);
+    Iterable<Input$Ingredient_bool_exp>? Function(
+      Iterable<CopyWith$Input$Ingredient_bool_exp<Input$Ingredient_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$Ingredient_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$Ingredient_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$Ingredient_bool_exp<
-                      Input$Ingredient_bool_exp>>?)
-          _fn);
+    Iterable<Input$Ingredient_bool_exp>? Function(
+      Iterable<CopyWith$Input$Ingredient_bool_exp<Input$Ingredient_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$String_comparison_exp<TRes> get id;
   CopyWith$Input$String_comparison_exp<TRes> get name;
 }
 
 class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
     implements CopyWith$Input$Ingredient_bool_exp<TRes> {
-  _CopyWithImpl$Input$Ingredient_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Ingredient_bool_exp(this._instance, this._then);
 
   final Input$Ingredient_bool_exp _instance;
 
@@ -6430,62 +6453,65 @@ class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
     Object? $_or = _undefined,
     Object? id = _undefined,
     Object? name = _undefined,
-  }) =>
-      _then(Input$Ingredient_bool_exp._({
-        ..._instance._$data,
-        if (IngredientUnits != _undefined)
-          'IngredientUnits':
-              (IngredientUnits as Input$IngredientUnit_bool_exp?),
-        if ($_and != _undefined)
-          '_and': ($_and as List<Input$Ingredient_bool_exp>?),
-        if ($_not != _undefined) '_not': ($_not as Input$Ingredient_bool_exp?),
-        if ($_or != _undefined)
-          '_or': ($_or as List<Input$Ingredient_bool_exp>?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-        if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
-      }));
+  }) => _then(
+    Input$Ingredient_bool_exp._({
+      ..._instance._$data,
+      if (IngredientUnits != _undefined)
+        'IngredientUnits': (IngredientUnits as Input$IngredientUnit_bool_exp?),
+      if ($_and != _undefined)
+        '_and': ($_and as List<Input$Ingredient_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$Ingredient_bool_exp?),
+      if ($_or != _undefined) '_or': ($_or as List<Input$Ingredient_bool_exp>?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+      if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits {
     final local$IngredientUnits = _instance.IngredientUnits;
     return local$IngredientUnits == null
         ? CopyWith$Input$IngredientUnit_bool_exp.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_bool_exp(
-            local$IngredientUnits, (e) => call(IngredientUnits: e));
+            local$IngredientUnits,
+            (e) => call(IngredientUnits: e),
+          );
   }
 
   TRes $_and(
-          Iterable<Input$Ingredient_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$Ingredient_bool_exp<
-                          Input$Ingredient_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and: _fn(
-              _instance.$_and?.map((e) => CopyWith$Input$Ingredient_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$Ingredient_bool_exp>? Function(
+      Iterable<CopyWith$Input$Ingredient_bool_exp<Input$Ingredient_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map(
+        (e) => CopyWith$Input$Ingredient_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   CopyWith$Input$Ingredient_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
         ? CopyWith$Input$Ingredient_bool_exp.stub(_then(_instance))
         : CopyWith$Input$Ingredient_bool_exp(
-            local$$_not, (e) => call($_not: e));
+            local$$_not,
+            (e) => call($_not: e),
+          );
   }
 
   TRes $_or(
-          Iterable<Input$Ingredient_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$Ingredient_bool_exp<
-                          Input$Ingredient_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or:
-              _fn(_instance.$_or?.map((e) => CopyWith$Input$Ingredient_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$Ingredient_bool_exp>? Function(
+      Iterable<CopyWith$Input$Ingredient_bool_exp<Input$Ingredient_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map(
+        (e) => CopyWith$Input$Ingredient_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
     final local$id = _instance.id;
@@ -6499,7 +6525,9 @@ class _CopyWithImpl$Input$Ingredient_bool_exp<TRes>
     return local$name == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$name, (e) => call(name: e));
+            local$name,
+            (e) => call(name: e),
+          );
   }
 }
 
@@ -6516,8 +6544,7 @@ class _CopyWithStubImpl$Input$Ingredient_bool_exp<TRes>
     List<Input$Ingredient_bool_exp>? $_or,
     Input$String_comparison_exp? id,
     Input$String_comparison_exp? name,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits =>
       CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
@@ -6541,13 +6568,12 @@ class Input$Ingredient_order_by {
     Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
     Enum$order_by? id,
     Enum$order_by? name,
-  }) =>
-      Input$Ingredient_order_by._({
-        if (IngredientUnits_aggregate != null)
-          r'IngredientUnits_aggregate': IngredientUnits_aggregate,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-      });
+  }) => Input$Ingredient_order_by._({
+    if (IngredientUnits_aggregate != null)
+      r'IngredientUnits_aggregate': IngredientUnits_aggregate,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+  });
 
   Input$Ingredient_order_by._(this._$data);
 
@@ -6557,19 +6583,22 @@ class Input$Ingredient_order_by {
       final l$IngredientUnits_aggregate = data['IngredientUnits_aggregate'];
       result$data['IngredientUnits_aggregate'] =
           l$IngredientUnits_aggregate == null
-              ? null
-              : Input$IngredientUnit_aggregate_order_by.fromJson(
-                  (l$IngredientUnits_aggregate as Map<String, dynamic>));
+          ? null
+          : Input$IngredientUnit_aggregate_order_by.fromJson(
+              (l$IngredientUnits_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
-      result$data['name'] =
-          l$name == null ? null : fromJson$Enum$order_by((l$name as String));
+      result$data['name'] = l$name == null
+          ? null
+          : fromJson$Enum$order_by((l$name as String));
     }
     return Input$Ingredient_order_by._(result$data);
   }
@@ -6588,8 +6617,8 @@ class Input$Ingredient_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits_aggregate')) {
       final l$IngredientUnits_aggregate = IngredientUnits_aggregate;
-      result$data['IngredientUnits_aggregate'] =
-          l$IngredientUnits_aggregate?.toJson();
+      result$data['IngredientUnits_aggregate'] = l$IngredientUnits_aggregate
+          ?.toJson();
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -6597,24 +6626,22 @@ class Input$Ingredient_order_by {
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
-      result$data['name'] =
-          l$name == null ? null : toJson$Enum$order_by(l$name);
+      result$data['name'] = l$name == null
+          ? null
+          : toJson$Enum$order_by(l$name);
     }
     return result$data;
   }
 
   CopyWith$Input$Ingredient_order_by<Input$Ingredient_order_by> get copyWith =>
-      CopyWith$Input$Ingredient_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Ingredient_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Ingredient_order_by) ||
+    if (other is! Input$Ingredient_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6676,15 +6703,12 @@ abstract class CopyWith$Input$Ingredient_order_by<TRes> {
     Enum$order_by? name,
   });
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
-      get IngredientUnits_aggregate;
+  get IngredientUnits_aggregate;
 }
 
 class _CopyWithImpl$Input$Ingredient_order_by<TRes>
     implements CopyWith$Input$Ingredient_order_by<TRes> {
-  _CopyWithImpl$Input$Ingredient_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Ingredient_order_by(this._instance, this._then);
 
   final Input$Ingredient_order_by _instance;
 
@@ -6696,25 +6720,29 @@ class _CopyWithImpl$Input$Ingredient_order_by<TRes>
     Object? IngredientUnits_aggregate = _undefined,
     Object? id = _undefined,
     Object? name = _undefined,
-  }) =>
-      _then(Input$Ingredient_order_by._({
-        ..._instance._$data,
-        if (IngredientUnits_aggregate != _undefined)
-          'IngredientUnits_aggregate': (IngredientUnits_aggregate
-              as Input$IngredientUnit_aggregate_order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (name != _undefined) 'name': (name as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$Ingredient_order_by._({
+      ..._instance._$data,
+      if (IngredientUnits_aggregate != _undefined)
+        'IngredientUnits_aggregate':
+            (IngredientUnits_aggregate
+                as Input$IngredientUnit_aggregate_order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (name != _undefined) 'name': (name as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
-      get IngredientUnits_aggregate {
+  get IngredientUnits_aggregate {
     final local$IngredientUnits_aggregate = _instance.IngredientUnits_aggregate;
     return local$IngredientUnits_aggregate == null
         ? CopyWith$Input$IngredientUnit_aggregate_order_by.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Input$IngredientUnit_aggregate_order_by(
             local$IngredientUnits_aggregate,
-            (e) => call(IngredientUnits_aggregate: e));
+            (e) => call(IngredientUnits_aggregate: e),
+          );
   }
 }
 
@@ -6728,33 +6756,33 @@ class _CopyWithStubImpl$Input$Ingredient_order_by<TRes>
     Input$IngredientUnit_aggregate_order_by? IngredientUnits_aggregate,
     Enum$order_by? id,
     Enum$order_by? name,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
-      get IngredientUnits_aggregate =>
-          CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
+  get IngredientUnits_aggregate =>
+      CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
 }
 
 class Input$Ingredient_stream_cursor_input {
   factory Input$Ingredient_stream_cursor_input({
     required Input$Ingredient_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$Ingredient_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$Ingredient_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$Ingredient_stream_cursor_input._(this._$data);
 
   factory Input$Ingredient_stream_cursor_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$Ingredient_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -6778,25 +6806,24 @@ class Input$Ingredient_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$Ingredient_stream_cursor_input<
-          Input$Ingredient_stream_cursor_input>
-      get copyWith => CopyWith$Input$Ingredient_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+    Input$Ingredient_stream_cursor_input
+  >
+  get copyWith => CopyWith$Input$Ingredient_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Ingredient_stream_cursor_input) ||
+    if (other is! Input$Ingredient_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6860,20 +6887,23 @@ class _CopyWithImpl$Input$Ingredient_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$Ingredient_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$Ingredient_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$Ingredient_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$Ingredient_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$Ingredient_stream_cursor_value_input<TRes> get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$Ingredient_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -6886,8 +6916,7 @@ class _CopyWithStubImpl$Input$Ingredient_stream_cursor_input<TRes>
   call({
     Input$Ingredient_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Ingredient_stream_cursor_value_input<TRes> get initial_value =>
       CopyWith$Input$Ingredient_stream_cursor_value_input.stub(_res);
@@ -6897,16 +6926,16 @@ class Input$Ingredient_stream_cursor_value_input {
   factory Input$Ingredient_stream_cursor_value_input({
     String? id,
     String? name,
-  }) =>
-      Input$Ingredient_stream_cursor_value_input._({
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-      });
+  }) => Input$Ingredient_stream_cursor_value_input._({
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+  });
 
   Input$Ingredient_stream_cursor_value_input._(this._$data);
 
   factory Input$Ingredient_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('id')) {
       final l$id = data['id'];
@@ -6939,18 +6968,17 @@ class Input$Ingredient_stream_cursor_value_input {
   }
 
   CopyWith$Input$Ingredient_stream_cursor_value_input<
-          Input$Ingredient_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$Ingredient_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$Ingredient_stream_cursor_value_input
+  >
+  get copyWith =>
+      CopyWith$Input$Ingredient_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Ingredient_stream_cursor_value_input) ||
+    if (other is! Input$Ingredient_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6993,10 +7021,7 @@ abstract class CopyWith$Input$Ingredient_stream_cursor_value_input<TRes> {
   factory CopyWith$Input$Ingredient_stream_cursor_value_input.stub(TRes res) =
       _CopyWithStubImpl$Input$Ingredient_stream_cursor_value_input;
 
-  TRes call({
-    String? id,
-    String? name,
-  });
+  TRes call({String? id, String? name});
 }
 
 class _CopyWithImpl$Input$Ingredient_stream_cursor_value_input<TRes>
@@ -7012,15 +7037,13 @@ class _CopyWithImpl$Input$Ingredient_stream_cursor_value_input<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? name = _undefined,
-  }) =>
-      _then(Input$Ingredient_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as String?),
-        if (name != _undefined) 'name': (name as String?),
-      }));
+  TRes call({Object? id = _undefined, Object? name = _undefined}) => _then(
+    Input$Ingredient_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as String?),
+      if (name != _undefined) 'name': (name as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Ingredient_stream_cursor_value_input<TRes>
@@ -7029,11 +7052,7 @@ class _CopyWithStubImpl$Input$Ingredient_stream_cursor_value_input<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? name,
-  }) =>
-      _res;
+  call({String? id, String? name}) => _res;
 }
 
 class Input$Int_comparison_exp {
@@ -7047,18 +7066,17 @@ class Input$Int_comparison_exp {
     int? $_lte,
     int? $_neq,
     List<int>? $_nin,
-  }) =>
-      Input$Int_comparison_exp._({
-        if ($_eq != null) r'_eq': $_eq,
-        if ($_gt != null) r'_gt': $_gt,
-        if ($_gte != null) r'_gte': $_gte,
-        if ($_in != null) r'_in': $_in,
-        if ($_is_null != null) r'_is_null': $_is_null,
-        if ($_lt != null) r'_lt': $_lt,
-        if ($_lte != null) r'_lte': $_lte,
-        if ($_neq != null) r'_neq': $_neq,
-        if ($_nin != null) r'_nin': $_nin,
-      });
+  }) => Input$Int_comparison_exp._({
+    if ($_eq != null) r'_eq': $_eq,
+    if ($_gt != null) r'_gt': $_gt,
+    if ($_gte != null) r'_gte': $_gte,
+    if ($_in != null) r'_in': $_in,
+    if ($_is_null != null) r'_is_null': $_is_null,
+    if ($_lt != null) r'_lt': $_lt,
+    if ($_lte != null) r'_lte': $_lte,
+    if ($_neq != null) r'_neq': $_neq,
+    if ($_nin != null) r'_nin': $_nin,
+  });
 
   Input$Int_comparison_exp._(this._$data);
 
@@ -7078,8 +7096,9 @@ class Input$Int_comparison_exp {
     }
     if (data.containsKey('_in')) {
       final l$$_in = data['_in'];
-      result$data['_in'] =
-          (l$$_in as List<dynamic>?)?.map((e) => (e as int)).toList();
+      result$data['_in'] = (l$$_in as List<dynamic>?)
+          ?.map((e) => (e as int))
+          .toList();
     }
     if (data.containsKey('_is_null')) {
       final l$$_is_null = data['_is_null'];
@@ -7099,8 +7118,9 @@ class Input$Int_comparison_exp {
     }
     if (data.containsKey('_nin')) {
       final l$$_nin = data['_nin'];
-      result$data['_nin'] =
-          (l$$_nin as List<dynamic>?)?.map((e) => (e as int)).toList();
+      result$data['_nin'] = (l$$_nin as List<dynamic>?)
+          ?.map((e) => (e as int))
+          .toList();
     }
     return Input$Int_comparison_exp._(result$data);
   }
@@ -7167,17 +7187,14 @@ class Input$Int_comparison_exp {
   }
 
   CopyWith$Input$Int_comparison_exp<Input$Int_comparison_exp> get copyWith =>
-      CopyWith$Input$Int_comparison_exp(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Int_comparison_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Int_comparison_exp) ||
+    if (other is! Input$Int_comparison_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -7296,8 +7313,8 @@ class Input$Int_comparison_exp {
       _$data.containsKey('_gte') ? l$$_gte : const {},
       _$data.containsKey('_in')
           ? l$$_in == null
-              ? null
-              : Object.hashAll(l$$_in.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_in.map((v) => v))
           : const {},
       _$data.containsKey('_is_null') ? l$$_is_null : const {},
       _$data.containsKey('_lt') ? l$$_lt : const {},
@@ -7305,8 +7322,8 @@ class Input$Int_comparison_exp {
       _$data.containsKey('_neq') ? l$$_neq : const {},
       _$data.containsKey('_nin')
           ? l$$_nin == null
-              ? null
-              : Object.hashAll(l$$_nin.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_nin.map((v) => v))
           : const {},
     ]);
   }
@@ -7336,10 +7353,7 @@ abstract class CopyWith$Input$Int_comparison_exp<TRes> {
 
 class _CopyWithImpl$Input$Int_comparison_exp<TRes>
     implements CopyWith$Input$Int_comparison_exp<TRes> {
-  _CopyWithImpl$Input$Int_comparison_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Int_comparison_exp(this._instance, this._then);
 
   final Input$Int_comparison_exp _instance;
 
@@ -7357,19 +7371,20 @@ class _CopyWithImpl$Input$Int_comparison_exp<TRes>
     Object? $_lte = _undefined,
     Object? $_neq = _undefined,
     Object? $_nin = _undefined,
-  }) =>
-      _then(Input$Int_comparison_exp._({
-        ..._instance._$data,
-        if ($_eq != _undefined) '_eq': ($_eq as int?),
-        if ($_gt != _undefined) '_gt': ($_gt as int?),
-        if ($_gte != _undefined) '_gte': ($_gte as int?),
-        if ($_in != _undefined) '_in': ($_in as List<int>?),
-        if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
-        if ($_lt != _undefined) '_lt': ($_lt as int?),
-        if ($_lte != _undefined) '_lte': ($_lte as int?),
-        if ($_neq != _undefined) '_neq': ($_neq as int?),
-        if ($_nin != _undefined) '_nin': ($_nin as List<int>?),
-      }));
+  }) => _then(
+    Input$Int_comparison_exp._({
+      ..._instance._$data,
+      if ($_eq != _undefined) '_eq': ($_eq as int?),
+      if ($_gt != _undefined) '_gt': ($_gt as int?),
+      if ($_gte != _undefined) '_gte': ($_gte as int?),
+      if ($_in != _undefined) '_in': ($_in as List<int>?),
+      if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
+      if ($_lt != _undefined) '_lt': ($_lt as int?),
+      if ($_lte != _undefined) '_lte': ($_lte as int?),
+      if ($_neq != _undefined) '_neq': ($_neq as int?),
+      if ($_nin != _undefined) '_nin': ($_nin as List<int>?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Int_comparison_exp<TRes>
@@ -7388,8 +7403,7 @@ class _CopyWithStubImpl$Input$Int_comparison_exp<TRes>
     int? $_lte,
     int? $_neq,
     List<int>? $_nin,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_aggregate_order_by {
@@ -7405,100 +7419,111 @@ class Input$RecipeSection_aggregate_order_by {
     Input$RecipeSection_var_pop_order_by? var_pop,
     Input$RecipeSection_var_samp_order_by? var_samp,
     Input$RecipeSection_variance_order_by? variance,
-  }) =>
-      Input$RecipeSection_aggregate_order_by._({
-        if (avg != null) r'avg': avg,
-        if (count != null) r'count': count,
-        if (max != null) r'max': max,
-        if (min != null) r'min': min,
-        if (stddev != null) r'stddev': stddev,
-        if (stddev_pop != null) r'stddev_pop': stddev_pop,
-        if (stddev_samp != null) r'stddev_samp': stddev_samp,
-        if (sum != null) r'sum': sum,
-        if (var_pop != null) r'var_pop': var_pop,
-        if (var_samp != null) r'var_samp': var_samp,
-        if (variance != null) r'variance': variance,
-      });
+  }) => Input$RecipeSection_aggregate_order_by._({
+    if (avg != null) r'avg': avg,
+    if (count != null) r'count': count,
+    if (max != null) r'max': max,
+    if (min != null) r'min': min,
+    if (stddev != null) r'stddev': stddev,
+    if (stddev_pop != null) r'stddev_pop': stddev_pop,
+    if (stddev_samp != null) r'stddev_samp': stddev_samp,
+    if (sum != null) r'sum': sum,
+    if (var_pop != null) r'var_pop': var_pop,
+    if (var_samp != null) r'var_samp': var_samp,
+    if (variance != null) r'variance': variance,
+  });
 
   Input$RecipeSection_aggregate_order_by._(this._$data);
 
   factory Input$RecipeSection_aggregate_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('avg')) {
       final l$avg = data['avg'];
       result$data['avg'] = l$avg == null
           ? null
           : Input$RecipeSection_avg_order_by.fromJson(
-              (l$avg as Map<String, dynamic>));
+              (l$avg as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('count')) {
       final l$count = data['count'];
-      result$data['count'] =
-          l$count == null ? null : fromJson$Enum$order_by((l$count as String));
+      result$data['count'] = l$count == null
+          ? null
+          : fromJson$Enum$order_by((l$count as String));
     }
     if (data.containsKey('max')) {
       final l$max = data['max'];
       result$data['max'] = l$max == null
           ? null
           : Input$RecipeSection_max_order_by.fromJson(
-              (l$max as Map<String, dynamic>));
+              (l$max as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('min')) {
       final l$min = data['min'];
       result$data['min'] = l$min == null
           ? null
           : Input$RecipeSection_min_order_by.fromJson(
-              (l$min as Map<String, dynamic>));
+              (l$min as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('stddev')) {
       final l$stddev = data['stddev'];
       result$data['stddev'] = l$stddev == null
           ? null
           : Input$RecipeSection_stddev_order_by.fromJson(
-              (l$stddev as Map<String, dynamic>));
+              (l$stddev as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('stddev_pop')) {
       final l$stddev_pop = data['stddev_pop'];
       result$data['stddev_pop'] = l$stddev_pop == null
           ? null
           : Input$RecipeSection_stddev_pop_order_by.fromJson(
-              (l$stddev_pop as Map<String, dynamic>));
+              (l$stddev_pop as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('stddev_samp')) {
       final l$stddev_samp = data['stddev_samp'];
       result$data['stddev_samp'] = l$stddev_samp == null
           ? null
           : Input$RecipeSection_stddev_samp_order_by.fromJson(
-              (l$stddev_samp as Map<String, dynamic>));
+              (l$stddev_samp as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('sum')) {
       final l$sum = data['sum'];
       result$data['sum'] = l$sum == null
           ? null
           : Input$RecipeSection_sum_order_by.fromJson(
-              (l$sum as Map<String, dynamic>));
+              (l$sum as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('var_pop')) {
       final l$var_pop = data['var_pop'];
       result$data['var_pop'] = l$var_pop == null
           ? null
           : Input$RecipeSection_var_pop_order_by.fromJson(
-              (l$var_pop as Map<String, dynamic>));
+              (l$var_pop as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('var_samp')) {
       final l$var_samp = data['var_samp'];
       result$data['var_samp'] = l$var_samp == null
           ? null
           : Input$RecipeSection_var_samp_order_by.fromJson(
-              (l$var_samp as Map<String, dynamic>));
+              (l$var_samp as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('variance')) {
       final l$variance = data['variance'];
       result$data['variance'] = l$variance == null
           ? null
           : Input$RecipeSection_variance_order_by.fromJson(
-              (l$variance as Map<String, dynamic>));
+              (l$variance as Map<String, dynamic>),
+            );
     }
     return Input$RecipeSection_aggregate_order_by._(result$data);
   }
@@ -7545,8 +7570,9 @@ class Input$RecipeSection_aggregate_order_by {
     }
     if (_$data.containsKey('count')) {
       final l$count = count;
-      result$data['count'] =
-          l$count == null ? null : toJson$Enum$order_by(l$count);
+      result$data['count'] = l$count == null
+          ? null
+          : toJson$Enum$order_by(l$count);
     }
     if (_$data.containsKey('max')) {
       final l$max = max;
@@ -7588,18 +7614,17 @@ class Input$RecipeSection_aggregate_order_by {
   }
 
   CopyWith$Input$RecipeSection_aggregate_order_by<
-          Input$RecipeSection_aggregate_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_aggregate_order_by(
-            this,
-            (i) => i,
-          );
+    Input$RecipeSection_aggregate_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$RecipeSection_aggregate_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_aggregate_order_by) ||
+    if (other is! Input$RecipeSection_aggregate_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -7786,40 +7811,38 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
     Object? var_pop = _undefined,
     Object? var_samp = _undefined,
     Object? variance = _undefined,
-  }) =>
-      _then(Input$RecipeSection_aggregate_order_by._({
-        ..._instance._$data,
-        if (avg != _undefined)
-          'avg': (avg as Input$RecipeSection_avg_order_by?),
-        if (count != _undefined) 'count': (count as Enum$order_by?),
-        if (max != _undefined)
-          'max': (max as Input$RecipeSection_max_order_by?),
-        if (min != _undefined)
-          'min': (min as Input$RecipeSection_min_order_by?),
-        if (stddev != _undefined)
-          'stddev': (stddev as Input$RecipeSection_stddev_order_by?),
-        if (stddev_pop != _undefined)
-          'stddev_pop':
-              (stddev_pop as Input$RecipeSection_stddev_pop_order_by?),
-        if (stddev_samp != _undefined)
-          'stddev_samp':
-              (stddev_samp as Input$RecipeSection_stddev_samp_order_by?),
-        if (sum != _undefined)
-          'sum': (sum as Input$RecipeSection_sum_order_by?),
-        if (var_pop != _undefined)
-          'var_pop': (var_pop as Input$RecipeSection_var_pop_order_by?),
-        if (var_samp != _undefined)
-          'var_samp': (var_samp as Input$RecipeSection_var_samp_order_by?),
-        if (variance != _undefined)
-          'variance': (variance as Input$RecipeSection_variance_order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_aggregate_order_by._({
+      ..._instance._$data,
+      if (avg != _undefined) 'avg': (avg as Input$RecipeSection_avg_order_by?),
+      if (count != _undefined) 'count': (count as Enum$order_by?),
+      if (max != _undefined) 'max': (max as Input$RecipeSection_max_order_by?),
+      if (min != _undefined) 'min': (min as Input$RecipeSection_min_order_by?),
+      if (stddev != _undefined)
+        'stddev': (stddev as Input$RecipeSection_stddev_order_by?),
+      if (stddev_pop != _undefined)
+        'stddev_pop': (stddev_pop as Input$RecipeSection_stddev_pop_order_by?),
+      if (stddev_samp != _undefined)
+        'stddev_samp':
+            (stddev_samp as Input$RecipeSection_stddev_samp_order_by?),
+      if (sum != _undefined) 'sum': (sum as Input$RecipeSection_sum_order_by?),
+      if (var_pop != _undefined)
+        'var_pop': (var_pop as Input$RecipeSection_var_pop_order_by?),
+      if (var_samp != _undefined)
+        'var_samp': (var_samp as Input$RecipeSection_var_samp_order_by?),
+      if (variance != _undefined)
+        'variance': (variance as Input$RecipeSection_variance_order_by?),
+    }),
+  );
 
   CopyWith$Input$RecipeSection_avg_order_by<TRes> get avg {
     final local$avg = _instance.avg;
     return local$avg == null
         ? CopyWith$Input$RecipeSection_avg_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_avg_order_by(
-            local$avg, (e) => call(avg: e));
+            local$avg,
+            (e) => call(avg: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_max_order_by<TRes> get max {
@@ -7827,7 +7850,9 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
     return local$max == null
         ? CopyWith$Input$RecipeSection_max_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_max_order_by(
-            local$max, (e) => call(max: e));
+            local$max,
+            (e) => call(max: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_min_order_by<TRes> get min {
@@ -7835,7 +7860,9 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
     return local$min == null
         ? CopyWith$Input$RecipeSection_min_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_min_order_by(
-            local$min, (e) => call(min: e));
+            local$min,
+            (e) => call(min: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_stddev_order_by<TRes> get stddev {
@@ -7843,25 +7870,33 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
     return local$stddev == null
         ? CopyWith$Input$RecipeSection_stddev_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_stddev_order_by(
-            local$stddev, (e) => call(stddev: e));
+            local$stddev,
+            (e) => call(stddev: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_stddev_pop_order_by<TRes> get stddev_pop {
     final local$stddev_pop = _instance.stddev_pop;
     return local$stddev_pop == null
         ? CopyWith$Input$RecipeSection_stddev_pop_order_by.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Input$RecipeSection_stddev_pop_order_by(
-            local$stddev_pop, (e) => call(stddev_pop: e));
+            local$stddev_pop,
+            (e) => call(stddev_pop: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_stddev_samp_order_by<TRes> get stddev_samp {
     final local$stddev_samp = _instance.stddev_samp;
     return local$stddev_samp == null
         ? CopyWith$Input$RecipeSection_stddev_samp_order_by.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Input$RecipeSection_stddev_samp_order_by(
-            local$stddev_samp, (e) => call(stddev_samp: e));
+            local$stddev_samp,
+            (e) => call(stddev_samp: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_sum_order_by<TRes> get sum {
@@ -7869,7 +7904,9 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
     return local$sum == null
         ? CopyWith$Input$RecipeSection_sum_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_sum_order_by(
-            local$sum, (e) => call(sum: e));
+            local$sum,
+            (e) => call(sum: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_var_pop_order_by<TRes> get var_pop {
@@ -7877,7 +7914,9 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
     return local$var_pop == null
         ? CopyWith$Input$RecipeSection_var_pop_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_var_pop_order_by(
-            local$var_pop, (e) => call(var_pop: e));
+            local$var_pop,
+            (e) => call(var_pop: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_var_samp_order_by<TRes> get var_samp {
@@ -7885,7 +7924,9 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
     return local$var_samp == null
         ? CopyWith$Input$RecipeSection_var_samp_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_var_samp_order_by(
-            local$var_samp, (e) => call(var_samp: e));
+            local$var_samp,
+            (e) => call(var_samp: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_variance_order_by<TRes> get variance {
@@ -7893,7 +7934,9 @@ class _CopyWithImpl$Input$RecipeSection_aggregate_order_by<TRes>
     return local$variance == null
         ? CopyWith$Input$RecipeSection_variance_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_variance_order_by(
-            local$variance, (e) => call(variance: e));
+            local$variance,
+            (e) => call(variance: e),
+          );
   }
 }
 
@@ -7915,8 +7958,7 @@ class _CopyWithStubImpl$Input$RecipeSection_aggregate_order_by<TRes>
     Input$RecipeSection_var_pop_order_by? var_pop,
     Input$RecipeSection_var_samp_order_by? var_samp,
     Input$RecipeSection_variance_order_by? variance,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$RecipeSection_avg_order_by<TRes> get avg =>
       CopyWith$Input$RecipeSection_avg_order_by.stub(_res);
@@ -7955,13 +7997,12 @@ class Input$RecipeSection_avg_order_by {
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_avg_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_avg_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_avg_order_by._(this._$data);
 
@@ -7975,8 +8016,9 @@ class Input$RecipeSection_avg_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -8015,8 +8057,9 @@ class Input$RecipeSection_avg_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -8026,24 +8069,22 @@ class Input$RecipeSection_avg_order_by {
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_avg_order_by<Input$RecipeSection_avg_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_avg_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$RecipeSection_avg_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_avg_order_by) ||
+    if (other is! Input$RecipeSection_avg_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8119,10 +8160,7 @@ abstract class CopyWith$Input$RecipeSection_avg_order_by<TRes> {
 
 class _CopyWithImpl$Input$RecipeSection_avg_order_by<TRes>
     implements CopyWith$Input$RecipeSection_avg_order_by<TRes> {
-  _CopyWithImpl$Input$RecipeSection_avg_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RecipeSection_avg_order_by(this._instance, this._then);
 
   final Input$RecipeSection_avg_order_by _instance;
 
@@ -8135,16 +8173,17 @@ class _CopyWithImpl$Input$RecipeSection_avg_order_by<TRes>
     Object? order = _undefined,
     Object? prepTimeMinutes = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_avg_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_avg_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_avg_order_by<TRes>
@@ -8158,8 +8197,7 @@ class _CopyWithStubImpl$Input$RecipeSection_avg_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_bool_exp {
@@ -8179,24 +8217,23 @@ class Input$RecipeSection_bool_exp {
     Input$String_comparison_exp? recipeId,
     Input$String_comparison_exp? servingUnit,
     Input$Int_comparison_exp? servings,
-  }) =>
-      Input$RecipeSection_bool_exp._({
-        if (IngredientUnits != null) r'IngredientUnits': IngredientUnits,
-        if (Recipe != null) r'Recipe': Recipe,
-        if (Steps != null) r'Steps': Steps,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (servingUnit != null) r'servingUnit': servingUnit,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_bool_exp._({
+    if (IngredientUnits != null) r'IngredientUnits': IngredientUnits,
+    if (Recipe != null) r'Recipe': Recipe,
+    if (Steps != null) r'Steps': Steps,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (servingUnit != null) r'servingUnit': servingUnit,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_bool_exp._(this._$data);
 
@@ -8207,7 +8244,8 @@ class Input$RecipeSection_bool_exp {
       result$data['IngredientUnits'] = l$IngredientUnits == null
           ? null
           : Input$IngredientUnit_bool_exp.fromJson(
-              (l$IngredientUnits as Map<String, dynamic>));
+              (l$IngredientUnits as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('Recipe')) {
       final l$Recipe = data['Recipe'];
@@ -8224,8 +8262,11 @@ class Input$RecipeSection_bool_exp {
     if (data.containsKey('_and')) {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
-          ?.map((e) => Input$RecipeSection_bool_exp.fromJson(
-              (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Input$RecipeSection_bool_exp.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -8233,13 +8274,17 @@ class Input$RecipeSection_bool_exp {
       result$data['_not'] = l$$_not == null
           ? null
           : Input$RecipeSection_bool_exp.fromJson(
-              (l$$_not as Map<String, dynamic>));
+              (l$$_not as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_or')) {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
-          ?.map((e) => Input$RecipeSection_bool_exp.fromJson(
-              (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Input$RecipeSection_bool_exp.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList();
     }
     if (data.containsKey('cookTimeMinutes')) {
@@ -8247,63 +8292,72 @@ class Input$RecipeSection_bool_exp {
       result$data['cookTimeMinutes'] = l$cookTimeMinutes == null
           ? null
           : Input$Int_comparison_exp.fromJson(
-              (l$cookTimeMinutes as Map<String, dynamic>));
+              (l$cookTimeMinutes as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('description')) {
       final l$description = data['description'];
       result$data['description'] = l$description == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$description as Map<String, dynamic>));
+              (l$description as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
       result$data['name'] = l$name == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$name as Map<String, dynamic>));
+              (l$name as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
       result$data['order'] = l$order == null
           ? null
           : Input$Int_comparison_exp.fromJson(
-              (l$order as Map<String, dynamic>));
+              (l$order as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
       result$data['prepTimeMinutes'] = l$prepTimeMinutes == null
           ? null
           : Input$Int_comparison_exp.fromJson(
-              (l$prepTimeMinutes as Map<String, dynamic>));
+              (l$prepTimeMinutes as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('recipeId')) {
       final l$recipeId = data['recipeId'];
       result$data['recipeId'] = l$recipeId == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$recipeId as Map<String, dynamic>));
+              (l$recipeId as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('servingUnit')) {
       final l$servingUnit = data['servingUnit'];
       result$data['servingUnit'] = l$servingUnit == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$servingUnit as Map<String, dynamic>));
+              (l$servingUnit as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('servings')) {
       final l$servings = data['servings'];
       result$data['servings'] = l$servings == null
           ? null
           : Input$Int_comparison_exp.fromJson(
-              (l$servings as Map<String, dynamic>));
+              (l$servings as Map<String, dynamic>),
+            );
     }
     return Input$RecipeSection_bool_exp._(result$data);
   }
@@ -8420,17 +8474,14 @@ class Input$RecipeSection_bool_exp {
   }
 
   CopyWith$Input$RecipeSection_bool_exp<Input$RecipeSection_bool_exp>
-      get copyWith => CopyWith$Input$RecipeSection_bool_exp(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$RecipeSection_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_bool_exp) ||
+    if (other is! Input$RecipeSection_bool_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8609,14 +8660,14 @@ class Input$RecipeSection_bool_exp {
       _$data.containsKey('Steps') ? l$Steps : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('cookTimeMinutes') ? l$cookTimeMinutes : const {},
       _$data.containsKey('description') ? l$description : const {},
@@ -8661,18 +8712,22 @@ abstract class CopyWith$Input$RecipeSection_bool_exp<TRes> {
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipe;
   CopyWith$Input$Step_bool_exp<TRes> get Steps;
   TRes $_and(
-      Iterable<Input$RecipeSection_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$RecipeSection_bool_exp<
-                      Input$RecipeSection_bool_exp>>?)
-          _fn);
+    Iterable<Input$RecipeSection_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$RecipeSection_bool_exp<Input$RecipeSection_bool_exp>
+      >?,
+    )
+    _fn,
+  );
   CopyWith$Input$RecipeSection_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$RecipeSection_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$RecipeSection_bool_exp<
-                      Input$RecipeSection_bool_exp>>?)
-          _fn);
+    Iterable<Input$RecipeSection_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$RecipeSection_bool_exp<Input$RecipeSection_bool_exp>
+      >?,
+    )
+    _fn,
+  );
   CopyWith$Input$Int_comparison_exp<TRes> get cookTimeMinutes;
   CopyWith$Input$String_comparison_exp<TRes> get description;
   CopyWith$Input$String_comparison_exp<TRes> get id;
@@ -8686,10 +8741,7 @@ abstract class CopyWith$Input$RecipeSection_bool_exp<TRes> {
 
 class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
     implements CopyWith$Input$RecipeSection_bool_exp<TRes> {
-  _CopyWithImpl$Input$RecipeSection_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RecipeSection_bool_exp(this._instance, this._then);
 
   final Input$RecipeSection_bool_exp _instance;
 
@@ -8713,43 +8765,44 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
     Object? recipeId = _undefined,
     Object? servingUnit = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_bool_exp._({
-        ..._instance._$data,
-        if (IngredientUnits != _undefined)
-          'IngredientUnits':
-              (IngredientUnits as Input$IngredientUnit_bool_exp?),
-        if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_bool_exp?),
-        if (Steps != _undefined) 'Steps': (Steps as Input$Step_bool_exp?),
-        if ($_and != _undefined)
-          '_and': ($_and as List<Input$RecipeSection_bool_exp>?),
-        if ($_not != _undefined)
-          '_not': ($_not as Input$RecipeSection_bool_exp?),
-        if ($_or != _undefined)
-          '_or': ($_or as List<Input$RecipeSection_bool_exp>?),
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Input$Int_comparison_exp?),
-        if (description != _undefined)
-          'description': (description as Input$String_comparison_exp?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-        if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
-        if (order != _undefined) 'order': (order as Input$Int_comparison_exp?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Input$Int_comparison_exp?),
-        if (recipeId != _undefined)
-          'recipeId': (recipeId as Input$String_comparison_exp?),
-        if (servingUnit != _undefined)
-          'servingUnit': (servingUnit as Input$String_comparison_exp?),
-        if (servings != _undefined)
-          'servings': (servings as Input$Int_comparison_exp?),
-      }));
+  }) => _then(
+    Input$RecipeSection_bool_exp._({
+      ..._instance._$data,
+      if (IngredientUnits != _undefined)
+        'IngredientUnits': (IngredientUnits as Input$IngredientUnit_bool_exp?),
+      if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_bool_exp?),
+      if (Steps != _undefined) 'Steps': (Steps as Input$Step_bool_exp?),
+      if ($_and != _undefined)
+        '_and': ($_and as List<Input$RecipeSection_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$RecipeSection_bool_exp?),
+      if ($_or != _undefined)
+        '_or': ($_or as List<Input$RecipeSection_bool_exp>?),
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Input$Int_comparison_exp?),
+      if (description != _undefined)
+        'description': (description as Input$String_comparison_exp?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+      if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
+      if (order != _undefined) 'order': (order as Input$Int_comparison_exp?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Input$Int_comparison_exp?),
+      if (recipeId != _undefined)
+        'recipeId': (recipeId as Input$String_comparison_exp?),
+      if (servingUnit != _undefined)
+        'servingUnit': (servingUnit as Input$String_comparison_exp?),
+      if (servings != _undefined)
+        'servings': (servings as Input$Int_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits {
     final local$IngredientUnits = _instance.IngredientUnits;
     return local$IngredientUnits == null
         ? CopyWith$Input$IngredientUnit_bool_exp.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_bool_exp(
-            local$IngredientUnits, (e) => call(IngredientUnits: e));
+            local$IngredientUnits,
+            (e) => call(IngredientUnits: e),
+          );
   }
 
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipe {
@@ -8767,45 +8820,53 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
   }
 
   TRes $_and(
-          Iterable<Input$RecipeSection_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$RecipeSection_bool_exp<
-                          Input$RecipeSection_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and: _fn(
-              _instance.$_and?.map((e) => CopyWith$Input$RecipeSection_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$RecipeSection_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$RecipeSection_bool_exp<Input$RecipeSection_bool_exp>
+      >?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map(
+        (e) => CopyWith$Input$RecipeSection_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   CopyWith$Input$RecipeSection_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
         ? CopyWith$Input$RecipeSection_bool_exp.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_bool_exp(
-            local$$_not, (e) => call($_not: e));
+            local$$_not,
+            (e) => call($_not: e),
+          );
   }
 
   TRes $_or(
-          Iterable<Input$RecipeSection_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$RecipeSection_bool_exp<
-                          Input$RecipeSection_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(
-              _instance.$_or?.map((e) => CopyWith$Input$RecipeSection_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$RecipeSection_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$RecipeSection_bool_exp<Input$RecipeSection_bool_exp>
+      >?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map(
+        (e) => CopyWith$Input$RecipeSection_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   CopyWith$Input$Int_comparison_exp<TRes> get cookTimeMinutes {
     final local$cookTimeMinutes = _instance.cookTimeMinutes;
     return local$cookTimeMinutes == null
         ? CopyWith$Input$Int_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$Int_comparison_exp(
-            local$cookTimeMinutes, (e) => call(cookTimeMinutes: e));
+            local$cookTimeMinutes,
+            (e) => call(cookTimeMinutes: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get description {
@@ -8813,7 +8874,9 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
     return local$description == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$description, (e) => call(description: e));
+            local$description,
+            (e) => call(description: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
@@ -8828,7 +8891,9 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
     return local$name == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$name, (e) => call(name: e));
+            local$name,
+            (e) => call(name: e),
+          );
   }
 
   CopyWith$Input$Int_comparison_exp<TRes> get order {
@@ -8843,7 +8908,9 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
     return local$prepTimeMinutes == null
         ? CopyWith$Input$Int_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$Int_comparison_exp(
-            local$prepTimeMinutes, (e) => call(prepTimeMinutes: e));
+            local$prepTimeMinutes,
+            (e) => call(prepTimeMinutes: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get recipeId {
@@ -8851,7 +8918,9 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
     return local$recipeId == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$recipeId, (e) => call(recipeId: e));
+            local$recipeId,
+            (e) => call(recipeId: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get servingUnit {
@@ -8859,7 +8928,9 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
     return local$servingUnit == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$servingUnit, (e) => call(servingUnit: e));
+            local$servingUnit,
+            (e) => call(servingUnit: e),
+          );
   }
 
   CopyWith$Input$Int_comparison_exp<TRes> get servings {
@@ -8867,7 +8938,9 @@ class _CopyWithImpl$Input$RecipeSection_bool_exp<TRes>
     return local$servings == null
         ? CopyWith$Input$Int_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$Int_comparison_exp(
-            local$servings, (e) => call(servings: e));
+            local$servings,
+            (e) => call(servings: e),
+          );
   }
 }
 
@@ -8893,8 +8966,7 @@ class _CopyWithStubImpl$Input$RecipeSection_bool_exp<TRes>
     Input$String_comparison_exp? recipeId,
     Input$String_comparison_exp? servingUnit,
     Input$Int_comparison_exp? servings,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits =>
       CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
@@ -8951,18 +9023,17 @@ class Input$RecipeSection_max_order_by {
     Enum$order_by? recipeId,
     Enum$order_by? servingUnit,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_max_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (servingUnit != null) r'servingUnit': servingUnit,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_max_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (servingUnit != null) r'servingUnit': servingUnit,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_max_order_by._(this._$data);
 
@@ -8982,18 +9053,21 @@ class Input$RecipeSection_max_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
-      result$data['name'] =
-          l$name == null ? null : fromJson$Enum$order_by((l$name as String));
+      result$data['name'] = l$name == null
+          ? null
+          : fromJson$Enum$order_by((l$name as String));
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -9054,8 +9128,9 @@ class Input$RecipeSection_max_order_by {
     }
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -9063,13 +9138,15 @@ class Input$RecipeSection_max_order_by {
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
-      result$data['name'] =
-          l$name == null ? null : toJson$Enum$order_by(l$name);
+      result$data['name'] = l$name == null
+          ? null
+          : toJson$Enum$order_by(l$name);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -9079,34 +9156,34 @@ class Input$RecipeSection_max_order_by {
     }
     if (_$data.containsKey('recipeId')) {
       final l$recipeId = recipeId;
-      result$data['recipeId'] =
-          l$recipeId == null ? null : toJson$Enum$order_by(l$recipeId);
+      result$data['recipeId'] = l$recipeId == null
+          ? null
+          : toJson$Enum$order_by(l$recipeId);
     }
     if (_$data.containsKey('servingUnit')) {
       final l$servingUnit = servingUnit;
-      result$data['servingUnit'] =
-          l$servingUnit == null ? null : toJson$Enum$order_by(l$servingUnit);
+      result$data['servingUnit'] = l$servingUnit == null
+          ? null
+          : toJson$Enum$order_by(l$servingUnit);
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_max_order_by<Input$RecipeSection_max_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_max_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$RecipeSection_max_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_max_order_by) ||
+    if (other is! Input$RecipeSection_max_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -9240,10 +9317,7 @@ abstract class CopyWith$Input$RecipeSection_max_order_by<TRes> {
 
 class _CopyWithImpl$Input$RecipeSection_max_order_by<TRes>
     implements CopyWith$Input$RecipeSection_max_order_by<TRes> {
-  _CopyWithImpl$Input$RecipeSection_max_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RecipeSection_max_order_by(this._instance, this._then);
 
   final Input$RecipeSection_max_order_by _instance;
 
@@ -9261,23 +9335,24 @@ class _CopyWithImpl$Input$RecipeSection_max_order_by<TRes>
     Object? recipeId = _undefined,
     Object? servingUnit = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_max_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (name != _undefined) 'name': (name as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
-        if (servingUnit != _undefined)
-          'servingUnit': (servingUnit as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_max_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (name != _undefined) 'name': (name as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
+      if (servingUnit != _undefined)
+        'servingUnit': (servingUnit as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_max_order_by<TRes>
@@ -9296,8 +9371,7 @@ class _CopyWithStubImpl$Input$RecipeSection_max_order_by<TRes>
     Enum$order_by? recipeId,
     Enum$order_by? servingUnit,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_min_order_by {
@@ -9311,18 +9385,17 @@ class Input$RecipeSection_min_order_by {
     Enum$order_by? recipeId,
     Enum$order_by? servingUnit,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_min_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (servingUnit != null) r'servingUnit': servingUnit,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_min_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (servingUnit != null) r'servingUnit': servingUnit,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_min_order_by._(this._$data);
 
@@ -9342,18 +9415,21 @@ class Input$RecipeSection_min_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
-      result$data['name'] =
-          l$name == null ? null : fromJson$Enum$order_by((l$name as String));
+      result$data['name'] = l$name == null
+          ? null
+          : fromJson$Enum$order_by((l$name as String));
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -9414,8 +9490,9 @@ class Input$RecipeSection_min_order_by {
     }
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -9423,13 +9500,15 @@ class Input$RecipeSection_min_order_by {
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
-      result$data['name'] =
-          l$name == null ? null : toJson$Enum$order_by(l$name);
+      result$data['name'] = l$name == null
+          ? null
+          : toJson$Enum$order_by(l$name);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -9439,34 +9518,34 @@ class Input$RecipeSection_min_order_by {
     }
     if (_$data.containsKey('recipeId')) {
       final l$recipeId = recipeId;
-      result$data['recipeId'] =
-          l$recipeId == null ? null : toJson$Enum$order_by(l$recipeId);
+      result$data['recipeId'] = l$recipeId == null
+          ? null
+          : toJson$Enum$order_by(l$recipeId);
     }
     if (_$data.containsKey('servingUnit')) {
       final l$servingUnit = servingUnit;
-      result$data['servingUnit'] =
-          l$servingUnit == null ? null : toJson$Enum$order_by(l$servingUnit);
+      result$data['servingUnit'] = l$servingUnit == null
+          ? null
+          : toJson$Enum$order_by(l$servingUnit);
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_min_order_by<Input$RecipeSection_min_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_min_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$RecipeSection_min_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_min_order_by) ||
+    if (other is! Input$RecipeSection_min_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -9600,10 +9679,7 @@ abstract class CopyWith$Input$RecipeSection_min_order_by<TRes> {
 
 class _CopyWithImpl$Input$RecipeSection_min_order_by<TRes>
     implements CopyWith$Input$RecipeSection_min_order_by<TRes> {
-  _CopyWithImpl$Input$RecipeSection_min_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RecipeSection_min_order_by(this._instance, this._then);
 
   final Input$RecipeSection_min_order_by _instance;
 
@@ -9621,23 +9697,24 @@ class _CopyWithImpl$Input$RecipeSection_min_order_by<TRes>
     Object? recipeId = _undefined,
     Object? servingUnit = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_min_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (name != _undefined) 'name': (name as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
-        if (servingUnit != _undefined)
-          'servingUnit': (servingUnit as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_min_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (name != _undefined) 'name': (name as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
+      if (servingUnit != _undefined)
+        'servingUnit': (servingUnit as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_min_order_by<TRes>
@@ -9656,8 +9733,7 @@ class _CopyWithStubImpl$Input$RecipeSection_min_order_by<TRes>
     Enum$order_by? recipeId,
     Enum$order_by? servingUnit,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_order_by {
@@ -9674,22 +9750,21 @@ class Input$RecipeSection_order_by {
     Enum$order_by? recipeId,
     Enum$order_by? servingUnit,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_order_by._({
-        if (IngredientUnits_aggregate != null)
-          r'IngredientUnits_aggregate': IngredientUnits_aggregate,
-        if (Recipe != null) r'Recipe': Recipe,
-        if (Steps_aggregate != null) r'Steps_aggregate': Steps_aggregate,
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (servingUnit != null) r'servingUnit': servingUnit,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_order_by._({
+    if (IngredientUnits_aggregate != null)
+      r'IngredientUnits_aggregate': IngredientUnits_aggregate,
+    if (Recipe != null) r'Recipe': Recipe,
+    if (Steps_aggregate != null) r'Steps_aggregate': Steps_aggregate,
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (servingUnit != null) r'servingUnit': servingUnit,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_order_by._(this._$data);
 
@@ -9699,9 +9774,10 @@ class Input$RecipeSection_order_by {
       final l$IngredientUnits_aggregate = data['IngredientUnits_aggregate'];
       result$data['IngredientUnits_aggregate'] =
           l$IngredientUnits_aggregate == null
-              ? null
-              : Input$IngredientUnit_aggregate_order_by.fromJson(
-                  (l$IngredientUnits_aggregate as Map<String, dynamic>));
+          ? null
+          : Input$IngredientUnit_aggregate_order_by.fromJson(
+              (l$IngredientUnits_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('Recipe')) {
       final l$Recipe = data['Recipe'];
@@ -9714,7 +9790,8 @@ class Input$RecipeSection_order_by {
       result$data['Steps_aggregate'] = l$Steps_aggregate == null
           ? null
           : Input$Step_aggregate_order_by.fromJson(
-              (l$Steps_aggregate as Map<String, dynamic>));
+              (l$Steps_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('cookTimeMinutes')) {
       final l$cookTimeMinutes = data['cookTimeMinutes'];
@@ -9730,18 +9807,21 @@ class Input$RecipeSection_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
-      result$data['name'] =
-          l$name == null ? null : fromJson$Enum$order_by((l$name as String));
+      result$data['name'] = l$name == null
+          ? null
+          : fromJson$Enum$order_by((l$name as String));
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -9806,8 +9886,8 @@ class Input$RecipeSection_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits_aggregate')) {
       final l$IngredientUnits_aggregate = IngredientUnits_aggregate;
-      result$data['IngredientUnits_aggregate'] =
-          l$IngredientUnits_aggregate?.toJson();
+      result$data['IngredientUnits_aggregate'] = l$IngredientUnits_aggregate
+          ?.toJson();
     }
     if (_$data.containsKey('Recipe')) {
       final l$Recipe = Recipe;
@@ -9825,8 +9905,9 @@ class Input$RecipeSection_order_by {
     }
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -9834,13 +9915,15 @@ class Input$RecipeSection_order_by {
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
-      result$data['name'] =
-          l$name == null ? null : toJson$Enum$order_by(l$name);
+      result$data['name'] = l$name == null
+          ? null
+          : toJson$Enum$order_by(l$name);
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -9850,34 +9933,34 @@ class Input$RecipeSection_order_by {
     }
     if (_$data.containsKey('recipeId')) {
       final l$recipeId = recipeId;
-      result$data['recipeId'] =
-          l$recipeId == null ? null : toJson$Enum$order_by(l$recipeId);
+      result$data['recipeId'] = l$recipeId == null
+          ? null
+          : toJson$Enum$order_by(l$recipeId);
     }
     if (_$data.containsKey('servingUnit')) {
       final l$servingUnit = servingUnit;
-      result$data['servingUnit'] =
-          l$servingUnit == null ? null : toJson$Enum$order_by(l$servingUnit);
+      result$data['servingUnit'] = l$servingUnit == null
+          ? null
+          : toJson$Enum$order_by(l$servingUnit);
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_order_by<Input$RecipeSection_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$RecipeSection_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_order_by) ||
+    if (other is! Input$RecipeSection_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10045,17 +10128,14 @@ abstract class CopyWith$Input$RecipeSection_order_by<TRes> {
     Enum$order_by? servings,
   });
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
-      get IngredientUnits_aggregate;
+  get IngredientUnits_aggregate;
   CopyWith$Input$Recipe_order_by<TRes> get Recipe;
   CopyWith$Input$Step_aggregate_order_by<TRes> get Steps_aggregate;
 }
 
 class _CopyWithImpl$Input$RecipeSection_order_by<TRes>
     implements CopyWith$Input$RecipeSection_order_by<TRes> {
-  _CopyWithImpl$Input$RecipeSection_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RecipeSection_order_by(this._instance, this._then);
 
   final Input$RecipeSection_order_by _instance;
 
@@ -10076,40 +10156,43 @@ class _CopyWithImpl$Input$RecipeSection_order_by<TRes>
     Object? recipeId = _undefined,
     Object? servingUnit = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_order_by._({
-        ..._instance._$data,
-        if (IngredientUnits_aggregate != _undefined)
-          'IngredientUnits_aggregate': (IngredientUnits_aggregate
-              as Input$IngredientUnit_aggregate_order_by?),
-        if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_order_by?),
-        if (Steps_aggregate != _undefined)
-          'Steps_aggregate':
-              (Steps_aggregate as Input$Step_aggregate_order_by?),
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (name != _undefined) 'name': (name as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
-        if (servingUnit != _undefined)
-          'servingUnit': (servingUnit as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_order_by._({
+      ..._instance._$data,
+      if (IngredientUnits_aggregate != _undefined)
+        'IngredientUnits_aggregate':
+            (IngredientUnits_aggregate
+                as Input$IngredientUnit_aggregate_order_by?),
+      if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_order_by?),
+      if (Steps_aggregate != _undefined)
+        'Steps_aggregate': (Steps_aggregate as Input$Step_aggregate_order_by?),
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (name != _undefined) 'name': (name as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (recipeId != _undefined) 'recipeId': (recipeId as Enum$order_by?),
+      if (servingUnit != _undefined)
+        'servingUnit': (servingUnit as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
-      get IngredientUnits_aggregate {
+  get IngredientUnits_aggregate {
     final local$IngredientUnits_aggregate = _instance.IngredientUnits_aggregate;
     return local$IngredientUnits_aggregate == null
         ? CopyWith$Input$IngredientUnit_aggregate_order_by.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Input$IngredientUnit_aggregate_order_by(
             local$IngredientUnits_aggregate,
-            (e) => call(IngredientUnits_aggregate: e));
+            (e) => call(IngredientUnits_aggregate: e),
+          );
   }
 
   CopyWith$Input$Recipe_order_by<TRes> get Recipe {
@@ -10124,7 +10207,9 @@ class _CopyWithImpl$Input$RecipeSection_order_by<TRes>
     return local$Steps_aggregate == null
         ? CopyWith$Input$Step_aggregate_order_by.stub(_then(_instance))
         : CopyWith$Input$Step_aggregate_order_by(
-            local$Steps_aggregate, (e) => call(Steps_aggregate: e));
+            local$Steps_aggregate,
+            (e) => call(Steps_aggregate: e),
+          );
   }
 }
 
@@ -10147,12 +10232,11 @@ class _CopyWithStubImpl$Input$RecipeSection_order_by<TRes>
     Enum$order_by? recipeId,
     Enum$order_by? servingUnit,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
-      get IngredientUnits_aggregate =>
-          CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
+  get IngredientUnits_aggregate =>
+      CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
 
   CopyWith$Input$Recipe_order_by<TRes> get Recipe =>
       CopyWith$Input$Recipe_order_by.stub(_res);
@@ -10167,18 +10251,18 @@ class Input$RecipeSection_stddev_order_by {
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_stddev_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_stddev_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_stddev_order_by._(this._$data);
 
   factory Input$RecipeSection_stddev_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('cookTimeMinutes')) {
       final l$cookTimeMinutes = data['cookTimeMinutes'];
@@ -10188,8 +10272,9 @@ class Input$RecipeSection_stddev_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -10228,8 +10313,9 @@ class Input$RecipeSection_stddev_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -10239,25 +10325,24 @@ class Input$RecipeSection_stddev_order_by {
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_stddev_order_by<
-          Input$RecipeSection_stddev_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_stddev_order_by(
-            this,
-            (i) => i,
-          );
+    Input$RecipeSection_stddev_order_by
+  >
+  get copyWith => CopyWith$Input$RecipeSection_stddev_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_stddev_order_by) ||
+    if (other is! Input$RecipeSection_stddev_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10333,10 +10418,7 @@ abstract class CopyWith$Input$RecipeSection_stddev_order_by<TRes> {
 
 class _CopyWithImpl$Input$RecipeSection_stddev_order_by<TRes>
     implements CopyWith$Input$RecipeSection_stddev_order_by<TRes> {
-  _CopyWithImpl$Input$RecipeSection_stddev_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RecipeSection_stddev_order_by(this._instance, this._then);
 
   final Input$RecipeSection_stddev_order_by _instance;
 
@@ -10349,16 +10431,17 @@ class _CopyWithImpl$Input$RecipeSection_stddev_order_by<TRes>
     Object? order = _undefined,
     Object? prepTimeMinutes = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_stddev_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_stddev_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_stddev_order_by<TRes>
@@ -10372,8 +10455,7 @@ class _CopyWithStubImpl$Input$RecipeSection_stddev_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_stddev_pop_order_by {
@@ -10382,18 +10464,18 @@ class Input$RecipeSection_stddev_pop_order_by {
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_stddev_pop_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_stddev_pop_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_stddev_pop_order_by._(this._$data);
 
   factory Input$RecipeSection_stddev_pop_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('cookTimeMinutes')) {
       final l$cookTimeMinutes = data['cookTimeMinutes'];
@@ -10403,8 +10485,9 @@ class Input$RecipeSection_stddev_pop_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -10443,8 +10526,9 @@ class Input$RecipeSection_stddev_pop_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -10454,25 +10538,25 @@ class Input$RecipeSection_stddev_pop_order_by {
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_stddev_pop_order_by<
-          Input$RecipeSection_stddev_pop_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_stddev_pop_order_by(
-            this,
-            (i) => i,
-          );
+    Input$RecipeSection_stddev_pop_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$RecipeSection_stddev_pop_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_stddev_pop_order_by) ||
+    if (other is! Input$RecipeSection_stddev_pop_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10564,16 +10648,17 @@ class _CopyWithImpl$Input$RecipeSection_stddev_pop_order_by<TRes>
     Object? order = _undefined,
     Object? prepTimeMinutes = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_stddev_pop_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_stddev_pop_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_stddev_pop_order_by<TRes>
@@ -10587,8 +10672,7 @@ class _CopyWithStubImpl$Input$RecipeSection_stddev_pop_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_stddev_samp_order_by {
@@ -10597,18 +10681,18 @@ class Input$RecipeSection_stddev_samp_order_by {
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_stddev_samp_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_stddev_samp_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_stddev_samp_order_by._(this._$data);
 
   factory Input$RecipeSection_stddev_samp_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('cookTimeMinutes')) {
       final l$cookTimeMinutes = data['cookTimeMinutes'];
@@ -10618,8 +10702,9 @@ class Input$RecipeSection_stddev_samp_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -10658,8 +10743,9 @@ class Input$RecipeSection_stddev_samp_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -10669,25 +10755,25 @@ class Input$RecipeSection_stddev_samp_order_by {
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_stddev_samp_order_by<
-          Input$RecipeSection_stddev_samp_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_stddev_samp_order_by(
-            this,
-            (i) => i,
-          );
+    Input$RecipeSection_stddev_samp_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$RecipeSection_stddev_samp_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_stddev_samp_order_by) ||
+    if (other is! Input$RecipeSection_stddev_samp_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10779,16 +10865,17 @@ class _CopyWithImpl$Input$RecipeSection_stddev_samp_order_by<TRes>
     Object? order = _undefined,
     Object? prepTimeMinutes = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_stddev_samp_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_stddev_samp_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_stddev_samp_order_by<TRes>
@@ -10802,29 +10889,29 @@ class _CopyWithStubImpl$Input$RecipeSection_stddev_samp_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_stream_cursor_input {
   factory Input$RecipeSection_stream_cursor_input({
     required Input$RecipeSection_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$RecipeSection_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$RecipeSection_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$RecipeSection_stream_cursor_input._(this._$data);
 
   factory Input$RecipeSection_stream_cursor_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$RecipeSection_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -10849,25 +10936,25 @@ class Input$RecipeSection_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_stream_cursor_input<
-          Input$RecipeSection_stream_cursor_input>
-      get copyWith => CopyWith$Input$RecipeSection_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+    Input$RecipeSection_stream_cursor_input
+  >
+  get copyWith =>
+      CopyWith$Input$RecipeSection_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_stream_cursor_input) ||
+    if (other is! Input$RecipeSection_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -10913,7 +11000,7 @@ abstract class CopyWith$Input$RecipeSection_stream_cursor_input<TRes> {
     Enum$cursor_ordering? ordering,
   });
   CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes>
-      get initial_value;
+  get initial_value;
 }
 
 class _CopyWithImpl$Input$RecipeSection_stream_cursor_input<TRes>
@@ -10932,21 +11019,24 @@ class _CopyWithImpl$Input$RecipeSection_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$RecipeSection_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$RecipeSection_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$RecipeSection_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$RecipeSection_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes>
-      get initial_value {
+  get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$RecipeSection_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -10959,12 +11049,11 @@ class _CopyWithStubImpl$Input$RecipeSection_stream_cursor_input<TRes>
   call({
     Input$RecipeSection_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes>
-      get initial_value =>
-          CopyWith$Input$RecipeSection_stream_cursor_value_input.stub(_res);
+  get initial_value =>
+      CopyWith$Input$RecipeSection_stream_cursor_value_input.stub(_res);
 }
 
 class Input$RecipeSection_stream_cursor_value_input {
@@ -10978,23 +11067,23 @@ class Input$RecipeSection_stream_cursor_value_input {
     String? recipeId,
     String? servingUnit,
     int? servings,
-  }) =>
-      Input$RecipeSection_stream_cursor_value_input._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (recipeId != null) r'recipeId': recipeId,
-        if (servingUnit != null) r'servingUnit': servingUnit,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_stream_cursor_value_input._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (recipeId != null) r'recipeId': recipeId,
+    if (servingUnit != null) r'servingUnit': servingUnit,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_stream_cursor_value_input._(this._$data);
 
   factory Input$RecipeSection_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('cookTimeMinutes')) {
       final l$cookTimeMinutes = data['cookTimeMinutes'];
@@ -11097,18 +11186,17 @@ class Input$RecipeSection_stream_cursor_value_input {
   }
 
   CopyWith$Input$RecipeSection_stream_cursor_value_input<
-          Input$RecipeSection_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$RecipeSection_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$RecipeSection_stream_cursor_value_input
+  >
+  get copyWith =>
+      CopyWith$Input$RecipeSection_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_stream_cursor_value_input) ||
+    if (other is! Input$RecipeSection_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -11225,8 +11313,8 @@ abstract class CopyWith$Input$RecipeSection_stream_cursor_value_input<TRes> {
   ) = _CopyWithImpl$Input$RecipeSection_stream_cursor_value_input;
 
   factory CopyWith$Input$RecipeSection_stream_cursor_value_input.stub(
-          TRes res) =
-      _CopyWithStubImpl$Input$RecipeSection_stream_cursor_value_input;
+    TRes res,
+  ) = _CopyWithStubImpl$Input$RecipeSection_stream_cursor_value_input;
 
   TRes call({
     int? cookTimeMinutes,
@@ -11264,21 +11352,22 @@ class _CopyWithImpl$Input$RecipeSection_stream_cursor_value_input<TRes>
     Object? recipeId = _undefined,
     Object? servingUnit = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as int?),
-        if (description != _undefined) 'description': (description as String?),
-        if (id != _undefined) 'id': (id as String?),
-        if (name != _undefined) 'name': (name as String?),
-        if (order != _undefined) 'order': (order as int?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as int?),
-        if (recipeId != _undefined) 'recipeId': (recipeId as String?),
-        if (servingUnit != _undefined) 'servingUnit': (servingUnit as String?),
-        if (servings != _undefined) 'servings': (servings as int?),
-      }));
+  }) => _then(
+    Input$RecipeSection_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as int?),
+      if (description != _undefined) 'description': (description as String?),
+      if (id != _undefined) 'id': (id as String?),
+      if (name != _undefined) 'name': (name as String?),
+      if (order != _undefined) 'order': (order as int?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as int?),
+      if (recipeId != _undefined) 'recipeId': (recipeId as String?),
+      if (servingUnit != _undefined) 'servingUnit': (servingUnit as String?),
+      if (servings != _undefined) 'servings': (servings as int?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_stream_cursor_value_input<TRes>
@@ -11297,8 +11386,7 @@ class _CopyWithStubImpl$Input$RecipeSection_stream_cursor_value_input<TRes>
     String? recipeId,
     String? servingUnit,
     int? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_sum_order_by {
@@ -11307,13 +11395,12 @@ class Input$RecipeSection_sum_order_by {
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_sum_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_sum_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_sum_order_by._(this._$data);
 
@@ -11327,8 +11414,9 @@ class Input$RecipeSection_sum_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -11367,8 +11455,9 @@ class Input$RecipeSection_sum_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -11378,24 +11467,22 @@ class Input$RecipeSection_sum_order_by {
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_sum_order_by<Input$RecipeSection_sum_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_sum_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$RecipeSection_sum_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_sum_order_by) ||
+    if (other is! Input$RecipeSection_sum_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -11471,10 +11558,7 @@ abstract class CopyWith$Input$RecipeSection_sum_order_by<TRes> {
 
 class _CopyWithImpl$Input$RecipeSection_sum_order_by<TRes>
     implements CopyWith$Input$RecipeSection_sum_order_by<TRes> {
-  _CopyWithImpl$Input$RecipeSection_sum_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RecipeSection_sum_order_by(this._instance, this._then);
 
   final Input$RecipeSection_sum_order_by _instance;
 
@@ -11487,16 +11571,17 @@ class _CopyWithImpl$Input$RecipeSection_sum_order_by<TRes>
     Object? order = _undefined,
     Object? prepTimeMinutes = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_sum_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_sum_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_sum_order_by<TRes>
@@ -11510,8 +11595,7 @@ class _CopyWithStubImpl$Input$RecipeSection_sum_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_var_pop_order_by {
@@ -11520,18 +11604,18 @@ class Input$RecipeSection_var_pop_order_by {
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_var_pop_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_var_pop_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_var_pop_order_by._(this._$data);
 
   factory Input$RecipeSection_var_pop_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('cookTimeMinutes')) {
       final l$cookTimeMinutes = data['cookTimeMinutes'];
@@ -11541,8 +11625,9 @@ class Input$RecipeSection_var_pop_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -11581,8 +11666,9 @@ class Input$RecipeSection_var_pop_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -11592,25 +11678,24 @@ class Input$RecipeSection_var_pop_order_by {
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_var_pop_order_by<
-          Input$RecipeSection_var_pop_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_var_pop_order_by(
-            this,
-            (i) => i,
-          );
+    Input$RecipeSection_var_pop_order_by
+  >
+  get copyWith => CopyWith$Input$RecipeSection_var_pop_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_var_pop_order_by) ||
+    if (other is! Input$RecipeSection_var_pop_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -11702,16 +11787,17 @@ class _CopyWithImpl$Input$RecipeSection_var_pop_order_by<TRes>
     Object? order = _undefined,
     Object? prepTimeMinutes = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_var_pop_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_var_pop_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_var_pop_order_by<TRes>
@@ -11725,8 +11811,7 @@ class _CopyWithStubImpl$Input$RecipeSection_var_pop_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_var_samp_order_by {
@@ -11735,18 +11820,18 @@ class Input$RecipeSection_var_samp_order_by {
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_var_samp_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_var_samp_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_var_samp_order_by._(this._$data);
 
   factory Input$RecipeSection_var_samp_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('cookTimeMinutes')) {
       final l$cookTimeMinutes = data['cookTimeMinutes'];
@@ -11756,8 +11841,9 @@ class Input$RecipeSection_var_samp_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -11796,8 +11882,9 @@ class Input$RecipeSection_var_samp_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -11807,25 +11894,25 @@ class Input$RecipeSection_var_samp_order_by {
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_var_samp_order_by<
-          Input$RecipeSection_var_samp_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_var_samp_order_by(
-            this,
-            (i) => i,
-          );
+    Input$RecipeSection_var_samp_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$RecipeSection_var_samp_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_var_samp_order_by) ||
+    if (other is! Input$RecipeSection_var_samp_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -11917,16 +12004,17 @@ class _CopyWithImpl$Input$RecipeSection_var_samp_order_by<TRes>
     Object? order = _undefined,
     Object? prepTimeMinutes = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_var_samp_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_var_samp_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_var_samp_order_by<TRes>
@@ -11940,8 +12028,7 @@ class _CopyWithStubImpl$Input$RecipeSection_var_samp_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$RecipeSection_variance_order_by {
@@ -11950,18 +12037,18 @@ class Input$RecipeSection_variance_order_by {
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      Input$RecipeSection_variance_order_by._({
-        if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
-        if (order != null) r'order': order,
-        if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
-        if (servings != null) r'servings': servings,
-      });
+  }) => Input$RecipeSection_variance_order_by._({
+    if (cookTimeMinutes != null) r'cookTimeMinutes': cookTimeMinutes,
+    if (order != null) r'order': order,
+    if (prepTimeMinutes != null) r'prepTimeMinutes': prepTimeMinutes,
+    if (servings != null) r'servings': servings,
+  });
 
   Input$RecipeSection_variance_order_by._(this._$data);
 
   factory Input$RecipeSection_variance_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('cookTimeMinutes')) {
       final l$cookTimeMinutes = data['cookTimeMinutes'];
@@ -11971,8 +12058,9 @@ class Input$RecipeSection_variance_order_by {
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = data['prepTimeMinutes'];
@@ -12011,8 +12099,9 @@ class Input$RecipeSection_variance_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('prepTimeMinutes')) {
       final l$prepTimeMinutes = prepTimeMinutes;
@@ -12022,25 +12111,25 @@ class Input$RecipeSection_variance_order_by {
     }
     if (_$data.containsKey('servings')) {
       final l$servings = servings;
-      result$data['servings'] =
-          l$servings == null ? null : toJson$Enum$order_by(l$servings);
+      result$data['servings'] = l$servings == null
+          ? null
+          : toJson$Enum$order_by(l$servings);
     }
     return result$data;
   }
 
   CopyWith$Input$RecipeSection_variance_order_by<
-          Input$RecipeSection_variance_order_by>
-      get copyWith => CopyWith$Input$RecipeSection_variance_order_by(
-            this,
-            (i) => i,
-          );
+    Input$RecipeSection_variance_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$RecipeSection_variance_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RecipeSection_variance_order_by) ||
+    if (other is! Input$RecipeSection_variance_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -12132,16 +12221,17 @@ class _CopyWithImpl$Input$RecipeSection_variance_order_by<TRes>
     Object? order = _undefined,
     Object? prepTimeMinutes = _undefined,
     Object? servings = _undefined,
-  }) =>
-      _then(Input$RecipeSection_variance_order_by._({
-        ..._instance._$data,
-        if (cookTimeMinutes != _undefined)
-          'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (prepTimeMinutes != _undefined)
-          'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
-        if (servings != _undefined) 'servings': (servings as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$RecipeSection_variance_order_by._({
+      ..._instance._$data,
+      if (cookTimeMinutes != _undefined)
+        'cookTimeMinutes': (cookTimeMinutes as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (prepTimeMinutes != _undefined)
+        'prepTimeMinutes': (prepTimeMinutes as Enum$order_by?),
+      if (servings != _undefined) 'servings': (servings as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RecipeSection_variance_order_by<TRes>
@@ -12155,8 +12245,7 @@ class _CopyWithStubImpl$Input$RecipeSection_variance_order_by<TRes>
     Enum$order_by? order,
     Enum$order_by? prepTimeMinutes,
     Enum$order_by? servings,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$Recipe_aggregate_order_by {
@@ -12164,12 +12253,11 @@ class Input$Recipe_aggregate_order_by {
     Enum$order_by? count,
     Input$Recipe_max_order_by? max,
     Input$Recipe_min_order_by? min,
-  }) =>
-      Input$Recipe_aggregate_order_by._({
-        if (count != null) r'count': count,
-        if (max != null) r'max': max,
-        if (min != null) r'min': min,
-      });
+  }) => Input$Recipe_aggregate_order_by._({
+    if (count != null) r'count': count,
+    if (max != null) r'max': max,
+    if (min != null) r'min': min,
+  });
 
   Input$Recipe_aggregate_order_by._(this._$data);
 
@@ -12177,8 +12265,9 @@ class Input$Recipe_aggregate_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('count')) {
       final l$count = data['count'];
-      result$data['count'] =
-          l$count == null ? null : fromJson$Enum$order_by((l$count as String));
+      result$data['count'] = l$count == null
+          ? null
+          : fromJson$Enum$order_by((l$count as String));
     }
     if (data.containsKey('max')) {
       final l$max = data['max'];
@@ -12209,8 +12298,9 @@ class Input$Recipe_aggregate_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('count')) {
       final l$count = count;
-      result$data['count'] =
-          l$count == null ? null : toJson$Enum$order_by(l$count);
+      result$data['count'] = l$count == null
+          ? null
+          : toJson$Enum$order_by(l$count);
     }
     if (_$data.containsKey('max')) {
       final l$max = max;
@@ -12224,17 +12314,14 @@ class Input$Recipe_aggregate_order_by {
   }
 
   CopyWith$Input$Recipe_aggregate_order_by<Input$Recipe_aggregate_order_by>
-      get copyWith => CopyWith$Input$Recipe_aggregate_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Recipe_aggregate_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Recipe_aggregate_order_by) ||
+    if (other is! Input$Recipe_aggregate_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -12298,10 +12385,7 @@ abstract class CopyWith$Input$Recipe_aggregate_order_by<TRes> {
 
 class _CopyWithImpl$Input$Recipe_aggregate_order_by<TRes>
     implements CopyWith$Input$Recipe_aggregate_order_by<TRes> {
-  _CopyWithImpl$Input$Recipe_aggregate_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Recipe_aggregate_order_by(this._instance, this._then);
 
   final Input$Recipe_aggregate_order_by _instance;
 
@@ -12313,13 +12397,14 @@ class _CopyWithImpl$Input$Recipe_aggregate_order_by<TRes>
     Object? count = _undefined,
     Object? max = _undefined,
     Object? min = _undefined,
-  }) =>
-      _then(Input$Recipe_aggregate_order_by._({
-        ..._instance._$data,
-        if (count != _undefined) 'count': (count as Enum$order_by?),
-        if (max != _undefined) 'max': (max as Input$Recipe_max_order_by?),
-        if (min != _undefined) 'min': (min as Input$Recipe_min_order_by?),
-      }));
+  }) => _then(
+    Input$Recipe_aggregate_order_by._({
+      ..._instance._$data,
+      if (count != _undefined) 'count': (count as Enum$order_by?),
+      if (max != _undefined) 'max': (max as Input$Recipe_max_order_by?),
+      if (min != _undefined) 'min': (min as Input$Recipe_min_order_by?),
+    }),
+  );
 
   CopyWith$Input$Recipe_max_order_by<TRes> get max {
     final local$max = _instance.max;
@@ -12346,8 +12431,7 @@ class _CopyWithStubImpl$Input$Recipe_aggregate_order_by<TRes>
     Enum$order_by? count,
     Input$Recipe_max_order_by? max,
     Input$Recipe_min_order_by? min,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Recipe_max_order_by<TRes> get max =>
       CopyWith$Input$Recipe_max_order_by.stub(_res);
@@ -12373,24 +12457,23 @@ class Input$Recipe_bool_exp {
     Input$String_comparison_exp? source,
     Input$String_comparison_exp? title,
     Input$timestamp_comparison_exp? updatedAt,
-  }) =>
-      Input$Recipe_bool_exp._({
-        if (Author != null) r'Author': Author,
-        if (Files != null) r'Files': Files,
-        if (RecipeSections != null) r'RecipeSections': RecipeSections,
-        if (RecipeTags != null) r'RecipeTags': RecipeTags,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (authorId != null) r'authorId': authorId,
-        if (createdAt != null) r'createdAt': createdAt,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (notes != null) r'notes': notes,
-        if (source != null) r'source': source,
-        if (title != null) r'title': title,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-      });
+  }) => Input$Recipe_bool_exp._({
+    if (Author != null) r'Author': Author,
+    if (Files != null) r'Files': Files,
+    if (RecipeSections != null) r'RecipeSections': RecipeSections,
+    if (RecipeTags != null) r'RecipeTags': RecipeTags,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (authorId != null) r'authorId': authorId,
+    if (createdAt != null) r'createdAt': createdAt,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (notes != null) r'notes': notes,
+    if (source != null) r'source': source,
+    if (title != null) r'title': title,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+  });
 
   Input$Recipe_bool_exp._(this._$data);
 
@@ -12413,20 +12496,23 @@ class Input$Recipe_bool_exp {
       result$data['RecipeSections'] = l$RecipeSections == null
           ? null
           : Input$RecipeSection_bool_exp.fromJson(
-              (l$RecipeSections as Map<String, dynamic>));
+              (l$RecipeSections as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('RecipeTags')) {
       final l$RecipeTags = data['RecipeTags'];
       result$data['RecipeTags'] = l$RecipeTags == null
           ? null
           : Input$_RecipeToTag_bool_exp.fromJson(
-              (l$RecipeTags as Map<String, dynamic>));
+              (l$RecipeTags as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_and')) {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
-          ?.map((e) =>
-              Input$Recipe_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Input$Recipe_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -12438,8 +12524,9 @@ class Input$Recipe_bool_exp {
     if (data.containsKey('_or')) {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
-          ?.map((e) =>
-              Input$Recipe_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Input$Recipe_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('authorId')) {
@@ -12447,56 +12534,64 @@ class Input$Recipe_bool_exp {
       result$data['authorId'] = l$authorId == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$authorId as Map<String, dynamic>));
+              (l$authorId as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('createdAt')) {
       final l$createdAt = data['createdAt'];
       result$data['createdAt'] = l$createdAt == null
           ? null
           : Input$timestamp_comparison_exp.fromJson(
-              (l$createdAt as Map<String, dynamic>));
+              (l$createdAt as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('description')) {
       final l$description = data['description'];
       result$data['description'] = l$description == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$description as Map<String, dynamic>));
+              (l$description as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('notes')) {
       final l$notes = data['notes'];
       result$data['notes'] = l$notes == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$notes as Map<String, dynamic>));
+              (l$notes as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('source')) {
       final l$source = data['source'];
       result$data['source'] = l$source == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$source as Map<String, dynamic>));
+              (l$source as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('title')) {
       final l$title = data['title'];
       result$data['title'] = l$title == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$title as Map<String, dynamic>));
+              (l$title as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('updatedAt')) {
       final l$updatedAt = data['updatedAt'];
       result$data['updatedAt'] = l$updatedAt == null
           ? null
           : Input$timestamp_comparison_exp.fromJson(
-              (l$updatedAt as Map<String, dynamic>));
+              (l$updatedAt as Map<String, dynamic>),
+            );
     }
     return Input$Recipe_bool_exp._(result$data);
   }
@@ -12612,17 +12707,14 @@ class Input$Recipe_bool_exp {
   }
 
   CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp> get copyWith =>
-      CopyWith$Input$Recipe_bool_exp(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Recipe_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Recipe_bool_exp) || runtimeType != other.runtimeType) {
+    if (other is! Input$Recipe_bool_exp || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Author = Author;
@@ -12800,14 +12892,14 @@ class Input$Recipe_bool_exp {
       _$data.containsKey('RecipeTags') ? l$RecipeTags : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('authorId') ? l$authorId : const {},
       _$data.containsKey('createdAt') ? l$createdAt : const {},
@@ -12852,14 +12944,18 @@ abstract class CopyWith$Input$Recipe_bool_exp<TRes> {
   CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSections;
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get RecipeTags;
   TRes $_and(
-      Iterable<Input$Recipe_bool_exp>? Function(
-              Iterable<CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?)
-          _fn);
+    Iterable<Input$Recipe_bool_exp>? Function(
+      Iterable<CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$Recipe_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$Recipe_bool_exp>? Function(
-              Iterable<CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?)
-          _fn);
+    Iterable<Input$Recipe_bool_exp>? Function(
+      Iterable<CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$String_comparison_exp<TRes> get authorId;
   CopyWith$Input$timestamp_comparison_exp<TRes> get createdAt;
   CopyWith$Input$String_comparison_exp<TRes> get description;
@@ -12872,10 +12968,7 @@ abstract class CopyWith$Input$Recipe_bool_exp<TRes> {
 
 class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     implements CopyWith$Input$Recipe_bool_exp<TRes> {
-  _CopyWithImpl$Input$Recipe_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Recipe_bool_exp(this._instance, this._then);
 
   final Input$Recipe_bool_exp _instance;
 
@@ -12899,35 +12992,33 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     Object? source = _undefined,
     Object? title = _undefined,
     Object? updatedAt = _undefined,
-  }) =>
-      _then(Input$Recipe_bool_exp._({
-        ..._instance._$data,
-        if (Author != _undefined) 'Author': (Author as Input$User_bool_exp?),
-        if (Files != _undefined) 'Files': (Files as Input$File_bool_exp?),
-        if (RecipeSections != _undefined)
-          'RecipeSections': (RecipeSections as Input$RecipeSection_bool_exp?),
-        if (RecipeTags != _undefined)
-          'RecipeTags': (RecipeTags as Input$_RecipeToTag_bool_exp?),
-        if ($_and != _undefined)
-          '_and': ($_and as List<Input$Recipe_bool_exp>?),
-        if ($_not != _undefined) '_not': ($_not as Input$Recipe_bool_exp?),
-        if ($_or != _undefined) '_or': ($_or as List<Input$Recipe_bool_exp>?),
-        if (authorId != _undefined)
-          'authorId': (authorId as Input$String_comparison_exp?),
-        if (createdAt != _undefined)
-          'createdAt': (createdAt as Input$timestamp_comparison_exp?),
-        if (description != _undefined)
-          'description': (description as Input$String_comparison_exp?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-        if (notes != _undefined)
-          'notes': (notes as Input$String_comparison_exp?),
-        if (source != _undefined)
-          'source': (source as Input$String_comparison_exp?),
-        if (title != _undefined)
-          'title': (title as Input$String_comparison_exp?),
-        if (updatedAt != _undefined)
-          'updatedAt': (updatedAt as Input$timestamp_comparison_exp?),
-      }));
+  }) => _then(
+    Input$Recipe_bool_exp._({
+      ..._instance._$data,
+      if (Author != _undefined) 'Author': (Author as Input$User_bool_exp?),
+      if (Files != _undefined) 'Files': (Files as Input$File_bool_exp?),
+      if (RecipeSections != _undefined)
+        'RecipeSections': (RecipeSections as Input$RecipeSection_bool_exp?),
+      if (RecipeTags != _undefined)
+        'RecipeTags': (RecipeTags as Input$_RecipeToTag_bool_exp?),
+      if ($_and != _undefined) '_and': ($_and as List<Input$Recipe_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$Recipe_bool_exp?),
+      if ($_or != _undefined) '_or': ($_or as List<Input$Recipe_bool_exp>?),
+      if (authorId != _undefined)
+        'authorId': (authorId as Input$String_comparison_exp?),
+      if (createdAt != _undefined)
+        'createdAt': (createdAt as Input$timestamp_comparison_exp?),
+      if (description != _undefined)
+        'description': (description as Input$String_comparison_exp?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+      if (notes != _undefined) 'notes': (notes as Input$String_comparison_exp?),
+      if (source != _undefined)
+        'source': (source as Input$String_comparison_exp?),
+      if (title != _undefined) 'title': (title as Input$String_comparison_exp?),
+      if (updatedAt != _undefined)
+        'updatedAt': (updatedAt as Input$timestamp_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$User_bool_exp<TRes> get Author {
     final local$Author = _instance.Author;
@@ -12948,7 +13039,9 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     return local$RecipeSections == null
         ? CopyWith$Input$RecipeSection_bool_exp.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_bool_exp(
-            local$RecipeSections, (e) => call(RecipeSections: e));
+            local$RecipeSections,
+            (e) => call(RecipeSections: e),
+          );
   }
 
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get RecipeTags {
@@ -12956,19 +13049,21 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     return local$RecipeTags == null
         ? CopyWith$Input$_RecipeToTag_bool_exp.stub(_then(_instance))
         : CopyWith$Input$_RecipeToTag_bool_exp(
-            local$RecipeTags, (e) => call(RecipeTags: e));
+            local$RecipeTags,
+            (e) => call(RecipeTags: e),
+          );
   }
 
   TRes $_and(
-          Iterable<Input$Recipe_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and: _fn(_instance.$_and?.map((e) => CopyWith$Input$Recipe_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$Recipe_bool_exp>? Function(
+      Iterable<CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map((e) => CopyWith$Input$Recipe_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$Recipe_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
@@ -12978,22 +13073,24 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
   }
 
   TRes $_or(
-          Iterable<Input$Recipe_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(_instance.$_or?.map((e) => CopyWith$Input$Recipe_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$Recipe_bool_exp>? Function(
+      Iterable<CopyWith$Input$Recipe_bool_exp<Input$Recipe_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map((e) => CopyWith$Input$Recipe_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$String_comparison_exp<TRes> get authorId {
     final local$authorId = _instance.authorId;
     return local$authorId == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$authorId, (e) => call(authorId: e));
+            local$authorId,
+            (e) => call(authorId: e),
+          );
   }
 
   CopyWith$Input$timestamp_comparison_exp<TRes> get createdAt {
@@ -13001,7 +13098,9 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     return local$createdAt == null
         ? CopyWith$Input$timestamp_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$timestamp_comparison_exp(
-            local$createdAt, (e) => call(createdAt: e));
+            local$createdAt,
+            (e) => call(createdAt: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get description {
@@ -13009,7 +13108,9 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     return local$description == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$description, (e) => call(description: e));
+            local$description,
+            (e) => call(description: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
@@ -13024,7 +13125,9 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     return local$notes == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$notes, (e) => call(notes: e));
+            local$notes,
+            (e) => call(notes: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get source {
@@ -13032,7 +13135,9 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     return local$source == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$source, (e) => call(source: e));
+            local$source,
+            (e) => call(source: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get title {
@@ -13040,7 +13145,9 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     return local$title == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$title, (e) => call(title: e));
+            local$title,
+            (e) => call(title: e),
+          );
   }
 
   CopyWith$Input$timestamp_comparison_exp<TRes> get updatedAt {
@@ -13048,7 +13155,9 @@ class _CopyWithImpl$Input$Recipe_bool_exp<TRes>
     return local$updatedAt == null
         ? CopyWith$Input$timestamp_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$timestamp_comparison_exp(
-            local$updatedAt, (e) => call(updatedAt: e));
+            local$updatedAt,
+            (e) => call(updatedAt: e),
+          );
   }
 }
 
@@ -13074,8 +13183,7 @@ class _CopyWithStubImpl$Input$Recipe_bool_exp<TRes>
     Input$String_comparison_exp? source,
     Input$String_comparison_exp? title,
     Input$timestamp_comparison_exp? updatedAt,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$User_bool_exp<TRes> get Author =>
       CopyWith$Input$User_bool_exp.stub(_res);
@@ -13131,17 +13239,16 @@ class Input$Recipe_max_order_by {
     Enum$order_by? source,
     Enum$order_by? title,
     Enum$order_by? updatedAt,
-  }) =>
-      Input$Recipe_max_order_by._({
-        if (authorId != null) r'authorId': authorId,
-        if (createdAt != null) r'createdAt': createdAt,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (notes != null) r'notes': notes,
-        if (source != null) r'source': source,
-        if (title != null) r'title': title,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-      });
+  }) => Input$Recipe_max_order_by._({
+    if (authorId != null) r'authorId': authorId,
+    if (createdAt != null) r'createdAt': createdAt,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (notes != null) r'notes': notes,
+    if (source != null) r'source': source,
+    if (title != null) r'title': title,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+  });
 
   Input$Recipe_max_order_by._(this._$data);
 
@@ -13167,13 +13274,15 @@ class Input$Recipe_max_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('notes')) {
       final l$notes = data['notes'];
-      result$data['notes'] =
-          l$notes == null ? null : fromJson$Enum$order_by((l$notes as String));
+      result$data['notes'] = l$notes == null
+          ? null
+          : fromJson$Enum$order_by((l$notes as String));
     }
     if (data.containsKey('source')) {
       final l$source = data['source'];
@@ -13183,8 +13292,9 @@ class Input$Recipe_max_order_by {
     }
     if (data.containsKey('title')) {
       final l$title = data['title'];
-      result$data['title'] =
-          l$title == null ? null : fromJson$Enum$order_by((l$title as String));
+      result$data['title'] = l$title == null
+          ? null
+          : fromJson$Enum$order_by((l$title as String));
     }
     if (data.containsKey('updatedAt')) {
       final l$updatedAt = data['updatedAt'];
@@ -13217,18 +13327,21 @@ class Input$Recipe_max_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('authorId')) {
       final l$authorId = authorId;
-      result$data['authorId'] =
-          l$authorId == null ? null : toJson$Enum$order_by(l$authorId);
+      result$data['authorId'] = l$authorId == null
+          ? null
+          : toJson$Enum$order_by(l$authorId);
     }
     if (_$data.containsKey('createdAt')) {
       final l$createdAt = createdAt;
-      result$data['createdAt'] =
-          l$createdAt == null ? null : toJson$Enum$order_by(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : toJson$Enum$order_by(l$createdAt);
     }
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -13236,39 +13349,40 @@ class Input$Recipe_max_order_by {
     }
     if (_$data.containsKey('notes')) {
       final l$notes = notes;
-      result$data['notes'] =
-          l$notes == null ? null : toJson$Enum$order_by(l$notes);
+      result$data['notes'] = l$notes == null
+          ? null
+          : toJson$Enum$order_by(l$notes);
     }
     if (_$data.containsKey('source')) {
       final l$source = source;
-      result$data['source'] =
-          l$source == null ? null : toJson$Enum$order_by(l$source);
+      result$data['source'] = l$source == null
+          ? null
+          : toJson$Enum$order_by(l$source);
     }
     if (_$data.containsKey('title')) {
       final l$title = title;
-      result$data['title'] =
-          l$title == null ? null : toJson$Enum$order_by(l$title);
+      result$data['title'] = l$title == null
+          ? null
+          : toJson$Enum$order_by(l$title);
     }
     if (_$data.containsKey('updatedAt')) {
       final l$updatedAt = updatedAt;
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : toJson$Enum$order_by(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : toJson$Enum$order_by(l$updatedAt);
     }
     return result$data;
   }
 
   CopyWith$Input$Recipe_max_order_by<Input$Recipe_max_order_by> get copyWith =>
-      CopyWith$Input$Recipe_max_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Recipe_max_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Recipe_max_order_by) ||
+    if (other is! Input$Recipe_max_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -13389,10 +13503,7 @@ abstract class CopyWith$Input$Recipe_max_order_by<TRes> {
 
 class _CopyWithImpl$Input$Recipe_max_order_by<TRes>
     implements CopyWith$Input$Recipe_max_order_by<TRes> {
-  _CopyWithImpl$Input$Recipe_max_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Recipe_max_order_by(this._instance, this._then);
 
   final Input$Recipe_max_order_by _instance;
 
@@ -13409,19 +13520,20 @@ class _CopyWithImpl$Input$Recipe_max_order_by<TRes>
     Object? source = _undefined,
     Object? title = _undefined,
     Object? updatedAt = _undefined,
-  }) =>
-      _then(Input$Recipe_max_order_by._({
-        ..._instance._$data,
-        if (authorId != _undefined) 'authorId': (authorId as Enum$order_by?),
-        if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (notes != _undefined) 'notes': (notes as Enum$order_by?),
-        if (source != _undefined) 'source': (source as Enum$order_by?),
-        if (title != _undefined) 'title': (title as Enum$order_by?),
-        if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$Recipe_max_order_by._({
+      ..._instance._$data,
+      if (authorId != _undefined) 'authorId': (authorId as Enum$order_by?),
+      if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (notes != _undefined) 'notes': (notes as Enum$order_by?),
+      if (source != _undefined) 'source': (source as Enum$order_by?),
+      if (title != _undefined) 'title': (title as Enum$order_by?),
+      if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Recipe_max_order_by<TRes>
@@ -13439,8 +13551,7 @@ class _CopyWithStubImpl$Input$Recipe_max_order_by<TRes>
     Enum$order_by? source,
     Enum$order_by? title,
     Enum$order_by? updatedAt,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$Recipe_min_order_by {
@@ -13453,17 +13564,16 @@ class Input$Recipe_min_order_by {
     Enum$order_by? source,
     Enum$order_by? title,
     Enum$order_by? updatedAt,
-  }) =>
-      Input$Recipe_min_order_by._({
-        if (authorId != null) r'authorId': authorId,
-        if (createdAt != null) r'createdAt': createdAt,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (notes != null) r'notes': notes,
-        if (source != null) r'source': source,
-        if (title != null) r'title': title,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-      });
+  }) => Input$Recipe_min_order_by._({
+    if (authorId != null) r'authorId': authorId,
+    if (createdAt != null) r'createdAt': createdAt,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (notes != null) r'notes': notes,
+    if (source != null) r'source': source,
+    if (title != null) r'title': title,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+  });
 
   Input$Recipe_min_order_by._(this._$data);
 
@@ -13489,13 +13599,15 @@ class Input$Recipe_min_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('notes')) {
       final l$notes = data['notes'];
-      result$data['notes'] =
-          l$notes == null ? null : fromJson$Enum$order_by((l$notes as String));
+      result$data['notes'] = l$notes == null
+          ? null
+          : fromJson$Enum$order_by((l$notes as String));
     }
     if (data.containsKey('source')) {
       final l$source = data['source'];
@@ -13505,8 +13617,9 @@ class Input$Recipe_min_order_by {
     }
     if (data.containsKey('title')) {
       final l$title = data['title'];
-      result$data['title'] =
-          l$title == null ? null : fromJson$Enum$order_by((l$title as String));
+      result$data['title'] = l$title == null
+          ? null
+          : fromJson$Enum$order_by((l$title as String));
     }
     if (data.containsKey('updatedAt')) {
       final l$updatedAt = data['updatedAt'];
@@ -13539,18 +13652,21 @@ class Input$Recipe_min_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('authorId')) {
       final l$authorId = authorId;
-      result$data['authorId'] =
-          l$authorId == null ? null : toJson$Enum$order_by(l$authorId);
+      result$data['authorId'] = l$authorId == null
+          ? null
+          : toJson$Enum$order_by(l$authorId);
     }
     if (_$data.containsKey('createdAt')) {
       final l$createdAt = createdAt;
-      result$data['createdAt'] =
-          l$createdAt == null ? null : toJson$Enum$order_by(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : toJson$Enum$order_by(l$createdAt);
     }
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -13558,39 +13674,40 @@ class Input$Recipe_min_order_by {
     }
     if (_$data.containsKey('notes')) {
       final l$notes = notes;
-      result$data['notes'] =
-          l$notes == null ? null : toJson$Enum$order_by(l$notes);
+      result$data['notes'] = l$notes == null
+          ? null
+          : toJson$Enum$order_by(l$notes);
     }
     if (_$data.containsKey('source')) {
       final l$source = source;
-      result$data['source'] =
-          l$source == null ? null : toJson$Enum$order_by(l$source);
+      result$data['source'] = l$source == null
+          ? null
+          : toJson$Enum$order_by(l$source);
     }
     if (_$data.containsKey('title')) {
       final l$title = title;
-      result$data['title'] =
-          l$title == null ? null : toJson$Enum$order_by(l$title);
+      result$data['title'] = l$title == null
+          ? null
+          : toJson$Enum$order_by(l$title);
     }
     if (_$data.containsKey('updatedAt')) {
       final l$updatedAt = updatedAt;
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : toJson$Enum$order_by(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : toJson$Enum$order_by(l$updatedAt);
     }
     return result$data;
   }
 
   CopyWith$Input$Recipe_min_order_by<Input$Recipe_min_order_by> get copyWith =>
-      CopyWith$Input$Recipe_min_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Recipe_min_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Recipe_min_order_by) ||
+    if (other is! Input$Recipe_min_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -13711,10 +13828,7 @@ abstract class CopyWith$Input$Recipe_min_order_by<TRes> {
 
 class _CopyWithImpl$Input$Recipe_min_order_by<TRes>
     implements CopyWith$Input$Recipe_min_order_by<TRes> {
-  _CopyWithImpl$Input$Recipe_min_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Recipe_min_order_by(this._instance, this._then);
 
   final Input$Recipe_min_order_by _instance;
 
@@ -13731,19 +13845,20 @@ class _CopyWithImpl$Input$Recipe_min_order_by<TRes>
     Object? source = _undefined,
     Object? title = _undefined,
     Object? updatedAt = _undefined,
-  }) =>
-      _then(Input$Recipe_min_order_by._({
-        ..._instance._$data,
-        if (authorId != _undefined) 'authorId': (authorId as Enum$order_by?),
-        if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (notes != _undefined) 'notes': (notes as Enum$order_by?),
-        if (source != _undefined) 'source': (source as Enum$order_by?),
-        if (title != _undefined) 'title': (title as Enum$order_by?),
-        if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$Recipe_min_order_by._({
+      ..._instance._$data,
+      if (authorId != _undefined) 'authorId': (authorId as Enum$order_by?),
+      if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (notes != _undefined) 'notes': (notes as Enum$order_by?),
+      if (source != _undefined) 'source': (source as Enum$order_by?),
+      if (title != _undefined) 'title': (title as Enum$order_by?),
+      if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Recipe_min_order_by<TRes>
@@ -13761,8 +13876,7 @@ class _CopyWithStubImpl$Input$Recipe_min_order_by<TRes>
     Enum$order_by? source,
     Enum$order_by? title,
     Enum$order_by? updatedAt,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$Recipe_order_by {
@@ -13779,23 +13893,22 @@ class Input$Recipe_order_by {
     Enum$order_by? source,
     Enum$order_by? title,
     Enum$order_by? updatedAt,
-  }) =>
-      Input$Recipe_order_by._({
-        if (Author != null) r'Author': Author,
-        if (Files_aggregate != null) r'Files_aggregate': Files_aggregate,
-        if (RecipeSections_aggregate != null)
-          r'RecipeSections_aggregate': RecipeSections_aggregate,
-        if (RecipeTags_aggregate != null)
-          r'RecipeTags_aggregate': RecipeTags_aggregate,
-        if (authorId != null) r'authorId': authorId,
-        if (createdAt != null) r'createdAt': createdAt,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (notes != null) r'notes': notes,
-        if (source != null) r'source': source,
-        if (title != null) r'title': title,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-      });
+  }) => Input$Recipe_order_by._({
+    if (Author != null) r'Author': Author,
+    if (Files_aggregate != null) r'Files_aggregate': Files_aggregate,
+    if (RecipeSections_aggregate != null)
+      r'RecipeSections_aggregate': RecipeSections_aggregate,
+    if (RecipeTags_aggregate != null)
+      r'RecipeTags_aggregate': RecipeTags_aggregate,
+    if (authorId != null) r'authorId': authorId,
+    if (createdAt != null) r'createdAt': createdAt,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (notes != null) r'notes': notes,
+    if (source != null) r'source': source,
+    if (title != null) r'title': title,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+  });
 
   Input$Recipe_order_by._(this._$data);
 
@@ -13812,22 +13925,25 @@ class Input$Recipe_order_by {
       result$data['Files_aggregate'] = l$Files_aggregate == null
           ? null
           : Input$File_aggregate_order_by.fromJson(
-              (l$Files_aggregate as Map<String, dynamic>));
+              (l$Files_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('RecipeSections_aggregate')) {
       final l$RecipeSections_aggregate = data['RecipeSections_aggregate'];
       result$data['RecipeSections_aggregate'] =
           l$RecipeSections_aggregate == null
-              ? null
-              : Input$RecipeSection_aggregate_order_by.fromJson(
-                  (l$RecipeSections_aggregate as Map<String, dynamic>));
+          ? null
+          : Input$RecipeSection_aggregate_order_by.fromJson(
+              (l$RecipeSections_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('RecipeTags_aggregate')) {
       final l$RecipeTags_aggregate = data['RecipeTags_aggregate'];
       result$data['RecipeTags_aggregate'] = l$RecipeTags_aggregate == null
           ? null
           : Input$_RecipeToTag_aggregate_order_by.fromJson(
-              (l$RecipeTags_aggregate as Map<String, dynamic>));
+              (l$RecipeTags_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('authorId')) {
       final l$authorId = data['authorId'];
@@ -13849,13 +13965,15 @@ class Input$Recipe_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('notes')) {
       final l$notes = data['notes'];
-      result$data['notes'] =
-          l$notes == null ? null : fromJson$Enum$order_by((l$notes as String));
+      result$data['notes'] = l$notes == null
+          ? null
+          : fromJson$Enum$order_by((l$notes as String));
     }
     if (data.containsKey('source')) {
       final l$source = data['source'];
@@ -13865,8 +13983,9 @@ class Input$Recipe_order_by {
     }
     if (data.containsKey('title')) {
       final l$title = data['title'];
-      result$data['title'] =
-          l$title == null ? null : fromJson$Enum$order_by((l$title as String));
+      result$data['title'] = l$title == null
+          ? null
+          : fromJson$Enum$order_by((l$title as String));
     }
     if (data.containsKey('updatedAt')) {
       final l$updatedAt = data['updatedAt'];
@@ -13920,8 +14039,8 @@ class Input$Recipe_order_by {
     }
     if (_$data.containsKey('RecipeSections_aggregate')) {
       final l$RecipeSections_aggregate = RecipeSections_aggregate;
-      result$data['RecipeSections_aggregate'] =
-          l$RecipeSections_aggregate?.toJson();
+      result$data['RecipeSections_aggregate'] = l$RecipeSections_aggregate
+          ?.toJson();
     }
     if (_$data.containsKey('RecipeTags_aggregate')) {
       final l$RecipeTags_aggregate = RecipeTags_aggregate;
@@ -13929,18 +14048,21 @@ class Input$Recipe_order_by {
     }
     if (_$data.containsKey('authorId')) {
       final l$authorId = authorId;
-      result$data['authorId'] =
-          l$authorId == null ? null : toJson$Enum$order_by(l$authorId);
+      result$data['authorId'] = l$authorId == null
+          ? null
+          : toJson$Enum$order_by(l$authorId);
     }
     if (_$data.containsKey('createdAt')) {
       final l$createdAt = createdAt;
-      result$data['createdAt'] =
-          l$createdAt == null ? null : toJson$Enum$order_by(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : toJson$Enum$order_by(l$createdAt);
     }
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -13948,39 +14070,40 @@ class Input$Recipe_order_by {
     }
     if (_$data.containsKey('notes')) {
       final l$notes = notes;
-      result$data['notes'] =
-          l$notes == null ? null : toJson$Enum$order_by(l$notes);
+      result$data['notes'] = l$notes == null
+          ? null
+          : toJson$Enum$order_by(l$notes);
     }
     if (_$data.containsKey('source')) {
       final l$source = source;
-      result$data['source'] =
-          l$source == null ? null : toJson$Enum$order_by(l$source);
+      result$data['source'] = l$source == null
+          ? null
+          : toJson$Enum$order_by(l$source);
     }
     if (_$data.containsKey('title')) {
       final l$title = title;
-      result$data['title'] =
-          l$title == null ? null : toJson$Enum$order_by(l$title);
+      result$data['title'] = l$title == null
+          ? null
+          : toJson$Enum$order_by(l$title);
     }
     if (_$data.containsKey('updatedAt')) {
       final l$updatedAt = updatedAt;
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : toJson$Enum$order_by(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : toJson$Enum$order_by(l$updatedAt);
     }
     return result$data;
   }
 
   CopyWith$Input$Recipe_order_by<Input$Recipe_order_by> get copyWith =>
-      CopyWith$Input$Recipe_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Recipe_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Recipe_order_by) || runtimeType != other.runtimeType) {
+    if (other is! Input$Recipe_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Author = Author;
@@ -14150,16 +14273,13 @@ abstract class CopyWith$Input$Recipe_order_by<TRes> {
   CopyWith$Input$User_order_by<TRes> get Author;
   CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate;
   CopyWith$Input$RecipeSection_aggregate_order_by<TRes>
-      get RecipeSections_aggregate;
+  get RecipeSections_aggregate;
   CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> get RecipeTags_aggregate;
 }
 
 class _CopyWithImpl$Input$Recipe_order_by<TRes>
     implements CopyWith$Input$Recipe_order_by<TRes> {
-  _CopyWithImpl$Input$Recipe_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Recipe_order_by(this._instance, this._then);
 
   final Input$Recipe_order_by _instance;
 
@@ -14180,29 +14300,30 @@ class _CopyWithImpl$Input$Recipe_order_by<TRes>
     Object? source = _undefined,
     Object? title = _undefined,
     Object? updatedAt = _undefined,
-  }) =>
-      _then(Input$Recipe_order_by._({
-        ..._instance._$data,
-        if (Author != _undefined) 'Author': (Author as Input$User_order_by?),
-        if (Files_aggregate != _undefined)
-          'Files_aggregate':
-              (Files_aggregate as Input$File_aggregate_order_by?),
-        if (RecipeSections_aggregate != _undefined)
-          'RecipeSections_aggregate': (RecipeSections_aggregate
-              as Input$RecipeSection_aggregate_order_by?),
-        if (RecipeTags_aggregate != _undefined)
-          'RecipeTags_aggregate':
-              (RecipeTags_aggregate as Input$_RecipeToTag_aggregate_order_by?),
-        if (authorId != _undefined) 'authorId': (authorId as Enum$order_by?),
-        if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (notes != _undefined) 'notes': (notes as Enum$order_by?),
-        if (source != _undefined) 'source': (source as Enum$order_by?),
-        if (title != _undefined) 'title': (title as Enum$order_by?),
-        if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$Recipe_order_by._({
+      ..._instance._$data,
+      if (Author != _undefined) 'Author': (Author as Input$User_order_by?),
+      if (Files_aggregate != _undefined)
+        'Files_aggregate': (Files_aggregate as Input$File_aggregate_order_by?),
+      if (RecipeSections_aggregate != _undefined)
+        'RecipeSections_aggregate':
+            (RecipeSections_aggregate
+                as Input$RecipeSection_aggregate_order_by?),
+      if (RecipeTags_aggregate != _undefined)
+        'RecipeTags_aggregate':
+            (RecipeTags_aggregate as Input$_RecipeToTag_aggregate_order_by?),
+      if (authorId != _undefined) 'authorId': (authorId as Enum$order_by?),
+      if (createdAt != _undefined) 'createdAt': (createdAt as Enum$order_by?),
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (notes != _undefined) 'notes': (notes as Enum$order_by?),
+      if (source != _undefined) 'source': (source as Enum$order_by?),
+      if (title != _undefined) 'title': (title as Enum$order_by?),
+      if (updatedAt != _undefined) 'updatedAt': (updatedAt as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$User_order_by<TRes> get Author {
     final local$Author = _instance.Author;
@@ -14216,26 +14337,31 @@ class _CopyWithImpl$Input$Recipe_order_by<TRes>
     return local$Files_aggregate == null
         ? CopyWith$Input$File_aggregate_order_by.stub(_then(_instance))
         : CopyWith$Input$File_aggregate_order_by(
-            local$Files_aggregate, (e) => call(Files_aggregate: e));
+            local$Files_aggregate,
+            (e) => call(Files_aggregate: e),
+          );
   }
 
   CopyWith$Input$RecipeSection_aggregate_order_by<TRes>
-      get RecipeSections_aggregate {
+  get RecipeSections_aggregate {
     final local$RecipeSections_aggregate = _instance.RecipeSections_aggregate;
     return local$RecipeSections_aggregate == null
         ? CopyWith$Input$RecipeSection_aggregate_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_aggregate_order_by(
             local$RecipeSections_aggregate,
-            (e) => call(RecipeSections_aggregate: e));
+            (e) => call(RecipeSections_aggregate: e),
+          );
   }
 
   CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes>
-      get RecipeTags_aggregate {
+  get RecipeTags_aggregate {
     final local$RecipeTags_aggregate = _instance.RecipeTags_aggregate;
     return local$RecipeTags_aggregate == null
         ? CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_then(_instance))
         : CopyWith$Input$_RecipeToTag_aggregate_order_by(
-            local$RecipeTags_aggregate, (e) => call(RecipeTags_aggregate: e));
+            local$RecipeTags_aggregate,
+            (e) => call(RecipeTags_aggregate: e),
+          );
   }
 }
 
@@ -14258,8 +14384,7 @@ class _CopyWithStubImpl$Input$Recipe_order_by<TRes>
     Enum$order_by? source,
     Enum$order_by? title,
     Enum$order_by? updatedAt,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$User_order_by<TRes> get Author =>
       CopyWith$Input$User_order_by.stub(_res);
@@ -14268,23 +14393,22 @@ class _CopyWithStubImpl$Input$Recipe_order_by<TRes>
       CopyWith$Input$File_aggregate_order_by.stub(_res);
 
   CopyWith$Input$RecipeSection_aggregate_order_by<TRes>
-      get RecipeSections_aggregate =>
-          CopyWith$Input$RecipeSection_aggregate_order_by.stub(_res);
+  get RecipeSections_aggregate =>
+      CopyWith$Input$RecipeSection_aggregate_order_by.stub(_res);
 
   CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes>
-      get RecipeTags_aggregate =>
-          CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_res);
+  get RecipeTags_aggregate =>
+      CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_res);
 }
 
 class Input$Recipe_stream_cursor_input {
   factory Input$Recipe_stream_cursor_input({
     required Input$Recipe_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$Recipe_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$Recipe_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$Recipe_stream_cursor_input._(this._$data);
 
@@ -14293,7 +14417,8 @@ class Input$Recipe_stream_cursor_input {
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$Recipe_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -14317,24 +14442,22 @@ class Input$Recipe_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$Recipe_stream_cursor_input<Input$Recipe_stream_cursor_input>
-      get copyWith => CopyWith$Input$Recipe_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Recipe_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Recipe_stream_cursor_input) ||
+    if (other is! Input$Recipe_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -14384,10 +14507,7 @@ abstract class CopyWith$Input$Recipe_stream_cursor_input<TRes> {
 
 class _CopyWithImpl$Input$Recipe_stream_cursor_input<TRes>
     implements CopyWith$Input$Recipe_stream_cursor_input<TRes> {
-  _CopyWithImpl$Input$Recipe_stream_cursor_input(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Recipe_stream_cursor_input(this._instance, this._then);
 
   final Input$Recipe_stream_cursor_input _instance;
 
@@ -14398,20 +14518,23 @@ class _CopyWithImpl$Input$Recipe_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$Recipe_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$Recipe_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$Recipe_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$Recipe_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$Recipe_stream_cursor_value_input<TRes> get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$Recipe_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -14424,8 +14547,7 @@ class _CopyWithStubImpl$Input$Recipe_stream_cursor_input<TRes>
   call({
     Input$Recipe_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Recipe_stream_cursor_value_input<TRes> get initial_value =>
       CopyWith$Input$Recipe_stream_cursor_value_input.stub(_res);
@@ -14441,22 +14563,22 @@ class Input$Recipe_stream_cursor_value_input {
     String? source,
     String? title,
     DateTime? updatedAt,
-  }) =>
-      Input$Recipe_stream_cursor_value_input._({
-        if (authorId != null) r'authorId': authorId,
-        if (createdAt != null) r'createdAt': createdAt,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-        if (notes != null) r'notes': notes,
-        if (source != null) r'source': source,
-        if (title != null) r'title': title,
-        if (updatedAt != null) r'updatedAt': updatedAt,
-      });
+  }) => Input$Recipe_stream_cursor_value_input._({
+    if (authorId != null) r'authorId': authorId,
+    if (createdAt != null) r'createdAt': createdAt,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+    if (notes != null) r'notes': notes,
+    if (source != null) r'source': source,
+    if (title != null) r'title': title,
+    if (updatedAt != null) r'updatedAt': updatedAt,
+  });
 
   Input$Recipe_stream_cursor_value_input._(this._$data);
 
   factory Input$Recipe_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('authorId')) {
       final l$authorId = data['authorId'];
@@ -14464,8 +14586,9 @@ class Input$Recipe_stream_cursor_value_input {
     }
     if (data.containsKey('createdAt')) {
       final l$createdAt = data['createdAt'];
-      result$data['createdAt'] =
-          l$createdAt == null ? null : dateTimeFromJson(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : dateTimeFromJson(l$createdAt);
     }
     if (data.containsKey('description')) {
       final l$description = data['description'];
@@ -14489,8 +14612,9 @@ class Input$Recipe_stream_cursor_value_input {
     }
     if (data.containsKey('updatedAt')) {
       final l$updatedAt = data['updatedAt'];
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : dateTimeFromJson(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : dateTimeFromJson(l$updatedAt);
     }
     return Input$Recipe_stream_cursor_value_input._(result$data);
   }
@@ -14521,8 +14645,9 @@ class Input$Recipe_stream_cursor_value_input {
     }
     if (_$data.containsKey('createdAt')) {
       final l$createdAt = createdAt;
-      result$data['createdAt'] =
-          l$createdAt == null ? null : dateTimeToJson(l$createdAt);
+      result$data['createdAt'] = l$createdAt == null
+          ? null
+          : dateTimeToJson(l$createdAt);
     }
     if (_$data.containsKey('description')) {
       final l$description = description;
@@ -14546,25 +14671,25 @@ class Input$Recipe_stream_cursor_value_input {
     }
     if (_$data.containsKey('updatedAt')) {
       final l$updatedAt = updatedAt;
-      result$data['updatedAt'] =
-          l$updatedAt == null ? null : dateTimeToJson(l$updatedAt);
+      result$data['updatedAt'] = l$updatedAt == null
+          ? null
+          : dateTimeToJson(l$updatedAt);
     }
     return result$data;
   }
 
   CopyWith$Input$Recipe_stream_cursor_value_input<
-          Input$Recipe_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$Recipe_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$Recipe_stream_cursor_value_input
+  >
+  get copyWith =>
+      CopyWith$Input$Recipe_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Recipe_stream_cursor_value_input) ||
+    if (other is! Input$Recipe_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -14705,18 +14830,19 @@ class _CopyWithImpl$Input$Recipe_stream_cursor_value_input<TRes>
     Object? source = _undefined,
     Object? title = _undefined,
     Object? updatedAt = _undefined,
-  }) =>
-      _then(Input$Recipe_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (authorId != _undefined) 'authorId': (authorId as String?),
-        if (createdAt != _undefined) 'createdAt': (createdAt as DateTime?),
-        if (description != _undefined) 'description': (description as String?),
-        if (id != _undefined) 'id': (id as String?),
-        if (notes != _undefined) 'notes': (notes as String?),
-        if (source != _undefined) 'source': (source as String?),
-        if (title != _undefined) 'title': (title as String?),
-        if (updatedAt != _undefined) 'updatedAt': (updatedAt as DateTime?),
-      }));
+  }) => _then(
+    Input$Recipe_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (authorId != _undefined) 'authorId': (authorId as String?),
+      if (createdAt != _undefined) 'createdAt': (createdAt as DateTime?),
+      if (description != _undefined) 'description': (description as String?),
+      if (id != _undefined) 'id': (id as String?),
+      if (notes != _undefined) 'notes': (notes as String?),
+      if (source != _undefined) 'source': (source as String?),
+      if (title != _undefined) 'title': (title as String?),
+      if (updatedAt != _undefined) 'updatedAt': (updatedAt as DateTime?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Recipe_stream_cursor_value_input<TRes>
@@ -14734,8 +14860,7 @@ class _CopyWithStubImpl$Input$Recipe_stream_cursor_value_input<TRes>
     String? source,
     String? title,
     DateTime? updatedAt,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$Step_aggregate_order_by {
@@ -14751,20 +14876,19 @@ class Input$Step_aggregate_order_by {
     Input$Step_var_pop_order_by? var_pop,
     Input$Step_var_samp_order_by? var_samp,
     Input$Step_variance_order_by? variance,
-  }) =>
-      Input$Step_aggregate_order_by._({
-        if (avg != null) r'avg': avg,
-        if (count != null) r'count': count,
-        if (max != null) r'max': max,
-        if (min != null) r'min': min,
-        if (stddev != null) r'stddev': stddev,
-        if (stddev_pop != null) r'stddev_pop': stddev_pop,
-        if (stddev_samp != null) r'stddev_samp': stddev_samp,
-        if (sum != null) r'sum': sum,
-        if (var_pop != null) r'var_pop': var_pop,
-        if (var_samp != null) r'var_samp': var_samp,
-        if (variance != null) r'variance': variance,
-      });
+  }) => Input$Step_aggregate_order_by._({
+    if (avg != null) r'avg': avg,
+    if (count != null) r'count': count,
+    if (max != null) r'max': max,
+    if (min != null) r'min': min,
+    if (stddev != null) r'stddev': stddev,
+    if (stddev_pop != null) r'stddev_pop': stddev_pop,
+    if (stddev_samp != null) r'stddev_samp': stddev_samp,
+    if (sum != null) r'sum': sum,
+    if (var_pop != null) r'var_pop': var_pop,
+    if (var_samp != null) r'var_samp': var_samp,
+    if (variance != null) r'variance': variance,
+  });
 
   Input$Step_aggregate_order_by._(this._$data);
 
@@ -14778,8 +14902,9 @@ class Input$Step_aggregate_order_by {
     }
     if (data.containsKey('count')) {
       final l$count = data['count'];
-      result$data['count'] =
-          l$count == null ? null : fromJson$Enum$order_by((l$count as String));
+      result$data['count'] = l$count == null
+          ? null
+          : fromJson$Enum$order_by((l$count as String));
     }
     if (data.containsKey('max')) {
       final l$max = data['max'];
@@ -14798,21 +14923,24 @@ class Input$Step_aggregate_order_by {
       result$data['stddev'] = l$stddev == null
           ? null
           : Input$Step_stddev_order_by.fromJson(
-              (l$stddev as Map<String, dynamic>));
+              (l$stddev as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('stddev_pop')) {
       final l$stddev_pop = data['stddev_pop'];
       result$data['stddev_pop'] = l$stddev_pop == null
           ? null
           : Input$Step_stddev_pop_order_by.fromJson(
-              (l$stddev_pop as Map<String, dynamic>));
+              (l$stddev_pop as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('stddev_samp')) {
       final l$stddev_samp = data['stddev_samp'];
       result$data['stddev_samp'] = l$stddev_samp == null
           ? null
           : Input$Step_stddev_samp_order_by.fromJson(
-              (l$stddev_samp as Map<String, dynamic>));
+              (l$stddev_samp as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('sum')) {
       final l$sum = data['sum'];
@@ -14825,21 +14953,24 @@ class Input$Step_aggregate_order_by {
       result$data['var_pop'] = l$var_pop == null
           ? null
           : Input$Step_var_pop_order_by.fromJson(
-              (l$var_pop as Map<String, dynamic>));
+              (l$var_pop as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('var_samp')) {
       final l$var_samp = data['var_samp'];
       result$data['var_samp'] = l$var_samp == null
           ? null
           : Input$Step_var_samp_order_by.fromJson(
-              (l$var_samp as Map<String, dynamic>));
+              (l$var_samp as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('variance')) {
       final l$variance = data['variance'];
       result$data['variance'] = l$variance == null
           ? null
           : Input$Step_variance_order_by.fromJson(
-              (l$variance as Map<String, dynamic>));
+              (l$variance as Map<String, dynamic>),
+            );
     }
     return Input$Step_aggregate_order_by._(result$data);
   }
@@ -14886,8 +15017,9 @@ class Input$Step_aggregate_order_by {
     }
     if (_$data.containsKey('count')) {
       final l$count = count;
-      result$data['count'] =
-          l$count == null ? null : toJson$Enum$order_by(l$count);
+      result$data['count'] = l$count == null
+          ? null
+          : toJson$Enum$order_by(l$count);
     }
     if (_$data.containsKey('max')) {
       final l$max = max;
@@ -14929,17 +15061,14 @@ class Input$Step_aggregate_order_by {
   }
 
   CopyWith$Input$Step_aggregate_order_by<Input$Step_aggregate_order_by>
-      get copyWith => CopyWith$Input$Step_aggregate_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Step_aggregate_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_aggregate_order_by) ||
+    if (other is! Input$Step_aggregate_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -15103,10 +15232,7 @@ abstract class CopyWith$Input$Step_aggregate_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
     implements CopyWith$Input$Step_aggregate_order_by<TRes> {
-  _CopyWithImpl$Input$Step_aggregate_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_aggregate_order_by(this._instance, this._then);
 
   final Input$Step_aggregate_order_by _instance;
 
@@ -15126,27 +15252,28 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
     Object? var_pop = _undefined,
     Object? var_samp = _undefined,
     Object? variance = _undefined,
-  }) =>
-      _then(Input$Step_aggregate_order_by._({
-        ..._instance._$data,
-        if (avg != _undefined) 'avg': (avg as Input$Step_avg_order_by?),
-        if (count != _undefined) 'count': (count as Enum$order_by?),
-        if (max != _undefined) 'max': (max as Input$Step_max_order_by?),
-        if (min != _undefined) 'min': (min as Input$Step_min_order_by?),
-        if (stddev != _undefined)
-          'stddev': (stddev as Input$Step_stddev_order_by?),
-        if (stddev_pop != _undefined)
-          'stddev_pop': (stddev_pop as Input$Step_stddev_pop_order_by?),
-        if (stddev_samp != _undefined)
-          'stddev_samp': (stddev_samp as Input$Step_stddev_samp_order_by?),
-        if (sum != _undefined) 'sum': (sum as Input$Step_sum_order_by?),
-        if (var_pop != _undefined)
-          'var_pop': (var_pop as Input$Step_var_pop_order_by?),
-        if (var_samp != _undefined)
-          'var_samp': (var_samp as Input$Step_var_samp_order_by?),
-        if (variance != _undefined)
-          'variance': (variance as Input$Step_variance_order_by?),
-      }));
+  }) => _then(
+    Input$Step_aggregate_order_by._({
+      ..._instance._$data,
+      if (avg != _undefined) 'avg': (avg as Input$Step_avg_order_by?),
+      if (count != _undefined) 'count': (count as Enum$order_by?),
+      if (max != _undefined) 'max': (max as Input$Step_max_order_by?),
+      if (min != _undefined) 'min': (min as Input$Step_min_order_by?),
+      if (stddev != _undefined)
+        'stddev': (stddev as Input$Step_stddev_order_by?),
+      if (stddev_pop != _undefined)
+        'stddev_pop': (stddev_pop as Input$Step_stddev_pop_order_by?),
+      if (stddev_samp != _undefined)
+        'stddev_samp': (stddev_samp as Input$Step_stddev_samp_order_by?),
+      if (sum != _undefined) 'sum': (sum as Input$Step_sum_order_by?),
+      if (var_pop != _undefined)
+        'var_pop': (var_pop as Input$Step_var_pop_order_by?),
+      if (var_samp != _undefined)
+        'var_samp': (var_samp as Input$Step_var_samp_order_by?),
+      if (variance != _undefined)
+        'variance': (variance as Input$Step_variance_order_by?),
+    }),
+  );
 
   CopyWith$Input$Step_avg_order_by<TRes> get avg {
     final local$avg = _instance.avg;
@@ -15174,7 +15301,9 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
     return local$stddev == null
         ? CopyWith$Input$Step_stddev_order_by.stub(_then(_instance))
         : CopyWith$Input$Step_stddev_order_by(
-            local$stddev, (e) => call(stddev: e));
+            local$stddev,
+            (e) => call(stddev: e),
+          );
   }
 
   CopyWith$Input$Step_stddev_pop_order_by<TRes> get stddev_pop {
@@ -15182,7 +15311,9 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
     return local$stddev_pop == null
         ? CopyWith$Input$Step_stddev_pop_order_by.stub(_then(_instance))
         : CopyWith$Input$Step_stddev_pop_order_by(
-            local$stddev_pop, (e) => call(stddev_pop: e));
+            local$stddev_pop,
+            (e) => call(stddev_pop: e),
+          );
   }
 
   CopyWith$Input$Step_stddev_samp_order_by<TRes> get stddev_samp {
@@ -15190,7 +15321,9 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
     return local$stddev_samp == null
         ? CopyWith$Input$Step_stddev_samp_order_by.stub(_then(_instance))
         : CopyWith$Input$Step_stddev_samp_order_by(
-            local$stddev_samp, (e) => call(stddev_samp: e));
+            local$stddev_samp,
+            (e) => call(stddev_samp: e),
+          );
   }
 
   CopyWith$Input$Step_sum_order_by<TRes> get sum {
@@ -15205,7 +15338,9 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
     return local$var_pop == null
         ? CopyWith$Input$Step_var_pop_order_by.stub(_then(_instance))
         : CopyWith$Input$Step_var_pop_order_by(
-            local$var_pop, (e) => call(var_pop: e));
+            local$var_pop,
+            (e) => call(var_pop: e),
+          );
   }
 
   CopyWith$Input$Step_var_samp_order_by<TRes> get var_samp {
@@ -15213,7 +15348,9 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
     return local$var_samp == null
         ? CopyWith$Input$Step_var_samp_order_by.stub(_then(_instance))
         : CopyWith$Input$Step_var_samp_order_by(
-            local$var_samp, (e) => call(var_samp: e));
+            local$var_samp,
+            (e) => call(var_samp: e),
+          );
   }
 
   CopyWith$Input$Step_variance_order_by<TRes> get variance {
@@ -15221,7 +15358,9 @@ class _CopyWithImpl$Input$Step_aggregate_order_by<TRes>
     return local$variance == null
         ? CopyWith$Input$Step_variance_order_by.stub(_then(_instance))
         : CopyWith$Input$Step_variance_order_by(
-            local$variance, (e) => call(variance: e));
+            local$variance,
+            (e) => call(variance: e),
+          );
   }
 }
 
@@ -15243,8 +15382,7 @@ class _CopyWithStubImpl$Input$Step_aggregate_order_by<TRes>
     Input$Step_var_pop_order_by? var_pop,
     Input$Step_var_samp_order_by? var_samp,
     Input$Step_variance_order_by? variance,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Step_avg_order_by<TRes> get avg =>
       CopyWith$Input$Step_avg_order_by.stub(_res);
@@ -15279,9 +15417,7 @@ class _CopyWithStubImpl$Input$Step_aggregate_order_by<TRes>
 
 class Input$Step_avg_order_by {
   factory Input$Step_avg_order_by({Enum$order_by? order}) =>
-      Input$Step_avg_order_by._({
-        if (order != null) r'order': order,
-      });
+      Input$Step_avg_order_by._({if (order != null) r'order': order});
 
   Input$Step_avg_order_by._(this._$data);
 
@@ -15289,8 +15425,9 @@ class Input$Step_avg_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$Step_avg_order_by._(result$data);
   }
@@ -15303,25 +15440,22 @@ class Input$Step_avg_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$Step_avg_order_by<Input$Step_avg_order_by> get copyWith =>
-      CopyWith$Input$Step_avg_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Step_avg_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_avg_order_by) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$Step_avg_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$order = order;
@@ -15356,10 +15490,7 @@ abstract class CopyWith$Input$Step_avg_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_avg_order_by<TRes>
     implements CopyWith$Input$Step_avg_order_by<TRes> {
-  _CopyWithImpl$Input$Step_avg_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_avg_order_by(this._instance, this._then);
 
   final Input$Step_avg_order_by _instance;
 
@@ -15367,10 +15498,12 @@ class _CopyWithImpl$Input$Step_avg_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? order = _undefined}) => _then(Input$Step_avg_order_by._({
-        ..._instance._$data,
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? order = _undefined}) => _then(
+    Input$Step_avg_order_by._({
+      ..._instance._$data,
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_avg_order_by<TRes>
@@ -15394,19 +15527,18 @@ class Input$Step_bool_exp {
     Input$String_comparison_exp? id,
     Input$Int_comparison_exp? order,
     Input$String_comparison_exp? recipeSectionId,
-  }) =>
-      Input$Step_bool_exp._({
-        if (File != null) r'File': File,
-        if (RecipeSection != null) r'RecipeSection': RecipeSection,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (description != null) r'description': description,
-        if (fileId != null) r'fileId': fileId,
-        if (id != null) r'id': id,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-      });
+  }) => Input$Step_bool_exp._({
+    if (File != null) r'File': File,
+    if (RecipeSection != null) r'RecipeSection': RecipeSection,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (description != null) r'description': description,
+    if (fileId != null) r'fileId': fileId,
+    if (id != null) r'id': id,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+  });
 
   Input$Step_bool_exp._(this._$data);
 
@@ -15423,13 +15555,15 @@ class Input$Step_bool_exp {
       result$data['RecipeSection'] = l$RecipeSection == null
           ? null
           : Input$RecipeSection_bool_exp.fromJson(
-              (l$RecipeSection as Map<String, dynamic>));
+              (l$RecipeSection as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_and')) {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
           ?.map(
-              (e) => Input$Step_bool_exp.fromJson((e as Map<String, dynamic>)))
+            (e) => Input$Step_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -15442,7 +15576,8 @@ class Input$Step_bool_exp {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
           ?.map(
-              (e) => Input$Step_bool_exp.fromJson((e as Map<String, dynamic>)))
+            (e) => Input$Step_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('description')) {
@@ -15450,35 +15585,40 @@ class Input$Step_bool_exp {
       result$data['description'] = l$description == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$description as Map<String, dynamic>));
+              (l$description as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('fileId')) {
       final l$fileId = data['fileId'];
       result$data['fileId'] = l$fileId == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$fileId as Map<String, dynamic>));
+              (l$fileId as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
       result$data['order'] = l$order == null
           ? null
           : Input$Int_comparison_exp.fromJson(
-              (l$order as Map<String, dynamic>));
+              (l$order as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = data['recipeSectionId'];
       result$data['recipeSectionId'] = l$recipeSectionId == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$recipeSectionId as Map<String, dynamic>));
+              (l$recipeSectionId as Map<String, dynamic>),
+            );
     }
     return Input$Step_bool_exp._(result$data);
   }
@@ -15559,17 +15699,14 @@ class Input$Step_bool_exp {
   }
 
   CopyWith$Input$Step_bool_exp<Input$Step_bool_exp> get copyWith =>
-      CopyWith$Input$Step_bool_exp(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Step_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_bool_exp) || runtimeType != other.runtimeType) {
+    if (other is! Input$Step_bool_exp || runtimeType != other.runtimeType) {
       return false;
     }
     final l$File = File;
@@ -15697,14 +15834,14 @@ class Input$Step_bool_exp {
       _$data.containsKey('RecipeSection') ? l$RecipeSection : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('description') ? l$description : const {},
       _$data.containsKey('fileId') ? l$fileId : const {},
@@ -15739,14 +15876,18 @@ abstract class CopyWith$Input$Step_bool_exp<TRes> {
   CopyWith$Input$File_bool_exp<TRes> get File;
   CopyWith$Input$RecipeSection_bool_exp<TRes> get RecipeSection;
   TRes $_and(
-      Iterable<Input$Step_bool_exp>? Function(
-              Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?)
-          _fn);
+    Iterable<Input$Step_bool_exp>? Function(
+      Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$Step_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$Step_bool_exp>? Function(
-              Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?)
-          _fn);
+    Iterable<Input$Step_bool_exp>? Function(
+      Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$String_comparison_exp<TRes> get description;
   CopyWith$Input$String_comparison_exp<TRes> get fileId;
   CopyWith$Input$String_comparison_exp<TRes> get id;
@@ -15756,10 +15897,7 @@ abstract class CopyWith$Input$Step_bool_exp<TRes> {
 
 class _CopyWithImpl$Input$Step_bool_exp<TRes>
     implements CopyWith$Input$Step_bool_exp<TRes> {
-  _CopyWithImpl$Input$Step_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_bool_exp(this._instance, this._then);
 
   final Input$Step_bool_exp _instance;
 
@@ -15778,24 +15916,25 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
     Object? id = _undefined,
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
-  }) =>
-      _then(Input$Step_bool_exp._({
-        ..._instance._$data,
-        if (File != _undefined) 'File': (File as Input$File_bool_exp?),
-        if (RecipeSection != _undefined)
-          'RecipeSection': (RecipeSection as Input$RecipeSection_bool_exp?),
-        if ($_and != _undefined) '_and': ($_and as List<Input$Step_bool_exp>?),
-        if ($_not != _undefined) '_not': ($_not as Input$Step_bool_exp?),
-        if ($_or != _undefined) '_or': ($_or as List<Input$Step_bool_exp>?),
-        if (description != _undefined)
-          'description': (description as Input$String_comparison_exp?),
-        if (fileId != _undefined)
-          'fileId': (fileId as Input$String_comparison_exp?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-        if (order != _undefined) 'order': (order as Input$Int_comparison_exp?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as Input$String_comparison_exp?),
-      }));
+  }) => _then(
+    Input$Step_bool_exp._({
+      ..._instance._$data,
+      if (File != _undefined) 'File': (File as Input$File_bool_exp?),
+      if (RecipeSection != _undefined)
+        'RecipeSection': (RecipeSection as Input$RecipeSection_bool_exp?),
+      if ($_and != _undefined) '_and': ($_and as List<Input$Step_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$Step_bool_exp?),
+      if ($_or != _undefined) '_or': ($_or as List<Input$Step_bool_exp>?),
+      if (description != _undefined)
+        'description': (description as Input$String_comparison_exp?),
+      if (fileId != _undefined)
+        'fileId': (fileId as Input$String_comparison_exp?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+      if (order != _undefined) 'order': (order as Input$Int_comparison_exp?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as Input$String_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$File_bool_exp<TRes> get File {
     final local$File = _instance.File;
@@ -15809,18 +15948,21 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
     return local$RecipeSection == null
         ? CopyWith$Input$RecipeSection_bool_exp.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_bool_exp(
-            local$RecipeSection, (e) => call(RecipeSection: e));
+            local$RecipeSection,
+            (e) => call(RecipeSection: e),
+          );
   }
 
   TRes $_and(
-          Iterable<Input$Step_bool_exp>? Function(
-                  Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and: _fn(_instance.$_and?.map((e) => CopyWith$Input$Step_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$Step_bool_exp>? Function(
+      Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map((e) => CopyWith$Input$Step_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$Step_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
@@ -15830,21 +15972,24 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
   }
 
   TRes $_or(
-          Iterable<Input$Step_bool_exp>? Function(
-                  Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(_instance.$_or?.map((e) => CopyWith$Input$Step_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$Step_bool_exp>? Function(
+      Iterable<CopyWith$Input$Step_bool_exp<Input$Step_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map((e) => CopyWith$Input$Step_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$String_comparison_exp<TRes> get description {
     final local$description = _instance.description;
     return local$description == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$description, (e) => call(description: e));
+            local$description,
+            (e) => call(description: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get fileId {
@@ -15852,7 +15997,9 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
     return local$fileId == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$fileId, (e) => call(fileId: e));
+            local$fileId,
+            (e) => call(fileId: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
@@ -15874,7 +16021,9 @@ class _CopyWithImpl$Input$Step_bool_exp<TRes>
     return local$recipeSectionId == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$recipeSectionId, (e) => call(recipeSectionId: e));
+            local$recipeSectionId,
+            (e) => call(recipeSectionId: e),
+          );
   }
 }
 
@@ -15895,8 +16044,7 @@ class _CopyWithStubImpl$Input$Step_bool_exp<TRes>
     Input$String_comparison_exp? id,
     Input$Int_comparison_exp? order,
     Input$String_comparison_exp? recipeSectionId,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$File_bool_exp<TRes> get File =>
       CopyWith$Input$File_bool_exp.stub(_res);
@@ -15934,14 +16082,13 @@ class Input$Step_max_order_by {
     Enum$order_by? id,
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
-  }) =>
-      Input$Step_max_order_by._({
-        if (description != null) r'description': description,
-        if (fileId != null) r'fileId': fileId,
-        if (id != null) r'id': id,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-      });
+  }) => Input$Step_max_order_by._({
+    if (description != null) r'description': description,
+    if (fileId != null) r'fileId': fileId,
+    if (id != null) r'id': id,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+  });
 
   Input$Step_max_order_by._(this._$data);
 
@@ -15961,13 +16108,15 @@ class Input$Step_max_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = data['recipeSectionId'];
@@ -15995,13 +16144,15 @@ class Input$Step_max_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('fileId')) {
       final l$fileId = fileId;
-      result$data['fileId'] =
-          l$fileId == null ? null : toJson$Enum$order_by(l$fileId);
+      result$data['fileId'] = l$fileId == null
+          ? null
+          : toJson$Enum$order_by(l$fileId);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -16009,8 +16160,9 @@ class Input$Step_max_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = recipeSectionId;
@@ -16022,18 +16174,14 @@ class Input$Step_max_order_by {
   }
 
   CopyWith$Input$Step_max_order_by<Input$Step_max_order_by> get copyWith =>
-      CopyWith$Input$Step_max_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Step_max_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_max_order_by) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$Step_max_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$description = description;
@@ -16118,10 +16266,7 @@ abstract class CopyWith$Input$Step_max_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_max_order_by<TRes>
     implements CopyWith$Input$Step_max_order_by<TRes> {
-  _CopyWithImpl$Input$Step_max_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_max_order_by(this._instance, this._then);
 
   final Input$Step_max_order_by _instance;
 
@@ -16135,17 +16280,18 @@ class _CopyWithImpl$Input$Step_max_order_by<TRes>
     Object? id = _undefined,
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
-  }) =>
-      _then(Input$Step_max_order_by._({
-        ..._instance._$data,
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (fileId != _undefined) 'fileId': (fileId as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$Step_max_order_by._({
+      ..._instance._$data,
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (fileId != _undefined) 'fileId': (fileId as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_max_order_by<TRes>
@@ -16160,8 +16306,7 @@ class _CopyWithStubImpl$Input$Step_max_order_by<TRes>
     Enum$order_by? id,
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$Step_min_order_by {
@@ -16171,14 +16316,13 @@ class Input$Step_min_order_by {
     Enum$order_by? id,
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
-  }) =>
-      Input$Step_min_order_by._({
-        if (description != null) r'description': description,
-        if (fileId != null) r'fileId': fileId,
-        if (id != null) r'id': id,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-      });
+  }) => Input$Step_min_order_by._({
+    if (description != null) r'description': description,
+    if (fileId != null) r'fileId': fileId,
+    if (id != null) r'id': id,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+  });
 
   Input$Step_min_order_by._(this._$data);
 
@@ -16198,13 +16342,15 @@ class Input$Step_min_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = data['recipeSectionId'];
@@ -16232,13 +16378,15 @@ class Input$Step_min_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('fileId')) {
       final l$fileId = fileId;
-      result$data['fileId'] =
-          l$fileId == null ? null : toJson$Enum$order_by(l$fileId);
+      result$data['fileId'] = l$fileId == null
+          ? null
+          : toJson$Enum$order_by(l$fileId);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -16246,8 +16394,9 @@ class Input$Step_min_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = recipeSectionId;
@@ -16259,18 +16408,14 @@ class Input$Step_min_order_by {
   }
 
   CopyWith$Input$Step_min_order_by<Input$Step_min_order_by> get copyWith =>
-      CopyWith$Input$Step_min_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Step_min_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_min_order_by) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$Step_min_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$description = description;
@@ -16355,10 +16500,7 @@ abstract class CopyWith$Input$Step_min_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_min_order_by<TRes>
     implements CopyWith$Input$Step_min_order_by<TRes> {
-  _CopyWithImpl$Input$Step_min_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_min_order_by(this._instance, this._then);
 
   final Input$Step_min_order_by _instance;
 
@@ -16372,17 +16514,18 @@ class _CopyWithImpl$Input$Step_min_order_by<TRes>
     Object? id = _undefined,
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
-  }) =>
-      _then(Input$Step_min_order_by._({
-        ..._instance._$data,
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (fileId != _undefined) 'fileId': (fileId as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$Step_min_order_by._({
+      ..._instance._$data,
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (fileId != _undefined) 'fileId': (fileId as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_min_order_by<TRes>
@@ -16397,8 +16540,7 @@ class _CopyWithStubImpl$Input$Step_min_order_by<TRes>
     Enum$order_by? id,
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$Step_order_by {
@@ -16410,16 +16552,15 @@ class Input$Step_order_by {
     Enum$order_by? id,
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
-  }) =>
-      Input$Step_order_by._({
-        if (File != null) r'File': File,
-        if (RecipeSection != null) r'RecipeSection': RecipeSection,
-        if (description != null) r'description': description,
-        if (fileId != null) r'fileId': fileId,
-        if (id != null) r'id': id,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-      });
+  }) => Input$Step_order_by._({
+    if (File != null) r'File': File,
+    if (RecipeSection != null) r'RecipeSection': RecipeSection,
+    if (description != null) r'description': description,
+    if (fileId != null) r'fileId': fileId,
+    if (id != null) r'id': id,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+  });
 
   Input$Step_order_by._(this._$data);
 
@@ -16436,7 +16577,8 @@ class Input$Step_order_by {
       result$data['RecipeSection'] = l$RecipeSection == null
           ? null
           : Input$RecipeSection_order_by.fromJson(
-              (l$RecipeSection as Map<String, dynamic>));
+              (l$RecipeSection as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('description')) {
       final l$description = data['description'];
@@ -16452,13 +16594,15 @@ class Input$Step_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     if (data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = data['recipeSectionId'];
@@ -16499,13 +16643,15 @@ class Input$Step_order_by {
     }
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('fileId')) {
       final l$fileId = fileId;
-      result$data['fileId'] =
-          l$fileId == null ? null : toJson$Enum$order_by(l$fileId);
+      result$data['fileId'] = l$fileId == null
+          ? null
+          : toJson$Enum$order_by(l$fileId);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -16513,8 +16659,9 @@ class Input$Step_order_by {
     }
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     if (_$data.containsKey('recipeSectionId')) {
       final l$recipeSectionId = recipeSectionId;
@@ -16526,17 +16673,14 @@ class Input$Step_order_by {
   }
 
   CopyWith$Input$Step_order_by<Input$Step_order_by> get copyWith =>
-      CopyWith$Input$Step_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Step_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_order_by) || runtimeType != other.runtimeType) {
+    if (other is! Input$Step_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$File = File;
@@ -16646,10 +16790,7 @@ abstract class CopyWith$Input$Step_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_order_by<TRes>
     implements CopyWith$Input$Step_order_by<TRes> {
-  _CopyWithImpl$Input$Step_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_order_by(this._instance, this._then);
 
   final Input$Step_order_by _instance;
 
@@ -16665,20 +16806,21 @@ class _CopyWithImpl$Input$Step_order_by<TRes>
     Object? id = _undefined,
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
-  }) =>
-      _then(Input$Step_order_by._({
-        ..._instance._$data,
-        if (File != _undefined) 'File': (File as Input$File_order_by?),
-        if (RecipeSection != _undefined)
-          'RecipeSection': (RecipeSection as Input$RecipeSection_order_by?),
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (fileId != _undefined) 'fileId': (fileId as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$Step_order_by._({
+      ..._instance._$data,
+      if (File != _undefined) 'File': (File as Input$File_order_by?),
+      if (RecipeSection != _undefined)
+        'RecipeSection': (RecipeSection as Input$RecipeSection_order_by?),
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (fileId != _undefined) 'fileId': (fileId as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$File_order_by<TRes> get File {
     final local$File = _instance.File;
@@ -16692,7 +16834,9 @@ class _CopyWithImpl$Input$Step_order_by<TRes>
     return local$RecipeSection == null
         ? CopyWith$Input$RecipeSection_order_by.stub(_then(_instance))
         : CopyWith$Input$RecipeSection_order_by(
-            local$RecipeSection, (e) => call(RecipeSection: e));
+            local$RecipeSection,
+            (e) => call(RecipeSection: e),
+          );
   }
 }
 
@@ -16710,8 +16854,7 @@ class _CopyWithStubImpl$Input$Step_order_by<TRes>
     Enum$order_by? id,
     Enum$order_by? order,
     Enum$order_by? recipeSectionId,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$File_order_by<TRes> get File =>
       CopyWith$Input$File_order_by.stub(_res);
@@ -16722,9 +16865,7 @@ class _CopyWithStubImpl$Input$Step_order_by<TRes>
 
 class Input$Step_stddev_order_by {
   factory Input$Step_stddev_order_by({Enum$order_by? order}) =>
-      Input$Step_stddev_order_by._({
-        if (order != null) r'order': order,
-      });
+      Input$Step_stddev_order_by._({if (order != null) r'order': order});
 
   Input$Step_stddev_order_by._(this._$data);
 
@@ -16732,8 +16873,9 @@ class Input$Step_stddev_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$Step_stddev_order_by._(result$data);
   }
@@ -16746,24 +16888,22 @@ class Input$Step_stddev_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$Step_stddev_order_by<Input$Step_stddev_order_by>
-      get copyWith => CopyWith$Input$Step_stddev_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Step_stddev_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_stddev_order_by) ||
+    if (other is! Input$Step_stddev_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -16799,10 +16939,7 @@ abstract class CopyWith$Input$Step_stddev_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_stddev_order_by<TRes>
     implements CopyWith$Input$Step_stddev_order_by<TRes> {
-  _CopyWithImpl$Input$Step_stddev_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_stddev_order_by(this._instance, this._then);
 
   final Input$Step_stddev_order_by _instance;
 
@@ -16810,11 +16947,12 @@ class _CopyWithImpl$Input$Step_stddev_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? order = _undefined}) =>
-      _then(Input$Step_stddev_order_by._({
-        ..._instance._$data,
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? order = _undefined}) => _then(
+    Input$Step_stddev_order_by._({
+      ..._instance._$data,
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_stddev_order_by<TRes>
@@ -16828,9 +16966,7 @@ class _CopyWithStubImpl$Input$Step_stddev_order_by<TRes>
 
 class Input$Step_stddev_pop_order_by {
   factory Input$Step_stddev_pop_order_by({Enum$order_by? order}) =>
-      Input$Step_stddev_pop_order_by._({
-        if (order != null) r'order': order,
-      });
+      Input$Step_stddev_pop_order_by._({if (order != null) r'order': order});
 
   Input$Step_stddev_pop_order_by._(this._$data);
 
@@ -16838,8 +16974,9 @@ class Input$Step_stddev_pop_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$Step_stddev_pop_order_by._(result$data);
   }
@@ -16852,24 +16989,22 @@ class Input$Step_stddev_pop_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$Step_stddev_pop_order_by<Input$Step_stddev_pop_order_by>
-      get copyWith => CopyWith$Input$Step_stddev_pop_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Step_stddev_pop_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_stddev_pop_order_by) ||
+    if (other is! Input$Step_stddev_pop_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -16905,10 +17040,7 @@ abstract class CopyWith$Input$Step_stddev_pop_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_stddev_pop_order_by<TRes>
     implements CopyWith$Input$Step_stddev_pop_order_by<TRes> {
-  _CopyWithImpl$Input$Step_stddev_pop_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_stddev_pop_order_by(this._instance, this._then);
 
   final Input$Step_stddev_pop_order_by _instance;
 
@@ -16916,11 +17048,12 @@ class _CopyWithImpl$Input$Step_stddev_pop_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? order = _undefined}) =>
-      _then(Input$Step_stddev_pop_order_by._({
-        ..._instance._$data,
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? order = _undefined}) => _then(
+    Input$Step_stddev_pop_order_by._({
+      ..._instance._$data,
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_stddev_pop_order_by<TRes>
@@ -16934,9 +17067,7 @@ class _CopyWithStubImpl$Input$Step_stddev_pop_order_by<TRes>
 
 class Input$Step_stddev_samp_order_by {
   factory Input$Step_stddev_samp_order_by({Enum$order_by? order}) =>
-      Input$Step_stddev_samp_order_by._({
-        if (order != null) r'order': order,
-      });
+      Input$Step_stddev_samp_order_by._({if (order != null) r'order': order});
 
   Input$Step_stddev_samp_order_by._(this._$data);
 
@@ -16944,8 +17075,9 @@ class Input$Step_stddev_samp_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$Step_stddev_samp_order_by._(result$data);
   }
@@ -16958,24 +17090,22 @@ class Input$Step_stddev_samp_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$Step_stddev_samp_order_by<Input$Step_stddev_samp_order_by>
-      get copyWith => CopyWith$Input$Step_stddev_samp_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Step_stddev_samp_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_stddev_samp_order_by) ||
+    if (other is! Input$Step_stddev_samp_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17011,10 +17141,7 @@ abstract class CopyWith$Input$Step_stddev_samp_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_stddev_samp_order_by<TRes>
     implements CopyWith$Input$Step_stddev_samp_order_by<TRes> {
-  _CopyWithImpl$Input$Step_stddev_samp_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_stddev_samp_order_by(this._instance, this._then);
 
   final Input$Step_stddev_samp_order_by _instance;
 
@@ -17022,11 +17149,12 @@ class _CopyWithImpl$Input$Step_stddev_samp_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? order = _undefined}) =>
-      _then(Input$Step_stddev_samp_order_by._({
-        ..._instance._$data,
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? order = _undefined}) => _then(
+    Input$Step_stddev_samp_order_by._({
+      ..._instance._$data,
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_stddev_samp_order_by<TRes>
@@ -17042,11 +17170,10 @@ class Input$Step_stream_cursor_input {
   factory Input$Step_stream_cursor_input({
     required Input$Step_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$Step_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$Step_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$Step_stream_cursor_input._(this._$data);
 
@@ -17055,7 +17182,8 @@ class Input$Step_stream_cursor_input {
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$Step_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -17079,24 +17207,22 @@ class Input$Step_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$Step_stream_cursor_input<Input$Step_stream_cursor_input>
-      get copyWith => CopyWith$Input$Step_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Step_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_stream_cursor_input) ||
+    if (other is! Input$Step_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17146,10 +17272,7 @@ abstract class CopyWith$Input$Step_stream_cursor_input<TRes> {
 
 class _CopyWithImpl$Input$Step_stream_cursor_input<TRes>
     implements CopyWith$Input$Step_stream_cursor_input<TRes> {
-  _CopyWithImpl$Input$Step_stream_cursor_input(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_stream_cursor_input(this._instance, this._then);
 
   final Input$Step_stream_cursor_input _instance;
 
@@ -17160,20 +17283,23 @@ class _CopyWithImpl$Input$Step_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$Step_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$Step_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$Step_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$Step_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$Step_stream_cursor_value_input<TRes> get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$Step_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -17186,8 +17312,7 @@ class _CopyWithStubImpl$Input$Step_stream_cursor_input<TRes>
   call({
     Input$Step_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Step_stream_cursor_value_input<TRes> get initial_value =>
       CopyWith$Input$Step_stream_cursor_value_input.stub(_res);
@@ -17200,19 +17325,19 @@ class Input$Step_stream_cursor_value_input {
     String? id,
     int? order,
     String? recipeSectionId,
-  }) =>
-      Input$Step_stream_cursor_value_input._({
-        if (description != null) r'description': description,
-        if (fileId != null) r'fileId': fileId,
-        if (id != null) r'id': id,
-        if (order != null) r'order': order,
-        if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
-      });
+  }) => Input$Step_stream_cursor_value_input._({
+    if (description != null) r'description': description,
+    if (fileId != null) r'fileId': fileId,
+    if (id != null) r'id': id,
+    if (order != null) r'order': order,
+    if (recipeSectionId != null) r'recipeSectionId': recipeSectionId,
+  });
 
   Input$Step_stream_cursor_value_input._(this._$data);
 
   factory Input$Step_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('description')) {
       final l$description = data['description'];
@@ -17275,18 +17400,16 @@ class Input$Step_stream_cursor_value_input {
   }
 
   CopyWith$Input$Step_stream_cursor_value_input<
-          Input$Step_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$Step_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$Step_stream_cursor_value_input
+  >
+  get copyWith => CopyWith$Input$Step_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_stream_cursor_value_input) ||
+    if (other is! Input$Step_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17389,16 +17512,17 @@ class _CopyWithImpl$Input$Step_stream_cursor_value_input<TRes>
     Object? id = _undefined,
     Object? order = _undefined,
     Object? recipeSectionId = _undefined,
-  }) =>
-      _then(Input$Step_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (description != _undefined) 'description': (description as String?),
-        if (fileId != _undefined) 'fileId': (fileId as String?),
-        if (id != _undefined) 'id': (id as String?),
-        if (order != _undefined) 'order': (order as int?),
-        if (recipeSectionId != _undefined)
-          'recipeSectionId': (recipeSectionId as String?),
-      }));
+  }) => _then(
+    Input$Step_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (description != _undefined) 'description': (description as String?),
+      if (fileId != _undefined) 'fileId': (fileId as String?),
+      if (id != _undefined) 'id': (id as String?),
+      if (order != _undefined) 'order': (order as int?),
+      if (recipeSectionId != _undefined)
+        'recipeSectionId': (recipeSectionId as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_stream_cursor_value_input<TRes>
@@ -17413,15 +17537,12 @@ class _CopyWithStubImpl$Input$Step_stream_cursor_value_input<TRes>
     String? id,
     int? order,
     String? recipeSectionId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$Step_sum_order_by {
   factory Input$Step_sum_order_by({Enum$order_by? order}) =>
-      Input$Step_sum_order_by._({
-        if (order != null) r'order': order,
-      });
+      Input$Step_sum_order_by._({if (order != null) r'order': order});
 
   Input$Step_sum_order_by._(this._$data);
 
@@ -17429,8 +17550,9 @@ class Input$Step_sum_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$Step_sum_order_by._(result$data);
   }
@@ -17443,25 +17565,22 @@ class Input$Step_sum_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$Step_sum_order_by<Input$Step_sum_order_by> get copyWith =>
-      CopyWith$Input$Step_sum_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Step_sum_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_sum_order_by) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$Step_sum_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$order = order;
@@ -17496,10 +17615,7 @@ abstract class CopyWith$Input$Step_sum_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_sum_order_by<TRes>
     implements CopyWith$Input$Step_sum_order_by<TRes> {
-  _CopyWithImpl$Input$Step_sum_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_sum_order_by(this._instance, this._then);
 
   final Input$Step_sum_order_by _instance;
 
@@ -17507,10 +17623,12 @@ class _CopyWithImpl$Input$Step_sum_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? order = _undefined}) => _then(Input$Step_sum_order_by._({
-        ..._instance._$data,
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? order = _undefined}) => _then(
+    Input$Step_sum_order_by._({
+      ..._instance._$data,
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_sum_order_by<TRes>
@@ -17524,9 +17642,7 @@ class _CopyWithStubImpl$Input$Step_sum_order_by<TRes>
 
 class Input$Step_var_pop_order_by {
   factory Input$Step_var_pop_order_by({Enum$order_by? order}) =>
-      Input$Step_var_pop_order_by._({
-        if (order != null) r'order': order,
-      });
+      Input$Step_var_pop_order_by._({if (order != null) r'order': order});
 
   Input$Step_var_pop_order_by._(this._$data);
 
@@ -17534,8 +17650,9 @@ class Input$Step_var_pop_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$Step_var_pop_order_by._(result$data);
   }
@@ -17548,24 +17665,22 @@ class Input$Step_var_pop_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$Step_var_pop_order_by<Input$Step_var_pop_order_by>
-      get copyWith => CopyWith$Input$Step_var_pop_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Step_var_pop_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_var_pop_order_by) ||
+    if (other is! Input$Step_var_pop_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17601,10 +17716,7 @@ abstract class CopyWith$Input$Step_var_pop_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_var_pop_order_by<TRes>
     implements CopyWith$Input$Step_var_pop_order_by<TRes> {
-  _CopyWithImpl$Input$Step_var_pop_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_var_pop_order_by(this._instance, this._then);
 
   final Input$Step_var_pop_order_by _instance;
 
@@ -17612,11 +17724,12 @@ class _CopyWithImpl$Input$Step_var_pop_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? order = _undefined}) =>
-      _then(Input$Step_var_pop_order_by._({
-        ..._instance._$data,
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? order = _undefined}) => _then(
+    Input$Step_var_pop_order_by._({
+      ..._instance._$data,
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_var_pop_order_by<TRes>
@@ -17630,9 +17743,7 @@ class _CopyWithStubImpl$Input$Step_var_pop_order_by<TRes>
 
 class Input$Step_var_samp_order_by {
   factory Input$Step_var_samp_order_by({Enum$order_by? order}) =>
-      Input$Step_var_samp_order_by._({
-        if (order != null) r'order': order,
-      });
+      Input$Step_var_samp_order_by._({if (order != null) r'order': order});
 
   Input$Step_var_samp_order_by._(this._$data);
 
@@ -17640,8 +17751,9 @@ class Input$Step_var_samp_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$Step_var_samp_order_by._(result$data);
   }
@@ -17654,24 +17766,22 @@ class Input$Step_var_samp_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$Step_var_samp_order_by<Input$Step_var_samp_order_by>
-      get copyWith => CopyWith$Input$Step_var_samp_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Step_var_samp_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_var_samp_order_by) ||
+    if (other is! Input$Step_var_samp_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17707,10 +17817,7 @@ abstract class CopyWith$Input$Step_var_samp_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_var_samp_order_by<TRes>
     implements CopyWith$Input$Step_var_samp_order_by<TRes> {
-  _CopyWithImpl$Input$Step_var_samp_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_var_samp_order_by(this._instance, this._then);
 
   final Input$Step_var_samp_order_by _instance;
 
@@ -17718,11 +17825,12 @@ class _CopyWithImpl$Input$Step_var_samp_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? order = _undefined}) =>
-      _then(Input$Step_var_samp_order_by._({
-        ..._instance._$data,
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? order = _undefined}) => _then(
+    Input$Step_var_samp_order_by._({
+      ..._instance._$data,
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_var_samp_order_by<TRes>
@@ -17736,9 +17844,7 @@ class _CopyWithStubImpl$Input$Step_var_samp_order_by<TRes>
 
 class Input$Step_variance_order_by {
   factory Input$Step_variance_order_by({Enum$order_by? order}) =>
-      Input$Step_variance_order_by._({
-        if (order != null) r'order': order,
-      });
+      Input$Step_variance_order_by._({if (order != null) r'order': order});
 
   Input$Step_variance_order_by._(this._$data);
 
@@ -17746,8 +17852,9 @@ class Input$Step_variance_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('order')) {
       final l$order = data['order'];
-      result$data['order'] =
-          l$order == null ? null : fromJson$Enum$order_by((l$order as String));
+      result$data['order'] = l$order == null
+          ? null
+          : fromJson$Enum$order_by((l$order as String));
     }
     return Input$Step_variance_order_by._(result$data);
   }
@@ -17760,24 +17867,22 @@ class Input$Step_variance_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('order')) {
       final l$order = order;
-      result$data['order'] =
-          l$order == null ? null : toJson$Enum$order_by(l$order);
+      result$data['order'] = l$order == null
+          ? null
+          : toJson$Enum$order_by(l$order);
     }
     return result$data;
   }
 
   CopyWith$Input$Step_variance_order_by<Input$Step_variance_order_by>
-      get copyWith => CopyWith$Input$Step_variance_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Step_variance_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Step_variance_order_by) ||
+    if (other is! Input$Step_variance_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -17813,10 +17918,7 @@ abstract class CopyWith$Input$Step_variance_order_by<TRes> {
 
 class _CopyWithImpl$Input$Step_variance_order_by<TRes>
     implements CopyWith$Input$Step_variance_order_by<TRes> {
-  _CopyWithImpl$Input$Step_variance_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Step_variance_order_by(this._instance, this._then);
 
   final Input$Step_variance_order_by _instance;
 
@@ -17824,11 +17926,12 @@ class _CopyWithImpl$Input$Step_variance_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? order = _undefined}) =>
-      _then(Input$Step_variance_order_by._({
-        ..._instance._$data,
-        if (order != _undefined) 'order': (order as Enum$order_by?),
-      }));
+  TRes call({Object? order = _undefined}) => _then(
+    Input$Step_variance_order_by._({
+      ..._instance._$data,
+      if (order != _undefined) 'order': (order as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Step_variance_order_by<TRes>
@@ -17861,28 +17964,27 @@ class Input$String_comparison_exp {
     String? $_nsimilar,
     String? $_regex,
     String? $_similar,
-  }) =>
-      Input$String_comparison_exp._({
-        if ($_eq != null) r'_eq': $_eq,
-        if ($_gt != null) r'_gt': $_gt,
-        if ($_gte != null) r'_gte': $_gte,
-        if ($_ilike != null) r'_ilike': $_ilike,
-        if ($_in != null) r'_in': $_in,
-        if ($_iregex != null) r'_iregex': $_iregex,
-        if ($_is_null != null) r'_is_null': $_is_null,
-        if ($_like != null) r'_like': $_like,
-        if ($_lt != null) r'_lt': $_lt,
-        if ($_lte != null) r'_lte': $_lte,
-        if ($_neq != null) r'_neq': $_neq,
-        if ($_nilike != null) r'_nilike': $_nilike,
-        if ($_nin != null) r'_nin': $_nin,
-        if ($_niregex != null) r'_niregex': $_niregex,
-        if ($_nlike != null) r'_nlike': $_nlike,
-        if ($_nregex != null) r'_nregex': $_nregex,
-        if ($_nsimilar != null) r'_nsimilar': $_nsimilar,
-        if ($_regex != null) r'_regex': $_regex,
-        if ($_similar != null) r'_similar': $_similar,
-      });
+  }) => Input$String_comparison_exp._({
+    if ($_eq != null) r'_eq': $_eq,
+    if ($_gt != null) r'_gt': $_gt,
+    if ($_gte != null) r'_gte': $_gte,
+    if ($_ilike != null) r'_ilike': $_ilike,
+    if ($_in != null) r'_in': $_in,
+    if ($_iregex != null) r'_iregex': $_iregex,
+    if ($_is_null != null) r'_is_null': $_is_null,
+    if ($_like != null) r'_like': $_like,
+    if ($_lt != null) r'_lt': $_lt,
+    if ($_lte != null) r'_lte': $_lte,
+    if ($_neq != null) r'_neq': $_neq,
+    if ($_nilike != null) r'_nilike': $_nilike,
+    if ($_nin != null) r'_nin': $_nin,
+    if ($_niregex != null) r'_niregex': $_niregex,
+    if ($_nlike != null) r'_nlike': $_nlike,
+    if ($_nregex != null) r'_nregex': $_nregex,
+    if ($_nsimilar != null) r'_nsimilar': $_nsimilar,
+    if ($_regex != null) r'_regex': $_regex,
+    if ($_similar != null) r'_similar': $_similar,
+  });
 
   Input$String_comparison_exp._(this._$data);
 
@@ -17906,8 +18008,9 @@ class Input$String_comparison_exp {
     }
     if (data.containsKey('_in')) {
       final l$$_in = data['_in'];
-      result$data['_in'] =
-          (l$$_in as List<dynamic>?)?.map((e) => (e as String)).toList();
+      result$data['_in'] = (l$$_in as List<dynamic>?)
+          ?.map((e) => (e as String))
+          .toList();
     }
     if (data.containsKey('_iregex')) {
       final l$$_iregex = data['_iregex'];
@@ -17939,8 +18042,9 @@ class Input$String_comparison_exp {
     }
     if (data.containsKey('_nin')) {
       final l$$_nin = data['_nin'];
-      result$data['_nin'] =
-          (l$$_nin as List<dynamic>?)?.map((e) => (e as String)).toList();
+      result$data['_nin'] = (l$$_nin as List<dynamic>?)
+          ?.map((e) => (e as String))
+          .toList();
     }
     if (data.containsKey('_niregex')) {
       final l$$_niregex = data['_niregex'];
@@ -18091,17 +18195,14 @@ class Input$String_comparison_exp {
   }
 
   CopyWith$Input$String_comparison_exp<Input$String_comparison_exp>
-      get copyWith => CopyWith$Input$String_comparison_exp(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$String_comparison_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$String_comparison_exp) ||
+    if (other is! Input$String_comparison_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -18314,8 +18415,8 @@ class Input$String_comparison_exp {
       _$data.containsKey('_ilike') ? l$$_ilike : const {},
       _$data.containsKey('_in')
           ? l$$_in == null
-              ? null
-              : Object.hashAll(l$$_in.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_in.map((v) => v))
           : const {},
       _$data.containsKey('_iregex') ? l$$_iregex : const {},
       _$data.containsKey('_is_null') ? l$$_is_null : const {},
@@ -18326,8 +18427,8 @@ class Input$String_comparison_exp {
       _$data.containsKey('_nilike') ? l$$_nilike : const {},
       _$data.containsKey('_nin')
           ? l$$_nin == null
-              ? null
-              : Object.hashAll(l$$_nin.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_nin.map((v) => v))
           : const {},
       _$data.containsKey('_niregex') ? l$$_niregex : const {},
       _$data.containsKey('_nlike') ? l$$_nlike : const {},
@@ -18373,10 +18474,7 @@ abstract class CopyWith$Input$String_comparison_exp<TRes> {
 
 class _CopyWithImpl$Input$String_comparison_exp<TRes>
     implements CopyWith$Input$String_comparison_exp<TRes> {
-  _CopyWithImpl$Input$String_comparison_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$String_comparison_exp(this._instance, this._then);
 
   final Input$String_comparison_exp _instance;
 
@@ -18404,29 +18502,30 @@ class _CopyWithImpl$Input$String_comparison_exp<TRes>
     Object? $_nsimilar = _undefined,
     Object? $_regex = _undefined,
     Object? $_similar = _undefined,
-  }) =>
-      _then(Input$String_comparison_exp._({
-        ..._instance._$data,
-        if ($_eq != _undefined) '_eq': ($_eq as String?),
-        if ($_gt != _undefined) '_gt': ($_gt as String?),
-        if ($_gte != _undefined) '_gte': ($_gte as String?),
-        if ($_ilike != _undefined) '_ilike': ($_ilike as String?),
-        if ($_in != _undefined) '_in': ($_in as List<String>?),
-        if ($_iregex != _undefined) '_iregex': ($_iregex as String?),
-        if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
-        if ($_like != _undefined) '_like': ($_like as String?),
-        if ($_lt != _undefined) '_lt': ($_lt as String?),
-        if ($_lte != _undefined) '_lte': ($_lte as String?),
-        if ($_neq != _undefined) '_neq': ($_neq as String?),
-        if ($_nilike != _undefined) '_nilike': ($_nilike as String?),
-        if ($_nin != _undefined) '_nin': ($_nin as List<String>?),
-        if ($_niregex != _undefined) '_niregex': ($_niregex as String?),
-        if ($_nlike != _undefined) '_nlike': ($_nlike as String?),
-        if ($_nregex != _undefined) '_nregex': ($_nregex as String?),
-        if ($_nsimilar != _undefined) '_nsimilar': ($_nsimilar as String?),
-        if ($_regex != _undefined) '_regex': ($_regex as String?),
-        if ($_similar != _undefined) '_similar': ($_similar as String?),
-      }));
+  }) => _then(
+    Input$String_comparison_exp._({
+      ..._instance._$data,
+      if ($_eq != _undefined) '_eq': ($_eq as String?),
+      if ($_gt != _undefined) '_gt': ($_gt as String?),
+      if ($_gte != _undefined) '_gte': ($_gte as String?),
+      if ($_ilike != _undefined) '_ilike': ($_ilike as String?),
+      if ($_in != _undefined) '_in': ($_in as List<String>?),
+      if ($_iregex != _undefined) '_iregex': ($_iregex as String?),
+      if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
+      if ($_like != _undefined) '_like': ($_like as String?),
+      if ($_lt != _undefined) '_lt': ($_lt as String?),
+      if ($_lte != _undefined) '_lte': ($_lte as String?),
+      if ($_neq != _undefined) '_neq': ($_neq as String?),
+      if ($_nilike != _undefined) '_nilike': ($_nilike as String?),
+      if ($_nin != _undefined) '_nin': ($_nin as List<String>?),
+      if ($_niregex != _undefined) '_niregex': ($_niregex as String?),
+      if ($_nlike != _undefined) '_nlike': ($_nlike as String?),
+      if ($_nregex != _undefined) '_nregex': ($_nregex as String?),
+      if ($_nsimilar != _undefined) '_nsimilar': ($_nsimilar as String?),
+      if ($_regex != _undefined) '_regex': ($_regex as String?),
+      if ($_similar != _undefined) '_similar': ($_similar as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$String_comparison_exp<TRes>
@@ -18455,8 +18554,7 @@ class _CopyWithStubImpl$Input$String_comparison_exp<TRes>
     String? $_nsimilar,
     String? $_regex,
     String? $_similar,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$Tag_bool_exp {
@@ -18467,15 +18565,14 @@ class Input$Tag_bool_exp {
     List<Input$Tag_bool_exp>? $_or,
     Input$String_comparison_exp? id,
     Input$String_comparison_exp? name,
-  }) =>
-      Input$Tag_bool_exp._({
-        if (Recipes != null) r'Recipes': Recipes,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-      });
+  }) => Input$Tag_bool_exp._({
+    if (Recipes != null) r'Recipes': Recipes,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+  });
 
   Input$Tag_bool_exp._(this._$data);
 
@@ -18486,7 +18583,8 @@ class Input$Tag_bool_exp {
       result$data['Recipes'] = l$Recipes == null
           ? null
           : Input$_RecipeToTag_bool_exp.fromJson(
-              (l$Recipes as Map<String, dynamic>));
+              (l$Recipes as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_and')) {
       final l$$_and = data['_and'];
@@ -18511,14 +18609,16 @@ class Input$Tag_bool_exp {
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
       result$data['name'] = l$name == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$name as Map<String, dynamic>));
+              (l$name as Map<String, dynamic>),
+            );
     }
     return Input$Tag_bool_exp._(result$data);
   }
@@ -18572,17 +18672,14 @@ class Input$Tag_bool_exp {
   }
 
   CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp> get copyWith =>
-      CopyWith$Input$Tag_bool_exp(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Tag_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Tag_bool_exp) || runtimeType != other.runtimeType) {
+    if (other is! Input$Tag_bool_exp || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Recipes = Recipes;
@@ -18670,14 +18767,14 @@ class Input$Tag_bool_exp {
       _$data.containsKey('Recipes') ? l$Recipes : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('id') ? l$id : const {},
       _$data.containsKey('name') ? l$name : const {},
@@ -18704,24 +18801,25 @@ abstract class CopyWith$Input$Tag_bool_exp<TRes> {
   });
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get Recipes;
   TRes $_and(
-      Iterable<Input$Tag_bool_exp>? Function(
-              Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?)
-          _fn);
+    Iterable<Input$Tag_bool_exp>? Function(
+      Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$Tag_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$Tag_bool_exp>? Function(
-              Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?)
-          _fn);
+    Iterable<Input$Tag_bool_exp>? Function(
+      Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$String_comparison_exp<TRes> get id;
   CopyWith$Input$String_comparison_exp<TRes> get name;
 }
 
 class _CopyWithImpl$Input$Tag_bool_exp<TRes>
     implements CopyWith$Input$Tag_bool_exp<TRes> {
-  _CopyWithImpl$Input$Tag_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Tag_bool_exp(this._instance, this._then);
 
   final Input$Tag_bool_exp _instance;
 
@@ -18736,35 +18834,39 @@ class _CopyWithImpl$Input$Tag_bool_exp<TRes>
     Object? $_or = _undefined,
     Object? id = _undefined,
     Object? name = _undefined,
-  }) =>
-      _then(Input$Tag_bool_exp._({
-        ..._instance._$data,
-        if (Recipes != _undefined)
-          'Recipes': (Recipes as Input$_RecipeToTag_bool_exp?),
-        if ($_and != _undefined) '_and': ($_and as List<Input$Tag_bool_exp>?),
-        if ($_not != _undefined) '_not': ($_not as Input$Tag_bool_exp?),
-        if ($_or != _undefined) '_or': ($_or as List<Input$Tag_bool_exp>?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-        if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
-      }));
+  }) => _then(
+    Input$Tag_bool_exp._({
+      ..._instance._$data,
+      if (Recipes != _undefined)
+        'Recipes': (Recipes as Input$_RecipeToTag_bool_exp?),
+      if ($_and != _undefined) '_and': ($_and as List<Input$Tag_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$Tag_bool_exp?),
+      if ($_or != _undefined) '_or': ($_or as List<Input$Tag_bool_exp>?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+      if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get Recipes {
     final local$Recipes = _instance.Recipes;
     return local$Recipes == null
         ? CopyWith$Input$_RecipeToTag_bool_exp.stub(_then(_instance))
         : CopyWith$Input$_RecipeToTag_bool_exp(
-            local$Recipes, (e) => call(Recipes: e));
+            local$Recipes,
+            (e) => call(Recipes: e),
+          );
   }
 
   TRes $_and(
-          Iterable<Input$Tag_bool_exp>? Function(
-                  Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and: _fn(_instance.$_and?.map((e) => CopyWith$Input$Tag_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$Tag_bool_exp>? Function(
+      Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map((e) => CopyWith$Input$Tag_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$Tag_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
@@ -18774,14 +18876,15 @@ class _CopyWithImpl$Input$Tag_bool_exp<TRes>
   }
 
   TRes $_or(
-          Iterable<Input$Tag_bool_exp>? Function(
-                  Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(_instance.$_or?.map((e) => CopyWith$Input$Tag_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$Tag_bool_exp>? Function(
+      Iterable<CopyWith$Input$Tag_bool_exp<Input$Tag_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map((e) => CopyWith$Input$Tag_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
     final local$id = _instance.id;
@@ -18795,7 +18898,9 @@ class _CopyWithImpl$Input$Tag_bool_exp<TRes>
     return local$name == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$name, (e) => call(name: e));
+            local$name,
+            (e) => call(name: e),
+          );
   }
 }
 
@@ -18812,8 +18917,7 @@ class _CopyWithStubImpl$Input$Tag_bool_exp<TRes>
     List<Input$Tag_bool_exp>? $_or,
     Input$String_comparison_exp? id,
     Input$String_comparison_exp? name,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get Recipes =>
       CopyWith$Input$_RecipeToTag_bool_exp.stub(_res);
@@ -18837,12 +18941,11 @@ class Input$Tag_order_by {
     Input$_RecipeToTag_aggregate_order_by? Recipes_aggregate,
     Enum$order_by? id,
     Enum$order_by? name,
-  }) =>
-      Input$Tag_order_by._({
-        if (Recipes_aggregate != null) r'Recipes_aggregate': Recipes_aggregate,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-      });
+  }) => Input$Tag_order_by._({
+    if (Recipes_aggregate != null) r'Recipes_aggregate': Recipes_aggregate,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+  });
 
   Input$Tag_order_by._(this._$data);
 
@@ -18853,17 +18956,20 @@ class Input$Tag_order_by {
       result$data['Recipes_aggregate'] = l$Recipes_aggregate == null
           ? null
           : Input$_RecipeToTag_aggregate_order_by.fromJson(
-              (l$Recipes_aggregate as Map<String, dynamic>));
+              (l$Recipes_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
-      result$data['name'] =
-          l$name == null ? null : fromJson$Enum$order_by((l$name as String));
+      result$data['name'] = l$name == null
+          ? null
+          : fromJson$Enum$order_by((l$name as String));
     }
     return Input$Tag_order_by._(result$data);
   }
@@ -18889,24 +18995,22 @@ class Input$Tag_order_by {
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
-      result$data['name'] =
-          l$name == null ? null : toJson$Enum$order_by(l$name);
+      result$data['name'] = l$name == null
+          ? null
+          : toJson$Enum$order_by(l$name);
     }
     return result$data;
   }
 
   CopyWith$Input$Tag_order_by<Input$Tag_order_by> get copyWith =>
-      CopyWith$Input$Tag_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$Tag_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Tag_order_by) || runtimeType != other.runtimeType) {
+    if (other is! Input$Tag_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Recipes_aggregate = Recipes_aggregate;
@@ -18969,10 +19073,7 @@ abstract class CopyWith$Input$Tag_order_by<TRes> {
 
 class _CopyWithImpl$Input$Tag_order_by<TRes>
     implements CopyWith$Input$Tag_order_by<TRes> {
-  _CopyWithImpl$Input$Tag_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Tag_order_by(this._instance, this._then);
 
   final Input$Tag_order_by _instance;
 
@@ -18984,22 +19085,25 @@ class _CopyWithImpl$Input$Tag_order_by<TRes>
     Object? Recipes_aggregate = _undefined,
     Object? id = _undefined,
     Object? name = _undefined,
-  }) =>
-      _then(Input$Tag_order_by._({
-        ..._instance._$data,
-        if (Recipes_aggregate != _undefined)
-          'Recipes_aggregate':
-              (Recipes_aggregate as Input$_RecipeToTag_aggregate_order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (name != _undefined) 'name': (name as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$Tag_order_by._({
+      ..._instance._$data,
+      if (Recipes_aggregate != _undefined)
+        'Recipes_aggregate':
+            (Recipes_aggregate as Input$_RecipeToTag_aggregate_order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (name != _undefined) 'name': (name as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> get Recipes_aggregate {
     final local$Recipes_aggregate = _instance.Recipes_aggregate;
     return local$Recipes_aggregate == null
         ? CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_then(_instance))
         : CopyWith$Input$_RecipeToTag_aggregate_order_by(
-            local$Recipes_aggregate, (e) => call(Recipes_aggregate: e));
+            local$Recipes_aggregate,
+            (e) => call(Recipes_aggregate: e),
+          );
   }
 }
 
@@ -19013,8 +19117,7 @@ class _CopyWithStubImpl$Input$Tag_order_by<TRes>
     Input$_RecipeToTag_aggregate_order_by? Recipes_aggregate,
     Enum$order_by? id,
     Enum$order_by? name,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$_RecipeToTag_aggregate_order_by<TRes> get Recipes_aggregate =>
       CopyWith$Input$_RecipeToTag_aggregate_order_by.stub(_res);
@@ -19024,11 +19127,10 @@ class Input$Tag_stream_cursor_input {
   factory Input$Tag_stream_cursor_input({
     required Input$Tag_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$Tag_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$Tag_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$Tag_stream_cursor_input._(this._$data);
 
@@ -19036,7 +19138,8 @@ class Input$Tag_stream_cursor_input {
     final result$data = <String, dynamic>{};
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] = Input$Tag_stream_cursor_value_input.fromJson(
-        (l$initial_value as Map<String, dynamic>));
+      (l$initial_value as Map<String, dynamic>),
+    );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -19060,24 +19163,22 @@ class Input$Tag_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$Tag_stream_cursor_input<Input$Tag_stream_cursor_input>
-      get copyWith => CopyWith$Input$Tag_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$Tag_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Tag_stream_cursor_input) ||
+    if (other is! Input$Tag_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -19127,10 +19228,7 @@ abstract class CopyWith$Input$Tag_stream_cursor_input<TRes> {
 
 class _CopyWithImpl$Input$Tag_stream_cursor_input<TRes>
     implements CopyWith$Input$Tag_stream_cursor_input<TRes> {
-  _CopyWithImpl$Input$Tag_stream_cursor_input(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Tag_stream_cursor_input(this._instance, this._then);
 
   final Input$Tag_stream_cursor_input _instance;
 
@@ -19141,20 +19239,22 @@ class _CopyWithImpl$Input$Tag_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$Tag_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$Tag_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$Tag_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value': (initial_value as Input$Tag_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$Tag_stream_cursor_value_input<TRes> get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$Tag_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -19167,18 +19267,14 @@ class _CopyWithStubImpl$Input$Tag_stream_cursor_input<TRes>
   call({
     Input$Tag_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Tag_stream_cursor_value_input<TRes> get initial_value =>
       CopyWith$Input$Tag_stream_cursor_value_input.stub(_res);
 }
 
 class Input$Tag_stream_cursor_value_input {
-  factory Input$Tag_stream_cursor_value_input({
-    String? id,
-    String? name,
-  }) =>
+  factory Input$Tag_stream_cursor_value_input({String? id, String? name}) =>
       Input$Tag_stream_cursor_value_input._({
         if (id != null) r'id': id,
         if (name != null) r'name': name,
@@ -19187,7 +19283,8 @@ class Input$Tag_stream_cursor_value_input {
   Input$Tag_stream_cursor_value_input._(this._$data);
 
   factory Input$Tag_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('id')) {
       final l$id = data['id'];
@@ -19220,18 +19317,16 @@ class Input$Tag_stream_cursor_value_input {
   }
 
   CopyWith$Input$Tag_stream_cursor_value_input<
-          Input$Tag_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$Tag_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$Tag_stream_cursor_value_input
+  >
+  get copyWith => CopyWith$Input$Tag_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Tag_stream_cursor_value_input) ||
+    if (other is! Input$Tag_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -19274,18 +19369,12 @@ abstract class CopyWith$Input$Tag_stream_cursor_value_input<TRes> {
   factory CopyWith$Input$Tag_stream_cursor_value_input.stub(TRes res) =
       _CopyWithStubImpl$Input$Tag_stream_cursor_value_input;
 
-  TRes call({
-    String? id,
-    String? name,
-  });
+  TRes call({String? id, String? name});
 }
 
 class _CopyWithImpl$Input$Tag_stream_cursor_value_input<TRes>
     implements CopyWith$Input$Tag_stream_cursor_value_input<TRes> {
-  _CopyWithImpl$Input$Tag_stream_cursor_value_input(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Tag_stream_cursor_value_input(this._instance, this._then);
 
   final Input$Tag_stream_cursor_value_input _instance;
 
@@ -19293,15 +19382,13 @@ class _CopyWithImpl$Input$Tag_stream_cursor_value_input<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? name = _undefined,
-  }) =>
-      _then(Input$Tag_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as String?),
-        if (name != _undefined) 'name': (name as String?),
-      }));
+  TRes call({Object? id = _undefined, Object? name = _undefined}) => _then(
+    Input$Tag_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as String?),
+      if (name != _undefined) 'name': (name as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Tag_stream_cursor_value_input<TRes>
@@ -19310,11 +19397,7 @@ class _CopyWithStubImpl$Input$Tag_stream_cursor_value_input<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? name,
-  }) =>
-      _res;
+  call({String? id, String? name}) => _res;
 }
 
 class Input$UnitSize_aggregate_order_by {
@@ -19322,36 +19405,39 @@ class Input$UnitSize_aggregate_order_by {
     Enum$order_by? count,
     Input$UnitSize_max_order_by? max,
     Input$UnitSize_min_order_by? min,
-  }) =>
-      Input$UnitSize_aggregate_order_by._({
-        if (count != null) r'count': count,
-        if (max != null) r'max': max,
-        if (min != null) r'min': min,
-      });
+  }) => Input$UnitSize_aggregate_order_by._({
+    if (count != null) r'count': count,
+    if (max != null) r'max': max,
+    if (min != null) r'min': min,
+  });
 
   Input$UnitSize_aggregate_order_by._(this._$data);
 
   factory Input$UnitSize_aggregate_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('count')) {
       final l$count = data['count'];
-      result$data['count'] =
-          l$count == null ? null : fromJson$Enum$order_by((l$count as String));
+      result$data['count'] = l$count == null
+          ? null
+          : fromJson$Enum$order_by((l$count as String));
     }
     if (data.containsKey('max')) {
       final l$max = data['max'];
       result$data['max'] = l$max == null
           ? null
           : Input$UnitSize_max_order_by.fromJson(
-              (l$max as Map<String, dynamic>));
+              (l$max as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('min')) {
       final l$min = data['min'];
       result$data['min'] = l$min == null
           ? null
           : Input$UnitSize_min_order_by.fromJson(
-              (l$min as Map<String, dynamic>));
+              (l$min as Map<String, dynamic>),
+            );
     }
     return Input$UnitSize_aggregate_order_by._(result$data);
   }
@@ -19370,8 +19456,9 @@ class Input$UnitSize_aggregate_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('count')) {
       final l$count = count;
-      result$data['count'] =
-          l$count == null ? null : toJson$Enum$order_by(l$count);
+      result$data['count'] = l$count == null
+          ? null
+          : toJson$Enum$order_by(l$count);
     }
     if (_$data.containsKey('max')) {
       final l$max = max;
@@ -19385,17 +19472,14 @@ class Input$UnitSize_aggregate_order_by {
   }
 
   CopyWith$Input$UnitSize_aggregate_order_by<Input$UnitSize_aggregate_order_by>
-      get copyWith => CopyWith$Input$UnitSize_aggregate_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$UnitSize_aggregate_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitSize_aggregate_order_by) ||
+    if (other is! Input$UnitSize_aggregate_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -19459,10 +19543,7 @@ abstract class CopyWith$Input$UnitSize_aggregate_order_by<TRes> {
 
 class _CopyWithImpl$Input$UnitSize_aggregate_order_by<TRes>
     implements CopyWith$Input$UnitSize_aggregate_order_by<TRes> {
-  _CopyWithImpl$Input$UnitSize_aggregate_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitSize_aggregate_order_by(this._instance, this._then);
 
   final Input$UnitSize_aggregate_order_by _instance;
 
@@ -19474,13 +19555,14 @@ class _CopyWithImpl$Input$UnitSize_aggregate_order_by<TRes>
     Object? count = _undefined,
     Object? max = _undefined,
     Object? min = _undefined,
-  }) =>
-      _then(Input$UnitSize_aggregate_order_by._({
-        ..._instance._$data,
-        if (count != _undefined) 'count': (count as Enum$order_by?),
-        if (max != _undefined) 'max': (max as Input$UnitSize_max_order_by?),
-        if (min != _undefined) 'min': (min as Input$UnitSize_min_order_by?),
-      }));
+  }) => _then(
+    Input$UnitSize_aggregate_order_by._({
+      ..._instance._$data,
+      if (count != _undefined) 'count': (count as Enum$order_by?),
+      if (max != _undefined) 'max': (max as Input$UnitSize_max_order_by?),
+      if (min != _undefined) 'min': (min as Input$UnitSize_min_order_by?),
+    }),
+  );
 
   CopyWith$Input$UnitSize_max_order_by<TRes> get max {
     final local$max = _instance.max;
@@ -19507,8 +19589,7 @@ class _CopyWithStubImpl$Input$UnitSize_aggregate_order_by<TRes>
     Enum$order_by? count,
     Input$UnitSize_max_order_by? max,
     Input$UnitSize_min_order_by? min,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$UnitSize_max_order_by<TRes> get max =>
       CopyWith$Input$UnitSize_max_order_by.stub(_res);
@@ -19528,18 +19609,17 @@ class Input$UnitSize_bool_exp {
     Input$String_comparison_exp? name,
     Input$String_comparison_exp? plural,
     Input$UnitType_enum_comparison_exp? unitType,
-  }) =>
-      Input$UnitSize_bool_exp._({
-        if (IngredientUnits != null) r'IngredientUnits': IngredientUnits,
-        if (UnitType != null) r'UnitType': UnitType,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (plural != null) r'plural': plural,
-        if (unitType != null) r'unitType': unitType,
-      });
+  }) => Input$UnitSize_bool_exp._({
+    if (IngredientUnits != null) r'IngredientUnits': IngredientUnits,
+    if (UnitType != null) r'UnitType': UnitType,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (plural != null) r'plural': plural,
+    if (unitType != null) r'unitType': unitType,
+  });
 
   Input$UnitSize_bool_exp._(this._$data);
 
@@ -19550,20 +19630,24 @@ class Input$UnitSize_bool_exp {
       result$data['IngredientUnits'] = l$IngredientUnits == null
           ? null
           : Input$IngredientUnit_bool_exp.fromJson(
-              (l$IngredientUnits as Map<String, dynamic>));
+              (l$IngredientUnits as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('UnitType')) {
       final l$UnitType = data['UnitType'];
       result$data['UnitType'] = l$UnitType == null
           ? null
           : Input$UnitType_bool_exp.fromJson(
-              (l$UnitType as Map<String, dynamic>));
+              (l$UnitType as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_and')) {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
-          ?.map((e) =>
-              Input$UnitSize_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Input$UnitSize_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -19575,8 +19659,10 @@ class Input$UnitSize_bool_exp {
     if (data.containsKey('_or')) {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
-          ?.map((e) =>
-              Input$UnitSize_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Input$UnitSize_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('id')) {
@@ -19584,28 +19670,32 @@ class Input$UnitSize_bool_exp {
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
       result$data['name'] = l$name == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$name as Map<String, dynamic>));
+              (l$name as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('plural')) {
       final l$plural = data['plural'];
       result$data['plural'] = l$plural == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$plural as Map<String, dynamic>));
+              (l$plural as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('unitType')) {
       final l$unitType = data['unitType'];
       result$data['unitType'] = l$unitType == null
           ? null
           : Input$UnitType_enum_comparison_exp.fromJson(
-              (l$unitType as Map<String, dynamic>));
+              (l$unitType as Map<String, dynamic>),
+            );
     }
     return Input$UnitSize_bool_exp._(result$data);
   }
@@ -19681,18 +19771,14 @@ class Input$UnitSize_bool_exp {
   }
 
   CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp> get copyWith =>
-      CopyWith$Input$UnitSize_bool_exp(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$UnitSize_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitSize_bool_exp) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$UnitSize_bool_exp || runtimeType != other.runtimeType) {
       return false;
     }
     final l$IngredientUnits = IngredientUnits;
@@ -19811,14 +19897,14 @@ class Input$UnitSize_bool_exp {
       _$data.containsKey('UnitType') ? l$UnitType : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('id') ? l$id : const {},
       _$data.containsKey('name') ? l$name : const {},
@@ -19851,16 +19937,18 @@ abstract class CopyWith$Input$UnitSize_bool_exp<TRes> {
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits;
   CopyWith$Input$UnitType_bool_exp<TRes> get UnitType;
   TRes $_and(
-      Iterable<Input$UnitSize_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp>>?)
-          _fn);
+    Iterable<Input$UnitSize_bool_exp>? Function(
+      Iterable<CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$UnitSize_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$UnitSize_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp>>?)
-          _fn);
+    Iterable<Input$UnitSize_bool_exp>? Function(
+      Iterable<CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$String_comparison_exp<TRes> get id;
   CopyWith$Input$String_comparison_exp<TRes> get name;
   CopyWith$Input$String_comparison_exp<TRes> get plural;
@@ -19869,10 +19957,7 @@ abstract class CopyWith$Input$UnitSize_bool_exp<TRes> {
 
 class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
     implements CopyWith$Input$UnitSize_bool_exp<TRes> {
-  _CopyWithImpl$Input$UnitSize_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitSize_bool_exp(this._instance, this._then);
 
   final Input$UnitSize_bool_exp _instance;
 
@@ -19890,32 +19975,34 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
     Object? name = _undefined,
     Object? plural = _undefined,
     Object? unitType = _undefined,
-  }) =>
-      _then(Input$UnitSize_bool_exp._({
-        ..._instance._$data,
-        if (IngredientUnits != _undefined)
-          'IngredientUnits':
-              (IngredientUnits as Input$IngredientUnit_bool_exp?),
-        if (UnitType != _undefined)
-          'UnitType': (UnitType as Input$UnitType_bool_exp?),
-        if ($_and != _undefined)
-          '_and': ($_and as List<Input$UnitSize_bool_exp>?),
-        if ($_not != _undefined) '_not': ($_not as Input$UnitSize_bool_exp?),
-        if ($_or != _undefined) '_or': ($_or as List<Input$UnitSize_bool_exp>?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-        if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
-        if (plural != _undefined)
-          'plural': (plural as Input$String_comparison_exp?),
-        if (unitType != _undefined)
-          'unitType': (unitType as Input$UnitType_enum_comparison_exp?),
-      }));
+  }) => _then(
+    Input$UnitSize_bool_exp._({
+      ..._instance._$data,
+      if (IngredientUnits != _undefined)
+        'IngredientUnits': (IngredientUnits as Input$IngredientUnit_bool_exp?),
+      if (UnitType != _undefined)
+        'UnitType': (UnitType as Input$UnitType_bool_exp?),
+      if ($_and != _undefined)
+        '_and': ($_and as List<Input$UnitSize_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$UnitSize_bool_exp?),
+      if ($_or != _undefined) '_or': ($_or as List<Input$UnitSize_bool_exp>?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+      if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
+      if (plural != _undefined)
+        'plural': (plural as Input$String_comparison_exp?),
+      if (unitType != _undefined)
+        'unitType': (unitType as Input$UnitType_enum_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits {
     final local$IngredientUnits = _instance.IngredientUnits;
     return local$IngredientUnits == null
         ? CopyWith$Input$IngredientUnit_bool_exp.stub(_then(_instance))
         : CopyWith$Input$IngredientUnit_bool_exp(
-            local$IngredientUnits, (e) => call(IngredientUnits: e));
+            local$IngredientUnits,
+            (e) => call(IngredientUnits: e),
+          );
   }
 
   CopyWith$Input$UnitType_bool_exp<TRes> get UnitType {
@@ -19923,21 +20010,23 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
     return local$UnitType == null
         ? CopyWith$Input$UnitType_bool_exp.stub(_then(_instance))
         : CopyWith$Input$UnitType_bool_exp(
-            local$UnitType, (e) => call(UnitType: e));
+            local$UnitType,
+            (e) => call(UnitType: e),
+          );
   }
 
   TRes $_and(
-          Iterable<Input$UnitSize_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$UnitSize_bool_exp<
-                          Input$UnitSize_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and:
-              _fn(_instance.$_and?.map((e) => CopyWith$Input$UnitSize_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$UnitSize_bool_exp>? Function(
+      Iterable<CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map(
+        (e) => CopyWith$Input$UnitSize_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   CopyWith$Input$UnitSize_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
@@ -19947,16 +20036,15 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
   }
 
   TRes $_or(
-          Iterable<Input$UnitSize_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$UnitSize_bool_exp<
-                          Input$UnitSize_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(_instance.$_or?.map((e) => CopyWith$Input$UnitSize_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$UnitSize_bool_exp>? Function(
+      Iterable<CopyWith$Input$UnitSize_bool_exp<Input$UnitSize_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map((e) => CopyWith$Input$UnitSize_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
     final local$id = _instance.id;
@@ -19970,7 +20058,9 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
     return local$name == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$name, (e) => call(name: e));
+            local$name,
+            (e) => call(name: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get plural {
@@ -19978,7 +20068,9 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
     return local$plural == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$plural, (e) => call(plural: e));
+            local$plural,
+            (e) => call(plural: e),
+          );
   }
 
   CopyWith$Input$UnitType_enum_comparison_exp<TRes> get unitType {
@@ -19986,7 +20078,9 @@ class _CopyWithImpl$Input$UnitSize_bool_exp<TRes>
     return local$unitType == null
         ? CopyWith$Input$UnitType_enum_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$UnitType_enum_comparison_exp(
-            local$unitType, (e) => call(unitType: e));
+            local$unitType,
+            (e) => call(unitType: e),
+          );
   }
 }
 
@@ -20006,8 +20100,7 @@ class _CopyWithStubImpl$Input$UnitSize_bool_exp<TRes>
     Input$String_comparison_exp? name,
     Input$String_comparison_exp? plural,
     Input$UnitType_enum_comparison_exp? unitType,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$IngredientUnit_bool_exp<TRes> get IngredientUnits =>
       CopyWith$Input$IngredientUnit_bool_exp.stub(_res);
@@ -20040,12 +20133,11 @@ class Input$UnitSize_max_order_by {
     Enum$order_by? id,
     Enum$order_by? name,
     Enum$order_by? plural,
-  }) =>
-      Input$UnitSize_max_order_by._({
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (plural != null) r'plural': plural,
-      });
+  }) => Input$UnitSize_max_order_by._({
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (plural != null) r'plural': plural,
+  });
 
   Input$UnitSize_max_order_by._(this._$data);
 
@@ -20053,13 +20145,15 @@ class Input$UnitSize_max_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
-      result$data['name'] =
-          l$name == null ? null : fromJson$Enum$order_by((l$name as String));
+      result$data['name'] = l$name == null
+          ? null
+          : fromJson$Enum$order_by((l$name as String));
     }
     if (data.containsKey('plural')) {
       final l$plural = data['plural'];
@@ -20086,29 +20180,28 @@ class Input$UnitSize_max_order_by {
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
-      result$data['name'] =
-          l$name == null ? null : toJson$Enum$order_by(l$name);
+      result$data['name'] = l$name == null
+          ? null
+          : toJson$Enum$order_by(l$name);
     }
     if (_$data.containsKey('plural')) {
       final l$plural = plural;
-      result$data['plural'] =
-          l$plural == null ? null : toJson$Enum$order_by(l$plural);
+      result$data['plural'] = l$plural == null
+          ? null
+          : toJson$Enum$order_by(l$plural);
     }
     return result$data;
   }
 
   CopyWith$Input$UnitSize_max_order_by<Input$UnitSize_max_order_by>
-      get copyWith => CopyWith$Input$UnitSize_max_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$UnitSize_max_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitSize_max_order_by) ||
+    if (other is! Input$UnitSize_max_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -20161,19 +20254,12 @@ abstract class CopyWith$Input$UnitSize_max_order_by<TRes> {
   factory CopyWith$Input$UnitSize_max_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$UnitSize_max_order_by;
 
-  TRes call({
-    Enum$order_by? id,
-    Enum$order_by? name,
-    Enum$order_by? plural,
-  });
+  TRes call({Enum$order_by? id, Enum$order_by? name, Enum$order_by? plural});
 }
 
 class _CopyWithImpl$Input$UnitSize_max_order_by<TRes>
     implements CopyWith$Input$UnitSize_max_order_by<TRes> {
-  _CopyWithImpl$Input$UnitSize_max_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitSize_max_order_by(this._instance, this._then);
 
   final Input$UnitSize_max_order_by _instance;
 
@@ -20185,13 +20271,14 @@ class _CopyWithImpl$Input$UnitSize_max_order_by<TRes>
     Object? id = _undefined,
     Object? name = _undefined,
     Object? plural = _undefined,
-  }) =>
-      _then(Input$UnitSize_max_order_by._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (name != _undefined) 'name': (name as Enum$order_by?),
-        if (plural != _undefined) 'plural': (plural as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$UnitSize_max_order_by._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (name != _undefined) 'name': (name as Enum$order_by?),
+      if (plural != _undefined) 'plural': (plural as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$UnitSize_max_order_by<TRes>
@@ -20200,12 +20287,7 @@ class _CopyWithStubImpl$Input$UnitSize_max_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? id,
-    Enum$order_by? name,
-    Enum$order_by? plural,
-  }) =>
-      _res;
+  call({Enum$order_by? id, Enum$order_by? name, Enum$order_by? plural}) => _res;
 }
 
 class Input$UnitSize_min_order_by {
@@ -20213,12 +20295,11 @@ class Input$UnitSize_min_order_by {
     Enum$order_by? id,
     Enum$order_by? name,
     Enum$order_by? plural,
-  }) =>
-      Input$UnitSize_min_order_by._({
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (plural != null) r'plural': plural,
-      });
+  }) => Input$UnitSize_min_order_by._({
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (plural != null) r'plural': plural,
+  });
 
   Input$UnitSize_min_order_by._(this._$data);
 
@@ -20226,13 +20307,15 @@ class Input$UnitSize_min_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
-      result$data['name'] =
-          l$name == null ? null : fromJson$Enum$order_by((l$name as String));
+      result$data['name'] = l$name == null
+          ? null
+          : fromJson$Enum$order_by((l$name as String));
     }
     if (data.containsKey('plural')) {
       final l$plural = data['plural'];
@@ -20259,29 +20342,28 @@ class Input$UnitSize_min_order_by {
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
-      result$data['name'] =
-          l$name == null ? null : toJson$Enum$order_by(l$name);
+      result$data['name'] = l$name == null
+          ? null
+          : toJson$Enum$order_by(l$name);
     }
     if (_$data.containsKey('plural')) {
       final l$plural = plural;
-      result$data['plural'] =
-          l$plural == null ? null : toJson$Enum$order_by(l$plural);
+      result$data['plural'] = l$plural == null
+          ? null
+          : toJson$Enum$order_by(l$plural);
     }
     return result$data;
   }
 
   CopyWith$Input$UnitSize_min_order_by<Input$UnitSize_min_order_by>
-      get copyWith => CopyWith$Input$UnitSize_min_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$UnitSize_min_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitSize_min_order_by) ||
+    if (other is! Input$UnitSize_min_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -20334,19 +20416,12 @@ abstract class CopyWith$Input$UnitSize_min_order_by<TRes> {
   factory CopyWith$Input$UnitSize_min_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$UnitSize_min_order_by;
 
-  TRes call({
-    Enum$order_by? id,
-    Enum$order_by? name,
-    Enum$order_by? plural,
-  });
+  TRes call({Enum$order_by? id, Enum$order_by? name, Enum$order_by? plural});
 }
 
 class _CopyWithImpl$Input$UnitSize_min_order_by<TRes>
     implements CopyWith$Input$UnitSize_min_order_by<TRes> {
-  _CopyWithImpl$Input$UnitSize_min_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitSize_min_order_by(this._instance, this._then);
 
   final Input$UnitSize_min_order_by _instance;
 
@@ -20358,13 +20433,14 @@ class _CopyWithImpl$Input$UnitSize_min_order_by<TRes>
     Object? id = _undefined,
     Object? name = _undefined,
     Object? plural = _undefined,
-  }) =>
-      _then(Input$UnitSize_min_order_by._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (name != _undefined) 'name': (name as Enum$order_by?),
-        if (plural != _undefined) 'plural': (plural as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$UnitSize_min_order_by._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (name != _undefined) 'name': (name as Enum$order_by?),
+      if (plural != _undefined) 'plural': (plural as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$UnitSize_min_order_by<TRes>
@@ -20373,12 +20449,7 @@ class _CopyWithStubImpl$Input$UnitSize_min_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? id,
-    Enum$order_by? name,
-    Enum$order_by? plural,
-  }) =>
-      _res;
+  call({Enum$order_by? id, Enum$order_by? name, Enum$order_by? plural}) => _res;
 }
 
 class Input$UnitSize_order_by {
@@ -20389,16 +20460,15 @@ class Input$UnitSize_order_by {
     Enum$order_by? name,
     Enum$order_by? plural,
     Enum$order_by? unitType,
-  }) =>
-      Input$UnitSize_order_by._({
-        if (IngredientUnits_aggregate != null)
-          r'IngredientUnits_aggregate': IngredientUnits_aggregate,
-        if (UnitType != null) r'UnitType': UnitType,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (plural != null) r'plural': plural,
-        if (unitType != null) r'unitType': unitType,
-      });
+  }) => Input$UnitSize_order_by._({
+    if (IngredientUnits_aggregate != null)
+      r'IngredientUnits_aggregate': IngredientUnits_aggregate,
+    if (UnitType != null) r'UnitType': UnitType,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (plural != null) r'plural': plural,
+    if (unitType != null) r'unitType': unitType,
+  });
 
   Input$UnitSize_order_by._(this._$data);
 
@@ -20408,26 +20478,30 @@ class Input$UnitSize_order_by {
       final l$IngredientUnits_aggregate = data['IngredientUnits_aggregate'];
       result$data['IngredientUnits_aggregate'] =
           l$IngredientUnits_aggregate == null
-              ? null
-              : Input$IngredientUnit_aggregate_order_by.fromJson(
-                  (l$IngredientUnits_aggregate as Map<String, dynamic>));
+          ? null
+          : Input$IngredientUnit_aggregate_order_by.fromJson(
+              (l$IngredientUnits_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('UnitType')) {
       final l$UnitType = data['UnitType'];
       result$data['UnitType'] = l$UnitType == null
           ? null
           : Input$UnitType_order_by.fromJson(
-              (l$UnitType as Map<String, dynamic>));
+              (l$UnitType as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
-      result$data['name'] =
-          l$name == null ? null : fromJson$Enum$order_by((l$name as String));
+      result$data['name'] = l$name == null
+          ? null
+          : fromJson$Enum$order_by((l$name as String));
     }
     if (data.containsKey('plural')) {
       final l$plural = data['plural'];
@@ -20465,8 +20539,8 @@ class Input$UnitSize_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('IngredientUnits_aggregate')) {
       final l$IngredientUnits_aggregate = IngredientUnits_aggregate;
-      result$data['IngredientUnits_aggregate'] =
-          l$IngredientUnits_aggregate?.toJson();
+      result$data['IngredientUnits_aggregate'] = l$IngredientUnits_aggregate
+          ?.toJson();
     }
     if (_$data.containsKey('UnitType')) {
       final l$UnitType = UnitType;
@@ -20478,35 +20552,34 @@ class Input$UnitSize_order_by {
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
-      result$data['name'] =
-          l$name == null ? null : toJson$Enum$order_by(l$name);
+      result$data['name'] = l$name == null
+          ? null
+          : toJson$Enum$order_by(l$name);
     }
     if (_$data.containsKey('plural')) {
       final l$plural = plural;
-      result$data['plural'] =
-          l$plural == null ? null : toJson$Enum$order_by(l$plural);
+      result$data['plural'] = l$plural == null
+          ? null
+          : toJson$Enum$order_by(l$plural);
     }
     if (_$data.containsKey('unitType')) {
       final l$unitType = unitType;
-      result$data['unitType'] =
-          l$unitType == null ? null : toJson$Enum$order_by(l$unitType);
+      result$data['unitType'] = l$unitType == null
+          ? null
+          : toJson$Enum$order_by(l$unitType);
     }
     return result$data;
   }
 
   CopyWith$Input$UnitSize_order_by<Input$UnitSize_order_by> get copyWith =>
-      CopyWith$Input$UnitSize_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$UnitSize_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitSize_order_by) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$UnitSize_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$IngredientUnits_aggregate = IngredientUnits_aggregate;
@@ -20602,16 +20675,13 @@ abstract class CopyWith$Input$UnitSize_order_by<TRes> {
     Enum$order_by? unitType,
   });
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
-      get IngredientUnits_aggregate;
+  get IngredientUnits_aggregate;
   CopyWith$Input$UnitType_order_by<TRes> get UnitType;
 }
 
 class _CopyWithImpl$Input$UnitSize_order_by<TRes>
     implements CopyWith$Input$UnitSize_order_by<TRes> {
-  _CopyWithImpl$Input$UnitSize_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitSize_order_by(this._instance, this._then);
 
   final Input$UnitSize_order_by _instance;
 
@@ -20626,29 +20696,33 @@ class _CopyWithImpl$Input$UnitSize_order_by<TRes>
     Object? name = _undefined,
     Object? plural = _undefined,
     Object? unitType = _undefined,
-  }) =>
-      _then(Input$UnitSize_order_by._({
-        ..._instance._$data,
-        if (IngredientUnits_aggregate != _undefined)
-          'IngredientUnits_aggregate': (IngredientUnits_aggregate
-              as Input$IngredientUnit_aggregate_order_by?),
-        if (UnitType != _undefined)
-          'UnitType': (UnitType as Input$UnitType_order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (name != _undefined) 'name': (name as Enum$order_by?),
-        if (plural != _undefined) 'plural': (plural as Enum$order_by?),
-        if (unitType != _undefined) 'unitType': (unitType as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$UnitSize_order_by._({
+      ..._instance._$data,
+      if (IngredientUnits_aggregate != _undefined)
+        'IngredientUnits_aggregate':
+            (IngredientUnits_aggregate
+                as Input$IngredientUnit_aggregate_order_by?),
+      if (UnitType != _undefined)
+        'UnitType': (UnitType as Input$UnitType_order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (name != _undefined) 'name': (name as Enum$order_by?),
+      if (plural != _undefined) 'plural': (plural as Enum$order_by?),
+      if (unitType != _undefined) 'unitType': (unitType as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
-      get IngredientUnits_aggregate {
+  get IngredientUnits_aggregate {
     final local$IngredientUnits_aggregate = _instance.IngredientUnits_aggregate;
     return local$IngredientUnits_aggregate == null
         ? CopyWith$Input$IngredientUnit_aggregate_order_by.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Input$IngredientUnit_aggregate_order_by(
             local$IngredientUnits_aggregate,
-            (e) => call(IngredientUnits_aggregate: e));
+            (e) => call(IngredientUnits_aggregate: e),
+          );
   }
 
   CopyWith$Input$UnitType_order_by<TRes> get UnitType {
@@ -20656,7 +20730,9 @@ class _CopyWithImpl$Input$UnitSize_order_by<TRes>
     return local$UnitType == null
         ? CopyWith$Input$UnitType_order_by.stub(_then(_instance))
         : CopyWith$Input$UnitType_order_by(
-            local$UnitType, (e) => call(UnitType: e));
+            local$UnitType,
+            (e) => call(UnitType: e),
+          );
   }
 }
 
@@ -20673,12 +20749,11 @@ class _CopyWithStubImpl$Input$UnitSize_order_by<TRes>
     Enum$order_by? name,
     Enum$order_by? plural,
     Enum$order_by? unitType,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$IngredientUnit_aggregate_order_by<TRes>
-      get IngredientUnits_aggregate =>
-          CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
+  get IngredientUnits_aggregate =>
+      CopyWith$Input$IngredientUnit_aggregate_order_by.stub(_res);
 
   CopyWith$Input$UnitType_order_by<TRes> get UnitType =>
       CopyWith$Input$UnitType_order_by.stub(_res);
@@ -20688,21 +20763,22 @@ class Input$UnitSize_stream_cursor_input {
   factory Input$UnitSize_stream_cursor_input({
     required Input$UnitSize_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$UnitSize_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$UnitSize_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$UnitSize_stream_cursor_input._(this._$data);
 
   factory Input$UnitSize_stream_cursor_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$UnitSize_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -20726,25 +20802,24 @@ class Input$UnitSize_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$UnitSize_stream_cursor_input<
-          Input$UnitSize_stream_cursor_input>
-      get copyWith => CopyWith$Input$UnitSize_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+    Input$UnitSize_stream_cursor_input
+  >
+  get copyWith => CopyWith$Input$UnitSize_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitSize_stream_cursor_input) ||
+    if (other is! Input$UnitSize_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -20794,10 +20869,7 @@ abstract class CopyWith$Input$UnitSize_stream_cursor_input<TRes> {
 
 class _CopyWithImpl$Input$UnitSize_stream_cursor_input<TRes>
     implements CopyWith$Input$UnitSize_stream_cursor_input<TRes> {
-  _CopyWithImpl$Input$UnitSize_stream_cursor_input(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitSize_stream_cursor_input(this._instance, this._then);
 
   final Input$UnitSize_stream_cursor_input _instance;
 
@@ -20808,20 +20880,23 @@ class _CopyWithImpl$Input$UnitSize_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$UnitSize_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$UnitSize_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$UnitSize_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$UnitSize_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$UnitSize_stream_cursor_value_input<TRes> get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$UnitSize_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -20834,8 +20909,7 @@ class _CopyWithStubImpl$Input$UnitSize_stream_cursor_input<TRes>
   call({
     Input$UnitSize_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$UnitSize_stream_cursor_value_input<TRes> get initial_value =>
       CopyWith$Input$UnitSize_stream_cursor_value_input.stub(_res);
@@ -20847,18 +20921,18 @@ class Input$UnitSize_stream_cursor_value_input {
     String? name,
     String? plural,
     Enum$UnitType_enum? unitType,
-  }) =>
-      Input$UnitSize_stream_cursor_value_input._({
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (plural != null) r'plural': plural,
-        if (unitType != null) r'unitType': unitType,
-      });
+  }) => Input$UnitSize_stream_cursor_value_input._({
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (plural != null) r'plural': plural,
+    if (unitType != null) r'unitType': unitType,
+  });
 
   Input$UnitSize_stream_cursor_value_input._(this._$data);
 
   factory Input$UnitSize_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('id')) {
       final l$id = data['id'];
@@ -20908,25 +20982,25 @@ class Input$UnitSize_stream_cursor_value_input {
     }
     if (_$data.containsKey('unitType')) {
       final l$unitType = unitType;
-      result$data['unitType'] =
-          l$unitType == null ? null : toJson$Enum$UnitType_enum(l$unitType);
+      result$data['unitType'] = l$unitType == null
+          ? null
+          : toJson$Enum$UnitType_enum(l$unitType);
     }
     return result$data;
   }
 
   CopyWith$Input$UnitSize_stream_cursor_value_input<
-          Input$UnitSize_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$UnitSize_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$UnitSize_stream_cursor_value_input
+  >
+  get copyWith =>
+      CopyWith$Input$UnitSize_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitSize_stream_cursor_value_input) ||
+    if (other is! Input$UnitSize_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -21016,15 +21090,15 @@ class _CopyWithImpl$Input$UnitSize_stream_cursor_value_input<TRes>
     Object? name = _undefined,
     Object? plural = _undefined,
     Object? unitType = _undefined,
-  }) =>
-      _then(Input$UnitSize_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as String?),
-        if (name != _undefined) 'name': (name as String?),
-        if (plural != _undefined) 'plural': (plural as String?),
-        if (unitType != _undefined)
-          'unitType': (unitType as Enum$UnitType_enum?),
-      }));
+  }) => _then(
+    Input$UnitSize_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as String?),
+      if (name != _undefined) 'name': (name as String?),
+      if (plural != _undefined) 'plural': (plural as String?),
+      if (unitType != _undefined) 'unitType': (unitType as Enum$UnitType_enum?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$UnitSize_stream_cursor_value_input<TRes>
@@ -21038,8 +21112,7 @@ class _CopyWithStubImpl$Input$UnitSize_stream_cursor_value_input<TRes>
     String? name,
     String? plural,
     Enum$UnitType_enum? unitType,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$UnitType_bool_exp {
@@ -21050,15 +21123,14 @@ class Input$UnitType_bool_exp {
     List<Input$UnitType_bool_exp>? $_or,
     Input$String_comparison_exp? description,
     Input$String_comparison_exp? id,
-  }) =>
-      Input$UnitType_bool_exp._({
-        if (UnitSizes != null) r'UnitSizes': UnitSizes,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-      });
+  }) => Input$UnitType_bool_exp._({
+    if (UnitSizes != null) r'UnitSizes': UnitSizes,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+  });
 
   Input$UnitType_bool_exp._(this._$data);
 
@@ -21069,13 +21141,16 @@ class Input$UnitType_bool_exp {
       result$data['UnitSizes'] = l$UnitSizes == null
           ? null
           : Input$UnitSize_bool_exp.fromJson(
-              (l$UnitSizes as Map<String, dynamic>));
+              (l$UnitSizes as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_and')) {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
-          ?.map((e) =>
-              Input$UnitType_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Input$UnitType_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -21087,8 +21162,10 @@ class Input$UnitType_bool_exp {
     if (data.containsKey('_or')) {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
-          ?.map((e) =>
-              Input$UnitType_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Input$UnitType_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('description')) {
@@ -21096,14 +21173,16 @@ class Input$UnitType_bool_exp {
       result$data['description'] = l$description == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$description as Map<String, dynamic>));
+              (l$description as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     return Input$UnitType_bool_exp._(result$data);
   }
@@ -21158,18 +21237,14 @@ class Input$UnitType_bool_exp {
   }
 
   CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp> get copyWith =>
-      CopyWith$Input$UnitType_bool_exp(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$UnitType_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitType_bool_exp) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$UnitType_bool_exp || runtimeType != other.runtimeType) {
       return false;
     }
     final l$UnitSizes = UnitSizes;
@@ -21259,14 +21334,14 @@ class Input$UnitType_bool_exp {
       _$data.containsKey('UnitSizes') ? l$UnitSizes : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('description') ? l$description : const {},
       _$data.containsKey('id') ? l$id : const {},
@@ -21293,26 +21368,25 @@ abstract class CopyWith$Input$UnitType_bool_exp<TRes> {
   });
   CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSizes;
   TRes $_and(
-      Iterable<Input$UnitType_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp>>?)
-          _fn);
+    Iterable<Input$UnitType_bool_exp>? Function(
+      Iterable<CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$UnitType_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$UnitType_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp>>?)
-          _fn);
+    Iterable<Input$UnitType_bool_exp>? Function(
+      Iterable<CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$String_comparison_exp<TRes> get description;
   CopyWith$Input$String_comparison_exp<TRes> get id;
 }
 
 class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
     implements CopyWith$Input$UnitType_bool_exp<TRes> {
-  _CopyWithImpl$Input$UnitType_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitType_bool_exp(this._instance, this._then);
 
   final Input$UnitType_bool_exp _instance;
 
@@ -21327,40 +21401,43 @@ class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
     Object? $_or = _undefined,
     Object? description = _undefined,
     Object? id = _undefined,
-  }) =>
-      _then(Input$UnitType_bool_exp._({
-        ..._instance._$data,
-        if (UnitSizes != _undefined)
-          'UnitSizes': (UnitSizes as Input$UnitSize_bool_exp?),
-        if ($_and != _undefined)
-          '_and': ($_and as List<Input$UnitType_bool_exp>?),
-        if ($_not != _undefined) '_not': ($_not as Input$UnitType_bool_exp?),
-        if ($_or != _undefined) '_or': ($_or as List<Input$UnitType_bool_exp>?),
-        if (description != _undefined)
-          'description': (description as Input$String_comparison_exp?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-      }));
+  }) => _then(
+    Input$UnitType_bool_exp._({
+      ..._instance._$data,
+      if (UnitSizes != _undefined)
+        'UnitSizes': (UnitSizes as Input$UnitSize_bool_exp?),
+      if ($_and != _undefined)
+        '_and': ($_and as List<Input$UnitType_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$UnitType_bool_exp?),
+      if ($_or != _undefined) '_or': ($_or as List<Input$UnitType_bool_exp>?),
+      if (description != _undefined)
+        'description': (description as Input$String_comparison_exp?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSizes {
     final local$UnitSizes = _instance.UnitSizes;
     return local$UnitSizes == null
         ? CopyWith$Input$UnitSize_bool_exp.stub(_then(_instance))
         : CopyWith$Input$UnitSize_bool_exp(
-            local$UnitSizes, (e) => call(UnitSizes: e));
+            local$UnitSizes,
+            (e) => call(UnitSizes: e),
+          );
   }
 
   TRes $_and(
-          Iterable<Input$UnitType_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$UnitType_bool_exp<
-                          Input$UnitType_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and:
-              _fn(_instance.$_and?.map((e) => CopyWith$Input$UnitType_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$UnitType_bool_exp>? Function(
+      Iterable<CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map(
+        (e) => CopyWith$Input$UnitType_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   CopyWith$Input$UnitType_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
@@ -21370,23 +21447,24 @@ class _CopyWithImpl$Input$UnitType_bool_exp<TRes>
   }
 
   TRes $_or(
-          Iterable<Input$UnitType_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$UnitType_bool_exp<
-                          Input$UnitType_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(_instance.$_or?.map((e) => CopyWith$Input$UnitType_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$UnitType_bool_exp>? Function(
+      Iterable<CopyWith$Input$UnitType_bool_exp<Input$UnitType_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map((e) => CopyWith$Input$UnitType_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$String_comparison_exp<TRes> get description {
     final local$description = _instance.description;
     return local$description == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$description, (e) => call(description: e));
+            local$description,
+            (e) => call(description: e),
+          );
   }
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
@@ -21410,8 +21488,7 @@ class _CopyWithStubImpl$Input$UnitType_bool_exp<TRes>
     List<Input$UnitType_bool_exp>? $_or,
     Input$String_comparison_exp? description,
     Input$String_comparison_exp? id,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$UnitSize_bool_exp<TRes> get UnitSizes =>
       CopyWith$Input$UnitSize_bool_exp.stub(_res);
@@ -21437,19 +21514,19 @@ class Input$UnitType_enum_comparison_exp {
     bool? $_is_null,
     Enum$UnitType_enum? $_neq,
     List<Enum$UnitType_enum>? $_nin,
-  }) =>
-      Input$UnitType_enum_comparison_exp._({
-        if ($_eq != null) r'_eq': $_eq,
-        if ($_in != null) r'_in': $_in,
-        if ($_is_null != null) r'_is_null': $_is_null,
-        if ($_neq != null) r'_neq': $_neq,
-        if ($_nin != null) r'_nin': $_nin,
-      });
+  }) => Input$UnitType_enum_comparison_exp._({
+    if ($_eq != null) r'_eq': $_eq,
+    if ($_in != null) r'_in': $_in,
+    if ($_is_null != null) r'_is_null': $_is_null,
+    if ($_neq != null) r'_neq': $_neq,
+    if ($_nin != null) r'_nin': $_nin,
+  });
 
   Input$UnitType_enum_comparison_exp._(this._$data);
 
   factory Input$UnitType_enum_comparison_exp.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('_eq')) {
       final l$$_eq = data['_eq'];
@@ -21500,13 +21577,15 @@ class Input$UnitType_enum_comparison_exp {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('_eq')) {
       final l$$_eq = $_eq;
-      result$data['_eq'] =
-          l$$_eq == null ? null : toJson$Enum$UnitType_enum(l$$_eq);
+      result$data['_eq'] = l$$_eq == null
+          ? null
+          : toJson$Enum$UnitType_enum(l$$_eq);
     }
     if (_$data.containsKey('_in')) {
       final l$$_in = $_in;
-      result$data['_in'] =
-          l$$_in?.map((e) => toJson$Enum$UnitType_enum(e)).toList();
+      result$data['_in'] = l$$_in
+          ?.map((e) => toJson$Enum$UnitType_enum(e))
+          .toList();
     }
     if (_$data.containsKey('_is_null')) {
       final l$$_is_null = $_is_null;
@@ -21514,30 +21593,30 @@ class Input$UnitType_enum_comparison_exp {
     }
     if (_$data.containsKey('_neq')) {
       final l$$_neq = $_neq;
-      result$data['_neq'] =
-          l$$_neq == null ? null : toJson$Enum$UnitType_enum(l$$_neq);
+      result$data['_neq'] = l$$_neq == null
+          ? null
+          : toJson$Enum$UnitType_enum(l$$_neq);
     }
     if (_$data.containsKey('_nin')) {
       final l$$_nin = $_nin;
-      result$data['_nin'] =
-          l$$_nin?.map((e) => toJson$Enum$UnitType_enum(e)).toList();
+      result$data['_nin'] = l$$_nin
+          ?.map((e) => toJson$Enum$UnitType_enum(e))
+          .toList();
     }
     return result$data;
   }
 
   CopyWith$Input$UnitType_enum_comparison_exp<
-          Input$UnitType_enum_comparison_exp>
-      get copyWith => CopyWith$Input$UnitType_enum_comparison_exp(
-            this,
-            (i) => i,
-          );
+    Input$UnitType_enum_comparison_exp
+  >
+  get copyWith => CopyWith$Input$UnitType_enum_comparison_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitType_enum_comparison_exp) ||
+    if (other is! Input$UnitType_enum_comparison_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -21618,15 +21697,15 @@ class Input$UnitType_enum_comparison_exp {
       _$data.containsKey('_eq') ? l$$_eq : const {},
       _$data.containsKey('_in')
           ? l$$_in == null
-              ? null
-              : Object.hashAll(l$$_in.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_in.map((v) => v))
           : const {},
       _$data.containsKey('_is_null') ? l$$_is_null : const {},
       _$data.containsKey('_neq') ? l$$_neq : const {},
       _$data.containsKey('_nin')
           ? l$$_nin == null
-              ? null
-              : Object.hashAll(l$$_nin.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_nin.map((v) => v))
           : const {},
     ]);
   }
@@ -21652,10 +21731,7 @@ abstract class CopyWith$Input$UnitType_enum_comparison_exp<TRes> {
 
 class _CopyWithImpl$Input$UnitType_enum_comparison_exp<TRes>
     implements CopyWith$Input$UnitType_enum_comparison_exp<TRes> {
-  _CopyWithImpl$Input$UnitType_enum_comparison_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitType_enum_comparison_exp(this._instance, this._then);
 
   final Input$UnitType_enum_comparison_exp _instance;
 
@@ -21669,15 +21745,16 @@ class _CopyWithImpl$Input$UnitType_enum_comparison_exp<TRes>
     Object? $_is_null = _undefined,
     Object? $_neq = _undefined,
     Object? $_nin = _undefined,
-  }) =>
-      _then(Input$UnitType_enum_comparison_exp._({
-        ..._instance._$data,
-        if ($_eq != _undefined) '_eq': ($_eq as Enum$UnitType_enum?),
-        if ($_in != _undefined) '_in': ($_in as List<Enum$UnitType_enum>?),
-        if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
-        if ($_neq != _undefined) '_neq': ($_neq as Enum$UnitType_enum?),
-        if ($_nin != _undefined) '_nin': ($_nin as List<Enum$UnitType_enum>?),
-      }));
+  }) => _then(
+    Input$UnitType_enum_comparison_exp._({
+      ..._instance._$data,
+      if ($_eq != _undefined) '_eq': ($_eq as Enum$UnitType_enum?),
+      if ($_in != _undefined) '_in': ($_in as List<Enum$UnitType_enum>?),
+      if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
+      if ($_neq != _undefined) '_neq': ($_neq as Enum$UnitType_enum?),
+      if ($_nin != _undefined) '_nin': ($_nin as List<Enum$UnitType_enum>?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$UnitType_enum_comparison_exp<TRes>
@@ -21692,8 +21769,7 @@ class _CopyWithStubImpl$Input$UnitType_enum_comparison_exp<TRes>
     bool? $_is_null,
     Enum$UnitType_enum? $_neq,
     List<Enum$UnitType_enum>? $_nin,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$UnitType_order_by {
@@ -21701,13 +21777,12 @@ class Input$UnitType_order_by {
     Input$UnitSize_aggregate_order_by? UnitSizes_aggregate,
     Enum$order_by? description,
     Enum$order_by? id,
-  }) =>
-      Input$UnitType_order_by._({
-        if (UnitSizes_aggregate != null)
-          r'UnitSizes_aggregate': UnitSizes_aggregate,
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-      });
+  }) => Input$UnitType_order_by._({
+    if (UnitSizes_aggregate != null)
+      r'UnitSizes_aggregate': UnitSizes_aggregate,
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+  });
 
   Input$UnitType_order_by._(this._$data);
 
@@ -21718,7 +21793,8 @@ class Input$UnitType_order_by {
       result$data['UnitSizes_aggregate'] = l$UnitSizes_aggregate == null
           ? null
           : Input$UnitSize_aggregate_order_by.fromJson(
-              (l$UnitSizes_aggregate as Map<String, dynamic>));
+              (l$UnitSizes_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('description')) {
       final l$description = data['description'];
@@ -21728,8 +21804,9 @@ class Input$UnitType_order_by {
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     return Input$UnitType_order_by._(result$data);
   }
@@ -21751,8 +21828,9 @@ class Input$UnitType_order_by {
     }
     if (_$data.containsKey('description')) {
       final l$description = description;
-      result$data['description'] =
-          l$description == null ? null : toJson$Enum$order_by(l$description);
+      result$data['description'] = l$description == null
+          ? null
+          : toJson$Enum$order_by(l$description);
     }
     if (_$data.containsKey('id')) {
       final l$id = id;
@@ -21762,18 +21840,14 @@ class Input$UnitType_order_by {
   }
 
   CopyWith$Input$UnitType_order_by<Input$UnitType_order_by> get copyWith =>
-      CopyWith$Input$UnitType_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$UnitType_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitType_order_by) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$UnitType_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$UnitSizes_aggregate = UnitSizes_aggregate;
@@ -21839,10 +21913,7 @@ abstract class CopyWith$Input$UnitType_order_by<TRes> {
 
 class _CopyWithImpl$Input$UnitType_order_by<TRes>
     implements CopyWith$Input$UnitType_order_by<TRes> {
-  _CopyWithImpl$Input$UnitType_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitType_order_by(this._instance, this._then);
 
   final Input$UnitType_order_by _instance;
 
@@ -21854,23 +21925,26 @@ class _CopyWithImpl$Input$UnitType_order_by<TRes>
     Object? UnitSizes_aggregate = _undefined,
     Object? description = _undefined,
     Object? id = _undefined,
-  }) =>
-      _then(Input$UnitType_order_by._({
-        ..._instance._$data,
-        if (UnitSizes_aggregate != _undefined)
-          'UnitSizes_aggregate':
-              (UnitSizes_aggregate as Input$UnitSize_aggregate_order_by?),
-        if (description != _undefined)
-          'description': (description as Enum$order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$UnitType_order_by._({
+      ..._instance._$data,
+      if (UnitSizes_aggregate != _undefined)
+        'UnitSizes_aggregate':
+            (UnitSizes_aggregate as Input$UnitSize_aggregate_order_by?),
+      if (description != _undefined)
+        'description': (description as Enum$order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$UnitSize_aggregate_order_by<TRes> get UnitSizes_aggregate {
     final local$UnitSizes_aggregate = _instance.UnitSizes_aggregate;
     return local$UnitSizes_aggregate == null
         ? CopyWith$Input$UnitSize_aggregate_order_by.stub(_then(_instance))
         : CopyWith$Input$UnitSize_aggregate_order_by(
-            local$UnitSizes_aggregate, (e) => call(UnitSizes_aggregate: e));
+            local$UnitSizes_aggregate,
+            (e) => call(UnitSizes_aggregate: e),
+          );
   }
 }
 
@@ -21884,8 +21958,7 @@ class _CopyWithStubImpl$Input$UnitType_order_by<TRes>
     Input$UnitSize_aggregate_order_by? UnitSizes_aggregate,
     Enum$order_by? description,
     Enum$order_by? id,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$UnitSize_aggregate_order_by<TRes> get UnitSizes_aggregate =>
       CopyWith$Input$UnitSize_aggregate_order_by.stub(_res);
@@ -21895,21 +21968,22 @@ class Input$UnitType_stream_cursor_input {
   factory Input$UnitType_stream_cursor_input({
     required Input$UnitType_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$UnitType_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$UnitType_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$UnitType_stream_cursor_input._(this._$data);
 
   factory Input$UnitType_stream_cursor_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$UnitType_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -21933,25 +22007,24 @@ class Input$UnitType_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$UnitType_stream_cursor_input<
-          Input$UnitType_stream_cursor_input>
-      get copyWith => CopyWith$Input$UnitType_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+    Input$UnitType_stream_cursor_input
+  >
+  get copyWith => CopyWith$Input$UnitType_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitType_stream_cursor_input) ||
+    if (other is! Input$UnitType_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -22001,10 +22074,7 @@ abstract class CopyWith$Input$UnitType_stream_cursor_input<TRes> {
 
 class _CopyWithImpl$Input$UnitType_stream_cursor_input<TRes>
     implements CopyWith$Input$UnitType_stream_cursor_input<TRes> {
-  _CopyWithImpl$Input$UnitType_stream_cursor_input(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$UnitType_stream_cursor_input(this._instance, this._then);
 
   final Input$UnitType_stream_cursor_input _instance;
 
@@ -22015,20 +22085,23 @@ class _CopyWithImpl$Input$UnitType_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$UnitType_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$UnitType_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$UnitType_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$UnitType_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$UnitType_stream_cursor_value_input<TRes> get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$UnitType_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -22041,8 +22114,7 @@ class _CopyWithStubImpl$Input$UnitType_stream_cursor_input<TRes>
   call({
     Input$UnitType_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$UnitType_stream_cursor_value_input<TRes> get initial_value =>
       CopyWith$Input$UnitType_stream_cursor_value_input.stub(_res);
@@ -22052,16 +22124,16 @@ class Input$UnitType_stream_cursor_value_input {
   factory Input$UnitType_stream_cursor_value_input({
     String? description,
     String? id,
-  }) =>
-      Input$UnitType_stream_cursor_value_input._({
-        if (description != null) r'description': description,
-        if (id != null) r'id': id,
-      });
+  }) => Input$UnitType_stream_cursor_value_input._({
+    if (description != null) r'description': description,
+    if (id != null) r'id': id,
+  });
 
   Input$UnitType_stream_cursor_value_input._(this._$data);
 
   factory Input$UnitType_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('description')) {
       final l$description = data['description'];
@@ -22094,18 +22166,17 @@ class Input$UnitType_stream_cursor_value_input {
   }
 
   CopyWith$Input$UnitType_stream_cursor_value_input<
-          Input$UnitType_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$UnitType_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$UnitType_stream_cursor_value_input
+  >
+  get copyWith =>
+      CopyWith$Input$UnitType_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$UnitType_stream_cursor_value_input) ||
+    if (other is! Input$UnitType_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -22149,10 +22220,7 @@ abstract class CopyWith$Input$UnitType_stream_cursor_value_input<TRes> {
   factory CopyWith$Input$UnitType_stream_cursor_value_input.stub(TRes res) =
       _CopyWithStubImpl$Input$UnitType_stream_cursor_value_input;
 
-  TRes call({
-    String? description,
-    String? id,
-  });
+  TRes call({String? description, String? id});
 }
 
 class _CopyWithImpl$Input$UnitType_stream_cursor_value_input<TRes>
@@ -22168,15 +22236,15 @@ class _CopyWithImpl$Input$UnitType_stream_cursor_value_input<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? description = _undefined,
-    Object? id = _undefined,
-  }) =>
-      _then(Input$UnitType_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (description != _undefined) 'description': (description as String?),
-        if (id != _undefined) 'id': (id as String?),
-      }));
+  TRes call({Object? description = _undefined, Object? id = _undefined}) =>
+      _then(
+        Input$UnitType_stream_cursor_value_input._({
+          ..._instance._$data,
+          if (description != _undefined)
+            'description': (description as String?),
+          if (id != _undefined) 'id': (id as String?),
+        }),
+      );
 }
 
 class _CopyWithStubImpl$Input$UnitType_stream_cursor_value_input<TRes>
@@ -22185,11 +22253,7 @@ class _CopyWithStubImpl$Input$UnitType_stream_cursor_value_input<TRes>
 
   TRes _res;
 
-  call({
-    String? description,
-    String? id,
-  }) =>
-      _res;
+  call({String? description, String? id}) => _res;
 }
 
 class Input$User_bool_exp {
@@ -22201,16 +22265,15 @@ class Input$User_bool_exp {
     List<Input$User_bool_exp>? $_or,
     Input$String_comparison_exp? id,
     Input$String_comparison_exp? name,
-  }) =>
-      Input$User_bool_exp._({
-        if (Files != null) r'Files': Files,
-        if (Recipes != null) r'Recipes': Recipes,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-      });
+  }) => Input$User_bool_exp._({
+    if (Files != null) r'Files': Files,
+    if (Recipes != null) r'Recipes': Recipes,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+  });
 
   Input$User_bool_exp._(this._$data);
 
@@ -22232,7 +22295,8 @@ class Input$User_bool_exp {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
           ?.map(
-              (e) => Input$User_bool_exp.fromJson((e as Map<String, dynamic>)))
+            (e) => Input$User_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -22245,7 +22309,8 @@ class Input$User_bool_exp {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
           ?.map(
-              (e) => Input$User_bool_exp.fromJson((e as Map<String, dynamic>)))
+            (e) => Input$User_bool_exp.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     if (data.containsKey('id')) {
@@ -22253,14 +22318,16 @@ class Input$User_bool_exp {
       result$data['id'] = l$id == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$id as Map<String, dynamic>));
+              (l$id as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
       result$data['name'] = l$name == null
           ? null
           : Input$String_comparison_exp.fromJson(
-              (l$name as Map<String, dynamic>));
+              (l$name as Map<String, dynamic>),
+            );
     }
     return Input$User_bool_exp._(result$data);
   }
@@ -22320,17 +22387,14 @@ class Input$User_bool_exp {
   }
 
   CopyWith$Input$User_bool_exp<Input$User_bool_exp> get copyWith =>
-      CopyWith$Input$User_bool_exp(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$User_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$User_bool_exp) || runtimeType != other.runtimeType) {
+    if (other is! Input$User_bool_exp || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Files = Files;
@@ -22428,14 +22492,14 @@ class Input$User_bool_exp {
       _$data.containsKey('Recipes') ? l$Recipes : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
       _$data.containsKey('id') ? l$id : const {},
       _$data.containsKey('name') ? l$name : const {},
@@ -22464,24 +22528,25 @@ abstract class CopyWith$Input$User_bool_exp<TRes> {
   CopyWith$Input$File_bool_exp<TRes> get Files;
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipes;
   TRes $_and(
-      Iterable<Input$User_bool_exp>? Function(
-              Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?)
-          _fn);
+    Iterable<Input$User_bool_exp>? Function(
+      Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$User_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$User_bool_exp>? Function(
-              Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?)
-          _fn);
+    Iterable<Input$User_bool_exp>? Function(
+      Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?,
+    )
+    _fn,
+  );
   CopyWith$Input$String_comparison_exp<TRes> get id;
   CopyWith$Input$String_comparison_exp<TRes> get name;
 }
 
 class _CopyWithImpl$Input$User_bool_exp<TRes>
     implements CopyWith$Input$User_bool_exp<TRes> {
-  _CopyWithImpl$Input$User_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$User_bool_exp(this._instance, this._then);
 
   final Input$User_bool_exp _instance;
 
@@ -22497,18 +22562,18 @@ class _CopyWithImpl$Input$User_bool_exp<TRes>
     Object? $_or = _undefined,
     Object? id = _undefined,
     Object? name = _undefined,
-  }) =>
-      _then(Input$User_bool_exp._({
-        ..._instance._$data,
-        if (Files != _undefined) 'Files': (Files as Input$File_bool_exp?),
-        if (Recipes != _undefined)
-          'Recipes': (Recipes as Input$Recipe_bool_exp?),
-        if ($_and != _undefined) '_and': ($_and as List<Input$User_bool_exp>?),
-        if ($_not != _undefined) '_not': ($_not as Input$User_bool_exp?),
-        if ($_or != _undefined) '_or': ($_or as List<Input$User_bool_exp>?),
-        if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
-        if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
-      }));
+  }) => _then(
+    Input$User_bool_exp._({
+      ..._instance._$data,
+      if (Files != _undefined) 'Files': (Files as Input$File_bool_exp?),
+      if (Recipes != _undefined) 'Recipes': (Recipes as Input$Recipe_bool_exp?),
+      if ($_and != _undefined) '_and': ($_and as List<Input$User_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$User_bool_exp?),
+      if ($_or != _undefined) '_or': ($_or as List<Input$User_bool_exp>?),
+      if (id != _undefined) 'id': (id as Input$String_comparison_exp?),
+      if (name != _undefined) 'name': (name as Input$String_comparison_exp?),
+    }),
+  );
 
   CopyWith$Input$File_bool_exp<TRes> get Files {
     final local$Files = _instance.Files;
@@ -22522,18 +22587,21 @@ class _CopyWithImpl$Input$User_bool_exp<TRes>
     return local$Recipes == null
         ? CopyWith$Input$Recipe_bool_exp.stub(_then(_instance))
         : CopyWith$Input$Recipe_bool_exp(
-            local$Recipes, (e) => call(Recipes: e));
+            local$Recipes,
+            (e) => call(Recipes: e),
+          );
   }
 
   TRes $_and(
-          Iterable<Input$User_bool_exp>? Function(
-                  Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and: _fn(_instance.$_and?.map((e) => CopyWith$Input$User_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$User_bool_exp>? Function(
+      Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map((e) => CopyWith$Input$User_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$User_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
@@ -22543,14 +22611,15 @@ class _CopyWithImpl$Input$User_bool_exp<TRes>
   }
 
   TRes $_or(
-          Iterable<Input$User_bool_exp>? Function(
-                  Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(_instance.$_or?.map((e) => CopyWith$Input$User_bool_exp(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Input$User_bool_exp>? Function(
+      Iterable<CopyWith$Input$User_bool_exp<Input$User_bool_exp>>?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map((e) => CopyWith$Input$User_bool_exp(e, (i) => i)),
+    )?.toList(),
+  );
 
   CopyWith$Input$String_comparison_exp<TRes> get id {
     final local$id = _instance.id;
@@ -22564,7 +22633,9 @@ class _CopyWithImpl$Input$User_bool_exp<TRes>
     return local$name == null
         ? CopyWith$Input$String_comparison_exp.stub(_then(_instance))
         : CopyWith$Input$String_comparison_exp(
-            local$name, (e) => call(name: e));
+            local$name,
+            (e) => call(name: e),
+          );
   }
 }
 
@@ -22582,8 +22653,7 @@ class _CopyWithStubImpl$Input$User_bool_exp<TRes>
     List<Input$User_bool_exp>? $_or,
     Input$String_comparison_exp? id,
     Input$String_comparison_exp? name,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$File_bool_exp<TRes> get Files =>
       CopyWith$Input$File_bool_exp.stub(_res);
@@ -22611,13 +22681,12 @@ class Input$User_order_by {
     Input$Recipe_aggregate_order_by? Recipes_aggregate,
     Enum$order_by? id,
     Enum$order_by? name,
-  }) =>
-      Input$User_order_by._({
-        if (Files_aggregate != null) r'Files_aggregate': Files_aggregate,
-        if (Recipes_aggregate != null) r'Recipes_aggregate': Recipes_aggregate,
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-      });
+  }) => Input$User_order_by._({
+    if (Files_aggregate != null) r'Files_aggregate': Files_aggregate,
+    if (Recipes_aggregate != null) r'Recipes_aggregate': Recipes_aggregate,
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+  });
 
   Input$User_order_by._(this._$data);
 
@@ -22628,24 +22697,28 @@ class Input$User_order_by {
       result$data['Files_aggregate'] = l$Files_aggregate == null
           ? null
           : Input$File_aggregate_order_by.fromJson(
-              (l$Files_aggregate as Map<String, dynamic>));
+              (l$Files_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('Recipes_aggregate')) {
       final l$Recipes_aggregate = data['Recipes_aggregate'];
       result$data['Recipes_aggregate'] = l$Recipes_aggregate == null
           ? null
           : Input$Recipe_aggregate_order_by.fromJson(
-              (l$Recipes_aggregate as Map<String, dynamic>));
+              (l$Recipes_aggregate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('id')) {
       final l$id = data['id'];
-      result$data['id'] =
-          l$id == null ? null : fromJson$Enum$order_by((l$id as String));
+      result$data['id'] = l$id == null
+          ? null
+          : fromJson$Enum$order_by((l$id as String));
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
-      result$data['name'] =
-          l$name == null ? null : fromJson$Enum$order_by((l$name as String));
+      result$data['name'] = l$name == null
+          ? null
+          : fromJson$Enum$order_by((l$name as String));
     }
     return Input$User_order_by._(result$data);
   }
@@ -22678,24 +22751,22 @@ class Input$User_order_by {
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
-      result$data['name'] =
-          l$name == null ? null : toJson$Enum$order_by(l$name);
+      result$data['name'] = l$name == null
+          ? null
+          : toJson$Enum$order_by(l$name);
     }
     return result$data;
   }
 
   CopyWith$Input$User_order_by<Input$User_order_by> get copyWith =>
-      CopyWith$Input$User_order_by(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$User_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$User_order_by) || runtimeType != other.runtimeType) {
+    if (other is! Input$User_order_by || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Files_aggregate = Files_aggregate;
@@ -22771,10 +22842,7 @@ abstract class CopyWith$Input$User_order_by<TRes> {
 
 class _CopyWithImpl$Input$User_order_by<TRes>
     implements CopyWith$Input$User_order_by<TRes> {
-  _CopyWithImpl$Input$User_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$User_order_by(this._instance, this._then);
 
   final Input$User_order_by _instance;
 
@@ -22787,25 +22855,27 @@ class _CopyWithImpl$Input$User_order_by<TRes>
     Object? Recipes_aggregate = _undefined,
     Object? id = _undefined,
     Object? name = _undefined,
-  }) =>
-      _then(Input$User_order_by._({
-        ..._instance._$data,
-        if (Files_aggregate != _undefined)
-          'Files_aggregate':
-              (Files_aggregate as Input$File_aggregate_order_by?),
-        if (Recipes_aggregate != _undefined)
-          'Recipes_aggregate':
-              (Recipes_aggregate as Input$Recipe_aggregate_order_by?),
-        if (id != _undefined) 'id': (id as Enum$order_by?),
-        if (name != _undefined) 'name': (name as Enum$order_by?),
-      }));
+  }) => _then(
+    Input$User_order_by._({
+      ..._instance._$data,
+      if (Files_aggregate != _undefined)
+        'Files_aggregate': (Files_aggregate as Input$File_aggregate_order_by?),
+      if (Recipes_aggregate != _undefined)
+        'Recipes_aggregate':
+            (Recipes_aggregate as Input$Recipe_aggregate_order_by?),
+      if (id != _undefined) 'id': (id as Enum$order_by?),
+      if (name != _undefined) 'name': (name as Enum$order_by?),
+    }),
+  );
 
   CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate {
     final local$Files_aggregate = _instance.Files_aggregate;
     return local$Files_aggregate == null
         ? CopyWith$Input$File_aggregate_order_by.stub(_then(_instance))
         : CopyWith$Input$File_aggregate_order_by(
-            local$Files_aggregate, (e) => call(Files_aggregate: e));
+            local$Files_aggregate,
+            (e) => call(Files_aggregate: e),
+          );
   }
 
   CopyWith$Input$Recipe_aggregate_order_by<TRes> get Recipes_aggregate {
@@ -22813,7 +22883,9 @@ class _CopyWithImpl$Input$User_order_by<TRes>
     return local$Recipes_aggregate == null
         ? CopyWith$Input$Recipe_aggregate_order_by.stub(_then(_instance))
         : CopyWith$Input$Recipe_aggregate_order_by(
-            local$Recipes_aggregate, (e) => call(Recipes_aggregate: e));
+            local$Recipes_aggregate,
+            (e) => call(Recipes_aggregate: e),
+          );
   }
 }
 
@@ -22828,8 +22900,7 @@ class _CopyWithStubImpl$Input$User_order_by<TRes>
     Input$Recipe_aggregate_order_by? Recipes_aggregate,
     Enum$order_by? id,
     Enum$order_by? name,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$File_aggregate_order_by<TRes> get Files_aggregate =>
       CopyWith$Input$File_aggregate_order_by.stub(_res);
@@ -22842,11 +22913,10 @@ class Input$User_stream_cursor_input {
   factory Input$User_stream_cursor_input({
     required Input$User_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$User_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$User_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$User_stream_cursor_input._(this._$data);
 
@@ -22855,7 +22925,8 @@ class Input$User_stream_cursor_input {
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$User_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -22879,24 +22950,22 @@ class Input$User_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$User_stream_cursor_input<Input$User_stream_cursor_input>
-      get copyWith => CopyWith$Input$User_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$User_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$User_stream_cursor_input) ||
+    if (other is! Input$User_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -22946,10 +23015,7 @@ abstract class CopyWith$Input$User_stream_cursor_input<TRes> {
 
 class _CopyWithImpl$Input$User_stream_cursor_input<TRes>
     implements CopyWith$Input$User_stream_cursor_input<TRes> {
-  _CopyWithImpl$Input$User_stream_cursor_input(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$User_stream_cursor_input(this._instance, this._then);
 
   final Input$User_stream_cursor_input _instance;
 
@@ -22960,20 +23026,23 @@ class _CopyWithImpl$Input$User_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$User_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$User_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$User_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$User_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$User_stream_cursor_value_input<TRes> get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$User_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -22986,18 +23055,14 @@ class _CopyWithStubImpl$Input$User_stream_cursor_input<TRes>
   call({
     Input$User_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$User_stream_cursor_value_input<TRes> get initial_value =>
       CopyWith$Input$User_stream_cursor_value_input.stub(_res);
 }
 
 class Input$User_stream_cursor_value_input {
-  factory Input$User_stream_cursor_value_input({
-    String? id,
-    String? name,
-  }) =>
+  factory Input$User_stream_cursor_value_input({String? id, String? name}) =>
       Input$User_stream_cursor_value_input._({
         if (id != null) r'id': id,
         if (name != null) r'name': name,
@@ -23006,7 +23071,8 @@ class Input$User_stream_cursor_value_input {
   Input$User_stream_cursor_value_input._(this._$data);
 
   factory Input$User_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('id')) {
       final l$id = data['id'];
@@ -23039,18 +23105,16 @@ class Input$User_stream_cursor_value_input {
   }
 
   CopyWith$Input$User_stream_cursor_value_input<
-          Input$User_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$User_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$User_stream_cursor_value_input
+  >
+  get copyWith => CopyWith$Input$User_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$User_stream_cursor_value_input) ||
+    if (other is! Input$User_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -23093,10 +23157,7 @@ abstract class CopyWith$Input$User_stream_cursor_value_input<TRes> {
   factory CopyWith$Input$User_stream_cursor_value_input.stub(TRes res) =
       _CopyWithStubImpl$Input$User_stream_cursor_value_input;
 
-  TRes call({
-    String? id,
-    String? name,
-  });
+  TRes call({String? id, String? name});
 }
 
 class _CopyWithImpl$Input$User_stream_cursor_value_input<TRes>
@@ -23112,15 +23173,13 @@ class _CopyWithImpl$Input$User_stream_cursor_value_input<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? name = _undefined,
-  }) =>
-      _then(Input$User_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as String?),
-        if (name != _undefined) 'name': (name as String?),
-      }));
+  TRes call({Object? id = _undefined, Object? name = _undefined}) => _then(
+    Input$User_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as String?),
+      if (name != _undefined) 'name': (name as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$User_stream_cursor_value_input<TRes>
@@ -23129,11 +23188,7 @@ class _CopyWithStubImpl$Input$User_stream_cursor_value_input<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? name,
-  }) =>
-      _res;
+  call({String? id, String? name}) => _res;
 }
 
 class Input$_RecipeToTag_aggregate_order_by {
@@ -23141,36 +23196,39 @@ class Input$_RecipeToTag_aggregate_order_by {
     Enum$order_by? count,
     Input$_RecipeToTag_max_order_by? max,
     Input$_RecipeToTag_min_order_by? min,
-  }) =>
-      Input$_RecipeToTag_aggregate_order_by._({
-        if (count != null) r'count': count,
-        if (max != null) r'max': max,
-        if (min != null) r'min': min,
-      });
+  }) => Input$_RecipeToTag_aggregate_order_by._({
+    if (count != null) r'count': count,
+    if (max != null) r'max': max,
+    if (min != null) r'min': min,
+  });
 
   Input$_RecipeToTag_aggregate_order_by._(this._$data);
 
   factory Input$_RecipeToTag_aggregate_order_by.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('count')) {
       final l$count = data['count'];
-      result$data['count'] =
-          l$count == null ? null : fromJson$Enum$order_by((l$count as String));
+      result$data['count'] = l$count == null
+          ? null
+          : fromJson$Enum$order_by((l$count as String));
     }
     if (data.containsKey('max')) {
       final l$max = data['max'];
       result$data['max'] = l$max == null
           ? null
           : Input$_RecipeToTag_max_order_by.fromJson(
-              (l$max as Map<String, dynamic>));
+              (l$max as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('min')) {
       final l$min = data['min'];
       result$data['min'] = l$min == null
           ? null
           : Input$_RecipeToTag_min_order_by.fromJson(
-              (l$min as Map<String, dynamic>));
+              (l$min as Map<String, dynamic>),
+            );
     }
     return Input$_RecipeToTag_aggregate_order_by._(result$data);
   }
@@ -23189,8 +23247,9 @@ class Input$_RecipeToTag_aggregate_order_by {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('count')) {
       final l$count = count;
-      result$data['count'] =
-          l$count == null ? null : toJson$Enum$order_by(l$count);
+      result$data['count'] = l$count == null
+          ? null
+          : toJson$Enum$order_by(l$count);
     }
     if (_$data.containsKey('max')) {
       final l$max = max;
@@ -23204,18 +23263,17 @@ class Input$_RecipeToTag_aggregate_order_by {
   }
 
   CopyWith$Input$_RecipeToTag_aggregate_order_by<
-          Input$_RecipeToTag_aggregate_order_by>
-      get copyWith => CopyWith$Input$_RecipeToTag_aggregate_order_by(
-            this,
-            (i) => i,
-          );
+    Input$_RecipeToTag_aggregate_order_by
+  >
+  get copyWith =>
+      CopyWith$Input$_RecipeToTag_aggregate_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$_RecipeToTag_aggregate_order_by) ||
+    if (other is! Input$_RecipeToTag_aggregate_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -23294,20 +23352,23 @@ class _CopyWithImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
     Object? count = _undefined,
     Object? max = _undefined,
     Object? min = _undefined,
-  }) =>
-      _then(Input$_RecipeToTag_aggregate_order_by._({
-        ..._instance._$data,
-        if (count != _undefined) 'count': (count as Enum$order_by?),
-        if (max != _undefined) 'max': (max as Input$_RecipeToTag_max_order_by?),
-        if (min != _undefined) 'min': (min as Input$_RecipeToTag_min_order_by?),
-      }));
+  }) => _then(
+    Input$_RecipeToTag_aggregate_order_by._({
+      ..._instance._$data,
+      if (count != _undefined) 'count': (count as Enum$order_by?),
+      if (max != _undefined) 'max': (max as Input$_RecipeToTag_max_order_by?),
+      if (min != _undefined) 'min': (min as Input$_RecipeToTag_min_order_by?),
+    }),
+  );
 
   CopyWith$Input$_RecipeToTag_max_order_by<TRes> get max {
     final local$max = _instance.max;
     return local$max == null
         ? CopyWith$Input$_RecipeToTag_max_order_by.stub(_then(_instance))
         : CopyWith$Input$_RecipeToTag_max_order_by(
-            local$max, (e) => call(max: e));
+            local$max,
+            (e) => call(max: e),
+          );
   }
 
   CopyWith$Input$_RecipeToTag_min_order_by<TRes> get min {
@@ -23315,7 +23376,9 @@ class _CopyWithImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
     return local$min == null
         ? CopyWith$Input$_RecipeToTag_min_order_by.stub(_then(_instance))
         : CopyWith$Input$_RecipeToTag_min_order_by(
-            local$min, (e) => call(min: e));
+            local$min,
+            (e) => call(min: e),
+          );
   }
 }
 
@@ -23329,8 +23392,7 @@ class _CopyWithStubImpl$Input$_RecipeToTag_aggregate_order_by<TRes>
     Enum$order_by? count,
     Input$_RecipeToTag_max_order_by? max,
     Input$_RecipeToTag_min_order_by? min,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$_RecipeToTag_max_order_by<TRes> get max =>
       CopyWith$Input$_RecipeToTag_max_order_by.stub(_res);
@@ -23348,16 +23410,15 @@ class Input$_RecipeToTag_bool_exp {
     List<Input$_RecipeToTag_bool_exp>? $_and,
     Input$_RecipeToTag_bool_exp? $_not,
     List<Input$_RecipeToTag_bool_exp>? $_or,
-  }) =>
-      Input$_RecipeToTag_bool_exp._({
-        if (A != null) r'A': A,
-        if (B != null) r'B': B,
-        if (Recipe != null) r'Recipe': Recipe,
-        if (Tag != null) r'Tag': Tag,
-        if ($_and != null) r'_and': $_and,
-        if ($_not != null) r'_not': $_not,
-        if ($_or != null) r'_or': $_or,
-      });
+  }) => Input$_RecipeToTag_bool_exp._({
+    if (A != null) r'A': A,
+    if (B != null) r'B': B,
+    if (Recipe != null) r'Recipe': Recipe,
+    if (Tag != null) r'Tag': Tag,
+    if ($_and != null) r'_and': $_and,
+    if ($_not != null) r'_not': $_not,
+    if ($_or != null) r'_or': $_or,
+  });
 
   Input$_RecipeToTag_bool_exp._(this._$data);
 
@@ -23390,8 +23451,11 @@ class Input$_RecipeToTag_bool_exp {
     if (data.containsKey('_and')) {
       final l$$_and = data['_and'];
       result$data['_and'] = (l$$_and as List<dynamic>?)
-          ?.map((e) =>
-              Input$_RecipeToTag_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Input$_RecipeToTag_bool_exp.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList();
     }
     if (data.containsKey('_not')) {
@@ -23399,13 +23463,17 @@ class Input$_RecipeToTag_bool_exp {
       result$data['_not'] = l$$_not == null
           ? null
           : Input$_RecipeToTag_bool_exp.fromJson(
-              (l$$_not as Map<String, dynamic>));
+              (l$$_not as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('_or')) {
       final l$$_or = data['_or'];
       result$data['_or'] = (l$$_or as List<dynamic>?)
-          ?.map((e) =>
-              Input$_RecipeToTag_bool_exp.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Input$_RecipeToTag_bool_exp.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList();
     }
     return Input$_RecipeToTag_bool_exp._(result$data);
@@ -23467,17 +23535,14 @@ class Input$_RecipeToTag_bool_exp {
   }
 
   CopyWith$Input$_RecipeToTag_bool_exp<Input$_RecipeToTag_bool_exp>
-      get copyWith => CopyWith$Input$_RecipeToTag_bool_exp(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$_RecipeToTag_bool_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$_RecipeToTag_bool_exp) ||
+    if (other is! Input$_RecipeToTag_bool_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -23578,14 +23643,14 @@ class Input$_RecipeToTag_bool_exp {
       _$data.containsKey('Tag') ? l$Tag : const {},
       _$data.containsKey('_and')
           ? l$$_and == null
-              ? null
-              : Object.hashAll(l$$_and.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_and.map((v) => v))
           : const {},
       _$data.containsKey('_not') ? l$$_not : const {},
       _$data.containsKey('_or')
           ? l$$_or == null
-              ? null
-              : Object.hashAll(l$$_or.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_or.map((v) => v))
           : const {},
     ]);
   }
@@ -23614,26 +23679,27 @@ abstract class CopyWith$Input$_RecipeToTag_bool_exp<TRes> {
   CopyWith$Input$Recipe_bool_exp<TRes> get Recipe;
   CopyWith$Input$Tag_bool_exp<TRes> get Tag;
   TRes $_and(
-      Iterable<Input$_RecipeToTag_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$_RecipeToTag_bool_exp<
-                      Input$_RecipeToTag_bool_exp>>?)
-          _fn);
+    Iterable<Input$_RecipeToTag_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$_RecipeToTag_bool_exp<Input$_RecipeToTag_bool_exp>
+      >?,
+    )
+    _fn,
+  );
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get $_not;
   TRes $_or(
-      Iterable<Input$_RecipeToTag_bool_exp>? Function(
-              Iterable<
-                  CopyWith$Input$_RecipeToTag_bool_exp<
-                      Input$_RecipeToTag_bool_exp>>?)
-          _fn);
+    Iterable<Input$_RecipeToTag_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$_RecipeToTag_bool_exp<Input$_RecipeToTag_bool_exp>
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_bool_exp<TRes>
     implements CopyWith$Input$_RecipeToTag_bool_exp<TRes> {
-  _CopyWithImpl$Input$_RecipeToTag_bool_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$_RecipeToTag_bool_exp(this._instance, this._then);
 
   final Input$_RecipeToTag_bool_exp _instance;
 
@@ -23649,20 +23715,20 @@ class _CopyWithImpl$Input$_RecipeToTag_bool_exp<TRes>
     Object? $_and = _undefined,
     Object? $_not = _undefined,
     Object? $_or = _undefined,
-  }) =>
-      _then(Input$_RecipeToTag_bool_exp._({
-        ..._instance._$data,
-        if (A != _undefined) 'A': (A as Input$String_comparison_exp?),
-        if (B != _undefined) 'B': (B as Input$String_comparison_exp?),
-        if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_bool_exp?),
-        if (Tag != _undefined) 'Tag': (Tag as Input$Tag_bool_exp?),
-        if ($_and != _undefined)
-          '_and': ($_and as List<Input$_RecipeToTag_bool_exp>?),
-        if ($_not != _undefined)
-          '_not': ($_not as Input$_RecipeToTag_bool_exp?),
-        if ($_or != _undefined)
-          '_or': ($_or as List<Input$_RecipeToTag_bool_exp>?),
-      }));
+  }) => _then(
+    Input$_RecipeToTag_bool_exp._({
+      ..._instance._$data,
+      if (A != _undefined) 'A': (A as Input$String_comparison_exp?),
+      if (B != _undefined) 'B': (B as Input$String_comparison_exp?),
+      if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_bool_exp?),
+      if (Tag != _undefined) 'Tag': (Tag as Input$Tag_bool_exp?),
+      if ($_and != _undefined)
+        '_and': ($_and as List<Input$_RecipeToTag_bool_exp>?),
+      if ($_not != _undefined) '_not': ($_not as Input$_RecipeToTag_bool_exp?),
+      if ($_or != _undefined)
+        '_or': ($_or as List<Input$_RecipeToTag_bool_exp>?),
+    }),
+  );
 
   CopyWith$Input$String_comparison_exp<TRes> get A {
     final local$A = _instance.A;
@@ -23693,38 +23759,44 @@ class _CopyWithImpl$Input$_RecipeToTag_bool_exp<TRes>
   }
 
   TRes $_and(
-          Iterable<Input$_RecipeToTag_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$_RecipeToTag_bool_exp<
-                          Input$_RecipeToTag_bool_exp>>?)
-              _fn) =>
-      call(
-          $_and: _fn(
-              _instance.$_and?.map((e) => CopyWith$Input$_RecipeToTag_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$_RecipeToTag_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$_RecipeToTag_bool_exp<Input$_RecipeToTag_bool_exp>
+      >?,
+    )
+    _fn,
+  ) => call(
+    $_and: _fn(
+      _instance.$_and?.map(
+        (e) => CopyWith$Input$_RecipeToTag_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   CopyWith$Input$_RecipeToTag_bool_exp<TRes> get $_not {
     final local$$_not = _instance.$_not;
     return local$$_not == null
         ? CopyWith$Input$_RecipeToTag_bool_exp.stub(_then(_instance))
         : CopyWith$Input$_RecipeToTag_bool_exp(
-            local$$_not, (e) => call($_not: e));
+            local$$_not,
+            (e) => call($_not: e),
+          );
   }
 
   TRes $_or(
-          Iterable<Input$_RecipeToTag_bool_exp>? Function(
-                  Iterable<
-                      CopyWith$Input$_RecipeToTag_bool_exp<
-                          Input$_RecipeToTag_bool_exp>>?)
-              _fn) =>
-      call(
-          $_or: _fn(
-              _instance.$_or?.map((e) => CopyWith$Input$_RecipeToTag_bool_exp(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Input$_RecipeToTag_bool_exp>? Function(
+      Iterable<
+        CopyWith$Input$_RecipeToTag_bool_exp<Input$_RecipeToTag_bool_exp>
+      >?,
+    )
+    _fn,
+  ) => call(
+    $_or: _fn(
+      _instance.$_or?.map(
+        (e) => CopyWith$Input$_RecipeToTag_bool_exp(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_bool_exp<TRes>
@@ -23741,8 +23813,7 @@ class _CopyWithStubImpl$Input$_RecipeToTag_bool_exp<TRes>
     List<Input$_RecipeToTag_bool_exp>? $_and,
     Input$_RecipeToTag_bool_exp? $_not,
     List<Input$_RecipeToTag_bool_exp>? $_or,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$String_comparison_exp<TRes> get A =>
       CopyWith$Input$String_comparison_exp.stub(_res);
@@ -23768,11 +23839,10 @@ class Input$_RecipeToTag_max_order_by {
   factory Input$_RecipeToTag_max_order_by({
     Enum$order_by? A,
     Enum$order_by? B,
-  }) =>
-      Input$_RecipeToTag_max_order_by._({
-        if (A != null) r'A': A,
-        if (B != null) r'B': B,
-      });
+  }) => Input$_RecipeToTag_max_order_by._({
+    if (A != null) r'A': A,
+    if (B != null) r'B': B,
+  });
 
   Input$_RecipeToTag_max_order_by._(this._$data);
 
@@ -23780,13 +23850,15 @@ class Input$_RecipeToTag_max_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('A')) {
       final l$A = data['A'];
-      result$data['A'] =
-          l$A == null ? null : fromJson$Enum$order_by((l$A as String));
+      result$data['A'] = l$A == null
+          ? null
+          : fromJson$Enum$order_by((l$A as String));
     }
     if (data.containsKey('B')) {
       final l$B = data['B'];
-      result$data['B'] =
-          l$B == null ? null : fromJson$Enum$order_by((l$B as String));
+      result$data['B'] = l$B == null
+          ? null
+          : fromJson$Enum$order_by((l$B as String));
     }
     return Input$_RecipeToTag_max_order_by._(result$data);
   }
@@ -23811,17 +23883,14 @@ class Input$_RecipeToTag_max_order_by {
   }
 
   CopyWith$Input$_RecipeToTag_max_order_by<Input$_RecipeToTag_max_order_by>
-      get copyWith => CopyWith$Input$_RecipeToTag_max_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$_RecipeToTag_max_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$_RecipeToTag_max_order_by) ||
+    if (other is! Input$_RecipeToTag_max_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -23864,18 +23933,12 @@ abstract class CopyWith$Input$_RecipeToTag_max_order_by<TRes> {
   factory CopyWith$Input$_RecipeToTag_max_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$_RecipeToTag_max_order_by;
 
-  TRes call({
-    Enum$order_by? A,
-    Enum$order_by? B,
-  });
+  TRes call({Enum$order_by? A, Enum$order_by? B});
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_max_order_by<TRes>
     implements CopyWith$Input$_RecipeToTag_max_order_by<TRes> {
-  _CopyWithImpl$Input$_RecipeToTag_max_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$_RecipeToTag_max_order_by(this._instance, this._then);
 
   final Input$_RecipeToTag_max_order_by _instance;
 
@@ -23883,15 +23946,13 @@ class _CopyWithImpl$Input$_RecipeToTag_max_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? A = _undefined,
-    Object? B = _undefined,
-  }) =>
-      _then(Input$_RecipeToTag_max_order_by._({
-        ..._instance._$data,
-        if (A != _undefined) 'A': (A as Enum$order_by?),
-        if (B != _undefined) 'B': (B as Enum$order_by?),
-      }));
+  TRes call({Object? A = _undefined, Object? B = _undefined}) => _then(
+    Input$_RecipeToTag_max_order_by._({
+      ..._instance._$data,
+      if (A != _undefined) 'A': (A as Enum$order_by?),
+      if (B != _undefined) 'B': (B as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_max_order_by<TRes>
@@ -23900,22 +23961,17 @@ class _CopyWithStubImpl$Input$_RecipeToTag_max_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? A,
-    Enum$order_by? B,
-  }) =>
-      _res;
+  call({Enum$order_by? A, Enum$order_by? B}) => _res;
 }
 
 class Input$_RecipeToTag_min_order_by {
   factory Input$_RecipeToTag_min_order_by({
     Enum$order_by? A,
     Enum$order_by? B,
-  }) =>
-      Input$_RecipeToTag_min_order_by._({
-        if (A != null) r'A': A,
-        if (B != null) r'B': B,
-      });
+  }) => Input$_RecipeToTag_min_order_by._({
+    if (A != null) r'A': A,
+    if (B != null) r'B': B,
+  });
 
   Input$_RecipeToTag_min_order_by._(this._$data);
 
@@ -23923,13 +23979,15 @@ class Input$_RecipeToTag_min_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('A')) {
       final l$A = data['A'];
-      result$data['A'] =
-          l$A == null ? null : fromJson$Enum$order_by((l$A as String));
+      result$data['A'] = l$A == null
+          ? null
+          : fromJson$Enum$order_by((l$A as String));
     }
     if (data.containsKey('B')) {
       final l$B = data['B'];
-      result$data['B'] =
-          l$B == null ? null : fromJson$Enum$order_by((l$B as String));
+      result$data['B'] = l$B == null
+          ? null
+          : fromJson$Enum$order_by((l$B as String));
     }
     return Input$_RecipeToTag_min_order_by._(result$data);
   }
@@ -23954,17 +24012,14 @@ class Input$_RecipeToTag_min_order_by {
   }
 
   CopyWith$Input$_RecipeToTag_min_order_by<Input$_RecipeToTag_min_order_by>
-      get copyWith => CopyWith$Input$_RecipeToTag_min_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$_RecipeToTag_min_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$_RecipeToTag_min_order_by) ||
+    if (other is! Input$_RecipeToTag_min_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -24007,18 +24062,12 @@ abstract class CopyWith$Input$_RecipeToTag_min_order_by<TRes> {
   factory CopyWith$Input$_RecipeToTag_min_order_by.stub(TRes res) =
       _CopyWithStubImpl$Input$_RecipeToTag_min_order_by;
 
-  TRes call({
-    Enum$order_by? A,
-    Enum$order_by? B,
-  });
+  TRes call({Enum$order_by? A, Enum$order_by? B});
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_min_order_by<TRes>
     implements CopyWith$Input$_RecipeToTag_min_order_by<TRes> {
-  _CopyWithImpl$Input$_RecipeToTag_min_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$_RecipeToTag_min_order_by(this._instance, this._then);
 
   final Input$_RecipeToTag_min_order_by _instance;
 
@@ -24026,15 +24075,13 @@ class _CopyWithImpl$Input$_RecipeToTag_min_order_by<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? A = _undefined,
-    Object? B = _undefined,
-  }) =>
-      _then(Input$_RecipeToTag_min_order_by._({
-        ..._instance._$data,
-        if (A != _undefined) 'A': (A as Enum$order_by?),
-        if (B != _undefined) 'B': (B as Enum$order_by?),
-      }));
+  TRes call({Object? A = _undefined, Object? B = _undefined}) => _then(
+    Input$_RecipeToTag_min_order_by._({
+      ..._instance._$data,
+      if (A != _undefined) 'A': (A as Enum$order_by?),
+      if (B != _undefined) 'B': (B as Enum$order_by?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_min_order_by<TRes>
@@ -24043,11 +24090,7 @@ class _CopyWithStubImpl$Input$_RecipeToTag_min_order_by<TRes>
 
   TRes _res;
 
-  call({
-    Enum$order_by? A,
-    Enum$order_by? B,
-  }) =>
-      _res;
+  call({Enum$order_by? A, Enum$order_by? B}) => _res;
 }
 
 class Input$_RecipeToTag_order_by {
@@ -24056,13 +24099,12 @@ class Input$_RecipeToTag_order_by {
     Enum$order_by? B,
     Input$Recipe_order_by? Recipe,
     Input$Tag_order_by? Tag,
-  }) =>
-      Input$_RecipeToTag_order_by._({
-        if (A != null) r'A': A,
-        if (B != null) r'B': B,
-        if (Recipe != null) r'Recipe': Recipe,
-        if (Tag != null) r'Tag': Tag,
-      });
+  }) => Input$_RecipeToTag_order_by._({
+    if (A != null) r'A': A,
+    if (B != null) r'B': B,
+    if (Recipe != null) r'Recipe': Recipe,
+    if (Tag != null) r'Tag': Tag,
+  });
 
   Input$_RecipeToTag_order_by._(this._$data);
 
@@ -24070,13 +24112,15 @@ class Input$_RecipeToTag_order_by {
     final result$data = <String, dynamic>{};
     if (data.containsKey('A')) {
       final l$A = data['A'];
-      result$data['A'] =
-          l$A == null ? null : fromJson$Enum$order_by((l$A as String));
+      result$data['A'] = l$A == null
+          ? null
+          : fromJson$Enum$order_by((l$A as String));
     }
     if (data.containsKey('B')) {
       final l$B = data['B'];
-      result$data['B'] =
-          l$B == null ? null : fromJson$Enum$order_by((l$B as String));
+      result$data['B'] = l$B == null
+          ? null
+          : fromJson$Enum$order_by((l$B as String));
     }
     if (data.containsKey('Recipe')) {
       final l$Recipe = data['Recipe'];
@@ -24126,17 +24170,14 @@ class Input$_RecipeToTag_order_by {
   }
 
   CopyWith$Input$_RecipeToTag_order_by<Input$_RecipeToTag_order_by>
-      get copyWith => CopyWith$Input$_RecipeToTag_order_by(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$_RecipeToTag_order_by(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$_RecipeToTag_order_by) ||
+    if (other is! Input$_RecipeToTag_order_by ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -24211,10 +24252,7 @@ abstract class CopyWith$Input$_RecipeToTag_order_by<TRes> {
 
 class _CopyWithImpl$Input$_RecipeToTag_order_by<TRes>
     implements CopyWith$Input$_RecipeToTag_order_by<TRes> {
-  _CopyWithImpl$Input$_RecipeToTag_order_by(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$_RecipeToTag_order_by(this._instance, this._then);
 
   final Input$_RecipeToTag_order_by _instance;
 
@@ -24227,14 +24265,15 @@ class _CopyWithImpl$Input$_RecipeToTag_order_by<TRes>
     Object? B = _undefined,
     Object? Recipe = _undefined,
     Object? Tag = _undefined,
-  }) =>
-      _then(Input$_RecipeToTag_order_by._({
-        ..._instance._$data,
-        if (A != _undefined) 'A': (A as Enum$order_by?),
-        if (B != _undefined) 'B': (B as Enum$order_by?),
-        if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_order_by?),
-        if (Tag != _undefined) 'Tag': (Tag as Input$Tag_order_by?),
-      }));
+  }) => _then(
+    Input$_RecipeToTag_order_by._({
+      ..._instance._$data,
+      if (A != _undefined) 'A': (A as Enum$order_by?),
+      if (B != _undefined) 'B': (B as Enum$order_by?),
+      if (Recipe != _undefined) 'Recipe': (Recipe as Input$Recipe_order_by?),
+      if (Tag != _undefined) 'Tag': (Tag as Input$Tag_order_by?),
+    }),
+  );
 
   CopyWith$Input$Recipe_order_by<TRes> get Recipe {
     final local$Recipe = _instance.Recipe;
@@ -24262,8 +24301,7 @@ class _CopyWithStubImpl$Input$_RecipeToTag_order_by<TRes>
     Enum$order_by? B,
     Input$Recipe_order_by? Recipe,
     Input$Tag_order_by? Tag,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$Recipe_order_by<TRes> get Recipe =>
       CopyWith$Input$Recipe_order_by.stub(_res);
@@ -24276,21 +24314,22 @@ class Input$_RecipeToTag_stream_cursor_input {
   factory Input$_RecipeToTag_stream_cursor_input({
     required Input$_RecipeToTag_stream_cursor_value_input initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      Input$_RecipeToTag_stream_cursor_input._({
-        r'initial_value': initial_value,
-        if (ordering != null) r'ordering': ordering,
-      });
+  }) => Input$_RecipeToTag_stream_cursor_input._({
+    r'initial_value': initial_value,
+    if (ordering != null) r'ordering': ordering,
+  });
 
   Input$_RecipeToTag_stream_cursor_input._(this._$data);
 
   factory Input$_RecipeToTag_stream_cursor_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$initial_value = data['initial_value'];
     result$data['initial_value'] =
         Input$_RecipeToTag_stream_cursor_value_input.fromJson(
-            (l$initial_value as Map<String, dynamic>));
+          (l$initial_value as Map<String, dynamic>),
+        );
     if (data.containsKey('ordering')) {
       final l$ordering = data['ordering'];
       result$data['ordering'] = l$ordering == null
@@ -24314,25 +24353,25 @@ class Input$_RecipeToTag_stream_cursor_input {
     result$data['initial_value'] = l$initial_value.toJson();
     if (_$data.containsKey('ordering')) {
       final l$ordering = ordering;
-      result$data['ordering'] =
-          l$ordering == null ? null : toJson$Enum$cursor_ordering(l$ordering);
+      result$data['ordering'] = l$ordering == null
+          ? null
+          : toJson$Enum$cursor_ordering(l$ordering);
     }
     return result$data;
   }
 
   CopyWith$Input$_RecipeToTag_stream_cursor_input<
-          Input$_RecipeToTag_stream_cursor_input>
-      get copyWith => CopyWith$Input$_RecipeToTag_stream_cursor_input(
-            this,
-            (i) => i,
-          );
+    Input$_RecipeToTag_stream_cursor_input
+  >
+  get copyWith =>
+      CopyWith$Input$_RecipeToTag_stream_cursor_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$_RecipeToTag_stream_cursor_input) ||
+    if (other is! Input$_RecipeToTag_stream_cursor_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -24396,21 +24435,24 @@ class _CopyWithImpl$Input$_RecipeToTag_stream_cursor_input<TRes>
   TRes call({
     Object? initial_value = _undefined,
     Object? ordering = _undefined,
-  }) =>
-      _then(Input$_RecipeToTag_stream_cursor_input._({
-        ..._instance._$data,
-        if (initial_value != _undefined && initial_value != null)
-          'initial_value':
-              (initial_value as Input$_RecipeToTag_stream_cursor_value_input),
-        if (ordering != _undefined)
-          'ordering': (ordering as Enum$cursor_ordering?),
-      }));
+  }) => _then(
+    Input$_RecipeToTag_stream_cursor_input._({
+      ..._instance._$data,
+      if (initial_value != _undefined && initial_value != null)
+        'initial_value':
+            (initial_value as Input$_RecipeToTag_stream_cursor_value_input),
+      if (ordering != _undefined)
+        'ordering': (ordering as Enum$cursor_ordering?),
+    }),
+  );
 
   CopyWith$Input$_RecipeToTag_stream_cursor_value_input<TRes>
-      get initial_value {
+  get initial_value {
     final local$initial_value = _instance.initial_value;
     return CopyWith$Input$_RecipeToTag_stream_cursor_value_input(
-        local$initial_value, (e) => call(initial_value: e));
+      local$initial_value,
+      (e) => call(initial_value: e),
+    );
   }
 }
 
@@ -24423,28 +24465,27 @@ class _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_input<TRes>
   call({
     Input$_RecipeToTag_stream_cursor_value_input? initial_value,
     Enum$cursor_ordering? ordering,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Input$_RecipeToTag_stream_cursor_value_input<TRes>
-      get initial_value =>
-          CopyWith$Input$_RecipeToTag_stream_cursor_value_input.stub(_res);
+  get initial_value =>
+      CopyWith$Input$_RecipeToTag_stream_cursor_value_input.stub(_res);
 }
 
 class Input$_RecipeToTag_stream_cursor_value_input {
   factory Input$_RecipeToTag_stream_cursor_value_input({
     String? A,
     String? B,
-  }) =>
-      Input$_RecipeToTag_stream_cursor_value_input._({
-        if (A != null) r'A': A,
-        if (B != null) r'B': B,
-      });
+  }) => Input$_RecipeToTag_stream_cursor_value_input._({
+    if (A != null) r'A': A,
+    if (B != null) r'B': B,
+  });
 
   Input$_RecipeToTag_stream_cursor_value_input._(this._$data);
 
   factory Input$_RecipeToTag_stream_cursor_value_input.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('A')) {
       final l$A = data['A'];
@@ -24477,18 +24518,17 @@ class Input$_RecipeToTag_stream_cursor_value_input {
   }
 
   CopyWith$Input$_RecipeToTag_stream_cursor_value_input<
-          Input$_RecipeToTag_stream_cursor_value_input>
-      get copyWith => CopyWith$Input$_RecipeToTag_stream_cursor_value_input(
-            this,
-            (i) => i,
-          );
+    Input$_RecipeToTag_stream_cursor_value_input
+  >
+  get copyWith =>
+      CopyWith$Input$_RecipeToTag_stream_cursor_value_input(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$_RecipeToTag_stream_cursor_value_input) ||
+    if (other is! Input$_RecipeToTag_stream_cursor_value_input ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -24531,10 +24571,7 @@ abstract class CopyWith$Input$_RecipeToTag_stream_cursor_value_input<TRes> {
   factory CopyWith$Input$_RecipeToTag_stream_cursor_value_input.stub(TRes res) =
       _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_value_input;
 
-  TRes call({
-    String? A,
-    String? B,
-  });
+  TRes call({String? A, String? B});
 }
 
 class _CopyWithImpl$Input$_RecipeToTag_stream_cursor_value_input<TRes>
@@ -24550,15 +24587,13 @@ class _CopyWithImpl$Input$_RecipeToTag_stream_cursor_value_input<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? A = _undefined,
-    Object? B = _undefined,
-  }) =>
-      _then(Input$_RecipeToTag_stream_cursor_value_input._({
-        ..._instance._$data,
-        if (A != _undefined) 'A': (A as String?),
-        if (B != _undefined) 'B': (B as String?),
-      }));
+  TRes call({Object? A = _undefined, Object? B = _undefined}) => _then(
+    Input$_RecipeToTag_stream_cursor_value_input._({
+      ..._instance._$data,
+      if (A != _undefined) 'A': (A as String?),
+      if (B != _undefined) 'B': (B as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_value_input<TRes>
@@ -24567,11 +24602,7 @@ class _CopyWithStubImpl$Input$_RecipeToTag_stream_cursor_value_input<TRes>
 
   TRes _res;
 
-  call({
-    String? A,
-    String? B,
-  }) =>
-      _res;
+  call({String? A, String? B}) => _res;
 }
 
 class Input$bytea_comparison_exp {
@@ -24585,18 +24616,17 @@ class Input$bytea_comparison_exp {
     String? $_lte,
     String? $_neq,
     List<String>? $_nin,
-  }) =>
-      Input$bytea_comparison_exp._({
-        if ($_eq != null) r'_eq': $_eq,
-        if ($_gt != null) r'_gt': $_gt,
-        if ($_gte != null) r'_gte': $_gte,
-        if ($_in != null) r'_in': $_in,
-        if ($_is_null != null) r'_is_null': $_is_null,
-        if ($_lt != null) r'_lt': $_lt,
-        if ($_lte != null) r'_lte': $_lte,
-        if ($_neq != null) r'_neq': $_neq,
-        if ($_nin != null) r'_nin': $_nin,
-      });
+  }) => Input$bytea_comparison_exp._({
+    if ($_eq != null) r'_eq': $_eq,
+    if ($_gt != null) r'_gt': $_gt,
+    if ($_gte != null) r'_gte': $_gte,
+    if ($_in != null) r'_in': $_in,
+    if ($_is_null != null) r'_is_null': $_is_null,
+    if ($_lt != null) r'_lt': $_lt,
+    if ($_lte != null) r'_lte': $_lte,
+    if ($_neq != null) r'_neq': $_neq,
+    if ($_nin != null) r'_nin': $_nin,
+  });
 
   Input$bytea_comparison_exp._(this._$data);
 
@@ -24616,8 +24646,9 @@ class Input$bytea_comparison_exp {
     }
     if (data.containsKey('_in')) {
       final l$$_in = data['_in'];
-      result$data['_in'] =
-          (l$$_in as List<dynamic>?)?.map((e) => (e as String)).toList();
+      result$data['_in'] = (l$$_in as List<dynamic>?)
+          ?.map((e) => (e as String))
+          .toList();
     }
     if (data.containsKey('_is_null')) {
       final l$$_is_null = data['_is_null'];
@@ -24637,8 +24668,9 @@ class Input$bytea_comparison_exp {
     }
     if (data.containsKey('_nin')) {
       final l$$_nin = data['_nin'];
-      result$data['_nin'] =
-          (l$$_nin as List<dynamic>?)?.map((e) => (e as String)).toList();
+      result$data['_nin'] = (l$$_nin as List<dynamic>?)
+          ?.map((e) => (e as String))
+          .toList();
     }
     return Input$bytea_comparison_exp._(result$data);
   }
@@ -24705,17 +24737,14 @@ class Input$bytea_comparison_exp {
   }
 
   CopyWith$Input$bytea_comparison_exp<Input$bytea_comparison_exp>
-      get copyWith => CopyWith$Input$bytea_comparison_exp(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$bytea_comparison_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$bytea_comparison_exp) ||
+    if (other is! Input$bytea_comparison_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -24834,8 +24863,8 @@ class Input$bytea_comparison_exp {
       _$data.containsKey('_gte') ? l$$_gte : const {},
       _$data.containsKey('_in')
           ? l$$_in == null
-              ? null
-              : Object.hashAll(l$$_in.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_in.map((v) => v))
           : const {},
       _$data.containsKey('_is_null') ? l$$_is_null : const {},
       _$data.containsKey('_lt') ? l$$_lt : const {},
@@ -24843,8 +24872,8 @@ class Input$bytea_comparison_exp {
       _$data.containsKey('_neq') ? l$$_neq : const {},
       _$data.containsKey('_nin')
           ? l$$_nin == null
-              ? null
-              : Object.hashAll(l$$_nin.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_nin.map((v) => v))
           : const {},
     ]);
   }
@@ -24874,10 +24903,7 @@ abstract class CopyWith$Input$bytea_comparison_exp<TRes> {
 
 class _CopyWithImpl$Input$bytea_comparison_exp<TRes>
     implements CopyWith$Input$bytea_comparison_exp<TRes> {
-  _CopyWithImpl$Input$bytea_comparison_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$bytea_comparison_exp(this._instance, this._then);
 
   final Input$bytea_comparison_exp _instance;
 
@@ -24895,19 +24921,20 @@ class _CopyWithImpl$Input$bytea_comparison_exp<TRes>
     Object? $_lte = _undefined,
     Object? $_neq = _undefined,
     Object? $_nin = _undefined,
-  }) =>
-      _then(Input$bytea_comparison_exp._({
-        ..._instance._$data,
-        if ($_eq != _undefined) '_eq': ($_eq as String?),
-        if ($_gt != _undefined) '_gt': ($_gt as String?),
-        if ($_gte != _undefined) '_gte': ($_gte as String?),
-        if ($_in != _undefined) '_in': ($_in as List<String>?),
-        if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
-        if ($_lt != _undefined) '_lt': ($_lt as String?),
-        if ($_lte != _undefined) '_lte': ($_lte as String?),
-        if ($_neq != _undefined) '_neq': ($_neq as String?),
-        if ($_nin != _undefined) '_nin': ($_nin as List<String>?),
-      }));
+  }) => _then(
+    Input$bytea_comparison_exp._({
+      ..._instance._$data,
+      if ($_eq != _undefined) '_eq': ($_eq as String?),
+      if ($_gt != _undefined) '_gt': ($_gt as String?),
+      if ($_gte != _undefined) '_gte': ($_gte as String?),
+      if ($_in != _undefined) '_in': ($_in as List<String>?),
+      if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
+      if ($_lt != _undefined) '_lt': ($_lt as String?),
+      if ($_lte != _undefined) '_lte': ($_lte as String?),
+      if ($_neq != _undefined) '_neq': ($_neq as String?),
+      if ($_nin != _undefined) '_nin': ($_nin as List<String>?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$bytea_comparison_exp<TRes>
@@ -24926,8 +24953,7 @@ class _CopyWithStubImpl$Input$bytea_comparison_exp<TRes>
     String? $_lte,
     String? $_neq,
     List<String>? $_nin,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$float8_comparison_exp {
@@ -24941,18 +24967,17 @@ class Input$float8_comparison_exp {
     double? $_lte,
     double? $_neq,
     List<double>? $_nin,
-  }) =>
-      Input$float8_comparison_exp._({
-        if ($_eq != null) r'_eq': $_eq,
-        if ($_gt != null) r'_gt': $_gt,
-        if ($_gte != null) r'_gte': $_gte,
-        if ($_in != null) r'_in': $_in,
-        if ($_is_null != null) r'_is_null': $_is_null,
-        if ($_lt != null) r'_lt': $_lt,
-        if ($_lte != null) r'_lte': $_lte,
-        if ($_neq != null) r'_neq': $_neq,
-        if ($_nin != null) r'_nin': $_nin,
-      });
+  }) => Input$float8_comparison_exp._({
+    if ($_eq != null) r'_eq': $_eq,
+    if ($_gt != null) r'_gt': $_gt,
+    if ($_gte != null) r'_gte': $_gte,
+    if ($_in != null) r'_in': $_in,
+    if ($_is_null != null) r'_is_null': $_is_null,
+    if ($_lt != null) r'_lt': $_lt,
+    if ($_lte != null) r'_lte': $_lte,
+    if ($_neq != null) r'_neq': $_neq,
+    if ($_nin != null) r'_nin': $_nin,
+  });
 
   Input$float8_comparison_exp._(this._$data);
 
@@ -25063,17 +25088,14 @@ class Input$float8_comparison_exp {
   }
 
   CopyWith$Input$float8_comparison_exp<Input$float8_comparison_exp>
-      get copyWith => CopyWith$Input$float8_comparison_exp(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$float8_comparison_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$float8_comparison_exp) ||
+    if (other is! Input$float8_comparison_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -25192,8 +25214,8 @@ class Input$float8_comparison_exp {
       _$data.containsKey('_gte') ? l$$_gte : const {},
       _$data.containsKey('_in')
           ? l$$_in == null
-              ? null
-              : Object.hashAll(l$$_in.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_in.map((v) => v))
           : const {},
       _$data.containsKey('_is_null') ? l$$_is_null : const {},
       _$data.containsKey('_lt') ? l$$_lt : const {},
@@ -25201,8 +25223,8 @@ class Input$float8_comparison_exp {
       _$data.containsKey('_neq') ? l$$_neq : const {},
       _$data.containsKey('_nin')
           ? l$$_nin == null
-              ? null
-              : Object.hashAll(l$$_nin.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_nin.map((v) => v))
           : const {},
     ]);
   }
@@ -25232,10 +25254,7 @@ abstract class CopyWith$Input$float8_comparison_exp<TRes> {
 
 class _CopyWithImpl$Input$float8_comparison_exp<TRes>
     implements CopyWith$Input$float8_comparison_exp<TRes> {
-  _CopyWithImpl$Input$float8_comparison_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$float8_comparison_exp(this._instance, this._then);
 
   final Input$float8_comparison_exp _instance;
 
@@ -25253,19 +25272,20 @@ class _CopyWithImpl$Input$float8_comparison_exp<TRes>
     Object? $_lte = _undefined,
     Object? $_neq = _undefined,
     Object? $_nin = _undefined,
-  }) =>
-      _then(Input$float8_comparison_exp._({
-        ..._instance._$data,
-        if ($_eq != _undefined) '_eq': ($_eq as double?),
-        if ($_gt != _undefined) '_gt': ($_gt as double?),
-        if ($_gte != _undefined) '_gte': ($_gte as double?),
-        if ($_in != _undefined) '_in': ($_in as List<double>?),
-        if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
-        if ($_lt != _undefined) '_lt': ($_lt as double?),
-        if ($_lte != _undefined) '_lte': ($_lte as double?),
-        if ($_neq != _undefined) '_neq': ($_neq as double?),
-        if ($_nin != _undefined) '_nin': ($_nin as List<double>?),
-      }));
+  }) => _then(
+    Input$float8_comparison_exp._({
+      ..._instance._$data,
+      if ($_eq != _undefined) '_eq': ($_eq as double?),
+      if ($_gt != _undefined) '_gt': ($_gt as double?),
+      if ($_gte != _undefined) '_gte': ($_gte as double?),
+      if ($_in != _undefined) '_in': ($_in as List<double>?),
+      if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
+      if ($_lt != _undefined) '_lt': ($_lt as double?),
+      if ($_lte != _undefined) '_lte': ($_lte as double?),
+      if ($_neq != _undefined) '_neq': ($_neq as double?),
+      if ($_nin != _undefined) '_nin': ($_nin as List<double>?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$float8_comparison_exp<TRes>
@@ -25284,8 +25304,7 @@ class _CopyWithStubImpl$Input$float8_comparison_exp<TRes>
     double? $_lte,
     double? $_neq,
     List<double>? $_nin,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$timestamp_comparison_exp {
@@ -25299,18 +25318,17 @@ class Input$timestamp_comparison_exp {
     DateTime? $_lte,
     DateTime? $_neq,
     List<DateTime>? $_nin,
-  }) =>
-      Input$timestamp_comparison_exp._({
-        if ($_eq != null) r'_eq': $_eq,
-        if ($_gt != null) r'_gt': $_gt,
-        if ($_gte != null) r'_gte': $_gte,
-        if ($_in != null) r'_in': $_in,
-        if ($_is_null != null) r'_is_null': $_is_null,
-        if ($_lt != null) r'_lt': $_lt,
-        if ($_lte != null) r'_lte': $_lte,
-        if ($_neq != null) r'_neq': $_neq,
-        if ($_nin != null) r'_nin': $_nin,
-      });
+  }) => Input$timestamp_comparison_exp._({
+    if ($_eq != null) r'_eq': $_eq,
+    if ($_gt != null) r'_gt': $_gt,
+    if ($_gte != null) r'_gte': $_gte,
+    if ($_in != null) r'_in': $_in,
+    if ($_is_null != null) r'_is_null': $_is_null,
+    if ($_lt != null) r'_lt': $_lt,
+    if ($_lte != null) r'_lte': $_lte,
+    if ($_neq != null) r'_neq': $_neq,
+    if ($_nin != null) r'_nin': $_nin,
+  });
 
   Input$timestamp_comparison_exp._(this._$data);
 
@@ -25330,8 +25348,9 @@ class Input$timestamp_comparison_exp {
     }
     if (data.containsKey('_in')) {
       final l$$_in = data['_in'];
-      result$data['_in'] =
-          (l$$_in as List<dynamic>?)?.map((e) => dateTimeFromJson(e)).toList();
+      result$data['_in'] = (l$$_in as List<dynamic>?)
+          ?.map((e) => dateTimeFromJson(e))
+          .toList();
     }
     if (data.containsKey('_is_null')) {
       final l$$_is_null = data['_is_null'];
@@ -25351,8 +25370,9 @@ class Input$timestamp_comparison_exp {
     }
     if (data.containsKey('_nin')) {
       final l$$_nin = data['_nin'];
-      result$data['_nin'] =
-          (l$$_nin as List<dynamic>?)?.map((e) => dateTimeFromJson(e)).toList();
+      result$data['_nin'] = (l$$_nin as List<dynamic>?)
+          ?.map((e) => dateTimeFromJson(e))
+          .toList();
     }
     return Input$timestamp_comparison_exp._(result$data);
   }
@@ -25419,17 +25439,14 @@ class Input$timestamp_comparison_exp {
   }
 
   CopyWith$Input$timestamp_comparison_exp<Input$timestamp_comparison_exp>
-      get copyWith => CopyWith$Input$timestamp_comparison_exp(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$timestamp_comparison_exp(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$timestamp_comparison_exp) ||
+    if (other is! Input$timestamp_comparison_exp ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -25548,8 +25565,8 @@ class Input$timestamp_comparison_exp {
       _$data.containsKey('_gte') ? l$$_gte : const {},
       _$data.containsKey('_in')
           ? l$$_in == null
-              ? null
-              : Object.hashAll(l$$_in.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_in.map((v) => v))
           : const {},
       _$data.containsKey('_is_null') ? l$$_is_null : const {},
       _$data.containsKey('_lt') ? l$$_lt : const {},
@@ -25557,8 +25574,8 @@ class Input$timestamp_comparison_exp {
       _$data.containsKey('_neq') ? l$$_neq : const {},
       _$data.containsKey('_nin')
           ? l$$_nin == null
-              ? null
-              : Object.hashAll(l$$_nin.map((v) => v))
+                ? null
+                : Object.hashAll(l$$_nin.map((v) => v))
           : const {},
     ]);
   }
@@ -25588,10 +25605,7 @@ abstract class CopyWith$Input$timestamp_comparison_exp<TRes> {
 
 class _CopyWithImpl$Input$timestamp_comparison_exp<TRes>
     implements CopyWith$Input$timestamp_comparison_exp<TRes> {
-  _CopyWithImpl$Input$timestamp_comparison_exp(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$timestamp_comparison_exp(this._instance, this._then);
 
   final Input$timestamp_comparison_exp _instance;
 
@@ -25609,19 +25623,20 @@ class _CopyWithImpl$Input$timestamp_comparison_exp<TRes>
     Object? $_lte = _undefined,
     Object? $_neq = _undefined,
     Object? $_nin = _undefined,
-  }) =>
-      _then(Input$timestamp_comparison_exp._({
-        ..._instance._$data,
-        if ($_eq != _undefined) '_eq': ($_eq as DateTime?),
-        if ($_gt != _undefined) '_gt': ($_gt as DateTime?),
-        if ($_gte != _undefined) '_gte': ($_gte as DateTime?),
-        if ($_in != _undefined) '_in': ($_in as List<DateTime>?),
-        if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
-        if ($_lt != _undefined) '_lt': ($_lt as DateTime?),
-        if ($_lte != _undefined) '_lte': ($_lte as DateTime?),
-        if ($_neq != _undefined) '_neq': ($_neq as DateTime?),
-        if ($_nin != _undefined) '_nin': ($_nin as List<DateTime>?),
-      }));
+  }) => _then(
+    Input$timestamp_comparison_exp._({
+      ..._instance._$data,
+      if ($_eq != _undefined) '_eq': ($_eq as DateTime?),
+      if ($_gt != _undefined) '_gt': ($_gt as DateTime?),
+      if ($_gte != _undefined) '_gte': ($_gte as DateTime?),
+      if ($_in != _undefined) '_in': ($_in as List<DateTime>?),
+      if ($_is_null != _undefined) '_is_null': ($_is_null as bool?),
+      if ($_lt != _undefined) '_lt': ($_lt as DateTime?),
+      if ($_lte != _undefined) '_lte': ($_lte as DateTime?),
+      if ($_neq != _undefined) '_neq': ($_neq as DateTime?),
+      if ($_nin != _undefined) '_nin': ($_nin as List<DateTime>?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$timestamp_comparison_exp<TRes>
@@ -25640,8 +25655,7 @@ class _CopyWithStubImpl$Input$timestamp_comparison_exp<TRes>
     DateTime? $_lte,
     DateTime? $_neq,
     List<DateTime>? $_nin,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 enum Enum$File_select_column {
@@ -25719,7 +25733,8 @@ enum Enum$IngredientUnit_select_column {
 }
 
 String toJson$Enum$IngredientUnit_select_column(
-    Enum$IngredientUnit_select_column e) {
+  Enum$IngredientUnit_select_column e,
+) {
   switch (e) {
     case Enum$IngredientUnit_select_column.amount:
       return r'amount';
@@ -25741,7 +25756,8 @@ String toJson$Enum$IngredientUnit_select_column(
 }
 
 Enum$IngredientUnit_select_column fromJson$Enum$IngredientUnit_select_column(
-    String value) {
+  String value,
+) {
   switch (value) {
     case r'amount':
       return Enum$IngredientUnit_select_column.amount;
@@ -25785,7 +25801,8 @@ String toJson$Enum$Ingredient_select_column(Enum$Ingredient_select_column e) {
 }
 
 Enum$Ingredient_select_column fromJson$Enum$Ingredient_select_column(
-    String value) {
+  String value,
+) {
   switch (value) {
     case r'id':
       return Enum$Ingredient_select_column.id;
@@ -25815,7 +25832,8 @@ enum Enum$RecipeSection_select_column {
 }
 
 String toJson$Enum$RecipeSection_select_column(
-    Enum$RecipeSection_select_column e) {
+  Enum$RecipeSection_select_column e,
+) {
   switch (e) {
     case Enum$RecipeSection_select_column.cookTimeMinutes:
       return r'cookTimeMinutes';
@@ -25841,7 +25859,8 @@ String toJson$Enum$RecipeSection_select_column(
 }
 
 Enum$RecipeSection_select_column fromJson$Enum$RecipeSection_select_column(
-    String value) {
+  String value,
+) {
   switch (value) {
     case r'cookTimeMinutes':
       return Enum$RecipeSection_select_column.cookTimeMinutes;
@@ -26164,7 +26183,8 @@ enum Enum$_RecipeToTag_select_column {
 }
 
 String toJson$Enum$_RecipeToTag_select_column(
-    Enum$_RecipeToTag_select_column e) {
+  Enum$_RecipeToTag_select_column e,
+) {
   switch (e) {
     case Enum$_RecipeToTag_select_column.A:
       return r'A';
@@ -26176,7 +26196,8 @@ String toJson$Enum$_RecipeToTag_select_column(
 }
 
 Enum$_RecipeToTag_select_column fromJson$Enum$_RecipeToTag_select_column(
-    String value) {
+  String value,
+) {
   switch (value) {
     case r'A':
       return Enum$_RecipeToTag_select_column.A;

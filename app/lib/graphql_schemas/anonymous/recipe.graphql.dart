@@ -15,9 +15,7 @@ import 'unitSizeFragment.graphql.dart';
 
 class Variables$Query$recipe {
   factory Variables$Query$recipe({required String id}) =>
-      Variables$Query$recipe._({
-        r'id': id,
-      });
+      Variables$Query$recipe._({r'id': id});
 
   Variables$Query$recipe._(this._$data);
 
@@ -40,18 +38,14 @@ class Variables$Query$recipe {
   }
 
   CopyWith$Variables$Query$recipe<Variables$Query$recipe> get copyWith =>
-      CopyWith$Variables$Query$recipe(
-        this,
-        (i) => i,
-      );
+      CopyWith$Variables$Query$recipe(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$recipe) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Variables$Query$recipe || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -83,10 +77,7 @@ abstract class CopyWith$Variables$Query$recipe<TRes> {
 
 class _CopyWithImpl$Variables$Query$recipe<TRes>
     implements CopyWith$Variables$Query$recipe<TRes> {
-  _CopyWithImpl$Variables$Query$recipe(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$recipe(this._instance, this._then);
 
   final Variables$Query$recipe _instance;
 
@@ -94,10 +85,12 @@ class _CopyWithImpl$Variables$Query$recipe<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? id = _undefined}) => _then(Variables$Query$recipe._({
-        ..._instance._$data,
-        if (id != _undefined && id != null) 'id': (id as String),
-      }));
+  TRes call({Object? id = _undefined}) => _then(
+    Variables$Query$recipe._({
+      ..._instance._$data,
+      if (id != _undefined && id != null) 'id': (id as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$recipe<TRes>
@@ -110,10 +103,7 @@ class _CopyWithStubImpl$Variables$Query$recipe<TRes>
 }
 
 class Query$recipe {
-  Query$recipe({
-    this.Recipe_by_pk,
-    this.$__typename = 'query_root',
-  });
+  Query$recipe({this.Recipe_by_pk, this.$__typename = 'query_root'});
 
   factory Query$recipe.fromJson(Map<String, dynamic> json) {
     final l$Recipe_by_pk = json['Recipe_by_pk'];
@@ -122,7 +112,8 @@ class Query$recipe {
       Recipe_by_pk: l$Recipe_by_pk == null
           ? null
           : Fragment$RecipeFragment.fromJson(
-              (l$Recipe_by_pk as Map<String, dynamic>)),
+              (l$Recipe_by_pk as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -144,10 +135,7 @@ class Query$recipe {
   int get hashCode {
     final l$Recipe_by_pk = Recipe_by_pk;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$Recipe_by_pk,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$Recipe_by_pk, l$$__typename]);
   }
 
   @override
@@ -155,7 +143,7 @@ class Query$recipe {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$recipe) || runtimeType != other.runtimeType) {
+    if (other is! Query$recipe || runtimeType != other.runtimeType) {
       return false;
     }
     final l$Recipe_by_pk = Recipe_by_pk;
@@ -173,10 +161,8 @@ class Query$recipe {
 }
 
 extension UtilityExtension$Query$recipe on Query$recipe {
-  CopyWith$Query$recipe<Query$recipe> get copyWith => CopyWith$Query$recipe(
-        this,
-        (i) => i,
-      );
+  CopyWith$Query$recipe<Query$recipe> get copyWith =>
+      CopyWith$Query$recipe(this, (i) => i);
 }
 
 abstract class CopyWith$Query$recipe<TRes> {
@@ -187,18 +173,12 @@ abstract class CopyWith$Query$recipe<TRes> {
 
   factory CopyWith$Query$recipe.stub(TRes res) = _CopyWithStubImpl$Query$recipe;
 
-  TRes call({
-    Fragment$RecipeFragment? Recipe_by_pk,
-    String? $__typename,
-  });
+  TRes call({Fragment$RecipeFragment? Recipe_by_pk, String? $__typename});
   CopyWith$Fragment$RecipeFragment<TRes> get Recipe_by_pk;
 }
 
 class _CopyWithImpl$Query$recipe<TRes> implements CopyWith$Query$recipe<TRes> {
-  _CopyWithImpl$Query$recipe(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$recipe(this._instance, this._then);
 
   final Query$recipe _instance;
 
@@ -209,22 +189,25 @@ class _CopyWithImpl$Query$recipe<TRes> implements CopyWith$Query$recipe<TRes> {
   TRes call({
     Object? Recipe_by_pk = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$recipe(
-        Recipe_by_pk: Recipe_by_pk == _undefined
-            ? _instance.Recipe_by_pk
-            : (Recipe_by_pk as Fragment$RecipeFragment?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$recipe(
+      Recipe_by_pk: Recipe_by_pk == _undefined
+          ? _instance.Recipe_by_pk
+          : (Recipe_by_pk as Fragment$RecipeFragment?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Fragment$RecipeFragment<TRes> get Recipe_by_pk {
     final local$Recipe_by_pk = _instance.Recipe_by_pk;
     return local$Recipe_by_pk == null
         ? CopyWith$Fragment$RecipeFragment.stub(_then(_instance))
         : CopyWith$Fragment$RecipeFragment(
-            local$Recipe_by_pk, (e) => call(Recipe_by_pk: e));
+            local$Recipe_by_pk,
+            (e) => call(Recipe_by_pk: e),
+          );
   }
 }
 
@@ -234,47 +217,53 @@ class _CopyWithStubImpl$Query$recipe<TRes>
 
   TRes _res;
 
-  call({
-    Fragment$RecipeFragment? Recipe_by_pk,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Fragment$RecipeFragment? Recipe_by_pk, String? $__typename}) => _res;
 
   CopyWith$Fragment$RecipeFragment<TRes> get Recipe_by_pk =>
       CopyWith$Fragment$RecipeFragment.stub(_res);
 }
 
-const documentNodeQueryrecipe = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'recipe'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'id')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeQueryrecipe = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'recipe'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'id')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'Recipe_by_pk'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'id'),
-            value: VariableNode(name: NameNode(value: 'id')),
-          )
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FragmentSpreadNode(
-            name: NameNode(value: 'RecipeFragment'),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'Recipe_by_pk'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'id'),
+                value: VariableNode(name: NameNode(value: 'id')),
+              ),
+            ],
             directives: [],
+            selectionSet: SelectionSetNode(
+              selections: [
+                FragmentSpreadNode(
+                  name: NameNode(value: 'RecipeFragment'),
+                  directives: [],
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -283,28 +272,19 @@ const documentNodeQueryrecipe = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-  fragmentDefinitionRecipeFragment,
-  fragmentDefinitionRecipeSectionFragment,
-  fragmentDefinitionIngredientUnitFragment,
-  fragmentDefinitionUnitSizeFragment,
-]);
+    ),
+    fragmentDefinitionRecipeFragment,
+    fragmentDefinitionRecipeSectionFragment,
+    fragmentDefinitionIngredientUnitFragment,
+    fragmentDefinitionUnitSizeFragment,
+  ],
+);
 Query$recipe _parserFn$Query$recipe(Map<String, dynamic> data) =>
     Query$recipe.fromJson(data);
-typedef OnQueryComplete$Query$recipe = FutureOr<void> Function(
-  Map<String, dynamic>?,
-  Query$recipe?,
-);
+typedef OnQueryComplete$Query$recipe =
+    FutureOr<void> Function(Map<String, dynamic>?, Query$recipe?);
 
 class Options$Query$recipe extends graphql.QueryOptions<Query$recipe> {
   Options$Query$recipe({
@@ -319,36 +299,36 @@ class Options$Query$recipe extends graphql.QueryOptions<Query$recipe> {
     graphql.Context? context,
     OnQueryComplete$Query$recipe? onComplete,
     graphql.OnQueryError? onError,
-  })  : onCompleteWithParsed = onComplete,
-        super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          pollInterval: pollInterval,
-          context: context,
-          onComplete: onComplete == null
-              ? null
-              : (data) => onComplete(
-                    data,
-                    data == null ? null : _parserFn$Query$recipe(data),
-                  ),
-          onError: onError,
-          document: documentNodeQueryrecipe,
-          parserFn: _parserFn$Query$recipe,
-        );
+  }) : onCompleteWithParsed = onComplete,
+       super(
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         pollInterval: pollInterval,
+         context: context,
+         onComplete: onComplete == null
+             ? null
+             : (data) => onComplete(
+                 data,
+                 data == null ? null : _parserFn$Query$recipe(data),
+               ),
+         onError: onError,
+         document: documentNodeQueryrecipe,
+         parserFn: _parserFn$Query$recipe,
+       );
 
   final OnQueryComplete$Query$recipe? onCompleteWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onComplete == null
-            ? super.properties
-            : super.properties.where((property) => property != onComplete),
-        onCompleteWithParsed,
-      ];
+    ...super.onComplete == null
+        ? super.properties
+        : super.properties.where((property) => property != onComplete),
+    onCompleteWithParsed,
+  ];
 }
 
 class WatchOptions$Query$recipe
@@ -367,20 +347,20 @@ class WatchOptions$Query$recipe
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeQueryrecipe,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Query$recipe,
-        );
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeQueryrecipe,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Query$recipe,
+       );
 }
 
 class FetchMoreOptions$Query$recipe extends graphql.FetchMoreOptions {
@@ -388,32 +368,31 @@ class FetchMoreOptions$Query$recipe extends graphql.FetchMoreOptions {
     required graphql.UpdateQuery updateQuery,
     required Variables$Query$recipe variables,
   }) : super(
-          updateQuery: updateQuery,
-          variables: variables.toJson(),
-          document: documentNodeQueryrecipe,
-        );
+         updateQuery: updateQuery,
+         variables: variables.toJson(),
+         document: documentNodeQueryrecipe,
+       );
 }
 
 extension ClientExtension$Query$recipe on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$recipe>> query$recipe(
-          Options$Query$recipe options) async =>
-      await this.query(options);
+    Options$Query$recipe options,
+  ) async => await this.query(options);
   graphql.ObservableQuery<Query$recipe> watchQuery$recipe(
-          WatchOptions$Query$recipe options) =>
-      this.watchQuery(options);
+    WatchOptions$Query$recipe options,
+  ) => this.watchQuery(options);
   void writeQuery$recipe({
     required Query$recipe data,
     required Variables$Query$recipe variables,
     bool broadcast = true,
-  }) =>
-      this.writeQuery(
-        graphql.Request(
-          operation: graphql.Operation(document: documentNodeQueryrecipe),
-          variables: variables.toJson(),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeQuery(
+    graphql.Request(
+      operation: graphql.Operation(document: documentNodeQueryrecipe),
+      variables: variables.toJson(),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
   Query$recipe? readQuery$recipe({
     required Variables$Query$recipe variables,
     bool optimistic = true,
@@ -430,20 +409,16 @@ extension ClientExtension$Query$recipe on graphql.GraphQLClient {
 }
 
 graphql_flutter.QueryHookResult<Query$recipe> useQuery$recipe(
-        Options$Query$recipe options) =>
-    graphql_flutter.useQuery(options);
+  Options$Query$recipe options,
+) => graphql_flutter.useQuery(options);
 graphql.ObservableQuery<Query$recipe> useWatchQuery$recipe(
-        WatchOptions$Query$recipe options) =>
-    graphql_flutter.useWatchQuery(options);
+  WatchOptions$Query$recipe options,
+) => graphql_flutter.useWatchQuery(options);
 
 class Query$recipe$Widget extends graphql_flutter.Query<Query$recipe> {
   Query$recipe$Widget({
     widgets.Key? key,
     required Options$Query$recipe options,
     required graphql_flutter.QueryBuilder<Query$recipe> builder,
-  }) : super(
-          key: key,
-          options: options,
-          builder: builder,
-        );
+  }) : super(key: key, options: options, builder: builder);
 }
