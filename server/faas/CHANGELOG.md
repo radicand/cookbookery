@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/radicand/cookbookery/compare/server-faas-v1.2.0...server-faas-v1.2.1) (2025-08-30)
+
+
+### Bug Fixes
+
+* force version bump for publishing reasons ([2e09b81](https://github.com/radicand/cookbookery/commit/2e09b811ea9a8ee852f3d2add1aec737bf33fce3))
+
 ## [1.2.0](https://github.com/radicand/cookbookery/compare/server-faas-v1.1.1...server-faas-v1.2.0) (2022-07-12)
 
 

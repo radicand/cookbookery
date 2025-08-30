@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.4](https://github.com/radicand/cookbookery/compare/app-v1.7.3...app-v1.7.4) (2025-08-30)
+
+
+### Bug Fixes
+
+* **tests:** correct linter errors ([fc18302](https://github.com/radicand/cookbookery/commit/fc18302ac21cc2e80918ad09aa14a7bd9ebd4acf))
+
 ## [1.7.3](https://github.com/radicand/cookbookery/compare/app-v1.7.2...app-v1.7.3) (2025-02-28)
 
 
