@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:url_launcher/url_launcher.dart';
 
-tryLaunchUrl(Uri uri) async {
+Future<bool> tryLaunchUrl(Uri uri) async {
   try {
     if (await canLaunchUrl(uri)) {
       log('Able to launch $uri');

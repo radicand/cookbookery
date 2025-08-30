@@ -54,13 +54,13 @@ class _LoginButtonState extends State<LoginButton> {
     ]);
   }
 
-  setSuccessAuthState() {
+  void setSuccessAuthState() {
     setState(() {
       loaderState = LoaderState.completed;
     });
   }
 
-  setLoadingState() {
+  void setLoadingState() {
     setState(() {
       loaderState = LoaderState.pending;
       errorMessage = '';
@@ -80,7 +80,7 @@ class _LoginButtonState extends State<LoginButton> {
     }
   }
 
-  initAction() async {
+  Future<void> initAction() async {
     setLoadingState();
     final bool isAuth = await AuthService.instance.init();
     if (isAuth) {

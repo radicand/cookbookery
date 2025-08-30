@@ -28,7 +28,11 @@ void main() {
   });
 }
 
-takeScreenshot(tester, binding, name) async {
+Future<void> takeScreenshot(
+  WidgetTester tester,
+  IntegrationTestWidgetsFlutterBinding binding,
+  String name,
+) async {
   if (Platform.isAndroid) {
     try {
       await binding.convertFlutterSurfaceToImage();

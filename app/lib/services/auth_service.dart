@@ -106,9 +106,9 @@ class AuthService {
     }
   }
 
-  Future<String> _setLocalVariables(result) async {
+  Future<String> _setLocalVariables(TokenResponse result) async {
     final bool isValidResult =
-        result != null && result.accessToken != null && result.idToken != null;
+        result.accessToken != null && result.idToken != null;
 
     if (isValidResult) {
       if (result.refreshToken != null) {
@@ -119,8 +119,8 @@ class AuthService {
       }
 
       oAuthAccessToken = result.accessToken;
-      profile = await getUserDetails(result.accessToken);
-      idToken = idTokenFromJson(result.idToken);
+      profile = await getUserDetails(result.accessToken!);
+      idToken = idTokenFromJson(result.idToken!);
 
       cookbookStore.setUser(profile);
       cookbookStore.setIdToken(idToken);
