@@ -571,10 +571,10 @@ packages:
     dependency: "direct main"
     description:
       name: graphql
-      sha256: "735bbbaa4db10d38054932e726d291bdd46e46e0575cd482a74b0615b8622e1c"
+      sha256: "297a1680520e7b4d3c5784cfcea11a16d599702911b74a8ab50857c6d58741b9"
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.1"
+    version: "5.2.3"
   graphql_codegen:
     dependency: "direct dev"
     description:
@@ -607,6 +607,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.3"
+  hive_ce:
+    dependency: transitive
+    description:
+      name: hive_ce
+      sha256: "81d39a03c4c0ba5938260a8c3547d2e71af59defecea21793d57fc3551f0d230"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.15.1"
   hooks_riverpod:
     dependency: "direct main"
     description:
@@ -668,6 +676,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  isolate_channel:
+    dependency: transitive
+    description:
+      name: isolate_channel
+      sha256: f3d36f783b301e6b312c3450eeb2656b0e7d1db81331af2a151d9083a3f6b18d
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.2+1"
   jni:
     dependency: transitive
     description:
