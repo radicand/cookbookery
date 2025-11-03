@@ -57,7 +57,7 @@ dev_dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
-  mobx_codegen: ^2.7.0
+  mobx_codegen: ^2.7.4
   graphql_codegen: ^2.0.0
   json_serializable: ^6.11.1
   build_runner: ^2.7.1
