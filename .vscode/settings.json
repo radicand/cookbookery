@@ -4,6 +4,8 @@
     "flutter": true,
     "xcodebuild": true,
     "xcrun": true,
-    "pod": true
+    "pod": true,
+    "bundler": true,
+    "bundle": true
   }
 }
