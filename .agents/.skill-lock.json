@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "skills": {
+    "flutter-pubspec-upgrade": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/flutter-pubspec-upgrade/SKILL.md",
+      "installedAt": "2026-03-01T00:00:00.000Z",
+      "updatedAt": "2026-03-01T00:00:00.000Z"
+    },
+    "flutter-android-upgrade": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/flutter-android-upgrade/SKILL.md",
+      "installedAt": "2026-03-01T00:00:00.000Z",
+      "updatedAt": "2026-03-01T00:00:00.000Z"
+    },
+    "flutter-ios-upgrade": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/flutter-ios-upgrade/SKILL.md",
+      "installedAt": "2026-03-01T00:00:00.000Z",
+      "updatedAt": "2026-03-01T00:00:00.000Z"
+    }
+  }
+}

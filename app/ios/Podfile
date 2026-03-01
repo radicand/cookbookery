@@ -3,6 +3,8 @@ platform :ios, '18.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+# Enable parallel code signing for faster builds
+ENV['COCOAPODS_PARALLEL_CODE_SIGN'] = 'true'
 
 project 'Runner', {
   'Debug' => :debug,
@@ -39,6 +41,8 @@ post_install do |installer|
     flutter_additional_ios_build_settings(target)
     target.build_configurations.each do |config|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '18.0'
+      config.build_settings['SWIFT_VERSION'] = '5.9'
+      config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = 'YES'
     end
   end
 end
