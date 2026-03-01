@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.5](https://github.com/radicand/cookbookery/compare/app-v1.7.4...app-v1.7.5) (2026-03-01)
+
+
+### Bug Fixes
+
+* **deps:** update Ruby version and bundler in release workflow; add missing gems to iOS and Android Gemfiles ([6d4fe80](https://github.com/radicand/cookbookery/commit/6d4fe80748bb239ea3424071d2945ad9b603b2d3))
+* **deps:** upgrade Flutter and Dart dependencies in pubspec.yaml ([b56eeb5](https://github.com/radicand/cookbookery/commit/b56eeb54de01b148497b4f1d4eb439f7174a75fe))
+
 ## [1.7.4](https://github.com/radicand/cookbookery/compare/app-v1.7.3...app-v1.7.4) (2025-08-30)
 
 
