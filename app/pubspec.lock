@@ -181,10 +181,10 @@ packages:
     dependency: "direct main"
     description:
       name: connectivity_plus
-      sha256: b5e72753cf63becce2c61fd04dfe0f1c430cc5278b53a1342dc5ad839eab29ec
+      sha256: "33bae12a398f841c6cda09d1064212957265869104c478e5ad51e2fb26c3973c"
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.5"
+    version: "7.0.0"
   connectivity_plus_platform_interface:
     dependency: transitive
     description:
@@ -571,10 +571,10 @@ packages:
     dependency: "direct main"
     description:
       name: graphql
-      sha256: "297a1680520e7b4d3c5784cfcea11a16d599702911b74a8ab50857c6d58741b9"
+      sha256: a7cb0b5e8719546bf8d4edf5f57c3690ddf0fcce379c0d9d2287fdab73481090
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.3"
+    version: "5.2.4"
   graphql_codegen:
     dependency: "direct dev"
     description:
@@ -587,10 +587,10 @@ packages:
     dependency: "direct main"
     description:
       name: graphql_flutter
-      sha256: "0fef9dc2483c4f21c6ac93cd2ef0b820542fc0ce6db6efa87367326d7f36ade4"
+      sha256: "4164962170998bc88bed833d1aa6efc5c3a85cbc8e66a8e62f790b43f4953980"
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.1"
+    version: "5.3.0"
   graphs:
     dependency: transitive
     description:
@@ -599,14 +599,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
-  hive:
-    dependency: transitive
-    description:
-      name: hive
-      sha256: "8dcf6db979d7933da8217edcec84e9df1bdb4e4edc7fc77dbd5aa74356d6d941"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.3"
   hive_ce:
     dependency: transitive
     description:
