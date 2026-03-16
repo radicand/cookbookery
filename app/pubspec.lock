@@ -571,10 +571,10 @@ packages:
     dependency: "direct main"
     description:
       name: graphql
-      sha256: "297a1680520e7b4d3c5784cfcea11a16d599702911b74a8ab50857c6d58741b9"
+      sha256: a7cb0b5e8719546bf8d4edf5f57c3690ddf0fcce379c0d9d2287fdab73481090
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.3"
+    version: "5.2.4"
   graphql_codegen:
     dependency: "direct dev"
     description:
