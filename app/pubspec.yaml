@@ -43,7 +43,7 @@ dependencies:
   adaptive_navigation: ^0.0.10
   graphql_flutter: ^5.2.1
   flutter_hooks: ^0.21.0
-  graphql: ^5.2.3
+  graphql: ^5.2.4
   gql: ^1.0.1
   fraction: ^5.0.5
   url_launcher: ^6.3.2
