@@ -113,7 +113,7 @@ jobs:
             echo "url=cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}" >> $GITHUB_OUTPUT
 
       - name: Install Helm
-        uses: azure/setup-helm@v4
+        uses: azure/setup-helm@v5
 
       - name: Setup kubeconfig
         run: |
