@@ -125,9 +125,24 @@ jobs:
           echo "${{ secrets.KUBE_CONFIG }}" > .kubeconfig
           chmod og-rwx .kubeconfig
 
+      - name: Compute extra ingress hosts
+        id: ingress_extras
+        run: |
+          if [[ "${{ inputs.environment }}" == "production" ]]; then
+            echo 'extra_host_args=--set ingress.extraHosts[0]=radicand.org --set ingress.extraHosts[1]=www.radicand.org' >> $GITHUB_OUTPUT
+          else
+            echo 'extra_host_args=' >> $GITHUB_OUTPUT
+          fi
+
       - name: Deploy
         run: |
-          helm upgrade cookbookery-web-production ./app/manifest/cookbook-web --install -n cookbook --set image.repository=ghcr.io/radicand/cookbookery-web --set image.tag=${{ steps.tagdata.outputs.result }} --set ingress.host=${{ steps.envurl.outputs.url }} --set CI_PROJECT_PATH_SLUG=${{ github.ref_name }} --set CI_ENVIRONMENT_SLUG=production
+          helm upgrade cookbookery-web-production ./app/manifest/cookbook-web --install -n cookbook \
+            --set image.repository=ghcr.io/radicand/cookbookery-web \
+            --set image.tag=${{ steps.tagdata.outputs.result }} \
+            --set ingress.host=${{ steps.envurl.outputs.url }} \
+            --set CI_PROJECT_PATH_SLUG=${{ github.ref_name }} \
+            --set CI_ENVIRONMENT_SLUG=production \
+            ${{ steps.ingress_extras.outputs.extra_host_args }}
         env:
           KUBECONFIG: .kubeconfig
 

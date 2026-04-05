@@ -19,6 +19,9 @@ ingress:
     # app.gitlab.com/env: ""
   # host: chart-example.local
   # path: /
+  extraHosts: []
+  #  - radicand.org
+  #  - www.radicand.org
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
