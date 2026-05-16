@@ -17,7 +17,7 @@ imagePullSecrets: []
 
 image:
   # -- Container image repository
-  repository: hasura/graphql-engine
+  repository: ghcr.io/radicand/cookbookery-api
   # -- Image tag (defaults to Chart.appVersion if not set)
   tag: ""
   # -- Image pull policy

@@ -50,12 +50,6 @@ jobs:
         run: |
           echo "${{ secrets.DOTENV }}" > .env
 
-      - name: Extract version from pubspec
-        id: tagdata
-        uses: mikefarah/yq@master
-        with:
-          cmd: yq '.version' app/pubspec.yaml | awk -F+ '{print $1}'
-
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v6
@@ -65,7 +59,7 @@ jobs:
             type=ref,event=branch
             type=ref,event=pr
             type=sha
-            type=raw,value=${{ steps.tagdata.outputs.result }}
+            type=raw,value=${{ inputs.tag_name }}
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'

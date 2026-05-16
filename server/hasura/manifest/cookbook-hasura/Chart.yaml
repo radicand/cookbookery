@@ -2,5 +2,5 @@ apiVersion: v2
 name: cookbook-hasura
 description: Helm chart for deploying Hasura GraphQL Engine
 type: application
-version: 0.3.0
-appVersion: "2.44.0"
+version: 1.6.1
+appVersion: "1.6.1"

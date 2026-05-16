@@ -17,7 +17,7 @@ imagePullSecrets: []
 
 image:
   # -- Container image repository
-  repository: nginx
+  repository: ghcr.io/radicand/cookbookery-web
   # -- Image tag (defaults to Chart.appVersion if not set)
   tag: ""
   # -- Image pull policy
