@@ -4,8 +4,6 @@ metadata:
   name: {{ include "cookbook-hasura.fullname" . }}
   labels:
     {{- include "cookbook-hasura.labels" . | nindent 4 }}
-  annotations:
-    {{- include "cookbook-hasura.annotations" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:

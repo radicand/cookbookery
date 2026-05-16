@@ -1,34 +1,88 @@
-# Default values for cookbook-backend.
+# Default values for cookbook-hasura.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-metadataDbUrl: ""
-dbUrl: ""
-jwtSecret: {}
-corsDomains: ""
-adminSecret: ""
+# -- Number of replicas for the Hasura deployment
 replicaCount: 1
+
+# -- Override the chart name used in resource names
+nameOverride: ""
+# -- Override the full release name used in resource names
+fullnameOverride: ""
+
+# -- Image pull secrets for private registries
+# Example:
+#   - name: my-registry-secret
 imagePullSecrets: []
+
 image:
-  repository: ghcr.io/radicand/cookbookery-api
-  tag: latest
+  # -- Container image repository
+  repository: hasura/graphql-engine
+  # -- Image tag (defaults to Chart.appVersion if not set)
+  tag: ""
+  # -- Image pull policy
   pullPolicy: IfNotPresent
+
+# -- Container port that Hasura listens on
+containerPort: 8080
+
+# -- Health check configuration for liveness and readiness probes
+healthCheck:
+  # -- Path to use for health checks
+  path: /healthz
+  # -- Delay before first probe is initiated
+  initialDelaySeconds: 60
+  # -- Timeout for each probe
+  timeoutSeconds: 2
+
+# -- Hasura GraphQL Engine configuration environment variables.
+# Each key/value pair becomes an env var on the container.
+# Secrets should NOT go here — use envFrom with a K8s Secret instead.
+# See: https://hasura.io/docs/latest/deployment/graphql-engine-flags/reference/
+hasura:
+  HASURA_GRAPHQL_ENABLE_CONSOLE: "false"
+  HASURA_GRAPHQL_DEV_MODE: "false"
+  HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "anonymous"
+
+# -- Load environment variables from ConfigMaps or Secrets.
+# Use this for injecting database URLs, admin secrets, JWT config, etc.
+# Example:
+#   - secretRef:
+#       name: my-hasura-secrets
+#   - configMapRef:
+#       name: my-hasura-config
+envFrom: []
+
+# -- Additional environment variables as a list of {name, value} or {name, valueFrom} objects.
+# Example:
+#   - name: MY_CUSTOM_VAR
+#     value: "some-value"
+#   - name: MY_SECRET_VAR
+#     valueFrom:
+#       secretKeyRef:
+#         name: my-secret
+#         key: secret-key
+extraEnv: []
+
 ingress:
-  enabled: true
-  annotations:
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-    # app.gitlab.com/app: ""
-    # app.gitlab.com/env: ""
-  # host: chart-example.local
-  # path: /
+  # -- Whether to create an Ingress resource
+  enabled: false
+  # -- Annotations to add to the Ingress
+  annotations: {}
+  # -- Primary hostname for the Ingress
+  host: ""
+  # -- Additional hostnames that should route to this service
+  extraHosts: []
+  # -- TLS configuration
   tls: []
-  #  - secretName: chart-example-tls
+  #  - secretName: my-tls-secret
   #    hosts:
-  #      - chart-example.local
-podSecurityContext:
-  {}
+  #      - hasura.example.com
+
+# -- Annotations to add to pods
+podAnnotations: {}
+
+podSecurityContext: {}
   # fsGroup: 2000
 
 securityContext:
@@ -40,31 +94,34 @@ securityContext:
   # runAsUser: 1000
 
 service:
+  # -- Service type
   type: ClusterIP
+  # -- Service port
   port: 80
-resources:
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  requests:
-    memory: "128Mi"
-    cpu: "300m"
-  limits:
-    memory: "400Mi"
-    cpu: "800m"
+
+# -- Resource requests and limits
+resources: {}
+  # requests:
+  #   memory: "128Mi"
+  #   cpu: "300m"
+  # limits:
+  #   memory: "400Mi"
+  #   cpu: "800m"
 
 serviceAccount:
-  # Specifies whether a service account should be created
+  # -- Whether to create a ServiceAccount
   create: true
-  # Annotations to add to the service account
+  # -- Annotations to add to the ServiceAccount
   annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
-  name:
+  # -- The name of the ServiceAccount to use.
+  # If not set and create is true, a name is generated using the fullname template.
+  name: ""
 
+# -- Node selector for pod scheduling
 nodeSelector: {}
 
+# -- Tolerations for pod scheduling
 tolerations: []
 
+# -- Affinity rules for pod scheduling
 affinity: {}

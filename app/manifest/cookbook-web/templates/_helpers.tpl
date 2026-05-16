@@ -51,15 +51,6 @@ app.kubernetes.io/name: {{ include "cookbook-web.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
-{{- define "cookbook-web.annotations" -}}
-{{- if .Values.CI_PROJECT_PATH_SLUG }}
-app.gitlab.com/app: {{ .Values.CI_PROJECT_PATH_SLUG }}
-{{- end }}
-{{- if .Values.CI_ENVIRONMENT_SLUG }}
-app.gitlab.com/env: {{ .Values.CI_ENVIRONMENT_SLUG }}
-{{- end }}
-{{- end -}}
-
 {{/*
 Create the name of the service account to use
 */}}

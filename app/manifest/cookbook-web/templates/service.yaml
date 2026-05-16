@@ -4,8 +4,6 @@ metadata:
   name: {{ include "cookbook-web.fullname" . }}
   labels:
     {{- include "cookbook-web.labels" . | nindent 4 }}
-  annotations:
-    {{- include "cookbook-web.annotations" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:

@@ -34,30 +34,6 @@ on:
       CR_PAT:
         description: 'Docker Personal Access Token'
         required: true
-      KUBE_INGRESS_BASE_DOMAIN:
-        description: 'Kubernetes Ingress Base Domain'
-        required: true
-      KUBE_CONFIG:
-        description: 'Kubernetes Config'
-        required: true
-      DATABASE_URL:
-        description: 'Database URL'
-        required: true
-      METADATA_DB_URL:
-        description: 'Metadata Database URL'
-        required: true
-      JWT_AUD:
-        description: 'JWT Audience'
-        required: true
-      JWT_ISS:
-        description: 'JWT Issuer'
-        required: true
-      JWT_JWKS:
-        description: 'JWT JWKS URL'
-        required: true
-      HASURA_ADMIN_SECRET:
-        description: 'Hasura Admin Secret'
-        required: true
 jobs:
   build:
     environment:
@@ -107,24 +83,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           provenance: false
 
-      - name: Extract env url
-        id: envurl
-        run: |
-            echo "url=cookbookery-api.${{ secrets.KUBE_INGRESS_BASE_DOMAIN }}" >> $GITHUB_OUTPUT
-
-      - name: Install Helm
-        uses: azure/setup-helm@v5
-
-      - name: Setup kubeconfig
-        run: |
-          echo "${{ secrets.KUBE_CONFIG }}" > .kubeconfig
-          chmod og-rwx .kubeconfig
-
-      - name: Deploy
-        run: |
-          helm upgrade cookbookery-api-production ./server/hasura/manifest/cookbook-hasura --install -n cookbook --set image.repository=ghcr.io/radicand/cookbookery-api --set image.tag=${{ inputs.tag_name }} --set dbUrl=${{ secrets.DATABASE_URL }} --set metadataDbUrl=${{ secrets.METADATA_DB_URL }} --set jwtSecret.audience=${{ secrets.JWT_AUD }} --set jwtSecret.issuer=${{ secrets.JWT_ISS }} --set jwtSecret.jwk_url=${{ secrets.JWT_JWKS }} --set adminSecret="${{ secrets.HASURA_ADMIN_SECRET }}" --set corsDomains="${{ vars.HASURA_CORS_DOMAINS }}" --set ingress.host=${{ steps.envurl.outputs.url }} --set CI_PROJECT_PATH_SLUG=${{ github.ref_name }} --set CI_ENVIRONMENT_SLUG=production
-        env:
-          KUBECONFIG: .kubeconfig
+      # TODO: ArgoCD image tag update
+      # The ArgoCD app manifest in the argocd-apps repo controls the deployed
+      # image tag via its valuesObject. To automate tag bumps, either:
+      #   1. Use ArgoCD Image Updater to watch ghcr.io/radicand/cookbookery-api
+      #   2. Add a step here that clones argocd-apps, updates the tag in the
+      #      cookbookery-api Application manifest, and pushes a commit.
+      # For now, update the tag manually in the argocd-apps repo after pushing
+      # a new image.
 
       - name: Delete packages older than 7 days (but keep at least 3 versions)
         uses: davahome/ghcr-cleanup@v1.1
