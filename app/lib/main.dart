@@ -6,7 +6,6 @@
 
 import 'dart:async';
 
-import 'package:adaptive_navigation/adaptive_navigation.dart';
 import 'package:cookbook/helpers/is_debug.dart';
 import 'package:cookbook/helpers/theme.dart';
 import 'package:cookbook/models/cookbook_store.dart';
@@ -15,8 +14,6 @@ import 'package:cookbook/screens/login.dart';
 import 'package:cookbook/screens/profile.dart';
 import 'package:cookbook/screens/recipe.dart';
 import 'package:cookbook/screens/tag.dart';
-import 'package:device_preview_screenshot/device_preview_screenshot.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -147,15 +144,9 @@ Future<void> main() async {
         'https://785380e0a35b434da08919d13ac6bfcb@o376448.ingest.sentry.io/4504668675047424';
     options.tracesSampleRate = 1.0;
   },
-      appRunner: () => runApp(DevicePreview(
-            enabled: false, // !kReleaseMode,
-            builder: (context) => GraphQLProvider(
-                client: client, child: CookbookApp()), // Wrap your app
-            tools: const [
-              ...DevicePreview.defaultTools,
-              DevicePreviewScreenshot(),
-            ],
-          )));
+    appRunner: () =>
+        runApp(GraphQLProvider(client: client, child: CookbookApp())),
+  );
 
   // This captures errors reported by the Flutter framework.
   FlutterError.onError = (FlutterErrorDetails details) async {
@@ -187,36 +178,64 @@ class SharedScaffold extends StatefulWidget {
 }
 
 class _SharedScaffoldState extends State<SharedScaffold> {
-  @override
-  Widget build(BuildContext context) => AdaptiveNavigationScaffold(
-        selectedIndex: widget.selectedIndex,
-        destinations: const [
-          AdaptiveScaffoldDestination(title: 'Home', icon: Icons.home),
-          AdaptiveScaffoldDestination(title: 'Profile', icon: Icons.person),
-        ],
-        appBar: AdaptiveAppBar(title: const Text(CookbookApp.title)),
-        navigationTypeResolver: (context) =>
-            _drawerSize ? NavigationType.drawer : NavigationType.bottom,
-        onDestinationSelected: (index) async {
-          // if there's a drawer, close it
-          if (_drawerSize) Navigator.pop(context);
+  bool get _useDrawer => MediaQuery.of(context).size.width >= 600;
 
-          // routes here must be go, not push.
-          switch (index) {
-            case 0:
-              context.goNamed('home');
-              break;
-            case 1:
-              context.goNamed('profile');
-              break;
-            default:
-              throw Exception('Invalid index');
-          }
-        },
+  void _onDestinationSelected(int index) {
+    switch (index) {
+      case 0:
+        context.goNamed('home');
+        break;
+      case 1:
+        context.goNamed('profile');
+        break;
+      default:
+        throw Exception('Invalid index');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_useDrawer) {
+      return Scaffold(
+        appBar: AppBar(title: const Text(CookbookApp.title)),
+        drawer: NavigationDrawer(
+          selectedIndex: widget.selectedIndex,
+          onDestinationSelected: (index) {
+            Navigator.pop(context); // close the drawer
+            _onDestinationSelected(index);
+          },
+          children: const [
+            Padding(
+              padding: EdgeInsets.fromLTRB(28, 16, 16, 10),
+              child: Text('Cookbook'),
+            ),
+            NavigationDrawerDestination(
+              icon: Icon(Icons.home),
+              label: Text('Home'),
+            ),
+            NavigationDrawerDestination(
+              icon: Icon(Icons.person),
+              label: Text('Profile'),
+            ),
+          ],
+        ),
         body: widget.body,
       );
+    }
 
-  bool get _drawerSize => MediaQuery.of(context).size.width >= 600;
+    return Scaffold(
+      appBar: AppBar(title: const Text(CookbookApp.title)),
+      body: widget.body,
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: widget.selectedIndex,
+        onDestinationSelected: _onDestinationSelected,
+        destinations: const [
+          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+      ),
+    );
+  }
 }
 
 class ErrorScaffold extends StatelessWidget {
@@ -228,7 +247,7 @@ class ErrorScaffold extends StatelessWidget {
   final Widget body;
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AdaptiveAppBar(title: const Text('Not Found')),
+    appBar: AppBar(title: const Text('Not Found')),
         body: body,
       );
 }

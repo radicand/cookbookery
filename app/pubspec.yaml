@@ -40,16 +40,12 @@ dependencies:
   mobx: ^2.5.0
   flutter_mobx: ^2.3.0
   flutter_dotenv: ^6.0.1
-  adaptive_navigation: ^0.0.10
   graphql_flutter: ^5.2.1
   flutter_hooks: ^0.21.0
   graphql: ^5.2.4
   gql: ^1.0.1
   fraction: ^5.0.5
   url_launcher: ^6.3.2
-  device_preview: ^1.2.0
-  device_preview_screenshot: ^1.0.0
-  hooks_riverpod: ^3.3.1
   sentry_flutter: ^9.19.0
   connectivity_plus: ^7.0.0
 dev_dependencies:
