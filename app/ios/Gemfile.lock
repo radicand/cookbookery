@@ -15,7 +15,7 @@ GEM
       minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
-    addressable (2.8.9)
+    addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
     algoliasearch (1.27.5)
       httpclient (~> 2.8, >= 2.8.3)
@@ -126,7 +126,7 @@ GEM
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
-    faraday-retry (1.0.3)
+    faraday-retry (1.0.4)
     faraday_middleware (1.2.1)
       faraday (~> 1.0)
     fastimage (2.4.0)
@@ -232,7 +232,7 @@ GEM
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
     jmespath (1.6.2)
-    json (2.18.1)
+    json (2.19.5)
     jwt (2.10.2)
       base64
     logger (1.7.0)
@@ -310,6 +310,7 @@ PLATFORMS
   arm64-darwin-22
   arm64-darwin-23
   arm64-darwin-24
+  arm64-darwin-25
 
 DEPENDENCIES
   aws-sdk-s3 (>= 1.208.0)
