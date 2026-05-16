@@ -5,11 +5,18 @@
 
 version: 2
 updates:
-  - package-ecosystem: "github-actions" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "pub" # See documentation for possible values
-    directory: "/app" # Location of package manifests
+    min-release-age: "3 days"
+  - package-ecosystem: "pub"
+    directory: "/app"
     schedule:
       interval: "weekly"
+    min-release-age: "3 days"
+  - package-ecosystem: "npm"
+    directory: "/common"
+    schedule:
+      interval: "weekly"
+    min-release-age: "3 days"
