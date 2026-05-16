@@ -47,7 +47,7 @@ dependencies:
   fraction: ^5.0.5
   url_launcher: ^6.3.2
   sentry_flutter: ^9.19.0
-  connectivity_plus: ^7.0.0
+  connectivity_plus: ^7.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
