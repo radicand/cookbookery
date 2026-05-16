@@ -39,7 +39,7 @@ dependencies:
   google_fonts: ^8.0.2
   mobx: ^2.5.0
   flutter_mobx: ^2.3.0
-  flutter_dotenv: ^6.0.0
+  flutter_dotenv: ^6.0.1
   adaptive_navigation: ^0.0.10
   graphql_flutter: ^5.2.1
   flutter_hooks: ^0.21.0
