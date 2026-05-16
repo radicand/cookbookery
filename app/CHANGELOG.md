@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.6](https://github.com/radicand/cookbookery/compare/app-v1.7.5...app-v1.7.6) (2026-05-16)
+
+
+### Bug Fixes
+
+* sync versions ([e10e57b](https://github.com/radicand/cookbookery/commit/e10e57b8b483e56b84c0511240f8954a94d8a9ec))
+
 ## [1.7.5](https://github.com/radicand/cookbookery/compare/app-v1.7.4...app-v1.7.5) (2026-03-01)
 
 
