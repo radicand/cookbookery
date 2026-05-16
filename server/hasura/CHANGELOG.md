@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/radicand/cookbookery/compare/server-api-v1.6.1...server-api-v1.6.2) (2026-05-16)
+
+
+### Bug Fixes
+
+* sync versions ([e10e57b](https://github.com/radicand/cookbookery/commit/e10e57b8b483e56b84c0511240f8954a94d8a9ec))
+
 ## [1.6.1](https://github.com/radicand/cookbookery/compare/server-api-v1.6.0...server-api-v1.6.1) (2024-07-29)
 
 
