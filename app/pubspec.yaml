@@ -46,7 +46,7 @@ dependencies:
   gql: ^1.0.1
   fraction: ^5.0.5
   url_launcher: ^6.3.2
-  sentry_flutter: ^9.19.0
+  sentry_flutter: ^9.22.0
   connectivity_plus: ^7.1.1
 dev_dependencies:
   flutter_test:
